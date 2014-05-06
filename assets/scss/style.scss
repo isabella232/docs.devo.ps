@@ -377,7 +377,10 @@ button.button {
     }
     h3,
     a {
+      overflow: hidden;
       padding: $gutter/2 1.5*$gutter/2;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     h3 {
       cursor: pointer;
