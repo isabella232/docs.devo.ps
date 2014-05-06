@@ -348,9 +348,12 @@ button.button {
       color: $grey;
       @include font-size($small);
       margin: 0;
+      overflow: hidden;
       padding: 1.5*$gutter/2;
-      text-transform: uppercase;
       text-align: center;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
   }
   .body {
@@ -430,5 +433,9 @@ button.button {
     display: block;
     overflow-y: auto;
     padding: $gutter/2;
+  }
+  h1 {
+    border-bottom: 1px solid $line;
+    padding-bottom: $gutter;
   }
 }
