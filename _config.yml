@@ -1,0 +1,22 @@
+---
+exclude: ['README.markdown', 'Makefile']
+pygments: true
+safe: false
+permalink: /:categories/:title
+
+name: devo.ps documentations
+description: 'Documentation for devo.ps'
+keywords:
+  - DevOps
+  - devo.ps
+  - documentation
+  - references
+  - help
+  - guide
+
+author: devo.ps
+email: support@devo.ps
+url: http://devo.ps
+
+#ga: 'UA-XXXXXXX-X'
+#gauges: XXXXXXXXXXXXXXXXXX

@@ -1,0 +1,431 @@
+/* Compass */
+
+@import 'compass/css3';
+@import 'compass/css3/border-radius';
+@import 'compass/css3/filter';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/user-interface';
+
+/* Variables (colors, layout, spacing & typography) */
+
+@import '_variables.scss';
+/*@import '_fonts.scss';*/
+
+/* Common styling (eggshell) */
+
+@import 'common/_fade.scss';
+@import 'common/_arrow.scss';
+@import 'common/_button.scss';
+@import 'common/_tooltip.scss';
+@import 'common/_dropdown.scss';
+@import 'common/_icon.scss';
+@import 'common/_form.scss';
+@import 'common/_spin.scss';
+@import 'common/_notification.scss';
+
+/* GENERAL */
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #FFF;
+  color: tint($black, 25%);
+  font-family: 'Open Sans', Arial, sans-serif;
+  @include font-size();
+  font-weight: normal;
+  line-height: 140%;
+  position: relative;
+}
+
+a {
+  cursor: pointer;
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: shade($blue, 10%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+  font-weight: normal;
+  line-height: 140%;
+  margin: 0 0 $gutter;
+}
+
+h1 {
+  @include font-size($huge);
+}
+
+h2 {
+  @include font-size($large);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @include font-size($normal);
+}
+
+p {
+  margin: 0 0 $gutter;
+}
+
+ul {
+  margin: 0 0 $gutter/2 $gutter;
+  padding: 0;
+  li {
+    padding: 0 0 $gutter/2;
+  }
+}
+
+small {
+  @include font-size($small);
+}
+
+table {
+  margin: 0 0 $gutter;
+  th {
+    padding: $gutter/4 $gutter/2;
+  }
+  td {
+    padding: 1.5*$gutter/2 $gutter/2;
+  }
+  th,
+  td {
+    &:first-child {
+      padding-left: $gutter/4;
+    }
+    &:last-child {
+      padding-right: $gutter/4;
+    }
+  }
+  thead {
+    color: $grey;
+    @include font-size($small);
+    th {
+      font-weight: normal;
+      white-space: nowrap;
+    }
+  }
+  tbody {
+    tr {
+      border-top: 1px solid $line;
+      @include transition-property(border);
+      @include transition-duration(0.2s);
+      &:last-child {
+        border-bottom: 1px solid $line;
+      }
+      &:hover {
+        border-color: shade($line, 15%);
+        + tr {
+          border-top-color: shade($line, 15%);
+        }
+      }
+    }
+  }
+}
+
+/* Forms */
+
+.field {
+  margin-bottom: $gutter/2;
+}
+
+/* Validation */
+
+.field .status:before {
+  display: inline-block;
+  @include icon();
+  margin-left: $gutter/4;
+}
+
+.field .description {
+  display: block;
+  @include font-size($small);
+  margin-top: $gutter/4;
+}
+
+input:not([type=submit]),
+textarea {
+  &.ng-invalid {
+    border-color: $red;
+    & + .description,
+    & + .status + .description {
+      color: $red;
+    }
+    & + .status:before {
+      color: $red;
+      content: 'x';
+    }
+  }
+  &.ng-valid {
+    & + .status:before {
+      color: $green;
+      content: 'o';
+    }
+  }
+  &.processing {
+    & + .status:before {
+      color: $blue;
+      content: 'l';
+      @include spin(1.2s);
+    }
+  }
+}
+
+label,
+.label {
+  @include font-size($micro);
+  color: inherit;
+  margin: 0 0 $gutter/5;
+  text-transform: uppercase;
+}
+
+/* Buttons & Controls */
+
+button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  outline: none;
+}
+
+.button,
+button.button {
+  @include button();
+  @include font-size($small);
+  text-align: center;
+  text-transform: uppercase;
+  &.add {
+    @include button($green);
+    &:before {
+      content: '+';
+      margin-right: $gutter/2;
+    }
+  }
+}
+
+.cancel {
+  color: $grey;
+  @include font-size($small);
+  padding: $gutter/4 0;
+  text-align: center;
+  text-transform: uppercase;
+  &:hover {
+    color: shade($blue, 10%)
+  }
+}
+
+.icon {
+  @include tooltip();
+  line-height: 1;
+  padding: 0;
+  &:hover {
+    color: $blue;
+  }
+  &:before {
+    @include font-size($large);
+    @include icon();
+  }
+  &.console:before { content: 'B'; }
+  &.settings:before { content: 'C'; }
+  &.view:before { content: 'I'; }
+}
+
+.header {
+   .controls {
+    float: right;
+    & > * {
+      margin-left: $gutter/4;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* Messages; errors, warnings... */
+
+.notification {
+  @include border-radius($radius);
+  @include notifications();
+  margin-bottom: $gutter;
+}
+
+/* Select boxes */
+
+.select {
+  position: relative;
+  &:after {
+    @include icon();
+    content: 'a';
+    cursor: pointer;
+    opacity: 0.5;
+    margin-left: $gutter/4;
+    pointer-events: none;
+    position: absolute;
+    right: $gutter/2;
+    top: 2px;
+  }
+  select {
+    @include button(tint($black, 95%), true);
+    padding-right: 1.5*$gutter;
+  }
+}
+
+/* Dropdown menus */
+
+.dropdown {
+  @include dropdown(true);
+  a:hover {
+    text-decoration: none;
+  }
+  .options {
+    background: #FFF;
+    border: 1px solid tint($black, 90%);
+    @include border-radius($radius);
+    @include box-shadow(rgba(0, 0, 0, 0.03) 0 1px 0 1px);
+    a {
+      display: block;
+      margin: $gutter/4 0;
+      padding: $gutter/4 1.5*$gutter/2;
+      white-space: nowrap;
+    }
+    .separated{
+      margin-top: $gutter/2;
+      position: relative;
+      &:after {
+        content: ' ';
+        display: block;
+        border-top: 1px solid tint($black, 90%);
+        left: 0;
+        position: absolute;
+        top: -$gutter/4;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* SIDEBAR */
+
+#sidebar {
+  border-right: 1px solid $line;
+  bottom: 0;
+  display: block;
+  float: left;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 20%;
+  h3,
+  a {
+    display: block;
+    @include transition-property(background);
+    @include transition-duration(0.2s);
+    &.active,
+    &:hover {
+      background: $light;
+    }
+  }
+  .header {
+    border-bottom: 1px solid $line;
+    h2 {
+      color: $grey;
+      @include font-size($small);
+      margin: 0;
+      padding: 1.5*$gutter/2;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .body {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        display: none;
+        a {
+          padding-left: 3*$gutter/2;
+        }
+      }
+      li.active {
+        ul { display: block; }
+      }
+    }
+    > ul > li {
+      border-bottom: 1px solid $line;
+    }
+    h3,
+    a {
+      padding: $gutter/2 1.5*$gutter/2;
+    }
+    h3 {
+      cursor: pointer;
+      margin: 0;
+      &:before {
+        color: $grey;
+        @include icon();
+        content: 's';
+        float: right;
+      }
+      &:hover {
+        &:before {
+          color: inherit;
+        }
+      }
+    }
+  }
+  .footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 20%;
+    a {
+      @include tooltip();
+      border-top: 1px solid $line;
+      display: block;
+      @include font-size($large);
+      padding: 1.5*$gutter/2;
+      &:before {
+        @include icon();
+        content: '2';
+      }
+    }
+  }
+}
+
+/* CONTENT */
+
+#content {
+  margin-left: 20%;
+  padding: $gutter 1.5*$gutter;
+  pre code {
+    background: $light;
+    border: 1px solid tint($line, 40%);
+    @include border-radius($radius);
+    display: block;
+    overflow-y: auto;
+    padding: $gutter/2;
+  }
+}
