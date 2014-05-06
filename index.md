@@ -1,5 +1,5 @@
 ---
-title: Building technology around data
+title: Getting started
 layout: default
 ---
 
