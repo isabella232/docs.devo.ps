@@ -15,6 +15,10 @@
   <link href='/style.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
+  <section id='content'>
+    {{ content }}
+  </section>
+
   <aside id='sidebar'>
     <header class='header'>
       {% include header.html %}
@@ -26,10 +30,6 @@
       {% include footer.html %}
     </footer>
   </aside>
-
-  <section id='content'>
-    {{ content }}
-  </section>
   
   <!-- JS -->
   <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
