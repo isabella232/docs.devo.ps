@@ -9199,8 +9199,11 @@ $(document).ready(function () {
 	});
 
     // Expand link to current page
-	var pathname = window.location.pathname;
-	console.log();
+	var path = window.location.pathname;
+	$('a[href="'+ path +'"]').each(function () {
+		$(this).addClass('active');
+		$(this).parent().parent().parent().addClass('active');
+	});
 });
 
 $(document).ready(function () {
