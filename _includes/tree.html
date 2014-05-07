@@ -1,18 +1,28 @@
 <ul>
   {% for item in tree %}
   <li>
+    <h3><strong><code>{{ item.title }}</code></strong>{% if parent %} (<code>{{ parent }}.{{ item.title }}</code>){% endif %}</h3>
     {% if item.subtree %}
-      <h4>{{ item.title }}</h4>
+      {% assign parent = parent %}
+      {% capture parent %}{{ parent | append: item.title }}{% endcapture %}
       {% assign tree = item.subtree %}
       {% include tree.html %}
     {% else %}
-      <h5><code>{{ item.title }}</code></h5>
-      <p class='description'>{{ item.description }}</p>
-      <ul class='details'>
-        <li><strong>Type</strong>: <code>{{ item.type }}</code></li>
-        <li><strong>Default</strong>: <code>{{ item.default }}</code></li>
-        <li><strong>Required</strong>: <code>{{ item.required }}</code></li>
-      </ul>
+      <p>{{ item.description }}</p>
+      <table>
+        <tr>
+          <th>Type</th>
+          <td><code>{{ item.type }}</code></td>
+        </tr>
+        <tr>
+          <th>Default</th>
+          <td><code>{{ item.default }}</code></td>
+        </tr>
+        <tr>
+          <th>Required</th>
+          <td><code>{{ item.required }}</code></td>
+        </tr>
+      </table>
     {% endif %}
   </li>
   {% endfor %}

@@ -426,7 +426,7 @@ button.button {
 #content {
   margin-left: 20%;
   padding: $gutter 1.5*$gutter;
-  .header {
+  > .header {
     border-bottom: 1px solid $line;
     margin-bottom: $gutter;
     padding-bottom: $gutter;
@@ -463,29 +463,49 @@ button.button {
     padding: $gutter/2;
   }
   .configuration {
+    h3,
+    p {
+      margin-bottom: $gutter/2;
+    }
     ul {
       list-style: none;
-      margin-left: $gutter;
+      margin-left: 2*$gutter;
+      li:last-child {
+        table {
+          margin-bottom: 0;
+        }
+      }
     }
     > ul {
       margin-left: 0;
-    }
-    h5 {
-      display: inline;
-    }
-    h5 + p {
-      display: inline;
-      margin: 0;
-    }
-    .details {
-      @include font-size($small);
-      margin-top: $gutter/2;
-      li {
-        padding: 0;
+      > li {
+        @include border-radius($radius);
+        border: 1px solid $line;
+        border-bottom-width: 0;
+        padding: 1.5*$gutter/2;
+        table {
+          margin-bottom: 0;
+        }
+        li {
+          border-top: 1px solid $line;
+          margin-top: $gutter/2;
+          padding-top: $gutter/2;
+        }
       }
-      strong {
-        color: $black;
+    }
+    table {
+      background: $light;
+      @include border-radius($radius);
+      margin-bottom: $gutter/2;
+      code {
+        color: $purple;
+      }
+      th {
         font-weight: normal;
+      }
+      th,
+      td {
+        padding: $gutter/4 $gutter/2;
       }
     }
   }

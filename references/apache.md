@@ -3,7 +3,6 @@ title: Apache
 layout: page
 links:
     - title: Official website
-      icon: 
       url: http://httpd.apache.org/
 configuration:
     - title: user
