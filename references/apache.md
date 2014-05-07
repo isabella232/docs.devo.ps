@@ -1,7 +1,10 @@
 ---
 title: Apache
 layout: page
-ref: http://httpd.apache.org/
+links:
+    - title: Official website
+      icon: 
+      url: http://httpd.apache.org/
 configuration:
     - title: user
       default: www-data

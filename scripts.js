@@ -9223,3 +9223,7 @@ $(document).ready(function () {
 		$(this).parent().parent().parent().addClass('active');
 	});
 });
+
+$(document).ready(function () {
+	// $('#content .configuration').
+});

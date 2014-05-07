@@ -426,16 +426,67 @@ button.button {
 #content {
   margin-left: 20%;
   padding: $gutter 1.5*$gutter;
-  pre code {
+  .header {
+    border-bottom: 1px solid $line;
+    margin-bottom: $gutter;
+    padding-bottom: $gutter;
+    h1 {
+      margin: 0;
+    }
+    .controls {
+      @include font-size($small);
+      margin-top: $gutter/2;
+      a {
+        border: 1px solid $line;
+        border-right-width: 0;
+        margin: 0;
+        padding: $gutter/4 $gutter/2;
+        &:first-child {
+          @include border-radius($radius 0 0 $radius);
+        }
+        &:last-child {
+          border-right-width: 1px;
+          @include border-radius(0 $radius $radius 0);
+        }
+      }
+    }
+  }
+  code {
     background: $light;
-    border: 1px solid tint($line, 40%);
     @include border-radius($radius);
+    padding: 0 $gutter/5;
+  }
+  pre code {
+    border: 1px solid tint($line, 40%);
     display: block;
     overflow-y: auto;
     padding: $gutter/2;
   }
-  h1 {
-    border-bottom: 1px solid $line;
-    padding-bottom: $gutter;
+  .configuration {
+    ul {
+      list-style: none;
+      margin-left: $gutter;
+    }
+    > ul {
+      margin-left: 0;
+    }
+    h5 {
+      display: inline;
+    }
+    h5 + p {
+      display: inline;
+      margin: 0;
+    }
+    .details {
+      @include font-size($small);
+      margin-top: $gutter/2;
+      li {
+        padding: 0;
+      }
+      strong {
+        color: $black;
+        font-weight: normal;
+      }
+    }
   }
 }
