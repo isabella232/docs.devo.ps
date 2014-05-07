@@ -466,6 +466,7 @@ button.button {
     ul {
       list-style: none;
       margin-left: 2*$gutter;
+      margin-top: 2*$gutter;
       li {
         border-top: 1px solid tint($line, 40%);
         margin-top: $gutter;
