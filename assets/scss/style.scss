@@ -441,6 +441,11 @@ button.button {
         border-right-width: 0;
         margin: 0;
         padding: $gutter/4 $gutter/2;
+        @include transition-property(border);
+        @include transition-duration(0.2s);
+        &:hover {
+          background: $light;
+        }
         &:first-child {
           @include border-radius($radius 0 0 $radius);
         }
