@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<section class='body'>
+  {{ content }}
+</section>
+
+{% if page.configuration %}
+<section class='configuration'>
+  <h2>Configuration</h2>
+	{% assign tree = page.configuration %}
+	{% include tree.html %}
+</section>
+{% endif %}
+
+

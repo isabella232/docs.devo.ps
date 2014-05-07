@@ -1,0 +1,19 @@
+<ul>
+  {% for item in tree %}
+  <li>
+    {% if item.subtree %}
+      <h4>{{ item.title }}</h4>
+      {% assign tree = item.subtree %}
+      {% include tree.html %}
+    {% else %}
+      <h5><code>{{ item.title }}</code></h5>
+      <p class='description'>{{ item.description }}</p>
+      <ul class='details'>
+        <li>Type: <code>{{ item.type }}</code></li>
+        <li>Default: <code>{{ item.default }}</code></li>
+        <li>Required: <code>{{ item.required }}</code></li>
+      </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
