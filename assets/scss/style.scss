@@ -470,38 +470,24 @@ button.button {
     ul {
       list-style: none;
       margin-left: 2*$gutter;
-      li:last-child {
-        table {
-          margin-bottom: 0;
-        }
+      li {
+        border-top: 1px solid tint($line, 40%);
+        margin-top: $gutter;
+        padding-top: $gutter;
+      }
+      li:first-child {
+        border: 0;
+        margin-top: 0;
+        padding-top: 0;
       }
     }
     > ul {
       margin-left: 0;
-      > li {
-        @include border-radius($radius);
-        border: 1px solid $line;
-        border-bottom-width: 0;
-        padding: 1.5*$gutter/2;
-        table {
-          margin-bottom: 0;
-        }
-        li {
-          border-bottom: 1px solid tint($line, 20%);
-          margin-bottom: $gutter;
-          padding-bottom: $gutter;
-          &:last-child {
-            border: 0;
-            margin-bottom: 0;
-            padding-bottom: 0;
-          }
-        }
-      }
     }
     table {
       background: $light;
       @include border-radius($radius);
-      margin-bottom: $gutter/2;
+      margin: 0;
       code {
         color: $purple;
       }
