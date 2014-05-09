@@ -1,5 +1,5 @@
 ---
-# markdown: redcarpet
+markdown: redcarpet
 exclude: ['README.markdown', 'Makefile']
 pygments: true
 safe: false
