@@ -2,7 +2,7 @@
   {% for val in tree %}
   <li>
     <h3><strong><code>{{ val[0] }}</code></strong>{% if parent %} (<code>{{ parent }}.{{ val[0] }}</code>){% endif %}</h3>
-    {% if val[1].type %}
+    {% if val[1].type and val[1].description %}
       <p>{{ val[1].description }}</p>
       <table>
         <thead>
