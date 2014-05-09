@@ -1,14 +1,9 @@
 <ul>
-  {% for item in tree %}
+  {% for val in tree %}
   <li>
-    <h3><strong><code>{{ item.title }}</code></strong>{% if parent %} (<code>{{ parent }}.{{ item.title }}</code>){% endif %}</h3>
-    {% if item.subtree %}
-      {% assign parent = parent %}
-      {% capture parent %}{{ parent | append: item.title }}{% endcapture %}
-      {% assign tree = item.subtree %}
-      {% include tree.html %}
-    {% else %}
-      <p>{{ item.description }}</p>
+    <h3><strong><code>{{ val[0] }}</code></strong>{% if parent %} (<code>{{ parent }}.{{ val[0] }}</code>){% endif %}</h3>
+    {% if val[1].type %}
+      <p>{{ val[1].description }}</p>
       <table>
         <thead>
           <th>Type</th>
@@ -17,12 +12,19 @@
         </thead>
         <tbody>
           <tr>
-            <td><code>{{ item.type }}</code></td>
-            <td><code>{{ item.default }}</code></td>
-            <td><code>{{ item.required }}</code></td>
+            <td><code>{{ val[1].type }}</code></td>
+            <td><code>{{ val[1].default }}</code></td>
+            <td><code>{{ val[1].required }}</code></td>
           </tr>
         </tbody>
       </table>
+    {% else %}
+      {% assign parent = parent %}
+      {% assign prev_parent = parent %}
+      {% capture parent %}{% if parent %}{{ parent | append: '.' | append: val[0] }}{% else %}{{ val[0] }}{% endif %}{% endcapture %}
+      {% assign tree = val[1] %}
+      {% include tree.html %}
+      {% assign parent = prev_parent %}
     {% endif %}
   </li>
   {% endfor %}
