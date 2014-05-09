@@ -95,7 +95,7 @@ configuration:
             minimum: 0
         threadlimit:
             default: 64
-            description: ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can    only be changed by stopping and starting Apache.
+            description: ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.
             type: integer
             required: false
             minimum: 0
@@ -138,7 +138,7 @@ configuration:
             minimum: 0
         threadlimit:
             default: 64
-            description: ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can    only be changed by stopping and starting Apache.
+            description: ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.
             type: integer
             required: false
             minimum: 0
@@ -161,28 +161,21 @@ configuration:
             required: false
             minimum: 0
 ---
-
 The Number One HTTP Server On The Internet
 
-The Apache HTTP Server Project is an effort to develop and maintain an
-open-source HTTP server for modern operating systems including UNIX and
-Windows NT. The goal of this project is to provide a secure, efficient
-and extensible server that provides HTTP services in sync with the
-current HTTP standards.
+The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.
 
-Apache httpd has been the most popular web server on the Internet since
-April 1996, and celebrated its 17th birthday as a project this February.
+Apache httpd has been the most popular web server on the Internet since April 1996, and celebrated its 17th birthday as a project this February.
 
-The Apache HTTP Server ("httpd") is a project of The Apache Software
-Foundation.
+The Apache HTTP Server ("httpd") is a project of The Apache Software Foundation.
 
-## Example
+## Configuration example
 
     services:
       apache: '*'
     configuration:
       apache:
-        user: root
-        worker:
-          startservers: 1
-
+        timeout: 60
+        prefork:
+          maxclients: 20
+          maxrequestsperchild: 1000
