@@ -55,14 +55,13 @@ find packages -name configuration.md -exec bash -i -c 'copy {}' \;
 cd $HERE
 python build/prepare_menu.py
 
-
 # # Stash changes to allow branch switch
 # git stash
 # git checkout gh-pages
 # cp -a $TMP_FOLDER/* .
-# git add .
-# git commit -am "$COMMIT_MSG"
-# git push
+git add .
+git commit -am "$COMMIT_MSG"
+git push
 
-# # Cleanup
-# rm -rf $TMP_FOLDER
+# Cleanup
+rm -rf $TMP_FOLDER
