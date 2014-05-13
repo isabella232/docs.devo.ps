@@ -2,6 +2,8 @@
 manual:
 - name: Get-Started
   title: Get Started
+- name: Home
+  title: Home
 references:
 - name: go
   title: Go
