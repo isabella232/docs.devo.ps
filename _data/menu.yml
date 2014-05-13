@@ -1,0 +1,7 @@
+---
+references:
+    - name: toto
+      path: tata
+manual:
+    - name: tutu
+      path: tutu
