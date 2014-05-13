@@ -14,7 +14,7 @@ fi
 
 TMP_FOLDER=$(mktemp -d)
 
-cd TMP_FOLDER
+cd $TMP_FOLDER
 
 #
 # Fetch wiki
