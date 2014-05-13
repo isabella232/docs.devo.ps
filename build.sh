@@ -20,9 +20,9 @@ cd $TMP_FOLDER
 # Fetch wiki
 #
 echo "Fetching docs wiki"
-git clone git@github.com/devo-ps/docs.devo.ps.wiki.git
+git clone git@github.com:devo-ps/docs.devo.ps.wiki.git
 echo "Fetching services details"
-git clone git@github.com/devo-ps/devops-ansible.git
+git clone git@github.com:devo-ps/devops-ansible.git
 
 #
 # Copy wiki to manual
