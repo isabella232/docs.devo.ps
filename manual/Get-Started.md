@@ -1,3 +1,7 @@
+---
+title: Get Started
+type: page
+---
 Simple steps:
 
 - Log on devo.ps
