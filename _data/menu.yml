@@ -1,9 +1,7 @@
 ---
 manual:
 - name: Get-Started
-  title: Get-Started
-- name: Home
-  title: Home
+  title: Get Started
 references:
 - name: go
   title: Go
