@@ -4,7 +4,7 @@
 # Meant to be called by devops builder
 ###################
 
-HERE=$(pwd)
+export HERE=$(pwd)
 
 COMMIT_MSG=$1
 if [ -z "$COMMIT_MSG" ]; then
@@ -28,6 +28,7 @@ git clone git@github.com:devo-ps/devops-ansible.git
 # Copy wiki to manual
 #
 cd docs.devo.ps.wiki
+mkdir -p $HERE/manual
 cp * $HERE/manual
 
 #
@@ -35,12 +36,12 @@ cp * $HERE/manual
 #
 cd ../devops-ansible
 # copy 
-function copy {
+function copy() {
     file="$1"
     dir=$(dirname $file)
     base=$(basename $file \.yml)
 
-    newname=$(echo $dir | cut -f4 -d'/')
+    newname=$(echo $dir | cut -f2 -d'/')
 
     cp $file $HERE/references/$newname.md
 }
