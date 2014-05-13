@@ -14,7 +14,7 @@ layout: default
   {{ content }}
 </section>
 
-{% if page.configuration and page.configuration.length != 0 %}
+{% if page.configuration and page.configuration.size > 0 %}
 <section class='configuration'>
   <h2>Configuration</h2>
 	{% assign tree = page.configuration %}
