@@ -44,8 +44,9 @@ function copy {
 
     cp $file $HERE/references/$newname.md
 }
+export -f copy
 
-find packages -name configuration.md -exec copy '{}' \;
+find packages -name configuration.md -exec bash -i -c 'copy {}' \;
 
 #
 # Prepare the menu data file
