@@ -1,7 +1,57 @@
 ---
-references:
-    - name: toto
-      path: tata
 manual:
-    - name: tutu
-      path: tutu
+- name: Get-Started
+  title: Get-Started
+- name: Home
+  title: Home
+references:
+- name: go
+  title: Go
+- name: python
+  title: Python
+- name: java
+  title: Java
+- name: memcached
+  title: Memcached
+- name: xvfb
+  title: Xvfb
+- name: couchdb
+  title: CouchDB
+- name: ruby
+  title: Ruby
+- name: redis
+  title: Redis
+- name: rabbitmq
+  title: RabbitMQ
+- name: docker
+  title: Docker
+- name: zeromq
+  title: ZeroMQ
+- name: php-fpm
+  title: PHP-FPM
+- name: elasticsearch
+  title: ElasticSearch
+- name: mysql
+  title: MySQL
+- name: openvpn
+  title: OpenVPN
+- name: mongodb
+  title: MongoDB
+- name: php
+  title: PHP
+- name: nginx
+  title: Nginx
+- name: apache
+  title: Apache
+- name: common
+  title: Common
+- name: couchbase
+  title: CouchBase
+- name: uwsgi
+  title: uWSGI
+- name: varnish
+  title: Varnish
+- name: nodejs
+  title: Node.js
+- name: dart
+  title: Dart
