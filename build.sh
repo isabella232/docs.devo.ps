@@ -6,7 +6,7 @@
 
 export HERE=$(pwd)
 
-COMMIT_MSG=$1
+COMMIT_MSG="$1"
 if [ -z "$COMMIT_MSG" ]; then
     # default commit message
     COMMIT_MSG='New deployment'
