@@ -9,7 +9,7 @@ Nodes are the core component of `devops`, to make it simple, you can consider a 
 
 Nodes are described in a yaml format, with 1 node per file. Nodes files must be saved in the `nodes` folder.
 
-## Node file format
+## File format
 
 A node is described in a YAML file. It __must__ be named as the node.id.
 
@@ -29,6 +29,7 @@ A node is described in a YAML file. It __must__ be named as the node.id.
 
     services: {}
     configuration: {}
+
 
 ### Format details
 
