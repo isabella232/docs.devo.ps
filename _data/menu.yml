@@ -12,6 +12,8 @@ manual:
   title: Home
 - name: Git
   title: Git
+- name: Scripts
+  title: Scripts
 references:
 - name: go
   title: Go
