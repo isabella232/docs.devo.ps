@@ -9,10 +9,10 @@ title: Git
 
 Creating a repository is done through the web interface on the [profile page](https://app.devo.ps/#/user/profile).
 
-Once created the repository is reachable at `git@app.devo.ps:USER/REPO` with:
+Once created the repository is reachable at `git@app.devo.ps:{user}/{repo}` with:
 
-- `USER`: your login user on `devops`
-- `REPO`: the newly created repo name
+- `{user}`: your login user on `devops`
+- `{repo}`: the newly created repo name
 
 __Note__: You need to already have your SSH public key to be able to create a repository.
 
