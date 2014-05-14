@@ -1,14 +1,9 @@
 ---
 layout: page
-title: Get Started
+title: Getting Started
 
 ---
----
-layout: page
-title: Get Started
-
----
-Simple steps:
+Getting started is as simple as this!
 
 - Log on devo.ps
 - Follow the wizard and add your SSH keys + cloud provider key
