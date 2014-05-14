@@ -69,3 +69,38 @@ __Notes__:
 
 - Modifying the __`provider`__ information will trigger no change (no resize, no migration to another provider); the provider details is only used on provisioning.
 - Toggling the __`disabled`__ attribute between `False` and `True` will in practice delete (an existing) / create (a disabled) node. It is a convenient way to keep the node definition in your git repository and use it as a temporary node spawned on demand.
+
+## Users on node
+
+Several users are created on the server:
+
+- `devops`: is used by the devops platform to
+  - maintain your server in sync with its YAML definition
+  - execute [tasks](/manual/Tasks.html)
+- `{user}`: is created for you to get access to the server. 
+  - `{user}` is your username on the devo.ps website. 
+  - The SSH public keys defined in your profile have been added to the `authorized_keys`. 
+- `{collaborators}`: one user per collaborator of your git repository is created on the server; for example if `bob` and `alice` are collaborator on your `myrepo` repository, they will also be able to access the server.
+
+## Access to the node
+
+The access to the node is provided over SSH. The IP address is available on the web interface on the node details page.
+
+You can access your server with the following command:
+
+```
+ssh {user}@{ip_address}
+```
+
+If you have installed the [CLI](/manual/CLI.html), you can also use the following commands:
+
+```
+# From anywhere on your workstation
+devops ssh --repo=repo node_id
+
+# From your repo folder (the repo is guessed from there)
+devops ssh node_id
+
+# Even simpler if you only have 1 node defined and you are in your repo folder...
+devops ssh
+```
