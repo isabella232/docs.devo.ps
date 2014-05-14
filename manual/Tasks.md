@@ -32,7 +32,7 @@ when:
   - myserver
 
 do:
-  - run: echo {% raw %}{{{% endraw %} myvar {% raw %}}}{% endraw %}
+  - run: echo {% raw %}{{ {% endraw %}myvar {% raw %}}}{% endraw %}
   - run: devops ./scripts/myscript.sh
     'on':
       - myserver2
@@ -101,13 +101,13 @@ vars:
   my_other_var: other_value
 ```
 
-Allows you to use `{% raw %}{{{% endraw %} myvar {% raw %}}}{% endraw %}` and `{% raw %}{{{% endraw %} my_other_var {% raw %}}}{% endraw %}` in either:
+Allows you to use `{% raw %}{{ {% endraw %}myvar {% raw %}}}{% endraw %}` and `{% raw %}{{ {% endraw %}my_other_var {% raw %}}}{% endraw %}` in either:
 
 - an inline command like
 
 ```
 do:
-  - run: mkdir {% raw %}{{{% endraw %} myvar {% raw %}}}{% endraw %} && cd {% raw %}{{{% endraw %} myvar {% raw %}}}{% endraw %}
+  - run: mkdir {% raw %}{{ {% endraw %}myvar {% raw %}}}{% endraw %} && cd {% raw %}{{ {% endraw %}myvar {% raw %}}}{% endraw %}
 ```
 
 - or with a script
@@ -119,7 +119,7 @@ do:
 shell> cat ./scripts/some_script.sh
 
 #!/bin/bash
-echo {% raw %}{{{% endraw %} my_other_var {% raw %}}}{% endraw %}
+echo {% raw %}{{ {% endraw %}my_other_var {% raw %}}}{% endraw %}
 ```
 
 - or within a package task
@@ -128,7 +128,7 @@ echo {% raw %}{{{% endraw %} my_other_var {% raw %}}}{% endraw %}
 do:
   - run: devops package some_task
     options:
-      some: {% raw %}{{{% endraw %} myvar {% raw %}}}{% endraw %}
+      some: {% raw %}{{ {% endraw %}myvar {% raw %}}}{% endraw %}
 ```
 
 ### On
