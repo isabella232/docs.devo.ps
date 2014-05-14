@@ -78,6 +78,11 @@ layout: page
 title: Get Started
 
 ---
+---
+layout: page
+title: Get Started
+
+---
 Simple steps:
 
 - Log on devo.ps
