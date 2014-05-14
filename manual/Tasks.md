@@ -186,6 +186,43 @@ https://app.devo.ps/webhook/{user}/{repo}/some/secret/url
 https://app.devo.ps/webhook/{user}/{repo}/some/even/more/secret/url
 ```
 
+## Running user
+
+By default all the commands are executed by the `devops` user. You can switch user by using the `sudo` command for either *inline commands* or *scripts*.
+
+- **inline commands**: you can prefix the command with the following:
+
+```
+do:
+  # Run as root
+  - run: **sudo** mkdir -p /opt/mystuff && **sudo** chown devops. /opt/mystuff
+  # Run as a different user
+  - run: **sudo -u {other_user}** mkdir /tmp/test
+```
+
+- **scripts**: if you want to switch user, you need to use the sudo command **within** your script, as such:
+
+```
+do:
+  - run: devops scripts/myscript.sh
+
+shell> cat ./scripts/myscript.sh
+#!/bin/bash
+# Run as root
+sudo mkdir /opt/folder
+sudo chown devops. /opt/folder
+
+# This will succeed now and executed as devops
+touch /opt/folder/file
+
+# Create folder and file as other_user
+sudo -u {other_user} mkdir /tmp/other
+sudo -u {other_user} touch /tmp/other/file
+
+# This will fail as the folder is owned by other_user
+touch /tmp/other/file2
+```
+
 ## Git operations
 
 ### On push - File validation
