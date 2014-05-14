@@ -86,7 +86,7 @@ Several users are created on the server:
 
 The access to the node is provided over SSH. The IP address is available on the web interface on the node details page.
 
-You can access your server with the following command:
+You can access your server with the following command (with `{user}` being your devops username):
 
 ```
 ssh {user}@{ip_address}
