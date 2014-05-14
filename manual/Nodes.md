@@ -32,15 +32,15 @@ A node is described in a YAML file. It __must__ be named as the node.id.
 
 ### Format details
 
-| Key | Type | Required | Default | Description
-| ---- | ---- | ---- | ---- | ----
-| __id__ | string | True | | The ID of the node, it must match the filename
-| __name__ | string | True | | The name of the server, will appear on the web interface
-| __type__ | string | True | |Type of the node, currently only `server` is supported
-| __disabled__ | bool | False | False | Whether or not consider the node as disabled
-| __provider__ | object | True | | The provider's detail of the node, used on provisioning, see the [providers references](/references/providers.html) for more details
-| __services__ | object | True | | The services to install on the node, see the References section for the list of supported services
-| __configuration__ | object | True | | The configuration for each of the services defined in the `services`
+Key | Type | Required | Default | Description
+--- | --- | --- | --- | ---
+__id__ | string | True | | The ID of the node, it must match the filename
+__name__ | string | True | | The name of the server, will appear on the web interface
+__type__ | string | True | |Type of the node, currently only `server` is supported
+__disabled__ | bool | False | False | Whether or not consider the node as disabled
+__provider__ | object | True | | The provider's detail of the node, used on provisioning, see the [providers references](/references/providers.html) for more details
+__services__ | object | True | | The services to install on the node, see the References section for the list of supported services
+__configuration__ | object | True | | The configuration for each of the services defined in the `services`
 
 ## Git operations
 
