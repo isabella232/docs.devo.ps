@@ -36,12 +36,12 @@ In each of the folders are provided sample files that can be used as references 
 
 ## Nodes
 
-Nodes are described more in detail [here](/manual/nodes.html).
+Nodes are described more in detail [here](/manual/Nodes.html).
 
 ## Tasks
 
-Tasks are described more in detail [here](/manual/tasks.html).
+Tasks are described more in detail [here](/manual/Tasks.html).
 
 ## Scripts
 
-Scripts are described more in detail [here](/manual/scripts.html).
+Scripts are described more in detail [here](/manual/Scripts.html).
