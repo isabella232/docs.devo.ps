@@ -6,6 +6,8 @@ manual:
   title: Getting Started
 - name: Home
   title: Home
+- name: Git
+  title: Git
 references:
 - name: go
   title: Go
