@@ -32,7 +32,7 @@ when:
   - myserver
 
 do:
-  - run: echo \{{ myvar }}
+  - run: echo &#123;&#123; myvar &#125;&#125;
   - run: devops ./scripts/myscript.sh
     'on':
       - myserver2
@@ -101,13 +101,13 @@ vars:
   my_other_var: other_value
 ```
 
-Allows you to use `\{{ myvar }}` and `\{{ my_other_var }}` in either:
+Allows you to use `&#123;&#123; myvar &#125;&#125;` and `&#123;&#123; my_other_var &#125;&#125;` in either:
 
 - an inline command like
 
 ```
 do:
-  - run: mkdir \{{ myvar }} && cd \{{ myvar }}
+  - run: mkdir &#123;&#123; myvar &#125;&#125; && cd &#123;&#123; myvar &#125;&#125;
 ```
 
 - or with a script
@@ -119,7 +119,7 @@ do:
 shell> cat ./scripts/some_script.sh
 
 #!/bin/bash
-echo \{{ my_other_var }}
+echo &#123;&#123; my_other_var &#125;&#125;
 ```
 
 - or within a package task
@@ -128,7 +128,7 @@ echo \{{ my_other_var }}
 do:
   - run: devops package some_task
     options:
-      some: \{{ myvar }}
+      some: &#123;&#123; myvar &#125;&#125;
 ```
 
 ### On
