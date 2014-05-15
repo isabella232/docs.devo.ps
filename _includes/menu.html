@@ -12,8 +12,15 @@
   <li>
     <h3>References</h3>
     <ul>
-      {% for item in menu.references %}
-      <li><a href='/references/{{ item.name }}.html'>{{ item.title }}</a></li>
+      {% for tag in menu.references %}
+      <li>
+        <h4>{{ tag[0] }}</h4>
+        <ul>
+          {% for item in tag[1] %}
+          <li><a href='/references/{{ item.name }}.html'>{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
       {% endfor %}
     </ul>
   </li>
