@@ -1,75 +1,61 @@
 ---
-manual:
-- name: Nodes
-  title: Nodes
-- name: CLI
-  title: CLI
-- name: Getting-Started
-  title: Getting Started
-- name: Tasks
-  title: Tasks
-- name: Home
-  title: Home
-- name: Git
-  title: Git
-- name: Scripts
-  title: Scripts
+manual: []
 references:
   app:
-  - name: xvfb
-    title: Xvfb
   - name: openvpn
     title: OpenVPN
   - name: uwsgi
     title: uWSGI
+  - name: xvfb
+    title: Xvfb
   caching:
   - name: memcached
     title: Memcached
   - name: varnish
     title: Varnish
   database:
-  - name: couchdb
-    title: CouchDB
-  - name: redis
-    title: Redis
-  - name: elasticsearch
-    title: ElasticSearch
-  - name: mysql
-    title: MySQL
-  - name: mongodb
-    title: MongoDB
   - name: couchbase
     title: CouchBase
+  - name: couchdb
+    title: CouchDB
+  - name: elasticsearch
+    title: ElasticSearch
+  - name: mongodb
+    title: MongoDB
+  - name: mysql
+    title: MySQL
+  - name: redis
+    title: Redis
   infrastructure:
   - name: docker
     title: Docker
   language:
-  - name: go
-    title: Go
-  - name: python
-    title: Python
-  - name: java
-    title: Java
-  - name: ruby
-    title: Ruby
-  - name: php
-    title: PHP
-  - name: nodejs
-    title: Node.js
   - name: dart
     title: Dart
+  - name: go
+    title: Go
+  - name: java
+    title: Java
+  - name: nodejs
+    title: Node.js
+  - name: php
+    title: PHP
+  - name: python
+    title: Python
+  - name: ruby
+    title: Ruby
   messagebus:
   - name: rabbitmq
     title: RabbitMQ
   - name: zeromq
     title: ZeroMQ
   misc:
-  - name: php-fpm
-    title: PHP-FPM
   - name: common
     title: Common
+  - name: php-fpm
+    title: PHP-FPM
   web:
-  - name: nginx
-    title: Nginx
   - name: apache
     title: Apache
+  - name: nginx
+    title: Nginx

@@ -4,9 +4,7 @@
   <li>
     <h3>Manual</h3>
     <ul>
-      {% for item in menu.manual %}
-      <li><a href='/manual/{{ item.name }}.html'>{{ item.title }}</a></li>
-      {% endfor %}
+      {% include menu/manual.html %}
     </ul>
   </li>
   <li>
