@@ -40,7 +40,7 @@ try:
         })
         # MD is not processed natively by jekyll, need to add frontmatter header
         header = {'title': title, 'layout': 'page'}
-        with open(os.path.join('manual', man), 'w+r') as f:
+        with open(os.path.join('manual', man), 'rw+') as f:
             content = f.read()
             f.seek(0)
             f.write(yaml.safe_dump(header, explicit_start=True, default_flow_style=False))
