@@ -11,7 +11,7 @@ The Command Line Interface lets you interact with devops in a terminal.
 
 You will need `python` (2.7) and `pip` on your system.
 
-You can find the details on the [user settings page](https://app.devo.ps/#/user/settings)
+You can find the details on the [user settings page](https://app.devo.ps/#/user/settings).
 
 ### Ubuntu / Debian
 

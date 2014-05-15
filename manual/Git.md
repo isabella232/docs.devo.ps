@@ -3,7 +3,7 @@ layout: page
 title: Git
 
 ---
-`devops` lets you manage your servers through Git. 
+`devops` lets you manage your servers through Git.  
 
 ## Creating a repository
 
