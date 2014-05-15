@@ -18,8 +18,10 @@ try:
             delimiter = data.index('---\n', 2)
             data = data[:delimiter]
             content = yaml.safe_load(data)
-    
-        menu['references'].append({
+        
+        content_type = content.get('tags', [])[0] or 'misc'
+        menu['references'].setdefaults(content_type, [])
+        menu['references'][content_type].append({
             'title': content.get('title'),
             'name': name
         })
