@@ -1,9 +1,9 @@
 ---
 manual:
-- name: Get-Started
-  title: Get Started
 - name: Nodes
   title: Nodes
+- name: CLI
+  title: CLI
 - name: Getting-Started
   title: Getting Started
 - name: Tasks
