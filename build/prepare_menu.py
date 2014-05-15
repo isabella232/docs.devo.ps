@@ -19,7 +19,7 @@ try:
             data = data[:delimiter]
             content = yaml.safe_load(data)
         
-        content_type = content.get('tags', [])[0] or 'misc'
+        content_type = content.get('tags', ['misc'])[0]
         menu['references'].setdefaults(content_type, [])
         menu['references'][content_type].append({
             'title': content.get('title'),
