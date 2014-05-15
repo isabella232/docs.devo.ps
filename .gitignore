@@ -1,0 +1,7 @@
+.*
+!.gitignore
+!.bowerrc
+!.gitmodules
+*~
+node_modules/
+vendor/

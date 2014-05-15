@@ -1,0 +1,43 @@
+{
+    "source": "./source",
+    "destination": "./_site",
+    "metadata": {
+        "site": {
+            "title": "devo.ps Documentation",
+            "description": "Documentation for devo.ps."
+        }
+    },
+    "metalsmith": {
+        "metalsmith-drafts": {},
+        "metalsmith-templates": {
+            "engine": "swig",
+            "cache": false,
+            "directory": "./templates"
+        },
+        "metalsmith-assets": null,
+        "metalsmith-static": null
+    },             
+    "assets": {
+        "vendor": {
+            "js": [
+                "vendor/jquery/dist/jquery.js",
+                "vendor/highlightjs/highlight.pack.js",
+                "vendor/swipe/swipe.js"
+            ],
+            "css": [
+                "vendor/normalize-css/normalize.css"
+            ]
+        },
+        "custom": {
+            "js": [
+                "assets/js/*.js"
+            ],
+            "css": [
+                "assets/css/*.css"
+            ],
+            "scss": [
+                "assets/scss/**/*.{scss,sass}"
+            ]
+        }
+    }
+}
