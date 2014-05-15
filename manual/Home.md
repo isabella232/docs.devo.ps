@@ -1,1 +1,5 @@
-Welcome to the docs.devo.ps wiki!
+---
+layout: page
+title: Home
+
+---
