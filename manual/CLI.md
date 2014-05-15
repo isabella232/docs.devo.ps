@@ -25,14 +25,14 @@ sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 ```
 # install epel
 # figure it out...
-sudo pip install https://app.devo.ps/cli/devops-cli.tar.gz
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 ```
 
 ### MacOS
 
 ```
 brew install python-pip
-sudo pip install https://app.devo.ps/cli/devops-cli.tar.gz
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 ```
 
 ## Features
