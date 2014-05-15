@@ -4,7 +4,7 @@ import os
 import yaml
 
 menu = {
-    'references': [],
+    'references': {},
     'manual': []
 }
 
