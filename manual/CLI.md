@@ -17,7 +17,7 @@ You can find the details on the [user settings page](https://app.devo.ps/#/user/
 
 ```
 sudo apt-get install python-pip
-sudo pip install https://app.devo.ps/cli/devops-cli.tar.gz
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 ```
 
 ### CentOS / Fedora / RH
