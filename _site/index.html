@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{ title }}</title>
+  <title>docs</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  {% if description %}<meta name='description' content='{{ description }}'/>{% endif %}
+  <meta name='description' content='docs'/>
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -15,25 +15,54 @@
 </head>
 <body>
   <section id='content'>
-    {% block content %}{% endblock %}
+    
   </section>
 
   <aside id='sidebar'>
     <header class='header'>
-      {% include "header.html" %}
+      <h2>devo.ps documentation</h2>
     </header>
     <section class='body'>
-      {% include "menu.html" %}
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      <ul>
+<li><a href="/manual/Getting-Started.html">Getting Started</a><ul>
+<li><a href="/manual/Git.html">Git</a></li>
+<li><a href="/manual/Nodes.html">Nodes</a></li>
+<li><a href="/manual/Tasks.html">Tasks</a></li>
+<li><a href="/manual/Scripts.html">Scripts</a></li>
+</ul>
+</li>
+</ul>
+
+    </ul>
+  </li>
+  <li>
+    <h3>References</h3>
+    <ul>
+      
+      <li><a href='/references/apache.html'>Apache</a></li>
+      
+      <li><a href='/references/php.html'>PHP</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
     </section>
     <footer class='footer'>
-      {% include "footer.html" %}
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
     </footer>
   </aside>
   
   <!-- JS -->
   <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
   <script type='text/javascript' src='/assets/scripts.js'></script>
-	{% if ga %}{% include "./ga.html" %}{% endif %}
-  {% if gauges %}{% include "./gauges.html" %}{% endif %}
+	
+  
 </body>
 </html>

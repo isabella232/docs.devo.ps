@@ -9,7 +9,8 @@ var Metalsmith = require('metalsmith');
 var gulp = require('gulp');
 var mkdirp = require('mkdirp');
 var clean = require('gulp-clean');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
+var bourbon = require('node-bourbon');
 var concat = require('gulp-concat');
 var gutil = require('gulp-util');
 var log = gutil.log;
@@ -33,21 +34,28 @@ gulp.task('clean', function() {
 
 gulp.task('sass', function() {
     gulp.src(site.assets.custom.scss)
-        .pipe(sass({ compass: true }))
+        .pipe(sass({
+            includePaths: bourbon.includePaths
+        }))
         .pipe(gulp.dest('./assets/css/'));
 });
 
 gulp.task('concat-js', function() {
     gulp.src(siteJS)
         .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public/assets'));
 });
 
 gulp.task('concat-css', function() {
     gulp.src(siteCSS)
         .pipe(concat('styles.css'))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public/assets'));
 });
+
+gulp.task('fonts', function() {
+    gulp.src(site.assets.custom.fonts)
+        .pipe(gulp.dest('./public/assets/fonts'));
+})
 
 
 //
@@ -116,5 +124,5 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['sass', 'concat-js', 'concat-css', 'metalsmith']);
-gulp.task('development', ['sass', 'concat-js', 'concat-css', 'metalsmith', 'server']);
+gulp.task('default', ['sass', 'concat-js', 'concat-css', 'fonts', 'metalsmith']);
+gulp.task('development', ['sass', 'concat-js', 'concat-css', 'fonts', 'metalsmith', 'server']);

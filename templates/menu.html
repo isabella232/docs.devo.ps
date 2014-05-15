@@ -4,21 +4,14 @@
   <li>
     <h3>Manual</h3>
     <ul>
-      {% include menu/manual.html %}
+      {{ menu_manual | safe }}
     </ul>
   </li>
   <li>
     <h3>References</h3>
     <ul>
-      {% for tag in menu.references %}
-      <li>
-        <h4>{{ tag[0] }}</h4>
-        <ul>
-          {% for item in tag[1] %}
-          <li><a href='/references/{{ item.name }}.html'>{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
+      {% for item in menu_references %}
+      <li><a href='/references/{{ item.name }}.html'>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </li>

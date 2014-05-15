@@ -2,7 +2,7 @@
   position: relative;
   span {
     background: $color;
-    @include border-radius($radius);
+
     bottom: 100%;
     color: #FFF;
     @include font-size($small);

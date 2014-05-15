@@ -1,12 +1,6 @@
 /* Compass */
 
-@import 'compass/css3';
-@import 'compass/css3/border-radius';
-@import 'compass/css3/filter';
-@import 'compass/css3/transition';
-@import 'compass/css3/transform';
-@import 'compass/utilities/general/clearfix';
-@import 'compass/css3/user-interface';
+@import 'bourbon';
 
 /* Variables (colors, layout, spacing & typography) */
 
@@ -261,7 +255,7 @@ button.button {
 /* Messages; errors, warnings... */
 
 .notification {
-  @include border-radius($radius);
+
   @include notifications();
   margin-bottom: $gutter;
 }
@@ -297,7 +291,7 @@ button.button {
   .options {
     background: #FFF;
     border: 1px solid tint($black, 90%);
-    @include border-radius($radius);
+
     @include box-shadow(rgba(0, 0, 0, 0.03) 0 1px 0 1px);
     a {
       display: block;
@@ -453,18 +447,18 @@ button.button {
           background: $light;
         }
         &:first-child {
-          @include border-radius($radius 0 0 $radius);
+
         }
         &:last-child {
           border-right-width: 1px;
-          @include border-radius(0 $radius $radius 0);
+
         }
       }
     }
   }
   code {
     background: $light;
-    @include border-radius($radius);
+
     padding: 0 $gutter/5;
   }
   pre code {
@@ -495,7 +489,7 @@ button.button {
     }
     table {
       background: $light;
-      @include border-radius($radius);
+
       margin: 0;
       code {
         color: $purple;

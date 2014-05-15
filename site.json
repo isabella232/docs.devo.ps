@@ -8,7 +8,12 @@
         }
     },
     "metalsmith": {
+        "metalsmith-markdown": {},
+        "metalsmith-include": {},
         "metalsmith-drafts": {},
+        "metalsmith-metadata": {
+            "menu_references": "references.yaml"
+        },
         "metalsmith-templates": {
             "engine": "swig",
             "cache": false,
@@ -37,6 +42,9 @@
             ],
             "scss": [
                 "assets/scss/**/*.{scss,sass}"
+            ],
+            "fonts": [
+                "assets/fonts/*"
             ]
         }
     }

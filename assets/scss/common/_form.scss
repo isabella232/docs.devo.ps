@@ -28,7 +28,6 @@ input:not([type=submit]),
 textarea {
   background: $light;
   border: 1px solid $line;
-  @include border-radius($radius);
   padding: $gutter/5 $gutter/2;
   @include transition-property(background, border);
   @include transition-duration(0.2s);
@@ -63,7 +62,7 @@ textarea {
     @include appearance(none);
     background: #FFF;
     border: 1px solid tint($black, 80%);
-    @include border-radius($radius);
+
     cursor: pointer;
     padding: ($gutter/4) ($gutter/2);
     &:active,

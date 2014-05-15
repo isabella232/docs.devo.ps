@@ -1,4 +1,4 @@
-dev: install consolidate bower
+dev: install  bower
 	@./node_modules/.bin/gulp development --open --port 4000
 
 install:
@@ -9,10 +9,7 @@ install:
        #install
 	@npm install
 
-bower: install consolidate
+bower: install
 	@./node_modules/.bin/bower install
-
-consolidate:
-	rm -rf ./node_modules/metalsmith-templates/node_modules/consolidate
 
 .PHONY: dev install bower
