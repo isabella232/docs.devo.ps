@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  {% if description %}<meta name='description' content='{{ description }}'/>{% endif %}
+  {% if keywords or tags %}<meta name='keywords' content='{% if keywords %}{{ keywords | join: ', ' }}{% endif %}{% if tags %}, {{ tags | join: ', ' }}{% endif %}'/>{% endif %}
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/public/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    {{ contents | safe }}
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      {% include ./header.html %}
+    </header>
+    <section class='body'>
+      <!-- {% assign menu = site.data.menu %} -->
+      {% include ./menu.html %}
+    </section>
+    <footer class='footer'>
+      {% include ./footer.html %}
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/public/scripts.js'></script>
+	{% if ga %}{% include ./ga.html %}{% endif %}
+  {% if gauges %}{% include ./gauges.html %}{% endif %}
+</body>
+</html>

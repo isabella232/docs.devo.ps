@@ -1,0 +1,33 @@
+@mixin tooltip($position: top, $color: $black, $arrow: 5px) {
+  position: relative;
+  span {
+    background: $color;
+    @include border-radius($radius);
+    bottom: 100%;
+    color: #FFF;
+    @include font-size($small);
+    left: 50%;
+    line-height: 140%;
+    opacity: 0;
+    padding: 1.5*$gutter/4 1.5*$gutter/2;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    white-space: nowrap;
+    width: auto;
+    z-index: 999;
+    &:after {
+      @include arrow(bottom);
+    }
+  }
+  &:hover {
+    span {
+      opacity: 1;
+      @include transition-property(opacity, margin);
+      @include transition-duration(0.1s);
+      margin-bottom: $arrow + 3;
+      @include transform(translateX(-50%));
+      visibility: visible;
+    }
+  }
+}

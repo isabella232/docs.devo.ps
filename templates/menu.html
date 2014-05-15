@@ -1,0 +1,25 @@
+<ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      {% include menu/manual.html %}
+    </ul>
+  </li>
+  <li>
+    <h3>References</h3>
+    <ul>
+      {% for tag in menu.references %}
+      <li>
+        <h4>{{ tag[0] }}</h4>
+        <ul>
+          {% for item in tag[1] %}
+          <li><a href='/references/{{ item.name }}.html'>{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+</ul>
