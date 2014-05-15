@@ -20,7 +20,7 @@ try:
             content = yaml.safe_load(data)
         
         content_type = content.get('tags', ['misc'])[0]
-        menu['references'].setdefault(content_type, [])
+        menu['references'].setdefaults(content_type, [])
         menu['references'][content_type].append({
             'title': content.get('title'),
             'name': name
