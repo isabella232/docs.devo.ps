@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; Scripts</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a>
+  </div>
+
+  <h1>Scripts</h1>
+</header>
+
+<section class='body'>
+  <p>{% assign openTag = &#39;{{&#39; %}
+{% assign closeTag = &#39;}}&#39; %}</p>
+<h2 id="overview">Overview</h2>
+<p>Scripts let you create arbitrary commands that you may want to execute during a task run.</p>
+<p>The scripts need to be saved in the <code>./scripts</code> folder to be usable by the system, they will then be referenced in the tasks with the following:</p>
+<pre><code>do:
+  - run: devops scripts/{filename}
+</code></pre><p>The scripts can be of any language you wish, shell script, python script, ruby script, etc.</p>
+<h2 id="languages">Languages</h2>
+<ul>
+<li>shell scripts are natively supported and should be able to run as-is without further customization on the platform</li>
+<li>python / ruby scripts <em>may</em> run properly as well, but you probably will run into issues as soon as you want to use <code>pip</code> packages or <code>gems</code>. You may have to update your node configuration and ensure your system has the required dependencies or packages. Refer to the <a href="/references/python.html">python service</a> or <a href="/references/ruby.html">ruby service</a> documentation for more information.</li>
+</ul>
+<pre><code>services:
+  python: &#39;*&#39;
+  ruby: &#39;*&#39;
+configuration:
+  python:
+    packages:
+      - pyyaml
+      - boto
+  ruby:
+    gems:
+      - compass
+</code></pre><h2 id="using-task-variables">Using task variables</h2>
+<p>Scripts can use variables defined in the task under the <code>vars</code> attribute, they will need to be put in between curvy brackets ({{ openTag }} and {{ closeTag }}).</p>
+<h2 id="using-webhooks-data-payload">Using webhooks - data payload</h2>
+<p>Tasks can be triggered by webhook, sending a <code>POST</code> request on the URL defined in the task. The payload (JSON) of the POST request can be accessed by {{ openTag }} payload {{ closeTag }}.</p>
+<p>The content of the payload depends on what effectively perform the POST request, it could be any of:</p>
+<ul>
+<li>nothing</li>
+<li>the GitHub payload (if it is triggered by GitHub on webhook), see <a href="https://developer.github.com/webhooks/">GitHub documentation</a> about the format.</li>
+<li>any custom payload - if called from anywhere else - you are responsible for handling its content securely on your servers.</li>
+</ul>
+<h2 id="running-user">Running user</h2>
+<p>By default and like all the commands ran in the task, the <code>devops</code> user will be executing the script on the platform. The <code>devops</code> user can get granted <code>root</code> access by using the <code>sudo</code> command - or any other users for the matter using <code>sudo -u {other_user} command</code>.</p>
+
+</section>
+
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      <ul>
+<li><a href="/manual/Getting-Started.html">Getting Started</a><ul>
+<li><a href="/manual/Git.html">Git</a></li>
+<li><a href="/manual/Nodes.html">Nodes</a></li>
+<li><a href="/manual/Tasks.html">Tasks</a></li>
+<li><a href="/manual/Scripts.html">Scripts</a></li>
+</ul>
+</li>
+</ul>
+
+    </ul>
+  </li>
+  <li>
+    <h3>References</h3>
+    <ul>
+      
+      <li><a href='/references/apache.html'>Apache</a></li>
+      
+      <li><a href='/references/common.html'>Common</a></li>
+      
+      <li><a href='/references/couchbase.html'>CouchBase</a></li>
+      
+      <li><a href='/references/couchdb.html'>CouchDB</a></li>
+      
+      <li><a href='/references/dart.html'>Dart</a></li>
+      
+      <li><a href='/references/docker.html'>Docker</a></li>
+      
+      <li><a href='/references/elasticsearch.html'>ElasticSearch</a></li>
+      
+      <li><a href='/references/go.html'>Go</a></li>
+      
+      <li><a href='/references/java.html'>Java</a></li>
+      
+      <li><a href='/references/memcached.html'>Memcached</a></li>
+      
+      <li><a href='/references/mongodb.html'>MongoDB</a></li>
+      
+      <li><a href='/references/mysql.html'>MySQL</a></li>
+      
+      <li><a href='/references/nginx.html'>Nginx</a></li>
+      
+      <li><a href='/references/nodejs.html'>Node.js</a></li>
+      
+      <li><a href='/references/openvpn.html'>OpenVPN</a></li>
+      
+      <li><a href='/references/php.html'>PHP</a></li>
+      
+      <li><a href='/references/python.html'>Python</a></li>
+      
+      <li><a href='/references/rabbitmq.html'>RabbitMQ</a></li>
+      
+      <li><a href='/references/redis.html'>Redis</a></li>
+      
+      <li><a href='/references/ruby.html'>Ruby</a></li>
+      
+      <li><a href='/references/varnish.html'>Varnish</a></li>
+      
+      <li><a href='/references/xvfb.html'>Xvfb</a></li>
+      
+      <li><a href='/references/zeromq.html'>ZeroMQ</a></li>
+      
+      <li><a href='/references/uwsgi.html'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>

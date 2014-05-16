@@ -1,0 +1,10 @@
+<p>The world&#39;s most popular open source relational database</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  mysql: &#39;*&#39;
+configuration:
+  mysql:
+    bind_address: 0.0.0.0
+    innodb:
+      innodb_buffer_pool_size: 8G
+</code></pre><p>Install MySQL on the node, make it listen on all interfaces (0.0.0.0) and allocate 8GB of RAM to the InnoDB buffer pool.</p>

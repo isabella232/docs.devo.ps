@@ -1,0 +1,11 @@
+<p>Free &amp; open source, high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.</p>
+<p>Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering.</p>
+<p>Memcached is simple yet powerful. Its simple design promotes quick deployment, ease of development, and solves many problems facing large data caches. Its API is available for most popular languages.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  memcached: &#39;*&#39;
+configuration:
+  memcached:
+    memory: 128
+    port: 11212
+</code></pre><p>Install Memcached on the node, allocate 128MB of RAM to the service and make it listen on port TCP/11212</p>
