@@ -25,9 +25,7 @@
 </header>
 
 <section class='body'>
-  <p>{% set openTag = &#39;{{&#39; %}
-{% set closeTag = &#39;}}&#39; %}</p>
-<h2 id="overview">Overview</h2>
+  <h2 id="overview">Overview</h2>
 <p>Scripts let you create arbitrary commands that you may want to execute during a task run.</p>
 <p>The scripts need to be saved in the <code>./scripts</code> folder to be usable by the system, they will then be referenced in the tasks with the following:</p>
 <pre><code>do:
@@ -50,9 +48,9 @@ configuration:
     gems:
       - compass
 </code></pre><h2 id="using-task-variables">Using task variables</h2>
-<p>Scripts can use variables defined in the task under the <code>vars</code> attribute, they will need to be put in between curvy brackets ({{ openTag }} and {{ closeTag }}).</p>
+<p>Scripts can use variables defined in the task under the <code>vars</code> attribute, they will need to be put in between curvy brackets ( <code>{{</code> and <code>}}</code> ).</p>
 <h2 id="using-webhooks-data-payload">Using webhooks - data payload</h2>
-<p>Tasks can be triggered by webhook, sending a <code>POST</code> request on the URL defined in the task. The payload (JSON) of the POST request can be accessed by {{ openTag }} payload {{ closeTag }}.</p>
+<p>Tasks can be triggered by webhook, sending a <code>POST</code> request on the URL defined in the task. The payload (JSON) of the POST request can be accessed by {{ payload }}.</p>
 <p>The content of the payload depends on what effectively perform the POST request, it could be any of:</p>
 <ul>
 <li>nothing</li>
