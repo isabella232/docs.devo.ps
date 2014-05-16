@@ -50,7 +50,7 @@ configuration:
 </code></pre><h2 id="using-task-variables">Using task variables</h2>
 <p>Scripts can use variables defined in the task under the <code>vars</code> attribute, they will need to be put in between curvy brackets ( <code>{{</code> and <code>}}</code> ).</p>
 <h2 id="using-webhooks-data-payload">Using webhooks - data payload</h2>
-<p>Tasks can be triggered by webhook, sending a <code>POST</code> request on the URL defined in the task. The payload (JSON) of the POST request can be accessed by {{ payload }}.</p>
+<p>Tasks can be triggered by webhook, sending a <code>POST</code> request on the URL defined in the task. The payload (JSON) of the POST request can be accessed by <code>{{ payload }}</code>.</p>
 <p>The content of the payload depends on what effectively perform the POST request, it could be any of:</p>
 <ul>
 <li>nothing</li>
