@@ -25,9 +25,7 @@
 </header>
 
 <section class='body'>
-  <p>{% set openTag = &#39;{{&#39; %}
-{% set closeTag = &#39;}}&#39; %}</p>
-<h2 id="overview">Overview</h2>
+  <h2 id="overview">Overview</h2>
 <p>Tasks are the core component of <code>devops</code>, to make it simple, you can consider a <code>task</code> as a list of operations to run on demand.  </p>
 <p>Tasks are described in a YAML format, with 1 task per file. Tasks files must be saved in the <code>tasks</code> folder.</p>
 <h2 id="file-format">File format</h2>
@@ -50,7 +48,7 @@ when:
   - myserver
 
 do:
-  - run: echo {{ openTag }} myvar {{ closeTag }}
+  - run: echo {{ myvar }}
   - run: devops ./scripts/myscript.sh
     &#39;on&#39;:
       - myserver2
@@ -151,12 +149,12 @@ do:
 <pre><code>vars:
   myvar: value
   my_other_var: other_value
-</code></pre><p>Allows you to use <code>{{ openTag }} myvar {{ closeTag }}</code> and <code>{{ openTag }} my_other_var {{ closeTag }}</code> in either:</p>
+</code></pre><p>Allows you to use <code>{{ myvar }}</code> and <code>{{ my_other_var }}</code> in either:</p>
 <ul>
 <li>an inline command like</li>
 </ul>
 <pre><code>do:
-  - run: mkdir {{ openTag }} myvar {{ closeTag }} &amp;&amp; cd {{ openTag }} myvar {{ closeTag }}
+  - run: mkdir {{ myvar }} &amp;&amp; cd {{ myvar }}
 </code></pre><ul>
 <li>or with a script</li>
 </ul>
@@ -166,14 +164,14 @@ do:
 shell&gt; cat ./scripts/some_script.sh
 
 #!/bin/bash
-echo {{ openTag }} my_other_var {{ closeTag }}
+echo {{ my_other_var }}
 </code></pre><ul>
 <li>or within a package task</li>
 </ul>
 <pre><code>do:
   - run: devops package some_task
     options:
-      some: {{ openTag }} myvar {{ closeTag }}
+      some: {{ myvar }}
 </code></pre><h3 id="on">On</h3>
 <p>The <code>&#39;on&#39;</code> attribute lets you define the list of nodes to run the command on. You can specify it either at the command level, or at the root level. </p>
 <p>If no <code>&#39;on&#39;</code> attribute is available within a command, it will fallback on the root <code>&#39;on&#39;</code> attribute. </p>
