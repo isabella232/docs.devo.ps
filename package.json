@@ -40,7 +40,6 @@
     "ncp": "*",
     "connect": "*",
     "bower": "*",
-    "gulp-compass": "*",
     "gulp-minify-css": "*",
     "gulp-concat": "*",
     "gulp-clean": "*",
