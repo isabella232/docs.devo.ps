@@ -1,4 +1,31 @@
-<p>High performance HTTP server.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; Nginx</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://wiki.nginx.org/Main'>Official website</a>
+  </div>
+
+  <h1>Nginx</h1>
+</header>
+
+<section class='body'>
+  <p>High performance HTTP server.</p>
 <h2 id="example">Example</h2>
 <pre><code>services:
   nginx: &#39;*&#39;
@@ -7,3 +34,411 @@ configuration:
     worker_processes: 1
 </code></pre><p>Install Nginx on the node, but spawn 1 worker only instead of 4 (default).</p>
 <p>Managing virtual hosts and domains is handled by dedicated tasks.</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>user</code></strong></h3>
+    
+      <p>Nginx running user.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>www-data</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>worker_processes</code></strong></h3>
+    
+      <p>Number of Nginx processes</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>4</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>pid</code></strong></h3>
+    
+      <p>Pid file path</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/run/nginx.pid</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>events</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>worker_connections</code></strong> (<code>events.worker_connections</code>)</h3>
+    
+      <p>Number of concurrent http connection handled per nginx process</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1024</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>http</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>sendfile</code></strong> (<code>http.sendfile</code>)</h3>
+    
+      <p>Enable sendfile</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>on</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>tcp_nopush</code></strong> (<code>http.tcp_nopush</code>)</h3>
+    
+      <p>Enable tcp_nopush</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>on</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>tcp_nodelay</code></strong> (<code>http.tcp_nodelay</code>)</h3>
+    
+      <p>Enable tcp_nodelay</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>on</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>keepalive_timeout</code></strong> (<code>http.keepalive_timeout</code>)</h3>
+    
+      <p>Keepalive timeout (sec) - 0 to disable</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>65</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>types_hash_max_size</code></strong> (<code>http.types_hash_max_size</code>)</h3>
+    
+      <p>Maximum size of hash tables</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>2048</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>access_log</code></strong> (<code>http.access_log</code>)</h3>
+    
+      <p>Global access log file path</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/log/nginx/access.log</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>error_log</code></strong> (<code>http.error_log</code>)</h3>
+    
+      <p>Global error log file path</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/log/nginx/error.log</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>gzip</code></strong> (<code>http.gzip</code>)</h3>
+    
+      <p>Enable gzip compression</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>on</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>gzip_disable</code></strong> (<code>http.gzip_disable</code>)</h3>
+    
+      <p>Space separated list of browser to disable gzip compression for</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>msie6</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+</ul>
+</section>
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      <ul>
+<li><a href="/manual/Getting-Started.html">Getting Started</a><ul>
+<li><a href="/manual/Git.html">Git</a></li>
+<li><a href="/manual/Nodes.html">Nodes</a></li>
+<li><a href="/manual/Tasks.html">Tasks</a></li>
+<li><a href="/manual/Scripts.html">Scripts</a></li>
+</ul>
+</li>
+</ul>
+
+    </ul>
+  </li>
+  <li>
+    <h3>References</h3>
+    <ul>
+      
+      <li><a href='/references/apache.html'>Apache</a></li>
+      
+      <li><a href='/references/common.html'>Common</a></li>
+      
+      <li><a href='/references/couchbase.html'>CouchBase</a></li>
+      
+      <li><a href='/references/couchdb.html'>CouchDB</a></li>
+      
+      <li><a href='/references/dart.html'>Dart</a></li>
+      
+      <li><a href='/references/docker.html'>Docker</a></li>
+      
+      <li><a href='/references/elasticsearch.html'>ElasticSearch</a></li>
+      
+      <li><a href='/references/go.html'>Go</a></li>
+      
+      <li><a href='/references/java.html'>Java</a></li>
+      
+      <li><a href='/references/memcached.html'>Memcached</a></li>
+      
+      <li><a href='/references/mongodb.html'>MongoDB</a></li>
+      
+      <li><a href='/references/mysql.html'>MySQL</a></li>
+      
+      <li><a href='/references/nginx.html'>Nginx</a></li>
+      
+      <li><a href='/references/nodejs.html'>Node.js</a></li>
+      
+      <li><a href='/references/openvpn.html'>OpenVPN</a></li>
+      
+      <li><a href='/references/php.html'>PHP</a></li>
+      
+      <li><a href='/references/python.html'>Python</a></li>
+      
+      <li><a href='/references/rabbitmq.html'>RabbitMQ</a></li>
+      
+      <li><a href='/references/redis.html'>Redis</a></li>
+      
+      <li><a href='/references/ruby.html'>Ruby</a></li>
+      
+      <li><a href='/references/varnish.html'>Varnish</a></li>
+      
+      <li><a href='/references/xvfb.html'>Xvfb</a></li>
+      
+      <li><a href='/references/zeromq.html'>ZeroMQ</a></li>
+      
+      <li><a href='/references/uwsgi.html'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>
