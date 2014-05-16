@@ -1,0 +1,109 @@
+<h2 id="overview">Overview</h2>
+<p>The Command Line Interface lets you interact with devops in a terminal.</p>
+<h2 id="installation">Installation</h2>
+<p>You will need <code>python</code> (2.7) and <code>pip</code> on your system.</p>
+<p>You can find the details on the <a href="https://app.devo.ps/#/user/settings">user settings page</a>.</p>
+<h3 id="ubuntu-debian">Ubuntu / Debian</h3>
+<pre><code>sudo apt-get install python-pip
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
+</code></pre><h3 id="centos-fedora-rh">CentOS / Fedora / RH</h3>
+<pre><code># install epel
+# figure it out...
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
+</code></pre><h3 id="macos">MacOS</h3>
+<pre><code>brew install python-pip
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
+</code></pre><h2 id="features">Features</h2>
+<p>The CLI lets you:</p>
+<ul>
+<li>list your repositories</li>
+<li>list the nodes / tasks within one of your repositories</li>
+<li>list the webhooks URLs currently registered and the associated tasks</li>
+<li>get the details of the nodes, including:<ul>
+<li>sync status</li>
+<li>IP address</li>
+<li>installed services</li>
+</ul>
+</li>
+<li>get the details of the tasks, including:<ul>
+<li>list of previous runs</li>
+<li>status of previous runs</li>
+</ul>
+</li>
+<li>get the full logs of:<ul>
+<li>sync operations</li>
+<li>tasks runs</li>
+</ul>
+</li>
+</ul>
+<h2 id="cli-commands">CLI commands</h2>
+<h3 id="login-logout">Login / Logout</h3>
+<p>All CLI commands require you to be authenticated. The API keys are available on the <a href="https://app.devo.ps/#/user/settings">user settings page</a>.</p>
+<pre><code>shell&gt; devops login
+shell&gt; devops logout
+</code></pre><h3 id="help">Help</h3>
+<p>The help will give you the full list of commands supported by the CLI.</p>
+<pre><code>shell&gt; devops --help
+</code></pre><h3 id="list">List</h3>
+<ul>
+<li><strong>List repositories</strong>: will return the list of all the repositories of your logged-in user</li>
+</ul>
+<pre><code>shell&gt; devops list repos
+</code></pre><ul>
+<li><strong>List nodes</strong>: will return the list of the nodes defined in the current repository (if you are in a devo.ps&#39; managed git repository), or in the repository specified in the option</li>
+</ul>
+<pre><code># Get the list of nodes in the current repository
+shell&gt; devops list nodes
+
+# Get the list of nodes in another repository
+shell&gt; devops list --repo=other_repo nodes
+</code></pre><ul>
+<li><strong>List tasks</strong>: will return the list of the tasks (either in the current repository or in the repo defined in the option - same as for nodes)</li>
+</ul>
+<pre><code>shell&gt; devops list [--repo=other_repo] tasks
+</code></pre><ul>
+<li><strong>List webhooks</strong>: will return the list of webhooks registered within the current repository and the linked task</li>
+</ul>
+<pre><code>shell&gt; devops list [--repo=other_repo] webhooks
+</code></pre><h3 id="details">Details</h3>
+<ul>
+<li><strong>Nodes details</strong>: will return the essential info about your nodes including:<ul>
+<li>IP address</li>
+<li>sync status (success / error)</li>
+<li>short list of services</li>
+<li><code>devops</code> SSH public key</li>
+</ul>
+</li>
+</ul>
+<pre><code>shell&gt; devops details [--repo=other_repo] --node {node_id}
+</code></pre><ul>
+<li><strong>Tasks details</strong>: will return the list of the previous runs, their respective status (success / error) and id.</li>
+</ul>
+<pre><code>shell&gt; devops details [--repo=other_repo] --task {task_id}
+</code></pre><h3 id="run-and-sync-actions">Run and Sync actions</h3>
+<ul>
+<li><strong>Run</strong>: will effectively triggers the execution of the requested task. Eventually will execute each step of the task on the nodes defined in the task definition</li>
+</ul>
+<pre><code>shell&gt; devops run [--repo=other_repo] {task_id}
+</code></pre><ul>
+<li><strong>Sync</strong>: will request a node to be synced. Usually sync operation are automatically triggered upon git commit/push of a node YAML file. But the sync operation may sometime fail due (e.g. error in the configuration, network error). The <code>Sync</code> action triggered via the CLI will perform a full sync of the node and ensure the remote server effectively is synced with its definition.</li>
+</ul>
+<pre><code>shell&gt; devops sync [--repo=other_repo] {node_id}
+</code></pre><h3 id="logs">Logs</h3>
+<p>Getting to know more in detail what is going on during the execution of task may prove invaluable. Logs are there for that.</p>
+<p>Not to get confused, the logs available are the logs of the operations performed by the devops platform, not any other log defined on the remote platform (e.g. <code>/var/log/messages</code>, nginx logs)</p>
+<ul>
+<li><strong>Node sync logs</strong>: will show each individual step performed during the sync operation</li>
+</ul>
+<pre><code>shell&gt; devops logs [--repo=other_repo] --node {node_id}
+</code></pre><ul>
+<li><strong>Task&#39;s run logs</strong>: will show the log of a specific run (by id); the id of a specific run is obtained via the <code>details</code> command for a task</li>
+</ul>
+<pre><code>shell&gt; devops logs [--repo=other_repo] --task {task_id} {run_id}
+</code></pre><h3 id="ssh">SSH</h3>
+<p>Simple yet useful way to access your nodes over ssh without having to bother with the IP address</p>
+<pre><code>shell&gt; devops ssh [--repo=other_repo] [{node_id}]
+</code></pre><p><strong>Notes</strong>:</p>
+<ul>
+<li>{node_id} is optional and only required if you have more than one node defined in your repository</li>
+</ul>

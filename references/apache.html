@@ -1,0 +1,14 @@
+<p>The Number One HTTP Server On The Internet</p>
+<p>The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.</p>
+<p>Apache httpd has been the most popular web server on the Internet since April 1996, and celebrated its 17th birthday as a project this February.</p>
+<p>The Apache HTTP Server (&quot;httpd&quot;) is a project of The Apache Software Foundation.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  apache: &#39;*&#39;
+configuration:
+  apache:
+    timeout: 60
+    prefork:
+      maxclients: 20
+      maxrequestsperchild: 1000
+</code></pre><p>Install Apache on the node, sets a timeout of 60 seconds on receive / send, set the prefork MPM to start at most 20 Apache child processes and ensure each Apache child process will handle at most 1000 requests before respawning.</p>
