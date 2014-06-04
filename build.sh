@@ -54,7 +54,7 @@ find packages -name configuration.md -exec bash -i -c 'copy {}' \;
 #
 # Prepare the providers' details iun devops-ansible
 #
-cd providers
+cd provider-build
 sudo pip install -r requirements.txt
 python providers.py $TMP_FOLDER3
 for provider_file in $TMP_FOLDER3/*
