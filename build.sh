@@ -56,7 +56,7 @@ find packages -name configuration.md -exec bash -i -c 'copy {}' \;
 #
 cd provider-build
 sudo pip install -r requirements.txt
-python providers.py $TMP_FOLDER3
+python providers.py $TMP_FOLDER3 /home/devops/providers_config.json
 for provider_file in $(ls $TMP_FOLDER3/*)
 do  
   base=$(basename $provider_file)
