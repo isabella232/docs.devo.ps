@@ -1,4 +1,31 @@
-<p>The world&#39;s most popular open source relational database</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; MySQL</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://www.mysql.com/'>Official website</a>
+  </div>
+
+  <h1>MySQL</h1>
+</header>
+
+<section class='body'>
+  <p>The world&#39;s most popular open source relational database</p>
 <h2 id="example">Example</h2>
 <pre><code>services:
   mysql: &#39;*&#39;
@@ -8,3 +35,1107 @@ configuration:
     innodb:
       innodb_buffer_pool_size: 8G
 </code></pre><p>Install MySQL on the node, make it listen on all interfaces (0.0.0.0) and allocate 8GB of RAM to the InnoDB buffer pool.</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>port</code></strong></h3>
+    
+      <p>Connection port.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>3306</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>bind_address</code></strong></h3>
+    
+      <p>Binding IP address.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>127.0.0.1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>socket</code></strong></h3>
+    
+      <p>Mysql listening socket.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/run/mysqld/mysqld.sock</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>pid_file</code></strong></h3>
+    
+      <p>Pid file.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/run/mysqld/mysqld.pid</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>base_dir</code></strong></h3>
+    
+      <p>Base folder.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/usr</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>data_dir</code></strong></h3>
+    
+      <p>Database files path.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/lib/mysql</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>auto_increment_increment</code></strong></h3>
+    
+      <p>Auto increment.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>auto_increment_offset</code></strong></h3>
+    
+      <p>Auto increment offset.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>old_passwords</code></strong></h3>
+    
+      <p>Allow old (non-secure) passwords.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>tunable</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>key_buffer</code></strong> (<code>tunable.key_buffer</code>)</h3>
+    
+      <p>Size of the buffer used for index blocks. The key buffer is also known as the key cache.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>256M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>max_allowed_packet</code></strong> (<code>tunable.max_allowed_packet</code>)</h3>
+    
+      <p>The maximum size of one packet or any generated/intermediate string.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>16M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>thread_stack</code></strong> (<code>tunable.thread_stack</code>)</h3>
+    
+      <p>The stack size for each thread.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>256K</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>thread_cache_size</code></strong> (<code>tunable.thread_cache_size</code>)</h3>
+    
+      <p>Number of threads the server should cache for reuse.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>32</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>max_connections</code></strong> (<code>tunable.max_connections</code>)</h3>
+    
+      <p>The maximum permitted number of simultaneous client connections.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>256</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>wait_timeout</code></strong> (<code>tunable.wait_timeout</code>)</h3>
+    
+      <p>The number of seconds the server waits for activity on a noninteractive connection before closing it.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>180</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>net_read_timeout</code></strong> (<code>tunable.net_read_timeout</code>)</h3>
+    
+      <p>The number of seconds to wait for more data from a connection before aborting the read.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>30</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>net_write_timeout</code></strong> (<code>tunable.net_write_timeout</code>)</h3>
+    
+      <p>The number of seconds to wait for a block to be written to a connection before aborting the write.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>30</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>back_log</code></strong> (<code>tunable.back_log</code>)</h3>
+    
+      <p>The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>128</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>table_open_cache</code></strong> (<code>tunable.table_open_cache</code>)</h3>
+    
+      <p>The number of open tables for all threads.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1024</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>max_heap_table_size</code></strong> (<code>tunable.max_heap_table_size</code>)</h3>
+    
+      <p>Maximum size to which user-created MEMORY tables are permitted to grow.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>64M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>query_cache</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>query_cache_limit</code></strong> (<code>query_cache.query_cache_limit</code>)</h3>
+    
+      <p>Do not cache results that are larger than this number of bytes.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>2M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>query_cache_size</code></strong> (<code>query_cache.query_cache_size</code>)</h3>
+    
+      <p>The amount of memory allocated for caching query results.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>64M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>logs</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>log_error</code></strong> (<code>logs.log_error</code>)</h3>
+    
+      <p>The location of the error log.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/log/mysql/mysql.log</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>slow_query_log</code></strong> (<code>logs.slow_query_log</code>)</h3>
+    
+      <p>Whether the slow query log is enabled.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>slow_query_log_file</code></strong> (<code>logs.slow_query_log_file</code>)</h3>
+    
+      <p>The name of the slow query log file.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/log/mysql/slow.log</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>long_query_time</code></strong> (<code>logs.long_query_time</code>)</h3>
+    
+      <p>Increment slow_queries variable and log if a query takes longer than this many seconds.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>number</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>log_queries_not_using_indexes</code></strong> (<code>logs.log_queries_not_using_indexes</code>)</h3>
+    
+      <p>If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>replication</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>server_id</code></strong> (<code>replication.server_id</code>)</h3>
+    
+      <p>Is used in replication to enable master and slave servers to identify themselves uniquely.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>10</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>log_bin</code></strong> (<code>replication.log_bin</code>)</h3>
+    
+      <p>Enable binary logging. The option value is the basename for the log sequence.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>mysql-bin</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>log_slave_updates</code></strong> (<code>replication.log_slave_updates</code>)</h3>
+    
+      <p>This option tells the slave to log the updates performed by its SQL thread to its own binary log.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>true</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>log_bin_trust_function_creators</code></strong> (<code>replication.log_bin_trust_function_creators</code>)</h3>
+    
+      <p>Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>expire_logs_days</code></strong> (<code>replication.expire_logs_days</code>)</h3>
+    
+      <p>The number of days for automatic binary log file removal.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>10</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>max_binlog_size</code></strong> (<code>replication.max_binlog_size</code>)</h3>
+    
+      <p>If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>100M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>relay_log</code></strong> (<code>replication.relay_log</code>)</h3>
+    
+      <p>The basename for the relay log.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>relay-bin</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>sync_binlog</code></strong> (<code>replication.sync_binlog</code>)</h3>
+    
+      <p>If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>skip_slave_start</code></strong> (<code>replication.skip_slave_start</code>)</h3>
+    
+      <p>Tells the slave server not to start the slave threads when the server starts.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>true</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>innodb_buffer_pool_size</code></strong> (<code>innodb.innodb_buffer_pool_size</code>)</h3>
+    
+      <p>The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>128M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_log_file_size</code></strong> (<code>innodb.innodb_log_file_size</code>)</h3>
+    
+      <p>The size in bytes of each log file in a log group.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>5M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_additional_mem_pool_size</code></strong> (<code>innodb.innodb_additional_mem_pool_size</code>)</h3>
+    
+      <p>The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>8M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_data_file_path</code></strong> (<code>innodb.innodb_data_file_path</code>)</h3>
+    
+      <p>The paths to individual data files and their sizes.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>ibdata1:10M:autoextend:max:500M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_flush_log_at_trx_commit</code></strong> (<code>innodb.innodb_flush_log_at_trx_commit</code>)</h3>
+    
+      <p>If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_flush_method</code></strong> (<code>innodb.innodb_flush_method</code>)</h3>
+    
+      <p>Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>O_DIRECT</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_log_buffer_size</code></strong> (<code>innodb.innodb_log_buffer_size</code>)</h3>
+    
+      <p>The size in bytes of the buffer that InnoDB uses to write to the log files on disk.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>8M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>innodb_adaptive_flushing</code></strong> (<code>innodb.innodb_adaptive_flushing</code>)</h3>
+    
+      <p>Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>true</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+</ul>
+</section>
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      <ul>
+<li><a href="/manual/Getting-Started.html">Getting Started</a></li>
+<li><a href="/manual/Git.html">Git</a><ul>
+<li><a href="/manual/Nodes.html">Nodes</a></li>
+<li><a href="/manual/Tasks.html">Tasks</a></li>
+<li><a href="/manual/Scripts.html">Scripts</a></li>
+</ul>
+</li>
+<li><a href="/manual/CLI.html">CLI</a></li>
+</ul>
+
+    </ul>
+  </li>
+  <li>
+    <h3>References</h3>
+    <ul>
+      
+      <li><a href='/references/.html'>[object Object]</a></li>
+      
+      <li><a href='/references/apache.html'>Apache</a></li>
+      
+      <li><a href='/references/common.html'>Common</a></li>
+      
+      <li><a href='/references/couchbase.html'>CouchBase</a></li>
+      
+      <li><a href='/references/couchdb.html'>CouchDB</a></li>
+      
+      <li><a href='/references/dart.html'>Dart</a></li>
+      
+      <li><a href='/references/docker.html'>Docker</a></li>
+      
+      <li><a href='/references/elasticsearch.html'>ElasticSearch</a></li>
+      
+      <li><a href='/references/go.html'>Go</a></li>
+      
+      <li><a href='/references/java.html'>Java</a></li>
+      
+      <li><a href='/references/memcached.html'>Memcached</a></li>
+      
+      <li><a href='/references/mongodb.html'>MongoDB</a></li>
+      
+      <li><a href='/references/mysql.html'>MySQL</a></li>
+      
+      <li><a href='/references/nginx.html'>Nginx</a></li>
+      
+      <li><a href='/references/nodejs.html'>Node.js</a></li>
+      
+      <li><a href='/references/openvpn.html'>OpenVPN</a></li>
+      
+      <li><a href='/references/php.html'>PHP</a></li>
+      
+      <li><a href='/references/python.html'>Python</a></li>
+      
+      <li><a href='/references/rabbitmq.html'>RabbitMQ</a></li>
+      
+      <li><a href='/references/redis.html'>Redis</a></li>
+      
+      <li><a href='/references/ruby.html'>Ruby</a></li>
+      
+      <li><a href='/references/varnish.html'>Varnish</a></li>
+      
+      <li><a href='/references/xvfb.html'>Xvfb</a></li>
+      
+      <li><a href='/references/zeromq.html'>ZeroMQ</a></li>
+      
+      <li><a href='/references/uwsgi.html'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>
