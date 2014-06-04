@@ -1,0 +1,24 @@
+{% extends "default.html" %}
+{% block title %}{% parent %} &raquo; {{ title }}{% endblock %}
+
+{% block content %}
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a>{% for link in links %}<a href='{{ link.url }}'>{{ link.title }}</a>{% endfor %}
+  </div>
+
+  <h1>{{ title }}</h1>
+</header>
+
+<section class='body'>
+  {{ contents | safe }}
+</section>
+
+{% if configuration %}
+<section class='configuration'>
+  <h2>Configuration</h2>
+    {% set tree = configuration %}
+    {% include "tree.html" %}
+</section>
+{% endif %}
+{% endblock %}
