@@ -61,10 +61,11 @@ for provider_file in $(ls $TMP_FOLDER3/*)
 do  
   base=$(basename $provider_file \.yml)
   cp $provider_file $HERE/source/references/$base.md
-  echo '
+  echo "
+title: $base
 template: provider.html
 ---
-' >> $HERE/source/references/$basename.md
+" >> $HERE/source/references/$basename.md
 done
 
 
