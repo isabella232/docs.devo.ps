@@ -65,7 +65,7 @@ do
 title: $base
 template: provider.html
 ---
-" >> $HERE/source/references/$basename.md
+" >> $HERE/source/references/$base.md
 done
 
 
