@@ -59,8 +59,8 @@ sudo pip install -r requirements.txt
 python providers.py $TMP_FOLDER3 /home/devops/providers_config.json
 for provider_file in $(ls $TMP_FOLDER3/*)
 do  
-  base=$(basename $provider_file)
-  cp $provider_file $HERE/source/references/$basename.md
+  base=$(basename $provider_file \.yml)
+  cp $provider_file $HERE/source/references/$base.md
   echo '
 template: provider.html
 ---
