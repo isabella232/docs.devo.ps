@@ -14,6 +14,7 @@ fi
 
 TMP_FOLDER=$(mktemp -d)
 TMP_FOLDER2=$(mktemp -d)
+TMP_FOLDER3=$(mktemp -d)
 
 cd $TMP_FOLDER
 
@@ -51,6 +52,23 @@ export -f copy
 find packages -name configuration.md -exec bash -i -c 'copy {}' \;
 
 #
+# Prepare the providers' details iun devops-ansible
+#
+cd providers
+sudo pip install -r requirements.txt
+python providers.py $TMP_FOLDER3
+for provider_file in $TMP_FOLDER3/*
+do  
+  base=$(basename $provider_file)
+  cp $provider_file $HERE/source/references/$basename.md
+  echo '
+template: provider.html
+---
+' >> $HERE/source/references/$basename.md
+done
+
+
+#
 # Prepare the menu data file
 #
 cd $HERE
@@ -73,3 +91,4 @@ git push
 # Cleanup
 rm -rf $TMP_FOLDER
 rm -rf $TMP_FOLDER2
+rm -rf $TMP_FOLDER3
