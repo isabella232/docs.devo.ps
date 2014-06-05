@@ -92,9 +92,9 @@ shell&gt; devops list --repo=other_repo nodes
 <li><strong>List webhooks</strong>: will return the list of webhooks registered within the current repository and the linked task</li>
 </ul>
 <pre><code>shell&gt; devops list [--repo=other_repo] webhooks
-</code></pre><h3 id="details">Details</h3>
+</code></pre><h3 id="info">Info</h3>
 <ul>
-<li><strong>Nodes details</strong>: will return the essential info about your nodes including:<ul>
+<li><strong>Nodes info</strong>: will return the essential info about your nodes including:<ul>
 <li>IP address</li>
 <li>sync status (success / error)</li>
 <li>short list of services</li>
@@ -102,11 +102,7 @@ shell&gt; devops list --repo=other_repo nodes
 </ul>
 </li>
 </ul>
-<pre><code>shell&gt; devops details [--repo=other_repo] --node {node_id}
-</code></pre><ul>
-<li><strong>Tasks details</strong>: will return the list of the previous runs, their respective status (success / error) and id.</li>
-</ul>
-<pre><code>shell&gt; devops details [--repo=other_repo] --task {task_id}
+<pre><code>shell&gt; devops info [--repo=other_repo] --node {node_id}
 </code></pre><h3 id="run-and-sync-actions">Run and Sync actions</h3>
 <ul>
 <li><strong>Run</strong>: will effectively triggers the execution of the requested task. Eventually will execute each step of the task on the nodes defined in the task definition</li>
