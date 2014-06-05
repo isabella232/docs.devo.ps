@@ -40,17 +40,17 @@ type: task
 vars:
   myvar: something
 
-when:
-  webhook:
+triggers:
+  webhooks:
     - path: super/secret/path
 
-&#39;on&#39;:
+targets:
   - myserver
 
-do:
+steps:
   - run: echo {{ myvar }}
   - run: devops ./scripts/myscript.sh
-    &#39;on&#39;:
+    targets:
       - myserver2
   - run: devops package task
     options:
@@ -96,21 +96,21 @@ do:
 <td>A list of variables to use thorough the task (see the vars section below)</td>
 </tr>
 <tr>
-<td><strong>when</strong></td>
+<td><strong>triggers</strong></td>
 <td><code>object</code></td>
 <td><code>false</code></td>
 <td></td>
 <td>When to automatically trigger this task (see the when section below)</td>
 </tr>
 <tr>
-<td><strong>&#39;on&#39;</strong></td>
+<td><strong>targets</strong></td>
 <td><code>array</code></td>
 <td><code>false</code></td>
 <td></td>
-<td>List of nodes to run the task on by default if not defined within a command. <strong>Note</strong>: beware of the quotes around the <code>&#39;on&#39;</code> key</td>
+<td>List of nodes to run the task on by default if not defined within a command.</td>
 </tr>
 <tr>
-<td><strong>do</strong></td>
+<td><strong>steps</strong></td>
 <td><code>array</code></td>
 <td><code>true</code></td>
 <td></td>
@@ -118,23 +118,23 @@ do:
 </tr>
 </tbody>
 </table>
-<h3 id="do">do</h3>
-<p>The <code>do</code> attribute defines the core of the task; the sequence of commands to run. </p>
+<h3 id="steps">steps</h3>
+<p>The <code>step</code> attribute defines the core of the task; the sequence of commands to run. </p>
 <p>3 types of commands exist:</p>
 <ul>
 <li><strong>inline commands</strong>: commands you would be able to run as if you were on the server (e.g. <code>mkdir folder</code>)</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: mkdir folder
 </code></pre><ul>
 <li><strong>script execution</strong>: you can call scripts that you have created in the <code>./scripts</code> folder and get it executed on the remote server. Obviously if the script doesn&#39;t exist the command will fail. More details about the scripts available <a href="/manual/Scripts.html">here</a></li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: devops scripts/some_script.sh
 </code></pre><ul>
 <li><strong>devops tasks</strong>: services that you have installed on your nodes come with a set of prepared tasks that you can run easily with little configuration. For example creating a custom virtual host for nginx. The format of the command is as such <code>devops {service} {task}</code>. Some of those tasks have options, you can find all the details in the <a href="/references">references</a> for each service.</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: devops nginx vhost add
     options:
       domain: example.com
@@ -153,12 +153,12 @@ do:
 <ul>
 <li>an inline command like</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: mkdir {{ myvar }} &amp;&amp; cd {{ myvar }}
 </code></pre><ul>
 <li>or with a script</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: devops scripts/some_script.sh
 
 shell&gt; cat ./scripts/some_script.sh
@@ -168,48 +168,47 @@ echo {{ my_other_var }}
 </code></pre><ul>
 <li>or within a package task</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: devops package some_task
     options:
       some: {{ myvar }}
-</code></pre><h3 id="on">On</h3>
-<p>The <code>&#39;on&#39;</code> attribute lets you define the list of nodes to run the command on. You can specify it either at the command level, or at the root level. </p>
-<p>If no <code>&#39;on&#39;</code> attribute is available within a command, it will fallback on the root <code>&#39;on&#39;</code> attribute. </p>
-<p>If there is no <code>&#39;on&#39;</code> attribute at all (no root-level attribute either) - the system will not know where to run the task and will fail.</p>
-<p>The node list provided in the <code>&#39;on&#39;</code> attribute need to exist on the platform and be defined in your repo. If they don&#39;t the task will fail.</p>
-<pre><code>&#39;on&#39;:
+</code></pre><h3 id="targets">Targets</h3>
+<p>The <code>targets</code> attribute lets you define the list of nodes to run the command on. You can specify it either at the command level, or at the root level. </p>
+<p>If no <code>targets</code> attribute is available within a command, it will fallback on the root <code>targets</code> attribute. </p>
+<p>If there is no <code>targets</code> attribute at all (no root-level attribute either) - the system will not know where to run the task and will fail.</p>
+<p>The node list provided in the <code>targets</code> attribute need to exist on the platform and be defined in your repo. If they don&#39;t the task will fail.</p>
+<pre><code>targets:
   - myserver
   - my_other_server
-do:
+steps:
   # will run on the root node list
   - run: echo ipsum
   # will only run on the list provided
   - run: echo lorem
-    &#39;on&#39;: [&#39;my_third_server&#39;]
-</code></pre><p><strong>Note</strong>: <code>on</code> can be easily interpreted as a boolean (on/off) by the Yaml parser, you need to put it in quote to ensure it will be considered as a string.</p>
-<h3 id="when">When</h3>
-<p>The <code>when</code> attribute lets you define when do you want a task to be triggered and executed.</p>
+    targets: [&#39;my_third_server&#39;]
+</code></pre><h3 id="triggers">Triggers</h3>
+<p>The <code>triggers</code> attribute lets you define when do you want a task to be triggered and executed.</p>
 <p>The supported events are:</p>
 <ul>
 <li>manual (always available)</li>
-<li>webhook</li>
+<li>webhooks</li>
 </ul>
 <h4 id="webhooks">Webhooks</h4>
 <p>Lets you define a webhook that you (or a third party) can call anytime to trigger an execution of the task.</p>
 <p>The only HTTP valid method is <code>POST</code>.</p>
-<pre><code>when:
-  webhook:
+<pre><code>triggers:
+  webhooks:
     - path: some/secret/url
     - path: some/even/more/secret/url
 </code></pre><p>The final effective URL path is constructed as follow:</p>
-<pre><code>https://app.devo.ps/webhook/{user}/{repo}/some/secret/url
-https://app.devo.ps/webhook/{user}/{repo}/some/even/more/secret/url
+<pre><code>https://app.devo.ps/webhooks/{user}/{repo}/some/secret/url
+https://app.devo.ps/webhooks/{user}/{repo}/some/even/more/secret/url
 </code></pre><h2 id="running-user">Running user</h2>
 <p>By default all the commands are executed by the <code>devops</code> user. You can switch user by using the <code>sudo</code> command for either <em>inline commands</em> or <em>scripts</em>.</p>
 <ul>
 <li><strong>inline commands</strong>: you can prefix the command with the following:</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   # Run as root
   - run: **sudo** mkdir -p /opt/mystuff &amp;&amp; **sudo** chown devops. /opt/mystuff
   # Run as a different user
@@ -217,7 +216,7 @@ https://app.devo.ps/webhook/{user}/{repo}/some/even/more/secret/url
 </code></pre><ul>
 <li><strong>scripts</strong>: if you want to switch user, you need to use the sudo command <strong>within</strong> your script, as such:</li>
 </ul>
-<pre><code>do:
+<pre><code>steps:
   - run: devops scripts/myscript.sh
 
 shell&gt; cat ./scripts/myscript.sh
@@ -330,8 +329,6 @@ touch /tmp/other/file2
       <li><a href='/references/zeromq.html'>ZeroMQ</a></li>
       
       <li><a href='/references/digital_ocean.html'>digital_ocean</a></li>
-      
-      <li><a href='/references/.html'>digital_ocean</a></li>
       
       <li><a href='/references/ec2.html'>ec2</a></li>
       
