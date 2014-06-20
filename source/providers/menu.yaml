@@ -1,0 +1,9 @@
+---
+- link: digital_ocean
+  title: digital ocean
+- link: ec2
+  title: ec2
+- link: linode
+  title: linode
+- link: rackspace
+  title: rackspace
