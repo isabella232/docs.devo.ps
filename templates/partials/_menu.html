@@ -1,0 +1,36 @@
+<ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      {% for item in manual_menu %}
+      <li><a href='/{{ item.link }}'>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>
+    <h3>Concepts</h3>
+    <ul>
+      {% for item in concepts_menu %}
+      <li><a href='/{{ item.link }}'>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>
+    <h3>Services</h3>
+    <ul>
+      {% for item in services_menu %}
+      <li><a href='/{{ item.link }}'>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>
+    <h3>Providers</h3>
+    <ul>
+      {% for item in providers_menu %}
+      <li><a href='/{{ item.link }}'>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+</ul>

@@ -15,25 +15,25 @@
 </head>
 <body>
   <section id='content'>
-    {% block content %}{% endblock %}
+    {% block content %}{{ contents | safe }}{% endblock %}
   </section>
 
   <aside id='sidebar'>
     <header class='header'>
-      {% include "header.html" %}
+      {% include "partials/_header.html" %}
     </header>
     <section class='body'>
-      {% include "menu.html" %}
+      {% include "partials/_menu.html" %}
     </section>
     <footer class='footer'>
-      {% include "footer.html" %}
+      {% include "partials/_footer.html" %}
     </footer>
   </aside>
   
   <!-- JS -->
   <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
   <script type='text/javascript' src='/assets/scripts.js'></script>
-	{% if ga %}{% include "./ga.html" %}{% endif %}
-  {% if gauges %}{% include "./gauges.html" %}{% endif %}
+	{% if ga %}{% include "partials/_ga.html" %}{% endif %}
+  {% if gauges %}{% include "partials/_gauges.html" %}{% endif %}
 </body>
 </html>

@@ -8,15 +8,21 @@
         }
     },
     "metalsmith": {
-        "metalsmith-markdown": {},
-        "metalsmith-include": {},
-        "metalsmith-drafts": {},
         "metalsmith-metadata": {
-            "menu_references": "references.yaml"
+            "concepts_menu": "concepts/menu.yaml",
+            "manual_menu": "manual/menu.yaml",
+            "services_menu": "services/menu.yaml",
+            "providers_menu": "providers/menu.yaml"
         },
+        "metalsmith-markdown": {
+            "xhtml": true
+        },
+        "metalsmith-headings": {},
+        "metalsmith-permalinks": {},
         "metalsmith-templates": {
             "engine": "swig",
             "cache": false,
+            "default": "page.html",
             "directory": "./templates"
         },
         "metalsmith-assets": null,

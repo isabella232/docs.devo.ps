@@ -1,5 +1,0 @@
-- [[Getting Started]]
-  - [[Git]]
-  - [[Nodes]]
-  - [[Tasks]]
-  - [[Scripts]]

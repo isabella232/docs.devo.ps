@@ -1,10 +1,5 @@
 ---
-template: page.html
-include: 
-  menu_manual: manual.html
-  
 title: Nodes
-
 ---
 ## Overview
 
@@ -88,6 +83,7 @@ Several users are created on the server:
 ## Access to the node
 
 The access to the node is provided over SSH. The IP address is available on the web interface on the node details page.
+
 
 You can access your server with the following command (with `{user}` being your devops username):
 

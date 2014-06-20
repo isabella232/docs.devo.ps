@@ -36,6 +36,7 @@
     "metalsmith-assets": "*",
     "metalsmith-include": "*",
     "metalsmith-metadata": "*",
+    "metalsmith-headings": "*",
     "open": "*",
     "ncp": "*",
     "connect": "*",
