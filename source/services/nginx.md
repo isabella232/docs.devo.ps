@@ -71,14 +71,11 @@ configuration:
     minimum: 1
     required: false
     type: integer
-include:
-  menu_manual: manual.html
 links:
 - title: Official website
   url: http://wiki.nginx.org/Main
 tags:
 - web
-template: page.html
 title: Nginx
 
 ---
