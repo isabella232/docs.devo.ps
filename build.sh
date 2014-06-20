@@ -30,6 +30,7 @@ cp -a * $HERE/source/
 #
 cd $HERE
 # python build/prepare_menu.py
+mkdir public
 make build
 
 # Copy build files
