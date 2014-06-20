@@ -13,23 +13,17 @@ if [ -z "$COMMIT_MSG" ]; then
 fi
 
 TMP_FOLDER=$(mktemp -d)
-
 TMP_FOLDER2=$(mktemp -d)
-TMP_FOLDER3=$(mktemp -d)
 
 cd $TMP_FOLDER
-
-#
-# Fetch wiki
-#
-echo "Fetching services details"
+echo "Fetching services / providers details"
 git clone --branch docs git@github.com:devo-ps/devops-ansible.git
 
 #
 # Copy wiki to manual
 #
 cd devops-ansible
-cp * $HERE/source/
+cp -a * $HERE/source/
 
 #
 # Prepare the menu data file
