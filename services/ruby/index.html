@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>devo.ps</title>
+  <title>devo.ps &raquo; Ruby</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='description' content='docs'/>
+  
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -16,7 +16,65 @@
 <body>
   <section id='content'>
     
-Some content
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='https://www.ruby-lang.org/'>Official website</a>
+  </div>
+
+  <h1>Ruby</h1>
+</header>
+
+<section class='body'>
+  <p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  ruby: &#39;*&#39;
+configuration:
+  ruby:
+    gems:
+      - compass
+</code></pre><p>Add ruby support to allow install of Gem packages (globally) on the system.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="add-gems">add gems</h3>
+<h1 id="add-ruby-gems">Add Ruby gems</h1>
+<p>Install ruby gems globally on the server.</p>
+<h3 id="remove-gems">remove gems</h3>
+<h1 id="remove-ruby-gems">Remove Ruby gems</h1>
+<p>Remove Ruby gems installed globally from the server. If the gems are not installed it doesn&#39;t do anything.</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>gems</code></strong></h3>
+    
+      <p>List of gems to install globally on the system</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>array</code></td>
+            <td><code></code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
+
   </section>
 
   <aside id='sidebar'>

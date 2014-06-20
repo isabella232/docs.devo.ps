@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; Varnish</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='https://www.varnish-cache.org/'>Official website</a>
+  </div>
+
+  <h1>Varnish</h1>
+</header>
+
+<section class='body'>
+  <p>Varnish is a web application accelerator. You install it in front of your web application and it will speed it up significantly.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  varnish: &#39;*&#39;
+configuration:
+  varnish:
+    listen_port: 80
+    listen_address: 0.0.0.0
+    storage_type: malloc
+    storage_size: 512M
+</code></pre><p>Install Varnish on the node, making it listen on all interfaces (0.0.0.0) and on TCP/80. The cache is set to be held in RAM (Malloc) for a maximum size of 512MB.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="task-restart">Task Restart</h1>
+<p>Restart Varnish</p>
+<h3 id="reload">reload</h3>
+<h1 id="task-reload">Task Reload</h1>
+<p>Reload Varnish config</p>
+<h3 id="start">start</h3>
+<h1 id="task-start">Task Start</h1>
+<p>Start Varnish</p>
+<h3 id="stop">stop</h3>
+<h1 id="task-stop">Task Stop</h1>
+<p>Stop Varnish</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>admin_listen_address</code></strong></h3>
+    
+      <p>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>127.0.0.1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>admin_listen_port</code></strong></h3>
+    
+      <p>Telnet admin interface listen port.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>6082</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>listen_address</code></strong></h3>
+    
+      <p>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code></code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>listen_port</code></strong></h3>
+    
+      <p>Listen port.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>6081</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>max_threads</code></strong></h3>
+    
+      <p>The maximum number of worker threads to start.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1000</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>min_threads</code></strong></h3>
+    
+      <p>The minimum number of worker threads to start.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>secret_file</code></strong></h3>
+    
+      <p>File containing administration secret.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/etc/varnish/secret</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>storage_file</code></strong></h3>
+    
+      <p>Storage file, only used if storage_type is file.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>storage_size</code></strong></h3>
+    
+      <p>Cache size: in bytes, optionally using k / M / G / T suffix.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>256M</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>storage_type</code></strong></h3>
+    
+      <p>Store objects either in memory (malloc), on in a file (file).</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>malloc</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>thread_timeout</code></strong></h3>
+    
+      <p>Idle timeout for worker threads.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>120</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>ttl</code></strong></h3>
+    
+      <p>Default TTL used when the backend does not specify one.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>120</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>vcl_conf</code></strong></h3>
+    
+      <p>Main configuration file.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/etc/varnish/default.vcl</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      
+      <li><a href='/manual/Getting-Started'>Getting Started</a></li>
+      
+      <li><a href='/manual/Git'>Git</a></li>
+      
+      <li><a href='/manual/CLI'>Command Line Interface</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Concepts</h3>
+    <ul>
+      
+      <li><a href='/concepts/Nodes'>Nodes</a></li>
+      
+      <li><a href='/concepts/Tasks'>Tasks</a></li>
+      
+      <li><a href='/concepts/Scripts'>Scripts</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Services</h3>
+    <ul>
+      
+      <li><a href='/apache'>Apache</a></li>
+      
+      <li><a href='/common'>Common</a></li>
+      
+      <li><a href='/couchbase'>CouchBase</a></li>
+      
+      <li><a href='/couchdb'>CouchDB</a></li>
+      
+      <li><a href='/dart'>Dart</a></li>
+      
+      <li><a href='/docker'>Docker</a></li>
+      
+      <li><a href='/elasticsearch'>ElasticSearch</a></li>
+      
+      <li><a href='/go'>Go</a></li>
+      
+      <li><a href='/java'>Java</a></li>
+      
+      <li><a href='/memcached'>Memcached</a></li>
+      
+      <li><a href='/mongodb'>MongoDB</a></li>
+      
+      <li><a href='/mysql'>MySQL</a></li>
+      
+      <li><a href='/nginx'>Nginx</a></li>
+      
+      <li><a href='/nodejs'>Node.js</a></li>
+      
+      <li><a href='/openvpn'>OpenVPN</a></li>
+      
+      <li><a href='/php'>PHP</a></li>
+      
+      <li><a href='/python'>Python</a></li>
+      
+      <li><a href='/rabbitmq'>RabbitMQ</a></li>
+      
+      <li><a href='/redis'>Redis</a></li>
+      
+      <li><a href='/ruby'>Ruby</a></li>
+      
+      <li><a href='/varnish'>Varnish</a></li>
+      
+      <li><a href='/xvfb'>Xvfb</a></li>
+      
+      <li><a href='/zeromq'>ZeroMQ</a></li>
+      
+      <li><a href='/uwsgi'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Providers</h3>
+    <ul>
+      
+      <li><a href='/digital_ocean'>digital ocean</a></li>
+      
+      <li><a href='/ec2'>ec2</a></li>
+      
+      <li><a href='/linode'>linode</a></li>
+      
+      <li><a href='/rackspace'>rackspace</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>

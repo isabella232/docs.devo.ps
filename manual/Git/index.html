@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>devo.ps</title>
+  <title>devo.ps &raquo; Git</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='description' content='docs'/>
+  
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -16,7 +16,46 @@
 <body>
   <section id='content'>
     
-Some content
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a>
+  </div>
+
+  <h1>Git</h1>
+</header>
+
+<section class='body'>
+  <p><code>devops</code> lets you manage your servers through Git.  </p>
+<h2 id="creating-a-repository">Creating a repository</h2>
+<p>Creating a repository is done through the web interface on the <a href="https://app.devo.ps/#/user/profile">profile page</a>.</p>
+<p>Once created the repository is reachable at <code>git@app.devo.ps:{user}/{repo}</code> with:</p>
+<ul>
+<li><code>{user}</code>: your login user on <code>devops</code></li>
+<li><code>{repo}</code>: the newly created repo name</li>
+</ul>
+<p><strong>Note</strong>: You need to already have your SSH public key to be able to create a repository.</p>
+<h2 id="cloning-a-repository">Cloning a repository</h2>
+<p>No magic here!</p>
+<pre><code>git clone git@app.devo.ps:USER/REPO
+</code></pre><h2 id="git-folder-structure">Git folder structure</h2>
+<p><code>devops</code> expect the following file structure:</p>
+<pre><code>./
+./nodes/...
+./tasks/...
+./scripts/...
+</code></pre><p>Respectively the <code>nodes</code>, <code>tasks</code> and <code>scripts</code> folders need to hold your ... nodes, tasks, scripts files.</p>
+<p>In each of the folders are provided sample files that can be used as references to create the definitions.</p>
+<h2 id="nodes">Nodes</h2>
+<p>Nodes are described more in detail <a href="/manual/Nodes.html">here</a>.</p>
+<h2 id="tasks">Tasks</h2>
+<p>Tasks are described more in detail <a href="/manual/Tasks.html">here</a>.</p>
+<h2 id="scripts">Scripts</h2>
+<p>Scripts are described more in detail <a href="/manual/Scripts.html">here</a>.</p>
+
+</section>
+
+
+
   </section>
 
   <aside id='sidebar'>

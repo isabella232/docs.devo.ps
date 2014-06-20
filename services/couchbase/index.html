@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>devo.ps</title>
+  <title>devo.ps &raquo; CouchBase</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='description' content='docs'/>
+  
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -16,7 +16,62 @@
 <body>
   <section id='content'>
     
-Some content
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://www.couchbase.com/'>Official website</a>
+  </div>
+
+  <h1>CouchBase</h1>
+</header>
+
+<section class='body'>
+  <p>Couchbase Server is the leading enterprise NoSQL database for scalability, performance, and availability.</p>
+<p>CouchBase Community 2.1.1</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  couchbase: &#39;*&#39;
+configuration:
+  couchbase: {}
+</code></pre><p>Install CouchBase Community on the node and perform no additional customization.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="restart">Restart</h1>
+<p>Do a full restart of the CouchBase service, effectively stopping and re-starting the service.</p>
+<p>For better user experience you may prefer the use of the <code>reload</code> task instead.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops couchbase restart
+</code></pre><h3 id="reload">reload</h3>
+<h1 id="reload">Reload</h1>
+<p>Do a graceful restart of the CouchBase service, reloading the configuration.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops couchbase reload
+</code></pre><h3 id="start">start</h3>
+<h1 id="start">Start</h1>
+<p>Start the CouchBase service, it does not do anything if it is already running.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops couchbase start
+</code></pre><h3 id="stop">stop</h3>
+<h1 id="stop">Stop</h1>
+<p>Stop the Couchbase service, it does not do anything if it is already stopped.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops couchbase stop
+</code></pre>
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+</ul>
+</section>
+
+
   </section>
 
   <aside id='sidebar'>

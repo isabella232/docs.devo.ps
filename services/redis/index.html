@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; Redis</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://redis.io/'>Official website</a>
+  </div>
+
+  <h1>Redis</h1>
+</header>
+
+<section class='body'>
+  <p>Redis is an open source, BSD licensed, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  redis: &#39;*&#39;
+configuration:
+  redis:
+    port: 16379
+    bind: 0.0.0.0
+</code></pre><p>Install Redis on the node, making it listen on all interfaces (0.0.0.0) and on port TCP/16379 instead of TCP/6379 default.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="task-restart">Task Restart</h1>
+<p>Restart Redis Server</p>
+<h3 id="reload">reload</h3>
+<h1 id="task-reload">Task Reload</h1>
+<h3 id="start">start</h3>
+<h1 id="task-start">Task Start</h1>
+<p>Start Redis Server</p>
+<h3 id="stop">stop</h3>
+<h1 id="task-stop">Task Stop</h1>
+<p>Stop Redis Server</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>aom</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>aof_rewrite_min_size</code></strong> (<code>aom.aof_rewrite_min_size</code>)</h3>
+    
+      <p>Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>64mb</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>aof_rewrite_percentage</code></strong> (<code>aom.aof_rewrite_percentage</code>)</h3>
+    
+      <p>Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>100</code></td>
+            <td><code></code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>enable</code></strong> (<code>aom.enable</code>)</h3>
+    
+      <p>Enable Append Only Mode</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>no</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>filename</code></strong> (<code>aom.filename</code>)</h3>
+    
+      <p>Name of the append only file</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>appendonly.aof</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>fsync</code></strong> (<code>aom.fsync</code>)</h3>
+    
+      <p>Fsync mode to sync the append only file</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>everysec</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>no_appendfsync_on_rewrite</code></strong> (<code>aom.no_appendfsync_on_rewrite</code>)</h3>
+    
+      <p>Define whether to (not) append fsync operations if another fsync op is already in progress</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>no</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>bind</code></strong></h3>
+    
+      <p>Binding IP address.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>127.0.0.1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>databases</code></strong></h3>
+    
+      <p>Number of databases within the redis server</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>limits</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>maxclients</code></strong> (<code>limits.maxclients</code>)</h3>
+    
+      <p>Max number of clients connected</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>10000</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxmemory</code></strong> (<code>limits.maxmemory</code>)</h3>
+    
+      <p>Maximum RAM used by Redis to store data (no limit by default) in bytes</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>[object Object]</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>policy</code></strong> (<code>limits.policy</code>)</h3>
+    
+      <p>Define how Redis will remove keys when maxmemory is reached</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>volatile-lru</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>samples</code></strong> (<code>limits.samples</code>)</h3>
+    
+      <p>Sample size to use to base the policy eviction for LRU and TTL policy algorithms</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>3</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>logfile</code></strong></h3>
+    
+      <p>Server log file</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/log/redis/redis-server.log</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>loglevel</code></strong></h3>
+    
+      <p>Server log verbosity</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>notice</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>lua</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>time_limit</code></strong> (<code>lua.time_limit</code>)</h3>
+    
+      <p>Time limit (in ms) for the execution of a LUA script</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>5000</code></td>
+            <td><code></code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>port</code></strong></h3>
+    
+      <p>Connection port.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>6379</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>replication</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>is_slave</code></strong> (<code>replication.is_slave</code>)</h3>
+    
+      <p>Is this redis instance a slave?</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>masterauth</code></strong> (<code>replication.masterauth</code>)</h3>
+    
+      <p>Redis master auth password (if required)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>[object Object]</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>masterip</code></strong> (<code>replication.masterip</code>)</h3>
+    
+      <p>IP or host of the master server</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code></code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>masterport</code></strong> (<code>replication.masterport</code>)</h3>
+    
+      <p>Redis port of the master server</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>6379</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>ping_slave_period</code></strong> (<code>replication.ping_slave_period</code>)</h3>
+    
+      <p>Frequency (in sec) to ping the master server as health check</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>10</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>priority</code></strong> (<code>replication.priority</code>)</h3>
+    
+      <p>Slave priority</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>100</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>read_only</code></strong> (<code>replication.read_only</code>)</h3>
+    
+      <p>Make the slave server read-only (preferred option)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>yes</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>serve_stale_data</code></strong> (<code>replication.serve_stale_data</code>)</h3>
+    
+      <p>Slave redis serves stale data if the connection is lost with the master</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>yes</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>timeout</code></strong> (<code>replication.timeout</code>)</h3>
+    
+      <p>Timeout to Bulk IO transfer and ping response to mark the master as unreachable</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>60</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>security</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>requirepass</code></strong> (<code>security.requirepass</code>)</h3>
+    
+      <p>Require a password to connect (either client or slave)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>[object Object]</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>slowlog</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>log_slower_than</code></strong> (<code>slowlog.log_slower_than</code>)</h3>
+    
+      <p>Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>10000</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>max_len</code></strong> (<code>slowlog.max_len</code>)</h3>
+    
+      <p>Length of the slow log to capture (FIFO based)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>128</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>snapshotting</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>dbfilename</code></strong> (<code>snapshotting.dbfilename</code>)</h3>
+    
+      <p>Filename where to dump the DB</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>dump.rdb</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>dir</code></strong> (<code>snapshotting.dir</code>)</h3>
+    
+      <p>Folder where to store the snapshots</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/lib/redis</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>rdbchecksum</code></strong> (<code>snapshotting.rdbchecksum</code>)</h3>
+    
+      <p>Enable database checksum (use ~10% extra CPU)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>yes</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>rdbcompression</code></strong> (<code>snapshotting.rdbcompression</code>)</h3>
+    
+      <p>Enable database compression</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>yes</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>save</code></strong> (<code>snapshotting.save</code>)</h3>
+    
+      <p>Array of save rules including seconds and number of changes that trigger a save</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>array</code></td>
+            <td><code>[object Object],[object Object],[object Object]</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>syslog</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>enable</code></strong> (<code>syslog.enable</code>)</h3>
+    
+      <p>Send log to syslog</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>no</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>facility</code></strong> (<code>syslog.facility</code>)</h3>
+    
+      <p>Syslog facility</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>local0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>ident</code></strong> (<code>syslog.ident</code>)</h3>
+    
+      <p>Syslog identity</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>redis</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>timeout</code></strong></h3>
+    
+      <p>Close the connection after a client is idle for N seconds (0 to disable)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      
+      <li><a href='/manual/Getting-Started'>Getting Started</a></li>
+      
+      <li><a href='/manual/Git'>Git</a></li>
+      
+      <li><a href='/manual/CLI'>Command Line Interface</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Concepts</h3>
+    <ul>
+      
+      <li><a href='/concepts/Nodes'>Nodes</a></li>
+      
+      <li><a href='/concepts/Tasks'>Tasks</a></li>
+      
+      <li><a href='/concepts/Scripts'>Scripts</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Services</h3>
+    <ul>
+      
+      <li><a href='/apache'>Apache</a></li>
+      
+      <li><a href='/common'>Common</a></li>
+      
+      <li><a href='/couchbase'>CouchBase</a></li>
+      
+      <li><a href='/couchdb'>CouchDB</a></li>
+      
+      <li><a href='/dart'>Dart</a></li>
+      
+      <li><a href='/docker'>Docker</a></li>
+      
+      <li><a href='/elasticsearch'>ElasticSearch</a></li>
+      
+      <li><a href='/go'>Go</a></li>
+      
+      <li><a href='/java'>Java</a></li>
+      
+      <li><a href='/memcached'>Memcached</a></li>
+      
+      <li><a href='/mongodb'>MongoDB</a></li>
+      
+      <li><a href='/mysql'>MySQL</a></li>
+      
+      <li><a href='/nginx'>Nginx</a></li>
+      
+      <li><a href='/nodejs'>Node.js</a></li>
+      
+      <li><a href='/openvpn'>OpenVPN</a></li>
+      
+      <li><a href='/php'>PHP</a></li>
+      
+      <li><a href='/python'>Python</a></li>
+      
+      <li><a href='/rabbitmq'>RabbitMQ</a></li>
+      
+      <li><a href='/redis'>Redis</a></li>
+      
+      <li><a href='/ruby'>Ruby</a></li>
+      
+      <li><a href='/varnish'>Varnish</a></li>
+      
+      <li><a href='/xvfb'>Xvfb</a></li>
+      
+      <li><a href='/zeromq'>ZeroMQ</a></li>
+      
+      <li><a href='/uwsgi'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Providers</h3>
+    <ul>
+      
+      <li><a href='/digital_ocean'>digital ocean</a></li>
+      
+      <li><a href='/ec2'>ec2</a></li>
+      
+      <li><a href='/linode'>linode</a></li>
+      
+      <li><a href='/rackspace'>rackspace</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>

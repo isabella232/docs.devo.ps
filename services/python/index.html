@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>devo.ps</title>
+  <title>devo.ps &raquo; Python</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='description' content='docs'/>
+  
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -16,7 +16,58 @@
 <body>
   <section id='content'>
     
-Some content
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='https://www.python.org/'>Official website</a>
+  </div>
+
+  <h1>Python</h1>
+</header>
+
+<section class='body'>
+  <p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  python: &#39;*&#39;
+configuration:
+  python:
+    packages:
+      - pyyaml
+</code></pre><p>Add support for Python, allowing custom packages to be installed (globally) on the node.</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>packages</code></strong></h3>
+    
+      <p>List of pip packages to install globally on the system</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>array</code></td>
+            <td><code></code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
+
   </section>
 
   <aside id='sidebar'>

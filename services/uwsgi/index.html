@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>devo.ps</title>
+  <title>devo.ps &raquo; uWSGI</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='description' content='docs'/>
+  
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -16,7 +16,60 @@
 <body>
   <section id='content'>
     
-Some content
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://projects.unbit.it/uwsgi/'>Official website</a>
+  </div>
+
+  <h1>uWSGI</h1>
+</header>
+
+<section class='body'>
+  <p>The uWSGI project aims at developing a full stack for building hosting services.</p>
+<p>Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.</p>
+<p>Thanks to its pluggable architecture it can be extended to support more platforms and languages.</p>
+<p>Currently, you can write plugins in C, C++ and Objective-C.</p>
+<p>The &quot;WSGI&quot; part in the name is a tribute to the namesake Python standard, as it has been the first developed plugin for the project.</p>
+<p>Versatility, performance, low-resource usage and reliability are the strengths of the project (and the only rules followed).</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  uwsgi: &#39;*&#39;
+</code></pre><p>Add support for uWSGI on the node, installing Python Emperor to manage the applications.</p>
+<p>Note that the applications are managed via dedicated tasks.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="task-restart">Task Restart</h1>
+<p>Restart emperor service</p>
+<h3 id="add-app">add app</h3>
+<h1 id="add-uwsgi-app">Add uwsgi app</h1>
+<p>Define a uWsgi app to be ran via Emperor. It will create the Emperor configuration file based on the passed options&#39; task and ensure it is running.</p>
+<h1 id="example-in-a-task">Example in a task</h1>
+<pre><code>do:
+  - run: devops uwsgi add_app
+    options:
+      name: my_app
+      root: /opt/that_folder
+      module: some_django_module
+      port: 3000
+</code></pre><h3 id="start">start</h3>
+<h1 id="task-start">Task Start</h1>
+<p>Start emperor service</p>
+<h3 id="stop">stop</h3>
+<h1 id="task-stop">Task Stop</h1>
+<p>Stop emperor service</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+</ul>
+</section>
+
+
   </section>
 
   <aside id='sidebar'>

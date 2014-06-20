@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>devo.ps</title>
+  <title>devo.ps &raquo; Node.js</title>
 
   <!-- Meta -->
   <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='description' content='docs'/>
+  
   
   <!-- CSS -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
@@ -16,7 +16,72 @@
 <body>
   <section id='content'>
     
-Some content
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://nodejs.org/'>Official website</a>
+  </div>
+
+  <h1>Node.js</h1>
+</header>
+
+<section class='body'>
+  <p>Node.js is a platform built on Chrome&#39;s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  nodejs: &#39;*&#39;
+configuration:
+  nodejs: 
+    packages:
+      - forever
+      - bower
+      - grunt-cli
+</code></pre><p>Install Node.js on the node, and install globally <code>forever</code>, <code>bower</code> and <code>grunt-cli</code> (as in <code>npm install -g xxx</code>).</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="task-restart">Task Restart</h1>
+<p>Restart node.js forever service</p>
+<h3 id="add-app">add app</h3>
+<h1 id="task-add_app">Task Add_app</h1>
+<h3 id="start">start</h3>
+<h1 id="task-start">Task Start</h1>
+<p>Start node.js forever service</p>
+<h3 id="stop">stop</h3>
+<h1 id="task-stop">Task Stop</h1>
+<p>Stop node.js forever service</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>packages</code></strong></h3>
+    
+      <p>List of packages to have globally installed on the server</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>array</code></td>
+            <td><code></code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
+
   </section>
 
   <aside id='sidebar'>

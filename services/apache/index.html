@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; Apache</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://httpd.apache.org/'>Official website</a>
+  </div>
+
+  <h1>Apache</h1>
+</header>
+
+<section class='body'>
+  <p>The Number One HTTP Server On The Internet</p>
+<p>The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.</p>
+<p>Apache httpd has been the most popular web server on the Internet since April 1996, and celebrated its 17th birthday as a project this February.</p>
+<p>The Apache HTTP Server (&quot;httpd&quot;) is a project of The Apache Software Foundation.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  apache: &#39;*&#39;
+configuration:
+  apache:
+    timeout: 60
+    prefork:
+      maxclients: 20
+      maxrequestsperchild: 1000
+</code></pre><p>Install Apache on the node, sets a timeout of 60 seconds on receive / send, set the prefork MPM to start at most 20 Apache child processes and ensure each Apache child process will handle at most 1000 requests before respawning.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="restart">Restart</h1>
+<p>Do a full restart of the Apache service, killing existing HTTP connections.</p>
+<p>For better user experience you may prefer the use of the <code>reload</code> task instead.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache restart
+</code></pre><h3 id="reload">reload</h3>
+<h1 id="reload">Reload</h1>
+<p>Do a graceful restart of the Apache service, reloading the configuration.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache reload
+</code></pre><h3 id="start">start</h3>
+<h1 id="start">Start</h1>
+<p>Start the Apache service, it does not do anything if it is already running.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache start
+</code></pre><h3 id="stop">stop</h3>
+<h1 id="stop">Stop</h1>
+<p>Stop the Apache service, it does not do anything if it is already stopped.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache stop
+</code></pre>
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>event</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>maxclients</code></strong> (<code>event.maxclients</code>)</h3>
+    
+      <p>Maximum number of simultaneous client connections</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>150</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxrequestsperchild</code></strong> (<code>event.maxrequestsperchild</code>)</h3>
+    
+      <p>Maximum number of requests a server process serves.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxsparethreads</code></strong> (<code>event.maxsparethreads</code>)</h3>
+    
+      <p>Maximum number of worker threads which are kept spare.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>75</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>minsparethreads</code></strong> (<code>event.minsparethreads</code>)</h3>
+    
+      <p>Minimum number of worker threads which are kept spare,</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>25</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>startservers</code></strong> (<code>event.startservers</code>)</h3>
+    
+      <p>Initial number of server processes to start.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>5</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>threadlimit</code></strong> (<code>event.threadlimit</code>)</h3>
+    
+      <p>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>64</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>threadsperchild</code></strong> (<code>event.threadsperchild</code>)</h3>
+    
+      <p>Constant number of worker threads in each server process.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>25</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>group</code></strong></h3>
+    
+      <p>Apache running group.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>www-data</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>keepalive</code></strong></h3>
+    
+      <p>Whether or not to allow persistent connections.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>true</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>keepalivetimout</code></strong></h3>
+    
+      <p>Number of seconds to wait for the next request from the same client on the same connection.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>5</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxkeepaliverequests</code></strong></h3>
+    
+      <p>The maximum number of requests to allow during a persistent connection.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>100</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>prefork</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>maxclients</code></strong> (<code>prefork.maxclients</code>)</h3>
+    
+      <p>Maximum number of server processes allowed to start.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>150</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxrequestsperchild</code></strong> (<code>prefork.maxrequestsperchild</code>)</h3>
+    
+      <p>Maximum number of requests a server process serves.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>4000</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxspareservers</code></strong> (<code>prefork.maxspareservers</code>)</h3>
+    
+      <p>Maximum number of server processes which are kept spare.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>10</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>minspareservers</code></strong> (<code>prefork.minspareservers</code>)</h3>
+    
+      <p>Minimum number of server processes which are kept spare.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>2</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>startservers</code></strong> (<code>prefork.startservers</code>)</h3>
+    
+      <p>Number of server processes to start.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>5</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>timeout</code></strong></h3>
+    
+      <p>The number of seconds before receives and sends time out.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>300</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>user</code></strong></h3>
+    
+      <p>Apache running user.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>www-data</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>worker</code></strong></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><strong><code>maxclients</code></strong> (<code>worker.maxclients</code>)</h3>
+    
+      <p>Maximum number of simultaneous client connections</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>150</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxrequestsperchild</code></strong> (<code>worker.maxrequestsperchild</code>)</h3>
+    
+      <p>Maximum number of requests a server process serves.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>maxsparethreads</code></strong> (<code>worker.maxsparethreads</code>)</h3>
+    
+      <p>Maximum number of worker threads which are kept spare.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>75</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>minsparethreads</code></strong> (<code>worker.minsparethreads</code>)</h3>
+    
+      <p>Minimum number of worker threads which are kept spare,</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>25</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>startservers</code></strong> (<code>worker.startservers</code>)</h3>
+    
+      <p>Initial number of server processes to start.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>5</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>threadlimit</code></strong> (<code>worker.threadlimit</code>)</h3>
+    
+      <p>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>64</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>threadsperchild</code></strong> (<code>worker.threadsperchild</code>)</h3>
+    
+      <p>Constant number of worker threads in each server process.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>25</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+</ul>
+</section>
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      
+      <li><a href='/manual/Getting-Started'>Getting Started</a></li>
+      
+      <li><a href='/manual/Git'>Git</a></li>
+      
+      <li><a href='/manual/CLI'>Command Line Interface</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Concepts</h3>
+    <ul>
+      
+      <li><a href='/concepts/Nodes'>Nodes</a></li>
+      
+      <li><a href='/concepts/Tasks'>Tasks</a></li>
+      
+      <li><a href='/concepts/Scripts'>Scripts</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Services</h3>
+    <ul>
+      
+      <li><a href='/apache'>Apache</a></li>
+      
+      <li><a href='/common'>Common</a></li>
+      
+      <li><a href='/couchbase'>CouchBase</a></li>
+      
+      <li><a href='/couchdb'>CouchDB</a></li>
+      
+      <li><a href='/dart'>Dart</a></li>
+      
+      <li><a href='/docker'>Docker</a></li>
+      
+      <li><a href='/elasticsearch'>ElasticSearch</a></li>
+      
+      <li><a href='/go'>Go</a></li>
+      
+      <li><a href='/java'>Java</a></li>
+      
+      <li><a href='/memcached'>Memcached</a></li>
+      
+      <li><a href='/mongodb'>MongoDB</a></li>
+      
+      <li><a href='/mysql'>MySQL</a></li>
+      
+      <li><a href='/nginx'>Nginx</a></li>
+      
+      <li><a href='/nodejs'>Node.js</a></li>
+      
+      <li><a href='/openvpn'>OpenVPN</a></li>
+      
+      <li><a href='/php'>PHP</a></li>
+      
+      <li><a href='/python'>Python</a></li>
+      
+      <li><a href='/rabbitmq'>RabbitMQ</a></li>
+      
+      <li><a href='/redis'>Redis</a></li>
+      
+      <li><a href='/ruby'>Ruby</a></li>
+      
+      <li><a href='/varnish'>Varnish</a></li>
+      
+      <li><a href='/xvfb'>Xvfb</a></li>
+      
+      <li><a href='/zeromq'>ZeroMQ</a></li>
+      
+      <li><a href='/uwsgi'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Providers</h3>
+    <ul>
+      
+      <li><a href='/digital_ocean'>digital ocean</a></li>
+      
+      <li><a href='/ec2'>ec2</a></li>
+      
+      <li><a href='/linode'>linode</a></li>
+      
+      <li><a href='/rackspace'>rackspace</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>

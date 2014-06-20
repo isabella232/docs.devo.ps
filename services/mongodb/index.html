@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>devo.ps &raquo; MongoDB</title>
+
+  <!-- Meta -->
+  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  
+  <!-- CSS -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <section id='content'>
+    
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='https://www.mongodb.org/'>Official website</a>
+  </div>
+
+  <h1>MongoDB</h1>
+</header>
+
+<section class='body'>
+  <p>MongoDB (from &quot;humongous&quot;) is an open-source document database, and the leading NoSQL database. Written in C++.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  mongodb: &#39;*&#39;
+configuration:
+  mongodb:
+    bindip: 0.0.0.0
+    port: 27018
+    enable_rest: true
+</code></pre><p>Install MongoDB on the node, make the service listen on all interfaces (0.0.0.0), change the listening port to TCP/27018 (instead of 27017 by default), and enable the REST interface (allowing REST api calls against the Mongo database)</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="task-restart">Task Restart</h1>
+<p>Restart MongoDB</p>
+<h3 id="reload">reload</h3>
+<h1 id="task-reload">Task Reload</h1>
+<h3 id="start">start</h3>
+<h1 id="task-start">Task Start</h1>
+<p>Start MongoDB</p>
+<h3 id="stop">stop</h3>
+<h1 id="task-stop">Task Stop</h1>
+<p>Stop MongoDB</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><strong><code>bindip</code></strong></h3>
+    
+      <p>Binding IP address.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>127.0.0.1</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>dbpath</code></strong></h3>
+    
+      <p>Database files path.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/lib/mongodb</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>enable</code></strong></h3>
+    
+      <p>Enable or disable mongodb service.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>yes</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>enable_rest</code></strong></h3>
+    
+      <p>Enable REST over the HTTP interface</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>logpath</code></strong></h3>
+    
+      <p>Database log file path.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>/var/log/mongodb/mongodb.log</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>nohttp</code></strong></h3>
+    
+      <p>Disable entirely the HTTP interface.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>false</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>port</code></strong></h3>
+    
+      <p>Connection port.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>27017</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><strong><code>user</code></strong></h3>
+    
+      <p>Mongodb running user.</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>mongodb</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
+
+  </section>
+
+  <aside id='sidebar'>
+    <header class='header'>
+      <h2>devo.ps documentation</h2>
+    </header>
+    <section class='body'>
+      <ul>
+  <li><a href='/'>Getting started</a></li>
+  <li><a href='/overview.html'>Overview</a></li>
+  <li>
+    <h3>Manual</h3>
+    <ul>
+      
+      <li><a href='/manual/Getting-Started'>Getting Started</a></li>
+      
+      <li><a href='/manual/Git'>Git</a></li>
+      
+      <li><a href='/manual/CLI'>Command Line Interface</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Concepts</h3>
+    <ul>
+      
+      <li><a href='/concepts/Nodes'>Nodes</a></li>
+      
+      <li><a href='/concepts/Tasks'>Tasks</a></li>
+      
+      <li><a href='/concepts/Scripts'>Scripts</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Services</h3>
+    <ul>
+      
+      <li><a href='/apache'>Apache</a></li>
+      
+      <li><a href='/common'>Common</a></li>
+      
+      <li><a href='/couchbase'>CouchBase</a></li>
+      
+      <li><a href='/couchdb'>CouchDB</a></li>
+      
+      <li><a href='/dart'>Dart</a></li>
+      
+      <li><a href='/docker'>Docker</a></li>
+      
+      <li><a href='/elasticsearch'>ElasticSearch</a></li>
+      
+      <li><a href='/go'>Go</a></li>
+      
+      <li><a href='/java'>Java</a></li>
+      
+      <li><a href='/memcached'>Memcached</a></li>
+      
+      <li><a href='/mongodb'>MongoDB</a></li>
+      
+      <li><a href='/mysql'>MySQL</a></li>
+      
+      <li><a href='/nginx'>Nginx</a></li>
+      
+      <li><a href='/nodejs'>Node.js</a></li>
+      
+      <li><a href='/openvpn'>OpenVPN</a></li>
+      
+      <li><a href='/php'>PHP</a></li>
+      
+      <li><a href='/python'>Python</a></li>
+      
+      <li><a href='/rabbitmq'>RabbitMQ</a></li>
+      
+      <li><a href='/redis'>Redis</a></li>
+      
+      <li><a href='/ruby'>Ruby</a></li>
+      
+      <li><a href='/varnish'>Varnish</a></li>
+      
+      <li><a href='/xvfb'>Xvfb</a></li>
+      
+      <li><a href='/zeromq'>ZeroMQ</a></li>
+      
+      <li><a href='/uwsgi'>uWSGI</a></li>
+      
+    </ul>
+  </li>
+  <li>
+    <h3>Providers</h3>
+    <ul>
+      
+      <li><a href='/digital_ocean'>digital ocean</a></li>
+      
+      <li><a href='/ec2'>ec2</a></li>
+      
+      <li><a href='/linode'>linode</a></li>
+      
+      <li><a href='/rackspace'>rackspace</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    </section>
+    <footer class='footer'>
+      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
+    </footer>
+  </aside>
+  
+  <!-- JS -->
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript' src='/assets/scripts.js'></script>
+	
+  
+</body>
+</html>
