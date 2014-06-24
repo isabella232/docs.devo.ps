@@ -2,5 +2,7 @@
 !.gitignore
 !.gitmodules
 *~
+
 node_modules/
 public/
+_site/
