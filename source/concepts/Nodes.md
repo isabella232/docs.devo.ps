@@ -22,7 +22,7 @@ A node is described in a YAML file. It __must__ be named as the node.id.
     provider:
       type: digitalocean
       size: 66
-      region: 3
+      location: 3
       image: ubuntu13.10    
 
     services: {}
@@ -38,7 +38,7 @@ Key | Type | Required | Default | Description
 **name** | `string` | `true` | | The name of the server, will appear on the web interface
 **type** | `string` | `true` | |Type of the node, currently only `server` is supported
 **disabled** | `bool` | `false` | `false` | Whether or not consider the node as disabled
-**provider** | `object` | `true` | | The provider's detail of the node, used on provisioning, see the [providers references](/references/providers.html) for more details
+**provider** | `object` | `true` | | The provider's detail of the node, used on provisioning, see the [providers references](/providers) for more details
 **services** | `object` | `true` | | The services to install on the node, see the References section for the list of supported services
 **configuration** | `object` | `true` | | The configuration for each of the services defined in the `services`
 
