@@ -95,8 +95,19 @@ body {
     }
   }
   .content {
-    /*@include font-size($smaller);*/
     margin-left: $sidebar + 2*$gutter;
+    h2 {
+      /* <hack> to avoid header to obscure titles */
+      margin-top: -3*$gutter;
+      padding-top: 3*$gutter;
+      /* <\hack> */
+    }
+    table {
+      .code,
+      code {
+        white-space: nowrap;
+      }
+    }
   }
 }
 

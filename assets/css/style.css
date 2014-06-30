@@ -1195,5 +1195,11 @@ body {
         color: #203442;
         font-weight: bold; }
   #main .content {
-    /*@include font-size($smaller);*/
     margin-left: 240px; }
+    #main .content h2 {
+      /* <hack> to avoid header to obscure titles */
+      margin-top: -60px;
+      padding-top: 60px;
+      /* <\hack> */ }
+    #main .content table .code, #main .content table code {
+      white-space: nowrap; }

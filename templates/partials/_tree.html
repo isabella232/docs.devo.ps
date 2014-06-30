@@ -1,7 +1,7 @@
 <ul>
   {% for val in tree %}
   <li>
-    <h3><strong><code>{{ loop.key }}</code></strong>{% if parent %} (<code>{{ parent }}.{{ loop.key }}</code>){% endif %}</h3>
+    <h3><code>{% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></h3>
     {% if val.type and val.description %}
       <p>{{ val.description }}</p>
       <table>
