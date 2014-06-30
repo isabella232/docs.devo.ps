@@ -1,556 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <title>devo.ps &raquo; OpenVPN</title>
-
-  <!-- Meta -->
-  <link rel='shortcut icon' href='/assets/images/favicon.ico' />
   <meta charset='utf-8'/>
+  <title>OpenVPN | devo.ps Documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
-  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
   <!-- CSS -->
-  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'> -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/> -->
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-  <section id='content'>
-    
-<header class='header'>
-    <div class='controls'>
-        <a href='#'>Permalink</a><a href='http://openvpn.net/'>Official website</a>
-  </div>
+  <header id='header'>
+    <div class='content'>
+      <input class='search' type='text' placeholder='Type in to start search'/>
 
-  <h1>OpenVPN</h1>
-</header>
+<h2><a href='http://devo.ps'>devo.ps</a> documentation</h2>
+    </div>
+  </header>
 
-<section class='body'>
-  <p>SSL/TLS based user-space VPN. Supports Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X, and Windows 2000/XP.</p>
-<h2 id="example">Example</h2>
-<pre><code>services:
-  openvpn: &#39;*&#39;
-configuration:
-  openvpn:
-    port: 6543
-    proto: &#39;tcp&#39;
-    max_client: 10
-    key:
-      key_size: 2048
-      email: me@example.com
-</code></pre><p>Install OpenVPN on the node, configure the service so it listen on TCP/6543 (instead of regular UDP/1194), limit the number of concurrent clients to 10 and set the server&#39;s key to be 2048bits with a custom email in the certificate.</p>
-<p>Note that the default values of the configuration will satisfy most of the use and those customization are more for advanced users.</p>
-<p>The management of OpenVPN clients is handled by dedicated tasks.</p>
-<h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart OpenVPN</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="add-user">add user</h3>
-<h1 id="task-add_user">Task Add_user</h1>
-<p>Add a new OpenVPN client</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop OpenVPN</p>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start OpenVPN</p>
-
-</section>
-
-
-<section class='configuration'>
-  <h2>Configuration</h2>
-    
-    <ul>
-  
-  <li>
-    <h3><strong><code>cipher</code></strong></h3>
-    
-      <p>cipher</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>BF-CBC</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>dev</code></strong></h3>
-    
-      <p>Device type</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>tun</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>dns1</code></strong></h3>
-    
-      <p>DNS to propagate to the clients (default to OpenDNS)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>208.67.222.222</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>dns2</code></strong></h3>
-    
-      <p>DNS to propagate to the clients (default to OpenDNS)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>208.67.220.220</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>group</code></strong></h3>
-    
-      <p>Running group of openvpn (must exist)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>nogroup</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>key</code></strong></h3>
-    
-      
-        
-      
-      
-      <ul>
-  
-  <li>
-    <h3><strong><code>ca_expire</code></strong> (<code>key.ca_expire</code>)</h3>
-    
-      <p>CA validity period (in days)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>3650</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>city</code></strong> (<code>key.city</code>)</h3>
-    
-      <p>Key city</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>SanFrancisco</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>common_name</code></strong> (<code>key.common_name</code>)</h3>
-    
-      <p>Key Common Name (CN)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>server</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>country</code></strong> (<code>key.country</code>)</h3>
-    
-      <p>Key country</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>US</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>email</code></strong> (<code>key.email</code>)</h3>
-    
-      <p>Key email</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>admin@server</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>key_expire</code></strong> (<code>key.key_expire</code>)</h3>
-    
-      <p>Key validity period (in days)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>3650</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>key_size</code></strong> (<code>key.key_size</code>)</h3>
-    
-      <p>Increase key size if you are paranoid; it will slow down TLS negociation</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>1024</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>name</code></strong> (<code>key.name</code>)</h3>
-    
-      <p>Key name</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>server</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>org</code></strong> (<code>key.org</code>)</h3>
-    
-      <p>Key Organization</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>Fort-Funston</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>org_unit</code></strong> (<code>key.org_unit</code>)</h3>
-    
-      <p>Key Organization Unit (OU)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>server</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>province</code></strong> (<code>key.province</code>)</h3>
-    
-      <p>Key province</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>CA</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-</ul>
-      
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>max_client</code></strong></h3>
-    
-      <p>Maximum number of simultaneous clients</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>100</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>netmask</code></strong></h3>
-    
-      <p>Netmask to apply on IP range for clients</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>255.255.255.0</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>network</code></strong></h3>
-    
-      <p>Network IP range for clients</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>10.8.0.0</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>port</code></strong></h3>
-    
-      <p>Listening port</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>1194</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>proto</code></strong></h3>
-    
-      <p>Protocol</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>udp</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-  <li>
-    <h3><strong><code>user</code></strong></h3>
-    
-      <p>Running user of openvpn (must exist)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>nobody</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
-  
-</ul>
-</section>
-
-
-  </section>
-
-  <aside id='sidebar'>
-    <header class='header'>
-      <h2>devo.ps documentation</h2>
-    </header>
-    <section class='body'>
+  <section id='main'>
+    <aside class='sidebar'>
       <ul>
   <li><a href='/'>Getting started</a></li>
   <li><a href='/overview.html'>Overview</a></li>
@@ -647,17 +136,547 @@ configuration:
     </ul>
   </li>
 </ul>
+    </aside>
+
+    <section class='content'>
+      
+<header class='header'>
+    <div class='controls'>
+        <a href='#'>Permalink</a><a href='http://openvpn.net/'>Official website</a>
+  </div>
+
+  <h1>OpenVPN</h1>
+</header>
+
+<section class='body'>
+  <p>SSL/TLS based user-space VPN. Supports Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X, and Windows 2000/XP.</p>
+<h2 id="example">Example</h2>
+<pre><code>services:
+  openvpn: &#39;*&#39;
+configuration:
+  openvpn:
+    port: 6543
+    proto: &#39;tcp&#39;
+    max_client: 10
+    key:
+      key_size: 2048
+      email: me@example.com
+</code></pre><p>Install OpenVPN on the node, configure the service so it listen on TCP/6543 (instead of regular UDP/1194), limit the number of concurrent clients to 10 and set the server&#39;s key to be 2048bits with a custom email in the certificate.</p>
+<p>Note that the default values of the configuration will satisfy most of the use and those customization are more for advanced users.</p>
+<p>The management of OpenVPN clients is handled by dedicated tasks.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="restart">restart</h3>
+<h1 id="task-restart">Task Restart</h1>
+<p>Restart OpenVPN</p>
+<h3 id="reload">reload</h3>
+<h1 id="task-reload">Task Reload</h1>
+<h3 id="add-user">add user</h3>
+<h1 id="task-add_user">Task Add_user</h1>
+<p>Add a new OpenVPN client</p>
+<h3 id="stop">stop</h3>
+<h1 id="task-stop">Task Stop</h1>
+<p>Stop OpenVPN</p>
+<h3 id="start">start</h3>
+<h1 id="task-start">Task Start</h1>
+<p>Start OpenVPN</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2 id='configuration'>Configuration</h2>
+    
+    <ul>
+  
+  <li>
+    <h3><code>cipher</code></h3>
+    
+      <p>cipher</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>BF-CBC</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>dev</code></h3>
+    
+      <p>Device type</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>tun</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>dns1</code></h3>
+    
+      <p>DNS to propagate to the clients (default to OpenDNS)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>208.67.222.222</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>dns2</code></h3>
+    
+      <p>DNS to propagate to the clients (default to OpenDNS)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>208.67.220.220</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>group</code></h3>
+    
+      <p>Running group of openvpn (must exist)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>nogroup</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key</code></h3>
+    
+      
+        
+      
+      
+      <ul>
+  
+  <li>
+    <h3><code>key.ca_expire</code></h3>
+    
+      <p>CA validity period (in days)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>3650</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.city</code></h3>
+    
+      <p>Key city</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>SanFrancisco</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.common_name</code></h3>
+    
+      <p>Key Common Name (CN)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>server</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.country</code></h3>
+    
+      <p>Key country</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>US</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.email</code></h3>
+    
+      <p>Key email</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>admin@server</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.key_expire</code></h3>
+    
+      <p>Key validity period (in days)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>3650</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.key_size</code></h3>
+    
+      <p>Increase key size if you are paranoid; it will slow down TLS negociation</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1024</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.name</code></h3>
+    
+      <p>Key name</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>server</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.org</code></h3>
+    
+      <p>Key Organization</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>Fort-Funston</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.org_unit</code></h3>
+    
+      <p>Key Organization Unit (OU)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>server</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>key.province</code></h3>
+    
+      <p>Key province</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>CA</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+      
+    
+  </li>
+  
+  <li>
+    <h3><code>max_client</code></h3>
+    
+      <p>Maximum number of simultaneous clients</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>100</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>netmask</code></h3>
+    
+      <p>Netmask to apply on IP range for clients</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>255.255.255.0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>network</code></h3>
+    
+      <p>Network IP range for clients</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>10.8.0.0</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>port</code></h3>
+    
+      <p>Listening port</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>integer</code></td>
+            <td><code>1194</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>proto</code></h3>
+    
+      <p>Protocol</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>udp</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+  <li>
+    <h3><code>user</code></h3>
+    
+      <p>Running user of openvpn (must exist)</p>
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Required</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>string</code></td>
+            <td><code>nobody</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </li>
+  
+</ul>
+</section>
+
 
     </section>
-    <footer class='footer'>
-      <a href='http://devo.ps'><span>Go to devo.ps</span></a>
-    </footer>
-  </aside>
-  
+  </section>
+
   <!-- JS -->
+  <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
-  <script type='text/javascript' src='/assets/scripts.js'></script>
-	
+  
   
 </body>
 </html>
