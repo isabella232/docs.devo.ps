@@ -49,6 +49,9 @@
             "scss": [
                 "assets/scss/**/*.{scss,sass}"
             ],
+            "favicons": [
+                "assets/favicons/*"
+            ],
             "fonts": [
                 "assets/fonts/*"
             ]

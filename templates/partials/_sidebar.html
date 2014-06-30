@@ -5,7 +5,7 @@
     <h3>Manual</h3>
     <ul>
       {% for item in manual_menu %}
-      <li><a href='/manual/{{ item.link }}'>{{ item.title }}</a></li>
+      <li><a href='/manual/{{ item.link }}'{% if path ==  'manual/' + item.link %} class='active'{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </li>
