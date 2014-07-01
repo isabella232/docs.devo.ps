@@ -41,8 +41,78 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/'>Getting started</a></li>
   <li><a href='/overview.html'>Overview</a></li>
+  
+  <li><a href='/concepts/Nodes' >Nodes</a></li>
+  
+  <li><a href='/concepts/Scripts' >Scripts</a></li>
+  
+  <li><a href='/concepts/Tasks' >Tasks</a></li>
+  
+  <li><a href='/manual/CLI' >CLI</a></li>
+  
+  <li><a href='/manual/Getting-Started' >Getting Started</a></li>
+  
+  <li><a href='/manual/Git' >Git</a></li>
+  
+  <li><a href='/providers/digital_ocean' >digital ocean</a></li>
+  
+  <li><a href='/providers/ec2' >ec2</a></li>
+  
+  <li><a href='/providers/linode' >linode</a></li>
+  
+  <li><a href='/providers/rackspace' >rackspace</a></li>
+  
+  <li><a href='/services/apache' >Apache</a></li>
+  
+  <li><a href='/services/common' >Common</a></li>
+  
+  <li><a href='/services/couchbase' >CouchBase</a></li>
+  
+  <li><a href='/services/couchdb' >CouchDB</a></li>
+  
+  <li><a href='/services/dart' >Dart</a></li>
+  
+  <li><a href='/services/docker' >Docker</a></li>
+  
+  <li><a href='/services/elasticsearch' >ElasticSearch</a></li>
+  
+  <li><a href='/services/go' >Go</a></li>
+  
+  <li><a href='/services/java' >Java</a></li>
+  
+  <li><a href='/services/memcached' >Memcached</a></li>
+  
+  <li><a href='/services/mongodb' >MongoDB</a></li>
+  
+  <li><a href='/services/mysql' >MySQL</a></li>
+  
+  <li><a href='/services/nginx' >Nginx</a></li>
+  
+  <li><a href='/services/nodejs' >Node.js</a></li>
+  
+  <li><a href='/services/openvpn' >OpenVPN</a></li>
+  
+  <li><a href='/services/php' >PHP</a></li>
+  
+  <li><a href='/services/python' >Python</a></li>
+  
+  <li><a href='/services/rabbitmq' >RabbitMQ</a></li>
+  
+  <li><a href='/services/redis' >Redis</a></li>
+  
+  <li><a href='/services/ruby' >Ruby</a></li>
+  
+  <li><a href='/services/uwsgi' >uWSGI</a></li>
+  
+  <li><a href='/services/varnish'  class='active'>Varnish</a></li>
+  
+  <li><a href='/services/xvfb' >Xvfb</a></li>
+  
+  <li><a href='/services/zeromq' >ZeroMQ</a></li>
+  
+</ul>
+<!--
   <li>
     <h3>Manual</h3>
     <ul>
@@ -136,16 +206,18 @@
     </ul>
   </li>
 </ul>
+ -->
     </aside>
 
     <section class='content'>
       
 <header class='header'>
-    <div class='controls'>
-        <a href='#'>Permalink</a><a href='https://www.varnish-cache.org/'>Official website</a>
-  </div>
-
   <h1>Varnish</h1>
+  <div class='tags'>
+    caching
+  </div>
+  
+
 </header>
 
 <section class='body'>
@@ -179,283 +251,284 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
+  <ul>
     
-    <ul>
+    
   
-  <li>
-    <h3><code>admin_listen_address</code></h3>
-    
-      <p>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>127.0.0.1</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>admin_listen_address</code></h3>
+  <p>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>127.0.0.1</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>admin_listen_port</code></h3>
-    
-      <p>Telnet admin interface listen port.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>6082</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>listen_address</code></h3>
-    
-      <p>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code></code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>admin_listen_port</code></h3>
+  <p>Telnet admin interface listen port.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>6082</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>listen_port</code></h3>
-    
-      <p>Listen port.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>6081</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>max_threads</code></h3>
-    
-      <p>The maximum number of worker threads to start.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>1000</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>listen_address</code></h3>
+  <p>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code></code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>min_threads</code></h3>
-    
-      <p>The minimum number of worker threads to start.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>1</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>secret_file</code></h3>
-    
-      <p>File containing administration secret.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/etc/varnish/secret</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>listen_port</code></h3>
+  <p>Listen port.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>6081</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>storage_file</code></h3>
-    
-      <p>Storage file, only used if storage_type is file.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>storage_size</code></h3>
-    
-      <p>Cache size: in bytes, optionally using k / M / G / T suffix.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>256M</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>max_threads</code></h3>
+  <p>The maximum number of worker threads to start.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>1000</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>storage_type</code></h3>
-    
-      <p>Store objects either in memory (malloc), on in a file (file).</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>malloc</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>thread_timeout</code></h3>
-    
-      <p>Idle timeout for worker threads.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>120</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>min_threads</code></h3>
+  <p>The minimum number of worker threads to start.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>1</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>ttl</code></h3>
-    
-      <p>Default TTL used when the backend does not specify one.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>120</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>vcl_conf</code></h3>
-    
-      <p>Main configuration file.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/etc/varnish/default.vcl</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>secret_file</code></h3>
+  <p>File containing administration secret.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/etc/varnish/secret</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-</ul>
+
+  
+<li>
+  <h3><code>storage_file</code></h3>
+  <p>Storage file, only used if storage_type is file.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>storage_size</code></h3>
+  <p>Cache size: in bytes, optionally using k / M / G / T suffix.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>256M</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>storage_type</code></h3>
+  <p>Store objects either in memory (malloc), on in a file (file).</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>malloc</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>thread_timeout</code></h3>
+  <p>Idle timeout for worker threads.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>120</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>ttl</code></h3>
+  <p>Default TTL used when the backend does not specify one.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>120</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>vcl_conf</code></h3>
+  <p>Main configuration file.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/etc/varnish/default.vcl</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+
+  </ul>
 </section>
 
 

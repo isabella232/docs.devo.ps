@@ -41,8 +41,78 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/'>Getting started</a></li>
   <li><a href='/overview.html'>Overview</a></li>
+  
+  <li><a href='/concepts/Nodes' >Nodes</a></li>
+  
+  <li><a href='/concepts/Scripts' >Scripts</a></li>
+  
+  <li><a href='/concepts/Tasks' >Tasks</a></li>
+  
+  <li><a href='/manual/CLI' >CLI</a></li>
+  
+  <li><a href='/manual/Getting-Started' >Getting Started</a></li>
+  
+  <li><a href='/manual/Git' >Git</a></li>
+  
+  <li><a href='/providers/digital_ocean' >digital ocean</a></li>
+  
+  <li><a href='/providers/ec2' >ec2</a></li>
+  
+  <li><a href='/providers/linode' >linode</a></li>
+  
+  <li><a href='/providers/rackspace' >rackspace</a></li>
+  
+  <li><a href='/services/apache' >Apache</a></li>
+  
+  <li><a href='/services/common' >Common</a></li>
+  
+  <li><a href='/services/couchbase' >CouchBase</a></li>
+  
+  <li><a href='/services/couchdb' >CouchDB</a></li>
+  
+  <li><a href='/services/dart' >Dart</a></li>
+  
+  <li><a href='/services/docker' >Docker</a></li>
+  
+  <li><a href='/services/elasticsearch' >ElasticSearch</a></li>
+  
+  <li><a href='/services/go' >Go</a></li>
+  
+  <li><a href='/services/java' >Java</a></li>
+  
+  <li><a href='/services/memcached' >Memcached</a></li>
+  
+  <li><a href='/services/mongodb' >MongoDB</a></li>
+  
+  <li><a href='/services/mysql' >MySQL</a></li>
+  
+  <li><a href='/services/nginx'  class='active'>Nginx</a></li>
+  
+  <li><a href='/services/nodejs' >Node.js</a></li>
+  
+  <li><a href='/services/openvpn' >OpenVPN</a></li>
+  
+  <li><a href='/services/php' >PHP</a></li>
+  
+  <li><a href='/services/python' >Python</a></li>
+  
+  <li><a href='/services/rabbitmq' >RabbitMQ</a></li>
+  
+  <li><a href='/services/redis' >Redis</a></li>
+  
+  <li><a href='/services/ruby' >Ruby</a></li>
+  
+  <li><a href='/services/uwsgi' >uWSGI</a></li>
+  
+  <li><a href='/services/varnish' >Varnish</a></li>
+  
+  <li><a href='/services/xvfb' >Xvfb</a></li>
+  
+  <li><a href='/services/zeromq' >ZeroMQ</a></li>
+  
+</ul>
+<!--
   <li>
     <h3>Manual</h3>
     <ul>
@@ -136,16 +206,18 @@
     </ul>
   </li>
 </ul>
+ -->
     </aside>
 
     <section class='content'>
       
 <header class='header'>
-    <div class='controls'>
-        <a href='#'>Permalink</a><a href='http://wiki.nginx.org/Main'>Official website</a>
-  </div>
-
   <h1>Nginx</h1>
+  <div class='tags'>
+    web
+  </div>
+  
+
 </header>
 
 <section class='body'>
@@ -310,311 +382,304 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
+  <ul>
     
-    <ul>
+    
   
-  <li>
-    <h3><code>events</code></h3>
     
       
-        
-      
-      
-      <ul>
-  
-  <li>
-    <h3><code>events.worker_connections</code></h3>
     
-      <p>Number of concurrent http connection handled per nginx process</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>1024</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
     
-  </li>
-  
-</ul>
-      
     
-  </li>
   
-  <li>
-    <h3><code>http</code></h3>
+<li>
+  <h3><code>events.worker_connections</code></h3>
+  <p>Number of concurrent http connection handled per nginx process</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>1024</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+
+    
+  
+
+  
     
       
-        
-      
-      
-      <ul>
+    
+    
+    
   
-  <li>
-    <h3><code>http.access_log</code></h3>
-    
-      <p>Global access log file path</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/var/log/nginx/access.log</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.access_log</code></h3>
+  <p>Global access log file path</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/var/log/nginx/access.log</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>http.error_log</code></h3>
-    
-      <p>Global error log file path</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/var/log/nginx/error.log</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>http.gzip</code></h3>
-    
-      <p>Enable gzip compression</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>on</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.error_log</code></h3>
+  <p>Global error log file path</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/var/log/nginx/error.log</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>http.gzip_disable</code></h3>
-    
-      <p>Space separated list of browser to disable gzip compression for</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>msie6</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>http.keepalive_timeout</code></h3>
-    
-      <p>Keepalive timeout (sec) - 0 to disable</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>65</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.gzip</code></h3>
+  <p>Enable gzip compression</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>on</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>http.sendfile</code></h3>
-    
-      <p>Enable sendfile</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>on</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>http.tcp_nodelay</code></h3>
-    
-      <p>Enable tcp_nodelay</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>on</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.gzip_disable</code></h3>
+  <p>Space separated list of browser to disable gzip compression for</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>msie6</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>http.tcp_nopush</code></h3>
-    
-      <p>Enable tcp_nopush</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>on</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>http.types_hash_max_size</code></h3>
-    
-      <p>Maximum size of hash tables</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>2048</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.keepalive_timeout</code></h3>
+  <p>Keepalive timeout (sec) - 0 to disable</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>65</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-</ul>
-      
-    
-  </li>
+
   
-  <li>
-    <h3><code>pid</code></h3>
-    
-      <p>Pid file path</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/var/run/nginx.pid</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.sendfile</code></h3>
+  <p>Enable sendfile</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>on</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>user</code></h3>
-    
-      <p>Nginx running user.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>www-data</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>worker_processes</code></h3>
-    
-      <p>Number of Nginx processes</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>4</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>http.tcp_nodelay</code></h3>
+  <p>Enable tcp_nodelay</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>on</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-</ul>
+
+  
+<li>
+  <h3><code>http.tcp_nopush</code></h3>
+  <p>Enable tcp_nopush</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>on</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>http.types_hash_max_size</code></h3>
+  <p>Maximum size of hash tables</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>2048</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+
+    
+  
+
+  
+<li>
+  <h3><code>pid</code></h3>
+  <p>Pid file path</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/var/run/nginx.pid</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>user</code></h3>
+  <p>Nginx running user.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>www-data</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>worker_processes</code></h3>
+  <p>Number of Nginx processes</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>4</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+
+  </ul>
 </section>
 
 

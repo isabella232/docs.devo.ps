@@ -41,8 +41,78 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/'>Getting started</a></li>
   <li><a href='/overview.html'>Overview</a></li>
+  
+  <li><a href='/concepts/Nodes' >Nodes</a></li>
+  
+  <li><a href='/concepts/Scripts' >Scripts</a></li>
+  
+  <li><a href='/concepts/Tasks' >Tasks</a></li>
+  
+  <li><a href='/manual/CLI' >CLI</a></li>
+  
+  <li><a href='/manual/Getting-Started' >Getting Started</a></li>
+  
+  <li><a href='/manual/Git' >Git</a></li>
+  
+  <li><a href='/providers/digital_ocean' >digital ocean</a></li>
+  
+  <li><a href='/providers/ec2' >ec2</a></li>
+  
+  <li><a href='/providers/linode' >linode</a></li>
+  
+  <li><a href='/providers/rackspace' >rackspace</a></li>
+  
+  <li><a href='/services/apache' >Apache</a></li>
+  
+  <li><a href='/services/common' >Common</a></li>
+  
+  <li><a href='/services/couchbase' >CouchBase</a></li>
+  
+  <li><a href='/services/couchdb'  class='active'>CouchDB</a></li>
+  
+  <li><a href='/services/dart' >Dart</a></li>
+  
+  <li><a href='/services/docker' >Docker</a></li>
+  
+  <li><a href='/services/elasticsearch' >ElasticSearch</a></li>
+  
+  <li><a href='/services/go' >Go</a></li>
+  
+  <li><a href='/services/java' >Java</a></li>
+  
+  <li><a href='/services/memcached' >Memcached</a></li>
+  
+  <li><a href='/services/mongodb' >MongoDB</a></li>
+  
+  <li><a href='/services/mysql' >MySQL</a></li>
+  
+  <li><a href='/services/nginx' >Nginx</a></li>
+  
+  <li><a href='/services/nodejs' >Node.js</a></li>
+  
+  <li><a href='/services/openvpn' >OpenVPN</a></li>
+  
+  <li><a href='/services/php' >PHP</a></li>
+  
+  <li><a href='/services/python' >Python</a></li>
+  
+  <li><a href='/services/rabbitmq' >RabbitMQ</a></li>
+  
+  <li><a href='/services/redis' >Redis</a></li>
+  
+  <li><a href='/services/ruby' >Ruby</a></li>
+  
+  <li><a href='/services/uwsgi' >uWSGI</a></li>
+  
+  <li><a href='/services/varnish' >Varnish</a></li>
+  
+  <li><a href='/services/xvfb' >Xvfb</a></li>
+  
+  <li><a href='/services/zeromq' >ZeroMQ</a></li>
+  
+</ul>
+<!--
   <li>
     <h3>Manual</h3>
     <ul>
@@ -136,16 +206,20 @@
     </ul>
   </li>
 </ul>
+ -->
     </aside>
 
     <section class='content'>
       
 <header class='header'>
-    <div class='controls'>
-        <a href='#'>Permalink</a><a href='http://couchdb.apache.org/'>Official website</a>
-  </div>
-
   <h1>CouchDB</h1>
+  <div class='tags'>
+    database
+  </div>
+  
+  <a href='http://docs.couchdb.org/en/latest/'>Official documentation</a>
+  
+
 </header>
 
 <section class='body'>
@@ -191,220 +265,221 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
+  <ul>
     
-    <ul>
+    
   
-  <li>
-    <h3><code>admin_pass</code></h3>
-    
-      <p>Define the admin password</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>admin</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>admin_pass</code></h3>
+  <p>Define the admin password</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>admin</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>admin_user</code></h3>
-    
-      <p>Define the admin username</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>admin</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>bind_address</code></h3>
-    
-      <p>The IP address to bind to.</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>127.0.0.1</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>admin_user</code></h3>
+  <p>Define the admin username</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>admin</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>enable</code></h3>
-    
-      <p>Define whether CouchDB should start at bood time</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>1</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>insecure</code></h3>
-    
-      <p>Allow insecure setup (no admin user)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>boolean</code></td>
-            <td><code>false</code></td>
-            <td><code>true</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>bind_address</code></h3>
+  <p>The IP address to bind to.</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>127.0.0.1</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>max_document_size</code></h3>
-    
-      <p>Maximum document size</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>4294967296</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>port</code></h3>
-    
-      <p>Listening port</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>integer</code></td>
-            <td><code>5984</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>enable</code></h3>
+  <p>Define whether CouchDB should start at bood time</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>1</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>running_user</code></h3>
-    
-      <p>Define the running user for the CouchDB process (it needs to exist)</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>couchdb</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-  <li>
-    <h3><code>stderr_file</code></h3>
-    
-      <p>Where to send the process STDERR</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/dev/null</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+<li>
+  <h3><code>insecure</code></h3>
+  <p>Allow insecure setup (no admin user)</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+        <td><code>true</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
   
-  <li>
-    <h3><code>stdout_file</code></h3>
-    
-      <p>Where to send the process STDOUT</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>string</code></td>
-            <td><code>/dev/null</code></td>
-            <td><code>false</code></td>
-          </tr>
-        </tbody>
-      </table>
-    
-  </li>
+
   
-</ul>
+<li>
+  <h3><code>max_document_size</code></h3>
+  <p>Maximum document size</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>4294967296</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>port</code></h3>
+  <p>Listening port</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>integer</code></td>
+        <td><code>5984</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>running_user</code></h3>
+  <p>Define the running user for the CouchDB process (it needs to exist)</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>couchdb</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>stderr_file</code></h3>
+  <p>Where to send the process STDERR</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/dev/null</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+  
+<li>
+  <h3><code>stdout_file</code></h3>
+  <p>Where to send the process STDOUT</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>string</code></td>
+        <td><code>/dev/null</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  
+
+
+  </ul>
 </section>
 
 
