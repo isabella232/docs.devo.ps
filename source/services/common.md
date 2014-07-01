@@ -1,8 +1,5 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-template: page.html
 title: Common
 
 ---

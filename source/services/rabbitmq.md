@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.rabbitmq.com/
+documentation: https://www.rabbitmq.com/documentation.html
 tags:
 - messagebus
-template: page.html
 title: RabbitMQ
 
 ---

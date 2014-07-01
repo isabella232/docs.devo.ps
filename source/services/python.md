@@ -5,14 +5,9 @@ configuration:
     description: List of pip packages to install globally on the system
     required: false
     type: array
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.python.org/
+documentation: https://docs.python.org/2/
 tags:
 - language
-template: page.html
 title: Python
 
 ---

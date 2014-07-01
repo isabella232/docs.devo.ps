@@ -71,9 +71,7 @@ configuration:
     minimum: 1
     required: false
     type: integer
-links:
-- title: Official website
-  url: http://wiki.nginx.org/Main
+documentation: http://wiki.nginx.org/Modules
 tags:
 - web
 title: Nginx

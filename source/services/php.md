@@ -368,14 +368,9 @@ configuration:
     regex: /^\d+[kmgKMG]$/
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://php.net/
+documentation: http://www.php.net/docs.php
 tags:
 - language
-template: page.html
 title: PHP
 
 ---

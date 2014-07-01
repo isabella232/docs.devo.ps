@@ -83,6 +83,6 @@ sizes:
   price_per: hour
   ram: 65536
 template: provider.html
-title: digital ocean
+title: Digital Ocean
 
 ---

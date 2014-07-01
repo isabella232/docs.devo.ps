@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://openjdk.java.net/
+documentation: http://openjdk.java.net/
 tags:
 - language
-template: page.html
 title: Java
 
 ---

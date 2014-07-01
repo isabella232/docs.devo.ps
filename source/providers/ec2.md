@@ -222,6 +222,6 @@ sizes:
   price_per: hour
   ram: 249856
 template: provider.html
-title: ec2
+title: Ec2
 
 ---

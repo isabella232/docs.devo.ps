@@ -305,14 +305,10 @@ configuration:
       minimum: 1
       required: false
       type: integer
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://www.mysql.com/
+documentation: http://dev.mysql.com/doc/
 tags:
 - database
-template: page.html
+- relational
 title: MySQL
 
 ---

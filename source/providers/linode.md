@@ -83,6 +83,6 @@ sizes:
   price_per: month
   ram: 98304
 template: provider.html
-title: linode
+title: Linode
 
 ---

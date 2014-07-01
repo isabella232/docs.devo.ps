@@ -79,14 +79,10 @@ configuration:
     description: Main configuration file.
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.varnish-cache.org/
+documentation: https://www.varnish-cache.org/docs
 tags:
 - caching
-template: page.html
+- reverse proxy
 title: Varnish
 
 ---

@@ -52,12 +52,12 @@ configuration:
     description: Where to send the process STDOUT
     required: false
     type: string
-    
-tags:
-  - database
-template: page.html
-title: CouchDB
 documentation: http://docs.couchdb.org/en/latest/
+tags:
+- database
+- nosql
+title: CouchDB
+
 ---
 A Database for the Web
 

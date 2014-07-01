@@ -48,14 +48,10 @@ configuration:
     description: Mongodb running user.
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.mongodb.org/
+documentation: http://docs.mongodb.org/manual/
 tags:
 - database
-template: page.html
+- nosql
 title: MongoDB
 
 ---

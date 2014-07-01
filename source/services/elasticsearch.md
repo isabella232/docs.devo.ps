@@ -39,14 +39,10 @@ configuration:
     description: Running user for the elasticsearch process
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://www.elasticsearch.org/
+documentation: http://www.elasticsearch.org/guide/
 tags:
 - database
-template: page.html
+- full text
 title: ElasticSearch
 
 ---

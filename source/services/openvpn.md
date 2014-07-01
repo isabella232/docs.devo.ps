@@ -123,14 +123,9 @@ configuration:
     description: Running user of openvpn (must exist)
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://openvpn.net/
+documentation: http://openvpn.net/index.php/open-source/documentation.html
 tags:
 - app
-template: page.html
 title: OpenVPN
 
 ---

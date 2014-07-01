@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://zeromq.org/
+documentation: http://zeromq.org/intro:read-the-manual
 tags:
 - messagebus
-template: page.html
 title: ZeroMQ
 
 ---

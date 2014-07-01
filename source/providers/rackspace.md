@@ -132,6 +132,6 @@ sizes:
   price_per: hour
   ram: 92160
 template: provider.html
-title: rackspace
+title: Rackspace
 
 ---

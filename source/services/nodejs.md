@@ -5,14 +5,9 @@ configuration:
     description: List of packages to have globally installed on the server
     required: false
     type: array
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://nodejs.org/
+documentation: http://nodejs.org/api/
 tags:
 - language
-template: page.html
 title: Node.js
 
 ---

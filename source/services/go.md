@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://golang.org/
+documentation: http://golang.org/doc/
 tags:
 - language
-template: page.html
 title: Go
 
 ---

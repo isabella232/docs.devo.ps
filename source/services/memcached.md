@@ -41,14 +41,10 @@ configuration:
     description: Memcached running user.
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://memcached.org/
+documentation: https://code.google.com/p/memcached/wiki/NewStart
 tags:
+- database
 - caching
-template: page.html
 title: Memcached
 
 ---

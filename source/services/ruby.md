@@ -5,14 +5,9 @@ configuration:
     description: List of gems to install globally on the system
     required: false
     type: array
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.ruby-lang.org/
+documentation: https://www.ruby-lang.org/en/documentation/
 tags:
 - language
-template: page.html
 title: Ruby
 
 ---

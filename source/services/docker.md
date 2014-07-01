@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.docker.io/
+documentation: https://docs.docker.com/
 tags:
 - infrastructure
-template: page.html
 title: Docker
 
 ---

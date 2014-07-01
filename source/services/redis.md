@@ -267,14 +267,9 @@ configuration:
     description: Close the connection after a client is idle for N seconds (0 to disable)
     required: false
     type: integer
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://redis.io/
+documentation: http://redis.io/documentation
 tags:
 - database
-template: page.html
 title: Redis
 
 ---

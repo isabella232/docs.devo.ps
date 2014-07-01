@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://projects.unbit.it/uwsgi/
+documentation: http://uwsgi-docs.readthedocs.org/en/latest/
 tags:
 - app
-template: page.html
 title: uWSGI
 
 ---

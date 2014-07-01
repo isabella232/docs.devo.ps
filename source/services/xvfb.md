@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://www.x.org/wiki/
+documentation: http://www.x.org/wiki/
 tags:
 - app
-template: page.html
 title: Xvfb
 
 ---

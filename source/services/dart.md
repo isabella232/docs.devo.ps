@@ -1,13 +1,8 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: https://www.dartlang.org/
+documentation: https://www.dartlang.org/docs/
 tags:
 - language
-template: page.html
 title: Dart
 
 ---

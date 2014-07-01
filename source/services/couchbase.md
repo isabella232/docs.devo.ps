@@ -1,13 +1,9 @@
 ---
 configuration: {}
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://www.couchbase.com/
+documentation: http://docs.couchbase.com/
 tags:
 - database
-template: page.html
+- nosql
 title: CouchBase
 
 ---
