@@ -52,16 +52,12 @@ configuration:
     description: Where to send the process STDOUT
     required: false
     type: string
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://couchdb.apache.org/
+    
 tags:
-- database
+  - database
 template: page.html
 title: CouchDB
-
+documentation: http://docs.couchdb.org/en/latest/
 ---
 A Database for the Web
 

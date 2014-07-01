@@ -8,6 +8,11 @@
         }
     },
     "metalsmith": {
+        "metalsmith-collections": {
+            "pages": {
+                "pattern": "*/*.md"
+            }
+        },
         "metalsmith-metadata": {
             "concepts_menu": "concepts/menu.yaml",
             "manual_menu": "manual/menu.yaml",

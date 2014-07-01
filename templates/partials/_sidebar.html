@@ -1,6 +1,10 @@
 <ul>
-  <li><a href='/'>Getting started</a></li>
   <li><a href='/overview.html'>Overview</a></li>
+  {% for item in pages | sort %}
+  <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+<!--
   <li>
     <h3>Manual</h3>
     <ul>
@@ -34,3 +38,4 @@
     </ul>
   </li>
 </ul>
+ -->

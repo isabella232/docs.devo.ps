@@ -27,6 +27,7 @@
     "gulp-util": "*",
     "metalsmith-drafts": "*",
     "metalsmith-markdown": "*",
+    "metalsmith-collections": "*",
     "metalsmith-templates": "*",
     "swig": "*",
     "metalsmith-permalinks": "*",

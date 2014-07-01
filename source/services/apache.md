@@ -158,17 +158,13 @@ configuration:
       minimum: 0
       required: false
       type: integer
-include:
-  menu_manual: manual.html
-links:
-- title: Official website
-  url: http://httpd.apache.org/
-tags:
-- web
+
 template: page.html
 title: Apache
 tags:
   - Web server
+  - web
+documentation: http://httpd.apache.org/docs/
 ---
 
 

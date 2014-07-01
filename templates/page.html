@@ -3,11 +3,14 @@
 
 {% block content %}
 <header class='header'>
-    <div class='controls'>
-        <a href='#'>Permalink</a>{% for link in links %}<a href='{{ link.url }}'>{{ link.title }}</a>{% endfor %}
-  </div>
-
   <h1>{{ title }}</h1>
+  <div class='tags'>
+    {{ tags | join(', ') }}
+  </div>
+  {% if documentation %}
+  <a href='{{ documentation }}'>Official documentation</a>
+  {% endif %}
+
 </header>
 
 <section class='body'>
@@ -17,8 +20,10 @@
 {% if configuration %}
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
+  <ul>
     {% set tree = configuration %}
     {% include "partials/_tree.html" %}
+  </ul>
 </section>
 {% endif %}
 {% endblock %}

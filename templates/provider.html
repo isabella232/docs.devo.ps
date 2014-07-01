@@ -3,10 +3,6 @@
 
 {% block content %}
 <header class='header'>
-    <div class='controls'>
-        <a href='#'>Permalink</a>{% for link in links %}<a href='{{ link.url }}'>{{ link.title }}</a>{% endfor %}
-  </div>
-
   <h1>{{ title }}</h1>
 </header>
 
@@ -17,19 +13,15 @@
       <th>ID</th>
       <th>Name</th>
       <th>RAM</th>
-      <th>Disk (GB)</th>
-      <th>Price (USD)</th>
-      <th>Bandwidth</th>
+      {% if sizes[0].disk != 0 %}<th>Disk (GB)</th>{% endif %}
     </thead>
     <tbody>
     {% for size in sizes %}
       <tr>
-        <td><code>{{ size.id }}</code></td>
-        <td><code>{{ size.name }}</code></td>
-        <td><code>{{ size.ram }}</code></td>
-        <td><code>{{ size.disk }}</code></td>
-        <td><code>{{ size.price }} (per {{ size.price_per }})</code></td>
-        <td><code>{{ size.bandwidth }}</code></td>
+        <td><code>{{ size.id | safe }}</code></td>
+        <td>{{ size.name | safe }}</td>
+        <td><code>{{ size.ram | safe }}</code></td>
+        {% if size.disk != 0 %}<td><code>{{ size.disk | safe }}</code></td>{% endif %}
       </tr>
     {% endfor %}
     </tbody>
@@ -39,14 +31,14 @@
     <thead>
       <th>ID</th>
       <th>Name</th>
-      <th>Country</th>
+      {% if locations[0].country %}<th>Country</th>{% endif %}
     </thead>
     <tbody>
     {% for location in locations %}
       <tr>
-        <td><code>{{ location.id }}</code></td>
-        <td><code>{{ location.name }}</code></td>
-        <td><code>{{ location.country }}</code></td>
+        <td><code>{{ location.id | safe }}</code></td>
+        <td>{{ location.name | safe }}</td>
+        {% if location.country %}<td>{{ location.country | safe }}</td>{% endif %}
       </tr>
     {% endfor %}
     </tbody>

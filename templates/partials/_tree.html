@@ -1,34 +1,32 @@
-<ul>
-  {% for val in tree %}
-  <li>
-    <h3><code>{% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></h3>
-    {% if val.type and val.description %}
-      <p>{{ val.description }}</p>
-      <table>
-        <thead>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>{{ val.type }}</code></td>
-            <td><code>{{ val.default }}</code></td>
-            <td><code>{{ val.required }}</code></td>
-          </tr>
-        </tbody>
-      </table>
+{% for val in tree %}
+  {% if val.type and val.description %}
+<li>
+  <h3><code>{% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></h3>
+  <p>{{ val.description }}</p>
+  <table>
+    <thead>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>{{ val.type }}</code></td>
+        <td><code>{{ val.default }}</code></td>
+        <td><code>{{ val.required }}</code></td>
+      </tr>
+    </tbody>
+  </table>
+</li>
+  {% else %}
+    {% if not parent %}
+      {% set parent = loop.key %}
     {% else %}
-      {% if not parent %}
-        {% set parent = loop.key %}
-      {% else %}
-        {% set parent_prev = parent %}
-        {% set parent += '.'+ loop.key %}
-      {% endif %}
-      {% set tree = val %}
-      {% include "_tree.html" %}
-      {% set parent = parent_prev %}
+      {% set parent_prev = parent %}
+      {% set parent += '.'+ loop.key %}
     {% endif %}
-  </li>
-  {% endfor %}
-</ul>
+    {% set tree = val %}
+    {% include "_tree.html" %}
+    {% set parent = parent_prev %}
+  {% endif %}
+{% endfor %}
