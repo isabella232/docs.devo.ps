@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>RabbitMQ | devo.ps Documentation</title>
+  <title>Vagrant | devo.ps Documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -43,9 +43,9 @@
       <ul>
   <li><a href='/overview.html'>Overview</a></li>
   
-  <li><a href='/concepts/Scripts' >Scripts</a></li>
+  <li><a href='/concepts/Nodes' >Nodes</a></li>
   
-  <li><a href='/services/go' >Go</a></li>
+  <li><a href='/concepts/Scripts' >Scripts</a></li>
   
   <li><a href='/concepts/Tasks' >Tasks</a></li>
   
@@ -77,7 +77,7 @@
   
   <li><a href='/services/elasticsearch' >ElasticSearch</a></li>
   
-  <li><a href='/concepts/Nodes' >Nodes</a></li>
+  <li><a href='/services/go' >Go</a></li>
   
   <li><a href='/services/java' >Java</a></li>
   
@@ -97,7 +97,7 @@
   
   <li><a href='/services/python' >Python</a></li>
   
-  <li><a href='/services/rabbitmq'  class='active'>RabbitMQ</a></li>
+  <li><a href='/services/rabbitmq' >RabbitMQ</a></li>
   
   <li><a href='/services/redis' >Redis</a></li>
   
@@ -105,7 +105,7 @@
   
   <li><a href='/services/uwsgi' >uWSGI</a></li>
   
-  <li><a href='/services/vagrant' >Vagrant</a></li>
+  <li><a href='/services/vagrant'  class='active'>Vagrant</a></li>
   
   <li><a href='/services/varnish' >Varnish</a></li>
   
@@ -214,37 +214,29 @@
     <section class='content'>
       
 <header class='header'>
-  <h1>RabbitMQ</h1>
+  <h1>Vagrant</h1>
   <div class='tags'>
-    messagebus
+    virtualbox, vm
   </div>
   
-  <a href='https://www.rabbitmq.com/documentation.html'>Official documentation</a>
+  <a href='http://docs.vagrantup.com/v2/'>Official documentation</a>
   
 
 </header>
 
 <section class='body'>
-  <p>Robust messaging for applications</p>
-<p>Easy to use</p>
-<p>Runs on all major operating systems</p>
-<p>Supports a huge number of developer platforms</p>
-<p>Open source and commercially supported</p>
+  <p>Vagrant is a tool for building complete development environments. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases development/production parity, and makes the &quot;works on my machine&quot; excuse a relic of the past.</p>
 <h2 id="example">Example</h2>
 <pre><code>services:
-  rabbitmq: &#39;*&#39;
-configuration:
-  rabbitmq: {}
-</code></pre><p>Install RabbitMQ on the node, keeping the default configuraiton unchanged.</p>
-<h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
+  vagrant: &#39;*&#39;
+</code></pre><p>Install the following on the node:</p>
+<ul>
+<li>Virtualbox 4.3</li>
+<li>Vagrant 1.6.3</li>
+</ul>
+<h2 id="note">Note</h2>
+<p>Virtualbox may not be supported on all platforms, some cloud providers may lack the required CPU flags to make it run properly.</p>
+<p>Hardware nodes that have been linked are generally better supported.</p>
 
 </section>
 

@@ -55,13 +55,13 @@
   
   <li><a href='/manual/Git' >Git</a></li>
   
-  <li><a href='/providers/digital_ocean' >digital ocean</a></li>
+  <li><a href='/providers/digital_ocean' >Digital Ocean</a></li>
   
-  <li><a href='/providers/ec2' >ec2</a></li>
+  <li><a href='/providers/ec2' >Ec2</a></li>
   
-  <li><a href='/providers/linode' >linode</a></li>
+  <li><a href='/providers/linode' >Linode</a></li>
   
-  <li><a href='/providers/rackspace' >rackspace</a></li>
+  <li><a href='/providers/rackspace' >Rackspace</a></li>
   
   <li><a href='/services/apache'  class='active'>Apache</a></li>
   
@@ -104,6 +104,8 @@
   <li><a href='/services/ruby' >Ruby</a></li>
   
   <li><a href='/services/uwsgi' >uWSGI</a></li>
+  
+  <li><a href='/services/vagrant' >Vagrant</a></li>
   
   <li><a href='/services/varnish' >Varnish</a></li>
   
@@ -214,7 +216,7 @@
 <header class='header'>
   <h1>Apache</h1>
   <div class='tags'>
-    Web server, web
+    web
   </div>
   
   <a href='http://httpd.apache.org/docs/'>Official documentation</a>
@@ -223,7 +225,11 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
+  <p>The Number One HTTP Server On The Internet</p>
+<p>The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.</p>
+<p>Apache httpd has been the most popular web server on the Internet since April 1996, and celebrated its 17th birthday as a project this February.</p>
+<p>The Apache HTTP Server (&quot;httpd&quot;) is a project of The Apache Software Foundation.</p>
+<h2 id="example">Example</h2>
 <pre><code>services:
   apache: &#39;*&#39;
 configuration:
@@ -234,43 +240,32 @@ configuration:
       maxrequestsperchild: 1000
 </code></pre><p>Install Apache on the node, sets a timeout of 60 seconds on receive / send, set the prefork MPM to start at most 20 Apache child processes and ensure each Apache child process will handle at most 1000 requests before respawning.</p>
 <h2 id="tasks">Tasks</h2>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Options</th>
-<th>Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>start</code></td>
-<td>-</td>
-<td>Start sthe Apache service, it does not do anything if it is already running.</td>
-</tr>
-<tr>
-<td><code>stop</code></td>
-<td>-</td>
-<td>Stops the Apache service, it does not do anything if it is already stopped.</td>
-</tr>
-<tr>
-<td><code>restart</code></td>
-<td>-</td>
-<td>Restarts the Apache service, killing existing HTTP connections. Use <code>reload</code> to avoid killing existing connections.</td>
-</tr>
-<tr>
-<td><code>reload</code></td>
-<td>-</td>
-<td>Gracefully restarts the Apache service, reloading the configuration.</td>
-</tr>
-<tr>
-<td><code>add vhost</code></td>
-<td><code>Object</code></td>
-<td>Adds a virtual host to the Apache configuration.</td>
-</tr>
-</tbody>
-</table>
-
+<h3 id="restart">restart</h3>
+<h1 id="restart">Restart</h1>
+<p>Do a full restart of the Apache service, killing existing HTTP connections.</p>
+<p>For better user experience you may prefer the use of the <code>reload</code> task instead.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache restart
+</code></pre><h3 id="reload">reload</h3>
+<h1 id="reload">Reload</h1>
+<p>Do a graceful restart of the Apache service, reloading the configuration.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache reload
+</code></pre><h3 id="start">start</h3>
+<h1 id="start">Start</h1>
+<p>Start the Apache service, it does not do anything if it is already running.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache start
+</code></pre><h3 id="stop">stop</h3>
+<h1 id="stop">Stop</h1>
+<p>Stop the Apache service, it does not do anything if it is already stopped.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache stop
+</code></pre>
 </section>
 
 
