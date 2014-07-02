@@ -26,8 +26,8 @@
     <tbody>
     {% for task in tasks %}
       <tr>
-        <td><a href='#{{ task.name | replace(' ', '-', 'g' ) }}'>{{ task.name | safe | capitalize }}</a></td>
-        <td>{% if task.options %}{{ task.options | safe }}{% endif %}</td>
+        <td>{{ task.name | safe | capitalize }}</td>
+        <td>{% if task.options %}{{ task.options | safe }}{% else %}-{% endif %}</td>
         <td>{{ task.description | safe }}</td>
       </tr>
     {% endfor %}
