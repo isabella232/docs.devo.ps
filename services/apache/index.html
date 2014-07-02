@@ -224,9 +224,8 @@
 </header>
 
 <section class='body'>
-  <h2 id="examples">Examples</h2>
-<h3 id="configuration">Configuration</h3>
-<pre><code class="lang-example">services:
+  <h2 id="example">Example</h2>
+<pre><code>services:
   apache: &#39;*&#39;
 configuration:
   apache:
@@ -234,48 +233,34 @@ configuration:
     prefork:
       maxclients: 20
       maxrequestsperchild: 1000
-</code></pre>
-<p>The example above will install Apache on the node, set the timeout to 60 seconds and set prefork MPM to start a maximum of 20 child processes handling 1000 requests maximum each.</p>
-<h3 id="task">Task</h3>
-<pre><code class="lang-example">steps: blah
-</code></pre>
+</code></pre><p>Install Apache on the node, sets a timeout of 60 seconds on receive / send, set the prefork MPM to start at most 20 Apache child processes and ensure each Apache child process will handle at most 1000 requests before respawning.</p>
 <h2 id="tasks">Tasks</h2>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Options</th>
-<th>Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>start</code></td>
-<td>-</td>
-<td>Start sthe Apache service, it does not do anything if it is already running.</td>
-</tr>
-<tr>
-<td><code>stop</code></td>
-<td>-</td>
-<td>Stops the Apache service, it does not do anything if it is already stopped.</td>
-</tr>
-<tr>
-<td><code>restart</code></td>
-<td>-</td>
-<td>Restarts the Apache service, killing existing HTTP connections. Use <code>reload</code> to avoid killing existing connections.</td>
-</tr>
-<tr>
-<td><code>reload</code></td>
-<td>-</td>
-<td>Gracefully restarts the Apache service, reloading the configuration.</td>
-</tr>
-<tr>
-<td><code>add vhost</code></td>
-<td><code>Object</code></td>
-<td>Adds a virtual host to the Apache configuration.</td>
-</tr>
-</tbody>
-</table>
+<h3 id="restart">restart</h3>
+<h1 id="restart">Restart</h1>
+<p>Do a full restart of the Apache service, killing existing HTTP connections.</p>
+<p>For better user experience you may prefer the use of the <code>reload</code> task instead.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache restart
+</code></pre><h3 id="reload">reload</h3>
+<h1 id="reload">Reload</h1>
+<p>Do a graceful restart of the Apache service, reloading the configuration.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache reload
+</code></pre><h3 id="start">start</h3>
+<h1 id="start">Start</h1>
+<p>Start the Apache service, it does not do anything if it is already running.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache start
+</code></pre><h3 id="stop">stop</h3>
+<h1 id="stop">Stop</h1>
+<p>Stop the Apache service, it does not do anything if it is already stopped.</p>
+<h1 id="example-in-a-devops-task">Example in a devops task</h1>
+<pre><code>do:
+  - run: devops apache stop
+</code></pre>
 </section>
 
 
