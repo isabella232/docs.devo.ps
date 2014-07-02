@@ -6,7 +6,6 @@ tags:
 title: Java
 
 ---
-Add java (openjdk) support to the platform, enabling java based services to be installed
 
 ## Example
 

@@ -6,7 +6,6 @@ tags:
 title: Dart
 
 ---
-Add support for Dart
 
 ## Example
 

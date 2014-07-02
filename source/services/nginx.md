@@ -77,7 +77,6 @@ tags:
 title: Nginx
 
 ---
-High performance HTTP server.
 
 ## Example
 

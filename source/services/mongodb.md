@@ -55,7 +55,6 @@ tags:
 title: MongoDB
 
 ---
-MongoDB (from "humongous") is an open-source document database, and the leading NoSQL database. Written in C++.
 
 ## Example
 

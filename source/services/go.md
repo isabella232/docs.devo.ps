@@ -6,7 +6,6 @@ tags:
 title: Go
 
 ---
-Enable Golang support
 
 ## Example
 

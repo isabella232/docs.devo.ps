@@ -312,7 +312,6 @@ tags:
 title: MySQL
 
 ---
-The world's most popular open source relational database
 
 ## Example
 
