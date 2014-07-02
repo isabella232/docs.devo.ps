@@ -164,66 +164,65 @@ tags:
 title: Apache
 
 ---
-The Number One HTTP Server On The Internet
 
-The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.
+## Examples
 
-Apache httpd has been the most popular web server on the Internet since April 1996, and celebrated its 17th birthday as a project this February.
+### Configuration
 
-The Apache HTTP Server ("httpd") is a project of The Apache Software Foundation.
+```example
+services:
+  apache: '*'
+configuration:
+  apache:
+    timeout: 60
+    prefork:
+      maxclients: 20
+      maxrequestsperchild: 1000
+```
 
-## Example
+The example above will install Apache on the node, set the timeout to 60 seconds and set prefork MPM to start a maximum of 20 child processes handling 1000 requests maximum each.
 
-    services:
-      apache: '*'
-    configuration:
-      apache:
-        timeout: 60
-        prefork:
-          maxclients: 20
-          maxrequestsperchild: 1000
+### Task
 
-Install Apache on the node, sets a timeout of 60 seconds on receive / send, set the prefork MPM to start at most 20 Apache child processes and ensure each Apache child process will handle at most 1000 requests before respawning.
+```example
+steps: blah
+```
 
 ## Tasks
-### restart
-# Restart
 
-Do a full restart of the Apache service, killing existing HTTP connections.
-
-For better user experience you may prefer the use of the `reload` task instead.
-
-# Example in a devops task
-
-    do:
-      - run: devops apache restart
-
-### reload
-# Reload
-
-Do a graceful restart of the Apache service, reloading the configuration.
-
-# Example in a devops task
-
-    do:
-      - run: devops apache reload
-
-### start
-# Start
-
-Start the Apache service, it does not do anything if it is already running.
-
-# Example in a devops task
-
-    do:
-      - run: devops apache start
-
-### stop
-# Stop
-
-Stop the Apache service, it does not do anything if it is already stopped.
-
-# Example in a devops task
-
-    do:
-      - run: devops apache stop
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Options</th>
+<th>Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>-</td>
+<td>Start sthe Apache service, it does not do anything if it is already running.</td>
+</tr>
+<tr>
+<td><code>stop</code></td>
+<td>-</td>
+<td>Stops the Apache service, it does not do anything if it is already stopped.</td>
+</tr>
+<tr>
+<td><code>restart</code></td>
+<td>-</td>
+<td>Restarts the Apache service, killing existing HTTP connections. Use <code>reload</code> to avoid killing existing connections.</td>
+</tr>
+<tr>
+<td><code>reload</code></td>
+<td>-</td>
+<td>Gracefully restarts the Apache service, reloading the configuration.</td>
+</tr>
+<tr>
+<td><code>add vhost</code></td>
+<td><code>Object</code></td>
+<td>Adds a virtual host to the Apache configuration.</td>
+</tr>
+</tbody>
+</table>
