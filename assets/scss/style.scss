@@ -109,7 +109,6 @@ body {
       }
       .variable {
         .type {
-          
           @include tooltip();
           &.string:before {
             content: 'str';
@@ -129,7 +128,9 @@ body {
           }
         }
       }
+      .default {
+        color: $purple;
+      }
     }
   }
 }
-
