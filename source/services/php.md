@@ -374,10 +374,10 @@ tags:
 tasks:
 - description: Restart PHP-FPM
   name: restart
-  options: {}
+  options: null
 - description: Reload PHP-FPM
   name: reload
-  options: {}
+  options: null
 - description: Add PHP PECL extensions
   name: pecl extension add
   options:
@@ -387,10 +387,10 @@ tasks:
       type: string
 - description: Start PHP-FPM
   name: start
-  options: {}
+  options: null
 - description: Stop PHP-FPM
   name: stop
-  options: {}
+  options: null
 title: PHP
 
 ---

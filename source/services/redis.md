@@ -273,16 +273,16 @@ tags:
 tasks:
 - description: Restart Redis
   name: restart
-  options: {}
+  options: null
 - description: Reload Redis
   name: reload
-  options: {}
+  options: null
 - description: Start Redis
   name: start
-  options: {}
+  options: null
 - description: Stop Redis
   name: stop
-  options: {}
+  options: null
 title: Redis
 
 ---

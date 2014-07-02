@@ -6,13 +6,13 @@ tags:
 tasks:
 - description: Restart Xvfb
   name: restart
-  options: {}
+  options: null
 - description: Start Xvfb
   name: start
-  options: {}
+  options: null
 - description: Stop Xvfb
   name: stop
-  options: {}
+  options: null
 title: Xvfb
 
 ---

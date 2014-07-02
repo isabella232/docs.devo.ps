@@ -48,16 +48,16 @@ tags:
 tasks:
 - description: Restart Memcached
   name: restart
-  options: {}
+  options: null
 - description: Reload Memcached
   name: reload
-  options: {}
+  options: null
 - description: Start Memcached
   name: start
-  options: {}
+  options: null
 - description: Stop Memcached
   name: stop
-  options: {}
+  options: null
 title: Memcached
 
 ---

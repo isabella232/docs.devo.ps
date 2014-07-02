@@ -164,16 +164,16 @@ tags:
 tasks:
 - description: Restart Apache
   name: restart
-  options: {}
+  options: null
 - description: Reload Apache
   name: reload
-  options: {}
+  options: null
 - description: Start Apache
   name: start
-  options: {}
+  options: null
 - description: Stop Apache
   name: stop
-  options: {}
+  options: null
 title: Apache
 
 ---

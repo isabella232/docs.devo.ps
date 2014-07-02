@@ -6,16 +6,16 @@ tags:
 tasks:
 - description: Restart RabbitMQ
   name: restart
-  options: {}
+  options: null
 - description: Reload RabbitMQ
   name: reload
-  options: {}
+  options: null
 - description: Start RabbitMQ
   name: start
-  options: {}
+  options: null
 - description: Stop RabbitMQ
   name: stop
-  options: {}
+  options: null
 title: RabbitMQ
 
 ---

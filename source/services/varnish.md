@@ -86,16 +86,16 @@ tags:
 tasks:
 - description: Restart Varnish
   name: restart
-  options: {}
+  options: null
 - description: Reload Varnish
   name: reload
-  options: {}
+  options: null
 - description: Start Varnish
   name: start
-  options: {}
+  options: null
 - description: Stop Varnish
   name: stop
-  options: {}
+  options: null
 title: Varnish
 
 ---

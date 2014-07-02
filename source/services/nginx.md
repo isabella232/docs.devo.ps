@@ -77,16 +77,16 @@ tags:
 tasks:
 - description: Restart Nginx
   name: restart
-  options: {}
+  options: null
 - description: Reload Nginx
   name: reload
-  options: {}
+  options: null
 - description: Start Nginx
   name: start
-  options: {}
+  options: null
 - description: Stop Nginx
   name: stop
-  options: {}
+  options: null
 - description: Defines a HTTP virtual host in Nginx config
   name: add http vhost
   options:

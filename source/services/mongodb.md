@@ -55,16 +55,16 @@ tags:
 tasks:
 - description: Restart MongoDB
   name: restart
-  options: {}
+  options: null
 - description: Reload MongoDB
   name: reload
-  options: {}
+  options: null
 - description: Start MongoDB
   name: start
-  options: {}
+  options: null
 - description: Stop MongoDB
   name: stop
-  options: {}
+  options: null
 title: MongoDB
 
 ---

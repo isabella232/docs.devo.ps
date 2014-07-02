@@ -7,16 +7,16 @@ tags:
 tasks:
 - description: Restart CouchBase
   name: restart
-  options: {}
+  options: null
 - description: Reload CouchBase
   name: reload
-  options: {}
+  options: null
 - description: Start CouchBase
   name: start
-  options: {}
+  options: null
 - description: Stop CouchBase
   name: stop
-  options: {}
+  options: null
 title: CouchBase
 
 ---

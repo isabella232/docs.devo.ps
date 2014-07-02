@@ -59,16 +59,16 @@ tags:
 tasks:
 - description: Restart CouchDB
   name: restart
-  options: {}
+  options: null
 - description: Reload CouchDB
   name: reload
-  options: {}
+  options: null
 - description: Start CouchDB
   name: start
-  options: {}
+  options: null
 - description: Stop CouchDB
   name: stop
-  options: {}
+  options: null
 title: CouchDB
 
 ---

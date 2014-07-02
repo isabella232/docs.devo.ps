@@ -11,7 +11,7 @@ tags:
 tasks:
 - description: Restart node.js foreverd
   name: restart
-  options: {}
+  options: null
 - description: Add a new app defintion for foreverd to run
   name: app add
   options:
@@ -42,10 +42,10 @@ tasks:
       type: string
 - description: Start node.js foreverd
   name: start
-  options: {}
+  options: null
 - description: Stop node.js foreverd
   name: stop
-  options: {}
+  options: null
 title: Node.js
 
 ---

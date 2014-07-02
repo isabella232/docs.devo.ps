@@ -312,10 +312,10 @@ tags:
 tasks:
 - description: Restart MySQL
   name: restart
-  options: {}
+  options: null
 - description: Reload MySQL
   name: reload
-  options: {}
+  options: null
 - description: Add a new MySQL user and a dedicated database
   name: user add
   options:
@@ -329,10 +329,10 @@ tasks:
       type: string
 - description: Stop MySQL
   name: stop
-  options: {}
+  options: null
 - description: Start MySQL
   name: start
-  options: {}
+  options: null
 title: MySQL
 
 ---

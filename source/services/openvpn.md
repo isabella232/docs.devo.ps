@@ -129,10 +129,10 @@ tags:
 tasks:
 - description: Restart OpenVPN
   name: restart
-  options: {}
+  options: null
 - description: Reload OpenVPN
   name: reload
-  options: {}
+  options: null
 - description: Add OpenVPN client users and send credentials by email
   name: user add
   options:
@@ -142,10 +142,10 @@ tasks:
       type: array
 - description: Stop OpenVPN
   name: stop
-  options: {}
+  options: null
 - description: Start OpenVPN
   name: start
-  options: {}
+  options: null
 title: OpenVPN
 
 ---

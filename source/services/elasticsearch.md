@@ -46,16 +46,16 @@ tags:
 tasks:
 - description: Restart ElasticSearch
   name: restart
-  options: {}
+  options: null
 - description: Reload ElasticSearch
   name: reload
-  options: {}
+  options: null
 - description: Start ElasticSearch
   name: start
-  options: {}
+  options: null
 - description: Stop ElasticSearch
   name: stop
-  options: {}
+  options: null
 title: ElasticSearch
 
 ---

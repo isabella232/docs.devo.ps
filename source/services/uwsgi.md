@@ -6,7 +6,7 @@ tags:
 tasks:
 - description: Restart uWSGI emperor
   name: restart
-  options: {}
+  options: null
 - description: Restart uWSGI emperor
   name: app add
   options:
@@ -28,10 +28,10 @@ tasks:
       type: string
 - description: Start uWSGI emperor
   name: start
-  options: {}
+  options: null
 - description: Stop uWSGI emperor
   name: stop
-  options: {}
+  options: null
 title: uWSGI
 
 ---
