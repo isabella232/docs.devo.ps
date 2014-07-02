@@ -10,12 +10,31 @@
   {% if documentation %}
   <a href='{{ documentation }}'>Official documentation</a>
   {% endif %}
-
 </header>
 
-<section class='body'>
-  {{ contents | safe }}
+{% if tasks %}
+<section class='tasks'>
+  <h2 id='tasks'>Tasks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Options</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+      <tr>
+        <td><a href='#{{ task.name | replace(' ', '-', 'g' ) }}'>{{ task.name | safe | capitalize }}</a></td>
+        <td>{% if task.options %}{{ task.options | safe }}{% endif %}</td>
+        <td>{{ task.description | safe }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 </section>
+{% endif %}
 
 {% if configuration %}
 <section class='configuration'>
@@ -35,4 +54,8 @@
   </table>
 </section>
 {% endif %}
+
+<section class='body'>
+  {{ contents | safe }}
+</section>
 {% endblock %}

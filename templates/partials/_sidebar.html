@@ -1,40 +1,35 @@
 <ul>
-  {% for item in pages | sort %}
-  <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
-  {% endfor %}
-</ul>
-<!--
+
   <li>
     <h3>Manual</h3>
     <ul>
-      {% for item in manual_menu %}
-      <li><a href='/manual/{{ item.link }}'{% if path ==  'manual/' + item.link %} class='active'{% endif %}>{{ item.title }}</a></li>
+      {% for item in manual | sort %}
+      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </li>
   <li>
     <h3>Concepts</h3>
     <ul>
-      {% for item in concepts_menu %}
-      <li><a href='/concepts/{{ item.link }}'>{{ item.title }}</a></li>
+      {% for item in concepts | sort %}
+      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </li>
   <li>
     <h3>Services</h3>
     <ul>
-      {% for item in services_menu %}
-      <li><a href='/services/{{ item.link }}'>{{ item.title }}</a></li>
+      {% for item in services | sort %}
+      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </li>
   <li>
     <h3>Providers</h3>
     <ul>
-      {% for item in providers_menu %}
-      <li><a href='/providers/{{ item.link }}'>{{ item.title }}</a></li>
+      {% for item in providers | sort %}
+      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </li>
 </ul>
- -->
