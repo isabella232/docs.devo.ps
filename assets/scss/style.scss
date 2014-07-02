@@ -107,6 +107,28 @@ body {
       code {
         white-space: nowrap;
       }
+      .variable {
+        .type {
+          
+          @include tooltip();
+          &.string:before {
+            content: 'str';
+            color: $blue;
+          }
+          &.object:before {
+            content: 'str';
+            color: $green;
+          }
+          &.array:before {
+            content: 'arr';
+            color: $orange;
+          }
+          &.integer:before {
+            content: 'int';
+            color: $purple;
+          }
+        }
+      }
     }
   }
 }

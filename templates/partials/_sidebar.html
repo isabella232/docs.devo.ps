@@ -1,5 +1,4 @@
 <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   {% for item in pages | sort %}
   <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
   {% endfor %}
