@@ -6,10 +6,3 @@ tags:
 title: ZeroMQ
 
 ---
-
-## Example
-
-    services:
-      zeromq: '*'
-
-Install the ZeroMQ libraries on the node.

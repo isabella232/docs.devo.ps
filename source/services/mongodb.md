@@ -52,36 +52,48 @@ documentation: http://docs.mongodb.org/manual/
 tags:
 - database
 - nosql
+tasks:
+- description: Restart MongoDB
+  name: restart
+  options: {}
+- description: Reload MongoDB
+  name: reload
+  options: {}
+- description: Start MongoDB
+  name: start
+  options: {}
+- description: Stop MongoDB
+  name: stop
+  options: {}
 title: MongoDB
 
 ---
 
-## Example
-
-    services:
-      mongodb: '*'
-    configuration:
-      mongodb:
-        bindip: 0.0.0.0
-        port: 27018
-        enable_rest: true
-
-Install MongoDB on the node, make the service listen on all interfaces (0.0.0.0), change the listening port to TCP/27018 (instead of 27017 by default), and enable the REST interface (allowing REST api calls against the Mongo database)
 ## Tasks
 ### restart
-# Task Restart
 
-Restart MongoDB
+#### Example in a devops task
+
+    steps:
+      - run: devops mongodb restart
 
 ### reload
-# Task Reload
+
+#### Example in a devops task
+
+    steps:
+      - run: devops mongodb reload
 
 ### start
-# Task Start
 
-Start MongoDB
+#### Example in a devops task
+
+    steps:
+      - run: devops mongodb start
 
 ### stop
-# Task Stop
 
-Stop MongoDB
+#### Example in a devops task
+
+    steps:
+      - run: devops mongodb stop

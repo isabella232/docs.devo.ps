@@ -270,36 +270,52 @@ configuration:
 documentation: http://redis.io/documentation
 tags:
 - database
+tasks:
+- description: Restart Redis
+  name: restart
+  options: {}
+- description: Reload Redis
+  name: reload
+  options: {}
+- description: Start Redis
+  name: start
+  options: {}
+- description: Stop Redis
+  name: stop
+  options: {}
 title: Redis
 
 ---
 
-## Example
-
-    services:
-      redis: '*'
-    configuration:
-      redis:
-        port: 16379
-        bind: 0.0.0.0
-
-Install Redis on the node, making it listen on all interfaces (0.0.0.0) and on port TCP/16379 instead of TCP/6379 default.
-
 ## Tasks
 ### restart
-# Task Restart
 
-Restart Redis Server
+#### Example in a devops task
+
+    steps:
+      - run: devops redis restart
+
 
 ### reload
-# Task Reload
+
+#### Example in a devops task
+
+    steps:
+      - run: devops redis reload
+
 
 ### start
-# Task Start
 
-Start Redis Server
+#### Example in a devops task
+
+    steps:
+      - run: devops redis start
+
 
 ### stop
-# Task Stop
 
-Stop Redis Server
+#### Example in a devops task
+
+    steps:
+      - run: devops redis stop
+

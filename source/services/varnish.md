@@ -83,39 +83,52 @@ documentation: https://www.varnish-cache.org/docs
 tags:
 - caching
 - reverse proxy
+tasks:
+- description: Restart Varnish
+  name: restart
+  options: {}
+- description: Reload Varnish
+  name: reload
+  options: {}
+- description: Start Varnish
+  name: start
+  options: {}
+- description: Stop Varnish
+  name: stop
+  options: {}
 title: Varnish
 
 ---
 
-## Example
-
-    services:
-      varnish: '*'
-    configuration:
-      varnish:
-        listen_port: 80
-        listen_address: 0.0.0.0
-        storage_type: malloc
-        storage_size: 512M
-
-Install Varnish on the node, making it listen on all interfaces (0.0.0.0) and on TCP/80. The cache is set to be held in RAM (Malloc) for a maximum size of 512MB.
 ## Tasks
 ### restart
-# Task Restart
 
-Restart Varnish
+#### Example in a devops task
+
+    steps:
+      - run: devops varnish restart
+
 
 ### reload
-# Task Reload
 
-Reload Varnish config
+#### Example in a devops task
+
+    steps:
+      - run: devops varnish reload
+
 
 ### start
-# Task Start
 
-Start Varnish
+#### Example in a devops task
+
+    steps:
+      - run: devops varnish start
+
 
 ### stop
-# Task Stop
 
-Stop Varnish
+#### Example in a devops task
+
+    steps:
+      - run: devops varnish stop
+

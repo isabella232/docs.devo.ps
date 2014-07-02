@@ -371,54 +371,68 @@ configuration:
 documentation: http://www.php.net/docs.php
 tags:
 - language
+tasks:
+- description: Restart PHP-FPM
+  name: restart
+  options: {}
+- description: Reload PHP-FPM
+  name: reload
+  options: {}
+- description: Add PHP PECL extensions
+  name: pecl extension add
+  options:
+    name:
+      description: Name of the PECL extension to install
+      required: true
+      type: string
+- description: Start PHP-FPM
+  name: start
+  options: {}
+- description: Stop PHP-FPM
+  name: stop
+  options: {}
 title: PHP
 
 ---
 
-## Example
-
-    services:
-      php: '*'
-    configuration:
-      php:
-        memory_limit: 64M
-        post_max_size: 32M
-        upload_max_filesize: 32M
-        apc:
-          shm_size: 256M
-
-Install PHP on the node, setting the max limit of a php process to 64MB, allowing 32MB files upload, and giving 256MB of room to APC cache.
-
 ## Tasks
 ### restart
-# Task Restart
 
-Restart php-fpm
+#### Example in a devops task
+
+    steps:
+      - run: devops php restart
+
 
 ### reload
-# Task Reload
 
-Reload php-fpm config
+#### Example in a devops task
 
-### stop
-# Task Stop
+    steps:
+      - run: devops php reload
 
-Stop php-fpm
 
-### add pecl extension
-# Task Add_pecl_extension
+### pecl extension add
 
-Add pecl extension
+#### Example in a devops task
 
----
-- id:  php_pecl_extension_name
-  label:  Name of the PECL extension
-  required:  true
-  default:  
-
----
+    steps:
+      - run: devops php pecl_extention add
+        options:
+          name: memcached
 
 ### start
-# Task Start
 
-Start php-fpm
+#### Example in a devops task
+
+    steps:
+      - run: devops php start
+
+
+### stop
+
+#### Example in a devops task
+
+    steps:
+      - run: devops php stop
+

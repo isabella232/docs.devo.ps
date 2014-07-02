@@ -43,38 +43,48 @@ documentation: http://www.elasticsearch.org/guide/
 tags:
 - database
 - full text
+tasks:
+- description: Restart ElasticSearch
+  name: restart
+  options: {}
+- description: Reload ElasticSearch
+  name: reload
+  options: {}
+- description: Start ElasticSearch
+  name: start
+  options: {}
+- description: Stop ElasticSearch
+  name: stop
+  options: {}
 title: ElasticSearch
 
 ---
 
-## Example
-
-    services:
-      elasticsearch: '*'
-    configuration:
-      elasticsearch:
-          bind_host: 0.0.0.0
-          http_port: 9200
-          heap_size: 4g
-
-Install ElasticSearch on the node, make it listen on all interfaces (0.0.0.0), use the TCP/9200 port for the HTTP access and give the service a maximum of 4GB of RAM to operate.
-
-Note that if your node does not have enough RAM the service will eventually crash.
 ## Tasks
 ### restart
-# Task Restart
 
-Restart ElasticSearch
+#### Example in a devops task
+
+    steps:
+      - run: devops elasticsearch restart
 
 ### reload
-# Task Reload
+
+#### Example in a devops task
+
+    steps:
+      - run: devops elasticsearch reload
 
 ### start
-# Task Start
 
-Start ElasticSearch
+#### Example in a devops task
+
+    steps:
+      - run: devops elasticsearch start
 
 ### stop
-# Task Stop
 
-Stop ElasticSearch
+#### Example in a devops task
+
+    steps:
+      - run: devops elasticsearch stop

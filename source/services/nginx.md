@@ -74,51 +74,84 @@ configuration:
 documentation: http://wiki.nginx.org/Modules
 tags:
 - web
+tasks:
+- description: Restart Nginx
+  name: restart
+  options: {}
+- description: Reload Nginx
+  name: reload
+  options: {}
+- description: Start Nginx
+  name: start
+  options: {}
+- description: Stop Nginx
+  name: stop
+  options: {}
+- description: Defines a HTTP virtual host in Nginx config
+  name: add http vhost
+  options:
+    aliases:
+      description: space separated list of domain name aliases
+      required: false
+      type: string
+    domain:
+      description: domain name
+      required: true
+      type: string
+    port:
+      description: listening port
+      required: true
+      type: int
+    routes:
+      description: list of route objects
+      required: true
+      type: array
+    upstreams:
+      description: list of upstream objects
+      required: false
+      type: array
+    webroot:
+      description: subfolder to serve data from based on the root /var/www/_domain_
+      required: false
+      type: string
 title: Nginx
 
 ---
 
-## Example
-
-    services:
-      nginx: '*'
-    configuration:
-      nginx:
-        worker_processes: 1
-
-Install Nginx on the node, but spawn 1 worker only instead of 4 (default).
-
-Managing virtual hosts and domains is handled by dedicated tasks.
-
 ## Tasks
 ### restart
-# Task Restart
 
-Restart Nginx
+#### Example in a devops task
+
+    steps:
+      - run: devops nginx restart
 
 ### reload
-# Task Reload
 
-Reload Nginx config
+#### Example in a devops task
+
+    steps:
+      - run: devops nginx reload
 
 ### start
-# Task Start
 
-Start Nginx
+#### Example in a devops task
+
+    steps:
+      - run: devops nginx start
 
 ### stop
-# Task Stop
 
-Stop Nginx
+#### Example in a devops task
+
+    steps:
+      - run: devops nginx stop
 
 ### add http vhost
-# vhost add
 
-Ensure a HTTP virtual host is defined in the node, creating it and restarting nginx if needed
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops nginx vhost add
         options:
           domain: example.com

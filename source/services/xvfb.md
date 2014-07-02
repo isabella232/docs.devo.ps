@@ -3,20 +3,41 @@ configuration: {}
 documentation: http://www.x.org/wiki/
 tags:
 - app
+tasks:
+- description: Restart Xvfb
+  name: restart
+  options: {}
+- description: Start Xvfb
+  name: start
+  options: {}
+- description: Stop Xvfb
+  name: stop
+  options: {}
 title: Xvfb
 
 ---
 
-## Example
-
-    services:
-      xvfb: '*'
-
-Install Xvfb on the node and ensure it is running on the node.
 ## Tasks
 ### restart
-# Restart Xvfb
+
+#### Example in a devops task
+
+    steps:
+      - run: devops xvfb restart
+
+
 ### start
-# Start Xvfb
+
+#### Example in a devops task
+
+    steps:
+      - run: devops xvfb start
+
+
 ### stop
-# Stop Xvfb
+
+#### Example in a devops task
+
+    steps:
+      - run: devops xvfb stop
+

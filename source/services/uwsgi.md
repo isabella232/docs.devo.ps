@@ -3,33 +3,54 @@ configuration: {}
 documentation: http://uwsgi-docs.readthedocs.org/en/latest/
 tags:
 - app
+tasks:
+- description: Restart uWSGI emperor
+  name: restart
+  options: {}
+- description: Restart uWSGI emperor
+  name: app add
+  options:
+    module:
+      description: stuff
+      required: false
+      type: string
+    name:
+      description: Name of the app
+      required: true
+      type: string
+    port:
+      description: listening TCP port
+      required: true
+      type: int
+    root:
+      description: root folder of the application
+      required: true
+      type: string
+- description: Start uWSGI emperor
+  name: start
+  options: {}
+- description: Stop uWSGI emperor
+  name: stop
+  options: {}
 title: uWSGI
 
 ---
 
-## Example
-
-    services:
-      uwsgi: '*'
-
-Add support for uWSGI on the node, installing Python Emperor to manage the applications.
-
-Note that the applications are managed via dedicated tasks.
 ## Tasks
 ### restart
-# Task Restart
 
-Restart emperor service
+#### Example in a devops task
 
-### add app
-# Add uwsgi app
+    steps:
+      - run: devops uwsgi restart
 
-Define a uWsgi app to be ran via Emperor. It will create the Emperor configuration file based on the passed options' task and ensure it is running.
 
-# Example in a task
+### app add
 
-    do:
-      - run: devops uwsgi add_app
+#### Example in a task
+
+    steps:
+      - run: devops uwsgi app add
         options:
           name: my_app
           root: /opt/that_folder
@@ -37,11 +58,17 @@ Define a uWsgi app to be ran via Emperor. It will create the Emperor configurati
           port: 3000
 
 ### start
-# Task Start
 
-Start emperor service
+#### Example in a devops task
+
+    steps:
+      - run: devops uwsgi start
+
 
 ### stop
-# Task Stop
 
-Stop emperor service
+#### Example in a devops task
+
+    steps:
+      - run: devops uwsgi stop
+

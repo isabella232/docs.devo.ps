@@ -4,58 +4,50 @@ documentation: http://docs.couchbase.com/
 tags:
 - database
 - nosql
+tasks:
+- description: Restart CouchBase
+  name: restart
+  options: {}
+- description: Reload CouchBase
+  name: reload
+  options: {}
+- description: Start CouchBase
+  name: start
+  options: {}
+- description: Stop CouchBase
+  name: stop
+  options: {}
 title: CouchBase
 
 ---
 
-## Example
-
-    services:
-      couchbase: '*'
-    configuration:
-      couchbase: {}
-
-Install CouchBase Community on the node and perform no additional customization.
-
 ## Tasks
 ### restart
-# Restart
-
-Do a full restart of the CouchBase service, effectively stopping and re-starting the service.
 
 For better user experience you may prefer the use of the `reload` task instead.
 
-# Example in a devops task
+#### Example in a devops task
 
-    do:
+    steps:
       - run: devops couchbase restart
 
 ### reload
-# Reload
 
-Do a graceful restart of the CouchBase service, reloading the configuration.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops couchbase reload
 
 ### start
-# Start
 
-Start the CouchBase service, it does not do anything if it is already running.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops couchbase start
 
 ### stop
-# Stop
 
-Stop the Couchbase service, it does not do anything if it is already stopped.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops couchbase stop

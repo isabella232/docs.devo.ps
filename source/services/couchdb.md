@@ -56,58 +56,50 @@ documentation: http://docs.couchdb.org/en/latest/
 tags:
 - database
 - nosql
+tasks:
+- description: Restart CouchDB
+  name: restart
+  options: {}
+- description: Reload CouchDB
+  name: reload
+  options: {}
+- description: Start CouchDB
+  name: start
+  options: {}
+- description: Stop CouchDB
+  name: stop
+  options: {}
 title: CouchDB
 
 ---
 
-## Example
-
-    services:
-      couchdb: '*'
-    configuration:
-      couchdb:
-        bind_address: 0.0.0.0
-
-Install CouchDB on the node and make the service listen on all interfaces (0.0.0.0)
 ## Tasks
 ### restart
-# Restart
-
-Do a full restart of the CouchDB service, effectively stopping and re-starting the service.
 
 For better user experience you may prefer the use of the `reload` task instead.
 
-# Example in a devops task
+#### Example in a devops task
 
-    do:
+    steps:
       - run: devops couchdb restart
 
 ### reload
-# Reload
 
-Do a graceful restart of the CouchDB service, reloading the configuration.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops couchdb reload
 
 ### start
-# Start
 
-Start the CouchDB service, it does not do anything if it is already running.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops couchdb start
 
 ### stop
-# Stop
 
-Stop the CouchDB service, it does not do anything if it is already stopped.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops couchdb stop

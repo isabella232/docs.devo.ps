@@ -45,35 +45,48 @@ documentation: https://code.google.com/p/memcached/wiki/NewStart
 tags:
 - database
 - caching
+tasks:
+- description: Restart Memcached
+  name: restart
+  options: {}
+- description: Reload Memcached
+  name: reload
+  options: {}
+- description: Start Memcached
+  name: start
+  options: {}
+- description: Stop Memcached
+  name: stop
+  options: {}
 title: Memcached
 
 ---
 
-## Example
-
-    services:
-      memcached: '*'
-    configuration:
-      memcached:
-        memory: 128
-        port: 11212
-
-Install Memcached on the node, allocate 128MB of RAM to the service and make it listen on port TCP/11212
 ## Tasks
 ### restart
-# Task Restart
 
-Restart Memcached
+#### Example in a devops task
+
+    steps:
+      - run: devops memcached restart
 
 ### reload
-# Task Reload
+
+#### Example in a devops task
+
+    steps:
+      - run: devops memcached reload
 
 ### start
-# Task Start
 
-Start Memcached
+#### Example in a devops task
+
+    steps:
+      - run: devops memcached start
 
 ### stop
-# Task Stop
 
-Stop Memcached
+#### Example in a devops task
+
+    steps:
+      - run: devops memcached stop

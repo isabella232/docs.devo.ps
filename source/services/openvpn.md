@@ -126,48 +126,74 @@ configuration:
 documentation: http://openvpn.net/index.php/open-source/documentation.html
 tags:
 - app
+tasks:
+- description: Restart OpenVPN
+  name: restart
+  options: {}
+- description: Reload OpenVPN
+  name: reload
+  options: {}
+- description: Add OpenVPN client users and send credentials by email
+  name: user add
+  options:
+    users:
+      description: list of user objects
+      required: true
+      type: array
+- description: Stop OpenVPN
+  name: stop
+  options: {}
+- description: Start OpenVPN
+  name: start
+  options: {}
 title: OpenVPN
 
 ---
 
-## Example
-
-    services:
-      openvpn: '*'
-    configuration:
-      openvpn:
-        port: 6543
-        proto: 'tcp'
-        max_client: 10
-        key:
-          key_size: 2048
-          email: me@example.com
-
-Install OpenVPN on the node, configure the service so it listen on TCP/6543 (instead of regular UDP/1194), limit the number of concurrent clients to 10 and set the server's key to be 2048bits with a custom email in the certificate.
-
-Note that the default values of the configuration will satisfy most of the use and those customization are more for advanced users.
-
-The management of OpenVPN clients is handled by dedicated tasks.
 ## Tasks
 ### restart
-# Task Restart
 
-Restart OpenVPN
+#### Example in a devops task
+
+    steps:
+      - run: devops openvpn restart
+
 
 ### reload
-# Task Reload
 
-### add user
-# Task Add_user
+#### Example in a devops task
 
-Add a new OpenVPN client
+    steps:
+      - run: devops openvpn reload
+
+
+### user add
+
+#### Example in a devops task
+
+    steps:
+      - run: devops openvpn user add
+        options:
+          users:
+            - name: bob
+              email: bob@example.com
+            - name: alice
+              email: alice@example.com
+
+
 
 ### stop
-# Task Stop
 
-Stop OpenVPN
+#### Example in a devops task
+
+    steps:
+      - run: devops openvpn stop
+
 
 ### start
-# Task Start
 
-Start OpenVPN
+#### Example in a devops task
+
+    steps:
+      - run: devops openvpn start
+

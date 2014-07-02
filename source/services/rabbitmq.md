@@ -3,27 +3,52 @@ configuration: {}
 documentation: https://www.rabbitmq.com/documentation.html
 tags:
 - messagebus
+tasks:
+- description: Restart RabbitMQ
+  name: restart
+  options: {}
+- description: Reload RabbitMQ
+  name: reload
+  options: {}
+- description: Start RabbitMQ
+  name: start
+  options: {}
+- description: Stop RabbitMQ
+  name: stop
+  options: {}
 title: RabbitMQ
 
 ---
 
-## Example
-
-    services:
-      rabbitmq: '*'
-    configuration:
-      rabbitmq: {}
-
-Install RabbitMQ on the node, keeping the default configuraiton unchanged.
 ## Tasks
 ### restart
-# Task Restart
+
+#### Example in a devops task
+
+    steps:
+      - run: devops rabbitmq restart
+
 
 ### reload
-# Task Reload
+
+#### Example in a devops task
+
+    steps:
+      - run: devops rabbitmq reload
+
 
 ### start
-# Task Start
+
+#### Example in a devops task
+
+    steps:
+      - run: devops rabbitmq start
+
 
 ### stop
-# Task Stop
+
+#### Example in a devops task
+
+    steps:
+      - run: devops rabbitmq stop
+

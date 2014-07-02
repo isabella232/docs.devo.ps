@@ -8,27 +8,42 @@ configuration:
 documentation: https://www.ruby-lang.org/en/documentation/
 tags:
 - language
+tasks:
+- description: Remove Ruby gems if installed
+  name: gems remove
+  options:
+    gems:
+      description: List of gems to remove
+      required: true
+      type: array
+- description: Add Ruby gems globally
+  name: gems add
+  options:
+    gems:
+      description: List of gems to install
+      required: true
+      type: array
 title: Ruby
 
 ---
 
-## Example
-
-    services:
-      ruby: '*'
-    configuration:
-      ruby:
-        gems:
-          - compass
-
-Add ruby support to allow install of Gem packages (globally) on the system.
 ## Tasks
-### add gems
-# Add Ruby gems
+### gems remove
 
-Install ruby gems globally on the server.
+#### Example in a devops task
 
-### remove gems
-# Remove Ruby gems
+    steps:
+      - run: devops ruby gems remove
+        options:
+          gems:
+            - compass
 
-Remove Ruby gems installed globally from the server. If the gems are not installed it doesn't do anything.
+### gems add
+
+#### Example in a devops task
+
+    steps:
+      - run: devops ruby gems add
+        options:
+          gems:
+            - compass

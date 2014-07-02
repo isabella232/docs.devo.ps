@@ -161,62 +161,49 @@ configuration:
 documentation: http://httpd.apache.org/docs/
 tags:
 - web
+tasks:
+- description: Restart Apache
+  name: restart
+  options: {}
+- description: Reload Apache
+  name: reload
+  options: {}
+- description: Start Apache
+  name: start
+  options: {}
+- description: Stop Apache
+  name: stop
+  options: {}
 title: Apache
 
 ---
 
-## Example
-
-    services:
-      apache: '*'
-    configuration:
-      apache:
-        timeout: 60
-        prefork:
-          maxclients: 20
-          maxrequestsperchild: 1000
-
-Install Apache on the node, sets a timeout of 60 seconds on receive / send, set the prefork MPM to start at most 20 Apache child processes and ensure each Apache child process will handle at most 1000 requests before respawning.
-
 ## Tasks
 ### restart
-# Restart
-
-Do a full restart of the Apache service, killing existing HTTP connections.
 
 For better user experience you may prefer the use of the `reload` task instead.
 
-# Example in a devops task
+#### Example in a devops task
 
-    do:
+    steps:
       - run: devops apache restart
 
 ### reload
-# Reload
+#### Example in a devops task
 
-Do a graceful restart of the Apache service, reloading the configuration.
-
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops apache reload
 
 ### start
-# Start
 
-Start the Apache service, it does not do anything if it is already running.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops apache start
 
 ### stop
-# Stop
 
-Stop the Apache service, it does not do anything if it is already stopped.
+#### Example in a devops task
 
-# Example in a devops task
-
-    do:
+    steps:
       - run: devops apache stop

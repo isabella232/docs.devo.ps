@@ -6,10 +6,3 @@ tags:
 title: Dart
 
 ---
-
-## Example
-
-    services:
-      dart: '*'
-
-Add support for Dart lang on the node.
