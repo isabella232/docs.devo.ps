@@ -308,7 +308,7 @@ configuration:
     regex: /^\d+[kmgKMG]$/
     required: false
     type: string
-  pecl_extenstions:
+  pecl_extensions:
     default: []
     description: List of extra php extensions installable via PECL
     required: false
