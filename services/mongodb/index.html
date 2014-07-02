@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,28 +224,24 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  mongodb: &#39;*&#39;
-configuration:
-  mongodb:
-    bindip: 0.0.0.0
-    port: 27018
-    enable_rest: true
-</code></pre><p>Install MongoDB on the node, make the service listen on all interfaces (0.0.0.0), change the listening port to TCP/27018 (instead of 27017 by default), and enable the REST interface (allowing REST api calls against the Mongo database)</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart MongoDB</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start MongoDB</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop MongoDB</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops mongodb restart
+</code></pre><h3 id="reload">reload</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops mongodb reload
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops mongodb start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops mongodb stop
+</code></pre>
 </section>
 
 

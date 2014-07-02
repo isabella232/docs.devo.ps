@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,18 +224,20 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  xvfb: &#39;*&#39;
-</code></pre><p>Install Xvfb on the node and ensure it is running on the node.</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="restart-xvfb">Restart Xvfb</h1>
-<h3 id="start">start</h3>
-<h1 id="start-xvfb">Start Xvfb</h1>
-<h3 id="stop">stop</h3>
-<h1 id="stop-xvfb">Stop Xvfb</h1>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops xvfb restart
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops xvfb start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops xvfb stop
+</code></pre>
 </section>
 
 

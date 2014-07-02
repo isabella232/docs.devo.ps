@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,27 +224,24 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  memcached: &#39;*&#39;
-configuration:
-  memcached:
-    memory: 128
-    port: 11212
-</code></pre><p>Install Memcached on the node, allocate 128MB of RAM to the service and make it listen on port TCP/11212</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart Memcached</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start Memcached</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop Memcached</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops memcached restart
+</code></pre><h3 id="reload">reload</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops memcached reload
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops memcached start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops memcached stop
+</code></pre>
 </section>
 
 

@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,32 +224,26 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  nginx: &#39;*&#39;
-configuration:
-  nginx:
-    worker_processes: 1
-</code></pre><p>Install Nginx on the node, but spawn 1 worker only instead of 4 (default).</p>
-<p>Managing virtual hosts and domains is handled by dedicated tasks.</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart Nginx</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<p>Reload Nginx config</p>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start Nginx</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop Nginx</p>
-<h3 id="add-http-vhost">add http vhost</h3>
-<h1 id="vhost-add">vhost add</h1>
-<p>Ensure a HTTP virtual host is defined in the node, creating it and restarting nginx if needed</p>
-<h1 id="example-in-a-devops-task">Example in a devops task</h1>
-<pre><code>do:
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nginx restart
+</code></pre><h3 id="reload">reload</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nginx reload
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nginx start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nginx stop
+</code></pre><h3 id="add-http-vhost">add http vhost</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
   - run: devops nginx vhost add
     options:
       domain: example.com

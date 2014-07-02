@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,29 +224,24 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  elasticsearch: &#39;*&#39;
-configuration:
-  elasticsearch:
-      bind_host: 0.0.0.0
-      http_port: 9200
-      heap_size: 4g
-</code></pre><p>Install ElasticSearch on the node, make it listen on all interfaces (0.0.0.0), use the TCP/9200 port for the HTTP access and give the service a maximum of 4GB of RAM to operate.</p>
-<p>Note that if your node does not have enough RAM the service will eventually crash.</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart ElasticSearch</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start ElasticSearch</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop ElasticSearch</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops elasticsearch restart
+</code></pre><h3 id="reload">reload</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops elasticsearch reload
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops elasticsearch start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops elasticsearch stop
+</code></pre>
 </section>
 
 

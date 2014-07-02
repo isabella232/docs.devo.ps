@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,36 +224,34 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  openvpn: &#39;*&#39;
-configuration:
-  openvpn:
-    port: 6543
-    proto: &#39;tcp&#39;
-    max_client: 10
-    key:
-      key_size: 2048
-      email: me@example.com
-</code></pre><p>Install OpenVPN on the node, configure the service so it listen on TCP/6543 (instead of regular UDP/1194), limit the number of concurrent clients to 10 and set the server&#39;s key to be 2048bits with a custom email in the certificate.</p>
-<p>Note that the default values of the configuration will satisfy most of the use and those customization are more for advanced users.</p>
-<p>The management of OpenVPN clients is handled by dedicated tasks.</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart OpenVPN</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="add-user">add user</h3>
-<h1 id="task-add_user">Task Add_user</h1>
-<p>Add a new OpenVPN client</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop OpenVPN</p>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start OpenVPN</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops openvpn restart
+</code></pre><h3 id="reload">reload</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops openvpn reload
+</code></pre><h3 id="user-add">user add</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops openvpn user add
+    options:
+      users:
+        - name: bob
+          email: bob@example.com
+        - name: alice
+          email: alice@example.com
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops openvpn stop
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops openvpn start
+</code></pre>
 </section>
 
 

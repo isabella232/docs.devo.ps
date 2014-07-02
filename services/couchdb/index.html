@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,38 +224,23 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  couchdb: &#39;*&#39;
-configuration:
-  couchdb:
-    bind_address: 0.0.0.0
-</code></pre><p>Install CouchDB on the node and make the service listen on all interfaces (0.0.0.0)</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="restart">Restart</h1>
-<p>Do a full restart of the CouchDB service, effectively stopping and re-starting the service.</p>
 <p>For better user experience you may prefer the use of the <code>reload</code> task instead.</p>
-<h1 id="example-in-a-devops-task">Example in a devops task</h1>
-<pre><code>do:
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
   - run: devops couchdb restart
 </code></pre><h3 id="reload">reload</h3>
-<h1 id="reload">Reload</h1>
-<p>Do a graceful restart of the CouchDB service, reloading the configuration.</p>
-<h1 id="example-in-a-devops-task">Example in a devops task</h1>
-<pre><code>do:
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
   - run: devops couchdb reload
 </code></pre><h3 id="start">start</h3>
-<h1 id="start">Start</h1>
-<p>Start the CouchDB service, it does not do anything if it is already running.</p>
-<h1 id="example-in-a-devops-task">Example in a devops task</h1>
-<pre><code>do:
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
   - run: devops couchdb start
 </code></pre><h3 id="stop">stop</h3>
-<h1 id="stop">Stop</h1>
-<p>Stop the CouchDB service, it does not do anything if it is already stopped.</p>
-<h1 id="example-in-a-devops-task">Example in a devops task</h1>
-<pre><code>do:
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
   - run: devops couchdb stop
 </code></pre>
 </section>

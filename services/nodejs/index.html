@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,29 +224,31 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  nodejs: &#39;*&#39;
-configuration:
-  nodejs: 
-    packages:
-      - forever
-      - bower
-      - grunt-cli
-</code></pre><p>Install Node.js on the node, and install globally <code>forever</code>, <code>bower</code> and <code>grunt-cli</code> (as in <code>npm install -g xxx</code>).</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart node.js forever service</p>
-<h3 id="add-app">add app</h3>
-<h1 id="task-add_app">Task Add_app</h1>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start node.js forever service</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop node.js forever service</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nodejs restart
+</code></pre><h3 id="app-add">app add</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nodejs app add
+    options:
+      name: myapp
+      root: /var/www/myapp 
+      script: app.js 
+      node_env: production 
+      user: nobody 
+      extra_env: &quot;NODE_DEBUG=DEBUG SOME_ENV=OTHER&quot;
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nodejs start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops nodejs stop
+</code></pre>
 </section>
 
 

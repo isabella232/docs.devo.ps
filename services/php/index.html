@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,42 +224,30 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  php: &#39;*&#39;
-configuration:
-  php:
-    memory_limit: 64M
-    post_max_size: 32M
-    upload_max_filesize: 32M
-    apc:
-      shm_size: 256M
-</code></pre><p>Install PHP on the node, setting the max limit of a php process to 64MB, allowing 32MB files upload, and giving 256MB of room to APC cache.</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart php-fpm</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<p>Reload php-fpm config</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop php-fpm</p>
-<h3 id="add-pecl-extension">add pecl extension</h3>
-<h1 id="task-add_pecl_extension">Task Add_pecl_extension</h1>
-<p>Add pecl extension</p>
-<hr/>
-<ul>
-<li>id:  php_pecl_extension_name
-label:  Name of the PECL extension
-required:  true
-default:  </li>
-</ul>
-<hr/>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start php-fpm</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops php restart
+</code></pre><h3 id="reload">reload</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops php reload
+</code></pre><h3 id="pecl-extension-add">pecl extension add</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops php pecl_extention add
+    options:
+      name: memcached
+</code></pre><h3 id="start">start</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops php start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops php stop
+</code></pre>
 </section>
 
 

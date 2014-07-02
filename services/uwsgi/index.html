@@ -64,7 +64,7 @@
   
   <li><a href='/services/apache' >Apache</a></li>
   
-  <li><a href='/services/common' >Common</a></li>
+  <li><a href='/services/common' ></a></li>
   
   <li><a href='/services/couchbase' >CouchBase</a></li>
   
@@ -224,33 +224,29 @@
 </header>
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  uwsgi: &#39;*&#39;
-</code></pre><p>Add support for uWSGI on the node, installing Python Emperor to manage the applications.</p>
-<p>Note that the applications are managed via dedicated tasks.</p>
-<h2 id="tasks">Tasks</h2>
+  <h2 id="tasks">Tasks</h2>
 <h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart emperor service</p>
-<h3 id="add-app">add app</h3>
-<h1 id="add-uwsgi-app">Add uwsgi app</h1>
-<p>Define a uWsgi app to be ran via Emperor. It will create the Emperor configuration file based on the passed options&#39; task and ensure it is running.</p>
-<h1 id="example-in-a-task">Example in a task</h1>
-<pre><code>do:
-  - run: devops uwsgi add_app
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops uwsgi restart
+</code></pre><h3 id="app-add">app add</h3>
+<h4 id="example-in-a-task">Example in a task</h4>
+<pre><code>steps:
+  - run: devops uwsgi app add
     options:
       name: my_app
       root: /opt/that_folder
       module: some_django_module
       port: 3000
 </code></pre><h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start emperor service</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop emperor service</p>
-
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops uwsgi start
+</code></pre><h3 id="stop">stop</h3>
+<h4 id="example-in-a-devops-task">Example in a devops task</h4>
+<pre><code>steps:
+  - run: devops uwsgi stop
+</code></pre>
 </section>
 
 
