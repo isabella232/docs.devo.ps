@@ -1691,5 +1691,5 @@ body {
       #main .content table .variable .type.integer:before {
         content: 'int';
         color: #8B66CB; }
-    #main .content table .default {
-      color: #8B66CB; }
+    #main .content table .value {
+      color: #50CD84; }
