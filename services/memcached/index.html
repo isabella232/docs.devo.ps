@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Nodes' >Nodes</a></li>
   
@@ -254,158 +253,75 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-<li>
-  <h3><code>connection</code></h3>
-  <p>Maximumum number of concurrent inbound connections.</p>
   <table>
     <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1024</code></td>
-        <td><code>false</code></td>
-      </tr>
+      
+      
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> connection</code></td>
+  <td class='default'><code>1024</code></td>
+  <td class='description'>Maximumum number of concurrent inbound connections.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> enable</code></td>
+  <td class='default'><code>yes</code></td>
+  <td class='description'>Enable or disable memcached service.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> listen</code></td>
+  <td class='default'><code>127.0.0.1</code></td>
+  <td class='description'>Binding IP address.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> logfile</code></td>
+  <td class='default'><code>/var/log/memcached.log</code></td>
+  <td class='description'>Log file path</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> memory</code></td>
+  <td class='default'><code>64</code></td>
+  <td class='description'>Amount of memory allocated in MB.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> port</code></td>
+  <td class='default'><code>11211</code></td>
+  <td class='description'>Connection port.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> user</code></td>
+  <td class='default'><code>memcache</code></td>
+  <td class='description'>Memcached running user.</td>
+</tr>
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>enable</code></h3>
-  <p>Enable or disable memcached service.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>yes</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>listen</code></h3>
-  <p>Binding IP address.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>127.0.0.1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>logfile</code></h3>
-  <p>Log file path</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/memcached.log</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>memory</code></h3>
-  <p>Amount of memory allocated in MB.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>64</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>port</code></h3>
-  <p>Connection port.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>11211</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>user</code></h3>
-  <p>Memcached running user.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>memcache</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-  </ul>
 </section>
 
 

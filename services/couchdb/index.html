@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Nodes' >Nodes</a></li>
   
@@ -267,221 +266,99 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-<li>
-  <h3><code>admin_pass</code></h3>
-  <p>Define the admin password</p>
   <table>
     <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>admin</code></td>
-        <td><code>false</code></td>
-      </tr>
+      
+      
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> admin_pass</code></td>
+  <td class='default'><code>admin</code></td>
+  <td class='description'>Define the admin password</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> admin_user</code></td>
+  <td class='default'><code>admin</code></td>
+  <td class='description'>Define the admin username</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> bind_address</code></td>
+  <td class='default'><code>127.0.0.1</code></td>
+  <td class='description'>The IP address to bind to.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> enable</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Define whether CouchDB should start at bood time</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable  required'><code><span class='type boolean'><span>boolean</span></span> insecure</code></td>
+  <td class='default'><code>false</code></td>
+  <td class='description'>Allow insecure setup (no admin user)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> max_document_size</code></td>
+  <td class='default'><code>4294967296</code></td>
+  <td class='description'>Maximum document size</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> port</code></td>
+  <td class='default'><code>5984</code></td>
+  <td class='description'>Listening port</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> running_user</code></td>
+  <td class='default'><code>couchdb</code></td>
+  <td class='description'>Define the running user for the CouchDB process (it needs to exist)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> stderr_file</code></td>
+  <td class='default'><code>/dev/null</code></td>
+  <td class='description'>Where to send the process STDERR</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> stdout_file</code></td>
+  <td class='default'><code>/dev/null</code></td>
+  <td class='description'>Where to send the process STDOUT</td>
+</tr>
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>admin_user</code></h3>
-  <p>Define the admin username</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>admin</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>bind_address</code></h3>
-  <p>The IP address to bind to.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>127.0.0.1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>enable</code></h3>
-  <p>Define whether CouchDB should start at bood time</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>insecure</code></h3>
-  <p>Allow insecure setup (no admin user)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>boolean</code></td>
-        <td><code>false</code></td>
-        <td><code>true</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>max_document_size</code></h3>
-  <p>Maximum document size</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>4294967296</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>port</code></h3>
-  <p>Listening port</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>5984</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>running_user</code></h3>
-  <p>Define the running user for the CouchDB process (it needs to exist)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>couchdb</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>stderr_file</code></h3>
-  <p>Where to send the process STDERR</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/dev/null</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>stdout_file</code></h3>
-  <p>Where to send the process STDOUT</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/dev/null</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-  </ul>
 </section>
 
 

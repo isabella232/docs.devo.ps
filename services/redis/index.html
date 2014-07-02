@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Nodes' >Nodes</a></li>
   
@@ -252,868 +251,387 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-    
+  <table>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
       
-    
-    
-    
-  
-<li>
-  <h3><code>aom.aof_rewrite_min_size</code></h3>
-  <p>Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>64mb</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>aom.aof_rewrite_percentage</code></h3>
-  <p>Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>100</code></td>
-        <td><code></code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>aom.enable</code></h3>
-  <p>Enable Append Only Mode</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>no</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>aom.filename</code></h3>
-  <p>Name of the append only file</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>appendonly.aof</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>aom.fsync</code></h3>
-  <p>Fsync mode to sync the append only file</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>everysec</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>aom.no_appendfsync_on_rewrite</code></h3>
-  <p>Define whether to (not) append fsync operations if another fsync op is already in progress</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>no</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>bind</code></h3>
-  <p>Binding IP address.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>127.0.0.1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>databases</code></h3>
-  <p>Number of databases within the redis server</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
       
-    
-    
-    
-  
-<li>
-  <h3><code>limits.maxclients</code></h3>
-  <p>Max number of clients connected</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10000</code></td>
-        <td><code>false</code></td>
-      </tr>
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> aom.aof_rewrite_min_size</code></td>
+  <td class='default'><code>64mb</code></td>
+  <td class='description'>Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> aom.aof_rewrite_percentage</code></td>
+  <td class='default'><code>100</code></td>
+  <td class='description'>Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> aom.enable</code></td>
+  <td class='default'><code>no</code></td>
+  <td class='description'>Enable Append Only Mode</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> aom.filename</code></td>
+  <td class='default'><code>appendonly.aof</code></td>
+  <td class='description'>Name of the append only file</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> aom.fsync</code></td>
+  <td class='default'><code>everysec</code></td>
+  <td class='description'>Fsync mode to sync the append only file</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> aom.no_appendfsync_on_rewrite</code></td>
+  <td class='default'><code>no</code></td>
+  <td class='description'>Define whether to (not) append fsync operations if another fsync op is already in progress</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> bind</code></td>
+  <td class='default'><code>127.0.0.1</code></td>
+  <td class='description'>Binding IP address.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> databases</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Number of databases within the redis server</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> limits.maxclients</code></td>
+  <td class='default'><code>10000</code></td>
+  <td class='description'>Max number of clients connected</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> limits.maxmemory</code></td>
+  <td class='default'><code>[object Object]</code></td>
+  <td class='description'>Maximum RAM used by Redis to store data (no limit by default) in bytes</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> limits.policy</code></td>
+  <td class='default'><code>volatile-lru</code></td>
+  <td class='description'>Define how Redis will remove keys when maxmemory is reached</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> limits.samples</code></td>
+  <td class='default'><code>3</code></td>
+  <td class='description'>Sample size to use to base the policy eviction for LRU and TTL policy algorithms</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> logfile</code></td>
+  <td class='default'><code>/var/log/redis/redis-server.log</code></td>
+  <td class='description'>Server log file</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> loglevel</code></td>
+  <td class='default'><code>notice</code></td>
+  <td class='description'>Server log verbosity</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> lua.time_limit</code></td>
+  <td class='default'><code>5000</code></td>
+  <td class='description'>Time limit (in ms) for the execution of a LUA script</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> port</code></td>
+  <td class='default'><code>6379</code></td>
+  <td class='description'>Connection port.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.is_slave</code></td>
+  <td class='default'><code>false</code></td>
+  <td class='description'>Is this redis instance a slave?</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.masterauth</code></td>
+  <td class='default'><code>[object Object]</code></td>
+  <td class='description'>Redis master auth password (if required)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.masterip</code></td>
+  <td class='default'><code></code></td>
+  <td class='description'>IP or host of the master server</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.masterport</code></td>
+  <td class='default'><code>6379</code></td>
+  <td class='description'>Redis port of the master server</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.ping_slave_period</code></td>
+  <td class='default'><code>10</code></td>
+  <td class='description'>Frequency (in sec) to ping the master server as health check</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.priority</code></td>
+  <td class='default'><code>100</code></td>
+  <td class='description'>Slave priority</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.read_only</code></td>
+  <td class='default'><code>yes</code></td>
+  <td class='description'>Make the slave server read-only (preferred option)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.serve_stale_data</code></td>
+  <td class='default'><code>yes</code></td>
+  <td class='description'>Slave redis serves stale data if the connection is lost with the master</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.timeout</code></td>
+  <td class='default'><code>60</code></td>
+  <td class='description'>Timeout to Bulk IO transfer and ping response to mark the master as unreachable</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> security.requirepass</code></td>
+  <td class='default'><code>[object Object]</code></td>
+  <td class='description'>Require a password to connect (either client or slave)</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> slowlog.log_slower_than</code></td>
+  <td class='default'><code>10000</code></td>
+  <td class='description'>Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> slowlog.max_len</code></td>
+  <td class='default'><code>128</code></td>
+  <td class='description'>Length of the slow log to capture (FIFO based)</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> snapshotting.dbfilename</code></td>
+  <td class='default'><code>dump.rdb</code></td>
+  <td class='description'>Filename where to dump the DB</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> snapshotting.dir</code></td>
+  <td class='default'><code>/var/lib/redis</code></td>
+  <td class='description'>Folder where to store the snapshots</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> snapshotting.rdbchecksum</code></td>
+  <td class='default'><code>yes</code></td>
+  <td class='description'>Enable database checksum (use ~10% extra CPU)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> snapshotting.rdbcompression</code></td>
+  <td class='default'><code>yes</code></td>
+  <td class='description'>Enable database compression</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type array'><span>array</span></span> snapshotting.save</code></td>
+  <td class='default'><code>[object Object],[object Object],[object Object]</code></td>
+  <td class='description'>Array of save rules including seconds and number of changes that trigger a save</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> syslog.enable</code></td>
+  <td class='default'><code>no</code></td>
+  <td class='description'>Send log to syslog</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> syslog.facility</code></td>
+  <td class='default'><code>local0</code></td>
+  <td class='description'>Syslog facility</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> syslog.ident</code></td>
+  <td class='default'><code>redis</code></td>
+  <td class='description'>Syslog identity</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> timeout</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Close the connection after a client is idle for N seconds (0 to disable)</td>
+</tr>
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>limits.maxmemory</code></h3>
-  <p>Maximum RAM used by Redis to store data (no limit by default) in bytes</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>[object Object]</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>limits.policy</code></h3>
-  <p>Define how Redis will remove keys when maxmemory is reached</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>volatile-lru</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>limits.samples</code></h3>
-  <p>Sample size to use to base the policy eviction for LRU and TTL policy algorithms</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>3</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>logfile</code></h3>
-  <p>Server log file</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/redis/redis-server.log</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>loglevel</code></h3>
-  <p>Server log verbosity</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>notice</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>lua.time_limit</code></h3>
-  <p>Time limit (in ms) for the execution of a LUA script</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>5000</code></td>
-        <td><code></code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>port</code></h3>
-  <p>Connection port.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>6379</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>replication.is_slave</code></h3>
-  <p>Is this redis instance a slave?</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>false</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.masterauth</code></h3>
-  <p>Redis master auth password (if required)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>[object Object]</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.masterip</code></h3>
-  <p>IP or host of the master server</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code></code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.masterport</code></h3>
-  <p>Redis port of the master server</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>6379</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.ping_slave_period</code></h3>
-  <p>Frequency (in sec) to ping the master server as health check</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.priority</code></h3>
-  <p>Slave priority</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>100</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.read_only</code></h3>
-  <p>Make the slave server read-only (preferred option)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>yes</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.serve_stale_data</code></h3>
-  <p>Slave redis serves stale data if the connection is lost with the master</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>yes</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.timeout</code></h3>
-  <p>Timeout to Bulk IO transfer and ping response to mark the master as unreachable</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>60</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>security.requirepass</code></h3>
-  <p>Require a password to connect (either client or slave)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>[object Object]</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>slowlog.log_slower_than</code></h3>
-  <p>Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10000</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>slowlog.max_len</code></h3>
-  <p>Length of the slow log to capture (FIFO based)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>128</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>snapshotting.dbfilename</code></h3>
-  <p>Filename where to dump the DB</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>dump.rdb</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>snapshotting.dir</code></h3>
-  <p>Folder where to store the snapshots</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/lib/redis</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>snapshotting.rdbchecksum</code></h3>
-  <p>Enable database checksum (use ~10% extra CPU)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>yes</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>snapshotting.rdbcompression</code></h3>
-  <p>Enable database compression</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>yes</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>snapshotting.save</code></h3>
-  <p>Array of save rules including seconds and number of changes that trigger a save</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>array</code></td>
-        <td><code>[object Object],[object Object],[object Object]</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>syslog.enable</code></h3>
-  <p>Send log to syslog</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>no</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>syslog.facility</code></h3>
-  <p>Syslog facility</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>local0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>syslog.ident</code></h3>
-  <p>Syslog identity</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>redis</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>timeout</code></h3>
-  <p>Close the connection after a client is idle for N seconds (0 to disable)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-  </ul>
 </section>
 
 

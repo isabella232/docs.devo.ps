@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Nodes' >Nodes</a></li>
   
@@ -268,1304 +267,562 @@ default:  </li>
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>apc.enable_cli</code></h3>
-  <p>Enable / disable APC for the CLI version of PHP (Mostly for testing and debugging).</p>
   <table>
     <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.enabled</code></h3>
-  <p>Enable / disable APC (0 - disabled).</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.gc_ttl</code></h3>
-  <p>The number of seconds that a cache entry may remain on the garbage-collection list.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>3600</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.max_file_size</code></h3>
-  <p>Cache files up to this file size. Prevents large files from being cached.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>1M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.shm_segments</code></h3>
-  <p>The number of shared memory segments to allocate for the compiler cache.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.shm_size</code></h3>
-  <p>The size of each shared memory segment in MB. (add unit)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>128M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.ttl</code></h3>
-  <p>The number of seconds a cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>14400</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>apc.user_ttl</code></h3>
-  <p>The number of seconds a user cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>7200</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>cgi.fix_pathinfo</code></h3>
-  <p>cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>display_errors</code></h3>
-  <p>Define whether PHP will output errors, notices and warnings.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>Off</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>error_log</code></h3>
-  <p>Log errors to specified file (or syslog).</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>syslog</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>error_reporting</code></h3>
-  <p>Define which errors, warnings and notices to report.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>E_ALL &amp; ~E_DEPRECATED</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>expose_php</code></h3>
-  <p>Decides whether PHP may expose the fact that it is installed on the server.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>Off</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>extensions</code></h3>
-  <p>List of extra php extensions installable via the regular OS package manager</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>array</code></td>
-        <td><code></code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>fpm.emergency_restart_interval</code></h3>
-  <p>Time within which an emergency graceful restart should be initiated (along with the threshold) - Available Units s(econds) default, m(inutes), h(ours), or d(ays)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.emergency_restart_threshold</code></h3>
-  <p>If more than X processes restart with SIGSEGV or SIGBUS within the emergency restart interval, php-fpm will restart</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.error_log</code></h3>
-  <p>Location of the error log file - can use `syslog` instead of file.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/php-fpm/php5-fpm.log</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.log_level</code></h3>
-  <p>Minimum log level to capture the logs for</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>notice</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pid</code></h3>
-  <p>Location of the php5-fpm process PID file</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/run/php5-fpm.pid</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
       
       
-    
-    
-    
-  
-    
-      
-      
-    
-    
-    
-  
-<li>
-  <h3><code>fpm.pool.bind.allowed_clients</code></h3>
-  <p>List (comma separated) of ipv4 addresses of FastCGI clients which are allowed to connect.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>127.0.0.1</code></td>
-        <td><code>false</code></td>
-      </tr>
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> apc.enable_cli</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Enable / disable APC for the CLI version of PHP (Mostly for testing and debugging).</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> apc.enabled</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Enable / disable APC (0 - disabled).</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> apc.gc_ttl</code></td>
+  <td class='default'><code>3600</code></td>
+  <td class='description'>The number of seconds that a cache entry may remain on the garbage-collection list.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> apc.max_file_size</code></td>
+  <td class='default'><code>1M</code></td>
+  <td class='description'>Cache files up to this file size. Prevents large files from being cached.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> apc.shm_segments</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>The number of shared memory segments to allocate for the compiler cache.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> apc.shm_size</code></td>
+  <td class='default'><code>128M</code></td>
+  <td class='description'>The size of each shared memory segment in MB. (add unit)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> apc.ttl</code></td>
+  <td class='default'><code>14400</code></td>
+  <td class='description'>The number of seconds a cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> apc.user_ttl</code></td>
+  <td class='default'><code>7200</code></td>
+  <td class='description'>The number of seconds a user cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> cgi.fix_pathinfo</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> display_errors</code></td>
+  <td class='default'><code>Off</code></td>
+  <td class='description'>Define whether PHP will output errors, notices and warnings.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> error_log</code></td>
+  <td class='default'><code>syslog</code></td>
+  <td class='description'>Log errors to specified file (or syslog).</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> error_reporting</code></td>
+  <td class='default'><code>E_ALL &amp; ~E_DEPRECATED</code></td>
+  <td class='description'>Define which errors, warnings and notices to report.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> expose_php</code></td>
+  <td class='default'><code>Off</code></td>
+  <td class='description'>Decides whether PHP may expose the fact that it is installed on the server.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type array'><span>array</span></span> extensions</code></td>
+  <td class='default'><code></code></td>
+  <td class='description'>List of extra php extensions installable via the regular OS package manager</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.emergency_restart_interval</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Time within which an emergency graceful restart should be initiated (along with the threshold) - Available Units s(econds) default, m(inutes), h(ours), or d(ays)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.emergency_restart_threshold</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>If more than X processes restart with SIGSEGV or SIGBUS within the emergency restart interval, php-fpm will restart</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.error_log</code></td>
+  <td class='default'><code>/var/log/php-fpm/php5-fpm.log</code></td>
+  <td class='description'>Location of the error log file - can use `syslog` instead of file.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.log_level</code></td>
+  <td class='default'><code>notice</code></td>
+  <td class='description'>Minimum log level to capture the logs for</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pid</code></td>
+  <td class='default'><code>/var/run/php5-fpm.pid</code></td>
+  <td class='description'>Location of the php5-fpm process PID file</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.bind.allowed_clients</code></td>
+  <td class='default'><code>127.0.0.1</code></td>
+  <td class='description'>List (comma separated) of ipv4 addresses of FastCGI clients which are allowed to connect.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.bind.group</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Group owner of the unix socket (only relevant if listen is a path)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.bind.mode</code></td>
+  <td class='default'><code>0666</code></td>
+  <td class='description'>Permission of the socket file (only relevant if listen is a path)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.bind.owner</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Owner of the unix socket (only relevant if listen is a path)</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.group</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Running unix group of the pool</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.listen</code></td>
+  <td class='default'><code>127.0.0.1:9000</code></td>
+  <td class='description'>The address on which to accept FastCGI requests (ip.add.re.ss;port, port, sock path)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.name</code></td>
+  <td class='default'><code>www</code></td>
+  <td class='description'>Pool name</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.ping.path</code></td>
+  <td class='default'><code>/ping</code></td>
+  <td class='description'>URL path to simple ping</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.ping.response</code></td>
+  <td class='default'><code>pong</code></td>
+  <td class='description'>Message to be sent back on ping</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.pm.max_children</code></td>
+  <td class='default'><code>10</code></td>
+  <td class='description'>Maximum number of children (usually cpu-core * 2)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.pm.max_requests</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Maximum number of requests processed by a single process before being respawned</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.pm.max_spare_servers</code></td>
+  <td class='default'><code>6</code></td>
+  <td class='description'>Maximum number of spare servers to keep running</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.pm.min_spare_servers</code></td>
+  <td class='default'><code>2</code></td>
+  <td class='description'>Minimum number of spare servers to keep running</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.pm.process_idle_timeout</code></td>
+  <td class='default'><code>10s</code></td>
+  <td class='description'>Maximum time to keep a server idle running (ondemand)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.pm.start_servers</code></td>
+  <td class='default'><code>4</code></td>
+  <td class='description'>Number of server to start (dynamic)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.pm.status_path</code></td>
+  <td class='default'><code>/status</code></td>
+  <td class='description'>URL path to access the status of the php pool</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.pm.type</code></td>
+  <td class='default'><code>static</code></td>
+  <td class='description'>Choose how the process manager will control the number of child processes. (static, dynamic, ondemand)</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.request_slowlog_timeout</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Time after which a backtrace is sent to the slowlogs (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.request_terminate_timeout</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Time after which a the process gets terminated (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.slowlog</code></td>
+  <td class='default'><code>/var/log/php-fpm/$pool.log.slow</code></td>
+  <td class='description'>Path for the slow log file of this pool</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.user</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Running unix user of the pool</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.process_control_timeout</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Time limit for child processes to wait for a reaction on signals from master. Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.process_max</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>The maximum number of processes FPM will fork across all the pools. 0 means no limit.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.syslog.facility</code></td>
+  <td class='default'><code>daemon</code></td>
+  <td class='description'>Syslog facility to send the log to (only if error_log=syslog)</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.syslog.ident</code></td>
+  <td class='default'><code>php-fpm</code></td>
+  <td class='description'>String that is prepended to the syslog message</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.log_errors</code></td>
+  <td class='default'><code>On</code></td>
+  <td class='description'>Define whether PHP should log errors to locations such as a server-specific log, STDERR, or a location specified by the error_log.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.max_execution_time</code></td>
+  <td class='default'><code>60</code></td>
+  <td class='description'>Maximum execution time of each script, in seconds.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.max_input_time</code></td>
+  <td class='default'><code>120</code></td>
+  <td class='description'>Maximum amount of time each script may spend parsing request data.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.memory_limit</code></td>
+  <td class='default'><code>128M</code></td>
+  <td class='description'>Maximum amount of memory a script may consume.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type array'><span>array</span></span> fpm.pool.pecl_extenstions</code></td>
+  <td class='default'><code></code></td>
+  <td class='description'>List of extra php extensions installable via PECL</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.post_max_size</code></td>
+  <td class='default'><code>16M</code></td>
+  <td class='description'>Maximum size of POST data that PHP will accept.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.realpath_cache_size</code></td>
+  <td class='default'><code>256k</code></td>
+  <td class='description'>Determines the size of the realpath cache to be used.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> fpm.pool.realpath_cache_ttl</code></td>
+  <td class='default'><code>3600</code></td>
+  <td class='description'>Duration of time, in seconds for which to cache realpath information for a given file or directory.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.safe_mode</code></td>
+  <td class='default'><code>Off</code></td>
+  <td class='description'>Enable / disable php safe_mode.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.safe_mode_gid</code></td>
+  <td class='default'><code>Off</code></td>
+  <td class='description'>Compare GID instead of UID when php safe_mode is enabled.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.session.save_handler</code></td>
+  <td class='default'><code>files</code></td>
+  <td class='description'>Handler used to store/retrieve session data.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.session.save_path</code></td>
+  <td class='default'><code>/var/lib/php/session</code></td>
+  <td class='description'>Folder PATH where sessions will be stored (if save_habdler is file).</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> fpm.pool.upload_max_filesize</code></td>
+  <td class='default'><code>16M</code></td>
+  <td class='description'>Maximum allowed size for uploaded files.</td>
+</tr>
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.bind.group</code></h3>
-  <p>Group owner of the unix socket (only relevant if listen is a path)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.bind.mode</code></h3>
-  <p>Permission of the socket file (only relevant if listen is a path)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>0666</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.bind.owner</code></h3>
-  <p>Owner of the unix socket (only relevant if listen is a path)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>fpm.pool.group</code></h3>
-  <p>Running unix group of the pool</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.listen</code></h3>
-  <p>The address on which to accept FastCGI requests (ip.add.re.ss;port, port, sock path)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>127.0.0.1:9000</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.name</code></h3>
-  <p>Pool name</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-      
-    
-    
-    
-  
-<li>
-  <h3><code>fpm.pool.ping.path</code></h3>
-  <p>URL path to simple ping</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/ping</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.ping.response</code></h3>
-  <p>Message to be sent back on ping</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>pong</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-      
-    
-    
-    
-  
-<li>
-  <h3><code>fpm.pool.pm.max_children</code></h3>
-  <p>Maximum number of children (usually cpu-core * 2)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.max_requests</code></h3>
-  <p>Maximum number of requests processed by a single process before being respawned</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.max_spare_servers</code></h3>
-  <p>Maximum number of spare servers to keep running</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>6</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.min_spare_servers</code></h3>
-  <p>Minimum number of spare servers to keep running</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>2</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.process_idle_timeout</code></h3>
-  <p>Maximum time to keep a server idle running (ondemand)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>10s</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.start_servers</code></h3>
-  <p>Number of server to start (dynamic)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>4</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.status_path</code></h3>
-  <p>URL path to access the status of the php pool</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/status</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pm.type</code></h3>
-  <p>Choose how the process manager will control the number of child processes. (static, dynamic, ondemand)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>static</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>fpm.pool.request_slowlog_timeout</code></h3>
-  <p>Time after which a backtrace is sent to the slowlogs (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.request_terminate_timeout</code></h3>
-  <p>Time after which a the process gets terminated (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.slowlog</code></h3>
-  <p>Path for the slow log file of this pool</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/php-fpm/$pool.log.slow</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.user</code></h3>
-  <p>Running unix user of the pool</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>fpm.pool.process_control_timeout</code></h3>
-  <p>Time limit for child processes to wait for a reaction on signals from master. Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.process_max</code></h3>
-  <p>The maximum number of processes FPM will fork across all the pools. 0 means no limit.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-      
-    
-    
-    
-  
-<li>
-  <h3><code>fpm.pool.syslog.facility</code></h3>
-  <p>Syslog facility to send the log to (only if error_log=syslog)</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>daemon</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.syslog.ident</code></h3>
-  <p>String that is prepended to the syslog message</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>php-fpm</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>fpm.pool.log_errors</code></h3>
-  <p>Define whether PHP should log errors to locations such as a server-specific log, STDERR, or a location specified by the error_log.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>On</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.max_execution_time</code></h3>
-  <p>Maximum execution time of each script, in seconds.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>60</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.max_input_time</code></h3>
-  <p>Maximum amount of time each script may spend parsing request data.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>120</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.memory_limit</code></h3>
-  <p>Maximum amount of memory a script may consume.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>128M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.pecl_extenstions</code></h3>
-  <p>List of extra php extensions installable via PECL</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>array</code></td>
-        <td><code></code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.post_max_size</code></h3>
-  <p>Maximum size of POST data that PHP will accept.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>16M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.realpath_cache_size</code></h3>
-  <p>Determines the size of the realpath cache to be used.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>256k</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.realpath_cache_ttl</code></h3>
-  <p>Duration of time, in seconds for which to cache realpath information for a given file or directory.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>3600</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.safe_mode</code></h3>
-  <p>Enable / disable php safe_mode.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>Off</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.safe_mode_gid</code></h3>
-  <p>Compare GID instead of UID when php safe_mode is enabled.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>Off</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-      
-    
-    
-    
-  
-<li>
-  <h3><code>fpm.pool.session.save_handler</code></h3>
-  <p>Handler used to store/retrieve session data.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>files</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>fpm.pool.session.save_path</code></h3>
-  <p>Folder PATH where sessions will be stored (if save_habdler is file).</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/lib/php/session</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>fpm.pool.upload_max_filesize</code></h3>
-  <p>Maximum allowed size for uploaded files.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>16M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-  </ul>
 </section>
 
 

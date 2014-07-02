@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Nodes' >Nodes</a></li>
   
@@ -386,304 +385,141 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-    
+  <table>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
       
-    
-    
-    
-  
-<li>
-  <h3><code>events.worker_connections</code></h3>
-  <p>Number of concurrent http connection handled per nginx process</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1024</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
       
-    
-    
-    
-  
-<li>
-  <h3><code>http.access_log</code></h3>
-  <p>Global access log file path</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/nginx/access.log</code></td>
-        <td><code>false</code></td>
-      </tr>
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> events.worker_connections</code></td>
+  <td class='default'><code>1024</code></td>
+  <td class='description'>Number of concurrent http connection handled per nginx process</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.access_log</code></td>
+  <td class='default'><code>/var/log/nginx/access.log</code></td>
+  <td class='description'>Global access log file path</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.error_log</code></td>
+  <td class='default'><code>/var/log/nginx/error.log</code></td>
+  <td class='description'>Global error log file path</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.gzip</code></td>
+  <td class='default'><code>on</code></td>
+  <td class='description'>Enable gzip compression</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.gzip_disable</code></td>
+  <td class='default'><code>msie6</code></td>
+  <td class='description'>Space separated list of browser to disable gzip compression for</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> http.keepalive_timeout</code></td>
+  <td class='default'><code>65</code></td>
+  <td class='description'>Keepalive timeout (sec) - 0 to disable</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.sendfile</code></td>
+  <td class='default'><code>on</code></td>
+  <td class='description'>Enable sendfile</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.tcp_nodelay</code></td>
+  <td class='default'><code>on</code></td>
+  <td class='description'>Enable tcp_nodelay</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> http.tcp_nopush</code></td>
+  <td class='default'><code>on</code></td>
+  <td class='description'>Enable tcp_nopush</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> http.types_hash_max_size</code></td>
+  <td class='default'><code>2048</code></td>
+  <td class='description'>Maximum size of hash tables</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> pid</code></td>
+  <td class='default'><code>/var/run/nginx.pid</code></td>
+  <td class='description'>Pid file path</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> user</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Nginx running user.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker_processes</code></td>
+  <td class='default'><code>4</code></td>
+  <td class='description'>Number of Nginx processes</td>
+</tr>
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.error_log</code></h3>
-  <p>Global error log file path</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/nginx/error.log</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.gzip</code></h3>
-  <p>Enable gzip compression</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>on</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.gzip_disable</code></h3>
-  <p>Space separated list of browser to disable gzip compression for</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>msie6</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.keepalive_timeout</code></h3>
-  <p>Keepalive timeout (sec) - 0 to disable</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>65</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.sendfile</code></h3>
-  <p>Enable sendfile</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>on</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.tcp_nodelay</code></h3>
-  <p>Enable tcp_nodelay</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>on</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.tcp_nopush</code></h3>
-  <p>Enable tcp_nopush</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>on</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>http.types_hash_max_size</code></h3>
-  <p>Maximum size of hash tables</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>2048</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>pid</code></h3>
-  <p>Pid file path</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/run/nginx.pid</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>user</code></h3>
-  <p>Nginx running user.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker_processes</code></h3>
-  <p>Number of Nginx processes</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>4</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-  </ul>
 </section>
 
 

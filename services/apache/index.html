@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Nodes' >Nodes</a></li>
   
@@ -271,566 +270,246 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-    
+  <table>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
       
-    
-    
-    
-  
-<li>
-  <h3><code>event.maxclients</code></h3>
-  <p>Maximum number of simultaneous client connections</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>150</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>event.maxrequestsperchild</code></h3>
-  <p>Maximum number of requests a server process serves.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>event.maxsparethreads</code></h3>
-  <p>Maximum number of worker threads which are kept spare.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>75</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>event.minsparethreads</code></h3>
-  <p>Minimum number of worker threads which are kept spare,</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>25</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>event.startservers</code></h3>
-  <p>Initial number of server processes to start.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>5</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>event.threadlimit</code></h3>
-  <p>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>64</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>event.threadsperchild</code></h3>
-  <p>Constant number of worker threads in each server process.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>25</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>group</code></h3>
-  <p>Apache running group.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>keepalive</code></h3>
-  <p>Whether or not to allow persistent connections.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>true</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>keepalivetimout</code></h3>
-  <p>Number of seconds to wait for the next request from the same client on the same connection.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>5</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>maxkeepaliverequests</code></h3>
-  <p>The maximum number of requests to allow during a persistent connection.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>100</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
       
-    
-    
-    
-  
-<li>
-  <h3><code>prefork.maxclients</code></h3>
-  <p>Maximum number of server processes allowed to start.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>150</code></td>
-        <td><code>false</code></td>
-      </tr>
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.maxclients</code></td>
+  <td class='default'><code>150</code></td>
+  <td class='description'>Maximum number of simultaneous client connections</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.maxrequestsperchild</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Maximum number of requests a server process serves.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.maxsparethreads</code></td>
+  <td class='default'><code>75</code></td>
+  <td class='description'>Maximum number of worker threads which are kept spare.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.minsparethreads</code></td>
+  <td class='default'><code>25</code></td>
+  <td class='description'>Minimum number of worker threads which are kept spare,</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.startservers</code></td>
+  <td class='default'><code>5</code></td>
+  <td class='description'>Initial number of server processes to start.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.threadlimit</code></td>
+  <td class='default'><code>64</code></td>
+  <td class='description'>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> event.threadsperchild</code></td>
+  <td class='default'><code>25</code></td>
+  <td class='description'>Constant number of worker threads in each server process.</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> group</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Apache running group.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> keepalive</code></td>
+  <td class='default'><code>true</code></td>
+  <td class='description'>Whether or not to allow persistent connections.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> keepalivetimout</code></td>
+  <td class='default'><code>5</code></td>
+  <td class='description'>Number of seconds to wait for the next request from the same client on the same connection.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> maxkeepaliverequests</code></td>
+  <td class='default'><code>100</code></td>
+  <td class='description'>The maximum number of requests to allow during a persistent connection.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> prefork.maxclients</code></td>
+  <td class='default'><code>150</code></td>
+  <td class='description'>Maximum number of server processes allowed to start.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> prefork.maxrequestsperchild</code></td>
+  <td class='default'><code>4000</code></td>
+  <td class='description'>Maximum number of requests a server process serves.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> prefork.maxspareservers</code></td>
+  <td class='default'><code>10</code></td>
+  <td class='description'>Maximum number of server processes which are kept spare.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> prefork.minspareservers</code></td>
+  <td class='default'><code>2</code></td>
+  <td class='description'>Minimum number of server processes which are kept spare.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> prefork.startservers</code></td>
+  <td class='default'><code>5</code></td>
+  <td class='description'>Number of server processes to start.</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> timeout</code></td>
+  <td class='default'><code>300</code></td>
+  <td class='description'>The number of seconds before receives and sends time out.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> user</code></td>
+  <td class='default'><code>www-data</code></td>
+  <td class='description'>Apache running user.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.maxclients</code></td>
+  <td class='default'><code>150</code></td>
+  <td class='description'>Maximum number of simultaneous client connections</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.maxrequestsperchild</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Maximum number of requests a server process serves.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.maxsparethreads</code></td>
+  <td class='default'><code>75</code></td>
+  <td class='description'>Maximum number of worker threads which are kept spare.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.minsparethreads</code></td>
+  <td class='default'><code>25</code></td>
+  <td class='description'>Minimum number of worker threads which are kept spare,</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.startservers</code></td>
+  <td class='default'><code>5</code></td>
+  <td class='description'>Initial number of server processes to start.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.threadlimit</code></td>
+  <td class='default'><code>64</code></td>
+  <td class='description'>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> worker.threadsperchild</code></td>
+  <td class='default'><code>25</code></td>
+  <td class='description'>Constant number of worker threads in each server process.</td>
+</tr>
+
+
+
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>prefork.maxrequestsperchild</code></h3>
-  <p>Maximum number of requests a server process serves.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>4000</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>prefork.maxspareservers</code></h3>
-  <p>Maximum number of server processes which are kept spare.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>prefork.minspareservers</code></h3>
-  <p>Minimum number of server processes which are kept spare.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>2</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>prefork.startservers</code></h3>
-  <p>Number of server processes to start.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>5</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>timeout</code></h3>
-  <p>The number of seconds before receives and sends time out.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>300</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>user</code></h3>
-  <p>Apache running user.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>www-data</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>worker.maxclients</code></h3>
-  <p>Maximum number of simultaneous client connections</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>150</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker.maxrequestsperchild</code></h3>
-  <p>Maximum number of requests a server process serves.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker.maxsparethreads</code></h3>
-  <p>Maximum number of worker threads which are kept spare.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>75</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker.minsparethreads</code></h3>
-  <p>Minimum number of worker threads which are kept spare,</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>25</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker.startservers</code></h3>
-  <p>Initial number of server processes to start.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>5</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker.threadlimit</code></h3>
-  <p>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>64</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>worker.threadsperchild</code></h3>
-  <p>Constant number of worker threads in each server process.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>25</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-
-  </ul>
 </section>
 
 

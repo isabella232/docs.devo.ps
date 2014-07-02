@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/concepts/Scripts' >Scripts</a></li>
   
@@ -255,985 +254,416 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-<li>
-  <h3><code>auto_increment_increment</code></h3>
-  <p>Auto increment.</p>
   <table>
     <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>auto_increment_offset</code></h3>
-  <p>Auto increment offset.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>base_dir</code></h3>
-  <p>Base folder.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/usr</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>bind_address</code></h3>
-  <p>Binding IP address.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>127.0.0.1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>data_dir</code></h3>
-  <p>Database files path.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/lib/mysql</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
       
-    
-    
-    
-  
-<li>
-  <h3><code>innodb.innodb_adaptive_flushing</code></h3>
-  <p>Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>true</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_additional_mem_pool_size</code></h3>
-  <p>The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>8M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_buffer_pool_size</code></h3>
-  <p>The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>128M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_data_file_path</code></h3>
-  <p>The paths to individual data files and their sizes.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>ibdata1:10M:autoextend:max:500M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_flush_log_at_trx_commit</code></h3>
-  <p>If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_flush_method</code></h3>
-  <p>Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>O_DIRECT</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_log_buffer_size</code></h3>
-  <p>The size in bytes of the buffer that InnoDB uses to write to the log files on disk.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>8M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>innodb.innodb_log_file_size</code></h3>
-  <p>The size in bytes of each log file in a log group.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>5M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
       
-    
-    
-    
-  
-<li>
-  <h3><code>logs.log_error</code></h3>
-  <p>The location of the error log.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/mysql/mysql.log</code></td>
-        <td><code>false</code></td>
-      </tr>
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> auto_increment_increment</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Auto increment.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> auto_increment_offset</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Auto increment offset.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> base_dir</code></td>
+  <td class='default'><code>/usr</code></td>
+  <td class='description'>Base folder.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> bind_address</code></td>
+  <td class='default'><code>127.0.0.1</code></td>
+  <td class='description'>Binding IP address.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> data_dir</code></td>
+  <td class='default'><code>/var/lib/mysql</code></td>
+  <td class='description'>Database files path.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_adaptive_flushing</code></td>
+  <td class='default'><code>true</code></td>
+  <td class='description'>Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_additional_mem_pool_size</code></td>
+  <td class='default'><code>8M</code></td>
+  <td class='description'>The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_buffer_pool_size</code></td>
+  <td class='default'><code>128M</code></td>
+  <td class='description'>The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_data_file_path</code></td>
+  <td class='default'><code>ibdata1:10M:autoextend:max:500M</code></td>
+  <td class='description'>The paths to individual data files and their sizes.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> innodb.innodb_flush_log_at_trx_commit</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_flush_method</code></td>
+  <td class='default'><code>O_DIRECT</code></td>
+  <td class='description'>Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_log_buffer_size</code></td>
+  <td class='default'><code>8M</code></td>
+  <td class='description'>The size in bytes of the buffer that InnoDB uses to write to the log files on disk.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> innodb.innodb_log_file_size</code></td>
+  <td class='default'><code>5M</code></td>
+  <td class='description'>The size in bytes of each log file in a log group.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> logs.log_error</code></td>
+  <td class='default'><code>/var/log/mysql/mysql.log</code></td>
+  <td class='description'>The location of the error log.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> logs.log_queries_not_using_indexes</code></td>
+  <td class='default'><code>false</code></td>
+  <td class='description'>If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type number'><span>number</span></span> logs.long_query_time</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Increment slow_queries variable and log if a query takes longer than this many seconds.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> logs.slow_query_log</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>Whether the slow query log is enabled.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> logs.slow_query_log_file</code></td>
+  <td class='default'><code>/var/log/mysql/slow.log</code></td>
+  <td class='description'>The name of the slow query log file.</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> old_passwords</code></td>
+  <td class='default'><code>0</code></td>
+  <td class='description'>Allow old (non-secure) passwords.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> pid_file</code></td>
+  <td class='default'><code>/var/run/mysqld/mysqld.pid</code></td>
+  <td class='description'>Pid file.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> port</code></td>
+  <td class='default'><code>3306</code></td>
+  <td class='description'>Connection port.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> query_cache.query_cache_limit</code></td>
+  <td class='default'><code>2M</code></td>
+  <td class='description'>Do not cache results that are larger than this number of bytes.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> query_cache.query_cache_size</code></td>
+  <td class='default'><code>64M</code></td>
+  <td class='description'>The amount of memory allocated for caching query results.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.expire_logs_days</code></td>
+  <td class='default'><code>10</code></td>
+  <td class='description'>The number of days for automatic binary log file removal.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.log_bin</code></td>
+  <td class='default'><code>mysql-bin</code></td>
+  <td class='description'>Enable binary logging. The option value is the basename for the log sequence.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.log_bin_trust_function_creators</code></td>
+  <td class='default'><code>false</code></td>
+  <td class='description'>Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.log_slave_updates</code></td>
+  <td class='default'><code>true</code></td>
+  <td class='description'>This option tells the slave to log the updates performed by its SQL thread to its own binary log.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.max_binlog_size</code></td>
+  <td class='default'><code>100M</code></td>
+  <td class='description'>If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.relay_log</code></td>
+  <td class='default'><code>relay-bin</code></td>
+  <td class='description'>The basename for the relay log.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.server_id</code></td>
+  <td class='default'><code>10</code></td>
+  <td class='description'>Is used in replication to enable master and slave servers to identify themselves uniquely.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> replication.skip_slave_start</code></td>
+  <td class='default'><code>true</code></td>
+  <td class='description'>Tells the slave server not to start the slave threads when the server starts.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> replication.sync_binlog</code></td>
+  <td class='default'><code>1</code></td>
+  <td class='description'>If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.</td>
+</tr>
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> socket</code></td>
+  <td class='default'><code>/var/run/mysqld/mysqld.sock</code></td>
+  <td class='description'>Mysql listening socket.</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.back_log</code></td>
+  <td class='default'><code>128</code></td>
+  <td class='description'>The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> tunable.key_buffer</code></td>
+  <td class='default'><code>256M</code></td>
+  <td class='description'>Size of the buffer used for index blocks. The key buffer is also known as the key cache.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> tunable.max_allowed_packet</code></td>
+  <td class='default'><code>16M</code></td>
+  <td class='description'>The maximum size of one packet or any generated/intermediate string.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.max_connections</code></td>
+  <td class='default'><code>256</code></td>
+  <td class='description'>The maximum permitted number of simultaneous client connections.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> tunable.max_heap_table_size</code></td>
+  <td class='default'><code>64M</code></td>
+  <td class='description'>Maximum size to which user-created MEMORY tables are permitted to grow.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.net_read_timeout</code></td>
+  <td class='default'><code>30</code></td>
+  <td class='description'>The number of seconds to wait for more data from a connection before aborting the read.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.net_write_timeout</code></td>
+  <td class='default'><code>30</code></td>
+  <td class='description'>The number of seconds to wait for a block to be written to a connection before aborting the write.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.table_open_cache</code></td>
+  <td class='default'><code>1024</code></td>
+  <td class='description'>The number of open tables for all threads.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.thread_cache_size</code></td>
+  <td class='default'><code>32</code></td>
+  <td class='description'>Number of threads the server should cache for reuse.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type string'><span>string</span></span> tunable.thread_stack</code></td>
+  <td class='default'><code>256K</code></td>
+  <td class='description'>The stack size for each thread.</td>
+</tr>
+
+
+
+<tr>
+  <td class='variable '><code><span class='type integer'><span>integer</span></span> tunable.wait_timeout</code></td>
+  <td class='default'><code>180</code></td>
+  <td class='description'>The number of seconds the server waits for activity on a noninteractive connection before closing it.</td>
+</tr>
+
+
+
+
+
     </tbody>
   </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>logs.log_queries_not_using_indexes</code></h3>
-  <p>If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>false</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>logs.long_query_time</code></h3>
-  <p>Increment slow_queries variable and log if a query takes longer than this many seconds.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>number</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>logs.slow_query_log</code></h3>
-  <p>Whether the slow query log is enabled.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>logs.slow_query_log_file</code></h3>
-  <p>The name of the slow query log file.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/log/mysql/slow.log</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>old_passwords</code></h3>
-  <p>Allow old (non-secure) passwords.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>0</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>pid_file</code></h3>
-  <p>Pid file.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/run/mysqld/mysqld.pid</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>port</code></h3>
-  <p>Connection port.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>3306</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>query_cache.query_cache_limit</code></h3>
-  <p>Do not cache results that are larger than this number of bytes.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>2M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>query_cache.query_cache_size</code></h3>
-  <p>The amount of memory allocated for caching query results.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>64M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>replication.expire_logs_days</code></h3>
-  <p>The number of days for automatic binary log file removal.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.log_bin</code></h3>
-  <p>Enable binary logging. The option value is the basename for the log sequence.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>mysql-bin</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.log_bin_trust_function_creators</code></h3>
-  <p>Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>false</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.log_slave_updates</code></h3>
-  <p>This option tells the slave to log the updates performed by its SQL thread to its own binary log.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>true</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.max_binlog_size</code></h3>
-  <p>If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>100M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.relay_log</code></h3>
-  <p>The basename for the relay log.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>relay-bin</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.server_id</code></h3>
-  <p>Is used in replication to enable master and slave servers to identify themselves uniquely.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>10</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.skip_slave_start</code></h3>
-  <p>Tells the slave server not to start the slave threads when the server starts.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>true</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>replication.sync_binlog</code></h3>
-  <p>If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-  
-<li>
-  <h3><code>socket</code></h3>
-  <p>Mysql listening socket.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>/var/run/mysqld/mysqld.sock</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-    
-      
-    
-    
-    
-  
-<li>
-  <h3><code>tunable.back_log</code></h3>
-  <p>The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>128</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.key_buffer</code></h3>
-  <p>Size of the buffer used for index blocks. The key buffer is also known as the key cache.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>256M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.max_allowed_packet</code></h3>
-  <p>The maximum size of one packet or any generated/intermediate string.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>16M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.max_connections</code></h3>
-  <p>The maximum permitted number of simultaneous client connections.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>256</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.max_heap_table_size</code></h3>
-  <p>Maximum size to which user-created MEMORY tables are permitted to grow.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>64M</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.net_read_timeout</code></h3>
-  <p>The number of seconds to wait for more data from a connection before aborting the read.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>30</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.net_write_timeout</code></h3>
-  <p>The number of seconds to wait for a block to be written to a connection before aborting the write.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>30</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.table_open_cache</code></h3>
-  <p>The number of open tables for all threads.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>1024</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.thread_cache_size</code></h3>
-  <p>Number of threads the server should cache for reuse.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>32</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.thread_stack</code></h3>
-  <p>The stack size for each thread.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>256K</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-  
-<li>
-  <h3><code>tunable.wait_timeout</code></h3>
-  <p>The number of seconds the server waits for activity on a noninteractive connection before closing it.</p>
-  <table>
-    <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>integer</code></td>
-        <td><code>180</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
-</li>
-  
-
-
-    
-  
-
-
-  </ul>
 </section>
 
 

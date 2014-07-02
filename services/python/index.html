@@ -25,7 +25,7 @@
 <meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
 
   <!-- CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
@@ -41,7 +41,6 @@
   <section id='main'>
     <aside class='sidebar'>
       <ul>
-  <li><a href='/overview.html'>Overview</a></li>
   
   <li><a href='/services/go' >Go</a></li>
   
@@ -240,32 +239,27 @@ configuration:
 
 <section class='configuration'>
   <h2 id='configuration'>Configuration</h2>
-  <ul>
-    
-    
-  
-<li>
-  <h3><code>packages</code></h3>
-  <p>List of pip packages to install globally on the system</p>
   <table>
     <thead>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Required</th>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>array</code></td>
-        <td><code></code></td>
-        <td><code>false</code></td>
-      </tr>
+      
+      
+
+<tr>
+  <td class='variable '><code><span class='type array'><span>array</span></span> packages</code></td>
+  <td class='default'><code></code></td>
+  <td class='description'>List of pip packages to install globally on the system</td>
+</tr>
+
+
     </tbody>
   </table>
-</li>
-  
-
-
-  </ul>
 </section>
 
 
