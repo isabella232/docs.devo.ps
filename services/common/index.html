@@ -151,85 +151,30 @@
 </header>
 
 
-<section class='tasks'>
-  <h2 id='tasks'>Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-    
-      <tr>
-        <td><code>git_clone</code></td>
-        <td>
-          
-          
-          
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-          
-            <tr>
-              <td class='variable  required'><code><span class='type string'><span>string</span></span> git_repo_address</code></td>
-              <td class='description'>URL of the git repository (http or ssh)</td>
-            </tr>
-          
-          
-            <tr>
-              <td class='variable  required'><code><span class='type string'><span>string</span></span> git_repo_dest</code></td>
-              <td class='description'>Folder where repository is cloned on the node</td>
-            </tr>
-          
-          
-            <tr>
-              <td class='variable '><code><span class='type string'><span>string</span></span> git_repo_version</code></td>
-              <td class='description'>Version of the repository to checkout (HEAD, SHA-1, branch or tag name)</td>
-            </tr>
-          
-          
-            </tbody>
-          </table>
-          
-          
-        </td>
-        <td>Clone or update a git repository</td>
-      </tr>
-    
-    </tbody>
-  </table>
-</section>
-
 
 <section class='body'>
-  
+  <hr/>
+<p>tasks: </p>
+<ul>
+<li>name: git_clone
+description: Clone or update a git repository
+options:
+  git_repo_address:<pre><code>type: string  
+description: URL of the git repository (http or ssh)
+required: true
+</code></pre>  git_repo_dest:<pre><code>type: string
+description: Folder where repository is cloned on the node
+required: true
+</code></pre>  git_repo_version:<pre><code>type: string
+description: &quot;Version of the repository to checkout (HEAD, SHA-1, branch or tag name)&quot;
+required: false
+default: HEAD
+</code></pre></li>
+</ul>
+<hr/>
+
 </section>
 
-
-<section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
-    </tbody>
-  </table>
-</section>
 
 
 
