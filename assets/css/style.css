@@ -1201,6 +1201,8 @@ body {
       margin-top: -60px;
       padding-top: 60px;
       /* <\hack> */ }
+    #main .content pre code + p {
+      margin-top: -20px; }
     #main .content table .code, #main .content table code {
       white-space: nowrap; }
     #main .content table .variable .type {

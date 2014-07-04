@@ -13,14 +13,6 @@ body {
   text-align: center;
 }
 
-/* Layout */
-
-#header,
-#main,
-#footer {
-  
-}
-
 /* Header */
 
 #header {
@@ -30,6 +22,7 @@ body {
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 1000;
   .content {
     margin: 0 auto;
     padding: 1.5*$gutter/2 0;
@@ -102,6 +95,10 @@ body {
       padding-top: 3*$gutter;
       /* <\hack> */
     }
+    pre code + p {
+      margin-top: -$gutter;
+    }
+
     table {
       .code,
       code {
