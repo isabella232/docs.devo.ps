@@ -1,34 +1,50 @@
-<ul>
 
+<ul>
   <li>
     <h3>Manual</h3>
     <ul>
-      {% for item in manual | sort %}
-      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
+      {% set menu = {} %}
+      {% for item in manual %}
+        {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
+      {% endfor %}
+      {% for i in menu | sort %}
+      <li><a href='/{{ manual[menu[i]].path }}' {% if path == manual[menu[i]].path %} class='active'{% endif %}>{{ manual[menu[i]].title }}</a></li>
       {% endfor %}
     </ul>
   </li>
   <li>
     <h3>Concepts</h3>
     <ul>
-      {% for item in concepts | sort %}
-      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
+      {% set menu = {} %}
+      {% for item in concepts %}
+        {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
+      {% endfor %}
+      {% for i in menu | sort %}
+      <li><a href='/{{ concepts[menu[i]].path }}' {% if path == concepts[menu[i]].path %} class='active'{% endif %}>{{ concepts[menu[i]].title }}</a></li>
       {% endfor %}
     </ul>
   </li>
   <li>
     <h3>Services</h3>
     <ul>
-      {% for item in services | sort %}
-      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
+      {% set menu = {} %}
+      {% for item in services %}
+        {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
+      {% endfor %}
+      {% for i in menu | sort %}
+      <li><a href='/{{ services[menu[i]].path }}' {% if path == services[menu[i]].path %} class='active'{% endif %}>{{ services[menu[i]].title }}</a></li>
       {% endfor %}
     </ul>
   </li>
   <li>
     <h3>Providers</h3>
     <ul>
-      {% for item in providers | sort %}
-      <li><a href='/{{ item.path }}' {% if path == item.path %} class='active'{% endif %}>{{ item.title }}</a></li>
+      {% set menu = {} %}
+      {% for item in providers %}
+        {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
+      {% endfor %}
+      {% for i in menu | sort %}
+      <li><a href='/{{ providers[menu[i]].path }}' {% if path == providers[menu[i]].path %} class='active'{% endif %}>{{ providers[menu[i]].title }}</a></li>
       {% endfor %}
     </ul>
   </li>
