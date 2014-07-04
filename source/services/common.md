@@ -1,6 +1,9 @@
 ---
-configuration: {}
 title: Common
+
+---
+
+---
 tasks: 
   - name: git_clone
     description: Clone or update a git repository

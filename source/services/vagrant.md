@@ -1,5 +1,4 @@
 ---
-configuration: {}
 documentation: http://docs.vagrantup.com/v2/
 tags:
 - virtualbox

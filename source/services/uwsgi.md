@@ -1,5 +1,4 @@
 ---
-configuration: {}
 documentation: http://uwsgi-docs.readthedocs.org/en/latest/
 tags:
 - app

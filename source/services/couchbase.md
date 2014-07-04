@@ -1,5 +1,4 @@
 ---
-configuration: {}
 documentation: http://docs.couchbase.com/
 tags:
 - database

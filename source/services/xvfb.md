@@ -1,5 +1,4 @@
 ---
-configuration: {}
 documentation: http://www.x.org/wiki/
 tags:
 - app

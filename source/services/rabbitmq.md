@@ -1,5 +1,4 @@
 ---
-configuration: {}
 documentation: https://www.rabbitmq.com/documentation.html
 tags:
 - messagebus

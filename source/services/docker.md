@@ -1,5 +1,4 @@
 ---
-configuration: {}
 documentation: https://docs.docker.com/
 tags:
 - infrastructure

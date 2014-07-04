@@ -97,7 +97,7 @@ tasks:
     port:
       description: listening port
       required: true
-      type: int
+      type: integer
     routes:
       description: list of route objects
       required: true
