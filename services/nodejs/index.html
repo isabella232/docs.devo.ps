@@ -167,25 +167,84 @@
     
       <tr>
         <td><code>start</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Start all the apps managed by Foreverd (node.js) if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Stop all the apps managed by Foreverd (node.js) if started</td>
       </tr>
     
       <tr>
         <td><code>restart</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Restart all the apps managed by Foreverd (node.js).</td>
       </tr>
     
       <tr>
         <td><code>app add</code></td>
-        <td>[object Object]</td>
+        <td>
+          
+          
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+          
+            <tr>
+              <td class='variable '><code><span class='type string'><span>string</span></span> extra_env</code></td>
+              <td class='description'>additional environment variable to pass to the application</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type string'><span>string</span></span> name</code></td>
+              <td class='description'>name of your app</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable '><code><span class='type string'><span>string</span></span> node_env</code></td>
+              <td class='description'>node.js environment var NODE_ENV</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type string'><span>string</span></span> root</code></td>
+              <td class='description'>path of the root folder of your app</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type string'><span>string</span></span> script</code></td>
+              <td class='description'>node.js script to run via foreverd</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable '><code><span class='type string'><span>string</span></span> user</code></td>
+              <td class='description'>running user of the application</td>
+            </tr>
+          
+          
+            </tbody>
+          </table>
+          
+          
+        </td>
         <td>Add a new app defintion for foreverd to run</td>
       </tr>
     
@@ -193,6 +252,10 @@
   </table>
 </section>
 
+
+<section class='body'>
+  
+</section>
 
 
 <section class='configuration'>
@@ -221,9 +284,6 @@
 </section>
 
 
-<section class='body'>
-  
-</section>
 
     </section>
   </section>

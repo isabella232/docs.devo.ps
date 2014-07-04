@@ -167,25 +167,72 @@
     
       <tr>
         <td><code>start</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Start uWSGI emperor if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Stop uWSGI emperor if started</td>
       </tr>
     
       <tr>
         <td><code>restart</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Restart uWSGI emperor, reload the configuration (but kills existing connection)</td>
       </tr>
     
       <tr>
         <td><code>app add</code></td>
-        <td>[object Object]</td>
+        <td>
+          
+          
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+          
+            <tr>
+              <td class='variable '><code><span class='type string'><span>string</span></span> module</code></td>
+              <td class='description'>stuff</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type string'><span>string</span></span> name</code></td>
+              <td class='description'>Name of the app</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type int'><span>int</span></span> port</code></td>
+              <td class='description'>listening TCP port</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type string'><span>string</span></span> root</code></td>
+              <td class='description'>root folder of the application</td>
+            </tr>
+          
+          
+            </tbody>
+          </table>
+          
+          
+        </td>
         <td>Add a new uWSGI application configuration</td>
       </tr>
     
@@ -193,6 +240,10 @@
   </table>
 </section>
 
+
+<section class='body'>
+  
+</section>
 
 
 <section class='configuration'>
@@ -213,9 +264,6 @@
 </section>
 
 
-<section class='body'>
-  
-</section>
 
     </section>
   </section>

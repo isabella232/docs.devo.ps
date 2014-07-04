@@ -167,31 +167,62 @@
     
       <tr>
         <td><code>start</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Start OpenVPN if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Stop OpenVPN if started</td>
       </tr>
     
       <tr>
         <td><code>reload</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Reload OpenVPN, reload the configuration and perform a graceful restart</td>
       </tr>
     
       <tr>
         <td><code>restart</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Restart OpenVPN, reload the configuration (but kills existing connection)</td>
       </tr>
     
       <tr>
         <td><code>user add</code></td>
-        <td>[object Object]</td>
+        <td>
+          
+          
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+          
+            <tr>
+              <td class='variable  required'><code><span class='type array'><span>array</span></span> users</code></td>
+              <td class='description'>list of user objects</td>
+            </tr>
+          
+          
+            </tbody>
+          </table>
+          
+          
+        </td>
         <td>Add OpenVPN client users and send credentials by email</td>
       </tr>
     
@@ -199,6 +230,42 @@
   </table>
 </section>
 
+
+<section class='body'>
+  <h3 id="options">Options</h3>
+<h4 id="user-object">User object</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Valid Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td>The client name (ex. bob, alice)</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td>email address</td>
+<td>The email address to send the credentials to</td>
+</tr>
+</tbody>
+</table>
+
+</section>
 
 
 <section class='configuration'>
@@ -404,41 +471,6 @@
 </section>
 
 
-<section class='body'>
-  <h3 id="options">Options</h3>
-<h4 id="user-object">User object</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Valid Values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td></td>
-<td>The client name (ex. bob, alice)</td>
-</tr>
-<tr>
-<td>email</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>email address</td>
-<td>The email address to send the credentials to</td>
-</tr>
-</tbody>
-</table>
-
-</section>
 
     </section>
   </section>

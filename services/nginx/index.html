@@ -167,31 +167,92 @@
     
       <tr>
         <td><code>start</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Start MongoDB if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Stop MongoDB if started</td>
       </tr>
     
       <tr>
         <td><code>reload</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Reload MongoDB, reload the configuration and perform a graceful restart</td>
       </tr>
     
       <tr>
         <td><code>restart</code></td>
-        <td>-</td>
+        <td>
+          -
+        </td>
         <td>Restart MongoDB, reload the configuration (but kills existing connection)</td>
       </tr>
     
       <tr>
         <td><code>vhost add</code></td>
-        <td>[object Object]</td>
+        <td>
+          
+          
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+          
+            <tr>
+              <td class='variable '><code><span class='type string'><span>string</span></span> aliases</code></td>
+              <td class='description'>space separated list of domain name aliases</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type string'><span>string</span></span> domain</code></td>
+              <td class='description'>domain name</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type int'><span>int</span></span> port</code></td>
+              <td class='description'>listening port</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable  required'><code><span class='type array'><span>array</span></span> routes</code></td>
+              <td class='description'>list of route objects</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable '><code><span class='type array'><span>array</span></span> upstreams</code></td>
+              <td class='description'>list of upstream objects</td>
+            </tr>
+          
+          
+            <tr>
+              <td class='variable '><code><span class='type string'><span>string</span></span> webroot</code></td>
+              <td class='description'>subfolder to serve data from based on the root /var/www/_domain_</td>
+            </tr>
+          
+          
+            </tbody>
+          </table>
+          
+          
+        </td>
         <td>Defines a HTTP virtual host in Nginx config</td>
       </tr>
     
@@ -199,6 +260,98 @@
   </table>
 </section>
 
+
+<section class='body'>
+  <h3 id="options">Options</h3>
+<h4 id="route-object">Route object</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Valid Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td>Any string including regex</td>
+<td>Any string / regex that nginx understand as a <code>location</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td>proxy / fastcgi / websocket / uwsgi / static</td>
+<td>The type of handler for that route</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td>Either an upstream name, or a service / url, or a path</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>string</td>
+<td>False</td>
+<td></td>
+<td></td>
+<td>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</td>
+</tr>
+<tr>
+<td>static</td>
+<td>string</td>
+<td>False</td>
+<td>root</td>
+<td>alias / root</td>
+<td>For type static only, define how to consider the source folder - alias or root</td>
+</tr>
+</tbody>
+</table>
+<h4 id="upstream-object">Upstream object</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Valid Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td>unique name on the node</td>
+<td>Name of the upstream</td>
+</tr>
+<tr>
+<td>backends</td>
+<td>array</td>
+<td>True</td>
+<td></td>
+<td>TCP URL and Unix socket path</td>
+<td>List of backends associated with the upstream</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the upstream name MUST be unique on the node.</p>
+
+</section>
 
 
 <section class='configuration'>
@@ -341,97 +494,6 @@
 </section>
 
 
-<section class='body'>
-  <h3 id="options">Options</h3>
-<h4 id="route-object">Route object</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Valid Values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>uri</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>Any string including regex</td>
-<td>Any string / regex that nginx understand as a <code>location</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>proxy / fastcgi / websocket / uwsgi / static</td>
-<td>The type of handler for that route</td>
-</tr>
-<tr>
-<td>to</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td></td>
-<td>Either an upstream name, or a service / url, or a path</td>
-</tr>
-<tr>
-<td>custom</td>
-<td>string</td>
-<td>False</td>
-<td></td>
-<td></td>
-<td>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</td>
-</tr>
-<tr>
-<td>static</td>
-<td>string</td>
-<td>False</td>
-<td>root</td>
-<td>alias / root</td>
-<td>For type static only, define how to consider the source folder - alias or root</td>
-</tr>
-</tbody>
-</table>
-<h4 id="upstream-object">Upstream object</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Valid Values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>unique name on the node</td>
-<td>Name of the upstream</td>
-</tr>
-<tr>
-<td>backends</td>
-<td>array</td>
-<td>True</td>
-<td></td>
-<td>TCP URL and Unix socket path</td>
-<td>List of backends associated with the upstream</td>
-</tr>
-</tbody>
-</table>
-<p>Note that the upstream name MUST be unique on the node.</p>
-
-</section>
 
     </section>
   </section>
