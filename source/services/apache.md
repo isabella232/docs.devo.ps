@@ -161,68 +161,21 @@ configuration:
 documentation: http://httpd.apache.org/docs/
 tags:
 - web
+tasks:
+- description: Start Apache if stopped
+  name: start
+- description: Stop Apache if started
+  name: stop
+- description: Reload Apache, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Apache, reload the configuration (but kills existing connection)
+  name: restart
 title: Apache
 
 ---
 
-## Examples
 
-### Configuration
+### Notes
 
-```example
-services:
-  apache: '*'
-configuration:
-  apache:
-    timeout: 60
-    prefork:
-      maxclients: 20
-      maxrequestsperchild: 1000
-```
+For better user experience you may prefer the use of the `reload` task instead of `restart`.
 
-The example above will install Apache on the node, set the timeout to 60 seconds and set prefork MPM to start a maximum of 20 child processes handling 1000 requests maximum each.
-
-### Task
-
-```example
-steps: blah
-```
-
-## Tasks
-
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Options</th>
-<th>Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>start</code></td>
-<td>-</td>
-<td>Start sthe Apache service, it does not do anything if it is already running.</td>
-</tr>
-<tr>
-<td><code>stop</code></td>
-<td>-</td>
-<td>Stops the Apache service, it does not do anything if it is already stopped.</td>
-</tr>
-<tr>
-<td><code>restart</code></td>
-<td>-</td>
-<td>Restarts the Apache service, killing existing HTTP connections. Use <code>reload</code> to avoid killing existing connections.</td>
-</tr>
-<tr>
-<td><code>reload</code></td>
-<td>-</td>
-<td>Gracefully restarts the Apache service, reloading the configuration.</td>
-</tr>
-<tr>
-<td><code>add vhost</code></td>
-<td><code>Object</code></td>
-<td>Adds a virtual host to the Apache configuration.</td>
-</tr>
-</tbody>
-</table>

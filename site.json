@@ -11,13 +11,11 @@
         "metalsmith-collections": {
             "pages": {
                 "pattern": "*/*.md"
-            }
-        },
-        "metalsmith-metadata": {
-            "concepts_menu": "concepts/menu.yaml",
-            "manual_menu": "manual/menu.yaml",
-            "services_menu": "services/menu.yaml",
-            "providers_menu": "providers/menu.yaml"
+            },
+            "manual": { "pattern": "manual/*.md" },
+            "concepts": { "pattern": "concepts/*.md" },
+            "providers": { "pattern": "providers/*.md" },
+            "services": { "pattern": "services/*.md" }
         },
         "metalsmith-markdown": {
             "xhtml": true

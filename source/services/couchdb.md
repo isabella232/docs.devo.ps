@@ -56,63 +56,20 @@ documentation: http://docs.couchdb.org/en/latest/
 tags:
 - database
 - nosql
+tasks:
+- description: Start CouchDB if stopped
+  name: start
+- description: Stop CouchDB if started
+  name: stop
+- description: Reload CouchDB, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart CouchDB, reload the configuration (but kills existing connection)
+  name: restart
 title: CouchDB
 
 ---
-A Database for the Web
 
-CouchDB is a database that completely embraces the web. Store your data with JSON documents. Access your documents and query your indexes with your web browser, via HTTP. Index, combine, and transform your documents with JavaScript. CouchDB works well with modern web and mobile apps. You can even serve web apps directly out of CouchDB. And you can distribute your data, or your apps, efficiently using CouchDB’s incremental replication. CouchDB supports master-master setups with automatic conflict detection.
 
-CouchDB comes with a suite of features, such as on-the-fly document transformation and real-time change notifications, that makes web app development a breeze. It even comes with an easy to use web administration console. You guessed it, served up directly out of CouchDB! We care a lot about distributed scaling. CouchDB is highly available and partition tolerant, but is also eventually consistent. And we care a lot about your data. CouchDB has a fault-tolerant storage engine that puts the safety of your data first.
+### Notes
 
-## Example
-
-    services:
-      couchdb: '*'
-    configuration:
-      couchdb:
-        bind_address: 0.0.0.0
-
-Install CouchDB on the node and make the service listen on all interfaces (0.0.0.0)
-## Tasks
-### restart
-# Restart
-
-Do a full restart of the CouchDB service, effectively stopping and re-starting the service.
-
-For better user experience you may prefer the use of the `reload` task instead.
-
-# Example in a devops task
-
-    do:
-      - run: devops couchdb restart
-
-### reload
-# Reload
-
-Do a graceful restart of the CouchDB service, reloading the configuration.
-
-# Example in a devops task
-
-    do:
-      - run: devops couchdb reload
-
-### start
-# Start
-
-Start the CouchDB service, it does not do anything if it is already running.
-
-# Example in a devops task
-
-    do:
-      - run: devops couchdb start
-
-### stop
-# Stop
-
-Stop the CouchDB service, it does not do anything if it is already stopped.
-
-# Example in a devops task
-
-    do:
-      - run: devops couchdb stop
+For better user experience you may prefer the use of the `reload` task instead of `restart`.

@@ -270,37 +270,15 @@ configuration:
 documentation: http://redis.io/documentation
 tags:
 - database
+tasks:
+- description: Start Redis if stopped
+  name: start
+- description: Stop Redis if started
+  name: stop
+- description: Reload Redis, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Redis, reload the configuration (but kills existing connection)
+  name: restart
 title: Redis
 
 ---
-Redis is an open source, BSD licensed, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
-
-## Example
-
-    services:
-      redis: '*'
-    configuration:
-      redis:
-        port: 16379
-        bind: 0.0.0.0
-
-Install Redis on the node, making it listen on all interfaces (0.0.0.0) and on port TCP/16379 instead of TCP/6379 default.
-
-## Tasks
-### restart
-# Task Restart
-
-Restart Redis Server
-
-### reload
-# Task Reload
-
-### start
-# Task Start
-
-Start Redis Server
-
-### stop
-# Task Stop
-
-Stop Redis Server

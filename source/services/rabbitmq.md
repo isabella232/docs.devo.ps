@@ -1,38 +1,16 @@
 ---
-configuration: {}
 documentation: https://www.rabbitmq.com/documentation.html
 tags:
 - messagebus
+tasks:
+- description: Start RabbitMQ if stopped
+  name: start
+- description: Stop RabbitMQ if started
+  name: stop
+- description: Reload RabbitMQ, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart RabbitMQ, reload the configuration (but kills existing connection)
+  name: restart
 title: RabbitMQ
 
 ---
-Robust messaging for applications
-
-Easy to use
-
-Runs on all major operating systems
-
-Supports a huge number of developer platforms
-
-Open source and commercially supported
-
-## Example
-
-    services:
-      rabbitmq: '*'
-    configuration:
-      rabbitmq: {}
-
-Install RabbitMQ on the node, keeping the default configuraiton unchanged.
-## Tasks
-### restart
-# Task Restart
-
-### reload
-# Task Reload
-
-### start
-# Task Start
-
-### stop
-# Task Stop

@@ -8,28 +8,21 @@ configuration:
 documentation: https://www.ruby-lang.org/en/documentation/
 tags:
 - language
+tasks:
+- description: Add Ruby gems globally
+  name: gems add
+  options:
+    gems:
+      description: List of gems (string) to add
+      required: true
+      type: array
+- description: Remove Ruby gems globally
+  name: gems remove
+  options:
+    gems:
+      description: List of gems (string) to remove
+      required: true
+      type: array
 title: Ruby
 
 ---
-A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
-
-## Example
-
-    services:
-      ruby: '*'
-    configuration:
-      ruby:
-        gems:
-          - compass
-
-Add ruby support to allow install of Gem packages (globally) on the system.
-## Tasks
-### add gems
-# Add Ruby gems
-
-Install ruby gems globally on the server.
-
-### remove gems
-# Remove Ruby gems
-
-Remove Ruby gems installed globally from the server. If the gems are not installed it doesn't do anything.

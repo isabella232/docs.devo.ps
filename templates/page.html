@@ -10,8 +10,54 @@
   {% if documentation %}
   <a href='{{ documentation }}'>Official documentation</a>
   {% endif %}
-
 </header>
+
+{% if tasks %}
+<section class='tasks'>
+  <h2 id='tasks'>Tasks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Options</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+      <tr>
+        <td><code>{{ task.name | safe }}</code></td>
+        <td>
+          {% if task.options %}
+          {% for option in task.options %}
+          {% if loop.first %}
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+          {% endif %}
+            <tr>
+              <td class='variable {% if option.required == true %} required{% endif %}'><code><span class='type {{ option.type }}'><span>{{ option.type }}</span></span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></td>
+              <td class='description'>{{ option.description }}</td>
+            </tr>
+          {% endfor %}
+          {% if loop.last %}
+            </tbody>
+          </table>
+          {% endif %}
+          {% else %}-{% endif %}
+        </td>
+        <td>{{ task.description | safe }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endif %}
 
 <section class='body'>
   {{ contents | safe }}
@@ -35,4 +81,5 @@
   </table>
 </section>
 {% endif %}
+
 {% endblock %}

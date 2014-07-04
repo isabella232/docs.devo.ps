@@ -83,40 +83,15 @@ documentation: https://www.varnish-cache.org/docs
 tags:
 - caching
 - reverse proxy
+tasks:
+- description: Start Varnish if stopped
+  name: start
+- description: Stop Varnish if started
+  name: stop
+- description: Reload Varnish, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Varnish, reload the configuration (but kills existing connection)
+  name: restart
 title: Varnish
 
 ---
-Varnish is a web application accelerator. You install it in front of your web application and it will speed it up significantly.
-
-## Example
-
-    services:
-      varnish: '*'
-    configuration:
-      varnish:
-        listen_port: 80
-        listen_address: 0.0.0.0
-        storage_type: malloc
-        storage_size: 512M
-
-Install Varnish on the node, making it listen on all interfaces (0.0.0.0) and on TCP/80. The cache is set to be held in RAM (Malloc) for a maximum size of 512MB.
-## Tasks
-### restart
-# Task Restart
-
-Restart Varnish
-
-### reload
-# Task Reload
-
-Reload Varnish config
-
-### start
-# Task Start
-
-Start Varnish
-
-### stop
-# Task Stop
-
-Stop Varnish

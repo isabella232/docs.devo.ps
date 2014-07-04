@@ -74,81 +74,50 @@ configuration:
 documentation: http://wiki.nginx.org/Modules
 tags:
 - web
+tasks:
+- description: Start MongoDB if stopped
+  name: start
+- description: Stop MongoDB if started
+  name: stop
+- description: Reload MongoDB, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart MongoDB, reload the configuration (but kills existing connection)
+  name: restart
+- description: Defines a HTTP virtual host in Nginx config
+  name: vhost add
+  options:
+    aliases:
+      description: space separated list of domain name aliases
+      required: false
+      type: string
+    domain:
+      description: domain name
+      required: true
+      type: string
+    port:
+      description: listening port
+      required: true
+      type: integer
+    routes:
+      description: list of route objects
+      required: true
+      type: array
+    upstreams:
+      description: list of upstream objects
+      required: false
+      type: array
+    webroot:
+      description: subfolder to serve data from based on the root /var/www/_domain_
+      required: false
+      type: string
 title: Nginx
 
 ---
-High performance HTTP server.
 
-## Example
 
-    services:
-      nginx: '*'
-    configuration:
-      nginx:
-        worker_processes: 1
+### Options
 
-Install Nginx on the node, but spawn 1 worker only instead of 4 (default).
-
-Managing virtual hosts and domains is handled by dedicated tasks.
-
-## Tasks
-### restart
-# Task Restart
-
-Restart Nginx
-
-### reload
-# Task Reload
-
-Reload Nginx config
-
-### start
-# Task Start
-
-Start Nginx
-
-### stop
-# Task Stop
-
-Stop Nginx
-
-### add http vhost
-# vhost add
-
-Ensure a HTTP virtual host is defined in the node, creating it and restarting nginx if needed
-
-# Example in a devops task
-
-    do:
-      - run: devops nginx vhost add
-        options:
-          domain: example.com
-          aliases: www.example.com
-          port: 80
-          webroot: html
-          upstreams:
-            - name: my_backend
-              backends:
-                - http://localhost:9000
-                  unix:///var/run/file.sock
-          routes:
-            - uri: /
-              type: proxy
-              to: my_backend
-              custom: >
-                some_custom_nginx;
-                configuration...;
-
-Name | Type | Required | Default |Description
-----|----|----|----|----|----
-domain | string | True | | The domain name the host will reply to
-aliases | string / array | False | | The list of domain aliases the vhost will reply to
-port | int | True | | The HTTP port
-webroot | string | False | '' | The subfolder to serve data from based on the root /var/www/_domain_
-upstreams | array | False | | Beware the upstreams can only be specified once and will be shared across all the vhosts
-routes | array of route | True | | Sorted list of URI and their handlers
-
-Format of a route:
+#### Route object
 
 Name | Type | Required | Default | Valid Values | Description
 ----|----|----|----|----|----
@@ -158,3 +127,11 @@ to | string | True | | | Either an upstream name, or a service / url, or a path
 custom | string | False | | | Custom inline nginx config to include within the route (e.g. auth, custom timeout)
 static | string | False | root | alias / root | For type static only, define how to consider the source folder - alias or root
 
+#### Upstream object
+
+Name | Type | Required | Default | Valid Values | Description
+----|----|----|----|----|----
+name | string | True | | unique name on the node | Name of the upstream
+backends | array | True | | TCP URL and Unix socket path | List of backends associated with the upstream
+
+Note that the upstream name MUST be unique on the node.

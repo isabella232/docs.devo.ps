@@ -308,7 +308,7 @@ configuration:
     regex: /^\d+[kmgKMG]$/
     required: false
     type: string
-  pecl_extenstions:
+  pecl_extensions:
     default: []
     description: List of extra php extensions installable via PECL
     required: false
@@ -371,57 +371,22 @@ configuration:
 documentation: http://www.php.net/docs.php
 tags:
 - language
+tasks:
+- description: Start PHP-FPM if stopped
+  name: start
+- description: Stop PHP-FPM if started
+  name: stop
+- description: Reload PHP-FPM, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart PHP-FPM, reload the configuration (but kills existing connection)
+  name: restart
+- description: Add PHP PECL extensions
+  name: pecl_extension add
+  options:
+    name:
+      description: Name of the PECL extension to install
+      required: true
+      type: string
 title: PHP
 
 ---
-PHP is a popular general-purpose scripting language that is especially suited to web development.
-
-Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.
-
-## Example
-
-    services:
-      php: '*'
-    configuration:
-      php:
-        memory_limit: 64M
-        post_max_size: 32M
-        upload_max_filesize: 32M
-        apc:
-          shm_size: 256M
-
-Install PHP on the node, setting the max limit of a php process to 64MB, allowing 32MB files upload, and giving 256MB of room to APC cache.
-
-## Tasks
-### restart
-# Task Restart
-
-Restart php-fpm
-
-### reload
-# Task Reload
-
-Reload php-fpm config
-
-### stop
-# Task Stop
-
-Stop php-fpm
-
-### add pecl extension
-# Task Add_pecl_extension
-
-Add pecl extension
-
----
-- id:  php_pecl_extension_name
-  label:  Name of the PECL extension
-  required:  true
-  default:  
-
----
-
-### start
-# Task Start
-
-Start php-fpm

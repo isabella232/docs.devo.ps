@@ -126,49 +126,33 @@ configuration:
 documentation: http://openvpn.net/index.php/open-source/documentation.html
 tags:
 - app
+tasks:
+- description: Start OpenVPN if stopped
+  name: start
+- description: Stop OpenVPN if started
+  name: stop
+- description: Reload OpenVPN, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart OpenVPN, reload the configuration (but kills existing connection)
+  name: restart
+- description: Add OpenVPN client users and send credentials by email
+  name: user add
+  options:
+    users:
+      description: list of user objects
+      required: true
+      type: array
 title: OpenVPN
 
 ---
-SSL/TLS based user-space VPN. Supports Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X, and Windows 2000/XP.
 
-## Example
 
-    services:
-      openvpn: '*'
-    configuration:
-      openvpn:
-        port: 6543
-        proto: 'tcp'
-        max_client: 10
-        key:
-          key_size: 2048
-          email: me@example.com
+### Options
 
-Install OpenVPN on the node, configure the service so it listen on TCP/6543 (instead of regular UDP/1194), limit the number of concurrent clients to 10 and set the server's key to be 2048bits with a custom email in the certificate.
+#### User object
 
-Note that the default values of the configuration will satisfy most of the use and those customization are more for advanced users.
+Name | Type | Required | Default | Valid Values | Description
+----|----|----|----|----|----
+name | string | True | | | The client name (ex. bob, alice)
+email | string | True | | email address | The email address to send the credentials to
 
-The management of OpenVPN clients is handled by dedicated tasks.
-## Tasks
-### restart
-# Task Restart
-
-Restart OpenVPN
-
-### reload
-# Task Reload
-
-### add user
-# Task Add_user
-
-Add a new OpenVPN client
-
-### stop
-# Task Stop
-
-Stop OpenVPN
-
-### start
-# Task Start
-
-Start OpenVPN

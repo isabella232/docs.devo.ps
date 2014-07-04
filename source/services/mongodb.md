@@ -52,37 +52,15 @@ documentation: http://docs.mongodb.org/manual/
 tags:
 - database
 - nosql
+tasks:
+- description: Start MongoDB if stopped
+  name: start
+- description: Stop MongoDB if started
+  name: stop
+- description: Reload MongoDB, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart MongoDB, reload the configuration (but kills existing connection)
+  name: restart
 title: MongoDB
 
 ---
-MongoDB (from "humongous") is an open-source document database, and the leading NoSQL database. Written in C++.
-
-## Example
-
-    services:
-      mongodb: '*'
-    configuration:
-      mongodb:
-        bindip: 0.0.0.0
-        port: 27018
-        enable_rest: true
-
-Install MongoDB on the node, make the service listen on all interfaces (0.0.0.0), change the listening port to TCP/27018 (instead of 27017 by default), and enable the REST interface (allowing REST api calls against the Mongo database)
-## Tasks
-### restart
-# Task Restart
-
-Restart MongoDB
-
-### reload
-# Task Reload
-
-### start
-# Task Start
-
-Start MongoDB
-
-### stop
-# Task Stop
-
-Stop MongoDB

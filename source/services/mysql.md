@@ -309,41 +309,26 @@ documentation: http://dev.mysql.com/doc/
 tags:
 - database
 - relational
+tasks:
+- description: Start MySQL if stopped
+  name: start
+- description: Stop MySQL if started
+  name: stop
+- description: Reload MySQL, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart MySQL, reload the configuration (but kills existing connection)
+  name: restart
+- description: Add a new MySQL user and a dedicated database
+  name: user add
+  options:
+    db:
+      description: Name of the database to create
+      required: true
+      type: string
+    user:
+      description: Name of the user to create
+      required: true
+      type: string
 title: MySQL
 
 ---
-The world's most popular open source relational database
-
-## Example
-
-    services:
-      mysql: '*'
-    configuration:
-      mysql:
-        bind_address: 0.0.0.0
-        innodb:
-          innodb_buffer_pool_size: 8G
-
-Install MySQL on the node, make it listen on all interfaces (0.0.0.0) and allocate 8GB of RAM to the InnoDB buffer pool.
-
-## Tasks
-### restart
-# Task Restart
-
-Restart MySQL
-
-### add user db
-# Task Add_user_db
-
-### start
-# Task Start
-
-Start MySQL
-
-### stop
-# Task Stop
-
-Stop MySQL
-
-### reload
-# Task Reload

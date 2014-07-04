@@ -8,38 +8,41 @@ configuration:
 documentation: http://nodejs.org/api/
 tags:
 - language
+tasks:
+- description: Start all the apps managed by Foreverd (node.js) if stopped
+  name: start
+- description: Stop all the apps managed by Foreverd (node.js) if started
+  name: stop
+- description: Restart all the apps managed by Foreverd (node.js).
+  name: restart
+- description: Add a new app defintion for foreverd to run
+  name: app add
+  options:
+    extra_env:
+      description: additional environment variable to pass to the application
+      required: false
+      type: string
+    name:
+      description: name of your app
+      required: true
+      type: string
+    node_env:
+      description: node.js environment var NODE_ENV
+      required: false
+      type: string
+    root:
+      description: path of the root folder of your app
+      required: true
+      type: string
+    script:
+      description: node.js script to run via foreverd
+      required: true
+      type: string
+    user:
+      default: devops
+      description: running user of the application
+      required: false
+      type: string
 title: Node.js
 
 ---
-Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
-
-## Example
-
-    services:
-      nodejs: '*'
-    configuration:
-      nodejs: 
-        packages:
-          - forever
-          - bower
-          - grunt-cli
-
-Install Node.js on the node, and install globally `forever`, `bower` and `grunt-cli` (as in `npm install -g xxx`).
-## Tasks
-### restart
-# Task Restart
-
-Restart node.js forever service
-
-### add app
-# Task Add_app
-
-### start
-# Task Start
-
-Start node.js forever service
-
-### stop
-# Task Stop
-
-Stop node.js forever service

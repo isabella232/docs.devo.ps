@@ -45,40 +45,15 @@ documentation: https://code.google.com/p/memcached/wiki/NewStart
 tags:
 - database
 - caching
+tasks:
+- description: Start Memcached if stopped
+  name: start
+- description: Stop Memcached if started
+  name: stop
+- description: Reload Memcached, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Memcached, reload the configuration (but kills existing connection)
+  name: restart
 title: Memcached
 
 ---
-Free & open source, high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.
-
-Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering.
-
-Memcached is simple yet powerful. Its simple design promotes quick deployment, ease of development, and solves many problems facing large data caches. Its API is available for most popular languages.
-
-## Example
-
-    services:
-      memcached: '*'
-    configuration:
-      memcached:
-        memory: 128
-        port: 11212
-
-Install Memcached on the node, allocate 128MB of RAM to the service and make it listen on port TCP/11212
-## Tasks
-### restart
-# Task Restart
-
-Restart Memcached
-
-### reload
-# Task Reload
-
-### start
-# Task Start
-
-Start Memcached
-
-### stop
-# Task Stop
-
-Stop Memcached

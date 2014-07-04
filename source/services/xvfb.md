@@ -1,23 +1,14 @@
 ---
-configuration: {}
 documentation: http://www.x.org/wiki/
 tags:
 - app
+tasks:
+- description: Start Xvfb if stopped
+  name: start
+- description: Stop Xvfb if started
+  name: stop
+- description: Restart Xvfb
+  name: restart
 title: Xvfb
 
 ---
-Add support for Xfvb (X Virtual FrameBuffer) service; useful when trying to run karma tests (for example) in a headless server.
-
-## Example
-
-    services:
-      xvfb: '*'
-
-Install Xvfb on the node and ensure it is running on the node.
-## Tasks
-### restart
-# Restart Xvfb
-### start
-# Start Xvfb
-### stop
-# Stop Xvfb
