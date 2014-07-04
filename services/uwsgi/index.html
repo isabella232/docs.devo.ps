@@ -70,7 +70,7 @@
     <h3>Services</h3>
     <ul>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nginx' >Nginx</a></li>
       
@@ -166,27 +166,27 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
-        <td>-</td>
-        <td>Restart uWSGI emperor</td>
-      </tr>
-    
-      <tr>
-        <td><code>app add</code></td>
-        <td>[object Object]</td>
-        <td>Restart uWSGI emperor</td>
-      </tr>
-    
-      <tr>
         <td><code>start</code></td>
         <td>-</td>
-        <td>Start uWSGI emperor</td>
+        <td>Start uWSGI emperor if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
         <td>-</td>
-        <td>Stop uWSGI emperor</td>
+        <td>Stop uWSGI emperor if started</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart uWSGI emperor, reload the configuration (but kills existing connection)</td>
+      </tr>
+    
+      <tr>
+        <td><code>app add</code></td>
+        <td>[object Object]</td>
+        <td>Add a new uWSGI application configuration</td>
       </tr>
     
     </tbody>
@@ -214,29 +214,7 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops uwsgi restart
-</code></pre><h3 id="app-add">app add</h3>
-<h4 id="example-in-a-task">Example in a task</h4>
-<pre><code>steps:
-  - run: devops uwsgi app add
-    options:
-      name: my_app
-      root: /opt/that_folder
-      module: some_django_module
-      port: 3000
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops uwsgi start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops uwsgi stop
-</code></pre>
+  
 </section>
 
     </section>

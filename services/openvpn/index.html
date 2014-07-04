@@ -70,7 +70,7 @@
     <h3>Services</h3>
     <ul>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nginx' >Nginx</a></li>
       
@@ -166,33 +166,33 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
+        <td><code>start</code></td>
         <td>-</td>
-        <td>Restart OpenVPN</td>
+        <td>Start OpenVPN if stopped</td>
+      </tr>
+    
+      <tr>
+        <td><code>stop</code></td>
+        <td>-</td>
+        <td>Stop OpenVPN if started</td>
       </tr>
     
       <tr>
         <td><code>reload</code></td>
         <td>-</td>
-        <td>Reload OpenVPN</td>
+        <td>Reload OpenVPN, reload the configuration and perform a graceful restart</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart OpenVPN, reload the configuration (but kills existing connection)</td>
       </tr>
     
       <tr>
         <td><code>user add</code></td>
         <td>[object Object]</td>
         <td>Add OpenVPN client users and send credentials by email</td>
-      </tr>
-    
-      <tr>
-        <td><code>stop</code></td>
-        <td>-</td>
-        <td>Stop OpenVPN</td>
-      </tr>
-    
-      <tr>
-        <td><code>start</code></td>
-        <td>-</td>
-        <td>Start OpenVPN</td>
       </tr>
     
     </tbody>
@@ -405,34 +405,39 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops openvpn restart
-</code></pre><h3 id="reload">reload</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops openvpn reload
-</code></pre><h3 id="user-add">user add</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops openvpn user add
-    options:
-      users:
-        - name: bob
-          email: bob@example.com
-        - name: alice
-          email: alice@example.com
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops openvpn stop
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops openvpn start
-</code></pre>
+  <h3 id="options">Options</h3>
+<h4 id="user-object">User object</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Valid Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td>The client name (ex. bob, alice)</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td>email address</td>
+<td>The email address to send the credentials to</td>
+</tr>
+</tbody>
+</table>
+
 </section>
 
     </section>

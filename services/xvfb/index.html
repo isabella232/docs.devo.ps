@@ -70,7 +70,7 @@
     <h3>Services</h3>
     <ul>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nginx' >Nginx</a></li>
       
@@ -166,21 +166,21 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
-        <td>-</td>
-        <td>Restart Xvfb</td>
-      </tr>
-    
-      <tr>
         <td><code>start</code></td>
         <td>-</td>
-        <td>Start Xvfb</td>
+        <td>Start Xvfb if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
         <td>-</td>
-        <td>Stop Xvfb</td>
+        <td>Stop Xvfb if started</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart Xvfb</td>
       </tr>
     
     </tbody>
@@ -208,20 +208,7 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops xvfb restart
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops xvfb start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops xvfb stop
-</code></pre>
+  
 </section>
 
     </section>

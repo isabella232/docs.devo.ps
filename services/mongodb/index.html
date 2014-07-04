@@ -94,7 +94,7 @@
       
       <li><a href='/services/mysql' >MySQL</a></li>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nodejs' >Node.js</a></li>
       
@@ -166,27 +166,27 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
-        <td>-</td>
-        <td>Restart MongoDB</td>
-      </tr>
-    
-      <tr>
-        <td><code>reload</code></td>
-        <td>-</td>
-        <td>Reload MongoDB</td>
-      </tr>
-    
-      <tr>
         <td><code>start</code></td>
         <td>-</td>
-        <td>Start MongoDB</td>
+        <td>Start MongoDB if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
         <td>-</td>
-        <td>Stop MongoDB</td>
+        <td>Stop MongoDB if started</td>
+      </tr>
+    
+      <tr>
+        <td><code>reload</code></td>
+        <td>-</td>
+        <td>Reload MongoDB, reload the configuration and perform a graceful restart</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart MongoDB, reload the configuration (but kills existing connection)</td>
       </tr>
     
     </tbody>
@@ -278,24 +278,7 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops mongodb restart
-</code></pre><h3 id="reload">reload</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops mongodb reload
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops mongodb start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops mongodb stop
-</code></pre>
+  
 </section>
 
     </section>

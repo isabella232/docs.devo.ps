@@ -70,7 +70,7 @@
     <h3>Services</h3>
     <ul>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nginx' >Nginx</a></li>
       
@@ -153,6 +153,46 @@
 </header>
 
 
+<section class='tasks'>
+  <h2 id='tasks'>Tasks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Options</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><code>start</code></td>
+        <td>-</td>
+        <td>Start Docker if stopped</td>
+      </tr>
+    
+      <tr>
+        <td><code>stop</code></td>
+        <td>-</td>
+        <td>Stop Docker if started</td>
+      </tr>
+    
+      <tr>
+        <td><code>reload</code></td>
+        <td>-</td>
+        <td>Reload Docker, reload the configuration.</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart Docker, stop then start the Docker daemon</td>
+      </tr>
+    
+    </tbody>
+  </table>
+</section>
+
 
 
 <section class='configuration'>
@@ -174,24 +214,7 @@
 
 
 <section class='body'>
-  <h2 id="example">Example</h2>
-<pre><code>services:
-  docker: &#39;*&#39;
-</code></pre><p>Add support for Docker containers on the node.</p>
-<p>Note that the server will be restarted in order to apply the proper option to the kernel.</p>
-<h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h1 id="task-restart">Task Restart</h1>
-<p>Restart Docker</p>
-<h3 id="reload">reload</h3>
-<h1 id="task-reload">Task Reload</h1>
-<h3 id="start">start</h3>
-<h1 id="task-start">Task Start</h1>
-<p>Start Docker</p>
-<h3 id="stop">stop</h3>
-<h1 id="task-stop">Task Stop</h1>
-<p>Stop Docker</p>
-
+  
 </section>
 
     </section>

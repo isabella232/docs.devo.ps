@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title> | devo.ps Documentation</title>
+  <title>Common | devo.ps Documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -94,7 +94,7 @@
       
       <li><a href='/services/mysql' >MySQL</a></li>
       
-      <li><a href='/services/common'  class='active'></a></li>
+      <li><a href='/services/common'  class='active'>Common</a></li>
       
       <li><a href='/services/nodejs' >Node.js</a></li>
       
@@ -143,7 +143,7 @@
     <section class='content'>
       
 <header class='header'>
-  <h1></h1>
+  <h1>Common</h1>
   <div class='tags'>
     
   </div>
@@ -153,9 +153,45 @@
 
 
 
+<section class='configuration'>
+  <h2 id='configuration'>Configuration</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+    </tbody>
+  </table>
+</section>
+
 
 <section class='body'>
-  
+  <hr/>
+<p>tasks: </p>
+<ul>
+<li>name: git_clone
+description: Clone or update a git repository
+options:
+  git_repo_address:<pre><code>type: string  
+description: URL of the git repository (http or ssh)
+required: true
+</code></pre>  git_repo_dest:<pre><code>type: string
+description: Folder where repository is cloned on the node
+required: true
+</code></pre>  git_repo_version:<pre><code>type: string
+description: &quot;Version of the repository to checkout (HEAD, SHA-1, branch or tag name)&quot;
+required: false
+default: HEAD
+</code></pre></li>
+</ul>
+<hr/>
+
 </section>
 
     </section>

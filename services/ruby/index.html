@@ -94,7 +94,7 @@
       
       <li><a href='/services/mysql' >MySQL</a></li>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nodejs' >Node.js</a></li>
       
@@ -166,15 +166,15 @@
     <tbody>
     
       <tr>
-        <td><code>gems remove</code></td>
-        <td>[object Object]</td>
-        <td>Remove Ruby gems if installed</td>
-      </tr>
-    
-      <tr>
         <td><code>gems add</code></td>
         <td>[object Object]</td>
         <td>Add Ruby gems globally</td>
+      </tr>
+    
+      <tr>
+        <td><code>gems remove</code></td>
+        <td>[object Object]</td>
+        <td>Remove Ruby gems globally</td>
       </tr>
     
     </tbody>
@@ -210,22 +210,7 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="gems-remove">gems remove</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops ruby gems remove
-    options:
-      gems:
-        - compass
-</code></pre><h3 id="gems-add">gems add</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops ruby gems add
-    options:
-      gems:
-        - compass
-</code></pre>
+  
 </section>
 
     </section>

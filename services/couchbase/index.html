@@ -70,7 +70,7 @@
     <h3>Services</h3>
     <ul>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nginx' >Nginx</a></li>
       
@@ -166,27 +166,27 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
-        <td>-</td>
-        <td>Restart CouchBase</td>
-      </tr>
-    
-      <tr>
-        <td><code>reload</code></td>
-        <td>-</td>
-        <td>Reload CouchBase</td>
-      </tr>
-    
-      <tr>
         <td><code>start</code></td>
         <td>-</td>
-        <td>Start CouchBase</td>
+        <td>Start CouchBase if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
         <td>-</td>
-        <td>Stop CouchBase</td>
+        <td>Stop CouchBase if started</td>
+      </tr>
+    
+      <tr>
+        <td><code>reload</code></td>
+        <td>-</td>
+        <td>Reload CouchBase, reload the configuration and perform a graceful restart</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart CouchBase, reload the configuration (but kills existing connection)</td>
       </tr>
     
     </tbody>
@@ -214,25 +214,9 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<p>For better user experience you may prefer the use of the <code>reload</code> task instead.</p>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops couchbase restart
-</code></pre><h3 id="reload">reload</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops couchbase reload
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops couchbase start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops couchbase stop
-</code></pre>
+  <h3 id="notes">Notes</h3>
+<p>For better user experience you may prefer the use of the <code>reload</code> task instead of <code>restart</code>.</p>
+
 </section>
 
     </section>

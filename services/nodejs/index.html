@@ -94,7 +94,7 @@
       
       <li><a href='/services/mysql' >MySQL</a></li>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/nodejs'  class='active'>Node.js</a></li>
       
@@ -166,27 +166,27 @@
     <tbody>
     
       <tr>
+        <td><code>start</code></td>
+        <td>-</td>
+        <td>Start all the apps managed by Foreverd (node.js) if stopped</td>
+      </tr>
+    
+      <tr>
+        <td><code>stop</code></td>
+        <td>-</td>
+        <td>Stop all the apps managed by Foreverd (node.js) if started</td>
+      </tr>
+    
+      <tr>
         <td><code>restart</code></td>
         <td>-</td>
-        <td>Restart node.js foreverd</td>
+        <td>Restart all the apps managed by Foreverd (node.js).</td>
       </tr>
     
       <tr>
         <td><code>app add</code></td>
         <td>[object Object]</td>
         <td>Add a new app defintion for foreverd to run</td>
-      </tr>
-    
-      <tr>
-        <td><code>start</code></td>
-        <td>-</td>
-        <td>Start node.js foreverd</td>
-      </tr>
-    
-      <tr>
-        <td><code>stop</code></td>
-        <td>-</td>
-        <td>Stop node.js foreverd</td>
       </tr>
     
     </tbody>
@@ -222,31 +222,7 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nodejs restart
-</code></pre><h3 id="app-add">app add</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nodejs app add
-    options:
-      name: myapp
-      root: /var/www/myapp 
-      script: app.js 
-      node_env: production 
-      user: nobody 
-      extra_env: &quot;NODE_DEBUG=DEBUG SOME_ENV=OTHER&quot;
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nodejs start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nodejs stop
-</code></pre>
+  
 </section>
 
     </section>

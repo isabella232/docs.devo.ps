@@ -72,7 +72,7 @@
       
       <li><a href='/services/apache' >Apache</a></li>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/couchbase' >CouchBase</a></li>
       
@@ -166,31 +166,31 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
-        <td>-</td>
-        <td>Restart Nginx</td>
-      </tr>
-    
-      <tr>
-        <td><code>reload</code></td>
-        <td>-</td>
-        <td>Reload Nginx</td>
-      </tr>
-    
-      <tr>
         <td><code>start</code></td>
         <td>-</td>
-        <td>Start Nginx</td>
+        <td>Start MongoDB if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
         <td>-</td>
-        <td>Stop Nginx</td>
+        <td>Stop MongoDB if started</td>
       </tr>
     
       <tr>
-        <td><code>add http vhost</code></td>
+        <td><code>reload</code></td>
+        <td>-</td>
+        <td>Reload MongoDB, reload the configuration and perform a graceful restart</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart MongoDB, reload the configuration (but kills existing connection)</td>
+      </tr>
+    
+      <tr>
+        <td><code>vhost add</code></td>
         <td>[object Object]</td>
         <td>Defines a HTTP virtual host in Nginx config</td>
       </tr>
@@ -342,100 +342,8 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nginx restart
-</code></pre><h3 id="reload">reload</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nginx reload
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nginx start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nginx stop
-</code></pre><h3 id="add-http-vhost">add http vhost</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops nginx vhost add
-    options:
-      domain: example.com
-      aliases: www.example.com
-      port: 80
-      webroot: html
-      upstreams:
-        - name: my_backend
-          backends:
-            - http://localhost:9000
-              unix:///var/run/file.sock
-      routes:
-        - uri: /
-          type: proxy
-          to: my_backend
-          custom: &gt;
-            some_custom_nginx;
-            configuration...;
-</code></pre><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>domain</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>The domain name the host will reply to</td>
-</tr>
-<tr>
-<td>aliases</td>
-<td>string / array</td>
-<td>False</td>
-<td></td>
-<td>The list of domain aliases the vhost will reply to</td>
-</tr>
-<tr>
-<td>port</td>
-<td>int</td>
-<td>True</td>
-<td></td>
-<td>The HTTP port</td>
-</tr>
-<tr>
-<td>webroot</td>
-<td>string</td>
-<td>False</td>
-<td>&#39;&#39;</td>
-<td>The subfolder to serve data from based on the root /var/www/<em>domain</em></td>
-</tr>
-<tr>
-<td>upstreams</td>
-<td>array</td>
-<td>False</td>
-<td></td>
-<td>Beware the upstreams can only be specified once and will be shared across all the vhosts</td>
-</tr>
-<tr>
-<td>routes</td>
-<td>array of route</td>
-<td>True</td>
-<td></td>
-<td>Sorted list of URI and their handlers</td>
-</tr>
-</tbody>
-</table>
-<p>Format of a route:</p>
+  <h3 id="options">Options</h3>
+<h4 id="route-object">Route object</h4>
 <table>
 <thead>
 <tr>
@@ -490,6 +398,38 @@
 </tr>
 </tbody>
 </table>
+<h4 id="upstream-object">Upstream object</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Valid Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>True</td>
+<td></td>
+<td>unique name on the node</td>
+<td>Name of the upstream</td>
+</tr>
+<tr>
+<td>backends</td>
+<td>array</td>
+<td>True</td>
+<td></td>
+<td>TCP URL and Unix socket path</td>
+<td>List of backends associated with the upstream</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the upstream name MUST be unique on the node.</p>
 
 </section>
 

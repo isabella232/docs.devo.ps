@@ -72,7 +72,7 @@
       
       <li><a href='/services/apache' >Apache</a></li>
       
-      <li><a href='/services/common' ></a></li>
+      <li><a href='/services/common' >Common</a></li>
       
       <li><a href='/services/couchbase' >CouchBase</a></li>
       
@@ -166,27 +166,27 @@
     <tbody>
     
       <tr>
-        <td><code>restart</code></td>
-        <td>-</td>
-        <td>Restart Redis</td>
-      </tr>
-    
-      <tr>
-        <td><code>reload</code></td>
-        <td>-</td>
-        <td>Reload Redis</td>
-      </tr>
-    
-      <tr>
         <td><code>start</code></td>
         <td>-</td>
-        <td>Start Redis</td>
+        <td>Start Redis if stopped</td>
       </tr>
     
       <tr>
         <td><code>stop</code></td>
         <td>-</td>
-        <td>Stop Redis</td>
+        <td>Stop Redis if started</td>
+      </tr>
+    
+      <tr>
+        <td><code>reload</code></td>
+        <td>-</td>
+        <td>Reload Redis, reload the configuration and perform a graceful restart</td>
+      </tr>
+    
+      <tr>
+        <td><code>restart</code></td>
+        <td>-</td>
+        <td>Restart Redis, reload the configuration (but kills existing connection)</td>
       </tr>
     
     </tbody>
@@ -582,24 +582,7 @@
 
 
 <section class='body'>
-  <h2 id="tasks">Tasks</h2>
-<h3 id="restart">restart</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops redis restart
-</code></pre><h3 id="reload">reload</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops redis reload
-</code></pre><h3 id="start">start</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops redis start
-</code></pre><h3 id="stop">stop</h3>
-<h4 id="example-in-a-devops-task">Example in a devops task</h4>
-<pre><code>steps:
-  - run: devops redis stop
-</code></pre>
+  
 </section>
 
     </section>
