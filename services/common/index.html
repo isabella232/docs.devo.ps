@@ -151,6 +151,28 @@
 </header>
 
 
+<section class='tasks'>
+  <h2 id='tasks'>Tasks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Options</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><code>git_clone</code></td>
+        <td>[object Object]</td>
+        <td>Clone or update a git repository</td>
+      </tr>
+    
+    </tbody>
+  </table>
+</section>
+
 
 
 <section class='configuration'>
@@ -172,26 +194,7 @@
 
 
 <section class='body'>
-  <hr/>
-<p>tasks: </p>
-<ul>
-<li>name: git_clone
-description: Clone or update a git repository
-options:
-  git_repo_address:<pre><code>type: string  
-description: URL of the git repository (http or ssh)
-required: true
-</code></pre>  git_repo_dest:<pre><code>type: string
-description: Folder where repository is cloned on the node
-required: true
-</code></pre>  git_repo_version:<pre><code>type: string
-description: &quot;Version of the repository to checkout (HEAD, SHA-1, branch or tag name)&quot;
-required: false
-default: HEAD
-</code></pre></li>
-</ul>
-<hr/>
-
+  
 </section>
 
     </section>
