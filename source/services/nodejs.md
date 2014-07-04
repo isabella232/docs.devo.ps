@@ -9,9 +9,12 @@ documentation: http://nodejs.org/api/
 tags:
 - language
 tasks:
-- description: Restart node.js foreverd
+- description: Start all the apps managed by Foreverd (node.js) if stopped
+  name: start
+- description: Stop all the apps managed by Foreverd (node.js) if started
+  name: stop
+- description: Restart all the apps managed by Foreverd (node.js).
   name: restart
-  options: null
 - description: Add a new app defintion for foreverd to run
   name: app add
   options:
@@ -40,52 +43,6 @@ tasks:
       description: running user of the application
       required: false
       type: string
-- description: Start node.js foreverd
-  name: start
-  options: null
-- description: Stop node.js foreverd
-  name: stop
-  options: null
 title: Node.js
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nodejs restart
-
-
-### app add
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nodejs app add
-        options:
-          name: myapp
-          root: /var/www/myapp 
-          script: app.js 
-          node_env: production 
-          user: nobody 
-          extra_env: "NODE_DEBUG=DEBUG SOME_ENV=OTHER"
-
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nodejs start
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nodejs stop
-

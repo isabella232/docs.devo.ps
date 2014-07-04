@@ -44,47 +44,16 @@ tags:
 - database
 - full text
 tasks:
-- description: Restart ElasticSearch
-  name: restart
-  options: null
-- description: Reload ElasticSearch
-  name: reload
-  options: null
-- description: Start ElasticSearch
+- description: Start ElasticSearch if stopped
   name: start
-  options: null
-- description: Stop ElasticSearch
+- description: Stop ElasticSearch if started
   name: stop
-  options: null
+- description: Reload ElasticSearch, reload the configuration and perform a graceful
+    restart
+  name: reload
+- description: Restart ElasticSearch, reload the configuration (but kills existing
+    connection)
+  name: restart
 title: ElasticSearch
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops elasticsearch restart
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops elasticsearch reload
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops elasticsearch start
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops elasticsearch stop

@@ -162,48 +162,20 @@ documentation: http://httpd.apache.org/docs/
 tags:
 - web
 tasks:
-- description: Restart Apache
-  name: restart
-  options: null
-- description: Reload Apache
-  name: reload
-  options: null
-- description: Start Apache
+- description: Start Apache if stopped
   name: start
-  options: null
-- description: Stop Apache
+- description: Stop Apache if started
   name: stop
-  options: null
+- description: Reload Apache, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Apache, reload the configuration (but kills existing connection)
+  name: restart
 title: Apache
 
 ---
 
-## Tasks
-### restart
 
-For better user experience you may prefer the use of the `reload` task instead.
+### Notes
 
-#### Example in a devops task
+For better user experience you may prefer the use of the `reload` task instead of `restart`.
 
-    steps:
-      - run: devops apache restart
-
-### reload
-#### Example in a devops task
-
-    steps:
-      - run: devops apache reload
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops apache start
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops apache stop

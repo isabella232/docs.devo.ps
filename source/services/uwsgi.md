@@ -4,10 +4,14 @@ documentation: http://uwsgi-docs.readthedocs.org/en/latest/
 tags:
 - app
 tasks:
-- description: Restart uWSGI emperor
+- description: Start uWSGI emperor if stopped
+  name: start
+- description: Stop uWSGI emperor if started
+  name: stop
+- description: Restart uWSGI emperor, reload the configuration (but kills existing
+    connection)
   name: restart
-  options: null
-- description: Restart uWSGI emperor
+- description: Add a new uWSGI application configuration
   name: app add
   options:
     module:
@@ -26,49 +30,6 @@ tasks:
       description: root folder of the application
       required: true
       type: string
-- description: Start uWSGI emperor
-  name: start
-  options: null
-- description: Stop uWSGI emperor
-  name: stop
-  options: null
 title: uWSGI
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops uwsgi restart
-
-
-### app add
-
-#### Example in a task
-
-    steps:
-      - run: devops uwsgi app add
-        options:
-          name: my_app
-          root: /opt/that_folder
-          module: some_django_module
-          port: 3000
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops uwsgi start
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops uwsgi stop
-

@@ -127,12 +127,14 @@ documentation: http://openvpn.net/index.php/open-source/documentation.html
 tags:
 - app
 tasks:
-- description: Restart OpenVPN
-  name: restart
-  options: null
-- description: Reload OpenVPN
+- description: Start OpenVPN if stopped
+  name: start
+- description: Stop OpenVPN if started
+  name: stop
+- description: Reload OpenVPN, reload the configuration and perform a graceful restart
   name: reload
-  options: null
+- description: Restart OpenVPN, reload the configuration (but kills existing connection)
+  name: restart
 - description: Add OpenVPN client users and send credentials by email
   name: user add
   options:
@@ -140,60 +142,17 @@ tasks:
       description: list of user objects
       required: true
       type: array
-- description: Stop OpenVPN
-  name: stop
-  options: null
-- description: Start OpenVPN
-  name: start
-  options: null
 title: OpenVPN
 
 ---
 
-## Tasks
-### restart
 
-#### Example in a devops task
+### Options
 
-    steps:
-      - run: devops openvpn restart
+#### User object
 
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops openvpn reload
-
-
-### user add
-
-#### Example in a devops task
-
-    steps:
-      - run: devops openvpn user add
-        options:
-          users:
-            - name: bob
-              email: bob@example.com
-            - name: alice
-              email: alice@example.com
-
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops openvpn stop
-
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops openvpn start
+Name | Type | Required | Default | Valid Values | Description
+----|----|----|----|----|----
+name | string | True | | | The client name (ex. bob, alice)
+email | string | True | | email address | The email address to send the credentials to
 

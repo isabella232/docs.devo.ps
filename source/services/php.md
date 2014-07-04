@@ -372,67 +372,21 @@ documentation: http://www.php.net/docs.php
 tags:
 - language
 tasks:
-- description: Restart PHP-FPM
-  name: restart
-  options: null
-- description: Reload PHP-FPM
+- description: Start PHP-FPM if stopped
+  name: start
+- description: Stop PHP-FPM if started
+  name: stop
+- description: Reload PHP-FPM, reload the configuration and perform a graceful restart
   name: reload
-  options: null
+- description: Restart PHP-FPM, reload the configuration (but kills existing connection)
+  name: restart
 - description: Add PHP PECL extensions
-  name: pecl extension add
+  name: pecl_extension add
   options:
     name:
       description: Name of the PECL extension to install
       required: true
       type: string
-- description: Start PHP-FPM
-  name: start
-  options: null
-- description: Stop PHP-FPM
-  name: stop
-  options: null
 title: PHP
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops php restart
-
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops php reload
-
-
-### pecl extension add
-
-#### Example in a devops task
-
-    steps:
-      - run: devops php pecl_extention add
-        options:
-          name: memcached
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops php start
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops php stop
-

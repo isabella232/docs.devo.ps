@@ -53,47 +53,14 @@ tags:
 - database
 - nosql
 tasks:
-- description: Restart MongoDB
-  name: restart
-  options: null
-- description: Reload MongoDB
-  name: reload
-  options: null
-- description: Start MongoDB
+- description: Start MongoDB if stopped
   name: start
-  options: null
-- description: Stop MongoDB
+- description: Stop MongoDB if started
   name: stop
-  options: null
+- description: Reload MongoDB, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart MongoDB, reload the configuration (but kills existing connection)
+  name: restart
 title: MongoDB
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops mongodb restart
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops mongodb reload
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops mongodb start
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops mongodb stop

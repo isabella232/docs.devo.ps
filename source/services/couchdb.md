@@ -57,49 +57,19 @@ tags:
 - database
 - nosql
 tasks:
-- description: Restart CouchDB
-  name: restart
-  options: null
-- description: Reload CouchDB
-  name: reload
-  options: null
-- description: Start CouchDB
+- description: Start CouchDB if stopped
   name: start
-  options: null
-- description: Stop CouchDB
+- description: Stop CouchDB if started
   name: stop
-  options: null
+- description: Reload CouchDB, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart CouchDB, reload the configuration (but kills existing connection)
+  name: restart
 title: CouchDB
 
 ---
 
-## Tasks
-### restart
 
-For better user experience you may prefer the use of the `reload` task instead.
+### Notes
 
-#### Example in a devops task
-
-    steps:
-      - run: devops couchdb restart
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops couchdb reload
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops couchdb start
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops couchdb stop
+For better user experience you may prefer the use of the `reload` task instead of `restart`.

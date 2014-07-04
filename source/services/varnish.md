@@ -84,51 +84,14 @@ tags:
 - caching
 - reverse proxy
 tasks:
-- description: Restart Varnish
-  name: restart
-  options: null
-- description: Reload Varnish
-  name: reload
-  options: null
-- description: Start Varnish
+- description: Start Varnish if stopped
   name: start
-  options: null
-- description: Stop Varnish
+- description: Stop Varnish if started
   name: stop
-  options: null
+- description: Reload Varnish, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Varnish, reload the configuration (but kills existing connection)
+  name: restart
 title: Varnish
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops varnish restart
-
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops varnish reload
-
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops varnish start
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops varnish stop
-

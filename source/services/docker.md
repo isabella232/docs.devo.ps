@@ -3,33 +3,15 @@ configuration: {}
 documentation: https://docs.docker.com/
 tags:
 - infrastructure
+tasks:
+- description: Start Docker if stopped
+  name: start
+- description: Stop Docker if started
+  name: stop
+- description: Reload Docker, reload the configuration.
+  name: reload
+- description: Restart Docker, stop then start the Docker daemon
+  name: restart
 title: Docker
 
 ---
-
-## Example
-
-    services:
-      docker: '*'
-
-Add support for Docker containers on the node.
-
-Note that the server will be restarted in order to apply the proper option to the kernel.
-## Tasks
-### restart
-# Task Restart
-
-Restart Docker
-
-### reload
-# Task Reload
-
-### start
-# Task Start
-
-Start Docker
-
-### stop
-# Task Stop
-
-Stop Docker

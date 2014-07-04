@@ -75,20 +75,16 @@ documentation: http://wiki.nginx.org/Modules
 tags:
 - web
 tasks:
-- description: Restart Nginx
-  name: restart
-  options: null
-- description: Reload Nginx
-  name: reload
-  options: null
-- description: Start Nginx
+- description: Start MongoDB if stopped
   name: start
-  options: null
-- description: Stop Nginx
+- description: Stop MongoDB if started
   name: stop
-  options: null
+- description: Reload MongoDB, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart MongoDB, reload the configuration (but kills existing connection)
+  name: restart
 - description: Defines a HTTP virtual host in Nginx config
-  name: add http vhost
+  name: vhost add
   options:
     aliases:
       description: space separated list of domain name aliases
@@ -118,69 +114,10 @@ title: Nginx
 
 ---
 
-## Tasks
-### restart
 
-#### Example in a devops task
+### Options
 
-    steps:
-      - run: devops nginx restart
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nginx reload
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nginx start
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nginx stop
-
-### add http vhost
-
-#### Example in a devops task
-
-    steps:
-      - run: devops nginx vhost add
-        options:
-          domain: example.com
-          aliases: www.example.com
-          port: 80
-          webroot: html
-          upstreams:
-            - name: my_backend
-              backends:
-                - http://localhost:9000
-                  unix:///var/run/file.sock
-          routes:
-            - uri: /
-              type: proxy
-              to: my_backend
-              custom: >
-                some_custom_nginx;
-                configuration...;
-
-Name | Type | Required | Default |Description
-----|----|----|----|----|----
-domain | string | True | | The domain name the host will reply to
-aliases | string / array | False | | The list of domain aliases the vhost will reply to
-port | int | True | | The HTTP port
-webroot | string | False | '' | The subfolder to serve data from based on the root /var/www/_domain_
-upstreams | array | False | | Beware the upstreams can only be specified once and will be shared across all the vhosts
-routes | array of route | True | | Sorted list of URI and their handlers
-
-Format of a route:
+#### Route object
 
 Name | Type | Required | Default | Valid Values | Description
 ----|----|----|----|----|----
@@ -190,3 +127,11 @@ to | string | True | | | Either an upstream name, or a service / url, or a path
 custom | string | False | | | Custom inline nginx config to include within the route (e.g. auth, custom timeout)
 static | string | False | root | alias / root | For type static only, define how to consider the source folder - alias or root
 
+#### Upstream object
+
+Name | Type | Required | Default | Valid Values | Description
+----|----|----|----|----|----
+name | string | True | | unique name on the node | Name of the upstream
+backends | array | True | | TCP URL and Unix socket path | List of backends associated with the upstream
+
+Note that the upstream name MUST be unique on the node.

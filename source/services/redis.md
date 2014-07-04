@@ -271,51 +271,14 @@ documentation: http://redis.io/documentation
 tags:
 - database
 tasks:
-- description: Restart Redis
-  name: restart
-  options: null
-- description: Reload Redis
-  name: reload
-  options: null
-- description: Start Redis
+- description: Start Redis if stopped
   name: start
-  options: null
-- description: Stop Redis
+- description: Stop Redis if started
   name: stop
-  options: null
+- description: Reload Redis, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Redis, reload the configuration (but kills existing connection)
+  name: restart
 title: Redis
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops redis restart
-
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops redis reload
-
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops redis start
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops redis stop
-

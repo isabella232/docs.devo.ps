@@ -4,51 +4,14 @@ documentation: https://www.rabbitmq.com/documentation.html
 tags:
 - messagebus
 tasks:
-- description: Restart RabbitMQ
-  name: restart
-  options: null
-- description: Reload RabbitMQ
-  name: reload
-  options: null
-- description: Start RabbitMQ
+- description: Start RabbitMQ if stopped
   name: start
-  options: null
-- description: Stop RabbitMQ
+- description: Stop RabbitMQ if started
   name: stop
-  options: null
+- description: Reload RabbitMQ, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart RabbitMQ, reload the configuration (but kills existing connection)
+  name: restart
 title: RabbitMQ
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops rabbitmq restart
-
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops rabbitmq reload
-
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops rabbitmq start
-
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops rabbitmq stop
-

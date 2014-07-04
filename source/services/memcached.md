@@ -46,47 +46,14 @@ tags:
 - database
 - caching
 tasks:
-- description: Restart Memcached
-  name: restart
-  options: null
-- description: Reload Memcached
-  name: reload
-  options: null
-- description: Start Memcached
+- description: Start Memcached if stopped
   name: start
-  options: null
-- description: Stop Memcached
+- description: Stop Memcached if started
   name: stop
-  options: null
+- description: Reload Memcached, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Memcached, reload the configuration (but kills existing connection)
+  name: restart
 title: Memcached
 
 ---
-
-## Tasks
-### restart
-
-#### Example in a devops task
-
-    steps:
-      - run: devops memcached restart
-
-### reload
-
-#### Example in a devops task
-
-    steps:
-      - run: devops memcached reload
-
-### start
-
-#### Example in a devops task
-
-    steps:
-      - run: devops memcached start
-
-### stop
-
-#### Example in a devops task
-
-    steps:
-      - run: devops memcached stop
