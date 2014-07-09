@@ -4,43 +4,72 @@
 
 /* Variables (layout) */
 
-$sidebar: 200px;
+$sidebar: 240px;
 $width: 960px;
 
 /* General */
 
 body {
-  text-align: center;
+  background: $light;
 }
 
-/* Header */
+/* Navigation (sidebar) */
 
-#header {
+#sidebar {
   background: #FFF;
-  border-bottom: 1px solid $line;
+  border-right: 1px solid $line;
+  @include box-sizing(border-box);
+  bottom: 0;
+  @include font-size($smaller);
   left: 0;
   position: fixed;
-  right: 0;
   top: 0;
+  width: $sidebar;
   z-index: 1000;
-  .content {
-    margin: 0 auto;
-    padding: 1.5*$gutter/2 0;
-    text-align: left;
-    width: $width;
+  > * {
+    @include box-sizing(border-box);
+    left: 0;
+    position: fixed;
+    width: $sidebar;
   }
-  .search {
-    border: 1px solid $line;
-    border-radius: $gutter;
-    float: right;
-    @include font-size($smaller);
-    margin: (-$gutter/4) 0;
-    padding: $gutter/5 1.5*$gutter/2;
+  .header {
+    border-bottom: 1px solid $line;
+    height: 2.5*$gutter;
+    padding: 1.5*$gutter/2 $gutter;
+    top: 0;
+    input {
+      border-radius: $gutter;
+      @include box-sizing(border-box);
+      @include font-size($smaller);
+      margin-top: -$gutter/2;
+      width: 100%;
+    }
   }
-  h2 {
-    color: inherit;
-    font-size: inherit;
-    margin: 0;
+  .body {
+    bottom: 2.5*$gutter;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 2px 0 0 inset;
+    overflow-y: auto;
+    padding: $gutter/2 $gutter;
+    position: fixed;
+    top: 2.5*$gutter;
+    h3 {
+      font-size: inherit;
+      margin: $gutter/2 0 $gutter/4;
+    }
+    a {
+      display: block;
+      margin-bottom: $gutter/4;
+      &.active {
+        color: $black;
+        font-weight: bold;
+      }
+    }
+  }
+  .footer {
+    border-top: 1px solid $line;
+    bottom: 0;
+    height: 2.5*$gutter;
+    padding: 1.5*$gutter/2 $gutter;
     a {
       &:before {
         @include font-size($large);
@@ -56,78 +85,51 @@ body {
 
 /* Main */
 
-#main {
-  @include clearfix;
-  margin: 0 auto;
-  padding-top: 3.5*$gutter;
-  text-align: left;
-  width: $width;
-  .sidebar {
-    border-right: 1px solid $line;
-    bottom: $gutter;
-    float: left;
-    overflow-y: auto;
-    padding-right: $gutter;
-    position: fixed;
-    top: 3.5*$gutter;
-    width: $sidebar;
-    h3 {
-      font-size: inherit;
-      margin: 0;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      ul {
-        margin-left: $gutter/2;
-      }
-      a.active {
-        color: $black;
-        font-weight: bold;
-      }
-    }
+#content {
+  margin-left: $sidebar;
+  max-width: $width - $sidebar;
+  padding: $gutter/2 $gutter;
+  h2 {
+    /* <hack> to avoid header to obscure titles */
+    margin-top: -3*$gutter;
+    padding-top: 3*$gutter;
+    /* <\hack> */
   }
-  .content {
-    margin-left: $sidebar + 2*$gutter;
-    h2 {
-      /* <hack> to avoid header to obscure titles */
-      margin-top: -3*$gutter;
-      padding-top: 3*$gutter;
-      /* <\hack> */
+  code,
+  .code {
+    background: #FFF;
+  }
+  pre code + p {
+    margin-top: -$gutter;
+  }
+  table {
+    .code,
+    code {
+      white-space: nowrap;
     }
-    pre code + p {
-      margin-top: -$gutter;
-    }
-
-    table {
-      .code,
-      code {
-        white-space: nowrap;
-      }
-      .variable {
-        .type {
-          @include tooltip();
-          &.string:before {
-            content: 'str';
-            color: $blue;
-          }
-          &.object:before {
-            content: 'str';
-            color: $green;
-          }
-          &.array:before {
-            content: 'arr';
-            color: $orange;
-          }
-          &.integer:before {
-            content: 'int';
-            color: $purple;
-          }
+    .variable {
+      .type {
+        @include tooltip();
+        &.string:before {
+          content: 'str';
+          color: $blue;
+        }
+        &.object:before {
+          content: 'str';
+          color: $green;
+        }
+        &.array:before {
+          content: 'arr';
+          color: $orange;
+        }
+        &.integer:before {
+          content: 'int';
+          color: $purple;
         }
       }
-      .value {
-        color: $green;
-      }
+    }
+    .value {
+      color: $green;
     }
   }
 }

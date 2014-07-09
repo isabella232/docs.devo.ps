@@ -14,20 +14,22 @@
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-  <header id='header'>
-    <div class='content'>
-      {% include 'partials/_header.html' %}
-    </div>
-  </header>
+  <nav id='sidebar'>
+    <header class='header'>
+      <input type='text' placeholder='Type in to start search'/>
+    </header>
+    
+    <nav class='body'>
+      {% include 'partials/_navigation.html' %}
+    </nav>
 
-  <section id='main'>
-    <aside class='sidebar'>
-      {% include 'partials/_sidebar.html' %}
-    </aside>
+    <footer class='footer'>
+      <a href='http://devo.ps'>devo.ps</a> documentation
+    </footer>
+  </nav>
 
-    <section class='content'>
-      {% block content %}{{ contents | safe }}{% endblock %}
-    </section>
+  <section id='content'>
+    {% block content %}{{ contents | safe }}{% endblock %}
   </section>
 
   <!-- JS -->
