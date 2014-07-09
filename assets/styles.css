@@ -1546,13 +1546,8 @@ table {
         border-top-color: #bbbec0; }
 
 /* Variables (layout) */
-/* General */
-body {
-  background: #fafafb; }
-
 /* Navigation (sidebar) */
 #sidebar {
-  background: #FFF;
   border-right: 1px solid #dde0e2;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1631,10 +1626,6 @@ body {
     margin-top: -60px;
     padding-top: 60px;
     /* <\hack> */ }
-  #content code, #content .code {
-    background: #FFF; }
-  #content pre code + p {
-    margin-top: -20px; }
   #content table .code, #content table code {
     white-space: nowrap; }
   #content table .variable .type {
