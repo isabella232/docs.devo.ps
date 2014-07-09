@@ -134,9 +134,21 @@ h6 {
     /* <\hack> */
   }
   table {
+    td {
+      vertical-align: top;
+    }
     .code,
     code {
       white-space: nowrap;
+    }
+    dl {
+      margin: 0;
+      dd {
+        margin: $gutter/4 0 $gutter/2 $gutter;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     .variable {
       .type {

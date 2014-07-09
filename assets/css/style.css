@@ -1283,8 +1283,16 @@ h3, h4, h5, h6 {
     margin-top: -60px;
     padding-top: 60px;
     /* <\hack> */ }
+  #content table td {
+    vertical-align: top; }
   #content table .code, #content table code {
     white-space: nowrap; }
+  #content table dl {
+    margin: 0; }
+    #content table dl dd {
+      margin: 5px 0 10px 20px; }
+      #content table dl dd:last-child {
+        margin-bottom: 0; }
   #content table .variable .type {
     position: relative; }
     #content table .variable .type span {
