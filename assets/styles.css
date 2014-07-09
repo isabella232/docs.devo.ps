@@ -1589,7 +1589,7 @@ table {
     bottom: 0;
     box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0 inset;
     overflow-y: auto;
-    padding: 10px 20px;
+    padding: 0 20px 10px;
     position: fixed;
     top: 50px; }
     #sidebar .body h3 {
@@ -1597,7 +1597,8 @@ table {
       margin: 10px 0 5px; }
     #sidebar .body a {
       display: block;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      padding-left: 10px; }
       #sidebar .body a.active {
         color: #203442;
         font-weight: bold; }
