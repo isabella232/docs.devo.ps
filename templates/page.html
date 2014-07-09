@@ -3,15 +3,17 @@
 
 {% block content %}
 <header class='header'>
-  <h1>{{ title }}</h1>
   <ul class='tags'>
     {% for tag in tags %}
       <li>{{ tag }}</li>
     {% endfor %}
   </ul>
-  {% if documentation %}
-  <a class='documentation' href='{{ documentation }}'>Official documentation</a>
-  {% endif %}
+
+  <h1>{{ title }} {% if documentation %}
+  <a class='documentation' href='{{ documentation }}'><span>Official documentation</span></a>
+  {% endif %}</h1>
+  
+  
 </header>
 
 {% if tasks %}

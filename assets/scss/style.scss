@@ -7,13 +7,34 @@
 $sidebar: 240px;
 $width: 960px;
 
+/* General */
+
+body {
+  @include font-size($smaller);
+}
+
+h1 {
+  @include font-size($large);
+}
+
+h2 {
+  @include font-size();
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @include font-size($smaller);
+}
+
+
 /* Navigation (sidebar) */
 
 #sidebar {
   border-right: 1px solid $line;
   @include box-sizing(border-box);
   bottom: 0;
-  @include font-size($smaller);
   left: 0;
   position: fixed;
   top: 0;
@@ -60,6 +81,9 @@ $width: 960px;
         color: $black;
         font-weight: bold;
       }
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -70,6 +94,38 @@ $width: 960px;
   margin-left: $sidebar;
   max-width: $width - $sidebar;
   padding: $gutter/2 $gutter;
+  .header {
+    margin-bottom: $gutter;
+    .tags {
+      float: right;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        border: 1px solid $line;
+        box-shadow: rgba(0, 0, 0, 0.01) 0 1px 0 0;
+        border-radius: $radius;
+        display: inline-block;
+        float: right;
+        margin-left: $gutter/4;
+        padding: $gutter/5 $gutter/4;
+      }
+    }
+    h1 {
+      a {
+        @include tooltip(bottom);
+        &:before {
+          @include font-size();
+          @include icon;
+          color: $grey;
+          content: '0';
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
   h2 {
     /* <hack> to avoid header to obscure titles */
     margin-top: -3*$gutter;
