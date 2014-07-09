@@ -45,7 +45,7 @@ $width: 960px;
     bottom: 0;
     box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0 inset;
     overflow-y: auto;
-    padding: $gutter/2 $gutter;
+    padding: 0 $gutter $gutter/2;
     position: fixed;
     top: 2.5*$gutter;
     h3 {
@@ -55,6 +55,7 @@ $width: 960px;
     a {
       display: block;
       margin-bottom: $gutter/4;
+      padding-left: $gutter/2;
       &.active {
         color: $black;
         font-weight: bold;
