@@ -70,7 +70,6 @@
 <a href='/concepts/Tasks' >Tasks</a>
 
 
-
 <h3>Services</h3>
 
 
@@ -264,55 +263,25 @@
         <td><code>vhost add</code></td>
         <td>
           
+          <dl>
           
+          <dt class='variable '><code><span class='type string'><span>string</span></span> aliases</code></dt>
+          <dd>space separated list of domain name aliases</dd>
           
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
+          <dt class='variable  required'><code><span class='type string'><span>string</span></span> domain</code></dt>
+          <dd>domain name</dd>
           
-            <tr>
-              <td class='variable '><code><span class='type string'><span>string</span></span> aliases</code></td>
-              <td class='description'>space separated list of domain name aliases</td>
-            </tr>
+          <dt class='variable  required'><code><span class='type integer'><span>integer</span></span> port</code></dt>
+          <dd>listening port</dd>
           
+          <dt class='variable  required'><code><span class='type array'><span>array</span></span> routes</code></dt>
+          <dd>list of route objects</dd>
           
-            <tr>
-              <td class='variable  required'><code><span class='type string'><span>string</span></span> domain</code></td>
-              <td class='description'>domain name</td>
-            </tr>
+          <dt class='variable '><code><span class='type array'><span>array</span></span> upstreams</code></dt>
+          <dd>list of upstream objects</dd>
           
-          
-            <tr>
-              <td class='variable  required'><code><span class='type integer'><span>integer</span></span> port</code></td>
-              <td class='description'>listening port</td>
-            </tr>
-          
-          
-            <tr>
-              <td class='variable  required'><code><span class='type array'><span>array</span></span> routes</code></td>
-              <td class='description'>list of route objects</td>
-            </tr>
-          
-          
-            <tr>
-              <td class='variable '><code><span class='type array'><span>array</span></span> upstreams</code></td>
-              <td class='description'>list of upstream objects</td>
-            </tr>
-          
-          
-            <tr>
-              <td class='variable '><code><span class='type string'><span>string</span></span> webroot</code></td>
-              <td class='description'>subfolder to serve data from based on the root /var/www/_domain_</td>
-            </tr>
-          
-          
-            </tbody>
-          </table>
+          <dt class='variable '><code><span class='type string'><span>string</span></span> webroot</code></dt>
+          <dd>subfolder to serve data from based on the root /var/www/_domain_</dd>
           
           
         </td>
