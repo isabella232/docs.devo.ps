@@ -7,16 +7,9 @@
 $sidebar: 240px;
 $width: 960px;
 
-/* General */
-
-body {
-  background: $light;
-}
-
 /* Navigation (sidebar) */
 
 #sidebar {
-  background: #FFF;
   border-right: 1px solid $line;
   @include box-sizing(border-box);
   bottom: 0;
@@ -94,13 +87,6 @@ body {
     margin-top: -3*$gutter;
     padding-top: 3*$gutter;
     /* <\hack> */
-  }
-  code,
-  .code {
-    background: #FFF;
-  }
-  pre code + p {
-    margin-top: -$gutter;
   }
   table {
     .code,
