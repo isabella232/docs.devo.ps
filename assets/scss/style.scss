@@ -10,65 +10,141 @@ $width: 960px;
 /* General */
 
 body {
-  @include font-size($smaller);
+  background: $light;
+  text-align: center;
 }
 
-h1 {
-  @include font-size($large);
-}
+/* Header */
 
-h2 {
-  @include font-size();
-}
-
-h3,
-h4,
-h5,
-h6 {
-  @include font-size($smaller);
-}
-
-
-/* Navigation (sidebar) */
-
-#sidebar {
-  border-right: 1px solid $line;
-  @include box-sizing(border-box);
-  bottom: 0;
+#header {
+  background: #FFF;
+  border-bottom: 1px solid $line;
   left: 0;
+  padding: 1.5*$gutter/2 0;
   position: fixed;
+  right: 0;
   top: 0;
-  width: $sidebar;
-  z-index: 1000;
-  > * {
-    @include box-sizing(border-box);
-    left: 0;
-    position: fixed;
-    width: $sidebar;
+  .content {
+    margin: 0 auto;
+    max-width: $width;
+    text-align: left;
   }
-  .header {
-    border-bottom: 1px solid $line;
-    height: 2.5*$gutter;
+  .logo {
+    &:before {
+      @include font-size($large);
+      @include icon();
+      content: '2';
+      float: left;
+      font-size: $normal;
+      margin-right: $gutter/4;
+    }
+  }
+  .menu {
+    float: right;
+    @include font-size($small);
+    input {
+      border-radius: $gutter;
+      margin: (-$gutter/4) 0;
+    }
+    a,
+    input {
+      margin-left: $gutter;
+    }
+  }
+}
+
+#main {
+  @include font-size($smaller);
+  margin: 3.5*$gutter auto 0;
+  max-width: $width;
+  text-align: left;
+  .content {
+    background: #FFF;
+    border: 1px solid $line;
+    border-radius: $radius;
+    @include box-sizing(border-box);
+    margin-left: $sidebar + $gutter;
     padding: 1.5*$gutter/2 $gutter;
-    top: 0;
-    a {
-      &:before {
-        @include font-size($large);
-        @include icon();
-        content: '2';
-        float: left;
-        font-size: $normal;
-        margin-right: $gutter/4;
+    .header {
+      .tags {
+        float: right;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          background: #FFF;
+          border: 1px solid $line;
+          border-radius: $gutter;
+          box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0;
+          display: inline-block;
+          margin: 0 $gutter/5 0 0;
+          padding: $gutter/5 $gutter/2;
+        }
+      }
+    }
+    h1 {
+      @include font-size($large);
+    }
+    h2 {
+      /* <hack> to avoid header to obscure titles */
+      @include font-size();
+      margin-top: -3*$gutter;
+      padding-top: 3*$gutter;
+      /* <\hack> */
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include font-size($smaller);
+    }
+    table {
+      td {
+        vertical-align: top;
+      }
+      .code,
+      code {
+        white-space: nowrap;
+      }
+      dl {
+        margin: 0;
+        dd {
+          margin: $gutter/4 0 $gutter/2 $gutter;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .variable {
+        .type {
+          @include tooltip();
+          &.string:before {
+            content: 'str';
+            color: $blue;
+          }
+          &.object:before {
+            content: 'str';
+            color: $green;
+          }
+          &.array:before {
+            content: 'arr';
+            color: $orange;
+          }
+          &.integer:before {
+            content: 'int';
+            color: $purple;
+          }
+        }
+      }
+      .value {
+        color: $green;
       }
     }
   }
-  .body {
-    bottom: 0;
-    box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0 inset;
-    overflow-y: auto;
-    padding: 0 $gutter $gutter/2;
-    position: fixed;
-    top: 2.5*$gutter;
+  .sidebar {
+    float: left;
+    @include font-size($smaller);
+    width: $sidebar;
     h3 {
       font-size: inherit;
       margin: $gutter/2 0 $gutter/4;
@@ -76,103 +152,6 @@ h6 {
     a {
       display: block;
       margin-bottom: $gutter/4;
-      padding-left: $gutter/2;
-      &.active {
-        color: $black;
-        font-weight: bold;
-      }
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-/* Main */
-
-#content {
-  margin-left: $sidebar;
-  max-width: $width - $sidebar;
-  padding: $gutter/2 $gutter;
-  .header {
-    margin-bottom: $gutter;
-    .tags {
-      float: right;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        border: 1px solid $line;
-        box-shadow: rgba(0, 0, 0, 0.01) 0 1px 0 0;
-        border-radius: $radius;
-        color: $grey;
-        display: inline-block;
-        float: right;
-        margin-left: $gutter/4;
-        padding: $gutter/5 $gutter/4;
-      }
-    }
-    h1 {
-      a {
-        @include tooltip(bottom);
-        &:before {
-          @include font-size();
-          @include icon;
-          color: $grey;
-          content: '0';
-          &:hover {
-            color: $black;
-          }
-        }
-      }
-    }
-  }
-  h2 {
-    /* <hack> to avoid header to obscure titles */
-    margin-top: -3*$gutter;
-    padding-top: 3*$gutter;
-    /* <\hack> */
-  }
-  table {
-    td {
-      vertical-align: top;
-    }
-    .code,
-    code {
-      white-space: nowrap;
-    }
-    dl {
-      margin: 0;
-      dd {
-        margin: $gutter/4 0 $gutter/2 $gutter;
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-    .variable {
-      .type {
-        @include tooltip();
-        &.string:before {
-          content: 'str';
-          color: $blue;
-        }
-        &.object:before {
-          content: 'str';
-          color: $green;
-        }
-        &.array:before {
-          content: 'arr';
-          color: $orange;
-        }
-        &.integer:before {
-          content: 'int';
-          color: $purple;
-        }
-      }
-    }
-    .value {
-      color: $green;
     }
   }
 }
