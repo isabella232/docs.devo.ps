@@ -55,8 +55,9 @@ body {
 
 #main {
   @include font-size($smaller);
-  margin: 3.5*$gutter auto 0;
+  margin: 53px auto 0;
   max-width: $width;
+  padding: $gutter 0;
   text-align: left;
   .content {
     background: #FFF;
@@ -84,6 +85,18 @@ body {
     }
     h1 {
       @include font-size($large);
+      a {
+        color: $grey;
+        @include font-size();
+        @include tooltip;
+        &:before {
+          @include icon;
+          content: '0';
+        }
+        &:hover {
+          color: $blue;
+        }
+      }
     }
     h2 {
       /* <hack> to avoid header to obscure titles */
@@ -148,10 +161,18 @@ body {
     h3 {
       font-size: inherit;
       margin: $gutter/2 0 $gutter/4;
+      &:first-child {
+        margin-top: 0;
+      }
     }
     a {
       display: block;
       margin-bottom: $gutter/4;
+      padding-left: $gutter/2;
+      &.active {
+        color: $black;
+        font-weight: bold;
+      }
     }
   }
 }

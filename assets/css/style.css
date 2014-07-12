@@ -1164,8 +1164,9 @@ body {
 #main {
   font-size: 14px;
   font-size: 1.4rem;
-  margin: 70px auto 0;
+  margin: 53px auto 0;
   max-width: 960px;
+  padding: 20px 0;
   text-align: left; }
   #main .content {
     background: #FFF;
@@ -1192,6 +1193,69 @@ body {
     #main .content h1 {
       font-size: 24px;
       font-size: 2.4rem; }
+      #main .content h1 a {
+        color: #a5adb3;
+        font-size: 16px;
+        font-size: 1.6rem;
+        position: relative; }
+        #main .content h1 a span {
+          background: #203442;
+          border-radius: 2px;
+          color: #FFF;
+          font-size: 12px;
+          font-size: 1.2rem;
+          line-height: 140%;
+          opacity: 0;
+          padding: 7.5px 15px;
+          position: absolute;
+          text-align: center;
+          visibility: hidden;
+          white-space: nowrap;
+          width: auto;
+          z-index: 999; }
+        #main .content h1 a:hover span {
+          opacity: 1;
+          -webkit-transition-property: opacity, margin;
+          -moz-transition-property: opacity, margin;
+          transition-property: opacity, margin;
+          -webkit-transition-duration: 0.1s;
+          -moz-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+          visibility: visible; }
+        #main .content h1 a span {
+          bottom: 100%;
+          left: 50%; }
+          #main .content h1 a span:after {
+            content: '';
+            position: absolute;
+            border-right: 5px solid transparent;
+            border-bottom-color: #203442;
+            border-top: 5px solid #203442;
+            border-left: 5px solid transparent;
+            bottom: -5px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            transform: translateX(-50%); }
+        #main .content h1 a:hover span {
+          margin-bottom: 8px;
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+          transform: translateX(-50%); }
+        #main .content h1 a:before {
+          font-family: 'icons';
+          font-variant: normal;
+          font-weight: normal;
+          speak: none;
+          text-transform: none;
+          -webkit-font-smoothing: antialiased;
+          content: '0'; }
+        #main .content h1 a:hover {
+          color: #1F8DD6; }
     #main .content h2 {
       /* <hack> to avoid header to obscure titles */
       font-size: 16px;
@@ -1284,6 +1348,12 @@ body {
     #main .sidebar h3 {
       font-size: inherit;
       margin: 10px 0 5px; }
+      #main .sidebar h3:first-child {
+        margin-top: 0; }
     #main .sidebar a {
       display: block;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      padding-left: 10px; }
+      #main .sidebar a.active {
+        color: #203442;
+        font-weight: bold; }
