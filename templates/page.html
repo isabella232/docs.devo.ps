@@ -11,40 +11,31 @@
 
   <h1>{{ title }} {% if documentation %}
   <a href='{{ documentation }}'><span>Official documentation</span></a>
-  {% endif %}</h1>
-  
-  
+  {% endif %}</h1>  
 </header>
 
 {% if tasks %}
 <section class='tasks'>
   <h2 id='tasks'>Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
+  <dl>
     {% for task in tasks %}
-      <tr>
-        <td><code>{{ task.name | safe }}</code></td>
-        <td>
-          {% if task.options %}
-          <dl>
+    <dt>
+      <code class='terminal'>{{ task.name | safe }}</code>
+    </dt>
+    <dd>
+      {{ task.description | safe }}
+      {% if task.options %}
+        <h3>Parameters</h3>
+        <dl>
           {% for option in task.options %}
-          <dt class='variable {% if option.required == true %} required{% endif %}'><code><span class='type {{ option.type }}'><span>{{ option.type }}</span></span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></dt>
+          <dt class='{% if option.required == true %}required{% endif %}'><code><span class='type {{ option.type }}'>{{ option.type }}</span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></dt>
           <dd>{{ option.description }}</dd>
           {% endfor %}
-          {% else %}-{% endif %}
-        </td>
-        <td>{{ task.description | safe }}</td>
-      </tr>
+        </dl>
+      {% endif %}
+    </dd>
     {% endfor %}
-    </tbody>
-  </table>
+  </dl>
 </section>
 {% endif %}
 
@@ -54,7 +45,7 @@
 
 {% if configuration %}
 <section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
+  <h2 id='configuration'>Variables</h2>
   <table>
     <thead>
       <tr>

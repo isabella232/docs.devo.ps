@@ -14,11 +14,44 @@ body {
   text-align: center;
 }
 
+code,
+.code {
+  vertical-align: bottom;
+  .key {
+    color: $purple;
+  }
+  .meta {
+    color: tint($black, 30%);
+  }
+  &.terminal {
+    background: tint($black, 10%);
+    border-color: tint($black, 5%);
+    color: tint($black, 90%);
+    .key {
+      color: tint($purple, 20%);
+    }
+    .meta {
+      color: tint($black, 70%);
+    }
+  }
+  &.pre {
+    padding: $gutter/4 $gutter/2;
+    white-space: pre-wrap;
+  }
+}
+.type {
+  color: $purple; 
+}
+.value {
+  color: $green;
+}
+
 /* Header */
 
 #header {
   background: #FFF;
   border-bottom: 1px solid $line;
+  box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
   left: 0;
   padding: 1.5*$gutter/2 0;
   position: fixed;
@@ -54,7 +87,6 @@ body {
 }
 
 #main {
-  @include font-size($smaller);
   margin: 53px auto 0;
   max-width: $width;
   padding: $gutter 0;
@@ -84,11 +116,12 @@ body {
       }
     }
     h1 {
-      @include font-size($large);
       a {
         color: $grey;
         @include font-size();
+        line-height: 1;
         @include tooltip;
+        vertical-align: middle;
         &:before {
           @include icon;
           content: '0';
@@ -100,16 +133,9 @@ body {
     }
     h2 {
       /* <hack> to avoid header to obscure titles */
-      @include font-size();
       margin-top: -3*$gutter;
       padding-top: 3*$gutter;
       /* <\hack> */
-    }
-    h3,
-    h4,
-    h5,
-    h6 {
-      @include font-size($smaller);
     }
     table {
       td {
@@ -119,38 +145,26 @@ body {
       code {
         white-space: nowrap;
       }
+    }
+    dl {
+      margin: 0 0 $gutter;
+      dt {
+        float: left;
+        margin-right: $gutter/2;
+      }
+      dt,
+      dd {
+        margin-bottom: $gutter/2;
+      }
+      h3 {
+        color: $grey;
+        @include font-size($small);
+        margin: $gutter/2 0;
+        text-transform: uppercase;
+      }
       dl {
-        margin: 0;
-        dd {
-          margin: $gutter/4 0 $gutter/2 $gutter;
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-      .variable {
-        .type {
-          @include tooltip();
-          &.string:before {
-            content: 'str';
-            color: $blue;
-          }
-          &.object:before {
-            content: 'str';
-            color: $green;
-          }
-          &.array:before {
-            content: 'arr';
-            color: $orange;
-          }
-          &.integer:before {
-            content: 'int';
-            color: $purple;
-          }
-        }
-      }
-      .value {
-        color: $green;
+        border-left: 2px solid $light;
+        padding-left: $gutter/2;
       }
     }
   }
