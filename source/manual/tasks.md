@@ -60,7 +60,7 @@ For example, we could add a `task.yml` file with the following content:
   <dd>Used to define a list of variables local to the task. Useful to define values you want to use in the steps (see belows).</dd>
 
   <dt class='optional'><code><span class='type'>object</span> triggers</code></dt>
-  <dd>A list of events upon which to run the task. Currently only supports manual trigger and webhooks.</dd>
+  <dd>A list of events upon which to run the task. Currently only supports manual trigger and webhooks. <a href='#triggers'>Read more about triggers below</a>.</dd>
 
   <dt><code><span class='type'>object</span> targets</code></dt>
   <dd>A list of nodes id on which to run the task.</dd>
@@ -111,34 +111,13 @@ The `steps` attribute defines the series of commands that composes the task. The
 
     *As for the scripts, we use the `devops` keyword. Services documentations dislpay a "Tasks" section if they have commands. See for example [Nginx list of commands](/services/nginx#tasks).*
 
-### Targets
-
-The `targets` attribute lets you define the list of nodes to run the command on. You can specify it either at the command level, or at the root level. 
-
-If no `targets` attribute is available within a command, it will fallback on the root `targets` attribute.
-
-```
-targets:
-  - myserver
-  - my_other_server
-steps:
-  # will run on the root node list
-  - run: echo ipsum
-  # will only run on the list provided
-  - run: echo lorem
-    targets: ['my_third_server']
-```
-
 ### Triggers
 
-The `triggers` attribute lets you define when do you want a task to be triggered and executed.
+Tasks are ran every time one of the triggers is... well triggered.
 
-The supported events are:
+*We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.*
 
-- manual (always available)
-- webhooks
-
-#### Webhooks
+#### Webhook
 
 Lets you define a webhook that you (or a third party) can call anytime to trigger an execution of the task.
 

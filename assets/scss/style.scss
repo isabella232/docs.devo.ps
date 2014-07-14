@@ -148,6 +148,8 @@ code,
     /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */
     em {
       background: tint($yellow, 90%);
+      border: 1px solid tint($yellow, 80%);
+      border-radius: $radius;
       display: block;
       @include font-size($smaller);
       font-style: normal;

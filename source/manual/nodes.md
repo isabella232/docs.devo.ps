@@ -78,7 +78,7 @@ Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Oc
 
 A `devops` user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate [tasks](/manual/tasks).
 
-Additionally, within a repository, we add the [SSH keys defined in the profile](/manual/profile#ssh) of all collaborators to the server's `authorized_keys` file for the `devops` user. This means you can log in as the devops user by simply running the following command:
+Additionally, we add the [SSH keys defined in the profile](/manual/profile#ssh) of all collaborators to the server's `authorized_keys` file for the `devops` user. This means you can log in as the `devops` user by simply running the following command:
 
 <code class='terminal pre'>ssh devops@{IP ADDRESS}</code>
 
@@ -86,14 +86,17 @@ Additionally, within a repository, we add the [SSH keys defined in the profile](
 
 If you have installed the [CLI](/manual/CLI.html), you can also use one of the following commands:
 
-<code class='terminal pre'># From anywhere on your workstation
-devops ssh --repo=repo node_id</code>
+- From anywhere on your workstation:
 
-<code class='terminal pre'># From your repo folder (the repo is guessed from there)
-devops ssh node_id</code>
+    <code class='terminal pre'>devops ssh --repo={REPOSITORY} {NODE_ID}</code>
 
-<code class='terminal pre'># Even simpler if you only have 1 node defined and you are in your repo folder...
-devops ssh</code>
+    Where `{REPOSITORY}` is the name of the repository and `{NODE_ID}` the id of the node you want to log into.
+
+- From within the local repository clone:
+
+    <code class='terminal pre'>devops ssh {NODE_ID}</code>
+
+    *If you only have 1 node in the repository, `devops ssh` would suffice.*
 
 ## Read also
 
