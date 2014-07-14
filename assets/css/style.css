@@ -1140,6 +1140,7 @@ code, .code {
     code.terminal .meta, .code.terminal .meta {
       color: #bcc2c6; }
   code.pre, .code.pre {
+    display: block;
     padding: 5px 10px;
     white-space: pre-wrap; }
   code .type, .code .type {
@@ -1275,7 +1276,7 @@ code, .code {
         content: '0'; }
       #main .content h1 a:hover {
         color: #1F8DD6; }
-    #main .content h2 {
+    #main .content h2, #main .content h3 {
       /* <hack> to avoid header to obscure titles */
       margin-top: -60px;
       padding-top: 60px;
@@ -1285,12 +1286,12 @@ code, .code {
     #main .content table .code, #main .content table code {
       white-space: nowrap; }
     #main .content em {
-      background: #f9f7fc;
+      background: #fff9ee;
       display: block;
       font-size: 14px;
       font-size: 1.4rem;
       font-style: normal;
-      padding: 10px; }
+      padding: 5px 10px; }
     #main .content dl {
       font-size: 14px;
       font-size: 1.4rem;

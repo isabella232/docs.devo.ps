@@ -1,3 +1,12 @@
+<h3>Guides</h3>
+{% set menu = {} %}
+{% for item in guides %}
+  {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
+{% endfor %}
+{% for i in menu | sort %}
+<a href='/{{ guides[menu[i]].path }}' {% if path == guides[menu[i]].path %} class='active'{% endif %}>{{ guides[menu[i]].title }}</a>
+{% endfor %}
+
 <h3>Manual</h3>
 {% set menu = {} %}
 {% for item in manual %}
@@ -7,13 +16,13 @@
 <a href='/{{ manual[menu[i]].path }}' {% if path == manual[menu[i]].path %} class='active'{% endif %}>{{ manual[menu[i]].title }}</a>
 {% endfor %}
 
-<h3>Concepts</h3>
+<h3>Providers</h3>
 {% set menu = {} %}
-{% for item in concepts %}
+{% for item in providers %}
   {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
 {% endfor %}
 {% for i in menu | sort %}
-<a href='/{{ concepts[menu[i]].path }}' {% if path == concepts[menu[i]].path %} class='active'{% endif %}>{{ concepts[menu[i]].title }}</a>
+<a href='/{{ providers[menu[i]].path }}' {% if path == providers[menu[i]].path %} class='active'{% endif %}>{{ providers[menu[i]].title }}</a>
 {% endfor %}
 
 <h3>Services</h3>
@@ -23,13 +32,4 @@
 {% endfor %}
 {% for i in menu | sort %}
 <a href='/{{ services[menu[i]].path }}' {% if path == services[menu[i]].path %} class='active'{% endif %}>{{ services[menu[i]].title }}</a>
-{% endfor %}
-
-<h3>Providers</h3>
-{% set menu = {} %}
-{% for item in providers %}
-  {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
-{% endfor %}
-{% for i in menu | sort %}
-<a href='/{{ providers[menu[i]].path }}' {% if path == providers[menu[i]].path %} class='active'{% endif %}>{{ providers[menu[i]].title }}</a>
 {% endfor %}

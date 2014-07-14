@@ -9,11 +9,9 @@
     },
     "metalsmith": {
         "metalsmith-collections": {
-            "pages": {
-                "pattern": "*/*.md"
-            },
+            "pages": { "pattern": "*/*.md" },
+            "guides": { "pattern": "guides/*.md" },
             "manual": { "pattern": "manual/*.md" },
-            "concepts": { "pattern": "concepts/*.md" },
             "providers": { "pattern": "providers/*.md" },
             "services": { "pattern": "services/*.md" }
         },

@@ -35,6 +35,7 @@ code,
     }
   }
   &.pre {
+    display: block;
     padding: $gutter/4 $gutter/2;
     white-space: pre-wrap;
   }
@@ -128,7 +129,8 @@ code,
         }
       }
     }
-    h2 {
+    h2,
+    h3 {
       /* <hack> to avoid header to obscure titles */
       margin-top: -3*$gutter;
       padding-top: 3*$gutter;
@@ -145,11 +147,11 @@ code,
     }
     /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */
     em {
-      background: tint($purple, 95%);
+      background: tint($yellow, 90%);
       display: block;
       @include font-size($smaller);
       font-style: normal;
-      padding: $gutter/2;
+      padding: $gutter/4 $gutter/2;
     }
     dl {
       @include font-size($smaller);
