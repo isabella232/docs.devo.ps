@@ -1713,6 +1713,8 @@ code, .code {
       white-space: nowrap; }
     #main .content em {
       background: #fff9ee;
+      border: 1px solid #fff3de;
+      border-radius: 2px;
       display: block;
       font-size: 14px;
       font-size: 1.4rem;

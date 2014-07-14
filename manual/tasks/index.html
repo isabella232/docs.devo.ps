@@ -278,7 +278,7 @@ steps:
   <dd>Used to define a list of variables local to the task. Useful to define values you want to use in the steps (see belows).</dd>
 
   <dt class='optional'><code><span class='type'>object</span> triggers</code></dt>
-  <dd>A list of events upon which to run the task. Currently only supports manual trigger and webhooks.</dd>
+  <dd>A list of events upon which to run the task. Currently only supports manual trigger and webhooks. <a href='#triggers'>Read more about triggers below</a>.</dd>
 
   <dt><code><span class='type'>object</span> targets</code></dt>
   <dd>A list of nodes id on which to run the task.</dd>
@@ -324,26 +324,10 @@ steps:
 </code></pre><p>  <em>As for the scripts, we use the <code>devops</code> keyword. Services documentations dislpay a &quot;Tasks&quot; section if they have commands. See for example <a href="/services/nginx#tasks">Nginx list of commands</a>.</em></p>
 </li>
 </ul>
-<h3 id="targets">Targets</h3>
-<p>The <code>targets</code> attribute lets you define the list of nodes to run the command on. You can specify it either at the command level, or at the root level. </p>
-<p>If no <code>targets</code> attribute is available within a command, it will fallback on the root <code>targets</code> attribute.</p>
-<pre><code>targets:
-  - myserver
-  - my_other_server
-steps:
-  # will run on the root node list
-  - run: echo ipsum
-  # will only run on the list provided
-  - run: echo lorem
-    targets: [&#39;my_third_server&#39;]
-</code></pre><h3 id="triggers">Triggers</h3>
-<p>The <code>triggers</code> attribute lets you define when do you want a task to be triggered and executed.</p>
-<p>The supported events are:</p>
-<ul>
-<li>manual (always available)</li>
-<li>webhooks</li>
-</ul>
-<h4 id="webhooks">Webhooks</h4>
+<h3 id="triggers">Triggers</h3>
+<p>Tasks are ran every time one of the triggers is... well triggered.</p>
+<p><em>We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.</em></p>
+<h4 id="webhook">Webhook</h4>
 <p>Lets you define a webhook that you (or a third party) can call anytime to trigger an execution of the task.</p>
 <p>The only HTTP valid method is <code>POST</code>.</p>
 <pre><code>triggers:

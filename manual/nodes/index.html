@@ -292,16 +292,20 @@ configuration:
 
 <h2 id="ssh-keys-users">SSH keys &amp; Users</h2>
 <p>A <code>devops</code> user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate <a href="/manual/tasks">tasks</a>.</p>
-<p>Additionally, within a repository, we add the <a href="/manual/profile#ssh">SSH keys defined in the profile</a> of all collaborators to the server&#39;s <code>authorized_keys</code> file for the <code>devops</code> user. This means you can log in as the devops user by simply running the following command:</p>
+<p>Additionally, we add the <a href="/manual/profile#ssh">SSH keys defined in the profile</a> of all collaborators to the server&#39;s <code>authorized_keys</code> file for the <code>devops</code> user. This means you can log in as the <code>devops</code> user by simply running the following command:</p>
 <p><code class='terminal pre'>ssh devops@{IP ADDRESS}</code></p>
 <p><em>The IP address can be retrieved both from the Web UI (in the node&#39;s details) or using the CLI.</em></p>
 <p>If you have installed the <a href="/manual/CLI.html">CLI</a>, you can also use one of the following commands:</p>
-<p><code class='terminal pre'># From anywhere on your workstation
-devops ssh --repo=repo node_id</code></p>
-<p><code class='terminal pre'># From your repo folder (the repo is guessed from there)
-devops ssh node_id</code></p>
-<p><code class='terminal pre'># Even simpler if you only have 1 node defined and you are in your repo folder...
-devops ssh</code></p>
+<ul>
+<li><p>From anywhere on your workstation:</p>
+<p>  <code class='terminal pre'>devops ssh --repo={REPOSITORY} {NODE_ID}</code></p>
+<p>  Where <code>{REPOSITORY}</code> is the name of the repository and <code>{NODE_ID}</code> the id of the node you want to log into.</p>
+</li>
+<li><p>From within the local repository clone:</p>
+<p>  <code class='terminal pre'>devops ssh {NODE_ID}</code></p>
+<p>  <em>If you only have 1 node in the repository, <code>devops ssh</code> would suffice.</em></p>
+</li>
+</ul>
 <h2 id="read-also">Read also</h2>
 <ul>
 <li><a href="">Git operations</a></li>
