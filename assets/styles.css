@@ -1712,8 +1712,8 @@ code, .code {
     #main .content table .code, #main .content table code {
       white-space: nowrap; }
     #main .content em {
-      background: #fff9ee;
-      border: 1px solid #fff3de;
+      background: #e8f3fa;
+      border: 1px solid #d2e8f6;
       border-radius: 2px;
       display: block;
       font-size: 14px;
