@@ -147,8 +147,8 @@ code,
     }
     /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */
     em {
-      background: tint($yellow, 90%);
-      border: 1px solid tint($yellow, 80%);
+      background: tint($blue, 90%);
+      border: 1px solid tint($blue, 80%);
       border-radius: $radius;
       display: block;
       @include font-size($smaller);
