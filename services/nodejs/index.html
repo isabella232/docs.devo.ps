@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>Node.js | devo.ps Documentation</title>
+  <title>Node.js | devo.ps documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -30,13 +30,30 @@
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-  <nav id='sidebar'>
-    <header class='header'>
-      <a href='http://devo.ps'>devo.ps</a> documentation
-    </header>
-    
-    <nav class='body'>
-      <h3>Manual</h3>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <input class='search' type='text' placeholder='Search by keyword'/>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
 
 
   
@@ -45,15 +62,31 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/repository' >undefined</a>
 
 <a href='/manual/CLI' >CLI</a>
 
-<a href='/manual/Getting-Started' >Getting Started</a>
-
 <a href='/manual/Git' >Git</a>
 
+<a href='/manual/nodes' >Nodes</a>
 
-<h3>Concepts</h3>
+<a href='/manual/scripts' >Scripts</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
 
 
   
@@ -62,12 +95,16 @@
 
   
 
+  
 
-<a href='/concepts/Nodes' >Nodes</a>
 
-<a href='/concepts/Scripts' >Scripts</a>
+<a href='/providers/digital_ocean' >Digital Ocean</a>
 
-<a href='/concepts/Tasks' >Tasks</a>
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -174,32 +211,11 @@
 
 <a href='/services/zeromq' >ZeroMQ</a>
 
-
-<h3>Providers</h3>
-
-
-  
-
-  
-
-  
-
-  
-
-
-<a href='/providers/digital_ocean' >Digital Ocean</a>
-
-<a href='/providers/ec2' >Ec2</a>
-
-<a href='/providers/linode' >Linode</a>
-
-<a href='/providers/rackspace' >Rackspace</a>
-
     </nav>
-  </nav>
 
-  <section id='content'>
-    
+    <section class='content'>
+      
+
 <header class='header'>
   <ul class='tags'>
     
@@ -208,80 +224,71 @@
   </ul>
 
   <h1>Node.js 
-  <a class='documentation' href='http://nodejs.org/api/'><span>Official documentation</span></a>
-  </h1>
-  
-  
+  <a href='http://nodejs.org/api/'><span>Official documentation</span></a>
+  </h1>  
 </header>
 
 
 <section class='tasks'>
   <h2 id='tasks'>Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
+  <dl>
     
-      <tr>
-        <td><code>start</code></td>
-        <td>
-          -
-        </td>
-        <td>Start all the apps managed by Foreverd (node.js) if stopped</td>
-      </tr>
+    <dt>
+      <code class='terminal'>start</code>
+    </dt>
+    <dd>
+      Start all the apps managed by Foreverd (node.js) if stopped
+      
+    </dd>
     
-      <tr>
-        <td><code>stop</code></td>
-        <td>
-          -
-        </td>
-        <td>Stop all the apps managed by Foreverd (node.js) if started</td>
-      </tr>
+    <dt>
+      <code class='terminal'>stop</code>
+    </dt>
+    <dd>
+      Stop all the apps managed by Foreverd (node.js) if started
+      
+    </dd>
     
-      <tr>
-        <td><code>restart</code></td>
-        <td>
-          -
-        </td>
-        <td>Restart all the apps managed by Foreverd (node.js).</td>
-      </tr>
+    <dt>
+      <code class='terminal'>restart</code>
+    </dt>
+    <dd>
+      Restart all the apps managed by Foreverd (node.js).
+      
+    </dd>
     
-      <tr>
-        <td><code>app add</code></td>
-        <td>
+    <dt>
+      <code class='terminal'>app add</code>
+    </dt>
+    <dd>
+      Add a new app defintion for foreverd to run
+      
+        <h3>Parameters</h3>
+        <dl>
           
-          <dl>
-          
-          <dt class='variable '><code><span class='type string'><span>string</span></span> extra_env</code></dt>
+          <dt><code><span class='type string'>string</span> extra_env</code></dt>
           <dd>additional environment variable to pass to the application</dd>
           
-          <dt class='variable  required'><code><span class='type string'><span>string</span></span> name</code></dt>
+          <dt class='required'><code><span class='type string'>string</span> name</code></dt>
           <dd>name of your app</dd>
           
-          <dt class='variable '><code><span class='type string'><span>string</span></span> node_env</code></dt>
+          <dt><code><span class='type string'>string</span> node_env</code></dt>
           <dd>node.js environment var NODE_ENV</dd>
           
-          <dt class='variable  required'><code><span class='type string'><span>string</span></span> root</code></dt>
+          <dt class='required'><code><span class='type string'>string</span> root</code></dt>
           <dd>path of the root folder of your app</dd>
           
-          <dt class='variable  required'><code><span class='type string'><span>string</span></span> script</code></dt>
+          <dt class='required'><code><span class='type string'>string</span> script</code></dt>
           <dd>node.js script to run via foreverd</dd>
           
-          <dt class='variable '><code><span class='type string'><span>string</span></span> user</code></dt>
+          <dt><code><span class='type string'>string</span> user</code></dt>
           <dd>running user of the application</dd>
           
-          
-        </td>
-        <td>Add a new app defintion for foreverd to run</td>
-      </tr>
+        </dl>
+      
+    </dd>
     
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 
@@ -291,7 +298,7 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
+  <h2 id='configuration'>Variables</h2>
   <table>
     <thead>
       <tr>
@@ -304,11 +311,9 @@
       
       
 
-<tr>
-  <td class='variable '><code><span class='type array'><span>array</span></span> packages</code></td>
-  <td class='default'><code></code></td>
-  <td class='description'>List of packages to have globally installed on the server</td>
-</tr>
+<dt><code><span class='type array'>array</span> packages</code></dt>
+<dd class='default'>Default: <code></code></dd>
+<dd class='description'>List of packages to have globally installed on the server</dd>
 
 
     </tbody>
@@ -317,7 +322,8 @@
 
 
 
-  </section>
+    </section>
+  <section>
 
   <!-- JS -->
   <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->

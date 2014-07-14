@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>Common | devo.ps Documentation</title>
+  <title>Common | devo.ps documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -30,13 +30,30 @@
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-  <nav id='sidebar'>
-    <header class='header'>
-      <a href='http://devo.ps'>devo.ps</a> documentation
-    </header>
-    
-    <nav class='body'>
-      <h3>Manual</h3>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <input class='search' type='text' placeholder='Search by keyword'/>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
 
 
   
@@ -45,15 +62,31 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/repository' >undefined</a>
 
 <a href='/manual/CLI' >CLI</a>
 
-<a href='/manual/Getting-Started' >Getting Started</a>
-
 <a href='/manual/Git' >Git</a>
 
+<a href='/manual/nodes' >Nodes</a>
 
-<h3>Concepts</h3>
+<a href='/manual/scripts' >Scripts</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
 
 
   
@@ -62,12 +95,16 @@
 
   
 
+  
 
-<a href='/concepts/Nodes' >Nodes</a>
 
-<a href='/concepts/Scripts' >Scripts</a>
+<a href='/providers/digital_ocean' >Digital Ocean</a>
 
-<a href='/concepts/Tasks' >Tasks</a>
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -174,77 +211,47 @@
 
 <a href='/services/zeromq' >ZeroMQ</a>
 
-
-<h3>Providers</h3>
-
-
-  
-
-  
-
-  
-
-  
-
-
-<a href='/providers/digital_ocean' >Digital Ocean</a>
-
-<a href='/providers/ec2' >Ec2</a>
-
-<a href='/providers/linode' >Linode</a>
-
-<a href='/providers/rackspace' >Rackspace</a>
-
     </nav>
-  </nav>
 
-  <section id='content'>
-    
+    <section class='content'>
+      
+
 <header class='header'>
   <ul class='tags'>
     
   </ul>
 
-  <h1>Common </h1>
-  
-  
+  <h1>Common </h1>  
 </header>
 
 
 <section class='tasks'>
   <h2 id='tasks'>Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
+  <dl>
     
-      <tr>
-        <td><code>git_clone</code></td>
-        <td>
+    <dt>
+      <code class='terminal'>git_clone</code>
+    </dt>
+    <dd>
+      Clone or update a git repository
+      
+        <h3>Parameters</h3>
+        <dl>
           
-          <dl>
-          
-          <dt class='variable  required'><code><span class='type string'><span>string</span></span> git_repo_address</code></dt>
+          <dt class='required'><code><span class='type string'>string</span> git_repo_address</code></dt>
           <dd>URL of the git repository (http or ssh)</dd>
           
-          <dt class='variable  required'><code><span class='type string'><span>string</span></span> git_repo_dest</code></dt>
+          <dt class='required'><code><span class='type string'>string</span> git_repo_dest</code></dt>
           <dd>Folder where repository is cloned on the node</dd>
           
-          <dt class='variable '><code><span class='type string'><span>string</span></span> git_repo_version</code></dt>
+          <dt><code><span class='type string'>string</span> git_repo_version</code></dt>
           <dd>Version of the repository to checkout (HEAD, SHA-1, branch or tag name)</dd>
           
-          
-        </td>
-        <td>Clone or update a git repository</td>
-      </tr>
+        </dl>
+      
+    </dd>
     
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 
@@ -255,7 +262,8 @@
 
 
 
-  </section>
+    </section>
+  <section>
 
   <!-- JS -->
   <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->

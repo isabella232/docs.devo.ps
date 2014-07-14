@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>Rackspace | devo.ps documentation</title>
+  <title>Scripts | devo.ps documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -79,7 +79,7 @@
 
 <a href='/manual/nodes' >Nodes</a>
 
-<a href='/manual/scripts' >Scripts</a>
+<a href='/manual/scripts'  class='active'>Scripts</a>
 
 <a href='/manual/tasks' >Tasks</a>
 
@@ -104,7 +104,7 @@
 
 <a href='/providers/linode' >Linode</a>
 
-<a href='/providers/rackspace'  class='active'>Rackspace</a>
+<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -215,183 +215,57 @@
 
     <section class='content'>
       
+
 <header class='header'>
-  <h1>Rackspace</h1>
+  <ul class='tags'>
+    
+  </ul>
+
+  <h1>Scripts </h1>  
 </header>
 
+
+
 <section class='body'>
-  <h2>Sizes</h2>
-  <table>
-    <thead>
-      <th>ID</th>
-      <th>Name</th>
-      <th>RAM</th>
-      <th>Disk (GB)</th>
-    </thead>
-    <tbody>
-    
-      <tr>
-        <td><code>2</code></td>
-        <td>512MB Standard Instance</td>
-        <td><code>512</code></td>
-        <td><code>20</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>3</code></td>
-        <td>1GB Standard Instance</td>
-        <td><code>1024</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>4</code></td>
-        <td>2GB Standard Instance</td>
-        <td><code>2048</code></td>
-        <td><code>80</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>5</code></td>
-        <td>4GB Standard Instance</td>
-        <td><code>4096</code></td>
-        <td><code>160</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>6</code></td>
-        <td>8GB Standard Instance</td>
-        <td><code>8192</code></td>
-        <td><code>320</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>7</code></td>
-        <td>15GB Standard Instance</td>
-        <td><code>15360</code></td>
-        <td><code>620</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>8</code></td>
-        <td>30GB Standard Instance</td>
-        <td><code>30720</code></td>
-        <td><code>1200</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance1-1</code></td>
-        <td>1 GB Performance</td>
-        <td><code>1024</code></td>
-        <td><code>20</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance1-2</code></td>
-        <td>2 GB Performance</td>
-        <td><code>2048</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance1-4</code></td>
-        <td>4 GB Performance</td>
-        <td><code>4096</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance1-8</code></td>
-        <td>8 GB Performance</td>
-        <td><code>8192</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance2-120</code></td>
-        <td>120 GB Performance</td>
-        <td><code>122880</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance2-15</code></td>
-        <td>15 GB Performance</td>
-        <td><code>15360</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance2-30</code></td>
-        <td>30 GB Performance</td>
-        <td><code>30720</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance2-60</code></td>
-        <td>60 GB Performance</td>
-        <td><code>61440</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-      <tr>
-        <td><code>performance2-90</code></td>
-        <td>90 GB Performance</td>
-        <td><code>92160</code></td>
-        <td><code>40</code></td>
-      </tr>
-    
-    </tbody>
-  </table>
-  <h2>Locations</h2>
-  <table>
-    <thead>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Country</th>
-    </thead>
-    <tbody>
-    
-      <tr>
-        <td><code>dfw</code></td>
-        <td>Dallas (Texas)</td>
-        <td>US</td>
-      </tr>
-    
-      <tr>
-        <td><code>ord</code></td>
-        <td>Chicago (Illinois)</td>
-        <td>US</td>
-      </tr>
-    
-      <tr>
-        <td><code>iad</code></td>
-        <td>Northern Virginia</td>
-        <td>US</td>
-      </tr>
-    
-      <tr>
-        <td><code>lon</code></td>
-        <td>London (UK)</td>
-        <td>UK</td>
-      </tr>
-    
-      <tr>
-        <td><code>syd</code></td>
-        <td>Sydney (Australia)</td>
-        <td>Australia</td>
-      </tr>
-    
-      <tr>
-        <td><code>hkg</code></td>
-        <td>Hong Kong (China)</td>
-        <td>China</td>
-      </tr>
-    
-    </tbody>
-  </table>
+  <h2 id="overview">Overview</h2>
+<p>Scripts let you create arbitrary commands that you may want to execute during a task run.</p>
+<p>The scripts need to be saved in the <code>./scripts</code> folder to be usable by the system, they will then be referenced in the tasks with the following:</p>
+<pre><code>do:
+  - run: devops scripts/{filename}
+</code></pre><p>The scripts can be of any language you wish, shell script, python script, ruby script, etc.</p>
+<h2 id="languages">Languages</h2>
+<ul>
+<li>shell scripts are natively supported and should be able to run as-is without further customization on the platform</li>
+<li>python / ruby scripts <em>may</em> run properly as well, but you probably will run into issues as soon as you want to use <code>pip</code> packages or <code>gems</code>. You may have to update your node configuration and ensure your system has the required dependencies or packages. Refer to the <a href="/references/python.html">python service</a> or <a href="/references/ruby.html">ruby service</a> documentation for more information.</li>
+</ul>
+<pre><code>services:
+  python: &#39;*&#39;
+  ruby: &#39;*&#39;
+configuration:
+  python:
+    packages:
+      - pyyaml
+      - boto
+  ruby:
+    gems:
+      - compass
+</code></pre><h2 id="using-task-variables">Using task variables</h2>
+<p>Scripts can use variables defined in the task under the <code>vars</code> attribute, they will need to be put in between curvy brackets ( <code>{{</code> and <code>}}</code> ).</p>
+<h2 id="using-webhooks-data-payload">Using webhooks - data payload</h2>
+<p>Tasks can be triggered by webhook, sending a <code>POST</code> request on the URL defined in the task. The payload (JSON) of the POST request can be accessed by <code>{{ payload }}</code>.</p>
+<p>The content of the payload depends on what effectively perform the POST request, it could be any of:</p>
+<ul>
+<li>nothing</li>
+<li>the GitHub payload (if it is triggered by GitHub on webhook), see <a href="https://developer.github.com/webhooks/">GitHub documentation</a> about the format.</li>
+<li>any custom payload - if called from anywhere else - you are responsible for handling its content securely on your servers.</li>
+</ul>
+<h2 id="running-user">Running user</h2>
+<p>By default and like all the commands ran in the task, the <code>devops</code> user will be executing the script on the platform. The <code>devops</code> user can get granted <code>root</code> access by using the <code>sudo</code> command - or any other users for the matter using <code>sudo -u {other_user} command</code>.</p>
+
 </section>
+
+
+
 
     </section>
   <section>

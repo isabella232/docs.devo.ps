@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>CouchDB | devo.ps Documentation</title>
+  <title>CouchDB | devo.ps documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -30,13 +30,30 @@
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-  <nav id='sidebar'>
-    <header class='header'>
-      <a href='http://devo.ps'>devo.ps</a> documentation
-    </header>
-    
-    <nav class='body'>
-      <h3>Manual</h3>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <input class='search' type='text' placeholder='Search by keyword'/>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
 
 
   
@@ -45,15 +62,31 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/repository' >undefined</a>
 
 <a href='/manual/CLI' >CLI</a>
 
-<a href='/manual/Getting-Started' >Getting Started</a>
-
 <a href='/manual/Git' >Git</a>
 
+<a href='/manual/nodes' >Nodes</a>
 
-<h3>Concepts</h3>
+<a href='/manual/scripts' >Scripts</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
 
 
   
@@ -62,12 +95,16 @@
 
   
 
+  
 
-<a href='/concepts/Nodes' >Nodes</a>
 
-<a href='/concepts/Scripts' >Scripts</a>
+<a href='/providers/digital_ocean' >Digital Ocean</a>
 
-<a href='/concepts/Tasks' >Tasks</a>
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -174,32 +211,11 @@
 
 <a href='/services/zeromq' >ZeroMQ</a>
 
-
-<h3>Providers</h3>
-
-
-  
-
-  
-
-  
-
-  
-
-
-<a href='/providers/digital_ocean' >Digital Ocean</a>
-
-<a href='/providers/ec2' >Ec2</a>
-
-<a href='/providers/linode' >Linode</a>
-
-<a href='/providers/rackspace' >Rackspace</a>
-
     </nav>
-  </nav>
 
-  <section id='content'>
-    
+    <section class='content'>
+      
+
 <header class='header'>
   <ul class='tags'>
     
@@ -210,59 +226,48 @@
   </ul>
 
   <h1>CouchDB 
-  <a class='documentation' href='http://docs.couchdb.org/en/latest/'><span>Official documentation</span></a>
-  </h1>
-  
-  
+  <a href='http://docs.couchdb.org/en/latest/'><span>Official documentation</span></a>
+  </h1>  
 </header>
 
 
 <section class='tasks'>
   <h2 id='tasks'>Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
+  <dl>
     
-      <tr>
-        <td><code>start</code></td>
-        <td>
-          -
-        </td>
-        <td>Start CouchDB if stopped</td>
-      </tr>
+    <dt>
+      <code class='terminal'>start</code>
+    </dt>
+    <dd>
+      Start CouchDB if stopped
+      
+    </dd>
     
-      <tr>
-        <td><code>stop</code></td>
-        <td>
-          -
-        </td>
-        <td>Stop CouchDB if started</td>
-      </tr>
+    <dt>
+      <code class='terminal'>stop</code>
+    </dt>
+    <dd>
+      Stop CouchDB if started
+      
+    </dd>
     
-      <tr>
-        <td><code>reload</code></td>
-        <td>
-          -
-        </td>
-        <td>Reload CouchDB, reload the configuration and perform a graceful restart</td>
-      </tr>
+    <dt>
+      <code class='terminal'>reload</code>
+    </dt>
+    <dd>
+      Reload CouchDB, reload the configuration and perform a graceful restart
+      
+    </dd>
     
-      <tr>
-        <td><code>restart</code></td>
-        <td>
-          -
-        </td>
-        <td>Restart CouchDB, reload the configuration (but kills existing connection)</td>
-      </tr>
+    <dt>
+      <code class='terminal'>restart</code>
+    </dt>
+    <dd>
+      Restart CouchDB, reload the configuration (but kills existing connection)
+      
+    </dd>
     
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 
@@ -274,7 +279,7 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
+  <h2 id='configuration'>Variables</h2>
   <table>
     <thead>
       <tr>
@@ -287,83 +292,63 @@
       
       
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> admin_pass</code></td>
-  <td class='default'><code>admin</code></td>
-  <td class='description'>Define the admin password</td>
-</tr>
+<dt><code><span class='type string'>string</span> admin_pass</code></dt>
+<dd class='default'>Default: <code>admin</code></dd>
+<dd class='description'>Define the admin password</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> admin_user</code></td>
-  <td class='default'><code>admin</code></td>
-  <td class='description'>Define the admin username</td>
-</tr>
+<dt><code><span class='type string'>string</span> admin_user</code></dt>
+<dd class='default'>Default: <code>admin</code></dd>
+<dd class='description'>Define the admin username</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> bind_address</code></td>
-  <td class='default'><code>127.0.0.1</code></td>
-  <td class='description'>The IP address to bind to.</td>
-</tr>
+<dt><code><span class='type string'>string</span> bind_address</code></dt>
+<dd class='default'>Default: <code>127.0.0.1</code></dd>
+<dd class='description'>The IP address to bind to.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> enable</code></td>
-  <td class='default'><code>1</code></td>
-  <td class='description'>Define whether CouchDB should start at bood time</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> enable</code></dt>
+<dd class='default'>Default: <code>1</code></dd>
+<dd class='description'>Define whether CouchDB should start at bood time</dd>
 
 
 
-<tr>
-  <td class='variable  required'><code><span class='type boolean'><span>boolean</span></span> insecure</code></td>
-  <td class='default'><code>false</code></td>
-  <td class='description'>Allow insecure setup (no admin user)</td>
-</tr>
+<dt class='required'><code><span class='type boolean'>boolean</span> insecure</code></dt>
+<dd class='default'>Default: <code>false</code></dd>
+<dd class='description'>Allow insecure setup (no admin user)</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> max_document_size</code></td>
-  <td class='default'><code>4294967296</code></td>
-  <td class='description'>Maximum document size</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> max_document_size</code></dt>
+<dd class='default'>Default: <code>4294967296</code></dd>
+<dd class='description'>Maximum document size</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> port</code></td>
-  <td class='default'><code>5984</code></td>
-  <td class='description'>Listening port</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> port</code></dt>
+<dd class='default'>Default: <code>5984</code></dd>
+<dd class='description'>Listening port</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> running_user</code></td>
-  <td class='default'><code>couchdb</code></td>
-  <td class='description'>Define the running user for the CouchDB process (it needs to exist)</td>
-</tr>
+<dt><code><span class='type string'>string</span> running_user</code></dt>
+<dd class='default'>Default: <code>couchdb</code></dd>
+<dd class='description'>Define the running user for the CouchDB process (it needs to exist)</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> stderr_file</code></td>
-  <td class='default'><code>/dev/null</code></td>
-  <td class='description'>Where to send the process STDERR</td>
-</tr>
+<dt><code><span class='type string'>string</span> stderr_file</code></dt>
+<dd class='default'>Default: <code>/dev/null</code></dd>
+<dd class='description'>Where to send the process STDERR</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> stdout_file</code></td>
-  <td class='default'><code>/dev/null</code></td>
-  <td class='description'>Where to send the process STDOUT</td>
-</tr>
+<dt><code><span class='type string'>string</span> stdout_file</code></dt>
+<dd class='default'>Default: <code>/dev/null</code></dd>
+<dd class='description'>Where to send the process STDOUT</dd>
 
 
     </tbody>
@@ -372,7 +357,8 @@
 
 
 
-  </section>
+    </section>
+  <section>
 
   <!-- JS -->
   <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->

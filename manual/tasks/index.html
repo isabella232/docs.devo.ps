@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+  <title>Tasks | devo.ps documentation</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <input class='search' type='text' placeholder='Search by keyword'/>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/repository' >undefined</a>
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/Git' >Git</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/scripts' >Scripts</a>
+
+<a href='/manual/tasks'  class='active'>Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/digital_ocean' >Digital Ocean</a>
+
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/services/apache' >Apache</a>
+
+<a href='/services/common' >Common</a>
+
+<a href='/services/couchbase' >CouchBase</a>
+
+<a href='/services/couchdb' >CouchDB</a>
+
+<a href='/services/dart' >Dart</a>
+
+<a href='/services/docker' >Docker</a>
+
+<a href='/services/elasticsearch' >ElasticSearch</a>
+
+<a href='/services/go' >Go</a>
+
+<a href='/services/java' >Java</a>
+
+<a href='/services/memcached' >Memcached</a>
+
+<a href='/services/mongodb' >MongoDB</a>
+
+<a href='/services/mysql' >MySQL</a>
+
+<a href='/services/nginx' >Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
+
+<a href='/services/openvpn' >OpenVPN</a>
+
+<a href='/services/php' >PHP</a>
+
+<a href='/services/python' >Python</a>
+
+<a href='/services/rabbitmq' >RabbitMQ</a>
+
+<a href='/services/redis' >Redis</a>
+
+<a href='/services/ruby' >Ruby</a>
+
+<a href='/services/uwsgi' >uWSGI</a>
+
+<a href='/services/vagrant' >Vagrant</a>
+
+<a href='/services/varnish' >Varnish</a>
+
+<a href='/services/xvfb' >Xvfb</a>
+
+<a href='/services/zeromq' >ZeroMQ</a>
+
+    </nav>
+
+    <section class='content'>
+      
+
+<header class='header'>
+  <ul class='tags'>
+    
+  </ul>
+
+  <h1>Tasks </h1>  
+</header>
+
+
+
+<section class='body'>
+  <p>Tasks are simple sequences of commands performed on designed <a href="/manual/nodes">nodes</a> of a repository upon certain events (aka &quot;triggers&quot;).</p>
+<h2 id="task-file">Task file</h2>
+<p>As with nodes, you define a task using a simple YAML (<code>.yml</code>) file.</p>
+<p><em>We currently require that you name the file as the task id (see example) and save it in the <code>tasks/</code> folder. We are working on adding support for arbitrary file names and folders, allowing you to save multiple tasks in a single file.</em></p>
+<p>For example, we could add a <code>task.yml</code> file with the following content:</p>
+<pre><code>id: deploy
+type: task
+name: Deployment pipeline
+
+triggers:
+  webhooks:
+    - deploy
+
+targets:
+  - nodejs_server
+
+vars:
+  build: /opt/build_temp
+  domain: example.com
+
+steps:
+  - run: sudo mkdir -p {{ build }} &amp;&amp; sudo chown -R devops. {{ build }}
+  - run: devops git clone
+    options:
+      from: https://github.com/Wiredcraft/octokan.com.git
+      to: {{ build }}
+      version: master
+  - run: cd {{ build }}; make build ; cp -a _site/* /var/www/{{ domain }}
+  - run: devops nginx vhost add
+      options:
+        domain: {{ domain }}
+        port: 80
+        routes:
+          - uri: /
+            type: proxy
+            to: http://localhost:3000
+</code></pre><h3 id="format">Format</h3>
+<dl>
+  <dt><code><span class='type'>string</span> id</code></dt>
+  <dd>The id of the task, currently has to match the file name.</dd>
+
+  <dt><code><span class='type'>string</span> name</code></dt>
+  <dd>The name of the task as displayed in the Web UI and CLI.</dd>
+
+  <dt><code><span class='type'>string</span> type</code></dt>
+  <dd>Must be set to <code>task</code>, defines this file as a task.</dd>
+
+  <dt class='optional'><code><span class='type'>object</span> vars</code></dt>
+  <dd>Used to define a list of variables local to the task. Useful to define values you want to use in the steps (see belows).</dd>
+
+  <dt class='optional'><code><span class='type'>object</span> triggers</code></dt>
+  <dd>A list of events upon which to run the task. Currently only supports manual trigger and webhooks.</dd>
+
+  <dt><code><span class='type'>object</span> targets</code></dt>
+  <dd>A list of nodes id on which to run the task.</dd>
+
+  <dt><code><span class='type'>object</span> steps</code></dt>
+  <dd>
+    A series of commands and tasks to be run one after the other.
+    <dl>
+      <dt><code><span class='type'>string</span> run</code></dt>
+      <dd>A command to be run; it may be an inline shell command, the path to one of the <a href="/manual/scripts">scripts</a> available in the repository or a <code>devops</code> command. <a href='#steps'>Read more about steps below</a>.</dd>
+
+      <dt class='optional'><code><span class='type'>object</span> options</code></dt>
+      <dd>An object of options to be passed to the command if it is a devops command.</dd>
+
+      <dt><code><span class='type'>object</span> targets</code></dt>
+      <dd>A list of nodes id on which to run the command. <strong>This takes precedence over the targets defined at the root of the task</strong>.</dd>
+    </dl>
+  </dd>
+</dl>
+
+<h3 id="steps">Steps</h3>
+<p>The <code>steps</code> attribute defines the series of commands that composes the task. These commands can be of 3 kinds:</p>
+<ul>
+<li><p><strong>Inline command</strong>: regular shell command. For example:</p>
+<pre><code>steps:
+  - run: mkdir folder
+</code></pre></li>
+<li><p><strong>Script</strong>: you can define shell scripts in the <code>scripts/</code> folder, making it convenient to reuse commands across multiple tasks or simply isolate a complex set of commands. For example:</p>
+<pre><code>steps:
+  - run: devops scripts/some_script.sh
+</code></pre><p>  <em>Notice the call to the <code>devops</code> keyword at the beginning of the command which we use as well for the last kind of command.</em></p>
+</li>
+<li><p><strong>devops command</strong>: services installed on your nodes usually come with some helper commands. A devops command looks like <code>devops {SERVICE} {COMMAND}</code> where <code>{SERVICE}</code> is the name of the service and <code>{COMMAND}</code> the name of the specific command. Some of these commands require you to define options. For example, adding a virtual host to your Nginx service can be done as follow:</p>
+<pre><code>steps:
+  - run: devops nginx vhost add
+    options:
+      domain: example.com
+      port: 80
+      routes:
+        - uri: /
+          type: proxy
+          to: http://localhost:3000
+</code></pre><p>  <em>As for the scripts, we use the <code>devops</code> keyword. Services documentations dislpay a &quot;Tasks&quot; section if they have commands. See for example <a href="/services/nginx#tasks">Nginx list of commands</a>.</em></p>
+</li>
+</ul>
+<h3 id="targets">Targets</h3>
+<p>The <code>targets</code> attribute lets you define the list of nodes to run the command on. You can specify it either at the command level, or at the root level. </p>
+<p>If no <code>targets</code> attribute is available within a command, it will fallback on the root <code>targets</code> attribute.</p>
+<pre><code>targets:
+  - myserver
+  - my_other_server
+steps:
+  # will run on the root node list
+  - run: echo ipsum
+  # will only run on the list provided
+  - run: echo lorem
+    targets: [&#39;my_third_server&#39;]
+</code></pre><h3 id="triggers">Triggers</h3>
+<p>The <code>triggers</code> attribute lets you define when do you want a task to be triggered and executed.</p>
+<p>The supported events are:</p>
+<ul>
+<li>manual (always available)</li>
+<li>webhooks</li>
+</ul>
+<h4 id="webhooks">Webhooks</h4>
+<p>Lets you define a webhook that you (or a third party) can call anytime to trigger an execution of the task.</p>
+<p>The only HTTP valid method is <code>POST</code>.</p>
+<pre><code>triggers:
+  webhooks:
+    - path: some/secret/url
+    - path: some/even/more/secret/url
+</code></pre><p>The final effective URL path is constructed as follow:</p>
+<pre><code>https://app.devo.ps/webhooks/{user}/{repo}/some/secret/url
+https://app.devo.ps/webhooks/{user}/{repo}/some/even/more/secret/url
+</code></pre><h2 id="users">Users</h2>
+<p>By default all the commands are executed by the <code>devops</code> user. You can however switch user by using the <code>sudo</code> command for either <em>inline commands</em> or <em>scripts</em>:</p>
+<ul>
+<li><p>For <strong>inline commands</strong> you can prefix the command with the following:</p>
+<pre><code>steps:
+  # Run as root
+  - run: **sudo** mkdir -p /opt/mystuff &amp;&amp; **sudo** chown devops. /opt/mystuff
+  # Run as a different user
+  - run: **sudo -u {other_user}** mkdir /tmp/test
+</code></pre></li>
+<li><p><strong>scripts</strong>: if you want to switch user, you need to use the sudo command <strong>within</strong> your script, as such:</p>
+<pre><code>steps:
+  - run: devops scripts/myscript.sh
+
+shell&gt; cat ./scripts/myscript.sh
+#!/bin/bash
+# Run as root
+sudo mkdir /opt/folder
+sudo chown devops. /opt/folder
+
+# This will succeed now and executed as devops
+touch /opt/folder/file
+
+# Create folder and file as other_user
+sudo -u {other_user} mkdir /tmp/other
+sudo -u {other_user} touch /tmp/other/file
+
+# This will fail as the folder is owned by other_user
+touch /tmp/other/file2
+</code></pre></li>
+</ul>
+
+</section>
+
+
+
+
+    </section>
+  <section>
+
+  <!-- JS -->
+  <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  
+  
+</body>
+</html>

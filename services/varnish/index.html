@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>Varnish | devo.ps Documentation</title>
+  <title>Varnish | devo.ps documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -30,13 +30,30 @@
   <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-  <nav id='sidebar'>
-    <header class='header'>
-      <a href='http://devo.ps'>devo.ps</a> documentation
-    </header>
-    
-    <nav class='body'>
-      <h3>Manual</h3>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <input class='search' type='text' placeholder='Search by keyword'/>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
 
 
   
@@ -45,15 +62,31 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/repository' >undefined</a>
 
 <a href='/manual/CLI' >CLI</a>
 
-<a href='/manual/Getting-Started' >Getting Started</a>
-
 <a href='/manual/Git' >Git</a>
 
+<a href='/manual/nodes' >Nodes</a>
 
-<h3>Concepts</h3>
+<a href='/manual/scripts' >Scripts</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
 
 
   
@@ -62,12 +95,16 @@
 
   
 
+  
 
-<a href='/concepts/Nodes' >Nodes</a>
 
-<a href='/concepts/Scripts' >Scripts</a>
+<a href='/providers/digital_ocean' >Digital Ocean</a>
 
-<a href='/concepts/Tasks' >Tasks</a>
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -174,32 +211,11 @@
 
 <a href='/services/zeromq' >ZeroMQ</a>
 
-
-<h3>Providers</h3>
-
-
-  
-
-  
-
-  
-
-  
-
-
-<a href='/providers/digital_ocean' >Digital Ocean</a>
-
-<a href='/providers/ec2' >Ec2</a>
-
-<a href='/providers/linode' >Linode</a>
-
-<a href='/providers/rackspace' >Rackspace</a>
-
     </nav>
-  </nav>
 
-  <section id='content'>
-    
+    <section class='content'>
+      
+
 <header class='header'>
   <ul class='tags'>
     
@@ -210,59 +226,48 @@
   </ul>
 
   <h1>Varnish 
-  <a class='documentation' href='https://www.varnish-cache.org/docs'><span>Official documentation</span></a>
-  </h1>
-  
-  
+  <a href='https://www.varnish-cache.org/docs'><span>Official documentation</span></a>
+  </h1>  
 </header>
 
 
 <section class='tasks'>
   <h2 id='tasks'>Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Options</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
+  <dl>
     
-      <tr>
-        <td><code>start</code></td>
-        <td>
-          -
-        </td>
-        <td>Start Varnish if stopped</td>
-      </tr>
+    <dt>
+      <code class='terminal'>start</code>
+    </dt>
+    <dd>
+      Start Varnish if stopped
+      
+    </dd>
     
-      <tr>
-        <td><code>stop</code></td>
-        <td>
-          -
-        </td>
-        <td>Stop Varnish if started</td>
-      </tr>
+    <dt>
+      <code class='terminal'>stop</code>
+    </dt>
+    <dd>
+      Stop Varnish if started
+      
+    </dd>
     
-      <tr>
-        <td><code>reload</code></td>
-        <td>
-          -
-        </td>
-        <td>Reload Varnish, reload the configuration and perform a graceful restart</td>
-      </tr>
+    <dt>
+      <code class='terminal'>reload</code>
+    </dt>
+    <dd>
+      Reload Varnish, reload the configuration and perform a graceful restart
+      
+    </dd>
     
-      <tr>
-        <td><code>restart</code></td>
-        <td>
-          -
-        </td>
-        <td>Restart Varnish, reload the configuration (but kills existing connection)</td>
-      </tr>
+    <dt>
+      <code class='terminal'>restart</code>
+    </dt>
+    <dd>
+      Restart Varnish, reload the configuration (but kills existing connection)
+      
+    </dd>
     
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 
@@ -272,7 +277,7 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
+  <h2 id='configuration'>Variables</h2>
   <table>
     <thead>
       <tr>
@@ -285,107 +290,81 @@
       
       
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> admin_listen_address</code></td>
-  <td class='default'><code>127.0.0.1</code></td>
-  <td class='description'>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</td>
-</tr>
+<dt><code><span class='type string'>string</span> admin_listen_address</code></dt>
+<dd class='default'>Default: <code>127.0.0.1</code></dd>
+<dd class='description'>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> admin_listen_port</code></td>
-  <td class='default'><code>6082</code></td>
-  <td class='description'>Telnet admin interface listen port.</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> admin_listen_port</code></dt>
+<dd class='default'>Default: <code>6082</code></dd>
+<dd class='description'>Telnet admin interface listen port.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> listen_address</code></td>
-  <td class='default'><code></code></td>
-  <td class='description'>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</td>
-</tr>
+<dt><code><span class='type string'>string</span> listen_address</code></dt>
+<dd class='default'>Default: <code></code></dd>
+<dd class='description'>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> listen_port</code></td>
-  <td class='default'><code>6081</code></td>
-  <td class='description'>Listen port.</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> listen_port</code></dt>
+<dd class='default'>Default: <code>6081</code></dd>
+<dd class='description'>Listen port.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> max_threads</code></td>
-  <td class='default'><code>1000</code></td>
-  <td class='description'>The maximum number of worker threads to start.</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> max_threads</code></dt>
+<dd class='default'>Default: <code>1000</code></dd>
+<dd class='description'>The maximum number of worker threads to start.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> min_threads</code></td>
-  <td class='default'><code>1</code></td>
-  <td class='description'>The minimum number of worker threads to start.</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> min_threads</code></dt>
+<dd class='default'>Default: <code>1</code></dd>
+<dd class='description'>The minimum number of worker threads to start.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> secret_file</code></td>
-  <td class='default'><code>/etc/varnish/secret</code></td>
-  <td class='description'>File containing administration secret.</td>
-</tr>
+<dt><code><span class='type string'>string</span> secret_file</code></dt>
+<dd class='default'>Default: <code>/etc/varnish/secret</code></dd>
+<dd class='description'>File containing administration secret.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> storage_file</code></td>
-  <td class='default'><code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></td>
-  <td class='description'>Storage file, only used if storage_type is file.</td>
-</tr>
+<dt><code><span class='type string'>string</span> storage_file</code></dt>
+<dd class='default'>Default: <code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></dd>
+<dd class='description'>Storage file, only used if storage_type is file.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> storage_size</code></td>
-  <td class='default'><code>256M</code></td>
-  <td class='description'>Cache size: in bytes, optionally using k / M / G / T suffix.</td>
-</tr>
+<dt><code><span class='type string'>string</span> storage_size</code></dt>
+<dd class='default'>Default: <code>256M</code></dd>
+<dd class='description'>Cache size: in bytes, optionally using k / M / G / T suffix.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> storage_type</code></td>
-  <td class='default'><code>malloc</code></td>
-  <td class='description'>Store objects either in memory (malloc), on in a file (file).</td>
-</tr>
+<dt><code><span class='type string'>string</span> storage_type</code></dt>
+<dd class='default'>Default: <code>malloc</code></dd>
+<dd class='description'>Store objects either in memory (malloc), on in a file (file).</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> thread_timeout</code></td>
-  <td class='default'><code>120</code></td>
-  <td class='description'>Idle timeout for worker threads.</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> thread_timeout</code></dt>
+<dd class='default'>Default: <code>120</code></dd>
+<dd class='description'>Idle timeout for worker threads.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type integer'><span>integer</span></span> ttl</code></td>
-  <td class='default'><code>120</code></td>
-  <td class='description'>Default TTL used when the backend does not specify one.</td>
-</tr>
+<dt><code><span class='type integer'>integer</span> ttl</code></dt>
+<dd class='default'>Default: <code>120</code></dd>
+<dd class='description'>Default TTL used when the backend does not specify one.</dd>
 
 
 
-<tr>
-  <td class='variable '><code><span class='type string'><span>string</span></span> vcl_conf</code></td>
-  <td class='default'><code>/etc/varnish/default.vcl</code></td>
-  <td class='description'>Main configuration file.</td>
-</tr>
+<dt><code><span class='type string'>string</span> vcl_conf</code></dt>
+<dd class='default'>Default: <code>/etc/varnish/default.vcl</code></dd>
+<dd class='description'>Main configuration file.</dd>
 
 
     </tbody>
@@ -394,7 +373,8 @@
 
 
 
-  </section>
+    </section>
+  <section>
 
   <!-- JS -->
   <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->
