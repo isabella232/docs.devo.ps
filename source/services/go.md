@@ -1,7 +1,7 @@
 ---
-title: Go
-experimental: true
+documentation: http://golang.org/doc/
 tags:
 - language
-documentation: http://golang.org/doc/
+title: Go
+
 ---
