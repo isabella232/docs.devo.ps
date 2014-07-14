@@ -1,10 +1,8 @@
 {% for val in tree %}
 {% if val.type and val.description %}
-<tr>
-  <td class='variable {% if val.required == true %} required{% endif %}'><code><span class='type {{ val.type }}'><span>{{ val.type }}</span></span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></td>
-  <td class='default'><code>{{ val.default }}</code></td>
-  <td class='description'>{{ val.description }}</td>
-</tr>
+<dt{% if val.required == true %} class='required'{% endif %}><code><span class='type {{ val.type }}'>{{ val.type }}</span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></dt>
+<dd class='default'>Default: <code>{{ val.default }}</code></dd>
+<dd class='description'>{{ val.description }}</dd>
 {% else %}
 {% if not parent %}
 {% set parent = loop.key %}

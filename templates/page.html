@@ -28,7 +28,7 @@
         <h3>Parameters</h3>
         <dl>
           {% for option in task.options %}
-          <dt class='{% if option.required == true %}required{% endif %}'><code><span class='type {{ option.type }}'>{{ option.type }}</span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></dt>
+          <dt{% if option.required == true %} class='required'{% endif %}><code><span class='type {{ option.type }}'>{{ option.type }}</span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></dt>
           <dd>{{ option.description }}</dd>
           {% endfor %}
         </dl>

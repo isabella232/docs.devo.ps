@@ -1,23 +1,21 @@
 ---
 title: Nodes
 ---
-## Overview
 
-Nodes are the core component of `devops`, to make it simple, you can consider a `node` is a server.  
+A node is anything from a server to a firewall. 
 
-Nodes are described in a yaml format, with 1 node per file. Nodes files must be saved in the `nodes` folder.
+*Currently, devo.ps only support servers but we are actively working on adding support for load balancers, firewall and clusters.*
 
-## File format
+## Node file
 
-A node is described in a YAML file. It __must__ be named as the node.id.
+Each node is defined in a YAML (`.yml`) file.
 
-    shell> cat ./nodes/myserver.yml
-    
-    ---
-    id: myserver
-    name: My Awesome Server
-    type: server
-    disabled: false
+*We currently require that you name the file as the node id (see example) and save it in the `nodes/` folder. We are working on adding support for arbitrary file names and folders, allowing you to save multiple nodes in a single file.*
+
+For example, we could add a `web.yml` file with the following content:
+
+    id: web
+    name: Web server
 
     provider:
       type: digitalocean
@@ -28,8 +26,9 @@ A node is described in a YAML file. It __must__ be named as the node.id.
     services: {}
     configuration: {}
 
+Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Ocean (using the [provider credentials defined in your profile](/concepts/profile#providers)) in their `San Francisco 1` datacenter (location and size values are [documented in the provider section](/providers/digital_ocean/)).
 
-### Format details
+### Format
 
 
 Key | Type | Required | Default | Description
