@@ -44,7 +44,7 @@ For example, we could add a `task.yml` file with the following content:
                 type: proxy
                 to: http://localhost:3000
 
-### Format
+## Format
 
 <dl>
   <dt><code><span class='type'>string</span> id</code></dt>
@@ -81,7 +81,7 @@ For example, we could add a `task.yml` file with the following content:
   </dd>
 </dl>
 
-### Steps
+## Steps
 
 The `steps` attribute defines the series of commands that composes the task. These commands can be of 3 kinds:
 
@@ -111,61 +111,30 @@ The `steps` attribute defines the series of commands that composes the task. The
 
     *As for the scripts, we use the `devops` keyword. Services documentations dislpay a "Tasks" section if they have commands. See for example [Nginx list of commands](/services/nginx#tasks).*
 
-### Triggers
+*Commands are run as the `devops` user on targeted nodes. You can however switch users by using the `sudo` command in scripts or inline commands.*
 
-Tasks are ran every time one of the triggers is... well triggered.
+## Triggers
+
+Tasks are run whenever one of the triggers conditions are met.
 
 *We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.*
 
-#### Webhook
+### Webhook
 
-Lets you define a webhook that you (or a third party) can call anytime to trigger an execution of the task.
+Webhooks allow you define HTTP callbacks which you, or a 3rd party, can query with a `POST` payload.
 
-The only HTTP valid method is `POST`.
+The following definition in a task:
 
-```
-triggers:
-  webhooks:
-    - path: some/secret/url
-    - path: some/even/more/secret/url
-```
+    triggers:
+      webhooks:
+        - path: some/secret/url
+        - path: some/other/url
 
-The final effective URL path is constructed as follow:
+    *While we are considering more security measures, like restricting access to webhooks for user defined IPs, we recommend that you use obfuscted/complex URLs for your webhooks (if you wish to keep it private).*
 
-```
-https://app.devo.ps/webhooks/{user}/{repo}/some/secret/url
-https://app.devo.ps/webhooks/{user}/{repo}/some/even/more/secret/url
-```
+Will automatically create the following endpoints:
 
-## Users
+    https://wh.devo.ps/{USER}/{REPO}/some/secret/url
+    https://wh.devo.ps/{USER}/{REPO}/some/other/url
 
-By default all the commands are executed by the `devops` user. You can however switch user by using the `sudo` command for either *inline commands* or *scripts*:
-
-- For **inline commands** you can prefix the command with the following:
-
-      steps:
-        # Run as root
-        - run: **sudo** mkdir -p /opt/mystuff && **sudo** chown devops. /opt/mystuff
-        # Run as a different user
-        - run: **sudo -u {other_user}** mkdir /tmp/test
-
-- **scripts**: if you want to switch user, you need to use the sudo command **within** your script, as such:
-
-      steps:
-        - run: devops scripts/myscript.sh
-      
-      shell> cat ./scripts/myscript.sh
-      #!/bin/bash
-      # Run as root
-      sudo mkdir /opt/folder
-      sudo chown devops. /opt/folder
-      
-      # This will succeed now and executed as devops
-      touch /opt/folder/file
-      
-      # Create folder and file as other_user
-      sudo -u {other_user} mkdir /tmp/other
-      sudo -u {other_user} touch /tmp/other/file
-      
-      # This will fail as the folder is owned by other_user
-      touch /tmp/other/file2
+Where `{USER}` is the repository owner and `{REPO}` the name of the repository.

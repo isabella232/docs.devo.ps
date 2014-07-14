@@ -1184,7 +1184,7 @@ code, .code {
       margin-left: 20px; }
 
 #main {
-  margin: 53px auto 0;
+  margin: 0 auto;
   max-width: 960px;
   padding: 20px 0;
   text-align: left; }
@@ -1196,6 +1196,7 @@ code, .code {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-left: 200px;
+    margin-top: 53px;
     padding: 15px 20px;
     /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */ }
     #main .content .header .tags {
@@ -1329,9 +1330,12 @@ code, .code {
         margin: 10px 0;
         text-transform: uppercase; }
   #main .sidebar {
-    float: left;
+    bottom: 20px;
     font-size: 14px;
     font-size: 1.4rem;
+    overflow-y: auto;
+    position: fixed;
+    top: 73px;
     width: 180px; }
     #main .sidebar h3 {
       font-size: inherit;
