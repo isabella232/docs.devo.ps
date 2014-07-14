@@ -71,13 +71,13 @@
   
 
 
-<a href='/manual/repository' >undefined</a>
-
 <a href='/manual/CLI' >CLI</a>
 
 <a href='/manual/Git' >Git</a>
 
 <a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/repository' >Repository</a>
 
 <a href='/manual/scripts' >Scripts</a>
 
@@ -263,7 +263,7 @@ steps:
           - uri: /
             type: proxy
             to: http://localhost:3000
-</code></pre><h3 id="format">Format</h3>
+</code></pre><h2 id="format">Format</h2>
 <dl>
   <dt><code><span class='type'>string</span> id</code></dt>
   <dd>The id of the task, currently has to match the file name.</dd>
@@ -299,7 +299,7 @@ steps:
   </dd>
 </dl>
 
-<h3 id="steps">Steps</h3>
+<h2 id="steps">Steps</h2>
 <p>The <code>steps</code> attribute defines the series of commands that composes the task. These commands can be of 3 kinds:</p>
 <ul>
 <li><p><strong>Inline command</strong>: regular shell command. For example:</p>
@@ -324,50 +324,23 @@ steps:
 </code></pre><p>  <em>As for the scripts, we use the <code>devops</code> keyword. Services documentations dislpay a &quot;Tasks&quot; section if they have commands. See for example <a href="/services/nginx#tasks">Nginx list of commands</a>.</em></p>
 </li>
 </ul>
-<h3 id="triggers">Triggers</h3>
-<p>Tasks are ran every time one of the triggers is... well triggered.</p>
+<p><em>Commands are run as the <code>devops</code> user on targeted nodes. You can however switch users by using the <code>sudo</code> command in scripts or inline commands.</em></p>
+<h2 id="triggers">Triggers</h2>
+<p>Tasks are run whenever one of the triggers conditions are met.</p>
 <p><em>We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.</em></p>
-<h4 id="webhook">Webhook</h4>
-<p>Lets you define a webhook that you (or a third party) can call anytime to trigger an execution of the task.</p>
-<p>The only HTTP valid method is <code>POST</code>.</p>
+<h3 id="webhook">Webhook</h3>
+<p>Webhooks allow you define HTTP callbacks which you, or a 3rd party, can query with a <code>POST</code> payload.</p>
+<p>The following definition in a task:</p>
 <pre><code>triggers:
   webhooks:
     - path: some/secret/url
-    - path: some/even/more/secret/url
-</code></pre><p>The final effective URL path is constructed as follow:</p>
-<pre><code>https://app.devo.ps/webhooks/{user}/{repo}/some/secret/url
-https://app.devo.ps/webhooks/{user}/{repo}/some/even/more/secret/url
-</code></pre><h2 id="users">Users</h2>
-<p>By default all the commands are executed by the <code>devops</code> user. You can however switch user by using the <code>sudo</code> command for either <em>inline commands</em> or <em>scripts</em>:</p>
-<ul>
-<li><p>For <strong>inline commands</strong> you can prefix the command with the following:</p>
-<pre><code>steps:
-  # Run as root
-  - run: **sudo** mkdir -p /opt/mystuff &amp;&amp; **sudo** chown devops. /opt/mystuff
-  # Run as a different user
-  - run: **sudo -u {other_user}** mkdir /tmp/test
-</code></pre></li>
-<li><p><strong>scripts</strong>: if you want to switch user, you need to use the sudo command <strong>within</strong> your script, as such:</p>
-<pre><code>steps:
-  - run: devops scripts/myscript.sh
+    - path: some/other/url
 
-shell&gt; cat ./scripts/myscript.sh
-#!/bin/bash
-# Run as root
-sudo mkdir /opt/folder
-sudo chown devops. /opt/folder
-
-# This will succeed now and executed as devops
-touch /opt/folder/file
-
-# Create folder and file as other_user
-sudo -u {other_user} mkdir /tmp/other
-sudo -u {other_user} touch /tmp/other/file
-
-# This will fail as the folder is owned by other_user
-touch /tmp/other/file2
-</code></pre></li>
-</ul>
+*While we are considering more security measures, like restricting access to webhooks for user defined IPs, we recommend that you use obfuscted/complex URLs for your webhooks (if you wish to keep it private).*
+</code></pre><p>Will automatically create the following endpoints:</p>
+<pre><code>https://wh.devo.ps/{USER}/{REPO}/some/secret/url
+https://wh.devo.ps/{USER}/{REPO}/some/other/url
+</code></pre><p>Where <code>{USER}</code> is the repository owner and <code>{REPO}</code> the name of the repository.</p>
 
 </section>
 
