@@ -1142,12 +1142,8 @@ code, .code {
   code.pre, .code.pre {
     padding: 5px 10px;
     white-space: pre-wrap; }
-
-.type {
-  color: #8B66CB; }
-
-.value {
-  color: #50CD84; }
+  code .type, .code .type {
+    color: #8B66CB; }
 
 /* Header */
 #header {
@@ -1199,7 +1195,8 @@ code, .code {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-left: 200px;
-    padding: 15px 20px; }
+    padding: 15px 20px;
+    /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */ }
     #main .content .header .tags {
       float: right;
       list-style: none;
@@ -1287,22 +1284,39 @@ code, .code {
       vertical-align: top; }
     #main .content table .code, #main .content table code {
       white-space: nowrap; }
+    #main .content em {
+      background: #f9f7fc;
+      display: block;
+      font-size: 14px;
+      font-size: 1.4rem;
+      font-style: normal;
+      padding: 10px; }
     #main .content dl {
+      font-size: 14px;
+      font-size: 1.4rem;
       margin: 0 0 20px; }
+      #main .content dl .optional:after {
+        color: #b9a3df;
+        content: 'Optional';
+        font-size: 14px;
+        font-size: 1.4rem;
+        margin-left: 5px;
+        /*text-transform: uppercase;*/ }
       #main .content dl dt {
-        float: left;
-        margin-right: 10px; }
-      #main .content dl dt, #main .content dl dd {
-        margin-bottom: 10px; }
+        margin-bottom: 5px; }
+      #main .content dl dd {
+        margin-bottom: 20px;
+        margin-left: 20px; }
+      #main .content dl dl {
+        border-left: 3px solid #fafafb;
+        margin-top: 10px;
+        padding-left: 10px; }
       #main .content dl h3 {
         color: #a5adb3;
         font-size: 12px;
         font-size: 1.2rem;
         margin: 10px 0;
         text-transform: uppercase; }
-      #main .content dl dl {
-        border-left: 2px solid #fafafb;
-        padding-left: 10px; }
   #main .sidebar {
     float: left;
     font-size: 14px;

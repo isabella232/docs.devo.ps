@@ -30,17 +30,40 @@ Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Oc
 
 ### Format
 
+<dl>
+  <dt><code><span class='type'>string</span> id</code></dt>
+  <dd>The id of the node, currently has to match the file name</dd>
 
-Key | Type | Required | Default | Description
---- | --- | --- | --- | ---
-**id** | `string` | `true` | | The ID of the node, it must match the filename
-**name** | `string` | `true` | | The name of the server, will appear on the web interface
-**type** | `string` | `true` | |Type of the node, currently only `server` is supported
-**disabled** | `bool` | `false` | `false` | Whether or not consider the node as disabled
-**provider** | `object` | `true` | | The provider's detail of the node, used on provisioning, see the [providers references](/providers) for more details
-**services** | `object` | `true` | | The services to install on the node, see the References section for the list of supported services
-**configuration** | `object` | `true` | | The configuration for each of the services defined in the `services`
+  <dt><code><span class='type'>string</span> name</code></dt>
+  <dd>The name of the server as displayed in the Web UI and CLI</dd>
 
+  <dt><code><span class='type'>string</span> type</code></dt>
+  <dd>Type of the node, currently only `server` is supported</dd>
+  
+  <dt class='optional'><code><span class='type'>boolean</span> disabled</code></dt>
+  <dd>If `true`, this server is not provisioned (useful to remove temporarily a box for example). Default to `false`.</dd>
+
+  <dt><code><span class='type'>object</span> provider</code></dt>
+  <dd>
+    The provider information for the node, used for provisioning.
+    <dl>
+      <dt><code><span class='type'>string</span> type</code></dt>
+      <dd>The id of the provider you want to use. We currently support Digital Ocean ([digitalocean](/providers/digitalocean)), EC2 ([ec2](/providers/ec2)), Linode ([linode](/providers/linode)) and Rackspace ([rackspace](/providers/rackspace))</dd>
+      <dt><code><span class='type'>integer</span> size</code></dt>
+      <dd>id of the server size to use, as defined in the provider's documentation.</dd>
+      <dt><code><span class='type'>integer</span> location</code></dt>
+      <dd>id of the location (datacenter) to use, as defined in the provider's documentation.</dd>
+      <dt><code><span class='type string'>string</span> image</code></dt>
+      <dd>id of the image (OS) you want to use.</dd>
+    </dl>
+  </dd>
+
+  <dt class='optional'><code><span class='type'>array</span> services</code></dt>
+  <dd>The list of services to be installed on the node; available services are documented in the **Services** section.</dd>
+
+  <dt class='optional'><code><span class='type'>object</span> services</code></dt>
+  <dd>A list of configuration settings to apply to the installed services, as defined in each service's documentation page.</dd>
+</dl>
 
 ## Git operations
 
