@@ -1759,17 +1759,16 @@ code, .code {
         color: #a5adb3;
         float: right;
         padding: 0; }
-      #main .content dl .optional, #main .content dl .default {
-        display: block;
-        margin-top: 5px; }
-      #main .content dl .default code {
-        background: transparent;
-        border: 0;
-        color: #50CD84;
-        line-height: inherit;
-        padding: 0; }
-      #main .content dl .optional {
-        color: #50CD84; }
+      #main .content dl .optional, #main .content dl .required {
+        color: #FF8859; }
+      #main .content dl .default {
+        display: block; }
+        #main .content dl .default code {
+          background: transparent;
+          border: 0;
+          color: #50CD84;
+          line-height: inherit;
+          padding: 0; }
   #main .sidebar {
     bottom: 20px;
     font-size: 14px;

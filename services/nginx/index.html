@@ -272,91 +272,103 @@
           
           
 <dt>
-  <code ><span class='type string'>string</span> aliases</code>
+  <code><span class='type string'>string</span> aliases</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>space separated list of domain name aliases
-
+<dd class='description'>
+  space separated list of domain name aliases
+  
+  
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> domain</code>
+  <code><span class='type string'>string</span> domain</code>
   
 </dt>
-<dd class='description'>domain name
-
+<dd class='description'>
+  domain name
+  
+  
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type integer'>integer</span> port</code>
+  <code><span class='type integer'>integer</span> port</code>
   
 </dt>
-<dd class='description'>listening port
-
+<dd class='description'>
+  listening port
+  
+  
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type array'>array</span> routes</code>
+  <code><span class='type array'>array</span> routes</code>
   
 </dt>
-<dd class='description'>list of route objects
-
+<dd class='description'>
+  list of route objects
+  
+  
 
 <h3>route Object</h3>
 <dl>
 
 
 <dt>
-  <code ><span class='type string'>string</span> custom</code>
+  <code><span class='type string'>string</span> custom</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)
-
+<dd class='description'>
+  Custom inline nginx config to include within the route (e.g. auth, custom timeout)
+  
+  
 
 </dd>
 
 <dt>
-  <code ><span class='type string'>string</span> static</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>root</code></span>
+  <code><span class='type string'>string</span> static</code>
+  <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>For type static only, define how to consider the source folder - alias or root
-
-Valid values: Either of alias / root
-
+<dd class='description'>
+  For type static only, define how to consider the source folder - alias or root
+  <span class='default'>Valid values: Either of alias / root</span>
+  <span class='default'>Default: <code>root</code></span>
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> to</code>
+  <code><span class='type string'>string</span> to</code>
   
 </dt>
-<dd class='description'>Either an upstream name, or a service / url, or a path
-
+<dd class='description'>
+  Either an upstream name, or a service / url, or a path
+  
+  
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> type</code>
+  <code><span class='type string'>string</span> type</code>
   
 </dt>
-<dd class='description'>The type of handler for that route
-
-Valid values: Either of proxy / fastcgi / websocket / uwsgi / static
-
+<dd class='description'>
+  The type of handler for that route
+  <span class='default'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static</span>
+  
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> uri</code>
+  <code><span class='type string'>string</span> uri</code>
   
 </dt>
-<dd class='description'>Any string / regex that nginx understand as a `location`
-
-Valid values: Any string including regex
-
+<dd class='description'>
+  Any string / regex that nginx understand as a `location`
+  <span class='default'>Valid values: Any string including regex</span>
+  
 
 </dd>
 
@@ -365,31 +377,37 @@ Valid values: Any string including regex
 </dd>
 
 <dt>
-  <code ><span class='type array'>array</span> upstreams</code>
+  <code><span class='type array'>array</span> upstreams</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>list of upstream objects
-
+<dd class='description'>
+  list of upstream objects
+  
+  
 
 <h3>upstream Object</h3>
 <dl>
 
 
 <dt>
-  <code  class='required'><span class='type array'>array</span> backends</code>
+  <code><span class='type array'>array</span> backends</code>
   
 </dt>
-<dd class='description'>List of backends associated with the upstream
-
+<dd class='description'>
+  List of backends associated with the upstream
+  
+  
 
 </dd>
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> name</code>
+  <code><span class='type string'>string</span> name</code>
   
 </dt>
-<dd class='description'>Name of the upstream - it must be unique on the entire node
-
+<dd class='description'>
+  Name of the upstream - it must be unique on the entire node
+  
+  
 
 </dd>
 
@@ -398,11 +416,13 @@ Valid values: Any string including regex
 </dd>
 
 <dt>
-  <code ><span class='type string'>string</span> webroot</code>
+  <code><span class='type string'>string</span> webroot</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>subfolder to serve data from based on the root /var/www/_domain_
-
+<dd class='description'>
+  subfolder to serve data from based on the root /var/www/_domain_
+  
+  
 
 </dd>
 
