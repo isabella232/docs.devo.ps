@@ -270,24 +270,155 @@
         <h3>Options</h3>
         <dl>
           
-          <dt><code><span class='type string'>string</span> aliases</code></dt>
-          <dd>space separated list of domain name aliases</dd>
           
-          <dt class='required'><code><span class='type string'>string</span> domain</code></dt>
-          <dd>domain name</dd>
-          
-          <dt class='required'><code><span class='type integer'>integer</span> port</code></dt>
-          <dd>listening port</dd>
-          
-          <dt class='required'><code><span class='type array'>array</span> routes</code></dt>
-          <dd>list of route objects</dd>
-          
-          <dt><code><span class='type array'>array</span> upstreams</code></dt>
-          <dd>list of upstream objects</dd>
-          
-          <dt><code><span class='type string'>string</span> webroot</code></dt>
-          <dd>subfolder to serve data from based on the root /var/www/_domain_</dd>
-          
+
+<dt>
+  <code ><span class='type string'>string</span> aliases</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>space separated list of domain name aliases</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type string'>string</span> domain</code>
+  
+</dt>
+<dd class='description'>domain name</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type integer'>integer</span> port</code>
+  
+</dt>
+<dd class='description'>listening port</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type array'>array</span> routes</code>
+  
+</dt>
+<dd class='description'>list of route objects</dd>
+
+
+
+<dl>
+<h3>route Object</h3>
+
+
+
+<dt>
+  <code  class='required'><span class='type string'>string</span> uri</code>
+  
+</dt>
+<dd class='description'>Any string / regex that nginx understand as a `location`</dd>
+
+<dd class='description'>Valid values: Any string including regex</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type string'>string</span> type</code>
+  
+</dt>
+<dd class='description'>The type of handler for that route</dd>
+
+<dd class='description'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type string'>string</span> to</code>
+  
+</dt>
+<dd class='description'>Either an upstream name, or a service / url, or a path</dd>
+
+
+
+
+
+<dt>
+  <code ><span class='type string'>string</span> custom</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</dd>
+
+
+
+
+
+<dt>
+  <code ><span class='type string'>string</span> static</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>root</code></span>
+</dt>
+<dd class='description'>For type static only, define how to consider the source folder - alias or root</dd>
+
+<dd class='description'>Valid values: Either of alias / root</dd>
+
+
+
+
+</dl>
+
+
+
+<dt>
+  <code ><span class='type array'>array</span> upstreams</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>list of upstream objects</dd>
+
+
+
+<dl>
+<h3>upstream Object</h3>
+
+
+
+<dt>
+  <code  class='required'><span class='type string'>string</span> name</code>
+  
+</dt>
+<dd class='description'>Name of the upstream - it must be unique on the entire node</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type array'>array</span> backends</code>
+  
+</dt>
+<dd class='description'>List of backends associated with the upstream</dd>
+
+
+
+
+</dl>
+
+
+
+<dt>
+  <code ><span class='type string'>string</span> webroot</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>subfolder to serve data from based on the root /var/www/_domain_</dd>
+
+
+
+
         </dl>
       
     </dd>
@@ -297,95 +428,7 @@
 
 
 <section class='body'>
-  <h3 id="options">Options</h3>
-<h4 id="route-object">Route object</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Valid Values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>uri</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>Any string including regex</td>
-<td>Any string / regex that nginx understand as a <code>location</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>proxy / fastcgi / websocket / uwsgi / static</td>
-<td>The type of handler for that route</td>
-</tr>
-<tr>
-<td>to</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td></td>
-<td>Either an upstream name, or a service / url, or a path</td>
-</tr>
-<tr>
-<td>custom</td>
-<td>string</td>
-<td>False</td>
-<td></td>
-<td></td>
-<td>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</td>
-</tr>
-<tr>
-<td>static</td>
-<td>string</td>
-<td>False</td>
-<td>root</td>
-<td>alias / root</td>
-<td>For type static only, define how to consider the source folder - alias or root</td>
-</tr>
-</tbody>
-</table>
-<h4 id="upstream-object">Upstream object</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Valid Values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>True</td>
-<td></td>
-<td>unique name on the node</td>
-<td>Name of the upstream</td>
-</tr>
-<tr>
-<td>backends</td>
-<td>array</td>
-<td>True</td>
-<td></td>
-<td>TCP URL and Unix socket path</td>
-<td>List of backends associated with the upstream</td>
-</tr>
-</tbody>
-</table>
-<p>Note that the upstream name MUST be unique on the node.</p>
-
+  
 </section>
 
 

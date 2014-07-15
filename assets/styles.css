@@ -966,7 +966,7 @@ button {
   color: inherit;
   outline: none; }
 
-.button, button.button {
+.button, a.button, button.button {
   background: #1F8DD6;
   border-radius: 2px;
   color: #FFF;
@@ -983,18 +983,20 @@ button {
   font-size: 1.2rem;
   text-align: center;
   text-transform: uppercase; }
-  .button:hover, .button:focus, button.button:hover, button.button:focus {
+  .button:hover, .button:focus, a.button:hover, a.button:focus, button.button:hover, button.button:focus {
     background: #1b7ec0;
+    color: #FFF;
     outline: none;
     text-decoration: none; }
-  .button:active, .button.active, button.button:active, button.button.active {
+  .button:active, .button.active, a.button:active, a.button.active, button.button:active, button.button.active {
     background: #3598da;
+    color: #FFF;
     text-decoration: none; }
-  .button[disabled=disabled], .button[disabled=true], .button[disabled], button.button[disabled=disabled], button.button[disabled=true], button.button[disabled] {
+  .button[disabled=disabled], .button[disabled=true], .button[disabled], a.button[disabled=disabled], a.button[disabled=true], a.button[disabled], button.button[disabled=disabled], button.button[disabled=true], button.button[disabled] {
     background: #fafafb;
     border-color: #e1e1e1;
     color: #79858d; }
-  .button.add, button.button.add {
+  .button.add, a.button.add, button.button.add {
     background: #50CD84;
     border-radius: 2px;
     color: #FFF;
@@ -1007,18 +1009,20 @@ button {
     -moz-transition-duration: 0.1s;
     transition-duration: 0.1s;
     border: 1px solid #48b876; }
-    .button.add:hover, .button.add:focus, button.button.add:hover, button.button.add:focus {
+    .button.add:hover, .button.add:focus, a.button.add:hover, a.button.add:focus, button.button.add:hover, button.button.add:focus {
       background: #48b876;
+      color: #FFF;
       outline: none;
       text-decoration: none; }
-    .button.add:active, .button.add.active, button.button.add:active, button.button.add.active {
+    .button.add:active, .button.add.active, a.button.add:active, a.button.add.active, button.button.add:active, button.button.add.active {
       background: #61d290;
+      color: #FFF;
       text-decoration: none; }
-    .button.add[disabled=disabled], .button.add[disabled=true], .button.add[disabled], button.button.add[disabled=disabled], button.button.add[disabled=true], button.button.add[disabled] {
+    .button.add[disabled=disabled], .button.add[disabled=true], .button.add[disabled], a.button.add[disabled=disabled], a.button.add[disabled=true], a.button.add[disabled], button.button.add[disabled=disabled], button.button.add[disabled=true], button.button.add[disabled] {
       background: #fafafb;
       border-color: #e1e1e1;
       color: #79858d; }
-  .button.delete, button.button.delete {
+  .button.delete, a.button.delete, button.button.delete {
     background: #FF5F5F;
     border-radius: 2px;
     color: #FFF;
@@ -1031,14 +1035,16 @@ button {
     -moz-transition-duration: 0.1s;
     transition-duration: 0.1s;
     border: 1px solid #e55555; }
-    .button.delete:hover, .button.delete:focus, button.button.delete:hover, button.button.delete:focus {
+    .button.delete:hover, .button.delete:focus, a.button.delete:hover, a.button.delete:focus, button.button.delete:hover, button.button.delete:focus {
       background: #e55555;
+      color: #FFF;
       outline: none;
       text-decoration: none; }
-    .button.delete:active, .button.delete.active, button.button.delete:active, button.button.delete.active {
+    .button.delete:active, .button.delete.active, a.button.delete:active, a.button.delete.active, button.button.delete:active, button.button.delete.active {
       background: #ff6f6f;
+      color: #FFF;
       text-decoration: none; }
-    .button.delete[disabled=disabled], .button.delete[disabled=true], .button.delete[disabled], button.button.delete[disabled=disabled], button.button.delete[disabled=true], button.button.delete[disabled] {
+    .button.delete[disabled=disabled], .button.delete[disabled=true], .button.delete[disabled], a.button.delete[disabled=disabled], a.button.delete[disabled=true], a.button.delete[disabled], button.button.delete[disabled=disabled], button.button.delete[disabled=true], button.button.delete[disabled] {
       background: #fafafb;
       border-color: #e1e1e1;
       color: #79858d; }
@@ -1092,7 +1098,12 @@ button {
     visibility: visible; }
   .icon span {
     bottom: 100%;
-    left: 50%; }
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
     .icon span:after {
       content: '';
       position: absolute;
@@ -1108,12 +1119,7 @@ button {
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
   .icon:hover span {
-    margin-bottom: 8px;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%); }
+    margin-bottom: 8px; }
   .icon:hover {
     color: #1F8DD6; }
   .icon:before {
@@ -1274,10 +1280,11 @@ label, .label {
     -webkit-font-smoothing: antialiased;
     content: '/';
     cursor: pointer;
+    line-height: inherit;
     pointer-events: none;
     position: absolute;
     right: 10px;
-    top: 5px; }
+    top: 0; }
     .select:after:hover {
       color: inherit; }
   .select:hover:after {
@@ -1325,25 +1332,26 @@ label, .label {
   .list .item, .list > .header, .list > .footer {
     border: 1px solid #dde0e2;
     border-bottom-width: 0;
-    padding: 0;
-    -webkit-transition-property: border;
-    -moz-transition-property: border;
-    transition-property: border;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    transition-duration: 0.2s; }
-    .list .item:hover, .list > .header:hover, .list > .footer:hover {
-      border-color: #bbbec0; }
-      .list .item:hover + .item, .list > .header:hover + .item, .list > .footer:hover + .item {
-        border-top-color: #bbbec0; }
-    .list .item.active .body, .list > .header.active .body, .list > .footer.active .body {
-      display: block; }
+    padding: 0; }
     .list .item.new, .list > .header.new, .list > .footer.new {
       -webkit-animation: new 4s linear;
       -moz-animation: new 4s linear;
       -ms-animation: new 4s linear;
       -o-animation: new 4s linear;
       animation: new 4s linear; }
+    .list .item.collapsible, .list > .header.collapsible, .list > .footer.collapsible {
+      -webkit-transition-property: border;
+      -moz-transition-property: border;
+      transition-property: border;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      transition-duration: 0.2s; }
+      .list .item.collapsible:hover, .list > .header.collapsible:hover, .list > .footer.collapsible:hover {
+        border-color: #bbbec0; }
+        .list .item.collapsible:hover + .item, .list > .header.collapsible:hover + .item, .list > .footer.collapsible:hover + .item {
+          border-top-color: #bbbec0; }
+      .list .item.collapsible.active .body, .list > .header.collapsible.active .body, .list > .footer.collapsible.active .body {
+        display: block; }
   .list > .item:first-child, .list > .header {
     border-radius: 2px 2px 0 0; }
   .list > .item:last-child, .list > .footer {
@@ -1381,10 +1389,10 @@ label, .label {
     -webkit-font-smoothing: antialiased;
     left: 50%;
     line-height: 1;
-    margin-left: -1.2rem;
-    margin-top: -1.2rem;
+    margin-left: -1.7rem;
+    margin-top: -1.7rem;
     opacity: 0.3;
-    padding: 5px;
+    padding: 0.5rem;
     position: absolute;
     -webkit-animation: spinning 1.2s linear infinite;
     -moz-animation: spinning 1.2s linear infinite;
@@ -1671,7 +1679,12 @@ code, .code {
         visibility: visible; }
       #main .content h1 a span {
         bottom: 100%;
-        left: 50%; }
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%); }
         #main .content h1 a span:after {
           content: '';
           position: absolute;
@@ -1687,12 +1700,7 @@ code, .code {
           -o-transform: translateX(-50%);
           transform: translateX(-50%); }
       #main .content h1 a:hover span {
-        margin-bottom: 8px;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%); }
+        margin-bottom: 8px; }
       #main .content h1 a:before {
         font-family: 'icons';
         font-variant: normal;
