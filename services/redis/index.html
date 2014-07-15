@@ -271,18 +271,10 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Variables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
 
 
 
@@ -290,38 +282,50 @@
 
 
 
-<dt><code><span class='type string'>string</span> aom.aof_rewrite_min_size</code></dt>
-<dd class='default'>Default: <code>64mb</code></dd>
+<dt>
+  <code><span class='type'>string</span> aom.aof_rewrite_min_size</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>64mb</code></span>
+</dt>
 <dd class='description'>Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> aom.aof_rewrite_percentage</code></dt>
-<dd class='default'>Default: <code>100</code></dd>
+<dt>
+  <code><span class='type'>integer</span> aom.aof_rewrite_percentage</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>100</code></span>
+</dt>
 <dd class='description'>Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> aom.enable</code></dt>
-<dd class='default'>Default: <code>no</code></dd>
+<dt>
+  <code><span class='type'>string</span> aom.enable</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>no</code></span>
+</dt>
 <dd class='description'>Enable Append Only Mode</dd>
 
 
 
-<dt><code><span class='type string'>string</span> aom.filename</code></dt>
-<dd class='default'>Default: <code>appendonly.aof</code></dd>
+<dt>
+  <code><span class='type'>string</span> aom.filename</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>appendonly.aof</code></span>
+</dt>
 <dd class='description'>Name of the append only file</dd>
 
 
 
-<dt><code><span class='type string'>string</span> aom.fsync</code></dt>
-<dd class='default'>Default: <code>everysec</code></dd>
+<dt>
+  <code><span class='type'>string</span> aom.fsync</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>everysec</code></span>
+</dt>
 <dd class='description'>Fsync mode to sync the append only file</dd>
 
 
 
-<dt><code><span class='type string'>string</span> aom.no_appendfsync_on_rewrite</code></dt>
-<dd class='default'>Default: <code>no</code></dd>
+<dt>
+  <code><span class='type'>string</span> aom.no_appendfsync_on_rewrite</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>no</code></span>
+</dt>
 <dd class='description'>Define whether to (not) append fsync operations if another fsync op is already in progress</dd>
 
 
@@ -329,14 +333,18 @@
 
 
 
-<dt><code><span class='type string'>string</span> bind</code></dt>
-<dd class='default'>Default: <code>127.0.0.1</code></dd>
+<dt>
+  <code><span class='type'>string</span> bind</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1</code></span>
+</dt>
 <dd class='description'>Binding IP address.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> databases</code></dt>
-<dd class='default'>Default: <code>1</code></dd>
+<dt>
+  <code><span class='type'>integer</span> databases</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+</dt>
 <dd class='description'>Number of databases within the redis server</dd>
 
 
@@ -347,26 +355,34 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> limits.maxclients</code></dt>
-<dd class='default'>Default: <code>10000</code></dd>
+<dt>
+  <code><span class='type'>integer</span> limits.maxclients</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10000</code></span>
+</dt>
 <dd class='description'>Max number of clients connected</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> limits.maxmemory</code></dt>
-<dd class='default'>Default: <code>[object Object]</code></dd>
+<dt>
+  <code><span class='type'>integer</span> limits.maxmemory</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>Maximum RAM used by Redis to store data (no limit by default) in bytes</dd>
 
 
 
-<dt><code><span class='type string'>string</span> limits.policy</code></dt>
-<dd class='default'>Default: <code>volatile-lru</code></dd>
+<dt>
+  <code><span class='type'>string</span> limits.policy</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>volatile-lru</code></span>
+</dt>
 <dd class='description'>Define how Redis will remove keys when maxmemory is reached</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> limits.samples</code></dt>
-<dd class='default'>Default: <code>3</code></dd>
+<dt>
+  <code><span class='type'>integer</span> limits.samples</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>3</code></span>
+</dt>
 <dd class='description'>Sample size to use to base the policy eviction for LRU and TTL policy algorithms</dd>
 
 
@@ -374,14 +390,18 @@
 
 
 
-<dt><code><span class='type string'>string</span> logfile</code></dt>
-<dd class='default'>Default: <code>/var/log/redis/redis-server.log</code></dd>
+<dt>
+  <code><span class='type'>string</span> logfile</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/redis/redis-server.log</code></span>
+</dt>
 <dd class='description'>Server log file</dd>
 
 
 
-<dt><code><span class='type string'>string</span> loglevel</code></dt>
-<dd class='default'>Default: <code>notice</code></dd>
+<dt>
+  <code><span class='type'>string</span> loglevel</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>notice</code></span>
+</dt>
 <dd class='description'>Server log verbosity</dd>
 
 
@@ -392,8 +412,10 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> lua.time_limit</code></dt>
-<dd class='default'>Default: <code>5000</code></dd>
+<dt>
+  <code><span class='type'>integer</span> lua.time_limit</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5000</code></span>
+</dt>
 <dd class='description'>Time limit (in ms) for the execution of a LUA script</dd>
 
 
@@ -401,8 +423,10 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> port</code></dt>
-<dd class='default'>Default: <code>6379</code></dd>
+<dt>
+  <code><span class='type'>integer</span> port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>6379</code></span>
+</dt>
 <dd class='description'>Connection port.</dd>
 
 
@@ -413,56 +437,74 @@
 
 
 
-<dt><code><span class='type string'>string</span> replication.is_slave</code></dt>
-<dd class='default'>Default: <code>false</code></dd>
+<dt>
+  <code><span class='type'>string</span> replication.is_slave</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>Is this redis instance a slave?</dd>
 
 
 
-<dt><code><span class='type string'>string</span> replication.masterauth</code></dt>
-<dd class='default'>Default: <code>[object Object]</code></dd>
+<dt>
+  <code><span class='type'>string</span> replication.masterauth</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>Redis master auth password (if required)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> replication.masterip</code></dt>
-<dd class='default'>Default: <code></code></dd>
+<dt>
+  <code><span class='type'>string</span> replication.masterip</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>IP or host of the master server</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> replication.masterport</code></dt>
-<dd class='default'>Default: <code>6379</code></dd>
+<dt>
+  <code><span class='type'>integer</span> replication.masterport</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>6379</code></span>
+</dt>
 <dd class='description'>Redis port of the master server</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> replication.ping_slave_period</code></dt>
-<dd class='default'>Default: <code>10</code></dd>
+<dt>
+  <code><span class='type'>integer</span> replication.ping_slave_period</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10</code></span>
+</dt>
 <dd class='description'>Frequency (in sec) to ping the master server as health check</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> replication.priority</code></dt>
-<dd class='default'>Default: <code>100</code></dd>
+<dt>
+  <code><span class='type'>integer</span> replication.priority</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>100</code></span>
+</dt>
 <dd class='description'>Slave priority</dd>
 
 
 
-<dt><code><span class='type string'>string</span> replication.read_only</code></dt>
-<dd class='default'>Default: <code>yes</code></dd>
+<dt>
+  <code><span class='type'>string</span> replication.read_only</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>yes</code></span>
+</dt>
 <dd class='description'>Make the slave server read-only (preferred option)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> replication.serve_stale_data</code></dt>
-<dd class='default'>Default: <code>yes</code></dd>
+<dt>
+  <code><span class='type'>string</span> replication.serve_stale_data</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>yes</code></span>
+</dt>
 <dd class='description'>Slave redis serves stale data if the connection is lost with the master</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> replication.timeout</code></dt>
-<dd class='default'>Default: <code>60</code></dd>
+<dt>
+  <code><span class='type'>integer</span> replication.timeout</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>60</code></span>
+</dt>
 <dd class='description'>Timeout to Bulk IO transfer and ping response to mark the master as unreachable</dd>
 
 
@@ -476,8 +518,10 @@
 
 
 
-<dt><code><span class='type string'>string</span> security.requirepass</code></dt>
-<dd class='default'>Default: <code>[object Object]</code></dd>
+<dt>
+  <code><span class='type'>string</span> security.requirepass</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>Require a password to connect (either client or slave)</dd>
 
 
@@ -491,14 +535,18 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> slowlog.log_slower_than</code></dt>
-<dd class='default'>Default: <code>10000</code></dd>
+<dt>
+  <code><span class='type'>integer</span> slowlog.log_slower_than</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10000</code></span>
+</dt>
 <dd class='description'>Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> slowlog.max_len</code></dt>
-<dd class='default'>Default: <code>128</code></dd>
+<dt>
+  <code><span class='type'>integer</span> slowlog.max_len</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>128</code></span>
+</dt>
 <dd class='description'>Length of the slow log to capture (FIFO based)</dd>
 
 
@@ -512,32 +560,42 @@
 
 
 
-<dt><code><span class='type string'>string</span> snapshotting.dbfilename</code></dt>
-<dd class='default'>Default: <code>dump.rdb</code></dd>
+<dt>
+  <code><span class='type'>string</span> snapshotting.dbfilename</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>dump.rdb</code></span>
+</dt>
 <dd class='description'>Filename where to dump the DB</dd>
 
 
 
-<dt><code><span class='type string'>string</span> snapshotting.dir</code></dt>
-<dd class='default'>Default: <code>/var/lib/redis</code></dd>
+<dt>
+  <code><span class='type'>string</span> snapshotting.dir</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/lib/redis</code></span>
+</dt>
 <dd class='description'>Folder where to store the snapshots</dd>
 
 
 
-<dt><code><span class='type string'>string</span> snapshotting.rdbchecksum</code></dt>
-<dd class='default'>Default: <code>yes</code></dd>
+<dt>
+  <code><span class='type'>string</span> snapshotting.rdbchecksum</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>yes</code></span>
+</dt>
 <dd class='description'>Enable database checksum (use ~10% extra CPU)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> snapshotting.rdbcompression</code></dt>
-<dd class='default'>Default: <code>yes</code></dd>
+<dt>
+  <code><span class='type'>string</span> snapshotting.rdbcompression</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>yes</code></span>
+</dt>
 <dd class='description'>Enable database compression</dd>
 
 
 
-<dt><code><span class='type array'>array</span> snapshotting.save</code></dt>
-<dd class='default'>Default: <code>[object Object],[object Object],[object Object]</code></dd>
+<dt>
+  <code><span class='type'>array</span> snapshotting.save</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>[object Object],[object Object],[object Object]</code></span>
+</dt>
 <dd class='description'>Array of save rules including seconds and number of changes that trigger a save</dd>
 
 
@@ -551,20 +609,26 @@
 
 
 
-<dt><code><span class='type string'>string</span> syslog.enable</code></dt>
-<dd class='default'>Default: <code>no</code></dd>
+<dt>
+  <code><span class='type'>string</span> syslog.enable</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>no</code></span>
+</dt>
 <dd class='description'>Send log to syslog</dd>
 
 
 
-<dt><code><span class='type string'>string</span> syslog.facility</code></dt>
-<dd class='default'>Default: <code>local0</code></dd>
+<dt>
+  <code><span class='type'>string</span> syslog.facility</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>local0</code></span>
+</dt>
 <dd class='description'>Syslog facility</dd>
 
 
 
-<dt><code><span class='type string'>string</span> syslog.ident</code></dt>
-<dd class='default'>Default: <code>redis</code></dd>
+<dt>
+  <code><span class='type'>string</span> syslog.ident</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>redis</code></span>
+</dt>
 <dd class='description'>Syslog identity</dd>
 
 
@@ -572,13 +636,14 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> timeout</code></dt>
-<dd class='default'>Default: <code>0</code></dd>
+<dt>
+  <code><span class='type'>integer</span> timeout</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>Close the connection after a client is idle for N seconds (0 to disable)</dd>
 
 
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 

@@ -319,45 +319,47 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Variables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
 
-<dt><code><span class='type string'>string</span> cipher</code></dt>
-<dd class='default'>Default: <code>BF-CBC</code></dd>
+<dt>
+  <code><span class='type'>string</span> cipher</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>BF-CBC</code></span>
+</dt>
 <dd class='description'>cipher</dd>
 
 
 
-<dt><code><span class='type string'>string</span> dev</code></dt>
-<dd class='default'>Default: <code>tun</code></dd>
+<dt>
+  <code><span class='type'>string</span> dev</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>tun</code></span>
+</dt>
 <dd class='description'>Device type</dd>
 
 
 
-<dt><code><span class='type string'>string</span> dns1</code></dt>
-<dd class='default'>Default: <code>208.67.222.222</code></dd>
+<dt>
+  <code><span class='type'>string</span> dns1</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>208.67.222.222</code></span>
+</dt>
 <dd class='description'>DNS to propagate to the clients (default to OpenDNS)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> dns2</code></dt>
-<dd class='default'>Default: <code>208.67.220.220</code></dd>
+<dt>
+  <code><span class='type'>string</span> dns2</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>208.67.220.220</code></span>
+</dt>
 <dd class='description'>DNS to propagate to the clients (default to OpenDNS)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> group</code></dt>
-<dd class='default'>Default: <code>nogroup</code></dd>
+<dt>
+  <code><span class='type'>string</span> group</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>nogroup</code></span>
+</dt>
 <dd class='description'>Running group of openvpn (must exist)</dd>
 
 
@@ -368,68 +370,90 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> key.ca_expire</code></dt>
-<dd class='default'>Default: <code>3650</code></dd>
+<dt>
+  <code><span class='type'>integer</span> key.ca_expire</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>3650</code></span>
+</dt>
 <dd class='description'>CA validity period (in days)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.city</code></dt>
-<dd class='default'>Default: <code>SanFrancisco</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.city</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>SanFrancisco</code></span>
+</dt>
 <dd class='description'>Key city</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.common_name</code></dt>
-<dd class='default'>Default: <code>server</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.common_name</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>server</code></span>
+</dt>
 <dd class='description'>Key Common Name (CN)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.country</code></dt>
-<dd class='default'>Default: <code>US</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.country</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>US</code></span>
+</dt>
 <dd class='description'>Key country</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.email</code></dt>
-<dd class='default'>Default: <code>admin@server</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.email</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>admin@server</code></span>
+</dt>
 <dd class='description'>Key email</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> key.key_expire</code></dt>
-<dd class='default'>Default: <code>3650</code></dd>
+<dt>
+  <code><span class='type'>integer</span> key.key_expire</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>3650</code></span>
+</dt>
 <dd class='description'>Key validity period (in days)</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> key.key_size</code></dt>
-<dd class='default'>Default: <code>1024</code></dd>
+<dt>
+  <code><span class='type'>integer</span> key.key_size</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1024</code></span>
+</dt>
 <dd class='description'>Increase key size if you are paranoid; it will slow down TLS negociation</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.name</code></dt>
-<dd class='default'>Default: <code>server</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.name</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>server</code></span>
+</dt>
 <dd class='description'>Key name</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.org</code></dt>
-<dd class='default'>Default: <code>Fort-Funston</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.org</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>Fort-Funston</code></span>
+</dt>
 <dd class='description'>Key Organization</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.org_unit</code></dt>
-<dd class='default'>Default: <code>server</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.org_unit</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>server</code></span>
+</dt>
 <dd class='description'>Key Organization Unit (OU)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> key.province</code></dt>
-<dd class='default'>Default: <code>CA</code></dd>
+<dt>
+  <code><span class='type'>string</span> key.province</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>CA</code></span>
+</dt>
 <dd class='description'>Key province</dd>
 
 
@@ -437,43 +461,54 @@
 
 
 
-<dt><code><span class='type integer'>integer</span> max_client</code></dt>
-<dd class='default'>Default: <code>100</code></dd>
+<dt>
+  <code><span class='type'>integer</span> max_client</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>100</code></span>
+</dt>
 <dd class='description'>Maximum number of simultaneous clients</dd>
 
 
 
-<dt><code><span class='type string'>string</span> netmask</code></dt>
-<dd class='default'>Default: <code>255.255.255.0</code></dd>
+<dt>
+  <code><span class='type'>string</span> netmask</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>255.255.255.0</code></span>
+</dt>
 <dd class='description'>Netmask to apply on IP range for clients</dd>
 
 
 
-<dt><code><span class='type string'>string</span> network</code></dt>
-<dd class='default'>Default: <code>10.8.0.0</code></dd>
+<dt>
+  <code><span class='type'>string</span> network</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10.8.0.0</code></span>
+</dt>
 <dd class='description'>Network IP range for clients</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> port</code></dt>
-<dd class='default'>Default: <code>1194</code></dd>
+<dt>
+  <code><span class='type'>integer</span> port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1194</code></span>
+</dt>
 <dd class='description'>Listening port</dd>
 
 
 
-<dt><code><span class='type string'>string</span> proto</code></dt>
-<dd class='default'>Default: <code>udp</code></dd>
+<dt>
+  <code><span class='type'>string</span> proto</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>udp</code></span>
+</dt>
 <dd class='description'>Protocol</dd>
 
 
 
-<dt><code><span class='type string'>string</span> user</code></dt>
-<dd class='default'>Default: <code>nobody</code></dd>
+<dt>
+  <code><span class='type'>string</span> user</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>nobody</code></span>
+</dt>
 <dd class='description'>Running user of openvpn (must exist)</dd>
 
 
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 

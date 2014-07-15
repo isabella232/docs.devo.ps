@@ -273,98 +273,115 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Variables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
 
-<dt><code><span class='type string'>string</span> admin_listen_address</code></dt>
-<dd class='default'>Default: <code>127.0.0.1</code></dd>
+<dt>
+  <code><span class='type'>string</span> admin_listen_address</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1</code></span>
+</dt>
 <dd class='description'>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> admin_listen_port</code></dt>
-<dd class='default'>Default: <code>6082</code></dd>
+<dt>
+  <code><span class='type'>integer</span> admin_listen_port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>6082</code></span>
+</dt>
 <dd class='description'>Telnet admin interface listen port.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> listen_address</code></dt>
-<dd class='default'>Default: <code></code></dd>
+<dt>
+  <code><span class='type'>string</span> listen_address</code>
+  <span class='optional'>Optional</span>
+</dt>
 <dd class='description'>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> listen_port</code></dt>
-<dd class='default'>Default: <code>6081</code></dd>
+<dt>
+  <code><span class='type'>integer</span> listen_port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>6081</code></span>
+</dt>
 <dd class='description'>Listen port.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> max_threads</code></dt>
-<dd class='default'>Default: <code>1000</code></dd>
+<dt>
+  <code><span class='type'>integer</span> max_threads</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1000</code></span>
+</dt>
 <dd class='description'>The maximum number of worker threads to start.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> min_threads</code></dt>
-<dd class='default'>Default: <code>1</code></dd>
+<dt>
+  <code><span class='type'>integer</span> min_threads</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+</dt>
 <dd class='description'>The minimum number of worker threads to start.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> secret_file</code></dt>
-<dd class='default'>Default: <code>/etc/varnish/secret</code></dd>
+<dt>
+  <code><span class='type'>string</span> secret_file</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/etc/varnish/secret</code></span>
+</dt>
 <dd class='description'>File containing administration secret.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> storage_file</code></dt>
-<dd class='default'>Default: <code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></dd>
+<dt>
+  <code><span class='type'>string</span> storage_file</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></span>
+</dt>
 <dd class='description'>Storage file, only used if storage_type is file.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> storage_size</code></dt>
-<dd class='default'>Default: <code>256M</code></dd>
+<dt>
+  <code><span class='type'>string</span> storage_size</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>256M</code></span>
+</dt>
 <dd class='description'>Cache size: in bytes, optionally using k / M / G / T suffix.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> storage_type</code></dt>
-<dd class='default'>Default: <code>malloc</code></dd>
+<dt>
+  <code><span class='type'>string</span> storage_type</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>malloc</code></span>
+</dt>
 <dd class='description'>Store objects either in memory (malloc), on in a file (file).</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> thread_timeout</code></dt>
-<dd class='default'>Default: <code>120</code></dd>
+<dt>
+  <code><span class='type'>integer</span> thread_timeout</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>120</code></span>
+</dt>
 <dd class='description'>Idle timeout for worker threads.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> ttl</code></dt>
-<dd class='default'>Default: <code>120</code></dd>
+<dt>
+  <code><span class='type'>integer</span> ttl</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>120</code></span>
+</dt>
 <dd class='description'>Default TTL used when the backend does not specify one.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> vcl_conf</code></dt>
-<dd class='default'>Default: <code>/etc/varnish/default.vcl</code></dd>
+<dt>
+  <code><span class='type'>string</span> vcl_conf</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/etc/varnish/default.vcl</code></span>
+</dt>
 <dd class='description'>Main configuration file.</dd>
 
 
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 

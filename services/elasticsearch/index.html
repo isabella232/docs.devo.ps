@@ -273,62 +273,67 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Variables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
 
-<dt><code><span class='type string'>string</span> bind_host</code></dt>
-<dd class='default'>Default: <code>127.0.0.1</code></dd>
+<dt>
+  <code><span class='type'>string</span> bind_host</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1</code></span>
+</dt>
 <dd class='description'>The IP address to bind to.</dd>
 
 
 
-<dt><code><span class='type string'>string</span> group</code></dt>
-<dd class='default'>Default: <code>elasticsearch</code></dd>
+<dt>
+  <code><span class='type'>string</span> group</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>elasticsearch</code></span>
+</dt>
 <dd class='description'>Running group for the elasticsearch process</dd>
 
 
 
-<dt><code><span class='type string'>string</span> heap_size</code></dt>
-<dd class='default'>Default: <code>256m</code></dd>
+<dt>
+  <code><span class='type'>string</span> heap_size</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>256m</code></span>
+</dt>
 <dd class='description'>Heap size for the elasticsearch process (unit as 256m 1g)</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> http_port</code></dt>
-<dd class='default'>Default: <code>9200</code></dd>
+<dt>
+  <code><span class='type'>integer</span> http_port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>9200</code></span>
+</dt>
 <dd class='description'>Listening port for HTTP traffic</dd>
 
 
 
-<dt><code><span class='type array'>array</span> plugins</code></dt>
-<dd class='default'>Default: <code></code></dd>
+<dt>
+  <code><span class='type'>array</span> plugins</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code></code></span>
+</dt>
 <dd class='description'>List of extra plugins to install</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> transport_port</code></dt>
-<dd class='default'>Default: <code>9300</code></dd>
+<dt>
+  <code><span class='type'>integer</span> transport_port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>9300</code></span>
+</dt>
 <dd class='description'>Listening port for inter-node traffic (cluster)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> user</code></dt>
-<dd class='default'>Default: <code>elasticsearch</code></dd>
+<dt>
+  <code><span class='type'>string</span> user</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>elasticsearch</code></span>
+</dt>
 <dd class='description'>Running user for the elasticsearch process</dd>
 
 
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 

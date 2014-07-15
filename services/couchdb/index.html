@@ -275,80 +275,91 @@
 
 
 <section class='configuration'>
-  <h2 id='configuration'>Variables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
 
-<dt><code><span class='type string'>string</span> admin_pass</code></dt>
-<dd class='default'>Default: <code>admin</code></dd>
+<dt>
+  <code><span class='type'>string</span> admin_pass</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>admin</code></span>
+</dt>
 <dd class='description'>Define the admin password</dd>
 
 
 
-<dt><code><span class='type string'>string</span> admin_user</code></dt>
-<dd class='default'>Default: <code>admin</code></dd>
+<dt>
+  <code><span class='type'>string</span> admin_user</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>admin</code></span>
+</dt>
 <dd class='description'>Define the admin username</dd>
 
 
 
-<dt><code><span class='type string'>string</span> bind_address</code></dt>
-<dd class='default'>Default: <code>127.0.0.1</code></dd>
+<dt>
+  <code><span class='type'>string</span> bind_address</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1</code></span>
+</dt>
 <dd class='description'>The IP address to bind to.</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> enable</code></dt>
-<dd class='default'>Default: <code>1</code></dd>
+<dt>
+  <code><span class='type'>integer</span> enable</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+</dt>
 <dd class='description'>Define whether CouchDB should start at bood time</dd>
 
 
 
-<dt class='required'><code><span class='type boolean'>boolean</span> insecure</code></dt>
-<dd class='default'>Default: <code>false</code></dd>
+<dt>
+  <code><span class='type'>boolean</span> insecure</code>
+  
+</dt>
 <dd class='description'>Allow insecure setup (no admin user)</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> max_document_size</code></dt>
-<dd class='default'>Default: <code>4294967296</code></dd>
+<dt>
+  <code><span class='type'>integer</span> max_document_size</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>4294967296</code></span>
+</dt>
 <dd class='description'>Maximum document size</dd>
 
 
 
-<dt><code><span class='type integer'>integer</span> port</code></dt>
-<dd class='default'>Default: <code>5984</code></dd>
+<dt>
+  <code><span class='type'>integer</span> port</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5984</code></span>
+</dt>
 <dd class='description'>Listening port</dd>
 
 
 
-<dt><code><span class='type string'>string</span> running_user</code></dt>
-<dd class='default'>Default: <code>couchdb</code></dd>
+<dt>
+  <code><span class='type'>string</span> running_user</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>couchdb</code></span>
+</dt>
 <dd class='description'>Define the running user for the CouchDB process (it needs to exist)</dd>
 
 
 
-<dt><code><span class='type string'>string</span> stderr_file</code></dt>
-<dd class='default'>Default: <code>/dev/null</code></dd>
+<dt>
+  <code><span class='type'>string</span> stderr_file</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/dev/null</code></span>
+</dt>
 <dd class='description'>Where to send the process STDERR</dd>
 
 
 
-<dt><code><span class='type string'>string</span> stdout_file</code></dt>
-<dd class='default'>Default: <code>/dev/null</code></dd>
+<dt>
+  <code><span class='type'>string</span> stdout_file</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/dev/null</code></span>
+</dt>
 <dd class='description'>Where to send the process STDOUT</dd>
 
 
-    </tbody>
-  </table>
+  </dl>
 </section>
 
 
