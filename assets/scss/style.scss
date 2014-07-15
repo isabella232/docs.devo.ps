@@ -160,18 +160,13 @@ code,
     dl {
       @include font-size($smaller);
       margin: 0 0 $gutter;
-      .optional {
-        &:after {
-          color: tint($purple, 40%);
-          content: 'Optional';
-          @include font-size($smaller);
-          margin-left: $gutter/4;
-        }
-      }
       dt {
         border-top: 1px solid $light;
         margin-bottom: $gutter/4;
         padding-top: $gutter/2;
+        > code {
+          margin-right: $gutter/2;
+        }
       }
       dd {
         margin-left: 0;

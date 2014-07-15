@@ -48,20 +48,11 @@
 
 {% if configuration %}
 <section class='configuration'>
-  <h2 id='configuration'>Variables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% set tree = configuration %}
-      {% include "partials/_tree.html" %}
-    </tbody>
-  </table>
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    {% set tree = configuration %}
+    {% include 'partials/_tree.html' %}
+  </dl>
 </section>
 {% endif %}
 

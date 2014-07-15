@@ -56,10 +56,10 @@ For example, we could add a `task.yml` file with the following content:
   <dt><code><span class='type'>string</span> type</code></dt>
   <dd>Must be set to `task`, defines this file as a task.</dd>
   
-  <dt class='optional'><code><span class='type'>object</span> vars</code></dt>
+  <dt><code><span class='type'>object</span> vars</code> <span class='optional'>Optional</span></dt>
   <dd>Used to define a list of variables local to the task. Useful to define values you want to use in the steps (see belows).</dd>
 
-  <dt class='optional'><code><span class='type'>object</span> triggers</code></dt>
+  <dt><code><span class='type'>object</span> triggers</code> <span class='optional'>Optional</span></dt>
   <dd>A list of events upon which to run the task. Currently only supports manual trigger and webhooks. <a href='#triggers'>Read more about triggers below</a>.</dd>
 
   <dt><code><span class='type'>object</span> targets</code></dt>
@@ -72,7 +72,7 @@ For example, we could add a `task.yml` file with the following content:
       <dt><code><span class='type'>string</span> run</code></dt>
       <dd>A command to be run; it may be an inline shell command, the path to one of the [scripts](/manual/scripts) available in the repository or a `devops` command. <a href='#steps'>Read more about steps below</a>.</dd>
       
-      <dt class='optional'><code><span class='type'>object</span> options</code></dt>
+      <dt><code><span class='type'>object</span> options</code> <span class='optional'>Optional</span></dt>
       <dd>An object of options to be passed to the command if it is a devops command.</dd>
 
       <dt><code><span class='type'>object</span> targets</code></dt>
