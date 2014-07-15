@@ -13,7 +13,9 @@
 {% set parent += '.'+ loop.key %}
 {% endif %}
 <dt></dt>
-<dd><dl>
+<dd>
+<h3>{{ parent }}</h3>
+<dl>
 {% set tree = val %}
 {% include "_tree.html" %}
 {% set parent = parent_prev %}
