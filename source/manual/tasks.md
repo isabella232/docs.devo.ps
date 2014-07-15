@@ -90,12 +90,12 @@ The `steps` attribute defines the series of commands that composes the task. The
       steps:
         - run: mkdir folder
 
-- **Script**: you can define shell scripts in the `scripts/` folder, making it convenient to reuse commands across multiple tasks or simply isolate a complex set of commands. For example:
+- **Script**: you can define shell, python or Ruby scripts in the `scripts/` folder, making it convenient to reuse commands across multiple tasks or simply isolate a complex set of commands. For example:
 
       steps:
         - run: devops scripts/some_script.sh
 
-    *Notice the call to the `devops` keyword at the beginning of the command which we use as well for the last kind of command.*
+    *To use packages (`pip` or `gems`) we recommend you use the configuration of respectively the [Python](/services/python) or [Ruby](/services/ruby) services rather than installing them from within a script.*
 
 - **devops command**: services installed on your nodes usually come with some helper commands. A devops command looks like `devops {SERVICE} {COMMAND}` where `{SERVICE}` is the name of the service and `{COMMAND}` the name of the specific command. Some of these commands require you to define options. For example, adding a virtual host to your Nginx service can be done as follow:
 
@@ -109,9 +109,9 @@ The `steps` attribute defines the series of commands that composes the task. The
                 type: proxy
                 to: http://localhost:3000
 
-    *As for the scripts, we use the `devops` keyword. Services documentations dislpay a "Tasks" section if they have commands. See for example [Nginx list of commands](/services/nginx#tasks).*
+    *As for the scripts, we use the `devops` keyword. Services documentations list the devops commands available for each service. See for example [Nginx list of commands](/services/nginx#tasks).*
 
-*Commands are run as the `devops` user on targeted nodes. You can however switch users by using the `sudo` command in scripts or inline commands.*
+Commands are run as the `devops` user on targeted nodes. You can however switch users by using the `sudo` command in scripts or inline commands.
 
 ## Triggers
 
@@ -130,7 +130,7 @@ The following definition in a task:
         - path: some/secret/url
         - path: some/other/url
 
-    *While we are considering more security measures, like restricting access to webhooks for user defined IPs, we recommend that you use obfuscted/complex URLs for your webhooks (if you wish to keep it private).*
+*While we are considering more security measures, like restricting access to webhooks for user defined IPs, we recommend that you use obfuscted/complex URLs for your webhooks (if you wish to keep it private).*
 
 Will automatically create the following endpoints:
 
@@ -138,3 +138,5 @@ Will automatically create the following endpoints:
     https://wh.devo.ps/{USER}/{REPO}/some/other/url
 
 Where `{USER}` is the repository owner and `{REPO}` the name of the repository.
+
+When a webhook receives a `POST` payload, it gets converted a JSON object and assigned to the `{{ payload }}` [variable](/manual/variables).

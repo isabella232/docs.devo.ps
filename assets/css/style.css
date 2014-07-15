@@ -1327,6 +1327,8 @@ code, .code {
         color: #a5adb3;
         font-size: 12px;
         font-size: 1.2rem;
+        margin-top: 0;
+        padding-top: 0;
         margin: 10px 0;
         text-transform: uppercase; }
   #main .sidebar {

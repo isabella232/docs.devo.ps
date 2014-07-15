@@ -194,6 +194,8 @@ code,
       h3 {
         color: $grey;
         @include font-size($small);
+        margin-top: 0;
+        padding-top: 0;
         margin: $gutter/2 0;
         text-transform: uppercase;
       }

@@ -28,7 +28,7 @@
     <dd>
       {{ task.description | safe }}
       {% if task.options %}
-        <h3>Parameters</h3>
+        <h3>Options</h3>
         <dl>
           {% for option in task.options %}
           <dt{% if option.required == true %} class='required'{% endif %}><code><span class='type {{ option.type }}'>{{ option.type }}</span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code></dt>
