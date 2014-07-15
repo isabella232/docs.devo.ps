@@ -109,7 +109,7 @@ The `steps` attribute defines the series of commands that composes the task. The
                 type: proxy
                 to: http://localhost:3000
 
-    *As for the scripts, we use the `devops` keyword. Services documentations list the devops commands available for each service. See for example [Nginx list of commands](/services/nginx#tasks).*
+    *As for the scripts, we use the `devops` keyword. Services documentations list the devops commands available for each service. See for example [Nginx list of commands](/services/nginx#commands).*
 
 Commands are run as the `devops` user on targeted nodes. You can however switch users by using the `sudo` command in scripts or inline commands.
 
