@@ -311,116 +311,167 @@
     
 
 <dt>
+  <code class='full'>auto_increment_increment</code>
   <code><span class='type'>integer</span> auto_increment_increment</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
 </dt>
-<dd class='description'>Auto increment.</dd>
+<dd class='description'>
+  Auto increment.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>auto_increment_offset</code>
   <code><span class='type'>integer</span> auto_increment_offset</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
 </dt>
-<dd class='description'>Auto increment offset.</dd>
+<dd class='description'>
+  Auto increment offset.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>base_dir</code>
   <code><span class='type'>string</span> base_dir</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/usr</code></span>
 </dt>
-<dd class='description'>Base folder.</dd>
+<dd class='description'>
+  Base folder.
+  <span class='default'>Default: <code>/usr</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>bind_address</code>
   <code><span class='type'>string</span> bind_address</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1</code></span>
 </dt>
-<dd class='description'>Binding IP address.</dd>
+<dd class='description'>
+  Binding IP address.
+  <span class='default'>Default: <code>127.0.0.1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>data_dir</code>
   <code><span class='type'>string</span> data_dir</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/lib/mysql</code></span>
 </dt>
-<dd class='description'>Database files path.</dd>
+<dd class='description'>
+  Database files path.
+  <span class='default'>Default: <code>/var/lib/mysql</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 
 
 
-<dt></dt>
+<dt><code>innodb</code></dt>
 <dd>
-<h3>innodb</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_adaptive_flushing</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>true</code></span>
+  <code class='full'>innodb.innodb_adaptive_flushing</code>
+  <code><span class='type'>string</span> innodb_adaptive_flushing</code>
 </dt>
-<dd class='description'>Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.</dd>
+<dd class='description'>
+  Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.
+  <span class='default'>Default: <code>true</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_additional_mem_pool_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>8M</code></span>
+  <code class='full'>innodb.innodb_additional_mem_pool_size</code>
+  <code><span class='type'>string</span> innodb_additional_mem_pool_size</code>
 </dt>
-<dd class='description'>The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.</dd>
+<dd class='description'>
+  The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.
+  <span class='default'>Default: <code>8M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_buffer_pool_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>128M</code></span>
+  <code class='full'>innodb.innodb_buffer_pool_size</code>
+  <code><span class='type'>string</span> innodb_buffer_pool_size</code>
 </dt>
-<dd class='description'>The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.</dd>
+<dd class='description'>
+  The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.
+  <span class='default'>Default: <code>128M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_data_file_path</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>ibdata1:10M:autoextend:max:500M</code></span>
+  <code class='full'>innodb.innodb_data_file_path</code>
+  <code><span class='type'>string</span> innodb_data_file_path</code>
 </dt>
-<dd class='description'>The paths to individual data files and their sizes.</dd>
+<dd class='description'>
+  The paths to individual data files and their sizes.
+  <span class='default'>Default: <code>ibdata1:10M:autoextend:max:500M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> innodb.innodb_flush_log_at_trx_commit</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>innodb.innodb_flush_log_at_trx_commit</code>
+  <code><span class='type'>integer</span> innodb_flush_log_at_trx_commit</code>
 </dt>
-<dd class='description'>If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.</dd>
+<dd class='description'>
+  If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_flush_method</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>O_DIRECT</code></span>
+  <code class='full'>innodb.innodb_flush_method</code>
+  <code><span class='type'>string</span> innodb_flush_method</code>
 </dt>
-<dd class='description'>Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT</dd>
+<dd class='description'>
+  Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT
+  <span class='default'>Default: <code>O_DIRECT</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_log_buffer_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>8M</code></span>
+  <code class='full'>innodb.innodb_log_buffer_size</code>
+  <code><span class='type'>string</span> innodb_log_buffer_size</code>
 </dt>
-<dd class='description'>The size in bytes of the buffer that InnoDB uses to write to the log files on disk.</dd>
+<dd class='description'>
+  The size in bytes of the buffer that InnoDB uses to write to the log files on disk.
+  <span class='default'>Default: <code>8M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> innodb.innodb_log_file_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5M</code></span>
+  <code class='full'>innodb.innodb_log_file_size</code>
+  <code><span class='type'>string</span> innodb_log_file_size</code>
 </dt>
-<dd class='description'>The size in bytes of each log file in a log group.</dd>
+<dd class='description'>
+  The size in bytes of each log file in a log group.
+  <span class='default'>Default: <code>5M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -431,50 +482,69 @@
 
 
 
-<dt></dt>
+<dt><code>logs</code></dt>
 <dd>
-<h3>logs</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> logs.log_error</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/mysql/mysql.log</code></span>
+  <code class='full'>logs.log_error</code>
+  <code><span class='type'>string</span> log_error</code>
 </dt>
-<dd class='description'>The location of the error log.</dd>
+<dd class='description'>
+  The location of the error log.
+  <span class='default'>Default: <code>/var/log/mysql/mysql.log</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> logs.log_queries_not_using_indexes</code>
-  <span class='optional'>Optional</span>
+  <code class='full'>logs.log_queries_not_using_indexes</code>
+  <code><span class='type'>string</span> log_queries_not_using_indexes</code>
 </dt>
-<dd class='description'>If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.</dd>
+<dd class='description'>
+  If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.
+  
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>number</span> logs.long_query_time</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>logs.long_query_time</code>
+  <code><span class='type'>number</span> long_query_time</code>
 </dt>
-<dd class='description'>Increment slow_queries variable and log if a query takes longer than this many seconds.</dd>
+<dd class='description'>
+  Increment slow_queries variable and log if a query takes longer than this many seconds.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> logs.slow_query_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>logs.slow_query_log</code>
+  <code><span class='type'>integer</span> slow_query_log</code>
 </dt>
-<dd class='description'>Whether the slow query log is enabled.</dd>
+<dd class='description'>
+  Whether the slow query log is enabled.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> logs.slow_query_log_file</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/mysql/slow.log</code></span>
+  <code class='full'>logs.slow_query_log_file</code>
+  <code><span class='type'>string</span> slow_query_log_file</code>
 </dt>
-<dd class='description'>The name of the slow query log file.</dd>
+<dd class='description'>
+  The name of the slow query log file.
+  <span class='default'>Default: <code>/var/log/mysql/slow.log</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -483,52 +553,71 @@
 
 
 <dt>
+  <code class='full'>old_passwords</code>
   <code><span class='type'>integer</span> old_passwords</code>
-  <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>Allow old (non-secure) passwords.</dd>
+<dd class='description'>
+  Allow old (non-secure) passwords.
+  
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>pid_file</code>
   <code><span class='type'>string</span> pid_file</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/run/mysqld/mysqld.pid</code></span>
 </dt>
-<dd class='description'>Pid file.</dd>
+<dd class='description'>
+  Pid file.
+  <span class='default'>Default: <code>/var/run/mysqld/mysqld.pid</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>port</code>
   <code><span class='type'>integer</span> port</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>3306</code></span>
 </dt>
-<dd class='description'>Connection port.</dd>
+<dd class='description'>
+  Connection port.
+  <span class='default'>Default: <code>3306</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 
 
 
-<dt></dt>
+<dt><code>query_cache</code></dt>
 <dd>
-<h3>query_cache</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> query_cache.query_cache_limit</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>2M</code></span>
+  <code class='full'>query_cache.query_cache_limit</code>
+  <code><span class='type'>string</span> query_cache_limit</code>
 </dt>
-<dd class='description'>Do not cache results that are larger than this number of bytes.</dd>
+<dd class='description'>
+  Do not cache results that are larger than this number of bytes.
+  <span class='default'>Default: <code>2M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> query_cache.query_cache_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>64M</code></span>
+  <code class='full'>query_cache.query_cache_size</code>
+  <code><span class='type'>string</span> query_cache_size</code>
 </dt>
-<dd class='description'>The amount of memory allocated for caching query results.</dd>
+<dd class='description'>
+  The amount of memory allocated for caching query results.
+  <span class='default'>Default: <code>64M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -539,82 +628,117 @@
 
 
 
-<dt></dt>
+<dt><code>replication</code></dt>
 <dd>
-<h3>replication</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> replication.expire_logs_days</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10</code></span>
+  <code class='full'>replication.expire_logs_days</code>
+  <code><span class='type'>integer</span> expire_logs_days</code>
 </dt>
-<dd class='description'>The number of days for automatic binary log file removal.</dd>
+<dd class='description'>
+  The number of days for automatic binary log file removal.
+  <span class='default'>Default: <code>10</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> replication.log_bin</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>mysql-bin</code></span>
+  <code class='full'>replication.log_bin</code>
+  <code><span class='type'>string</span> log_bin</code>
 </dt>
-<dd class='description'>Enable binary logging. The option value is the basename for the log sequence.</dd>
+<dd class='description'>
+  Enable binary logging. The option value is the basename for the log sequence.
+  <span class='default'>Default: <code>mysql-bin</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> replication.log_bin_trust_function_creators</code>
-  <span class='optional'>Optional</span>
+  <code class='full'>replication.log_bin_trust_function_creators</code>
+  <code><span class='type'>string</span> log_bin_trust_function_creators</code>
 </dt>
-<dd class='description'>Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.</dd>
+<dd class='description'>
+  Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.
+  
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> replication.log_slave_updates</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>true</code></span>
+  <code class='full'>replication.log_slave_updates</code>
+  <code><span class='type'>string</span> log_slave_updates</code>
 </dt>
-<dd class='description'>This option tells the slave to log the updates performed by its SQL thread to its own binary log.</dd>
+<dd class='description'>
+  This option tells the slave to log the updates performed by its SQL thread to its own binary log.
+  <span class='default'>Default: <code>true</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> replication.max_binlog_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>100M</code></span>
+  <code class='full'>replication.max_binlog_size</code>
+  <code><span class='type'>string</span> max_binlog_size</code>
 </dt>
-<dd class='description'>If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.</dd>
+<dd class='description'>
+  If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.
+  <span class='default'>Default: <code>100M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> replication.relay_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>relay-bin</code></span>
+  <code class='full'>replication.relay_log</code>
+  <code><span class='type'>string</span> relay_log</code>
 </dt>
-<dd class='description'>The basename for the relay log.</dd>
+<dd class='description'>
+  The basename for the relay log.
+  <span class='default'>Default: <code>relay-bin</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> replication.server_id</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10</code></span>
+  <code class='full'>replication.server_id</code>
+  <code><span class='type'>integer</span> server_id</code>
 </dt>
-<dd class='description'>Is used in replication to enable master and slave servers to identify themselves uniquely.</dd>
+<dd class='description'>
+  Is used in replication to enable master and slave servers to identify themselves uniquely.
+  <span class='default'>Default: <code>10</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> replication.skip_slave_start</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>true</code></span>
+  <code class='full'>replication.skip_slave_start</code>
+  <code><span class='type'>string</span> skip_slave_start</code>
 </dt>
-<dd class='description'>Tells the slave server not to start the slave threads when the server starts.</dd>
+<dd class='description'>
+  Tells the slave server not to start the slave threads when the server starts.
+  <span class='default'>Default: <code>true</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> replication.sync_binlog</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>replication.sync_binlog</code>
+  <code><span class='type'>integer</span> sync_binlog</code>
 </dt>
-<dd class='description'>If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.</dd>
+<dd class='description'>
+  If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -623,108 +747,155 @@
 
 
 <dt>
+  <code class='full'>socket</code>
   <code><span class='type'>string</span> socket</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/run/mysqld/mysqld.sock</code></span>
 </dt>
-<dd class='description'>Mysql listening socket.</dd>
+<dd class='description'>
+  Mysql listening socket.
+  <span class='default'>Default: <code>/var/run/mysqld/mysqld.sock</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 
 
 
-<dt></dt>
+<dt><code>tunable</code></dt>
 <dd>
-<h3>tunable</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.back_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>128</code></span>
+  <code class='full'>tunable.back_log</code>
+  <code><span class='type'>integer</span> back_log</code>
 </dt>
-<dd class='description'>The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.</dd>
+<dd class='description'>
+  The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.
+  <span class='default'>Default: <code>128</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> tunable.key_buffer</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>256M</code></span>
+  <code class='full'>tunable.key_buffer</code>
+  <code><span class='type'>string</span> key_buffer</code>
 </dt>
-<dd class='description'>Size of the buffer used for index blocks. The key buffer is also known as the key cache.</dd>
+<dd class='description'>
+  Size of the buffer used for index blocks. The key buffer is also known as the key cache.
+  <span class='default'>Default: <code>256M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> tunable.max_allowed_packet</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>16M</code></span>
+  <code class='full'>tunable.max_allowed_packet</code>
+  <code><span class='type'>string</span> max_allowed_packet</code>
 </dt>
-<dd class='description'>The maximum size of one packet or any generated/intermediate string.</dd>
+<dd class='description'>
+  The maximum size of one packet or any generated/intermediate string.
+  <span class='default'>Default: <code>16M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.max_connections</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>256</code></span>
+  <code class='full'>tunable.max_connections</code>
+  <code><span class='type'>integer</span> max_connections</code>
 </dt>
-<dd class='description'>The maximum permitted number of simultaneous client connections.</dd>
+<dd class='description'>
+  The maximum permitted number of simultaneous client connections.
+  <span class='default'>Default: <code>256</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> tunable.max_heap_table_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>64M</code></span>
+  <code class='full'>tunable.max_heap_table_size</code>
+  <code><span class='type'>string</span> max_heap_table_size</code>
 </dt>
-<dd class='description'>Maximum size to which user-created MEMORY tables are permitted to grow.</dd>
+<dd class='description'>
+  Maximum size to which user-created MEMORY tables are permitted to grow.
+  <span class='default'>Default: <code>64M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.net_read_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>30</code></span>
+  <code class='full'>tunable.net_read_timeout</code>
+  <code><span class='type'>integer</span> net_read_timeout</code>
 </dt>
-<dd class='description'>The number of seconds to wait for more data from a connection before aborting the read.</dd>
+<dd class='description'>
+  The number of seconds to wait for more data from a connection before aborting the read.
+  <span class='default'>Default: <code>30</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.net_write_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>30</code></span>
+  <code class='full'>tunable.net_write_timeout</code>
+  <code><span class='type'>integer</span> net_write_timeout</code>
 </dt>
-<dd class='description'>The number of seconds to wait for a block to be written to a connection before aborting the write.</dd>
+<dd class='description'>
+  The number of seconds to wait for a block to be written to a connection before aborting the write.
+  <span class='default'>Default: <code>30</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.table_open_cache</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1024</code></span>
+  <code class='full'>tunable.table_open_cache</code>
+  <code><span class='type'>integer</span> table_open_cache</code>
 </dt>
-<dd class='description'>The number of open tables for all threads.</dd>
+<dd class='description'>
+  The number of open tables for all threads.
+  <span class='default'>Default: <code>1024</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.thread_cache_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>32</code></span>
+  <code class='full'>tunable.thread_cache_size</code>
+  <code><span class='type'>integer</span> thread_cache_size</code>
 </dt>
-<dd class='description'>Number of threads the server should cache for reuse.</dd>
+<dd class='description'>
+  Number of threads the server should cache for reuse.
+  <span class='default'>Default: <code>32</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> tunable.thread_stack</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>256K</code></span>
+  <code class='full'>tunable.thread_stack</code>
+  <code><span class='type'>string</span> thread_stack</code>
 </dt>
-<dd class='description'>The stack size for each thread.</dd>
+<dd class='description'>
+  The stack size for each thread.
+  <span class='default'>Default: <code>256K</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> tunable.wait_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>180</code></span>
+  <code class='full'>tunable.wait_timeout</code>
+  <code><span class='type'>integer</span> wait_timeout</code>
 </dt>
-<dd class='description'>The number of seconds the server waits for activity on a noninteractive connection before closing it.</dd>
+<dd class='description'>
+  The number of seconds the server waits for activity on a noninteractive connection before closing it.
+  <span class='default'>Default: <code>180</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 

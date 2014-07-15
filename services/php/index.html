@@ -302,74 +302,105 @@
 
 
 
-<dt></dt>
+<dt><code>apc</code></dt>
 <dd>
-<h3>apc</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> apc.enable_cli</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>apc.enable_cli</code>
+  <code><span class='type'>integer</span> enable_cli</code>
 </dt>
-<dd class='description'>Enable / disable APC for the CLI version of PHP (Mostly for testing and debugging).</dd>
+<dd class='description'>
+  Enable / disable APC for the CLI version of PHP (Mostly for testing and debugging).
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> apc.enabled</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>apc.enabled</code>
+  <code><span class='type'>integer</span> enabled</code>
 </dt>
-<dd class='description'>Enable / disable APC (0 - disabled).</dd>
+<dd class='description'>
+  Enable / disable APC (0 - disabled).
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> apc.gc_ttl</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>3600</code></span>
+  <code class='full'>apc.gc_ttl</code>
+  <code><span class='type'>integer</span> gc_ttl</code>
 </dt>
-<dd class='description'>The number of seconds that a cache entry may remain on the garbage-collection list.</dd>
+<dd class='description'>
+  The number of seconds that a cache entry may remain on the garbage-collection list.
+  <span class='default'>Default: <code>3600</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> apc.max_file_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1M</code></span>
+  <code class='full'>apc.max_file_size</code>
+  <code><span class='type'>string</span> max_file_size</code>
 </dt>
-<dd class='description'>Cache files up to this file size. Prevents large files from being cached.</dd>
+<dd class='description'>
+  Cache files up to this file size. Prevents large files from being cached.
+  <span class='default'>Default: <code>1M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> apc.shm_segments</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>apc.shm_segments</code>
+  <code><span class='type'>integer</span> shm_segments</code>
 </dt>
-<dd class='description'>The number of shared memory segments to allocate for the compiler cache.</dd>
+<dd class='description'>
+  The number of shared memory segments to allocate for the compiler cache.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> apc.shm_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>128M</code></span>
+  <code class='full'>apc.shm_size</code>
+  <code><span class='type'>string</span> shm_size</code>
 </dt>
-<dd class='description'>The size of each shared memory segment in MB. (add unit)</dd>
+<dd class='description'>
+  The size of each shared memory segment in MB. (add unit)
+  <span class='default'>Default: <code>128M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> apc.ttl</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>14400</code></span>
+  <code class='full'>apc.ttl</code>
+  <code><span class='type'>integer</span> ttl</code>
 </dt>
-<dd class='description'>The number of seconds a cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</dd>
+<dd class='description'>
+  The number of seconds a cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.
+  <span class='default'>Default: <code>14400</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> apc.user_ttl</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>7200</code></span>
+  <code class='full'>apc.user_ttl</code>
+  <code><span class='type'>integer</span> user_ttl</code>
 </dt>
-<dd class='description'>The number of seconds a user cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</dd>
+<dd class='description'>
+  The number of seconds a user cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.
+  <span class='default'>Default: <code>7200</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -380,18 +411,21 @@
 
 
 
-<dt></dt>
+<dt><code>cgi</code></dt>
 <dd>
-<h3>cgi</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> cgi.fix_pathinfo</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1</code></span>
+  <code class='full'>cgi.fix_pathinfo</code>
+  <code><span class='type'>integer</span> fix_pathinfo</code>
 </dt>
-<dd class='description'>cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.</dd>
+<dd class='description'>
+  cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.
+  <span class='default'>Default: <code>1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -400,92 +434,131 @@
 
 
 <dt>
+  <code class='full'>display_errors</code>
   <code><span class='type'>string</span> display_errors</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>Off</code></span>
 </dt>
-<dd class='description'>Define whether PHP will output errors, notices and warnings.</dd>
+<dd class='description'>
+  Define whether PHP will output errors, notices and warnings.
+  <span class='default'>Default: <code>Off</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>error_log</code>
   <code><span class='type'>string</span> error_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>syslog</code></span>
 </dt>
-<dd class='description'>Log errors to specified file (or syslog).</dd>
+<dd class='description'>
+  Log errors to specified file (or syslog).
+  <span class='default'>Default: <code>syslog</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>error_reporting</code>
   <code><span class='type'>string</span> error_reporting</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>E_ALL &amp; ~E_DEPRECATED</code></span>
 </dt>
-<dd class='description'>Define which errors, warnings and notices to report.</dd>
+<dd class='description'>
+  Define which errors, warnings and notices to report.
+  <span class='default'>Default: <code>E_ALL &amp; ~E_DEPRECATED</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>expose_php</code>
   <code><span class='type'>string</span> expose_php</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>Off</code></span>
 </dt>
-<dd class='description'>Decides whether PHP may expose the fact that it is installed on the server.</dd>
+<dd class='description'>
+  Decides whether PHP may expose the fact that it is installed on the server.
+  <span class='default'>Default: <code>Off</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>extensions</code>
   <code><span class='type'>array</span> extensions</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code></code></span>
 </dt>
-<dd class='description'>List of extra php extensions installable via the regular OS package manager</dd>
+<dd class='description'>
+  List of extra php extensions installable via the regular OS package manager
+  <span class='default'>Default: <code></code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 
 
 
-<dt></dt>
+<dt><code>fpm</code></dt>
 <dd>
-<h3>fpm</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.emergency_restart_interval</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.emergency_restart_interval</code>
+  <code><span class='type'>string</span> emergency_restart_interval</code>
 </dt>
-<dd class='description'>Time within which an emergency graceful restart should be initiated (along with the threshold) - Available Units s(econds) default, m(inutes), h(ours), or d(ays)</dd>
+<dd class='description'>
+  Time within which an emergency graceful restart should be initiated (along with the threshold) - Available Units s(econds) default, m(inutes), h(ours), or d(ays)
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.emergency_restart_threshold</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.emergency_restart_threshold</code>
+  <code><span class='type'>integer</span> emergency_restart_threshold</code>
 </dt>
-<dd class='description'>If more than X processes restart with SIGSEGV or SIGBUS within the emergency restart interval, php-fpm will restart</dd>
+<dd class='description'>
+  If more than X processes restart with SIGSEGV or SIGBUS within the emergency restart interval, php-fpm will restart
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.error_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/php-fpm/php5-fpm.log</code></span>
+  <code class='full'>fpm.error_log</code>
+  <code><span class='type'>string</span> error_log</code>
 </dt>
-<dd class='description'>Location of the error log file - can use `syslog` instead of file.</dd>
+<dd class='description'>
+  Location of the error log file - can use `syslog` instead of file.
+  <span class='default'>Default: <code>/var/log/php-fpm/php5-fpm.log</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.log_level</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>notice</code></span>
+  <code class='full'>fpm.log_level</code>
+  <code><span class='type'>string</span> log_level</code>
 </dt>
-<dd class='description'>Minimum log level to capture the logs for</dd>
+<dd class='description'>
+  Minimum log level to capture the logs for
+  <span class='default'>Default: <code>notice</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pid</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/run/php5-fpm.pid</code></span>
+  <code class='full'>fpm.pid</code>
+  <code><span class='type'>string</span> pid</code>
 </dt>
-<dd class='description'>Location of the php5-fpm process PID file</dd>
+<dd class='description'>
+  Location of the php5-fpm process PID file
+  <span class='default'>Default: <code>/var/run/php5-fpm.pid</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -493,9 +566,8 @@
 
 
 
-<dt></dt>
+<dt><code>fpm.pool</code></dt>
 <dd>
-<h3>fpm.pool</h3>
 <dl>
 
 
@@ -504,42 +576,57 @@
 
 
 
-<dt></dt>
+<dt><code>fpm.pool.bind</code></dt>
 <dd>
-<h3>fpm.pool.bind</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.bind.allowed_clients</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1</code></span>
+  <code class='full'>fpm.pool.bind.allowed_clients</code>
+  <code><span class='type'>string</span> allowed_clients</code>
 </dt>
-<dd class='description'>List (comma separated) of ipv4 addresses of FastCGI clients which are allowed to connect.</dd>
+<dd class='description'>
+  List (comma separated) of ipv4 addresses of FastCGI clients which are allowed to connect.
+  <span class='default'>Default: <code>127.0.0.1</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.bind.group</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
+  <code class='full'>fpm.pool.bind.group</code>
+  <code><span class='type'>string</span> group</code>
 </dt>
-<dd class='description'>Group owner of the unix socket (only relevant if listen is a path)</dd>
+<dd class='description'>
+  Group owner of the unix socket (only relevant if listen is a path)
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.bind.mode</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0666</code></span>
+  <code class='full'>fpm.pool.bind.mode</code>
+  <code><span class='type'>string</span> mode</code>
 </dt>
-<dd class='description'>Permission of the socket file (only relevant if listen is a path)</dd>
+<dd class='description'>
+  Permission of the socket file (only relevant if listen is a path)
+  <span class='default'>Default: <code>0666</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.bind.owner</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
+  <code class='full'>fpm.pool.bind.owner</code>
+  <code><span class='type'>string</span> owner</code>
 </dt>
-<dd class='description'>Owner of the unix socket (only relevant if listen is a path)</dd>
+<dd class='description'>
+  Owner of the unix socket (only relevant if listen is a path)
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -548,26 +635,38 @@
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.group</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
+  <code class='full'>fpm.pool.group</code>
+  <code><span class='type'>string</span> group</code>
 </dt>
-<dd class='description'>Running unix group of the pool</dd>
+<dd class='description'>
+  Running unix group of the pool
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.listen</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>127.0.0.1:9000</code></span>
+  <code class='full'>fpm.pool.listen</code>
+  <code><span class='type'>string</span> listen</code>
 </dt>
-<dd class='description'>The address on which to accept FastCGI requests (ip.add.re.ss;port, port, sock path)</dd>
+<dd class='description'>
+  The address on which to accept FastCGI requests (ip.add.re.ss;port, port, sock path)
+  <span class='default'>Default: <code>127.0.0.1:9000</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.name</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www</code></span>
+  <code class='full'>fpm.pool.name</code>
+  <code><span class='type'>string</span> name</code>
 </dt>
-<dd class='description'>Pool name</dd>
+<dd class='description'>
+  Pool name
+  <span class='default'>Default: <code>www</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -575,26 +674,33 @@
 
 
 
-<dt></dt>
+<dt><code>fpm.pool.ping</code></dt>
 <dd>
-<h3>fpm.pool.ping</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.ping.path</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/ping</code></span>
+  <code class='full'>fpm.pool.ping.path</code>
+  <code><span class='type'>string</span> path</code>
 </dt>
-<dd class='description'>URL path to simple ping</dd>
+<dd class='description'>
+  URL path to simple ping
+  <span class='default'>Default: <code>/ping</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.ping.response</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>pong</code></span>
+  <code class='full'>fpm.pool.ping.response</code>
+  <code><span class='type'>string</span> response</code>
 </dt>
-<dd class='description'>Message to be sent back on ping</dd>
+<dd class='description'>
+  Message to be sent back on ping
+  <span class='default'>Default: <code>pong</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -606,74 +712,105 @@
 
 
 
-<dt></dt>
+<dt><code>fpm.pool.pm</code></dt>
 <dd>
-<h3>fpm.pool.pm</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.pm.max_children</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10</code></span>
+  <code class='full'>fpm.pool.pm.max_children</code>
+  <code><span class='type'>integer</span> max_children</code>
 </dt>
-<dd class='description'>Maximum number of children (usually cpu-core * 2)</dd>
+<dd class='description'>
+  Maximum number of children (usually cpu-core * 2)
+  <span class='default'>Default: <code>10</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.pm.max_requests</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.pool.pm.max_requests</code>
+  <code><span class='type'>integer</span> max_requests</code>
 </dt>
-<dd class='description'>Maximum number of requests processed by a single process before being respawned</dd>
+<dd class='description'>
+  Maximum number of requests processed by a single process before being respawned
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.pm.max_spare_servers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>6</code></span>
+  <code class='full'>fpm.pool.pm.max_spare_servers</code>
+  <code><span class='type'>integer</span> max_spare_servers</code>
 </dt>
-<dd class='description'>Maximum number of spare servers to keep running</dd>
+<dd class='description'>
+  Maximum number of spare servers to keep running
+  <span class='default'>Default: <code>6</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.pm.min_spare_servers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>2</code></span>
+  <code class='full'>fpm.pool.pm.min_spare_servers</code>
+  <code><span class='type'>integer</span> min_spare_servers</code>
 </dt>
-<dd class='description'>Minimum number of spare servers to keep running</dd>
+<dd class='description'>
+  Minimum number of spare servers to keep running
+  <span class='default'>Default: <code>2</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.pm.process_idle_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10s</code></span>
+  <code class='full'>fpm.pool.pm.process_idle_timeout</code>
+  <code><span class='type'>string</span> process_idle_timeout</code>
 </dt>
-<dd class='description'>Maximum time to keep a server idle running (ondemand)</dd>
+<dd class='description'>
+  Maximum time to keep a server idle running (ondemand)
+  <span class='default'>Default: <code>10s</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.pm.start_servers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>4</code></span>
+  <code class='full'>fpm.pool.pm.start_servers</code>
+  <code><span class='type'>integer</span> start_servers</code>
 </dt>
-<dd class='description'>Number of server to start (dynamic)</dd>
+<dd class='description'>
+  Number of server to start (dynamic)
+  <span class='default'>Default: <code>4</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.pm.status_path</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/status</code></span>
+  <code class='full'>fpm.pool.pm.status_path</code>
+  <code><span class='type'>string</span> status_path</code>
 </dt>
-<dd class='description'>URL path to access the status of the php pool</dd>
+<dd class='description'>
+  URL path to access the status of the php pool
+  <span class='default'>Default: <code>/status</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.pm.type</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>static</code></span>
+  <code class='full'>fpm.pool.pm.type</code>
+  <code><span class='type'>string</span> type</code>
 </dt>
-<dd class='description'>Choose how the process manager will control the number of child processes. (static, dynamic, ondemand)</dd>
+<dd class='description'>
+  Choose how the process manager will control the number of child processes. (static, dynamic, ondemand)
+  <span class='default'>Default: <code>static</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -682,34 +819,50 @@
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.request_slowlog_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.pool.request_slowlog_timeout</code>
+  <code><span class='type'>string</span> request_slowlog_timeout</code>
 </dt>
-<dd class='description'>Time after which a backtrace is sent to the slowlogs (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</dd>
+<dd class='description'>
+  Time after which a backtrace is sent to the slowlogs (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.request_terminate_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.pool.request_terminate_timeout</code>
+  <code><span class='type'>string</span> request_terminate_timeout</code>
 </dt>
-<dd class='description'>Time after which a the process gets terminated (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</dd>
+<dd class='description'>
+  Time after which a the process gets terminated (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.slowlog</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/php-fpm/$pool.log.slow</code></span>
+  <code class='full'>fpm.pool.slowlog</code>
+  <code><span class='type'>string</span> slowlog</code>
 </dt>
-<dd class='description'>Path for the slow log file of this pool</dd>
+<dd class='description'>
+  Path for the slow log file of this pool
+  <span class='default'>Default: <code>/var/log/php-fpm/$pool.log.slow</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.user</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
+  <code class='full'>fpm.pool.user</code>
+  <code><span class='type'>string</span> user</code>
 </dt>
-<dd class='description'>Running unix user of the pool</dd>
+<dd class='description'>
+  Running unix user of the pool
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -718,18 +871,26 @@
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.process_control_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.pool.process_control_timeout</code>
+  <code><span class='type'>string</span> process_control_timeout</code>
 </dt>
-<dd class='description'>Time limit for child processes to wait for a reaction on signals from master. Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</dd>
+<dd class='description'>
+  Time limit for child processes to wait for a reaction on signals from master. Available Units; s(econds) default, m(inutes), h(ours), or d(ays)
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.process_max</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>0</code></span>
+  <code class='full'>fpm.pool.process_max</code>
+  <code><span class='type'>integer</span> process_max</code>
 </dt>
-<dd class='description'>The maximum number of processes FPM will fork across all the pools. 0 means no limit.</dd>
+<dd class='description'>
+  The maximum number of processes FPM will fork across all the pools. 0 means no limit.
+  <span class='default'>Default: <code>0</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -737,26 +898,33 @@
 
 
 
-<dt></dt>
+<dt><code>fpm.pool.syslog</code></dt>
 <dd>
-<h3>fpm.pool.syslog</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.syslog.facility</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>daemon</code></span>
+  <code class='full'>fpm.pool.syslog.facility</code>
+  <code><span class='type'>string</span> facility</code>
 </dt>
-<dd class='description'>Syslog facility to send the log to (only if error_log=syslog)</dd>
+<dd class='description'>
+  Syslog facility to send the log to (only if error_log=syslog)
+  <span class='default'>Default: <code>daemon</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.syslog.ident</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>php-fpm</code></span>
+  <code class='full'>fpm.pool.syslog.ident</code>
+  <code><span class='type'>string</span> ident</code>
 </dt>
-<dd class='description'>String that is prepended to the syslog message</dd>
+<dd class='description'>
+  String that is prepended to the syslog message
+  <span class='default'>Default: <code>php-fpm</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -769,82 +937,122 @@
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.log_errors</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>On</code></span>
+  <code class='full'>fpm.pool.log_errors</code>
+  <code><span class='type'>string</span> log_errors</code>
 </dt>
-<dd class='description'>Define whether PHP should log errors to locations such as a server-specific log, STDERR, or a location specified by the error_log.</dd>
+<dd class='description'>
+  Define whether PHP should log errors to locations such as a server-specific log, STDERR, or a location specified by the error_log.
+  <span class='default'>Default: <code>On</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.max_execution_time</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>60</code></span>
+  <code class='full'>fpm.pool.max_execution_time</code>
+  <code><span class='type'>integer</span> max_execution_time</code>
 </dt>
-<dd class='description'>Maximum execution time of each script, in seconds.</dd>
+<dd class='description'>
+  Maximum execution time of each script, in seconds.
+  <span class='default'>Default: <code>60</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.max_input_time</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>120</code></span>
+  <code class='full'>fpm.pool.max_input_time</code>
+  <code><span class='type'>integer</span> max_input_time</code>
 </dt>
-<dd class='description'>Maximum amount of time each script may spend parsing request data.</dd>
+<dd class='description'>
+  Maximum amount of time each script may spend parsing request data.
+  <span class='default'>Default: <code>120</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.memory_limit</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>128M</code></span>
+  <code class='full'>fpm.pool.memory_limit</code>
+  <code><span class='type'>string</span> memory_limit</code>
 </dt>
-<dd class='description'>Maximum amount of memory a script may consume.</dd>
+<dd class='description'>
+  Maximum amount of memory a script may consume.
+  <span class='default'>Default: <code>128M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>array</span> fpm.pool.pecl_extensions</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code></code></span>
+  <code class='full'>fpm.pool.pecl_extensions</code>
+  <code><span class='type'>array</span> pecl_extensions</code>
 </dt>
-<dd class='description'>List of extra php extensions installable via PECL</dd>
+<dd class='description'>
+  List of extra php extensions installable via PECL
+  <span class='default'>Default: <code></code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.post_max_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>16M</code></span>
+  <code class='full'>fpm.pool.post_max_size</code>
+  <code><span class='type'>string</span> post_max_size</code>
 </dt>
-<dd class='description'>Maximum size of POST data that PHP will accept.</dd>
+<dd class='description'>
+  Maximum size of POST data that PHP will accept.
+  <span class='default'>Default: <code>16M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.realpath_cache_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>256k</code></span>
+  <code class='full'>fpm.pool.realpath_cache_size</code>
+  <code><span class='type'>string</span> realpath_cache_size</code>
 </dt>
-<dd class='description'>Determines the size of the realpath cache to be used.</dd>
+<dd class='description'>
+  Determines the size of the realpath cache to be used.
+  <span class='default'>Default: <code>256k</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> fpm.pool.realpath_cache_ttl</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>3600</code></span>
+  <code class='full'>fpm.pool.realpath_cache_ttl</code>
+  <code><span class='type'>integer</span> realpath_cache_ttl</code>
 </dt>
-<dd class='description'>Duration of time, in seconds for which to cache realpath information for a given file or directory.</dd>
+<dd class='description'>
+  Duration of time, in seconds for which to cache realpath information for a given file or directory.
+  <span class='default'>Default: <code>3600</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.safe_mode</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>Off</code></span>
+  <code class='full'>fpm.pool.safe_mode</code>
+  <code><span class='type'>string</span> safe_mode</code>
 </dt>
-<dd class='description'>Enable / disable php safe_mode.</dd>
+<dd class='description'>
+  Enable / disable php safe_mode.
+  <span class='default'>Default: <code>Off</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.safe_mode_gid</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>Off</code></span>
+  <code class='full'>fpm.pool.safe_mode_gid</code>
+  <code><span class='type'>string</span> safe_mode_gid</code>
 </dt>
-<dd class='description'>Compare GID instead of UID when php safe_mode is enabled.</dd>
+<dd class='description'>
+  Compare GID instead of UID when php safe_mode is enabled.
+  <span class='default'>Default: <code>Off</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -852,26 +1060,33 @@
 
 
 
-<dt></dt>
+<dt><code>fpm.pool.session</code></dt>
 <dd>
-<h3>fpm.pool.session</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.session.save_handler</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>files</code></span>
+  <code class='full'>fpm.pool.session.save_handler</code>
+  <code><span class='type'>string</span> save_handler</code>
 </dt>
-<dd class='description'>Handler used to store/retrieve session data.</dd>
+<dd class='description'>
+  Handler used to store/retrieve session data.
+  <span class='default'>Default: <code>files</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.session.save_path</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/lib/php/session</code></span>
+  <code class='full'>fpm.pool.session.save_path</code>
+  <code><span class='type'>string</span> save_path</code>
 </dt>
-<dd class='description'>Folder PATH where sessions will be stored (if save_habdler is file).</dd>
+<dd class='description'>
+  Folder PATH where sessions will be stored (if save_habdler is file).
+  <span class='default'>Default: <code>/var/lib/php/session</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -880,10 +1095,14 @@
 
 
 <dt>
-  <code><span class='type'>string</span> fpm.pool.upload_max_filesize</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>16M</code></span>
+  <code class='full'>fpm.pool.upload_max_filesize</code>
+  <code><span class='type'>string</span> upload_max_filesize</code>
 </dt>
-<dd class='description'>Maximum allowed size for uploaded files.</dd>
+<dd class='description'>
+  Maximum allowed size for uploaded files.
+  <span class='default'>Default: <code>16M</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
   </dl>

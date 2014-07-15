@@ -281,66 +281,93 @@
 
 
 
-<dt></dt>
+<dt><code>event</code></dt>
 <dd>
-<h3>event</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.maxclients</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>150</code></span>
+  <code class='full'>event.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
 </dt>
-<dd class='description'>Maximum number of simultaneous client connections</dd>
+<dd class='description'>
+  Maximum number of simultaneous client connections
+  <span class='default'>Default: <code>150</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.maxrequestsperchild</code>
-  <span class='optional'>Optional</span>
+  <code class='full'>event.maxrequestsperchild</code>
+  <code><span class='type'>integer</span> maxrequestsperchild</code>
 </dt>
-<dd class='description'>Maximum number of requests a server process serves.</dd>
+<dd class='description'>
+  Maximum number of requests a server process serves.
+  
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.maxsparethreads</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>75</code></span>
+  <code class='full'>event.maxsparethreads</code>
+  <code><span class='type'>integer</span> maxsparethreads</code>
 </dt>
-<dd class='description'>Maximum number of worker threads which are kept spare.</dd>
+<dd class='description'>
+  Maximum number of worker threads which are kept spare.
+  <span class='default'>Default: <code>75</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.minsparethreads</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>25</code></span>
+  <code class='full'>event.minsparethreads</code>
+  <code><span class='type'>integer</span> minsparethreads</code>
 </dt>
-<dd class='description'>Minimum number of worker threads which are kept spare,</dd>
+<dd class='description'>
+  Minimum number of worker threads which are kept spare,
+  <span class='default'>Default: <code>25</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.startservers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5</code></span>
+  <code class='full'>event.startservers</code>
+  <code><span class='type'>integer</span> startservers</code>
 </dt>
-<dd class='description'>Initial number of server processes to start.</dd>
+<dd class='description'>
+  Initial number of server processes to start.
+  <span class='default'>Default: <code>5</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.threadlimit</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>64</code></span>
+  <code class='full'>event.threadlimit</code>
+  <code><span class='type'>integer</span> threadlimit</code>
 </dt>
-<dd class='description'>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</dd>
+<dd class='description'>
+  ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.
+  <span class='default'>Default: <code>64</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> event.threadsperchild</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>25</code></span>
+  <code class='full'>event.threadsperchild</code>
+  <code><span class='type'>integer</span> threadsperchild</code>
 </dt>
-<dd class='description'>Constant number of worker threads in each server process.</dd>
+<dd class='description'>
+  Constant number of worker threads in each server process.
+  <span class='default'>Default: <code>25</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -349,84 +376,119 @@
 
 
 <dt>
+  <code class='full'>group</code>
   <code><span class='type'>string</span> group</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
 </dt>
-<dd class='description'>Apache running group.</dd>
+<dd class='description'>
+  Apache running group.
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>keepalive</code>
   <code><span class='type'>string</span> keepalive</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>true</code></span>
 </dt>
-<dd class='description'>Whether or not to allow persistent connections.</dd>
+<dd class='description'>
+  Whether or not to allow persistent connections.
+  <span class='default'>Default: <code>true</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>keepalivetimout</code>
   <code><span class='type'>integer</span> keepalivetimout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5</code></span>
 </dt>
-<dd class='description'>Number of seconds to wait for the next request from the same client on the same connection.</dd>
+<dd class='description'>
+  Number of seconds to wait for the next request from the same client on the same connection.
+  <span class='default'>Default: <code>5</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>maxkeepaliverequests</code>
   <code><span class='type'>integer</span> maxkeepaliverequests</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>100</code></span>
 </dt>
-<dd class='description'>The maximum number of requests to allow during a persistent connection.</dd>
+<dd class='description'>
+  The maximum number of requests to allow during a persistent connection.
+  <span class='default'>Default: <code>100</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 
 
 
-<dt></dt>
+<dt><code>prefork</code></dt>
 <dd>
-<h3>prefork</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> prefork.maxclients</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>150</code></span>
+  <code class='full'>prefork.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
 </dt>
-<dd class='description'>Maximum number of server processes allowed to start.</dd>
+<dd class='description'>
+  Maximum number of server processes allowed to start.
+  <span class='default'>Default: <code>150</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> prefork.maxrequestsperchild</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>4000</code></span>
+  <code class='full'>prefork.maxrequestsperchild</code>
+  <code><span class='type'>integer</span> maxrequestsperchild</code>
 </dt>
-<dd class='description'>Maximum number of requests a server process serves.</dd>
+<dd class='description'>
+  Maximum number of requests a server process serves.
+  <span class='default'>Default: <code>4000</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> prefork.maxspareservers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>10</code></span>
+  <code class='full'>prefork.maxspareservers</code>
+  <code><span class='type'>integer</span> maxspareservers</code>
 </dt>
-<dd class='description'>Maximum number of server processes which are kept spare.</dd>
+<dd class='description'>
+  Maximum number of server processes which are kept spare.
+  <span class='default'>Default: <code>10</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> prefork.minspareservers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>2</code></span>
+  <code class='full'>prefork.minspareservers</code>
+  <code><span class='type'>integer</span> minspareservers</code>
 </dt>
-<dd class='description'>Minimum number of server processes which are kept spare.</dd>
+<dd class='description'>
+  Minimum number of server processes which are kept spare.
+  <span class='default'>Default: <code>2</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> prefork.startservers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5</code></span>
+  <code class='full'>prefork.startservers</code>
+  <code><span class='type'>integer</span> startservers</code>
 </dt>
-<dd class='description'>Number of server processes to start.</dd>
+<dd class='description'>
+  Number of server processes to start.
+  <span class='default'>Default: <code>5</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -435,84 +497,119 @@
 
 
 <dt>
+  <code class='full'>timeout</code>
   <code><span class='type'>integer</span> timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>300</code></span>
 </dt>
-<dd class='description'>The number of seconds before receives and sends time out.</dd>
+<dd class='description'>
+  The number of seconds before receives and sends time out.
+  <span class='default'>Default: <code>300</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>user</code>
   <code><span class='type'>string</span> user</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
 </dt>
-<dd class='description'>Apache running user.</dd>
+<dd class='description'>
+  Apache running user.
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 
 
 
-<dt></dt>
+<dt><code>worker</code></dt>
 <dd>
-<h3>worker</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.maxclients</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>150</code></span>
+  <code class='full'>worker.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
 </dt>
-<dd class='description'>Maximum number of simultaneous client connections</dd>
+<dd class='description'>
+  Maximum number of simultaneous client connections
+  <span class='default'>Default: <code>150</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.maxrequestsperchild</code>
-  <span class='optional'>Optional</span>
+  <code class='full'>worker.maxrequestsperchild</code>
+  <code><span class='type'>integer</span> maxrequestsperchild</code>
 </dt>
-<dd class='description'>Maximum number of requests a server process serves.</dd>
+<dd class='description'>
+  Maximum number of requests a server process serves.
+  
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.maxsparethreads</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>75</code></span>
+  <code class='full'>worker.maxsparethreads</code>
+  <code><span class='type'>integer</span> maxsparethreads</code>
 </dt>
-<dd class='description'>Maximum number of worker threads which are kept spare.</dd>
+<dd class='description'>
+  Maximum number of worker threads which are kept spare.
+  <span class='default'>Default: <code>75</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.minsparethreads</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>25</code></span>
+  <code class='full'>worker.minsparethreads</code>
+  <code><span class='type'>integer</span> minsparethreads</code>
 </dt>
-<dd class='description'>Minimum number of worker threads which are kept spare,</dd>
+<dd class='description'>
+  Minimum number of worker threads which are kept spare,
+  <span class='default'>Default: <code>25</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.startservers</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>5</code></span>
+  <code class='full'>worker.startservers</code>
+  <code><span class='type'>integer</span> startservers</code>
 </dt>
-<dd class='description'>Initial number of server processes to start.</dd>
+<dd class='description'>
+  Initial number of server processes to start.
+  <span class='default'>Default: <code>5</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.threadlimit</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>64</code></span>
+  <code class='full'>worker.threadlimit</code>
+  <code><span class='type'>integer</span> threadlimit</code>
 </dt>
-<dd class='description'>ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</dd>
+<dd class='description'>
+  ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.
+  <span class='default'>Default: <code>64</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> worker.threadsperchild</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>25</code></span>
+  <code class='full'>worker.threadsperchild</code>
+  <code><span class='type'>integer</span> threadsperchild</code>
 </dt>
-<dd class='description'>Constant number of worker threads in each server process.</dd>
+<dd class='description'>
+  Constant number of worker threads in each server process.
+  <span class='default'>Default: <code>25</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 

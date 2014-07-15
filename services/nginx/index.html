@@ -428,18 +428,21 @@ Valid values: Any string including regex
 
 
 
-<dt></dt>
+<dt><code>events</code></dt>
 <dd>
-<h3>events</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> events.worker_connections</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>1024</code></span>
+  <code class='full'>events.worker_connections</code>
+  <code><span class='type'>integer</span> worker_connections</code>
 </dt>
-<dd class='description'>Number of concurrent http connection handled per nginx process</dd>
+<dd class='description'>
+  Number of concurrent http connection handled per nginx process
+  <span class='default'>Default: <code>1024</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -450,82 +453,117 @@ Valid values: Any string including regex
 
 
 
-<dt></dt>
+<dt><code>http</code></dt>
 <dd>
-<h3>http</h3>
 <dl>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.access_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/nginx/access.log</code></span>
+  <code class='full'>http.access_log</code>
+  <code><span class='type'>string</span> access_log</code>
 </dt>
-<dd class='description'>Global access log file path</dd>
+<dd class='description'>
+  Global access log file path
+  <span class='default'>Default: <code>/var/log/nginx/access.log</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.error_log</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/log/nginx/error.log</code></span>
+  <code class='full'>http.error_log</code>
+  <code><span class='type'>string</span> error_log</code>
 </dt>
-<dd class='description'>Global error log file path</dd>
+<dd class='description'>
+  Global error log file path
+  <span class='default'>Default: <code>/var/log/nginx/error.log</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.gzip</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>on</code></span>
+  <code class='full'>http.gzip</code>
+  <code><span class='type'>string</span> gzip</code>
 </dt>
-<dd class='description'>Enable gzip compression</dd>
+<dd class='description'>
+  Enable gzip compression
+  <span class='default'>Default: <code>on</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.gzip_disable</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>msie6</code></span>
+  <code class='full'>http.gzip_disable</code>
+  <code><span class='type'>string</span> gzip_disable</code>
 </dt>
-<dd class='description'>Space separated list of browser to disable gzip compression for</dd>
+<dd class='description'>
+  Space separated list of browser to disable gzip compression for
+  <span class='default'>Default: <code>msie6</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> http.keepalive_timeout</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>65</code></span>
+  <code class='full'>http.keepalive_timeout</code>
+  <code><span class='type'>integer</span> keepalive_timeout</code>
 </dt>
-<dd class='description'>Keepalive timeout (sec) - 0 to disable</dd>
+<dd class='description'>
+  Keepalive timeout (sec) - 0 to disable
+  <span class='default'>Default: <code>65</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.sendfile</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>on</code></span>
+  <code class='full'>http.sendfile</code>
+  <code><span class='type'>string</span> sendfile</code>
 </dt>
-<dd class='description'>Enable sendfile</dd>
+<dd class='description'>
+  Enable sendfile
+  <span class='default'>Default: <code>on</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.tcp_nodelay</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>on</code></span>
+  <code class='full'>http.tcp_nodelay</code>
+  <code><span class='type'>string</span> tcp_nodelay</code>
 </dt>
-<dd class='description'>Enable tcp_nodelay</dd>
+<dd class='description'>
+  Enable tcp_nodelay
+  <span class='default'>Default: <code>on</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>string</span> http.tcp_nopush</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>on</code></span>
+  <code class='full'>http.tcp_nopush</code>
+  <code><span class='type'>string</span> tcp_nopush</code>
 </dt>
-<dd class='description'>Enable tcp_nopush</dd>
+<dd class='description'>
+  Enable tcp_nopush
+  <span class='default'>Default: <code>on</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
-  <code><span class='type'>integer</span> http.types_hash_max_size</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>2048</code></span>
+  <code class='full'>http.types_hash_max_size</code>
+  <code><span class='type'>integer</span> types_hash_max_size</code>
 </dt>
-<dd class='description'>Maximum size of hash tables</dd>
+<dd class='description'>
+  Maximum size of hash tables
+  <span class='default'>Default: <code>2048</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
@@ -534,26 +572,38 @@ Valid values: Any string including regex
 
 
 <dt>
+  <code class='full'>pid</code>
   <code><span class='type'>string</span> pid</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>/var/run/nginx.pid</code></span>
 </dt>
-<dd class='description'>Pid file path</dd>
+<dd class='description'>
+  Pid file path
+  <span class='default'>Default: <code>/var/run/nginx.pid</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>user</code>
   <code><span class='type'>string</span> user</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>www-data</code></span>
 </dt>
-<dd class='description'>Nginx running user.</dd>
+<dd class='description'>
+  Nginx running user.
+  <span class='default'>Default: <code>www-data</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
 
 <dt>
+  <code class='full'>worker_processes</code>
   <code><span class='type'>integer</span> worker_processes</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>4</code></span>
 </dt>
-<dd class='description'>Number of Nginx processes</dd>
+<dd class='description'>
+  Number of Nginx processes
+  <span class='default'>Default: <code>4</code></span>
+  <!-- <span class='optional'>Optional</span> -->
+</dd>
 
 
   </dl>
