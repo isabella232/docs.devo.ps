@@ -12,8 +12,11 @@
 {% set parent_prev = parent %}
 {% set parent += '.'+ loop.key %}
 {% endif %}
+<dt></dt>
+<dd><dl>
 {% set tree = val %}
 {% include "_tree.html" %}
 {% set parent = parent_prev %}
+</dl></dd>
 {% endif %}
 {% endfor %}
