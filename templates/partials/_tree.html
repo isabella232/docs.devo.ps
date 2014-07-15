@@ -7,7 +7,7 @@
 <dd class='description'>
   {{ val.description }}
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
-  <!-- {% if val.required == false %}<span class='optional'>Optional</span>{% endif %} -->
+  {% if val.required == true %}<span class='required'>Required</span>{% endif %}
 </dd>
 {% else %}
 {% if not parent %}
