@@ -202,11 +202,11 @@ code,
         padding: 0;
       }
       .optional,
-      .default {
-        display: block;
-        margin-top: $gutter/4;
+      .required {
+        color: $orange;
       }
       .default {
+        display: block;
         code {
           background: transparent;
           border: 0;
@@ -214,9 +214,6 @@ code,
           line-height: inherit;
           padding: 0;
         }
-      }
-      .required {
-        color: $orange;
       }
     }
   }

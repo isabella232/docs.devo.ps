@@ -1,12 +1,12 @@
 {% for val in tree %}
 <dt>
-  <code {% if val.required == true %} class='required'{% endif %}><span class='type {{ val.type }}'>{{ val.type }}</span> {{ loop.key }}</code>
-  {% if val.required == false %}<span class='optional'>Optional</span>{% endif %}{% if val.default %}{% if val.required == false %}, {% endif %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
+  <code><span class='type {{ val.type }}'>{{ val.type }}</span> {{ loop.key }}</code>
+  {% if val.required == false %}<span class='optional'>Optional</span>{% endif %}
 </dt>
-<dd class='description'>{{ val.description }}
-{% if val.valid_values %}
-Valid values: {{ val.valid_values }}
-{% endif %}
+<dd class='description'>
+  {{ val.description }}
+  {% if val.valid_values %}<span class='default'>Valid values: {{ val.valid_values }}</span>{% endif %}
+  {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
 {% if val.options %}
 <h3>{{ loop.key | replace('s$', '') }} Object</h3>
 <dl>
