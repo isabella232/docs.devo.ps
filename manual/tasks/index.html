@@ -68,8 +68,6 @@
 
   
 
-  
-
 
 <a href='/manual/CLI' >CLI</a>
 
@@ -78,8 +76,6 @@
 <a href='/manual/nodes' >Nodes</a>
 
 <a href='/manual/repository' >Repository</a>
-
-<a href='/manual/scripts' >Scripts</a>
 
 <a href='/manual/tasks'  class='active'>Tasks</a>
 
@@ -306,10 +302,10 @@ steps:
 <pre><code>steps:
   - run: mkdir folder
 </code></pre></li>
-<li><p><strong>Script</strong>: you can define shell scripts in the <code>scripts/</code> folder, making it convenient to reuse commands across multiple tasks or simply isolate a complex set of commands. For example:</p>
+<li><p><strong>Script</strong>: you can define shell, python or Ruby scripts in the <code>scripts/</code> folder, making it convenient to reuse commands across multiple tasks or simply isolate a complex set of commands. For example:</p>
 <pre><code>steps:
   - run: devops scripts/some_script.sh
-</code></pre><p>  <em>Notice the call to the <code>devops</code> keyword at the beginning of the command which we use as well for the last kind of command.</em></p>
+</code></pre><p>  <em>To use packages (<code>pip</code> or <code>gems</code>) we recommend you use the configuration of respectively the <a href="/services/python">Python</a> or <a href="/services/ruby">Ruby</a> services rather than installing them from within a script.</em></p>
 </li>
 <li><p><strong>devops command</strong>: services installed on your nodes usually come with some helper commands. A devops command looks like <code>devops {SERVICE} {COMMAND}</code> where <code>{SERVICE}</code> is the name of the service and <code>{COMMAND}</code> the name of the specific command. Some of these commands require you to define options. For example, adding a virtual host to your Nginx service can be done as follow:</p>
 <pre><code>steps:
@@ -321,10 +317,10 @@ steps:
         - uri: /
           type: proxy
           to: http://localhost:3000
-</code></pre><p>  <em>As for the scripts, we use the <code>devops</code> keyword. Services documentations dislpay a &quot;Tasks&quot; section if they have commands. See for example <a href="/services/nginx#tasks">Nginx list of commands</a>.</em></p>
+</code></pre><p>  <em>As for the scripts, we use the <code>devops</code> keyword. Services documentations list the devops commands available for each service. See for example <a href="/services/nginx#tasks">Nginx list of commands</a>.</em></p>
 </li>
 </ul>
-<p><em>Commands are run as the <code>devops</code> user on targeted nodes. You can however switch users by using the <code>sudo</code> command in scripts or inline commands.</em></p>
+<p>Commands are run as the <code>devops</code> user on targeted nodes. You can however switch users by using the <code>sudo</code> command in scripts or inline commands.</p>
 <h2 id="triggers">Triggers</h2>
 <p>Tasks are run whenever one of the triggers conditions are met.</p>
 <p><em>We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.</em></p>
@@ -335,12 +331,12 @@ steps:
   webhooks:
     - path: some/secret/url
     - path: some/other/url
-
-*While we are considering more security measures, like restricting access to webhooks for user defined IPs, we recommend that you use obfuscted/complex URLs for your webhooks (if you wish to keep it private).*
-</code></pre><p>Will automatically create the following endpoints:</p>
+</code></pre><p><em>While we are considering more security measures, like restricting access to webhooks for user defined IPs, we recommend that you use obfuscted/complex URLs for your webhooks (if you wish to keep it private).</em></p>
+<p>Will automatically create the following endpoints:</p>
 <pre><code>https://wh.devo.ps/{USER}/{REPO}/some/secret/url
 https://wh.devo.ps/{USER}/{REPO}/some/other/url
 </code></pre><p>Where <code>{USER}</code> is the repository owner and <code>{REPO}</code> the name of the repository.</p>
+<p>When a webhook receives a <code>POST</code> payload, it gets converted a JSON object and assigned to the <code>{{ payload }}</code> <a href="/manual/variables">variable</a>.</p>
 
 </section>
 
