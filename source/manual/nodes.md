@@ -97,9 +97,4 @@ If you have installed the [CLI](/manual/CLI.html), you can also use one of the f
     <code class='terminal pre'>devops ssh {NODE_ID}</code>
 
     *If you only have 1 node in the repository, `devops ssh` would suffice.*
-
-## Read also
-
-- [Git operations]()
-- [Git ]()
-- [How to create, edit and delete a node](/guides/managing-nodes)
+    
