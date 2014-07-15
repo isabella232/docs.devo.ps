@@ -317,7 +317,7 @@
 <dd class='description'>
   Auto increment.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -329,7 +329,7 @@
 <dd class='description'>
   Auto increment offset.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -341,7 +341,7 @@
 <dd class='description'>
   Base folder.
   <span class='default'>Default: <code>/usr</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -353,7 +353,7 @@
 <dd class='description'>
   Binding IP address.
   <span class='default'>Default: <code>127.0.0.1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -365,7 +365,7 @@
 <dd class='description'>
   Database files path.
   <span class='default'>Default: <code>/var/lib/mysql</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -386,7 +386,7 @@
 <dd class='description'>
   Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.
   <span class='default'>Default: <code>true</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -398,7 +398,7 @@
 <dd class='description'>
   The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.
   <span class='default'>Default: <code>8M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -410,7 +410,7 @@
 <dd class='description'>
   The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.
   <span class='default'>Default: <code>128M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -422,7 +422,7 @@
 <dd class='description'>
   The paths to individual data files and their sizes.
   <span class='default'>Default: <code>ibdata1:10M:autoextend:max:500M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -434,7 +434,7 @@
 <dd class='description'>
   If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -446,7 +446,7 @@
 <dd class='description'>
   Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT
   <span class='default'>Default: <code>O_DIRECT</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -458,7 +458,7 @@
 <dd class='description'>
   The size in bytes of the buffer that InnoDB uses to write to the log files on disk.
   <span class='default'>Default: <code>8M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -470,7 +470,7 @@
 <dd class='description'>
   The size in bytes of each log file in a log group.
   <span class='default'>Default: <code>5M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -495,7 +495,7 @@
 <dd class='description'>
   The location of the error log.
   <span class='default'>Default: <code>/var/log/mysql/mysql.log</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -507,7 +507,7 @@
 <dd class='description'>
   If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -519,7 +519,7 @@
 <dd class='description'>
   Increment slow_queries variable and log if a query takes longer than this many seconds.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -531,7 +531,7 @@
 <dd class='description'>
   Whether the slow query log is enabled.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -543,7 +543,7 @@
 <dd class='description'>
   The name of the slow query log file.
   <span class='default'>Default: <code>/var/log/mysql/slow.log</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -559,7 +559,7 @@
 <dd class='description'>
   Allow old (non-secure) passwords.
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -571,7 +571,7 @@
 <dd class='description'>
   Pid file.
   <span class='default'>Default: <code>/var/run/mysqld/mysqld.pid</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -583,7 +583,7 @@
 <dd class='description'>
   Connection port.
   <span class='default'>Default: <code>3306</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -604,7 +604,7 @@
 <dd class='description'>
   Do not cache results that are larger than this number of bytes.
   <span class='default'>Default: <code>2M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -616,7 +616,7 @@
 <dd class='description'>
   The amount of memory allocated for caching query results.
   <span class='default'>Default: <code>64M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -641,7 +641,7 @@
 <dd class='description'>
   The number of days for automatic binary log file removal.
   <span class='default'>Default: <code>10</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -653,7 +653,7 @@
 <dd class='description'>
   Enable binary logging. The option value is the basename for the log sequence.
   <span class='default'>Default: <code>mysql-bin</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -665,7 +665,7 @@
 <dd class='description'>
   Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -677,7 +677,7 @@
 <dd class='description'>
   This option tells the slave to log the updates performed by its SQL thread to its own binary log.
   <span class='default'>Default: <code>true</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -689,7 +689,7 @@
 <dd class='description'>
   If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.
   <span class='default'>Default: <code>100M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -701,7 +701,7 @@
 <dd class='description'>
   The basename for the relay log.
   <span class='default'>Default: <code>relay-bin</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -713,7 +713,7 @@
 <dd class='description'>
   Is used in replication to enable master and slave servers to identify themselves uniquely.
   <span class='default'>Default: <code>10</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -725,7 +725,7 @@
 <dd class='description'>
   Tells the slave server not to start the slave threads when the server starts.
   <span class='default'>Default: <code>true</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -737,7 +737,7 @@
 <dd class='description'>
   If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -753,7 +753,7 @@
 <dd class='description'>
   Mysql listening socket.
   <span class='default'>Default: <code>/var/run/mysqld/mysqld.sock</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -774,7 +774,7 @@
 <dd class='description'>
   The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.
   <span class='default'>Default: <code>128</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -786,7 +786,7 @@
 <dd class='description'>
   Size of the buffer used for index blocks. The key buffer is also known as the key cache.
   <span class='default'>Default: <code>256M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -798,7 +798,7 @@
 <dd class='description'>
   The maximum size of one packet or any generated/intermediate string.
   <span class='default'>Default: <code>16M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -810,7 +810,7 @@
 <dd class='description'>
   The maximum permitted number of simultaneous client connections.
   <span class='default'>Default: <code>256</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -822,7 +822,7 @@
 <dd class='description'>
   Maximum size to which user-created MEMORY tables are permitted to grow.
   <span class='default'>Default: <code>64M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -834,7 +834,7 @@
 <dd class='description'>
   The number of seconds to wait for more data from a connection before aborting the read.
   <span class='default'>Default: <code>30</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -846,7 +846,7 @@
 <dd class='description'>
   The number of seconds to wait for a block to be written to a connection before aborting the write.
   <span class='default'>Default: <code>30</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -858,7 +858,7 @@
 <dd class='description'>
   The number of open tables for all threads.
   <span class='default'>Default: <code>1024</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -870,7 +870,7 @@
 <dd class='description'>
   Number of threads the server should cache for reuse.
   <span class='default'>Default: <code>32</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -882,7 +882,7 @@
 <dd class='description'>
   The stack size for each thread.
   <span class='default'>Default: <code>256K</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -894,7 +894,7 @@
 <dd class='description'>
   The number of seconds the server waits for activity on a noninteractive connection before closing it.
   <span class='default'>Default: <code>180</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 

@@ -292,7 +292,7 @@
 <dd class='description'>
   Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage
   <span class='default'>Default: <code>64mb</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -304,7 +304,7 @@
 <dd class='description'>
   Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)
   <span class='default'>Default: <code>100</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -316,7 +316,7 @@
 <dd class='description'>
   Enable Append Only Mode
   <span class='default'>Default: <code>no</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -328,7 +328,7 @@
 <dd class='description'>
   Name of the append only file
   <span class='default'>Default: <code>appendonly.aof</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -340,7 +340,7 @@
 <dd class='description'>
   Fsync mode to sync the append only file
   <span class='default'>Default: <code>everysec</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -352,7 +352,7 @@
 <dd class='description'>
   Define whether to (not) append fsync operations if another fsync op is already in progress
   <span class='default'>Default: <code>no</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -368,7 +368,7 @@
 <dd class='description'>
   Binding IP address.
   <span class='default'>Default: <code>127.0.0.1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -380,7 +380,7 @@
 <dd class='description'>
   Number of databases within the redis server
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -401,7 +401,7 @@
 <dd class='description'>
   Max number of clients connected
   <span class='default'>Default: <code>10000</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -413,7 +413,7 @@
 <dd class='description'>
   Maximum RAM used by Redis to store data (no limit by default) in bytes
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -425,7 +425,7 @@
 <dd class='description'>
   Define how Redis will remove keys when maxmemory is reached
   <span class='default'>Default: <code>volatile-lru</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -437,7 +437,7 @@
 <dd class='description'>
   Sample size to use to base the policy eviction for LRU and TTL policy algorithms
   <span class='default'>Default: <code>3</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -453,7 +453,7 @@
 <dd class='description'>
   Server log file
   <span class='default'>Default: <code>/var/log/redis/redis-server.log</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -465,7 +465,7 @@
 <dd class='description'>
   Server log verbosity
   <span class='default'>Default: <code>notice</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -486,7 +486,7 @@
 <dd class='description'>
   Time limit (in ms) for the execution of a LUA script
   <span class='default'>Default: <code>5000</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -502,7 +502,7 @@
 <dd class='description'>
   Connection port.
   <span class='default'>Default: <code>6379</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -523,7 +523,7 @@
 <dd class='description'>
   Is this redis instance a slave?
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -535,7 +535,7 @@
 <dd class='description'>
   Redis master auth password (if required)
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -547,7 +547,7 @@
 <dd class='description'>
   IP or host of the master server
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -559,7 +559,7 @@
 <dd class='description'>
   Redis port of the master server
   <span class='default'>Default: <code>6379</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -571,7 +571,7 @@
 <dd class='description'>
   Frequency (in sec) to ping the master server as health check
   <span class='default'>Default: <code>10</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -583,7 +583,7 @@
 <dd class='description'>
   Slave priority
   <span class='default'>Default: <code>100</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -595,7 +595,7 @@
 <dd class='description'>
   Make the slave server read-only (preferred option)
   <span class='default'>Default: <code>yes</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -607,7 +607,7 @@
 <dd class='description'>
   Slave redis serves stale data if the connection is lost with the master
   <span class='default'>Default: <code>yes</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -619,7 +619,7 @@
 <dd class='description'>
   Timeout to Bulk IO transfer and ping response to mark the master as unreachable
   <span class='default'>Default: <code>60</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -644,7 +644,7 @@
 <dd class='description'>
   Require a password to connect (either client or slave)
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -669,7 +669,7 @@
 <dd class='description'>
   Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries
   <span class='default'>Default: <code>10000</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -681,7 +681,7 @@
 <dd class='description'>
   Length of the slow log to capture (FIFO based)
   <span class='default'>Default: <code>128</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -706,7 +706,7 @@
 <dd class='description'>
   Filename where to dump the DB
   <span class='default'>Default: <code>dump.rdb</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -718,7 +718,7 @@
 <dd class='description'>
   Folder where to store the snapshots
   <span class='default'>Default: <code>/var/lib/redis</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -730,7 +730,7 @@
 <dd class='description'>
   Enable database checksum (use ~10% extra CPU)
   <span class='default'>Default: <code>yes</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -742,7 +742,7 @@
 <dd class='description'>
   Enable database compression
   <span class='default'>Default: <code>yes</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -754,7 +754,7 @@
 <dd class='description'>
   Array of save rules including seconds and number of changes that trigger a save
   <span class='default'>Default: <code>[object Object],[object Object],[object Object]</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -779,7 +779,7 @@
 <dd class='description'>
   Send log to syslog
   <span class='default'>Default: <code>no</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -791,7 +791,7 @@
 <dd class='description'>
   Syslog facility
   <span class='default'>Default: <code>local0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -803,7 +803,7 @@
 <dd class='description'>
   Syslog identity
   <span class='default'>Default: <code>redis</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -819,7 +819,7 @@
 <dd class='description'>
   Close the connection after a client is idle for N seconds (0 to disable)
   
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 

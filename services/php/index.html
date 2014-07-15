@@ -315,7 +315,7 @@
 <dd class='description'>
   Enable / disable APC for the CLI version of PHP (Mostly for testing and debugging).
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -327,7 +327,7 @@
 <dd class='description'>
   Enable / disable APC (0 - disabled).
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -339,7 +339,7 @@
 <dd class='description'>
   The number of seconds that a cache entry may remain on the garbage-collection list.
   <span class='default'>Default: <code>3600</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -351,7 +351,7 @@
 <dd class='description'>
   Cache files up to this file size. Prevents large files from being cached.
   <span class='default'>Default: <code>1M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -363,7 +363,7 @@
 <dd class='description'>
   The number of shared memory segments to allocate for the compiler cache.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -375,7 +375,7 @@
 <dd class='description'>
   The size of each shared memory segment in MB. (add unit)
   <span class='default'>Default: <code>128M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -387,7 +387,7 @@
 <dd class='description'>
   The number of seconds a cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.
   <span class='default'>Default: <code>14400</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -399,7 +399,7 @@
 <dd class='description'>
   The number of seconds a user cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.
   <span class='default'>Default: <code>7200</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -424,7 +424,7 @@
 <dd class='description'>
   cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.
   <span class='default'>Default: <code>1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -440,7 +440,7 @@
 <dd class='description'>
   Define whether PHP will output errors, notices and warnings.
   <span class='default'>Default: <code>Off</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -452,7 +452,7 @@
 <dd class='description'>
   Log errors to specified file (or syslog).
   <span class='default'>Default: <code>syslog</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -464,7 +464,7 @@
 <dd class='description'>
   Define which errors, warnings and notices to report.
   <span class='default'>Default: <code>E_ALL &amp; ~E_DEPRECATED</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -476,7 +476,7 @@
 <dd class='description'>
   Decides whether PHP may expose the fact that it is installed on the server.
   <span class='default'>Default: <code>Off</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -488,7 +488,7 @@
 <dd class='description'>
   List of extra php extensions installable via the regular OS package manager
   <span class='default'>Default: <code></code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -509,7 +509,7 @@
 <dd class='description'>
   Time within which an emergency graceful restart should be initiated (along with the threshold) - Available Units s(econds) default, m(inutes), h(ours), or d(ays)
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -521,7 +521,7 @@
 <dd class='description'>
   If more than X processes restart with SIGSEGV or SIGBUS within the emergency restart interval, php-fpm will restart
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -533,7 +533,7 @@
 <dd class='description'>
   Location of the error log file - can use `syslog` instead of file.
   <span class='default'>Default: <code>/var/log/php-fpm/php5-fpm.log</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -545,7 +545,7 @@
 <dd class='description'>
   Minimum log level to capture the logs for
   <span class='default'>Default: <code>notice</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -557,7 +557,7 @@
 <dd class='description'>
   Location of the php5-fpm process PID file
   <span class='default'>Default: <code>/var/run/php5-fpm.pid</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -589,7 +589,7 @@
 <dd class='description'>
   List (comma separated) of ipv4 addresses of FastCGI clients which are allowed to connect.
   <span class='default'>Default: <code>127.0.0.1</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -601,7 +601,7 @@
 <dd class='description'>
   Group owner of the unix socket (only relevant if listen is a path)
   <span class='default'>Default: <code>www-data</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -613,7 +613,7 @@
 <dd class='description'>
   Permission of the socket file (only relevant if listen is a path)
   <span class='default'>Default: <code>0666</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -625,7 +625,7 @@
 <dd class='description'>
   Owner of the unix socket (only relevant if listen is a path)
   <span class='default'>Default: <code>www-data</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -641,7 +641,7 @@
 <dd class='description'>
   Running unix group of the pool
   <span class='default'>Default: <code>www-data</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -653,7 +653,7 @@
 <dd class='description'>
   The address on which to accept FastCGI requests (ip.add.re.ss;port, port, sock path)
   <span class='default'>Default: <code>127.0.0.1:9000</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -665,7 +665,7 @@
 <dd class='description'>
   Pool name
   <span class='default'>Default: <code>www</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -687,7 +687,7 @@
 <dd class='description'>
   URL path to simple ping
   <span class='default'>Default: <code>/ping</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -699,7 +699,7 @@
 <dd class='description'>
   Message to be sent back on ping
   <span class='default'>Default: <code>pong</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -725,7 +725,7 @@
 <dd class='description'>
   Maximum number of children (usually cpu-core * 2)
   <span class='default'>Default: <code>10</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -737,7 +737,7 @@
 <dd class='description'>
   Maximum number of requests processed by a single process before being respawned
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -749,7 +749,7 @@
 <dd class='description'>
   Maximum number of spare servers to keep running
   <span class='default'>Default: <code>6</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -761,7 +761,7 @@
 <dd class='description'>
   Minimum number of spare servers to keep running
   <span class='default'>Default: <code>2</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -773,7 +773,7 @@
 <dd class='description'>
   Maximum time to keep a server idle running (ondemand)
   <span class='default'>Default: <code>10s</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -785,7 +785,7 @@
 <dd class='description'>
   Number of server to start (dynamic)
   <span class='default'>Default: <code>4</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -797,7 +797,7 @@
 <dd class='description'>
   URL path to access the status of the php pool
   <span class='default'>Default: <code>/status</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -809,7 +809,7 @@
 <dd class='description'>
   Choose how the process manager will control the number of child processes. (static, dynamic, ondemand)
   <span class='default'>Default: <code>static</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -825,7 +825,7 @@
 <dd class='description'>
   Time after which a backtrace is sent to the slowlogs (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -837,7 +837,7 @@
 <dd class='description'>
   Time after which a the process gets terminated (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -849,7 +849,7 @@
 <dd class='description'>
   Path for the slow log file of this pool
   <span class='default'>Default: <code>/var/log/php-fpm/$pool.log.slow</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -861,7 +861,7 @@
 <dd class='description'>
   Running unix user of the pool
   <span class='default'>Default: <code>www-data</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -877,7 +877,7 @@
 <dd class='description'>
   Time limit for child processes to wait for a reaction on signals from master. Available Units; s(econds) default, m(inutes), h(ours), or d(ays)
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -889,7 +889,7 @@
 <dd class='description'>
   The maximum number of processes FPM will fork across all the pools. 0 means no limit.
   <span class='default'>Default: <code>0</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -911,7 +911,7 @@
 <dd class='description'>
   Syslog facility to send the log to (only if error_log=syslog)
   <span class='default'>Default: <code>daemon</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -923,7 +923,7 @@
 <dd class='description'>
   String that is prepended to the syslog message
   <span class='default'>Default: <code>php-fpm</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -943,7 +943,7 @@
 <dd class='description'>
   Define whether PHP should log errors to locations such as a server-specific log, STDERR, or a location specified by the error_log.
   <span class='default'>Default: <code>On</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -955,7 +955,7 @@
 <dd class='description'>
   Maximum execution time of each script, in seconds.
   <span class='default'>Default: <code>60</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -967,7 +967,7 @@
 <dd class='description'>
   Maximum amount of time each script may spend parsing request data.
   <span class='default'>Default: <code>120</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -979,7 +979,7 @@
 <dd class='description'>
   Maximum amount of memory a script may consume.
   <span class='default'>Default: <code>128M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -991,7 +991,7 @@
 <dd class='description'>
   List of extra php extensions installable via PECL
   <span class='default'>Default: <code></code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1003,7 +1003,7 @@
 <dd class='description'>
   Maximum size of POST data that PHP will accept.
   <span class='default'>Default: <code>16M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1015,7 +1015,7 @@
 <dd class='description'>
   Determines the size of the realpath cache to be used.
   <span class='default'>Default: <code>256k</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1027,7 +1027,7 @@
 <dd class='description'>
   Duration of time, in seconds for which to cache realpath information for a given file or directory.
   <span class='default'>Default: <code>3600</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1039,7 +1039,7 @@
 <dd class='description'>
   Enable / disable php safe_mode.
   <span class='default'>Default: <code>Off</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1051,7 +1051,7 @@
 <dd class='description'>
   Compare GID instead of UID when php safe_mode is enabled.
   <span class='default'>Default: <code>Off</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1073,7 +1073,7 @@
 <dd class='description'>
   Handler used to store/retrieve session data.
   <span class='default'>Default: <code>files</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1085,7 +1085,7 @@
 <dd class='description'>
   Folder PATH where sessions will be stored (if save_habdler is file).
   <span class='default'>Default: <code>/var/lib/php/session</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
@@ -1101,7 +1101,7 @@
 <dd class='description'>
   Maximum allowed size for uploaded files.
   <span class='default'>Default: <code>16M</code></span>
-  <!-- <span class='optional'>Optional</span> -->
+  
 </dd>
 
 
