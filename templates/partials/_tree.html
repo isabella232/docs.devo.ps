@@ -1,10 +1,14 @@
 {% for val in tree %}
 {% if val.type and val.description %}
 <dt>
-  <code><span class='type'>{{ val.type }}</span> {% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code>
-  {% if val.required == false %}<span class='optional'>Optional</span>{% endif %}{% if val.default %}{% if val.required == false %}, {% endif %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
+  <code class='full'>{% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code>
+  <code><span class='type'>{{ val.type }}</span> {{ loop.key }}</code>
 </dt>
-<dd class='description'>{{ val.description }}</dd>
+<dd class='description'>
+  {{ val.description }}
+  {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
+  <!-- {% if val.required == false %}<span class='optional'>Optional</span>{% endif %} -->
+</dd>
 {% else %}
 {% if not parent %}
 {% set parent = loop.key %}
@@ -12,9 +16,8 @@
 {% set parent_prev = parent %}
 {% set parent += '.'+ loop.key %}
 {% endif %}
-<dt></dt>
+<dt><code>{{ parent }}</code></dt>
 <dd>
-<h3>{{ parent }}</h3>
 <dl>
 {% set tree = val %}
 {% include "_tree.html" %}
