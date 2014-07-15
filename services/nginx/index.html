@@ -316,12 +316,32 @@
 
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> uri</code>
+  <code ><span class='type string'>string</span> custom</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</dd>
+
+
+
+
+
+<dt>
+  <code ><span class='type string'>string</span> static</code>
+  <span class='optional'>Optional</span>, <span class='default'>Default: <code>root</code></span>
+</dt>
+<dd class='description'>For type static only, define how to consider the source folder - alias or root</dd>
+
+<dd class='description'>Valid values: Either of alias / root</dd>
+
+
+
+
+
+<dt>
+  <code  class='required'><span class='type string'>string</span> to</code>
   
 </dt>
-<dd class='description'>Any string / regex that nginx understand as a `location`</dd>
-
-<dd class='description'>Valid values: Any string including regex</dd>
+<dd class='description'>Either an upstream name, or a service / url, or a path</dd>
 
 
 
@@ -340,32 +360,12 @@
 
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> to</code>
+  <code  class='required'><span class='type string'>string</span> uri</code>
   
 </dt>
-<dd class='description'>Either an upstream name, or a service / url, or a path</dd>
+<dd class='description'>Any string / regex that nginx understand as a `location`</dd>
 
-
-
-
-
-<dt>
-  <code ><span class='type string'>string</span> custom</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</dd>
-
-
-
-
-
-<dt>
-  <code ><span class='type string'>string</span> static</code>
-  <span class='optional'>Optional</span>, <span class='default'>Default: <code>root</code></span>
-</dt>
-<dd class='description'>For type static only, define how to consider the source folder - alias or root</dd>
-
-<dd class='description'>Valid values: Either of alias / root</dd>
+<dd class='description'>Valid values: Any string including regex</dd>
 
 
 
@@ -388,20 +388,20 @@
 
 
 <dt>
-  <code  class='required'><span class='type string'>string</span> name</code>
+  <code  class='required'><span class='type array'>array</span> backends</code>
   
 </dt>
-<dd class='description'>Name of the upstream - it must be unique on the entire node</dd>
+<dd class='description'>List of backends associated with the upstream</dd>
 
 
 
 
 
 <dt>
-  <code  class='required'><span class='type array'>array</span> backends</code>
+  <code  class='required'><span class='type string'>string</span> name</code>
   
 </dt>
-<dd class='description'>List of backends associated with the upstream</dd>
+<dd class='description'>Name of the upstream - it must be unique on the entire node</dd>
 
 
 
