@@ -275,31 +275,34 @@
   <code ><span class='type string'>string</span> aliases</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>space separated list of domain name aliases</dd>
+<dd class='description'>space separated list of domain name aliases
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type string'>string</span> domain</code>
   
 </dt>
-<dd class='description'>domain name</dd>
+<dd class='description'>domain name
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type integer'>integer</span> port</code>
   
 </dt>
-<dd class='description'>listening port</dd>
+<dd class='description'>listening port
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type array'>array</span> routes</code>
   
 </dt>
-<dd class='description'>list of route objects</dd>
+<dd class='description'>list of route objects
 
 
 <dl>
@@ -309,56 +312,62 @@
   <code ><span class='type string'>string</span> custom</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</dd>
+<dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)
 
 
+</dd>
 
 <dt>
   <code ><span class='type string'>string</span> static</code>
   <span class='optional'>Optional</span>, <span class='default'>Default: <code>root</code></span>
 </dt>
-<dd class='description'>For type static only, define how to consider the source folder - alias or root</dd>
+<dd class='description'>For type static only, define how to consider the source folder - alias or root
 
 Valid values: Either of alias / root
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type string'>string</span> to</code>
   
 </dt>
-<dd class='description'>Either an upstream name, or a service / url, or a path</dd>
+<dd class='description'>Either an upstream name, or a service / url, or a path
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type string'>string</span> type</code>
   
 </dt>
-<dd class='description'>The type of handler for that route</dd>
+<dd class='description'>The type of handler for that route
 
 Valid values: Either of proxy / fastcgi / websocket / uwsgi / static
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type string'>string</span> uri</code>
   
 </dt>
-<dd class='description'>Any string / regex that nginx understand as a `location`</dd>
+<dd class='description'>Any string / regex that nginx understand as a `location`
 
 Valid values: Any string including regex
 
 
+</dd>
 
 </dl>
 
+</dd>
 
 <dt>
   <code ><span class='type array'>array</span> upstreams</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>list of upstream objects</dd>
+<dd class='description'>list of upstream objects
 
 
 <dl>
@@ -368,28 +377,32 @@ Valid values: Any string including regex
   <code  class='required'><span class='type array'>array</span> backends</code>
   
 </dt>
-<dd class='description'>List of backends associated with the upstream</dd>
+<dd class='description'>List of backends associated with the upstream
 
 
+</dd>
 
 <dt>
   <code  class='required'><span class='type string'>string</span> name</code>
   
 </dt>
-<dd class='description'>Name of the upstream - it must be unique on the entire node</dd>
+<dd class='description'>Name of the upstream - it must be unique on the entire node
 
 
+</dd>
 
 </dl>
 
+</dd>
 
 <dt>
   <code ><span class='type string'>string</span> webroot</code>
   <span class='optional'>Optional</span>
 </dt>
-<dd class='description'>subfolder to serve data from based on the root /var/www/_domain_</dd>
+<dd class='description'>subfolder to serve data from based on the root /var/www/_domain_
 
 
+</dd>
 
         </dl>
       
