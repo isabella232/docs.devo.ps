@@ -8,6 +8,7 @@
 Valid values: {{ val.valid_values }}
 {% endif %}
 {% if val.options %}
+<h3>{{ loop.key | replace('s$', '') }} Object</h3>
 <dl>
 {% set tree = val.options %}
 {% include "_task_tree.html" %}
