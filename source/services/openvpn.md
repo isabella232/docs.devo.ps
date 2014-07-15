@@ -140,19 +140,20 @@ tasks:
   options:
     users:
       description: list of user objects
+      options:
+        email:
+          description: The email address to send the credentials to
+          required: true
+          type: string
+          valid_values: email address
+        name:
+          description: The client name (ex. bob, alice)
+          required: true
+          type: string
       required: true
       type: array
 title: OpenVPN
 
 ---
 
-
-### Options
-
-#### User object
-
-Name | Type | Required | Default | Valid Values | Description
-----|----|----|----|----|----
-name | string | True | | | The client name (ex. bob, alice)
-email | string | True | | email address | The email address to send the credentials to
 
