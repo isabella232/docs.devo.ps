@@ -1185,6 +1185,8 @@ code, .code {
     float: right;
     font-size: 12px;
     font-size: 1.2rem; }
+    #header .menu form {
+      display: inline; }
     #header .menu input {
       border-radius: 20px;
       margin: -5px 0; }

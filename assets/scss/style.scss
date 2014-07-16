@@ -74,6 +74,9 @@ code,
   .menu {
     float: right;
     @include font-size($small);
+    form {
+      display: inline;
+    }
     input {
       border-radius: $gutter;
       margin: (-$gutter/4) 0;
