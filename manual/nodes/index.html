@@ -64,8 +64,12 @@
 
   
 
+  
+
 
 <a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
 
 <a href='/manual/nodes'  class='active'>Nodes</a>
 
@@ -215,8 +219,8 @@
 
 
 <section class='body'>
-  <p>A node is anything from a server to a firewall. </p>
-<p><em>Currently, devo.ps only support servers but we are actively working on adding support for load balancers, firewalls and clusters.</em></p>
+  <p>A node is usually a server, either physical or virtual. However, it may also refer to another component of your infrastructure: a firewall, a load balancer or storage (e.g. S3).</p>
+<p><em>Currently, we only support servers but are actively working on adding support for load balancers, firewalls and clusters.</em></p>
 <h2 id="node-file">Node file</h2>
 <p>Each node is defined in a YAML (<code>.yml</code>) file.</p>
 <p><em>We currently require that you name the file as the node id (see example) and save it in the <code>nodes/</code> folder. We are working on adding support for arbitrary file names and folders, allowing you to save multiple nodes in a single file.</em></p>
@@ -278,6 +282,12 @@ configuration:
   <dd>A list of configuration settings to apply to the installed services, as defined in each service&#39;s documentation page.</dd>
 </dl>
 
+<h2 id="services-configuration">Services &amp; Configuration</h2>
+<p>A service refers to a technology you want to add support for on your node; it may be a database (MySQL, CouchBase, MongoDB), a language (PHP, Python, Ruby, Node.js), a Web server (NGINX, Apache), a reverse-proxy or a load-blanacer (Varnish), HAproxy, Squid)...</p>
+<p>When adding a service to a node, you can specify a version or use the <code>*</code> as a wildcard for the latest avaiable version:</p>
+<pre><code>services:
+  nginx: &#39;*&#39;
+</code></pre><p><em>We are currently only support the wildcard option but will soon enable users to pick a specific version of a service and handle service ugprades.</em></p>
 <h2 id="ssh-keys-users">SSH keys &amp; Users</h2>
 <p>A <code>devops</code> user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate <a href="/manual/tasks">tasks</a>.</p>
 <p>Additionally, we add the <a href="/manual/profile#ssh">SSH keys defined in the profile</a> of all collaborators to the server&#39;s <code>authorized_keys</code> file for the <code>devops</code> user. This means you can log in as the <code>devops</code> user by simply running the following command:</p>

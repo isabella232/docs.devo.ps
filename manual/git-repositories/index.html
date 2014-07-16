@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <title>Ruby | devo.ps documentation</title>
+  <title>Git &amp; Repositories | devo.ps documentation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -69,7 +69,7 @@
 
 <a href='/manual/CLI' >CLI</a>
 
-<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+<a href='/manual/git-repositories'  class='active'>Git &amp; Repositories</a>
 
 <a href='/manual/nodes' >Nodes</a>
 
@@ -191,7 +191,7 @@
 
 <a href='/services/redis' >Redis</a>
 
-<a href='/services/ruby'  class='active'>Ruby</a>
+<a href='/services/ruby' >Ruby</a>
 
 <a href='/services/uwsgi' >uWSGI</a>
 
@@ -211,98 +211,29 @@
 <header class='header'>
   <ul class='tags'>
     
-      <li>language</li>
-    
   </ul>
 
-  <h1>Ruby 
-  <a href='https://www.ruby-lang.org/en/documentation/'><span>Official documentation</span></a>
-  </h1>  
+  <h1>Git &amp; Repositories </h1>  
 </header>
 
 
-<section class='tasks'>
-  <h2 id='tasks'>Commands</h2>
-  <dl>
-    
-    <dt>
-      <code class='terminal'>gems add</code>
-    </dt>
-    <dd>
-      Add Ruby gems globally
-      
-        <h3>Options</h3>
-        <dl>
-          
-          
-<dt>
-  <code><span class='type array'>array</span> gems</code>
-  
-</dt>
-<dd class='description'>
-  List of gems (string) to add
-  
-  
-
-</dd>
-
-        </dl>
-      
-    </dd>
-    
-    <dt>
-      <code class='terminal'>gems remove</code>
-    </dt>
-    <dd>
-      Remove Ruby gems globally
-      
-        <h3>Options</h3>
-        <dl>
-          
-          
-<dt>
-  <code><span class='type array'>array</span> gems</code>
-  
-</dt>
-<dd class='description'>
-  List of gems (string) to remove
-  
-  
-
-</dd>
-
-        </dl>
-      
-    </dd>
-    
-  </dl>
-</section>
-
 
 <section class='body'>
-  
+  <p>Repositories contain a list of YAML files (and optional)</p>
+<h2 id="file-structure">File structure</h2>
+<ul>
+<li><code>nodes/</code></li>
+<li><code>scripts/</code></li>
+<li><code>tasks/</code></li>
+</ul>
+<h2 id="readme-files">README files</h2>
+<p>Additionally, you can add markdown files anywhere </p>
+<h2 id="branches">Branches</h2>
+<p>Repositories</p>
+<h2 id="collaborators">Collaborators</h2>
+
 </section>
 
-
-<section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
-  <dl>
-    
-    
-
-<dt>
-  <code class='full'>gems</code>
-  <code><span class='type'>array</span> gems</code>
-</dt>
-<dd class='description'>
-  List of gems to install globally on the system
-  <span class='default'>Default: <code></code></span>
-  
-</dd>
-
-
-  </dl>
-</section>
 
 
 
