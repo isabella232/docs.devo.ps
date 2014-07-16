@@ -67,16 +67,22 @@ Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Oc
     </dl>
   </dd>
 
-  <dt class='optional'><code><span class='type'>array</span> services</code></dt>
+  <dt>
+    <code><span class='type'>array</span> services</code>
+    <span class='optional'>Optional</span>
+  </dt>
   <dd>The list of services to be installed on the node; available services are documented in the **Services** section.</dd>
 
-  <dt class='optional'><code><span class='type'>object</span> services</code></dt>
-  <dd>A list of configuration settings to apply to the installed services, as defined in each service's documentation page.</dd>
+  <dt>
+    <code><span class='type'>object</span> configuration</code>
+    <span class='optional'>Optional</span>
+  </dt>
+  <dd>A list of configuration settings to apply to the installed services, as defined in each service's documentation page. Use the service id as the key (see the [services](#services) section below for an example).</dd>
 </dl>
 
-## Services & Configuration
+### Services
 
-A service refers to a technology you want to add support for on your node; it may be a database (MySQL, CouchBase, MongoDB), a language (PHP, Python, Ruby, Node.js), a Web server (NGINX, Apache), a reverse-proxy or a load-blanacer (Varnish), HAproxy, Squid)...
+A service refers to a technology you want to add support for on your node; it may be a database (MySQL, CouchBase, MongoDB), a language (PHP, Python, Ruby, Node.js), a Web server (NGINX, Apache), a reverse-proxy or a load-balancer (Varnish), HAproxy, Squid)...
 
 When adding a service to a node, you can specify a version or use the `*` as a wildcard for the latest avaiable version:
 
@@ -87,7 +93,7 @@ When adding a service to a node, you can specify a version or use the `*` as a w
 
 Services usually come with configuration and commands, both of which are detailed on the documentation page of the service.
 
-For example, you can configure NGINX's gzip compression by modifying `http.gzip` variable, or change the default keepalive timeout (full set of ):
+For example, you can configure NGINX's gzip compression by modifying `http.gzip` variable, or change the default keepalive timeout (see [NGINX configuration](/services/nginx/#configuration)):
 
     services:
       nginx: '*'
@@ -98,7 +104,7 @@ For example, you can configure NGINX's gzip compression by modifying `http.gzip`
           gzip: off
           keepalive_timeout: 120
 
-
+Similarly, services may have commnads that you can use in [tasks](/manual/tasks). For an example, you could use the `devops nginx start` command (see [NGINX commands](/services/nginx/#commands)).
 
 ## SSH keys & Users
 
