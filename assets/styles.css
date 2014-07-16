@@ -1726,7 +1726,7 @@ code, .code {
       font-size: 1.4rem;
       margin: 0 0 20px; }
       #main .content dl dt {
-        border-top: 1px solid #fafafb;
+        border-top: 1px solid #eaeced;
         margin-bottom: 5px;
         padding-top: 10px; }
         #main .content dl dt > code {
@@ -1736,9 +1736,9 @@ code, .code {
         padding-bottom: 10px;
         padding-left: 20px; }
         #main .content dl dd:last-child {
-          border-bottom: 1px solid #fafafb; }
+          border-bottom: 1px solid #eaeced; }
       #main .content dl dl {
-        border-left: 3px solid #fafafb;
+        border-left: 3px solid #eaeced;
         margin-bottom: 0;
         margin-top: 10px;
         padding-left: 10px; }
