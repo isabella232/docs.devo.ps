@@ -1377,3 +1377,5 @@ code, .code {
       #main .sidebar a.active {
         color: #203442;
         font-weight: bold; }
+      #main .sidebar a:first-child {
+        padding-left: 0; }

@@ -106,6 +106,15 @@ For example, you can configure NGINX's gzip compression by modifying `http.gzip`
 
 Similarly, services may have commnads that you can use in [tasks](/manual/tasks). For an example, you could use the `devops nginx start` command (see [NGINX commands](/services/nginx/#commands)).
 
+## Status
+
+Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the [git section](/manual/git-repositories))
+
+- **Synchronized** (synced): 
+- **Synchronizing** (synching):  
+- **Error**: the server may have failed to synchronize correctly.)
+
+
 ## SSH keys & Users
 
 A `devops` user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate [tasks](/manual/tasks).

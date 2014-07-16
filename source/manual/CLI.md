@@ -2,7 +2,7 @@
 title: CLI
 ---
 
-The Command Line Interface (CLI) lets you interact with devops in a terminal.
+The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server, 
 
 ## Installation
 

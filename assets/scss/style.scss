@@ -248,6 +248,9 @@ code,
         color: $black;
         font-weight: bold;
       }
+      &:first-child {
+        padding-left: 0;
+      }
     }
   }
 }

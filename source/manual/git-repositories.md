@@ -51,20 +51,6 @@ Respectively the `nodes`, `tasks` and `scripts` folders need to hold your ... no
 
 In each of the folders are provided sample files that can be used as references to create the definitions.
 
-## Nodes
-
-Nodes are described more in detail [here](/manual/Nodes.html).
-
-## Tasks
-
-Tasks are described more in detail [here](/manual/Tasks.html).
-
-## Scripts
-
-Scripts are described more in detail [here](/manual/Scripts.html).
-
-
-
 ## Git operations
 
 ### On push - File validation

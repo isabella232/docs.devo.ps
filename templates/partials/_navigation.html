@@ -1,11 +1,13 @@
-<h3>Guides</h3>
+<a href='/'>Getting started</a>
+
+<!-- <h3>Guides</h3>
 {% set menu = {} %}
 {% for item in guides %}
   {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
 {% endfor %}
 {% for i in menu | sort %}
 <a href='/{{ guides[menu[i]].path }}' {% if path == guides[menu[i]].path %} class='active'{% endif %}>{{ guides[menu[i]].title }}</a>
-{% endfor %}
+{% endfor %} -->
 
 <h3>Manual</h3>
 {% set menu = {} %}
