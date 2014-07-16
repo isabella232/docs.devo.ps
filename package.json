@@ -32,6 +32,7 @@
     "swig": "*",
     "metalsmith-permalinks": "*",
     "metalsmith": "*",
+    "metalsmith-build-date": "*",
     "metalsmith-ignore": "*",
     "metalsmith-static": "*",
     "metalsmith-assets": "*",

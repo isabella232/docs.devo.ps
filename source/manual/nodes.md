@@ -2,9 +2,9 @@
 title: Nodes
 ---
 
-A node is anything from a server to a firewall. 
+A node is usually a server, either physical or virtual. However, it may also refer to another component of your infrastructure: a firewall, a load balancer or storage (e.g. S3).
 
-*Currently, devo.ps only support servers but we are actively working on adding support for load balancers, firewalls and clusters.*
+*Currently, we only support servers but are actively working on adding support for load balancers, firewalls and clusters.*
 
 ## Node file
 
@@ -73,6 +73,17 @@ Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Oc
   <dt class='optional'><code><span class='type'>object</span> services</code></dt>
   <dd>A list of configuration settings to apply to the installed services, as defined in each service's documentation page.</dd>
 </dl>
+
+## Services & Configuration
+
+A service refers to a technology you want to add support for on your node; it may be a database (MySQL, CouchBase, MongoDB), a language (PHP, Python, Ruby, Node.js), a Web server (NGINX, Apache), a reverse-proxy or a load-blanacer (Varnish), HAproxy, Squid)...
+
+When adding a service to a node, you can specify a version or use the `*` as a wildcard for the latest avaiable version:
+
+    services:
+      nginx: '*'
+
+*We are currently only support the wildcard option but will soon enable users to pick a specific version of a service and handle service ugprades.*
 
 ## SSH keys & Users
 
