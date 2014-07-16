@@ -1,0 +1,645 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+  <title>Apache | devo.ps documentation</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <form>
+  <input type='text' id='st-search-input'/>
+</form>
+<script type='text/javascript'>
+var Swiftype = window.Swiftype || {};
+  (function() {
+    Swiftype.key = 'nkPRs5W_yrQndsebXC-A';
+
+    /** DO NOT EDIT BELOW THIS LINE **/
+    var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+    script.src = '//s.swiftypecdn.com/embed.js';
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+  }());
+</script>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/digital_ocean' >Digital Ocean</a>
+
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/services/apache'  class='active'>Apache</a>
+
+<a href='/services/common' >Common</a>
+
+<a href='/services/couchbase' >CouchBase</a>
+
+<a href='/services/couchdb' >CouchDB</a>
+
+<a href='/services/dart' >Dart</a>
+
+<a href='/services/docker' >Docker</a>
+
+<a href='/services/elasticsearch' >ElasticSearch</a>
+
+<a href='/services/go' >Go</a>
+
+<a href='/services/java' >Java</a>
+
+<a href='/services/memcached' >Memcached</a>
+
+<a href='/services/mongodb' >MongoDB</a>
+
+<a href='/services/mysql' >MySQL</a>
+
+<a href='/services/nginx' >Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
+
+<a href='/services/openvpn' >OpenVPN</a>
+
+<a href='/services/php' >PHP</a>
+
+<a href='/services/python' >Python</a>
+
+<a href='/services/rabbitmq' >RabbitMQ</a>
+
+<a href='/services/redis' >Redis</a>
+
+<a href='/services/ruby' >Ruby</a>
+
+<a href='/services/uwsgi' >uWSGI</a>
+
+<a href='/services/vagrant' >Vagrant</a>
+
+<a href='/services/varnish' >Varnish</a>
+
+<a href='/services/xvfb' >Xvfb</a>
+
+<a href='/services/zeromq' >ZeroMQ</a>
+
+    </nav>
+
+    <section class='content'>
+      
+
+<header class='header'>
+  <ul class='tags'>
+    
+      <li>web</li>
+    
+  </ul>
+
+  <h1>Apache 
+  <a href='http://httpd.apache.org/docs/'><span>Official documentation</span></a>
+  </h1>  
+</header>
+
+
+<section class='tasks'>
+  <h2 id='tasks'>Commands</h2>
+  <dl>
+    
+    <dt>
+      <code class='terminal'>start</code>
+    </dt>
+    <dd>
+      Start Apache if stopped
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>stop</code>
+    </dt>
+    <dd>
+      Stop Apache if started
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>reload</code>
+    </dt>
+    <dd>
+      Reload Apache, reload the configuration and perform a graceful restart
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>restart</code>
+    </dt>
+    <dd>
+      Restart Apache, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+  </dl>
+</section>
+
+
+<section class='body'>
+  <h3 id="notes">Notes</h3>
+<p>For better user experience you may prefer the use of the <code>reload</code> task instead of <code>restart</code>.</p>
+
+</section>
+
+
+<section class='configuration'>
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
+
+
+
+
+<dt><code>event</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>event.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
+</dt>
+<dd class='description'>
+  Maximum number of simultaneous client connections
+  <span class='default'>Default: <code>150</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>event.maxrequestsperchild</code>
+  <code><span class='type'>integer</span> maxrequestsperchild</code>
+</dt>
+<dd class='description'>
+  Maximum number of requests a server process serves.
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>event.maxsparethreads</code>
+  <code><span class='type'>integer</span> maxsparethreads</code>
+</dt>
+<dd class='description'>
+  Maximum number of worker threads which are kept spare.
+  <span class='default'>Default: <code>75</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>event.minsparethreads</code>
+  <code><span class='type'>integer</span> minsparethreads</code>
+</dt>
+<dd class='description'>
+  Minimum number of worker threads which are kept spare,
+  <span class='default'>Default: <code>25</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>event.startservers</code>
+  <code><span class='type'>integer</span> startservers</code>
+</dt>
+<dd class='description'>
+  Initial number of server processes to start.
+  <span class='default'>Default: <code>5</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>event.threadlimit</code>
+  <code><span class='type'>integer</span> threadlimit</code>
+</dt>
+<dd class='description'>
+  ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.
+  <span class='default'>Default: <code>64</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>event.threadsperchild</code>
+  <code><span class='type'>integer</span> threadsperchild</code>
+</dt>
+<dd class='description'>
+  Constant number of worker threads in each server process.
+  <span class='default'>Default: <code>25</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>group</code>
+  <code><span class='type'>string</span> group</code>
+</dt>
+<dd class='description'>
+  Apache running group.
+  <span class='default'>Default: <code>www-data</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>keepalive</code>
+  <code><span class='type'>string</span> keepalive</code>
+</dt>
+<dd class='description'>
+  Whether or not to allow persistent connections.
+  <span class='default'>Default: <code>true</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>keepalivetimout</code>
+  <code><span class='type'>integer</span> keepalivetimout</code>
+</dt>
+<dd class='description'>
+  Number of seconds to wait for the next request from the same client on the same connection.
+  <span class='default'>Default: <code>5</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>maxkeepaliverequests</code>
+  <code><span class='type'>integer</span> maxkeepaliverequests</code>
+</dt>
+<dd class='description'>
+  The maximum number of requests to allow during a persistent connection.
+  <span class='default'>Default: <code>100</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>prefork</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>prefork.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
+</dt>
+<dd class='description'>
+  Maximum number of server processes allowed to start.
+  <span class='default'>Default: <code>150</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>prefork.maxrequestsperchild</code>
+  <code><span class='type'>integer</span> maxrequestsperchild</code>
+</dt>
+<dd class='description'>
+  Maximum number of requests a server process serves.
+  <span class='default'>Default: <code>4000</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>prefork.maxspareservers</code>
+  <code><span class='type'>integer</span> maxspareservers</code>
+</dt>
+<dd class='description'>
+  Maximum number of server processes which are kept spare.
+  <span class='default'>Default: <code>10</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>prefork.minspareservers</code>
+  <code><span class='type'>integer</span> minspareservers</code>
+</dt>
+<dd class='description'>
+  Minimum number of server processes which are kept spare.
+  <span class='default'>Default: <code>2</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>prefork.startservers</code>
+  <code><span class='type'>integer</span> startservers</code>
+</dt>
+<dd class='description'>
+  Number of server processes to start.
+  <span class='default'>Default: <code>5</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>timeout</code>
+  <code><span class='type'>integer</span> timeout</code>
+</dt>
+<dd class='description'>
+  The number of seconds before receives and sends time out.
+  <span class='default'>Default: <code>300</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>user</code>
+  <code><span class='type'>string</span> user</code>
+</dt>
+<dd class='description'>
+  Apache running user.
+  <span class='default'>Default: <code>www-data</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>worker</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>worker.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
+</dt>
+<dd class='description'>
+  Maximum number of simultaneous client connections
+  <span class='default'>Default: <code>150</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>worker.maxrequestsperchild</code>
+  <code><span class='type'>integer</span> maxrequestsperchild</code>
+</dt>
+<dd class='description'>
+  Maximum number of requests a server process serves.
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>worker.maxsparethreads</code>
+  <code><span class='type'>integer</span> maxsparethreads</code>
+</dt>
+<dd class='description'>
+  Maximum number of worker threads which are kept spare.
+  <span class='default'>Default: <code>75</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>worker.minsparethreads</code>
+  <code><span class='type'>integer</span> minsparethreads</code>
+</dt>
+<dd class='description'>
+  Minimum number of worker threads which are kept spare,
+  <span class='default'>Default: <code>25</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>worker.startservers</code>
+  <code><span class='type'>integer</span> startservers</code>
+</dt>
+<dd class='description'>
+  Initial number of server processes to start.
+  <span class='default'>Default: <code>5</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>worker.threadlimit</code>
+  <code><span class='type'>integer</span> threadlimit</code>
+</dt>
+<dd class='description'>
+  ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.
+  <span class='default'>Default: <code>64</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>worker.threadsperchild</code>
+  <code><span class='type'>integer</span> threadsperchild</code>
+</dt>
+<dd class='description'>
+  Constant number of worker threads in each server process.
+  <span class='default'>Default: <code>25</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+  </dl>
+</section>
+
+
+
+    </section>
+  <section>
+
+  <!-- JS -->
+  <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  
+  
+</body>
+</html>

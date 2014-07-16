@@ -1,0 +1,935 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+  <title>MySQL | devo.ps documentation</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <form>
+  <input type='text' id='st-search-input'/>
+</form>
+<script type='text/javascript'>
+var Swiftype = window.Swiftype || {};
+  (function() {
+    Swiftype.key = 'nkPRs5W_yrQndsebXC-A';
+
+    /** DO NOT EDIT BELOW THIS LINE **/
+    var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+    script.src = '//s.swiftypecdn.com/embed.js';
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+  }());
+</script>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/digital_ocean' >Digital Ocean</a>
+
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/services/apache' >Apache</a>
+
+<a href='/services/common' >Common</a>
+
+<a href='/services/couchbase' >CouchBase</a>
+
+<a href='/services/couchdb' >CouchDB</a>
+
+<a href='/services/dart' >Dart</a>
+
+<a href='/services/docker' >Docker</a>
+
+<a href='/services/elasticsearch' >ElasticSearch</a>
+
+<a href='/services/go' >Go</a>
+
+<a href='/services/java' >Java</a>
+
+<a href='/services/memcached' >Memcached</a>
+
+<a href='/services/mongodb' >MongoDB</a>
+
+<a href='/services/mysql'  class='active'>MySQL</a>
+
+<a href='/services/nginx' >Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
+
+<a href='/services/openvpn' >OpenVPN</a>
+
+<a href='/services/php' >PHP</a>
+
+<a href='/services/python' >Python</a>
+
+<a href='/services/rabbitmq' >RabbitMQ</a>
+
+<a href='/services/redis' >Redis</a>
+
+<a href='/services/ruby' >Ruby</a>
+
+<a href='/services/uwsgi' >uWSGI</a>
+
+<a href='/services/vagrant' >Vagrant</a>
+
+<a href='/services/varnish' >Varnish</a>
+
+<a href='/services/xvfb' >Xvfb</a>
+
+<a href='/services/zeromq' >ZeroMQ</a>
+
+    </nav>
+
+    <section class='content'>
+      
+
+<header class='header'>
+  <ul class='tags'>
+    
+      <li>database</li>
+    
+      <li>relational</li>
+    
+  </ul>
+
+  <h1>MySQL 
+  <a href='http://dev.mysql.com/doc/'><span>Official documentation</span></a>
+  </h1>  
+</header>
+
+
+<section class='tasks'>
+  <h2 id='tasks'>Commands</h2>
+  <dl>
+    
+    <dt>
+      <code class='terminal'>start</code>
+    </dt>
+    <dd>
+      Start MySQL if stopped
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>stop</code>
+    </dt>
+    <dd>
+      Stop MySQL if started
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>reload</code>
+    </dt>
+    <dd>
+      Reload MySQL, reload the configuration and perform a graceful restart
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>restart</code>
+    </dt>
+    <dd>
+      Restart MySQL, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>user add</code>
+    </dt>
+    <dd>
+      Add a new MySQL user and a dedicated database
+      
+        <h3>Options</h3>
+        <dl>
+          
+          
+<dt>
+  <code><span class='type string'>string</span> db</code>
+  
+</dt>
+<dd class='description'>
+  Name of the database to create
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> user</code>
+  
+</dt>
+<dd class='description'>
+  Name of the user to create
+  
+  
+
+</dd>
+
+        </dl>
+      
+    </dd>
+    
+  </dl>
+</section>
+
+
+<section class='body'>
+  
+</section>
+
+
+<section class='configuration'>
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
+
+<dt>
+  <code class='full'>auto_increment_increment</code>
+  <code><span class='type'>integer</span> auto_increment_increment</code>
+</dt>
+<dd class='description'>
+  Auto increment.
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>auto_increment_offset</code>
+  <code><span class='type'>integer</span> auto_increment_offset</code>
+</dt>
+<dd class='description'>
+  Auto increment offset.
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>base_dir</code>
+  <code><span class='type'>string</span> base_dir</code>
+</dt>
+<dd class='description'>
+  Base folder.
+  <span class='default'>Default: <code>/usr</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>bind_address</code>
+  <code><span class='type'>string</span> bind_address</code>
+</dt>
+<dd class='description'>
+  Binding IP address.
+  <span class='default'>Default: <code>127.0.0.1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>data_dir</code>
+  <code><span class='type'>string</span> data_dir</code>
+</dt>
+<dd class='description'>
+  Database files path.
+  <span class='default'>Default: <code>/var/lib/mysql</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>innodb</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_adaptive_flushing</code>
+  <code><span class='type'>string</span> innodb_adaptive_flushing</code>
+</dt>
+<dd class='description'>
+  Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.
+  <span class='default'>Default: <code>true</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_additional_mem_pool_size</code>
+  <code><span class='type'>string</span> innodb_additional_mem_pool_size</code>
+</dt>
+<dd class='description'>
+  The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.
+  <span class='default'>Default: <code>8M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_buffer_pool_size</code>
+  <code><span class='type'>string</span> innodb_buffer_pool_size</code>
+</dt>
+<dd class='description'>
+  The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.
+  <span class='default'>Default: <code>128M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_data_file_path</code>
+  <code><span class='type'>string</span> innodb_data_file_path</code>
+</dt>
+<dd class='description'>
+  The paths to individual data files and their sizes.
+  <span class='default'>Default: <code>ibdata1:10M:autoextend:max:500M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_flush_log_at_trx_commit</code>
+  <code><span class='type'>integer</span> innodb_flush_log_at_trx_commit</code>
+</dt>
+<dd class='description'>
+  If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_flush_method</code>
+  <code><span class='type'>string</span> innodb_flush_method</code>
+</dt>
+<dd class='description'>
+  Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT
+  <span class='default'>Default: <code>O_DIRECT</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_log_buffer_size</code>
+  <code><span class='type'>string</span> innodb_log_buffer_size</code>
+</dt>
+<dd class='description'>
+  The size in bytes of the buffer that InnoDB uses to write to the log files on disk.
+  <span class='default'>Default: <code>8M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>innodb.innodb_log_file_size</code>
+  <code><span class='type'>string</span> innodb_log_file_size</code>
+</dt>
+<dd class='description'>
+  The size in bytes of each log file in a log group.
+  <span class='default'>Default: <code>5M</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+
+
+
+<dt><code>logs</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>logs.log_error</code>
+  <code><span class='type'>string</span> log_error</code>
+</dt>
+<dd class='description'>
+  The location of the error log.
+  <span class='default'>Default: <code>/var/log/mysql/mysql.log</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>logs.log_queries_not_using_indexes</code>
+  <code><span class='type'>string</span> log_queries_not_using_indexes</code>
+</dt>
+<dd class='description'>
+  If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>logs.long_query_time</code>
+  <code><span class='type'>number</span> long_query_time</code>
+</dt>
+<dd class='description'>
+  Increment slow_queries variable and log if a query takes longer than this many seconds.
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>logs.slow_query_log</code>
+  <code><span class='type'>integer</span> slow_query_log</code>
+</dt>
+<dd class='description'>
+  Whether the slow query log is enabled.
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>logs.slow_query_log_file</code>
+  <code><span class='type'>string</span> slow_query_log_file</code>
+</dt>
+<dd class='description'>
+  The name of the slow query log file.
+  <span class='default'>Default: <code>/var/log/mysql/slow.log</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>old_passwords</code>
+  <code><span class='type'>integer</span> old_passwords</code>
+</dt>
+<dd class='description'>
+  Allow old (non-secure) passwords.
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>pid_file</code>
+  <code><span class='type'>string</span> pid_file</code>
+</dt>
+<dd class='description'>
+  Pid file.
+  <span class='default'>Default: <code>/var/run/mysqld/mysqld.pid</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>port</code>
+  <code><span class='type'>integer</span> port</code>
+</dt>
+<dd class='description'>
+  Connection port.
+  <span class='default'>Default: <code>3306</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>query_cache</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>query_cache.query_cache_limit</code>
+  <code><span class='type'>string</span> query_cache_limit</code>
+</dt>
+<dd class='description'>
+  Do not cache results that are larger than this number of bytes.
+  <span class='default'>Default: <code>2M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>query_cache.query_cache_size</code>
+  <code><span class='type'>string</span> query_cache_size</code>
+</dt>
+<dd class='description'>
+  The amount of memory allocated for caching query results.
+  <span class='default'>Default: <code>64M</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+
+
+
+<dt><code>replication</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>replication.expire_logs_days</code>
+  <code><span class='type'>integer</span> expire_logs_days</code>
+</dt>
+<dd class='description'>
+  The number of days for automatic binary log file removal.
+  <span class='default'>Default: <code>10</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.log_bin</code>
+  <code><span class='type'>string</span> log_bin</code>
+</dt>
+<dd class='description'>
+  Enable binary logging. The option value is the basename for the log sequence.
+  <span class='default'>Default: <code>mysql-bin</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.log_bin_trust_function_creators</code>
+  <code><span class='type'>string</span> log_bin_trust_function_creators</code>
+</dt>
+<dd class='description'>
+  Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.log_slave_updates</code>
+  <code><span class='type'>string</span> log_slave_updates</code>
+</dt>
+<dd class='description'>
+  This option tells the slave to log the updates performed by its SQL thread to its own binary log.
+  <span class='default'>Default: <code>true</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.max_binlog_size</code>
+  <code><span class='type'>string</span> max_binlog_size</code>
+</dt>
+<dd class='description'>
+  If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.
+  <span class='default'>Default: <code>100M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.relay_log</code>
+  <code><span class='type'>string</span> relay_log</code>
+</dt>
+<dd class='description'>
+  The basename for the relay log.
+  <span class='default'>Default: <code>relay-bin</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.server_id</code>
+  <code><span class='type'>integer</span> server_id</code>
+</dt>
+<dd class='description'>
+  Is used in replication to enable master and slave servers to identify themselves uniquely.
+  <span class='default'>Default: <code>10</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.skip_slave_start</code>
+  <code><span class='type'>string</span> skip_slave_start</code>
+</dt>
+<dd class='description'>
+  Tells the slave server not to start the slave threads when the server starts.
+  <span class='default'>Default: <code>true</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.sync_binlog</code>
+  <code><span class='type'>integer</span> sync_binlog</code>
+</dt>
+<dd class='description'>
+  If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>socket</code>
+  <code><span class='type'>string</span> socket</code>
+</dt>
+<dd class='description'>
+  Mysql listening socket.
+  <span class='default'>Default: <code>/var/run/mysqld/mysqld.sock</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>tunable</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>tunable.back_log</code>
+  <code><span class='type'>integer</span> back_log</code>
+</dt>
+<dd class='description'>
+  The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.
+  <span class='default'>Default: <code>128</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.key_buffer</code>
+  <code><span class='type'>string</span> key_buffer</code>
+</dt>
+<dd class='description'>
+  Size of the buffer used for index blocks. The key buffer is also known as the key cache.
+  <span class='default'>Default: <code>256M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.max_allowed_packet</code>
+  <code><span class='type'>string</span> max_allowed_packet</code>
+</dt>
+<dd class='description'>
+  The maximum size of one packet or any generated/intermediate string.
+  <span class='default'>Default: <code>16M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.max_connections</code>
+  <code><span class='type'>integer</span> max_connections</code>
+</dt>
+<dd class='description'>
+  The maximum permitted number of simultaneous client connections.
+  <span class='default'>Default: <code>256</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.max_heap_table_size</code>
+  <code><span class='type'>string</span> max_heap_table_size</code>
+</dt>
+<dd class='description'>
+  Maximum size to which user-created MEMORY tables are permitted to grow.
+  <span class='default'>Default: <code>64M</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.net_read_timeout</code>
+  <code><span class='type'>integer</span> net_read_timeout</code>
+</dt>
+<dd class='description'>
+  The number of seconds to wait for more data from a connection before aborting the read.
+  <span class='default'>Default: <code>30</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.net_write_timeout</code>
+  <code><span class='type'>integer</span> net_write_timeout</code>
+</dt>
+<dd class='description'>
+  The number of seconds to wait for a block to be written to a connection before aborting the write.
+  <span class='default'>Default: <code>30</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.table_open_cache</code>
+  <code><span class='type'>integer</span> table_open_cache</code>
+</dt>
+<dd class='description'>
+  The number of open tables for all threads.
+  <span class='default'>Default: <code>1024</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.thread_cache_size</code>
+  <code><span class='type'>integer</span> thread_cache_size</code>
+</dt>
+<dd class='description'>
+  Number of threads the server should cache for reuse.
+  <span class='default'>Default: <code>32</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.thread_stack</code>
+  <code><span class='type'>string</span> thread_stack</code>
+</dt>
+<dd class='description'>
+  The stack size for each thread.
+  <span class='default'>Default: <code>256K</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>tunable.wait_timeout</code>
+  <code><span class='type'>integer</span> wait_timeout</code>
+</dt>
+<dd class='description'>
+  The number of seconds the server waits for activity on a noninteractive connection before closing it.
+  <span class='default'>Default: <code>180</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+  </dl>
+</section>
+
+
+
+    </section>
+  <section>
+
+  <!-- JS -->
+  <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  
+  
+</body>
+</html>

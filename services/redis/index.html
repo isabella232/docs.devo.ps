@@ -1,0 +1,852 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+  <title>Redis | devo.ps documentation</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link href='/assets/styles.css' rel='stylesheet' type='text/css'/>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='content'>
+      <nav class='menu'>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://devo.ps/about'>About</a>
+        <form>
+  <input type='text' id='st-search-input'/>
+</form>
+<script type='text/javascript'>
+var Swiftype = window.Swiftype || {};
+  (function() {
+    Swiftype.key = 'nkPRs5W_yrQndsebXC-A';
+
+    /** DO NOT EDIT BELOW THIS LINE **/
+    var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+    script.src = '//s.swiftypecdn.com/embed.js';
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+  }());
+</script>
+      </nav>
+
+      <a class='logo' href='http://devo.ps'>devo.ps</a> documentation
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <h3>Guides</h3>
+
+
+  
+
+
+<a href='/guides/how-to-use-the-cli' >CLI</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/digital_ocean' >Digital Ocean</a>
+
+<a href='/providers/ec2' >Ec2</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/services/apache' >Apache</a>
+
+<a href='/services/common' >Common</a>
+
+<a href='/services/couchbase' >CouchBase</a>
+
+<a href='/services/couchdb' >CouchDB</a>
+
+<a href='/services/dart' >Dart</a>
+
+<a href='/services/docker' >Docker</a>
+
+<a href='/services/elasticsearch' >ElasticSearch</a>
+
+<a href='/services/go' >Go</a>
+
+<a href='/services/java' >Java</a>
+
+<a href='/services/memcached' >Memcached</a>
+
+<a href='/services/mongodb' >MongoDB</a>
+
+<a href='/services/mysql' >MySQL</a>
+
+<a href='/services/nginx' >Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
+
+<a href='/services/openvpn' >OpenVPN</a>
+
+<a href='/services/php' >PHP</a>
+
+<a href='/services/python' >Python</a>
+
+<a href='/services/rabbitmq' >RabbitMQ</a>
+
+<a href='/services/redis'  class='active'>Redis</a>
+
+<a href='/services/ruby' >Ruby</a>
+
+<a href='/services/uwsgi' >uWSGI</a>
+
+<a href='/services/vagrant' >Vagrant</a>
+
+<a href='/services/varnish' >Varnish</a>
+
+<a href='/services/xvfb' >Xvfb</a>
+
+<a href='/services/zeromq' >ZeroMQ</a>
+
+    </nav>
+
+    <section class='content'>
+      
+
+<header class='header'>
+  <ul class='tags'>
+    
+      <li>database</li>
+    
+  </ul>
+
+  <h1>Redis 
+  <a href='http://redis.io/documentation'><span>Official documentation</span></a>
+  </h1>  
+</header>
+
+
+<section class='tasks'>
+  <h2 id='tasks'>Commands</h2>
+  <dl>
+    
+    <dt>
+      <code class='terminal'>start</code>
+    </dt>
+    <dd>
+      Start Redis if stopped
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>stop</code>
+    </dt>
+    <dd>
+      Stop Redis if started
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>reload</code>
+    </dt>
+    <dd>
+      Reload Redis, reload the configuration and perform a graceful restart
+      
+    </dd>
+    
+    <dt>
+      <code class='terminal'>restart</code>
+    </dt>
+    <dd>
+      Restart Redis, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+  </dl>
+</section>
+
+
+<section class='body'>
+  
+</section>
+
+
+<section class='configuration'>
+  <h2 id='configuration'>Configuration</h2>
+  <dl>
+    
+    
+
+
+
+
+<dt><code>aom</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>aom.aof_rewrite_min_size</code>
+  <code><span class='type'>string</span> aof_rewrite_min_size</code>
+</dt>
+<dd class='description'>
+  Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage
+  <span class='default'>Default: <code>64mb</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>aom.aof_rewrite_percentage</code>
+  <code><span class='type'>integer</span> aof_rewrite_percentage</code>
+</dt>
+<dd class='description'>
+  Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)
+  <span class='default'>Default: <code>100</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>aom.enable</code>
+  <code><span class='type'>string</span> enable</code>
+</dt>
+<dd class='description'>
+  Enable Append Only Mode
+  <span class='default'>Default: <code>no</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>aom.filename</code>
+  <code><span class='type'>string</span> filename</code>
+</dt>
+<dd class='description'>
+  Name of the append only file
+  <span class='default'>Default: <code>appendonly.aof</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>aom.fsync</code>
+  <code><span class='type'>string</span> fsync</code>
+</dt>
+<dd class='description'>
+  Fsync mode to sync the append only file
+  <span class='default'>Default: <code>everysec</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>aom.no_appendfsync_on_rewrite</code>
+  <code><span class='type'>string</span> no_appendfsync_on_rewrite</code>
+</dt>
+<dd class='description'>
+  Define whether to (not) append fsync operations if another fsync op is already in progress
+  <span class='default'>Default: <code>no</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>bind</code>
+  <code><span class='type'>string</span> bind</code>
+</dt>
+<dd class='description'>
+  Binding IP address.
+  <span class='default'>Default: <code>127.0.0.1</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>databases</code>
+  <code><span class='type'>integer</span> databases</code>
+</dt>
+<dd class='description'>
+  Number of databases within the redis server
+  <span class='default'>Default: <code>1</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>limits</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>limits.maxclients</code>
+  <code><span class='type'>integer</span> maxclients</code>
+</dt>
+<dd class='description'>
+  Max number of clients connected
+  <span class='default'>Default: <code>10000</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>limits.maxmemory</code>
+  <code><span class='type'>integer</span> maxmemory</code>
+</dt>
+<dd class='description'>
+  Maximum RAM used by Redis to store data (no limit by default) in bytes
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>limits.policy</code>
+  <code><span class='type'>string</span> policy</code>
+</dt>
+<dd class='description'>
+  Define how Redis will remove keys when maxmemory is reached
+  <span class='default'>Default: <code>volatile-lru</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>limits.samples</code>
+  <code><span class='type'>integer</span> samples</code>
+</dt>
+<dd class='description'>
+  Sample size to use to base the policy eviction for LRU and TTL policy algorithms
+  <span class='default'>Default: <code>3</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>logfile</code>
+  <code><span class='type'>string</span> logfile</code>
+</dt>
+<dd class='description'>
+  Server log file
+  <span class='default'>Default: <code>/var/log/redis/redis-server.log</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>loglevel</code>
+  <code><span class='type'>string</span> loglevel</code>
+</dt>
+<dd class='description'>
+  Server log verbosity
+  <span class='default'>Default: <code>notice</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>lua</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>lua.time_limit</code>
+  <code><span class='type'>integer</span> time_limit</code>
+</dt>
+<dd class='description'>
+  Time limit (in ms) for the execution of a LUA script
+  <span class='default'>Default: <code>5000</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>port</code>
+  <code><span class='type'>integer</span> port</code>
+</dt>
+<dd class='description'>
+  Connection port.
+  <span class='default'>Default: <code>6379</code></span>
+  
+</dd>
+
+
+
+
+
+
+<dt><code>replication</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>replication.is_slave</code>
+  <code><span class='type'>string</span> is_slave</code>
+</dt>
+<dd class='description'>
+  Is this redis instance a slave?
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.masterauth</code>
+  <code><span class='type'>string</span> masterauth</code>
+</dt>
+<dd class='description'>
+  Redis master auth password (if required)
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.masterip</code>
+  <code><span class='type'>string</span> masterip</code>
+</dt>
+<dd class='description'>
+  IP or host of the master server
+  
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.masterport</code>
+  <code><span class='type'>integer</span> masterport</code>
+</dt>
+<dd class='description'>
+  Redis port of the master server
+  <span class='default'>Default: <code>6379</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.ping_slave_period</code>
+  <code><span class='type'>integer</span> ping_slave_period</code>
+</dt>
+<dd class='description'>
+  Frequency (in sec) to ping the master server as health check
+  <span class='default'>Default: <code>10</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.priority</code>
+  <code><span class='type'>integer</span> priority</code>
+</dt>
+<dd class='description'>
+  Slave priority
+  <span class='default'>Default: <code>100</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.read_only</code>
+  <code><span class='type'>string</span> read_only</code>
+</dt>
+<dd class='description'>
+  Make the slave server read-only (preferred option)
+  <span class='default'>Default: <code>yes</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.serve_stale_data</code>
+  <code><span class='type'>string</span> serve_stale_data</code>
+</dt>
+<dd class='description'>
+  Slave redis serves stale data if the connection is lost with the master
+  <span class='default'>Default: <code>yes</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>replication.timeout</code>
+  <code><span class='type'>integer</span> timeout</code>
+</dt>
+<dd class='description'>
+  Timeout to Bulk IO transfer and ping response to mark the master as unreachable
+  <span class='default'>Default: <code>60</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+
+
+
+<dt><code>security</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>security.requirepass</code>
+  <code><span class='type'>string</span> requirepass</code>
+</dt>
+<dd class='description'>
+  Require a password to connect (either client or slave)
+  
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+
+
+
+<dt><code>slowlog</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>slowlog.log_slower_than</code>
+  <code><span class='type'>integer</span> log_slower_than</code>
+</dt>
+<dd class='description'>
+  Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries
+  <span class='default'>Default: <code>10000</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>slowlog.max_len</code>
+  <code><span class='type'>integer</span> max_len</code>
+</dt>
+<dd class='description'>
+  Length of the slow log to capture (FIFO based)
+  <span class='default'>Default: <code>128</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+
+
+
+<dt><code>snapshotting</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>snapshotting.dbfilename</code>
+  <code><span class='type'>string</span> dbfilename</code>
+</dt>
+<dd class='description'>
+  Filename where to dump the DB
+  <span class='default'>Default: <code>dump.rdb</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>snapshotting.dir</code>
+  <code><span class='type'>string</span> dir</code>
+</dt>
+<dd class='description'>
+  Folder where to store the snapshots
+  <span class='default'>Default: <code>/var/lib/redis</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>snapshotting.rdbchecksum</code>
+  <code><span class='type'>string</span> rdbchecksum</code>
+</dt>
+<dd class='description'>
+  Enable database checksum (use ~10% extra CPU)
+  <span class='default'>Default: <code>yes</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>snapshotting.rdbcompression</code>
+  <code><span class='type'>string</span> rdbcompression</code>
+</dt>
+<dd class='description'>
+  Enable database compression
+  <span class='default'>Default: <code>yes</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>snapshotting.save</code>
+  <code><span class='type'>array</span> save</code>
+</dt>
+<dd class='description'>
+  Array of save rules including seconds and number of changes that trigger a save
+  <span class='default'>Default: <code>[object Object],[object Object],[object Object]</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+
+
+
+<dt><code>syslog</code></dt>
+<dd>
+<dl>
+
+
+
+<dt>
+  <code class='full'>syslog.enable</code>
+  <code><span class='type'>string</span> enable</code>
+</dt>
+<dd class='description'>
+  Send log to syslog
+  <span class='default'>Default: <code>no</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>syslog.facility</code>
+  <code><span class='type'>string</span> facility</code>
+</dt>
+<dd class='description'>
+  Syslog facility
+  <span class='default'>Default: <code>local0</code></span>
+  
+</dd>
+
+
+
+<dt>
+  <code class='full'>syslog.ident</code>
+  <code><span class='type'>string</span> ident</code>
+</dt>
+<dd class='description'>
+  Syslog identity
+  <span class='default'>Default: <code>redis</code></span>
+  
+</dd>
+
+
+
+</dl></dd>
+
+
+
+<dt>
+  <code class='full'>timeout</code>
+  <code><span class='type'>integer</span> timeout</code>
+</dt>
+<dd class='description'>
+  Close the connection after a client is idle for N seconds (0 to disable)
+  
+  
+</dd>
+
+
+  </dl>
+</section>
+
+
+
+    </section>
+  <section>
+
+  <!-- JS -->
+  <!-- <script src='/assets/scripts.js' type='text/javascript'></script> -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  
+  
+</body>
+</html>
