@@ -85,6 +85,21 @@ When adding a service to a node, you can specify a version or use the `*` as a w
 
 *We are currently only support the wildcard option but will soon enable users to pick a specific version of a service and handle service ugprades.*
 
+Services usually come with configuration and commands, both of which are detailed on the documentation page of the service.
+
+For example, you can configure NGINX's gzip compression by modifying `http.gzip` variable, or change the default keepalive timeout (full set of ):
+
+    services:
+      nginx: '*'
+
+    configuration:
+      nginx:
+        http:
+          gzip: off
+          keepalive_timeout: 120
+
+
+
 ## SSH keys & Users
 
 A `devops` user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate [tasks](/manual/tasks).

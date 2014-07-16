@@ -19,7 +19,7 @@
 
 {% if tasks %}
 <section class='tasks'>
-  <h2 id='tasks'>Commands</h2>
+  <h2 id='commands'><a href='#commands'>Commands</a></h2>
   <dl>
     {% for task in tasks %}
     <dt>
@@ -46,7 +46,7 @@
 
 {% if configuration %}
 <section class='configuration'>
-  <h2 id='configuration'>Configuration</h2>
+  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
   <dl>
     {% set tree = configuration %}
     {% include 'partials/_tree.html' %}

@@ -1287,6 +1287,10 @@ code, .code {
         content: '0'; }
       #main .content h1 a:hover {
         color: #1F8DD6; }
+    #main .content h2 a {
+      color: inherit; }
+      #main .content h2 a:hover {
+        text-decoration: underline; }
     #main .content h2, #main .content h3 {
       /* <hack> to avoid header to obscure titles */
       margin-top: -60px;
