@@ -7,7 +7,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/guides/how-to-use-the-cli</loc>
+    <loc>http://docs.devo.ps/guides/how-to-deploy-your-nodejs-app</loc>
+    <lastmod>2014-07-16</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/CLI</loc>
     <lastmod>2014-07-16</lastmod>
   </url>
   
@@ -87,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/manual/CLI</loc>
+    <loc>http://docs.devo.ps/guides/how-to-use-the-cli</loc>
     <lastmod>2014-07-16</lastmod>
   </url>
   
