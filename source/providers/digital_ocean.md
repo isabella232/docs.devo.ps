@@ -18,21 +18,24 @@ locations:
 - country: null
   id: '6'
   name: Singapore 1
+- country: null
+  id: '7'
+  name: London 1
 sizes:
 - bandwidth: 0
   disk: 0
-  id: '66'
-  name: 512MB
+  id: '60'
+  name: 32GB
   price: 0
   price_per: hour
-  ram: 512
+  ram: 32768
 - bandwidth: 0
   disk: 0
-  id: '63'
-  name: 1GB
+  id: '61'
+  name: 16GB
   price: 0
   price_per: hour
-  ram: 1024
+  ram: 16384
 - bandwidth: 0
   disk: 0
   id: '62'
@@ -40,6 +43,13 @@ sizes:
   price: 0
   price_per: hour
   ram: 2048
+- bandwidth: 0
+  disk: 0
+  id: '63'
+  name: 1GB
+  price: 0
+  price_per: hour
+  ram: 1024
 - bandwidth: 0
   disk: 0
   id: '64'
@@ -56,25 +66,11 @@ sizes:
   ram: 8192
 - bandwidth: 0
   disk: 0
-  id: '61'
-  name: 16GB
+  id: '66'
+  name: 512MB
   price: 0
   price_per: hour
-  ram: 16384
-- bandwidth: 0
-  disk: 0
-  id: '60'
-  name: 32GB
-  price: 0
-  price_per: hour
-  ram: 32768
-- bandwidth: 0
-  disk: 0
-  id: '70'
-  name: 48GB
-  price: 0
-  price_per: hour
-  ram: 49152
+  ram: 512
 - bandwidth: 0
   disk: 0
   id: '69'
@@ -82,6 +78,13 @@ sizes:
   price: 0
   price_per: hour
   ram: 65536
+- bandwidth: 0
+  disk: 0
+  id: '70'
+  name: 48GB
+  price: 0
+  price_per: hour
+  ram: 49152
 template: provider.html
 title: Digital Ocean
 
