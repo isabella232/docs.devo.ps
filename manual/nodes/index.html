@@ -302,7 +302,17 @@ configuration:
 <pre><code>services:
   nginx: &#39;*&#39;
 </code></pre><p><em>We are currently only support the wildcard option but will soon enable users to pick a specific version of a service and handle service ugprades.</em></p>
-<h2 id="ssh-keys-users">SSH keys &amp; Users</h2>
+<p>Services usually come with configuration and commands, both of which are detailed on the documentation page of the service.</p>
+<p>For example, you can configure NGINX&#39;s gzip compression by modifying <code>http.gzip</code> variable, or change the default keepalive timeout (full set of ):</p>
+<pre><code>services:
+  nginx: &#39;*&#39;
+
+configuration:
+  nginx:
+    http:
+      gzip: off
+      keepalive_timeout: 120
+</code></pre><h2 id="ssh-keys-users">SSH keys &amp; Users</h2>
 <p>A <code>devops</code> user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate <a href="/manual/tasks">tasks</a>.</p>
 <p>Additionally, we add the <a href="/manual/profile#ssh">SSH keys defined in the profile</a> of all collaborators to the server&#39;s <code>authorized_keys</code> file for the <code>devops</code> user. This means you can log in as the <code>devops</code> user by simply running the following command:</p>
 <p><code class='terminal pre'>ssh devops@{IP ADDRESS}</code></p>

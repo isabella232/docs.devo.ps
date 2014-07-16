@@ -245,6 +245,46 @@ var Swiftype = window.Swiftype || {};
 <h2 id="branches">Branches</h2>
 <p>Repositories</p>
 <h2 id="collaborators">Collaborators</h2>
+<h2 id="creating-a-repository">Creating a repository</h2>
+<p>Creating a repository is done through the web interface on the <a href="https://app.devo.ps/#/user/profile">profile page</a>.</p>
+<p>Once created the repository is reachable at <code>git@app.devo.ps:{user}/{repo}</code> with:</p>
+<ul>
+<li><code>{user}</code>: your login user on <code>devops</code></li>
+<li><code>{repo}</code>: the newly created repo name</li>
+</ul>
+<p><strong>Note</strong>: You need to already have your SSH public key to be able to create a repository.</p>
+<h2 id="cloning-a-repository">Cloning a repository</h2>
+<p>No magic here!</p>
+<pre><code>git clone git@app.devo.ps:USER/REPO
+</code></pre><h2 id="git-folder-structure">Git folder structure</h2>
+<p><code>devops</code> expect the following file structure:</p>
+<pre><code>./
+./nodes/...
+./tasks/...
+./scripts/...
+</code></pre><p>Respectively the <code>nodes</code>, <code>tasks</code> and <code>scripts</code> folders need to hold your ... nodes, tasks, scripts files.</p>
+<p>In each of the folders are provided sample files that can be used as references to create the definitions.</p>
+<h2 id="nodes">Nodes</h2>
+<p>Nodes are described more in detail <a href="/manual/Nodes.html">here</a>.</p>
+<h2 id="tasks">Tasks</h2>
+<p>Tasks are described more in detail <a href="/manual/Tasks.html">here</a>.</p>
+<h2 id="scripts">Scripts</h2>
+<p>Scripts are described more in detail <a href="/manual/Scripts.html">here</a>.</p>
+<h2 id="git-operations">Git operations</h2>
+<h3 id="on-push-file-validation">On push - File validation</h3>
+<p>On <code>git push</code>, the file will be parsed and validated by the <code>devops</code> platform. If the file is not valid, the push will be rejected. You will need to fix the file before pushing again.</p>
+<h3 id="file-creation">File creation</h3>
+<p>On commit / push of a new node on git, the node will be provisioned on the provider defined in the file.</p>
+<p>It will use the cloud provider API credentials defined in your profile. Obviously any attempt to create a node on an invalid provider or on a provider for which no credentials are found in the profile will fail.</p>
+<h3 id="file-delete">File delete</h3>
+<p>Removing a node from the repository is interpreted by <code>devops</code> as a request to effectively remove the server. The server will be stopped and destroyed.</p>
+<h3 id="file-update">File update</h3>
+<p>Adding or removing a service, updating the configuration of a service will lead to a sync of the node. After a few minutes the node will have the services and configuration as described in the <code>yaml</code> file.</p>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Modifying the <strong><code>provider</code></strong> information will trigger no change (no resize, no migration to another provider); the provider details is only used on provisioning.</li>
+<li>Toggling the <strong><code>disabled</code></strong> attribute between <code>False</code> and <code>True</code> will in practice delete (an existing) / create (a disabled) node. It is a convenient way to keep the node definition in your git repository and use it as a temporary node spawned on demand.</li>
+</ul>
 
 </section>
 
