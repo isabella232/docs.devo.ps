@@ -327,8 +327,23 @@ configuration:
 </code></pre><p>Similarly, services may have commnads that you can use in <a href="/manual/tasks">tasks</a>. For an example, you could use the <code>devops nginx start</code> command (see <a href="/services/nginx/#commands">NGINX commands</a>).</p>
 <h2 id="status">Status</h2>
 <p>Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the <a href="/manual/git-repositories">git section</a>)</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Icon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Synchronized</strong> (synced)</td>
+<td>The actual node is in the same state</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>Synchronized</strong> (synced): </li>
 <li><strong>Synchronizing</strong> (synching):  </li>
 <li><strong>Error</strong>: the server may have failed to synchronize correctly.)</li>
 </ul>

@@ -239,44 +239,21 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='body'>
-  <p>The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server, </p>
+  <p>The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server or listing your repositories.</p>
 <h2 id="installation">Installation</h2>
-<p>You will need <code>python</code> (2.7) and <code>pip</code> on your system.</p>
-<p>You can find the details on the <a href="https://app.devo.ps/#/user/settings">user settings page</a>.</p>
-<h3 id="ubuntu-debian">Ubuntu / Debian</h3>
+<p>You will need <code>python 2.7+</code> as well as <code>pip</code> installed on your system.</p>
+<h3 id="macos">MacOS</h3>
+<p>We recommend MacOS users to use <a href="http://brew.sh/">Homebrew</a> for installing pip.</p>
+<pre><code>brew install python-pip
+sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
+</code></pre><h3 id="ubuntu-debian">Ubuntu / Debian</h3>
 <pre><code>sudo apt-get install python-pip
 sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 </code></pre><h3 id="centos-fedora-rh">CentOS / Fedora / RH</h3>
-<pre><code># install epel
-# figure it out...
-sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
-</code></pre><h3 id="macos">MacOS</h3>
-<pre><code>brew install python-pip
-sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
-</code></pre><h2 id="features">Features</h2>
-<p>The CLI lets you:</p>
-<ul>
-<li>list your repositories</li>
-<li>list the nodes / tasks within one of your repositories</li>
-<li>list the webhooks URLs currently registered and the associated tasks</li>
-<li>get the details of the nodes, including:<ul>
-<li>sync status</li>
-<li>IP address</li>
-<li>installed services</li>
-</ul>
-</li>
-<li>get the details of the tasks, including:<ul>
-<li>list of previous runs</li>
-<li>status of previous runs</li>
-</ul>
-</li>
-<li>get the full logs of:<ul>
-<li>sync operations</li>
-<li>tasks runs</li>
-</ul>
-</li>
-</ul>
-<h2 id="cli-commands">CLI commands</h2>
+<p>You will first need to install EPEL (you can find plenty of tutorials for <a href="http://fedoraproject.org/wiki/EPEL/FAQ#howtouse">Fedora</a> or <a href="http://www.rackspace.com/knowledge_center/article/installing-rhel-epel-repo-on-centos-5x-or-6x">CentOS &amp; RH</a>)</p>
+<pre><code>sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
+</code></pre><p><em>The CLI isn&#39;t currently tested or optimized on the Windows platform.</em></p>
+<h2 id="usage">Usage</h2>
 <h3 id="login-logout">Login / Logout</h3>
 <p>All CLI commands require you to be authenticated. The API keys are available on the <a href="https://app.devo.ps/#/user/settings">user settings page</a>.</p>
 <pre><code>shell&gt; devops login
