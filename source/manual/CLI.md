@@ -2,55 +2,33 @@
 title: CLI
 ---
 
-The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server, 
+The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server or listing your repositories.
 
 ## Installation
 
-You will need `python` (2.7) and `pip` on your system.
-
-You can find the details on the [user settings page](https://app.devo.ps/#/user/settings).
-
-### Ubuntu / Debian
-
-```
-sudo apt-get install python-pip
-sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
-```
-
-### CentOS / Fedora / RH
-
-```
-# install epel
-# figure it out...
-sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
-```
+You will need `python 2.7+` as well as `pip` installed on your system.
 
 ### MacOS
 
-```
-brew install python-pip
-sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
-```
+We recommend MacOS users to use [Homebrew](http://brew.sh/) for installing pip.
 
-## Features
+    brew install python-pip
+    sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 
-The CLI lets you:
+### Ubuntu / Debian
 
-- list your repositories
-- list the nodes / tasks within one of your repositories
-- list the webhooks URLs currently registered and the associated tasks
-- get the details of the nodes, including:
-  - sync status
-  - IP address
-  - installed services
-- get the details of the tasks, including:
-  - list of previous runs
-  - status of previous runs
-- get the full logs of:
-  - sync operations
-  - tasks runs
+    sudo apt-get install python-pip
+    sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
 
-## CLI commands
+### CentOS / Fedora / RH
+
+You will first need to install EPEL (you can find plenty of tutorials for [Fedora](http://fedoraproject.org/wiki/EPEL/FAQ#howtouse) or [CentOS & RH](http://www.rackspace.com/knowledge_center/article/installing-rhel-epel-repo-on-centos-5x-or-6x))
+
+    sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
+
+*The CLI isn't currently tested or optimized on the Windows platform.*
+
+## Usage
 
 ### Login / Logout
 

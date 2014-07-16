@@ -110,7 +110,9 @@ Similarly, services may have commnads that you can use in [tasks](/manual/tasks)
 
 Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the [git section](/manual/git-repositories))
 
-- **Synchronized** (synced): 
+Status | Description | Icon
+--- | --- | ---
+**Synchronized** (synced) | The actual node is in the same state | 
 - **Synchronizing** (synching):  
 - **Error**: the server may have failed to synchronize correctly.)
 
