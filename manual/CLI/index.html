@@ -272,37 +272,53 @@ sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
   <dd>Return the list of all the repositories you have access to (as displayed in your profile).</dd>
 
   <dt><code class='terminal'>devops list [--repo={REPO}] nodes</code></dt>
-  <dd>Return the list of all the nodes in the specified repository (<code>{REPO}</code>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small></dd>
-
-  <dt><code class='terminal'>devops list [--repo={REPO}] tasks</code></dt>
-  <dd>Return the list of all the tasks associated with the specified repository (<code>{REPO}</code>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small></dd>
-
-  <dt><code class='terminal'>devops list [--repo={REPO}] webhooks</code></dt>
-  <dd>Return the list of all the webhooks associated with tasks from the specified repository (<code>{REPO}</code>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small></dd>
-
-  <dt><code class='terminal'>devops info [--repo={REPO}] --node {NODE}</code></dt>
-  <dd>Return information (IP address, status, services and public SSH keys) about the specified node (where &#39;{NODE}&#39; is the node id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  <dd>Return the list of all the nodes in the specified repository (<code>{REPO}</code>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
   </dd>
 
-  <dt><code class='terminal'>devops run [--repo={REPO}] {TASK}</code></dt>
-  <dd>Triggers the designated task (where <code>{TASK}</code> is the task id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  <dt><code class='terminal'>devops list [--repo={REPO}] tasks</code></dt>
+  <dd>Return the list of all the tasks associated with the specified repository (<code>{REPO}</code>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
+
+  <dt><code class='terminal'>devops list [--repo={REPO}] runs {TASK} [--count={COUNT}]</code></dt>
+  <dd>Returns the list of the previous runs of a task specified by <code>{TASK}</code>, limiting the list size to <code>{COUNT}</code> runs. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If the <code>--count</code> option is ommitted, will fetch the last 10 runs by default.</small>
+  </dd>
+
+  <dt><code class='terminal'>devops list [--repo={REPO}] webhooks</code></dt>
+  <dd>Return the list of all the webhooks associated with tasks from the specified repository (<code>{REPO}</code>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
   </dd>
 
   <dt><code class='terminal'>devops sync [--repo={REPO}] {NODE}</code></dt>
   <dd>Trigger the syncing of the specified node (where <code>{NODE}</code> is the node id). This is useful in case a node fell out of sync (see <a href="/manual/nodes/#status">nodes status</a>). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
   </dd>
 
+  <dt><code class='terminal'>devops info [--repo={REPO}] {NODE}</code></dt>
+  <dd>Return information (IP address, status, services and public SSH keys) about the specified node (where &#39;{NODE}&#39; is the node id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
+
+  <dt><code class='terminal'>devops link [--repo={REPO}] {NODE}</code></dt>
+  <dd>Link the node (where <code>{NODE}</code> is the node id) to devo.ps with the information provided interactively. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). Note: the node file must be already exist in devo.ps.</small>
+  </dd>
+
+  <dt><code class='terminal'>devops run [--repo={REPO}] {TASK}</code></dt>
+  <dd>Triggers the designated task (where <code>{TASK}</code> is the task id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
+
   <dt><code class='terminal'>devops logs [--repo={REPO}] --node={NODE}</code></dt>
   <dd>Returns the logs of the latest sync. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
   </dd>
 
-  <dt><code class='terminal'>devops logs [--repo={REPO}] --task={TASK} {RUN}</code></dt>
-  <dd>Returns the logs of the run specified by the run id <code>{RUN}</code> for the task which id is <code>{TASK}</code>. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  <dt><code class='terminal'>devops logs [--repo={REPO}] --task={TASK} [{RUN}]</code></dt>
+  <dd>Returns the logs of the run specified by the run id <code>{RUN}</code> for the task which id is <code>{TASK}</code>. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If no <code>{RUN}</code> is provided, will fetch the logs of the latest run.</small>
   </dd>
 
-  <dt><code class='terminal'>devops ssh [--repo={REPO}] {NODE}</code></dt>
+  <dt><code class='terminal'>devops ssh [--repo={REPO}] [{NODE}]</code></dt>
   <dd>Establish an SSH connection with the designated node (where {NODE} is the node id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If <code>{NODE}</code> is ommitted and the repository only contains 1 node, connects to this node.</small>
   </dd>
+
+  <dt><code class='terminal'>devops ssh-config [--repo={REPO}] [{NODE}]</code></dt>
+  <dd>Show the SSH connection configuration used to connect to the designated node (where <code>{NODE}</code> is the node id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If <code>{NODE}</code> is ommitted returns the ssh-config of all the nodes defined in the repository.</small>
+  </dd>
+
 </dl>
 </section>
 
