@@ -308,7 +308,7 @@ sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
   </dd>
 
   <dt><code class='terminal'>devops logs [--repo={REPO}] --task={TASK} [{RUN}]</code></dt>
-  <dd>Returns the logs of the run specified by the run id <code>{RUN}</code> for the task which id is <code>{TASK}</code>. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If no <code>{RUN}</code> is provided, will fetch the logs of the latest run.</small>
+  <dd>Returns the logs of the run specified by the run id <code>{RUN}</code> for the task which id is <code>{TASK}</code>. <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If <code>{RUN}</code> is ommitted, fetches the logs of the latest run.</small>
   </dd>
 
   <dt><code class='terminal'>devops ssh [--repo={REPO}] [{NODE}]</code></dt>
@@ -316,7 +316,7 @@ sudo pip install https://app.devo.ps/cli/devops-cli-latest.tar.gz
   </dd>
 
   <dt><code class='terminal'>devops ssh-config [--repo={REPO}] [{NODE}]</code></dt>
-  <dd>Show the SSH connection configuration used to connect to the designated node (where <code>{NODE}</code> is the node id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If <code>{NODE}</code> is ommitted returns the ssh-config of all the nodes defined in the repository.</small>
+  <dd>Show the SSH connection configuration used to connect to the designated node (where <code>{NODE}</code> is the node id). <small>If the <code>--repo</code> option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If <code>{NODE}</code> is ommitted, returns the ssh-config of all the nodes defined in the repository.</small>
   </dd>
 
 </dl>
