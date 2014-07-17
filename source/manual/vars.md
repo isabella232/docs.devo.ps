@@ -2,7 +2,7 @@
 title: Variables
 ---
 
-Variables, usually refered to as `vars`, refers both the configuration and meta data coming from your servers (services configuration, ID address, size )
+Variables, usually refered to as `vars`, refers to the services configuration, meta data and services configuration, ID address, size )
 
 ## Assigning and Reading
 
