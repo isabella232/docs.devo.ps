@@ -80,7 +80,7 @@ You will first need to install EPEL (you can find plenty of tutorials for [Fedor
   </dd>
 
   <dt><code class='terminal'>devops logs [--repo={REPO}] --task={TASK} [{RUN}]</code></dt>
-  <dd>Returns the logs of the run specified by the run id `{RUN}` for the task which id is `{TASK}`. <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If no `{RUN}` is provided, will fetch the logs of the latest run.</small>
+  <dd>Returns the logs of the run specified by the run id `{RUN}` for the task which id is `{TASK}`. <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If `{RUN}` is ommitted, fetches the logs of the latest run.</small>
   </dd>
 
   <dt><code class='terminal'>devops ssh [--repo={REPO}] [{NODE}]</code></dt>
@@ -88,7 +88,7 @@ You will first need to install EPEL (you can find plenty of tutorials for [Fedor
   </dd>
 
   <dt><code class='terminal'>devops ssh-config [--repo={REPO}] [{NODE}]</code></dt>
-  <dd>Show the SSH connection configuration used to connect to the designated node (where `{NODE}` is the node id). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If `{NODE}` is ommitted returns the ssh-config of all the nodes defined in the repository.</small>
+  <dd>Show the SSH connection configuration used to connect to the designated node (where `{NODE}` is the node id). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If `{NODE}` is ommitted, returns the ssh-config of all the nodes defined in the repository.</small>
   </dd>
 
 </dl>
