@@ -52,7 +52,7 @@ You will first need to install EPEL (you can find plenty of tutorials for [Fedor
   </dd>
 
   <dt><code class='terminal'>devops list [--repo={REPO}] runs {TASK} [--count={COUNT}]</code></dt>
-  <dd>Returns the list of the previous runs of a task specified by `{TASK}`, limiting the list size to `{COUNT}` runs. <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If the `--count` option is ommitted, will fetch the last 10 runs by default.</small>
+  <dd>Returns the list of the previous runs of a task specified by `{TASK}`, limiting the list size to `{COUNT}` runs. <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If the `--count` option is ommitted, fetches the last 10 runs by default.</small>
   </dd>
 
   <dt><code class='terminal'>devops list [--repo={REPO}] webhooks</code></dt>
