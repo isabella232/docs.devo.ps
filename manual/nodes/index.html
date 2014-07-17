@@ -326,7 +326,7 @@ configuration:
       keepalive_timeout: 120
 </code></pre><p>Similarly, services may have commnads that you can use in <a href="/manual/tasks">tasks</a>. For an example, you could use the <code>devops nginx start</code> command (see <a href="/services/nginx/#commands">NGINX commands</a>).</p>
 <h2 id="status">Status</h2>
-<p>Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the <a href="/manual/git-repositories">git section</a>)</p>
+<p>Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the <a href="/manual/git-repositories">git section</a>).</p>
 <table>
 <thead>
 <tr>
@@ -337,16 +337,23 @@ configuration:
 </thead>
 <tbody>
 <tr>
-<td><strong>Synchronized</strong> (synced)</td>
-<td>The actual node is in the same state</td>
-<td></td>
+<td><span class='icon synced'></span></td>
+<td><strong>Synced</strong></td>
+<td>The node is matching the state described in your repository. Traditional configuration management systems call this a &quot;converged&quot; state.</td>
+</tr>
+<tr>
+<td><span class='icon syncing'></span></td>
+<td><strong>Syncing</strong></td>
+<td>The node is currently being updated to try and reach the state described in your repository. Traditional configuration management systems call &quot;converging&quot;.</td>
+</tr>
+<tr>
+<td> <span class='icon error'></span></td>
+<td><strong>Out of sync</strong></td>
+<td>The latest snycing failed or the service lost contact with the node. The current state isn&#39;t the same as what is in your repo. Check the console logs for more information.</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>Synchronizing</strong> (synching):  </li>
-<li><strong>Error</strong>: the server may have failed to synchronize correctly.)</li>
-</ul>
+<p><em>If a syncing fails, the system will try a certain amount of times before giving up. You trigger another series of attempts by using the sync action either through the Web UI or CLI.</em></p>
 <h2 id="ssh-keys-users">SSH keys &amp; Users</h2>
 <p>A <code>devops</code> user is created on all servers provisioned by devo.ps. This user is used by our service to maintain your servers (add services, update configuration...) and orchestrate <a href="/manual/tasks">tasks</a>.</p>
 <p>Additionally, we add the <a href="/manual/profile#ssh">SSH keys defined in the profile</a> of all collaborators to the server&#39;s <code>authorized_keys</code> file for the <code>devops</code> user. This means you can log in as the <code>devops</code> user by simply running the following command:</p>
