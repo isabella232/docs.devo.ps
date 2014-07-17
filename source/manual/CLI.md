@@ -30,104 +30,49 @@ You will first need to install EPEL (you can find plenty of tutorials for [Fedor
 
 ## Usage
 
-### Login / Logout
+<dl>
+  <dt><code class='terminal'>devops --help</code></dt>
+  <dd>Displays the full list of commands supported by the CLI.</dd>
 
-All CLI commands require you to be authenticated. The API keys are available on the [user settings page](https://app.devo.ps/#/user/settings).
+  <dt><code class='terminal'>devops login</code></dt>
+  <dd>Authenticate your CLI; this require you use the API key given to you on the [user settings page](https://app.devo.ps/#/user/settings).</dd>
 
-```
-shell> devops login
-shell> devops logout
-```
+  <dt><code class='terminal'>devops logout</code></dt>
+  <dd>Logs your CLI out.</dd>
 
-### Help
+  <dt><code class='terminal'>devops list repos</code></dt>
+  <dd>Return the list of all the repositories you have access to (as displayed in your profile).</dd>
 
-The help will give you the full list of commands supported by the CLI.
+  <dt><code class='terminal'>devops list [--repo={REPO}] nodes</code></dt>
+  <dd>Return the list of all the nodes in the specified repository (`{REPO}`). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small></dd>
 
-```
-shell> devops --help 
-```
+  <dt><code class='terminal'>devops list [--repo={REPO}] tasks</code></dt>
+  <dd>Return the list of all the tasks associated with the specified repository (`{REPO}`). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small></dd>
 
-### List
+  <dt><code class='terminal'>devops list [--repo={REPO}] webhooks</code></dt>
+  <dd>Return the list of all the webhooks associated with tasks from the specified repository (`{REPO}`). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small></dd>
 
-- **List repositories**: will return the list of all the repositories of your logged-in user
+  <dt><code class='terminal'>devops info [--repo={REPO}] --node {NODE}</code></dt>
+  <dd>Return information (IP address, status, services and public SSH keys) about the specified node (where '{NODE}' is the node id). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
 
-```
-shell> devops list repos
-```
+  <dt><code class='terminal'>devops run [--repo={REPO}] {TASK}</code></dt>
+  <dd>Triggers the designated task (where `{TASK}` is the task id). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
 
-- **List nodes**: will return the list of the nodes defined in the current repository (if you are in a devo.ps' managed git repository), or in the repository specified in the option
+  <dt><code class='terminal'>devops sync [--repo={REPO}] {NODE}</code></dt>
+  <dd>Trigger the syncing of the specified node (where `{NODE}` is the node id). This is useful in case a node fell out of sync (see [nodes status](/manual/nodes/#status)). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
 
-```
-# Get the list of nodes in the current repository
-shell> devops list nodes
+  <dt><code class='terminal'>devops logs [--repo={REPO}] --node={NODE}</code></dt>
+  <dd>Returns the logs of the latest sync. <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
 
-# Get the list of nodes in another repository
-shell> devops list --repo=other_repo nodes
-```
+  <dt><code class='terminal'>devops logs [--repo={REPO}] --task={TASK} {RUN}</code></dt>
+  <dd>Returns the logs of the run specified by the run id `{RUN}` for the task which id is `{TASK}`. <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository).</small>
+  </dd>
 
-- **List tasks**: will return the list of the tasks (either in the current repository or in the repo defined in the option - same as for nodes)
-
-```
-shell> devops list [--repo=other_repo] tasks
-```
-
-- **List webhooks**: will return the list of webhooks registered within the current repository and the linked task
-
-```
-shell> devops list [--repo=other_repo] webhooks
-```
-
-### Info
-
-- **Nodes info**: will return the essential info about your nodes including:
-  - IP address
-  - sync status (success / error)
-  - short list of services
-  - `devops` SSH public key
-
-```
-shell> devops info [--repo=other_repo] --node {node_id}
-```
-
-### Run and Sync actions
-
-- **Run**: will effectively triggers the execution of the requested task. Eventually will execute each step of the task on the nodes defined in the task definition
-
-```
-shell> devops run [--repo=other_repo] {task_id}
-```
-
-- **Sync**: will request a node to be synced. Usually sync operation are automatically triggered upon git commit/push of a node YAML file. But the sync operation may sometime fail due (e.g. error in the configuration, network error). The `Sync` action triggered via the CLI will perform a full sync of the node and ensure the remote server effectively is synced with its definition.
-
-```
-shell> devops sync [--repo=other_repo] {node_id}
-```
-
-### Logs
-
-Getting to know more in detail what is going on during the execution of task may prove invaluable. Logs are there for that.
-
-Not to get confused, the logs available are the logs of the operations performed by the devops platform, not any other log defined on the remote platform (e.g. `/var/log/messages`, nginx logs)
-
-- **Node sync logs**: will show each individual step performed during the sync operation
-
-```
-shell> devops logs [--repo=other_repo] --node {node_id}
-```
-
-- **Task's run logs**: will show the log of a specific run (by id); the id of a specific run is obtained via the `details` command for a task
-
-```
-shell> devops logs [--repo=other_repo] --task {task_id} {run_id}
-```
-
-### SSH
-
-Simple yet useful way to access your nodes over ssh without having to bother with the IP address
-
-```
-shell> devops ssh [--repo=other_repo] [{node_id}]
-```
-
-**Notes**:
-- {node_id} is optional and only required if you have more than one node defined in your repository
+  <dt><code class='terminal'>devops ssh [--repo={REPO}] {NODE}</code></dt>
+  <dd>Establish an SSH connection with the designated node (where {NODE} is the node id). <small>If the `--repo` option is ommitted, assumes the repo is the one you run the command from (requires a local clone of the repository). If `{NODE}` is ommitted and the repository only contains 1 node, connects to this node.</small>
+  </dd>
+</dl>

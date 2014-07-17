@@ -36,7 +36,6 @@ body {
 
 code,
 .code {
-  vertical-align: bottom;
   .key {
     color: $purple;
   }
@@ -202,6 +201,12 @@ code,
         padding-left: $gutter;
         &:last-child {
           border-bottom: 1px solid tint($line, 40%);
+        }
+        small {
+          display: block;
+          code {
+            font-size: inherit;
+          }
         }
       }
       dl {
