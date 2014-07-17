@@ -15,6 +15,25 @@ body {
   text-align: center;
 }
 
+.icon {
+  &:before {
+    @include icon();
+    @include font-size($large);
+  }
+  &.error:before {
+    color: $red;
+    content: 'X';
+  }
+  &.synced:before {
+    color: $green;
+    content: 'O';
+  }
+  &.syncing:before {
+    color: $blue;
+    content: 'L';
+  }
+}
+
 code,
 .code {
   vertical-align: bottom;

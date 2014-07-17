@@ -108,13 +108,15 @@ Similarly, services may have commnads that you can use in [tasks](/manual/tasks)
 
 ## Status
 
-Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the [git section](/manual/git-repositories))
+Whenever a change to a node is pushed to your repository, devo.ps will try to apply that change to your infrastructure (more information on this process in the [git section](/manual/git-repositories)).
 
 Status | Description | Icon
 --- | --- | ---
-**Synchronized** (synced) | The actual node is in the same state | 
-- **Synchronizing** (synching):  
-- **Error**: the server may have failed to synchronize correctly.)
+<span class='icon synced'></span> | **Synced** | The node is matching the state described in your repository. Traditional configuration management systems call this a "converged" state.
+<span class='icon syncing'></span> | **Syncing** | The node is currently being updated to try and reach the state described in your repository. Traditional configuration management systems call "converging".
+ <span class='icon error'></span> | **Out of sync** | The latest snycing failed or the service lost contact with the node. The current state isn't the same as what is in your repo. Check the console logs for more information.
+
+*If a syncing fails, the system will try a certain amount of times before giving up. You trigger another series of attempts by using the sync action either through the Web UI or CLI.*
 
 
 ## SSH keys & Users

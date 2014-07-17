@@ -1133,6 +1133,25 @@ body {
   background: #fafafb;
   text-align: center; }
 
+.icon:before {
+  font-family: 'icons';
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  font-size: 24px;
+  font-size: 2.4rem; }
+.icon.error:before {
+  color: #FF5F5F;
+  content: 'X'; }
+.icon.synced:before {
+  color: #50CD84;
+  content: 'O'; }
+.icon.syncing:before {
+  color: #1F8DD6;
+  content: 'L'; }
+
 code, .code {
   vertical-align: bottom; }
   code .key, .code .key {
