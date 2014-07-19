@@ -12,7 +12,7 @@ The SSH keys defined in your profile are used for two things:
 
 * **Git access**; when cloning a repository, you will only be asked to run a command like:
 
-    <code class='terminal'>git clone git@app.devo.ps:{USERNAME}/{REPO}
+    <code class='terminal'>git clone git@app.devo.ps:{USERNAME}/{REPO}</code>
 
     We use your SSH keys to try and authenticate you against the Git server.
 
