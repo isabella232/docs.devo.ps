@@ -12,7 +12,7 @@ The SSH keys defined in your profile are used for two things:
 
 * **Git access**; when cloning a repository, you will only be asked to run a command like:
 
-    <code class='terminal'>git clone git@app.devo.ps:{USERNAME}/{REPO}</code>
+    <code class='terminal pre'>git clone git@app.devo.ps:{USERNAME}/{REPO}</code>
 
     We use your SSH keys to try and authenticate you against the Git server.
 
@@ -20,7 +20,7 @@ The SSH keys defined in your profile are used for two things:
 
 * **SSH access**; any node created though our service will have your keys, and those of your collaborators, added to the `devops` user's `authorized_keys` file. This mean you can at any time log in your servers by running the following command;
 
-    <code class='terminal'>ssh devops@{IP_ADDRESS}</code>
+    <code class='terminal pre'>ssh devops@{IP_ADDRESS}</code>
 
     Where {IP_ADDRESS} is the IP address of your server. You can retrieve this information either using the [CLI](/manual/cli#usage) (see the `devops info` command) or using the Web UI on the details page of your node. You can also use the [CLI](/manual/cli#usage)'s `devops ssh` command.
 
