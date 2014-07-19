@@ -249,12 +249,12 @@ var Swiftype = window.Swiftype || {};
 <p>The SSH keys defined in your profile are used for two things:</p>
 <ul>
 <li><p><strong>Git access</strong>; when cloning a repository, you will only be asked to run a command like:</p>
-<p>  <code class='terminal'>git clone git@app.devo.ps:{USERNAME}/{REPO}</code></p>
+<p>  <code class='terminal pre'>git clone git@app.devo.ps:{USERNAME}/{REPO}</code></p>
 <p>  We use your SSH keys to try and authenticate you against the Git server.</p>
 <p>  <em>We currently don&#39;t support HTTP or username/password Git access.</em></p>
 </li>
 <li><p><strong>SSH access</strong>; any node created though our service will have your keys, and those of your collaborators, added to the <code>devops</code> user&#39;s <code>authorized_keys</code> file. This mean you can at any time log in your servers by running the following command;</p>
-<p>  <code class='terminal'>ssh devops@{IP_ADDRESS}</code></p>
+<p>  <code class='terminal pre'>ssh devops@{IP_ADDRESS}</code></p>
 <p>  Where {IP_ADDRESS} is the IP address of your server. You can retrieve this information either using the <a href="/manual/cli#usage">CLI</a> (see the <code>devops info</code> command) or using the Web UI on the details page of your node. You can also use the <a href="/manual/cli#usage">CLI</a>&#39;s <code>devops ssh</code> command.</p>
 </li>
 </ul>
