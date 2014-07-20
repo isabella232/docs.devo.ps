@@ -2,7 +2,11 @@
 title: Variables
 ---
 
-Variables, usually refered to as `vars`, refers to the services configuration, meta data and services configuration, ID address, size )
+Variables, usually refered to as `vars`, refers to various kind of values set through devo.ps;
+
+- **Services configuration**;
+- **Meta data**;
+- **Custom variables**;
 
 ## Assigning and Reading
 
