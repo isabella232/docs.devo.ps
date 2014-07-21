@@ -2,76 +2,52 @@
 title: Git & Repositories
 ---
 
-Repositories contain a list of YAML files (and optional)
+## Repositories 
 
+devo.ps allows you to create Git repositories. Each repository can contain any number of nodes, tasks and scripts. These can only reference each other; for example, a task may not refer to the variables or nodes defined in another repository. You can add a repository from the profile page.
 
-## File structure
+### Files & Folders
 
-- `nodes/`
-- `scripts/`
-- `tasks/`
+We recommend you organize your repositories in three subfolders:
 
-## README files
+- `nodes/` contains nodes files (servers),
+- `scripts/` contains scripts (shell, Ruby, Python...),
+- `tasks/` contains tasks files,
 
-Additionally, you can add markdown files anywhere 
+*We currently require you to use the folder structure but will be soon allowing users to use any kind of organization.*
 
-## Branches
+Folder can contain subfolders. Nodes and tasks files must be `.yaml` or `.yml` files, scripts should be `.sh`, `.py` or `.rb`. We also support README files; either `README.md`, `README.txt` or `README` will work.
 
-Repositories
+### Branches
 
-## Collaborators
+Branches of a repository can be **active**. For every active branch, devo.ps will try and provision nodes and run tasks as opposed to inactive branches. [Validation](#validation) only happens on active branches.
 
-## Creating a repository
+*We currently only allow the master branch to be active.*
 
-Creating a repository is done through the web interface on the [profile page](https://app.devo.ps/#/user/profile).
+### Collaborators
 
-Once created the repository is reachable at `git@app.devo.ps:{user}/{repo}` with:
+You can invite any number of devo.ps users as collaborators: they will have read and write access to the repository but won't be able to either read your profile information (cloud provider keys) or change the repository settings (collaborators and active branches).
 
-- `{user}`: your login user on `devops`
-- `{repo}`: the newly created repo name
+*We are currently adding more granular permission management allowing to manage teams and delegate admin permissions to other users.*
 
-__Note__: You need to already have your SSH public key to be able to create a repository.
+## Git
 
-## Cloning a repository
+### URL
 
-No magic here!
+Each repository is available at `git@app.devo.ps:{USER}/{REPO}` where `{USER}` is the username of the repository's owner and `{REPO}` is the repository's name. To clone this repository on your loca, simply run:
 
-    git clone git@app.devo.ps:USER/REPO
+<code class='terminal pre'>git clone</code>
 
-## Git folder structure
+### Validation
 
-`devops` expect the following file structure:
+Whenever you `git push` your local changes, we run the committed files through a validation step (if the branch you're working is active). If the validation fails, the push command will fail with an error informing you of the potential issue.
 
-    ./
-    ./nodes/...
-    ./tasks/...
-    ./scripts/...
+### Operations
 
-Respectively the `nodes`, `tasks` and `scripts` folders need to hold your ... nodes, tasks, scripts files.
+- **Add a file**; if the file is a node, we will attempt to provision it using the cloud provider key provided in the profile of the repository's owner. For a task, the triggers (webhook or other) will be added and the task will start being run as soon as one of them is triggered.
 
-In each of the folders are provided sample files that can be used as references to create the definitions.
+- **Remove a file**; if the file is a node, we will effectively attempt to decommission the server, which means **you will loose all data stored on the node**. Task will simply be removed and no new run will be added. If a task is removed while running, the run will finish.
 
-## Git operations
+    *We are currently implementing more advanced storage features which will allow you to backup and snapshot your data (files and database) before deleting a node.
 
-### On push - File validation
-
-On `git push`, the file will be parsed and validated by the `devops` platform. If the file is not valid, the push will be rejected. You will need to fix the file before pushing again.
-
-### File creation
-
-On commit / push of a new node on git, the node will be provisioned on the provider defined in the file.
-
-It will use the cloud provider API credentials defined in your profile. Obviously any attempt to create a node on an invalid provider or on a provider for which no credentials are found in the profile will fail.
-
-### File delete
-
-Removing a node from the repository is interpreted by `devops` as a request to effectively remove the server. The server will be stopped and destroyed.
-
-### File update
-
-Adding or removing a service, updating the configuration of a service will lead to a sync of the node. After a few minutes the node will have the services and configuration as described in the `yaml` file.
-
-__Notes__:
-
-- Modifying the __`provider`__ information will trigger no change (no resize, no migration to another provider); the provider details is only used on provisioning.
-- Toggling the __`disabled`__ attribute between `False` and `True` will in practice delete (an existing) / create (a disabled) node. It is a convenient way to keep the node definition in your git repository and use it as a temporary node spawned on demand.
+- **Update a file**; for nodes, the configuration will be adjusted. If this involves changing the provider or a change in size that requires to provision a new box, we will first destroy the existing node before re-provisioning a new one.
