@@ -245,44 +245,50 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='body'>
-  <p>Variables, usually refered to as <code>vars</code>, refers to various kind of values set through devo.ps;</p>
+  <h2 id="types-of-variables">Types of variables</h2>
+<p>Variables, usually refered to as <code>vars</code>, are various kind of values available through devo.ps;</p>
 <ul>
-<li><strong>Services configuration</strong>;</li>
-<li><strong>Meta data</strong>;</li>
-<li><strong>Custom variables</strong>;</li>
+<li><p><strong>Services configuration</strong>; each service comes with a set of default configuration that you can override. The value of each each of these configuration is available as a variable.</p>
+<p>  For example, the NGINX service has a <code>events.worker_connections</code> <a href="/services/nginx#configuration">configuration variable</a>. If that service is installed on the <code>web_1</code> node, then you should be able to access it at <code>{{ web_1.configuration.nginx.events.worker_connections }}</code>.</p>
+</li>
+<li><p><strong>Meta data</strong>; some information coming is dynamically assigned to each node upon provisioning.</p>
+<p>  For example, the IP address (<code>{{ web_1.ip }})</code>) or devops SSH key (<code>{{ web1.pub_key }}</code>).</p>
+</li>
+<li><p><strong>Custom variables</strong>; users can define custom variables in the <code>vars</code> attributes of nodes, tasks and tasks commands.</p>
+<p>  For example, </p>
+</li>
 </ul>
-<h2 id="assigning-and-reading">Assigning and Reading</h2>
-<h2 id="registry">Registry</h2>
-<h2 id="scope">Scope</h2>
-<p>The <code>vars</code> attribute define a list of variables that can be use anywhere in the future commands.</p>
-<p>For example:</p>
+<h2 id="assigning">Assigning</h2>
 <pre><code>vars:
-  myvar: value
-  my_other_var: other_value
-</code></pre><p>Allows you to use <code>{{ myvar }}</code> and <code>{{ my_other_var }}</code> in either:</p>
+  my_var: 123
+  my_other_var: [&quot;An&quot;, &quot;array&quot;, &quot;of&quot;, &quot;strings&quot;]
+  {{ my_global_var }}: &quot;Something else again&quot;
+</code></pre><!-- ## Registry -->
+
+<h2 id="reading">Reading</h2>
 <ul>
-<li>an inline command like</li>
-</ul>
-<pre><code>steps:
-  - run: mkdir {{ myvar }} &amp;&amp; cd {{ myvar }}
-</code></pre><ul>
-<li>or with a script</li>
-</ul>
-<pre><code>steps:
-  - run: devops scripts/some_script.sh
+<li><p>an inline command like</p>
+<pre><code>  steps:
+    - run: mkdir {{ myvar }} &amp;&amp; cd {{ myvar }}
+</code></pre></li>
+<li><p>or with a script</p>
+<pre><code>  steps:
+    - run: devops scripts/some_script.sh
 
-shell&gt; cat ./scripts/some_script.sh
+  shell&gt; cat ./scripts/some_script.sh
 
-#!/bin/bash
-echo {{ my_other_var }}
-</code></pre><ul>
-<li>or within a package task</li>
+  #!/bin/bash
+  echo {{ my_other_var }}
+</code></pre></li>
+<li><p>or within a package task</p>
+<pre><code>  steps:
+    - run: devops package some_task
+      options:
+        some: {{ myvar }}
+</code></pre></li>
 </ul>
-<pre><code>steps:
-  - run: devops package some_task
-    options:
-      some: {{ myvar }}
-</code></pre>
+<!-- ## Scope -->
+
 </section>
 
 
