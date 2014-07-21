@@ -36,7 +36,7 @@ You can invite any number of devo.ps users as collaborators: they will have read
 
 Each repository is available at `git@app.devo.ps:{USER}/{REPO}` where `{USER}` is the username of the repository's owner and `{REPO}` is the repository's name. To clone this repository on your loca, simply run:
 
-<code class='terminal pre'>git clone</code>
+<code class='terminal pre'>git clone git@app.devo.ps:{USER}/{REPO}</code>
 
 ### Validation
 
