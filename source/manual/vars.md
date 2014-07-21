@@ -2,54 +2,53 @@
 title: Variables
 ---
 
-Variables, usually refered to as `vars`, refers to various kind of values set through devo.ps;
+## Types of variables
 
-- **Services configuration**;
-- **Meta data**;
-- **Custom variables**;
+Variables, usually refered to as `vars`, are various kind of values available through devo.ps;
 
-## Assigning and Reading
+- **Services configuration**; each service comes with a set of default configuration that you can override. The value of each each of these configuration is available as a variable.
 
-## Registry
+    For example, the NGINX service has a `events.worker_connections` [configuration variable](/services/nginx#configuration). If that service is installed on the `web_1` node, then you should be able to access it at `{{ web_1.configuration.nginx.events.worker_connections }}`.
 
-## Scope
+- **Meta data**; some information coming is dynamically assigned to each node upon provisioning.
 
-The `vars` attribute define a list of variables that can be use anywhere in the future commands.
+    For example, the IP address (`{{ web_1.ip }})`) or devops SSH key (`{{ web1.pub_key }}`).
 
-For example:
+- **Custom variables**; users can define custom variables in the `vars` attributes of nodes, tasks and tasks commands.
 
-```
-vars:
-  myvar: value
-  my_other_var: other_value
-```
+    For example, 
 
-Allows you to use `{{ myvar }}` and `{{ my_other_var }}` in either:
+## Assigning
+
+    vars:
+      my_var: 123
+      my_other_var: ["An", "array", "of", "strings"]
+      {{ my_global_var }}: "Something else again"
+
+<!-- ## Registry -->
+
+## Reading
 
 - an inline command like
 
-```
-steps:
-  - run: mkdir {{ myvar }} && cd {{ myvar }}
-```
+        steps:
+          - run: mkdir {{ myvar }} && cd {{ myvar }}
 
 - or with a script
 
-```
-steps:
-  - run: devops scripts/some_script.sh
+        steps:
+          - run: devops scripts/some_script.sh
 
-shell> cat ./scripts/some_script.sh
+        shell> cat ./scripts/some_script.sh
 
-#!/bin/bash
-echo {{ my_other_var }}
-```
+        #!/bin/bash
+        echo {{ my_other_var }}
 
 - or within a package task
 
-```
-steps:
-  - run: devops package some_task
-    options:
-      some: {{ myvar }}
-```
+        steps:
+          - run: devops package some_task
+            options:
+              some: {{ myvar }}
+
+<!-- ## Scope -->

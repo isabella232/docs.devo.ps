@@ -258,6 +258,17 @@ code,
     position: fixed;
     top: $header + $gutter;
     width: $sidebar;
+    &::-webkit-scrollbar {
+      width: $gutter/4;
+    }
+    &::-webkit-scrollbar-track {
+      background: shade($light, 3%);
+      border-radius: $gutter/4;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: shade($light, 10%);
+      border-radius: $gutter/4;
+    }
     h3 {
       font-size: inherit;
       margin: $gutter/2 0 $gutter/4;

@@ -1387,6 +1387,14 @@ code .type, .code .type {
     position: fixed;
     top: 73px;
     width: 180px; }
+    #main .sidebar::-webkit-scrollbar {
+      width: 5px; }
+    #main .sidebar::-webkit-scrollbar-track {
+      background: #f2f2f3;
+      border-radius: 5px; }
+    #main .sidebar::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border-radius: 5px; }
     #main .sidebar h3 {
       font-size: inherit;
       margin: 10px 0 5px; }

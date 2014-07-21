@@ -53,7 +53,7 @@ Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Oc
   <dd>
     The provider information for the node, used for provisioning.
     <dl>
-      <dt><code><span class='type'>string</span> type</code></dt>
+      <dt><code><span class='type'>string</span> name</code></dt>
       <dd>The id of the provider you want to use. We currently support Digital Ocean ([digitalocean](/providers/digitalocean)), EC2 ([ec2](/providers/ec2)), Linode ([linode](/providers/linode)) and Rackspace ([rackspace](/providers/rackspace)).</dd>
       
       <dt><code><span class='type'>integer</span> size</code></dt>
