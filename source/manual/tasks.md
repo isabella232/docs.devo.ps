@@ -81,6 +81,18 @@ For example, we could add a `task.yml` file with the following content:
   </dd>
 </dl>
 
+## Runs & Status
+
+Everytime a task is triggered, an instance of that task, called a "run", is instanciated. Changes happening after a run has started won't affect it. Each run is asigned a unique id (the "run id").
+
+A run can be in one of the following states
+
+Status | Description | Icon
+--- | --- | ---
+<span class='icon done'></span> | **Done** | The run completed successfully.
+<span class='icon running'></span> | **Running** | The run is currently ongoing.
+ <span class='icon error'></span> | **Failed** | The run aborted after running into an error (details about the error can be found in the console).
+
 ## Steps
 
 The `steps` attribute defines the series of commands that composes the task. These commands can be of 3 kinds:

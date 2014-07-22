@@ -24,10 +24,12 @@ body {
     color: $red;
     content: 'X';
   }
+  &.done:before,
   &.synced:before {
     color: $green;
     content: 'O';
   }
+  &.running:before,
   &.syncing:before {
     color: $blue;
     content: 'L';
