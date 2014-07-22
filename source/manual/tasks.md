@@ -85,7 +85,7 @@ For example, we could add a `task.yml` file with the following content:
 
 Everytime a task is triggered, an instance of that task, called a "run", is instanciated. Changes happening after a run has started won't affect it. Each run is asigned a unique id (the "run id").
 
-A run can be in one of the following states
+A run can be:
 
 Status | Description | Icon
 --- | --- | ---
