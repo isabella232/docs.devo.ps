@@ -1417,7 +1417,8 @@ body .swiftype-widget .autocomplete {
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0;
   font-family: inherit;
-  font-size: inherit; }
+  font-size: inherit;
+  margin-top: 1px; }
   body .swiftype-widget .autocomplete ul li {
     border: 0;
     border-top: 1px solid #dde0e2; }
