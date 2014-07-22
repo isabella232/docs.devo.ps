@@ -317,6 +317,35 @@ steps:
   </dd>
 </dl>
 
+<h2 id="runs-status">Runs &amp; Status</h2>
+<p>Everytime a task is triggered, an instance of that task, called a &quot;run&quot;, is instanciated. Changes happening after a run has started won&#39;t affect it. Each run is asigned a unique id (the &quot;run id&quot;).</p>
+<p>A run can be in one of the following states</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Icon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class='icon done'></span></td>
+<td><strong>Done</strong></td>
+<td>The run completed successfully.</td>
+</tr>
+<tr>
+<td><span class='icon running'></span></td>
+<td><strong>Running</strong></td>
+<td>The run is currently ongoing.</td>
+</tr>
+<tr>
+<td> <span class='icon error'></span></td>
+<td><strong>Failed</strong></td>
+<td>The run aborted after running into an error (details about the error can be found in the console).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="steps">Steps</h2>
 <p>The <code>steps</code> attribute defines the series of commands that composes the task. These commands can be of 3 kinds:</p>
 <ul>
