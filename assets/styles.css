@@ -1571,10 +1571,10 @@ body {
 .icon.error:before {
   color: #FF5F5F;
   content: 'X'; }
-.icon.synced:before {
+.icon.done:before, .icon.synced:before {
   color: #50CD84;
   content: 'O'; }
-.icon.syncing:before {
+.icon.running:before, .icon.syncing:before {
   color: #1F8DD6;
   content: 'L'; }
 
