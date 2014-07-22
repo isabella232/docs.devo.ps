@@ -1,0 +1,53 @@
+body {
+  .swiftype-widget .autocomplete {
+    background: #FFF;
+    border: 1px solid $line;
+    border-radius: $radius;
+    box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0;
+    font-family: inherit;
+    font-size: inherit;
+    ul li {
+      border: 0;
+      border-top: 1px solid $line;
+      &:first-child {
+        border-top: 0;
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+      }
+      &:last-child {
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+      }
+      &.active {
+        background: $blue;
+        border: 0;
+        border-top: 1px solid shade($blue, 5%);
+        box-shadow: none;
+        &:first-child {
+          border-top: 0;
+        }
+        & + li {
+          border-top: 1px solid shade($blue, 5%);
+        }
+        p.title,
+        .sections {
+          text-shadow: none;
+        }
+      }
+      p.title,
+      .sections {
+        font-weight: normal;
+        em {
+          color: inherit;
+          font-weight: bold;
+        }
+      }
+      p.title {
+        color: $black;
+      }
+      .sections {
+        color: $grey;
+      }
+    }
+  }
+}

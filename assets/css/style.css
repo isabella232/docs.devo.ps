@@ -1409,3 +1409,42 @@ code .type, .code .type {
         font-weight: bold; }
       #main .sidebar a:first-child {
         padding-left: 0; }
+
+/* SwiftType overrides */
+body .swiftype-widget .autocomplete {
+  background: #FFF;
+  border: 1px solid #dde0e2;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0;
+  font-family: inherit;
+  font-size: inherit; }
+  body .swiftype-widget .autocomplete ul li {
+    border: 0;
+    border-top: 1px solid #dde0e2; }
+    body .swiftype-widget .autocomplete ul li:first-child {
+      border-top: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px; }
+    body .swiftype-widget .autocomplete ul li:last-child {
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px; }
+    body .swiftype-widget .autocomplete ul li.active {
+      background: #1F8DD6;
+      border: 0;
+      border-top: 1px solid #1d85cb;
+      box-shadow: none; }
+      body .swiftype-widget .autocomplete ul li.active:first-child {
+        border-top: 0; }
+      body .swiftype-widget .autocomplete ul li.active + li {
+        border-top: 1px solid #1d85cb; }
+      body .swiftype-widget .autocomplete ul li.active p.title, body .swiftype-widget .autocomplete ul li.active .sections {
+        text-shadow: none; }
+    body .swiftype-widget .autocomplete ul li p.title, body .swiftype-widget .autocomplete ul li .sections {
+      font-weight: normal; }
+      body .swiftype-widget .autocomplete ul li p.title em, body .swiftype-widget .autocomplete ul li .sections em {
+        color: inherit;
+        font-weight: bold; }
+    body .swiftype-widget .autocomplete ul li p.title {
+      color: #203442; }
+    body .swiftype-widget .autocomplete ul li .sections {
+      color: #a5adb3; }
