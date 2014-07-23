@@ -1131,6 +1131,7 @@ table {
 /* General */
 body {
   background: #fafafb;
+  line-height: 150%;
   text-align: center; }
 
 .icon:before {
