@@ -36,6 +36,21 @@ tasks:
       description: Full name of the user that will perform commits
       required: true
       type: string
+- description: Commit and push the content of a folder to a remote repository
+  name: push
+  options:
+    repo:
+      description: Local folder that host a repository
+      required: true
+      type: string
+    src:
+      description: Source folder where the content to push is
+      required: true
+      type: string
+    version:
+      description: Remote branch to push the source content to
+      required: true
+      type: string
 title: Git
 
 ---
