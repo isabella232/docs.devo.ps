@@ -65,6 +65,11 @@ configuration:
     description: Nginx running user.
     required: false
     type: string
+  vhosts:
+    default: []
+    description: List of virtual hosts objects
+    required: false
+    type: array
   worker_processes:
     default: 4
     description: Number of Nginx processes
