@@ -1,4 +1,6 @@
 ---
+tags:
+- version control
 tasks:
 - description: Clone or update a git repository
   name: update
@@ -34,10 +36,6 @@ tasks:
       description: Full name of the user that will perform commits
       required: true
       type: string
-
----
----
 title: Git
-tags:
-    - version control
+
 ---
