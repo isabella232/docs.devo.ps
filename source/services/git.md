@@ -39,12 +39,12 @@ tasks:
 - description: Commit and push the content of a folder to a remote repository
   name: push
   options:
-    repo:
-      description: Local folder that host a repository
+    build_dir:
+      description: Source folder where the content to push is
       required: true
       type: string
-    src:
-      description: Source folder where the content to push is
+    repo:
+      description: Local folder that host a repository
       required: true
       type: string
     version:
