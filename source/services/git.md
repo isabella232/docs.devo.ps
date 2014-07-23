@@ -37,18 +37,18 @@ tasks:
       required: true
       type: string
 - description: Commit and push the content of a folder to a remote repository
-  name: push
+  name: deploy
   options:
-    build_dir:
-      description: Source folder where the content to push is
+    branch:
+      description: Remote branch to push the source content to (will be removed)
       required: true
       type: string
     repo:
-      description: Local folder that host a repository
+      description: Local folder where the repository is located
       required: true
       type: string
-    version:
-      description: Remote branch to push the source content to
+    source:
+      description: Source folder within the repo where the content to push is
       required: true
       type: string
 title: Git
