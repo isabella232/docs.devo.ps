@@ -10,7 +10,7 @@ As with nodes, you define a task using a simple YAML (`.yml`) file.
 
 *We currently require that you name the file as the task id (see example) and save it in the `tasks/` folder. We are working on adding support for arbitrary file names and folders, allowing you to save multiple tasks in a single file.*
 
-For example, we could add a `task.yml` file with the following content:
+For example, we could add a `deploy.yml` file with the following content:
 
     id: deploy
     type: task
@@ -28,21 +28,12 @@ For example, we could add a `task.yml` file with the following content:
       domain: example.com
     
     steps:
-      - run: sudo mkdir -p {{ build }} && sudo chown -R devops. {{ build }}
-      - run: devops git clone
+      - run: devops git update
         options:
-          from: https://github.com/Wiredcraft/octokan.com.git
-          to: {{ build }}
+          repo: https://github.com/Wiredcraft/octokan.com.git
+          dest: {{ build }}
           version: master
       - run: cd {{ build }}; make build ; cp -a _site/* /var/www/{{ domain }}
-      - run: devops nginx vhost add
-          options:
-            domain: {{ domain }}
-            port: 80
-            routes:
-              - uri: /
-                type: proxy
-                to: http://localhost:3000
 
 ## Format
 
@@ -109,19 +100,16 @@ The `steps` attribute defines the series of commands that composes the task. The
 
     *To use packages (`pip` or `gems`) we recommend you use the configuration of respectively the [Python](/services/python) or [Ruby](/services/ruby) services rather than installing them from within a script.*
 
-- **devops command**: services installed on your nodes usually come with some helper commands. A devops command looks like `devops {SERVICE} {COMMAND}` where `{SERVICE}` is the name of the service and `{COMMAND}` the name of the specific command. Some of these commands require you to define options. For example, adding a virtual host to your Nginx service can be done as follow:
+- **devops command**: services installed on your nodes usually come with some helper commands. A devops command looks like `devops {SERVICE} {COMMAND}` where `{SERVICE}` is the name of the service and `{COMMAND}` the name of the specific command. Some of these commands require you to define options. For example, cloning or updating a git repository can be done as follow:
 
       steps:
-        - run: devops nginx vhost add
+        - run: devops git update
           options:
-            domain: example.com
-            port: 80
-            routes:
-              - uri: /
-                type: proxy
-                to: http://localhost:3000
+            repo: https://github.com/user/repo.git
+            dest: /some/local/folder
+            version: master
 
-    *As for the scripts, we use the `devops` keyword. Services documentations list the devops commands available for each service. See for example [Nginx list of commands](/services/nginx#commands).*
+    *As for the scripts, we use the `devops` keyword. Services documentations list the devops commands available for each service. See for example [Git list of commands](/services/git#commands).*
 
 Commands are run as the `devops` user on targeted nodes. You can however switch users by using the `sudo` command in scripts or inline commands.
 
