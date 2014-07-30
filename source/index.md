@@ -10,9 +10,9 @@ This documentation is divided in 3 sections:
 
 ## Need help?
 
-- Send a support ticket: [devo.ps support](http://intercom.io)
 - Chat with us: [devo.ps chat](https://www.hipchat.com/gyHEHtsXZ)
 - Get in touch by email: [support@devo.ps](mailto:support@devo.ps)
+- Use the "Help & Support" link from within the app.
 
 ## Other
 
