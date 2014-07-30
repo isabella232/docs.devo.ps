@@ -18,7 +18,7 @@ For example, we could add a `deploy.yml` file with the following content:
 
     triggers:
       webhooks:
-        - deploy
+        - path: deploy/my/app
     
     targets:
       - nodejs_server
