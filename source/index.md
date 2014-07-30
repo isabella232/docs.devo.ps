@@ -10,8 +10,8 @@ This documentation is divided in 3 sections:
 
 ## Need help?
 
-- Chat with us: [devo.ps chat](https://www.hipchat.com/gyHEHtsXZ)
-- Get in touch by email: [support@devo.ps](mailto:support@devo.ps)
+- Chat directly with us: [devo.ps chat](https://www.hipchat.com/gyHEHtsXZ)
+- Contact the support: [help@devo.ps](mailto:help@devo.ps)
 - Use the "Help & Support" link from within the app.
 
 ## Other
