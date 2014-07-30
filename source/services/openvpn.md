@@ -124,6 +124,7 @@ configuration:
     required: false
     type: string
 documentation: http://openvpn.net/index.php/open-source/documentation.html
+experimental: true
 tags:
 - app
 tasks:

@@ -1,5 +1,6 @@
 ---
 documentation: https://www.rabbitmq.com/documentation.html
+experimental: true
 tags:
 - messagebus
 tasks:

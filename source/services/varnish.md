@@ -80,6 +80,7 @@ configuration:
     required: false
     type: string
 documentation: https://www.varnish-cache.org/docs
+experimental: true
 tags:
 - caching
 - reverse proxy

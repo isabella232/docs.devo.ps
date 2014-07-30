@@ -1,5 +1,6 @@
 ---
 documentation: http://docs.couchbase.com/
+experimental: true
 tags:
 - database
 - nosql

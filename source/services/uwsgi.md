@@ -1,5 +1,6 @@
 ---
 documentation: http://uwsgi-docs.readthedocs.org/en/latest/
+experimental: true
 tags:
 - app
 tasks:

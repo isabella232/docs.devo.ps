@@ -369,6 +369,7 @@ configuration:
     required: false
     type: string
 documentation: http://www.php.net/docs.php
+experimental: true
 tags:
 - language
 tasks:
