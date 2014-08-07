@@ -16,6 +16,15 @@ body {
   text-align: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+}
+
 .icon {
   &:before {
     @include icon();
@@ -84,7 +93,8 @@ code,
     text-align: left;
   }
   .logo {
-    &:before {
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+    a:before {
       @include font-size($large);
       @include icon();
       content: '2';
@@ -95,6 +105,7 @@ code,
   }
   .menu {
     float: right;
+    font-family: 'Open Sans', Arial, sans-serif;
     @include font-size($small);
     form {
       display: inline;
