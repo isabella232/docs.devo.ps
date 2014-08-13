@@ -69,6 +69,11 @@ configuration:
       - 1
       required: false
       type: integer
+  composer:
+    default: false
+    description: Add composer support (https://getcomposer.org/) globally to the node
+    required: false
+    type: boolean
   display_errors:
     default: 'Off'
     description: Define whether PHP will output errors, notices and warnings.
