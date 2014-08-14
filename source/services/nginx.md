@@ -138,7 +138,7 @@ tasks:
     ssl:
       description: Enable HTTPS
       options:
-        certicate:
+        certificate:
           default: /etc/nginx/ssl/{domain}.pem
           description: HTTPS certificate file path (chained if needed)
           required: false
