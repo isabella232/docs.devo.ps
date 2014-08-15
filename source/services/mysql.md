@@ -27,6 +27,11 @@ configuration:
     description: Database files path.
     required: false
     type: string
+  databases:
+    default: {}
+    description: Databases to be present on the host
+    required: false
+    type: database
   innodb:
     innodb_adaptive_flushing:
       default: true
@@ -305,6 +310,11 @@ configuration:
       minimum: 1
       required: false
       type: integer
+  users:
+    default: {}
+    description: Regular users
+    required: false
+    type: user
 documentation: http://dev.mysql.com/doc/
 tags:
 - database
