@@ -332,8 +332,14 @@ tasks:
   name: user add
   options:
     db:
-      description: Name of the database to create
-      required: true
+      description: Name of the database to be granted access to. If the database doesn't
+        exist it will be created.
+      required: false
+      type: string
+    pass:
+      description: Password to use for the MySQL user. If none supplied a random one
+        will be created
+      required: false
       type: string
     user:
       description: Name of the user to create
