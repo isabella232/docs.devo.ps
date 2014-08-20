@@ -21,6 +21,9 @@ locations:
 - country: null
   id: '7'
   name: London 1
+- country: null
+  id: '8'
+  name: New York 3
 sizes:
 - bandwidth: 0
   disk: 0
