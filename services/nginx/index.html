@@ -506,60 +506,14 @@ var Swiftype = window.Swiftype || {};
   <dl>
     
     <dt>
-      <h3 id='object-vhost'><a href='#object-vhost'>vhost</a></h3>
+      <h3 id='object-route'><a href='#object-route'>route</a></h3>
     </dt>
     <dd>
-      A virtual host object.
+      A route object used in a vhost.
       
       <dl>
         
         
-<dt>
-  <code><span class='type string'>string</span> aliases</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Space separated list of domain name aliases
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> domain</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP
-  
-  <span class='default'>Default: <code>_</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type integer'>integer</span> port</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
-  
-  <span class='default'>Default: <code>80</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type array'>array</span> routes</code>
-  
-</dt>
-<dd class='description'>
-  list of route objects
-  
-  
-
-<h3>route Object</h3>
-<dl>
-
-
 <dt>
   <code><span class='type string'>string</span> custom</code>
   <span class='optional'>Optional</span>
@@ -615,7 +569,93 @@ var Swiftype = window.Swiftype || {};
 
 </dd>
 
-</dl>
+      </dl>
+      
+    
+    <dt>
+      <h3 id='object-upstream'><a href='#object-upstream'>upstream</a></h3>
+    </dt>
+    <dd>
+      An upstream object used in a vhost.
+      
+      <dl>
+        
+        
+<dt>
+  <code><span class='type array'>array</span> backends</code>
+  
+</dt>
+<dd class='description'>
+  List of backends associated with the upstream
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> name</code>
+  
+</dt>
+<dd class='description'>
+  Name of the upstream - it must be unique on the entire node
+  
+  
+
+</dd>
+
+      </dl>
+      
+    
+    <dt>
+      <h3 id='object-vhost'><a href='#object-vhost'>vhost</a></h3>
+    </dt>
+    <dd>
+      A virtual host object.
+      
+      <dl>
+        
+        
+<dt>
+  <code><span class='type string'>string</span> aliases</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Space separated list of domain name aliases
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> domain</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP
+  
+  <span class='default'>Default: <code>_</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type integer'>integer</span> port</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
+  
+  <span class='default'>Default: <code>80</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type array'>array</span> routes</code>
+  
+</dt>
+<dd class='description'>
+  List of route objects. The order matters and the routes will be applied sequentially. (<a href='#object-route'>Read more about route objects</a>)
+  
+  
 
 </dd>
 
@@ -674,37 +714,9 @@ var Swiftype = window.Swiftype || {};
   <span class='optional'>Optional</span>
 </dt>
 <dd class='description'>
-  list of upstream objects
+  list of upstream objects (<a href='#object-upstream'>Read more about upstream objects</a>)
   
   
-
-<h3>upstream Object</h3>
-<dl>
-
-
-<dt>
-  <code><span class='type array'>array</span> backends</code>
-  
-</dt>
-<dd class='description'>
-  List of backends associated with the upstream
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> name</code>
-  
-</dt>
-<dd class='description'>
-  Name of the upstream - it must be unique on the entire node
-  
-  
-
-</dd>
-
-</dl>
 
 </dd>
 
