@@ -66,12 +66,11 @@ configuration:
     required: false
     type: string
   vhosts:
-    default: {}
-    description: Associative array of virtual hosts objects, the key is used as vhost
-      identifier
+    default: []
+    description: Array of virtual hosts objects
     object_id: vhost
     required: false
-    type: object
+    type: array
   worker_processes:
     default: 4
     description: Number of Nginx processes
@@ -133,6 +132,11 @@ objects:
         default: _
         description: Primary domain name, use '_' as wildcard to respond to every
           domain / IP
+        required: false
+        type: string
+      id:
+        description: Virtual host identifier, used to perform lookup in the vhosts
+          array. Also used to name the configuration files and the default web root.
         required: false
         type: string
       port:
