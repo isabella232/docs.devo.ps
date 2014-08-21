@@ -8,6 +8,7 @@
   {{ val.description }}
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
   {% if val.required == true %}<span class='required'>Required</span>{% endif %}
+  {% if val.type == 'object' and val.object_id %}See the associated {{ val.object_id }} object details <a href='#{{ val.object_id }}'>here</a>{% endif %}
 </dd>
 {% else %}
 {% if not parent %}

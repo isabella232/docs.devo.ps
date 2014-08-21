@@ -7,6 +7,7 @@
   {{ val.description }}
   {% if val.valid_values %}<span class='default'>Valid values: {{ val.valid_values }}</span>{% endif %}
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
+  {% if val.type == 'object' and val.object_id %}See the associated {{ val.object_id }} object details <a href='#{{ val.object_id }}'>here</a>{% endif %}
 {% if val.options %}
 <h3>{{ loop.key | replace('s$', '') }} Object</h3>
 <dl>
