@@ -81,90 +81,92 @@ configuration:
 documentation: http://wiki.nginx.org/Modules
 objects:
   vhost:
-    aliases:
-      description: Space separated list of domain name aliases
-      required: false
-      type: string
-    domain:
-      default: _
-      description: Primary domain name, use '_' as wildcard to respond to every domain
-        / IP
-      required: false
-      type: string
-    port:
-      default: 80
-      description: Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
-      required: false
-      type: integer
-    routes:
-      description: list of route objects
-      options:
-        custom:
-          description: Custom inline nginx config to include within the route (e.g.
-            auth, custom timeout)
-          required: false
-          type: string
-        static:
-          default: root
-          description: For type static only, define how to consider the source folder
-            - alias or root
-          required: false
-          type: string
-          valid_values: Either of alias / root
-        to:
-          description: Either an upstream name, or a service / url, or a path
-          required: false
-          type: string
-        type:
-          description: The type of handler for that route
-          required: true
-          type: string
-          valid_values: Either of proxy / fastcgi / websocket / uwsgi / static
-        uri:
-          description: Any string / regex that nginx understand as a `location`
-          required: true
-          type: string
-          valid_values: Any string including regex
-      required: true
-      type: array
-    ssl:
-      description: Enable HTTPS
-      options:
-        certificate:
-          default: /etc/nginx/ssl/{domain}.pem
-          description: HTTPS certificate file path (chained if needed)
-          required: false
-          type: string
-        private_key:
-          default: /etc/nginx/ssl/{domain}.key
-          description: Private key file path used to generate the certificate (password-less)
-          required: false
-          type: string
-      required: false
-    support:
-      description: List of technologies the vhost will support (only 'php' for the
-        moment)
-      required: false
-      type: array
-    upstreams:
-      description: list of upstream objects
-      options:
-        backends:
-          description: List of backends associated with the upstream
-          required: true
-          type: array
-          valid: TCP URL and Unix socket path
-        name:
-          description: Name of the upstream - it must be unique on the entire node
-          required: true
-          type: string
-          valid: Unique name on the node
-      required: false
-      type: array
-    webroot:
-      description: Subfolder to serve data from based on the root /var/www/_vhost_id_
-      required: false
-      type: string
+    description: A virtual host object.
+    options:
+      aliases:
+        description: Space separated list of domain name aliases
+        required: false
+        type: string
+      domain:
+        default: _
+        description: Primary domain name, use '_' as wildcard to respond to every
+          domain / IP
+        required: false
+        type: string
+      port:
+        default: 80
+        description: Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
+        required: false
+        type: integer
+      routes:
+        description: list of route objects
+        options:
+          custom:
+            description: Custom inline nginx config to include within the route (e.g.
+              auth, custom timeout)
+            required: false
+            type: string
+          static:
+            default: root
+            description: For type static only, define how to consider the source folder
+              - alias or root
+            required: false
+            type: string
+            valid_values: Either of alias / root
+          to:
+            description: Either an upstream name, or a service / url, or a path
+            required: false
+            type: string
+          type:
+            description: The type of handler for that route
+            required: true
+            type: string
+            valid_values: Either of proxy / fastcgi / websocket / uwsgi / static
+          uri:
+            description: Any string / regex that nginx understand as a `location`
+            required: true
+            type: string
+            valid_values: Any string including regex
+        required: true
+        type: array
+      ssl:
+        description: Enable HTTPS
+        options:
+          certificate:
+            default: /etc/nginx/ssl/{domain}.pem
+            description: HTTPS certificate file path (chained if needed)
+            required: false
+            type: string
+          private_key:
+            default: /etc/nginx/ssl/{domain}.key
+            description: Private key file path used to generate the certificate (password-less)
+            required: false
+            type: string
+        required: false
+      support:
+        description: List of technologies the vhost will support (only 'php' for the
+          moment)
+        required: false
+        type: array
+      upstreams:
+        description: list of upstream objects
+        options:
+          backends:
+            description: List of backends associated with the upstream
+            required: true
+            type: array
+            valid: TCP URL and Unix socket path
+          name:
+            description: Name of the upstream - it must be unique on the entire node
+            required: true
+            type: string
+            valid: Unique name on the node
+        required: false
+        type: array
+      webroot:
+        description: Subfolder to serve data from based on the root /var/www/_vhost_id_
+        required: false
+        type: string
 tags:
 - web
 tasks:
