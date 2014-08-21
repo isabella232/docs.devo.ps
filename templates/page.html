@@ -54,4 +54,17 @@
 </section>
 {% endif %}
 
+{% if objects %}
+<section class='objects'>
+  <h2 id='objects'><a href='#objects'>{{ title }} Objects</a></h2>
+  {% for object in objects %}
+    <h3 id='{{ loop.key }}'><a href='#{{ loop.key }}'>{{ loop.key | title }}</a></h3>
+    <dl>
+      {% set tree = object %}
+      {% include 'partials/_task_tree.html' %}
+    </dl>
+  {% endfor %}
+</section>
+{% endif %}
+
 {% endblock %}
