@@ -56,11 +56,11 @@
 
 {% if objects %}
 <section class='objects'>
-  <h2 id='objects'><a href='#objects'>{{ title }} Objects</a></h2>
+  <h2 id='objects'><a href='#objects'>Objects</a></h2>
   <dl>
     {% for object in objects %}
     <dt>
-      <h3 id='{{ loop.key }}'><a href='#{{ loop.key }}'>{{ loop.key | title }}</a></h3>
+      <h3 id='object-{{ loop.key }}'><a href='#object-{{ loop.key }}'>{{ loop.key }}</a></h3>
     </dt>
     <dd>
       {{ object.description | safe }}

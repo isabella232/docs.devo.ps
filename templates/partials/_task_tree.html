@@ -4,10 +4,9 @@
   {% if val.required == false %}<span class='optional'>Optional</span>{% endif %}
 </dt>
 <dd class='description'>
-  {{ val.description }}
+  {{ val.description }}{% if val.object_id %} (<a href='#object-{{ val.object_id }}'>Read more about {{ val.object_id }} objects</a>){% endif %}
   {% if val.valid_values %}<span class='default'>Valid values: {{ val.valid_values }}</span>{% endif %}
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
-  {% if val.type == 'object' and val.object_id %}See the associated {{ val.object_id }} object details <a href='#{{ val.object_id }}'>here</a>{% endif %}
 {% if val.options %}
 <h3>{{ loop.key | replace('s$', '') }} Object</h3>
 <dl>
