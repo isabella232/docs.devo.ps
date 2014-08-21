@@ -320,6 +320,7 @@ var Swiftype = window.Swiftype || {};
   Number of concurrent http connection handled per nginx process
   <span class='default'>Default: <code>1024</code></span>
   
+  
 </dd>
 
 
@@ -345,6 +346,7 @@ var Swiftype = window.Swiftype || {};
   Global access log file path
   <span class='default'>Default: <code>/var/log/nginx/access.log</code></span>
   
+  
 </dd>
 
 
@@ -356,6 +358,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Global error log file path
   <span class='default'>Default: <code>/var/log/nginx/error.log</code></span>
+  
   
 </dd>
 
@@ -369,6 +372,7 @@ var Swiftype = window.Swiftype || {};
   Enable gzip compression
   <span class='default'>Default: <code>on</code></span>
   
+  
 </dd>
 
 
@@ -380,6 +384,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Space separated list of browser to disable gzip compression for
   <span class='default'>Default: <code>msie6</code></span>
+  
   
 </dd>
 
@@ -393,6 +398,7 @@ var Swiftype = window.Swiftype || {};
   Keepalive timeout (sec) - 0 to disable
   <span class='default'>Default: <code>65</code></span>
   
+  
 </dd>
 
 
@@ -404,6 +410,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Enable sendfile
   <span class='default'>Default: <code>on</code></span>
+  
   
 </dd>
 
@@ -417,6 +424,7 @@ var Swiftype = window.Swiftype || {};
   Enable tcp_nodelay
   <span class='default'>Default: <code>on</code></span>
   
+  
 </dd>
 
 
@@ -429,6 +437,7 @@ var Swiftype = window.Swiftype || {};
   Enable tcp_nopush
   <span class='default'>Default: <code>on</code></span>
   
+  
 </dd>
 
 
@@ -440,6 +449,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Maximum size of hash tables
   <span class='default'>Default: <code>2048</code></span>
+  
   
 </dd>
 
@@ -457,6 +467,7 @@ var Swiftype = window.Swiftype || {};
   Pid file path
   <span class='default'>Default: <code>/var/run/nginx.pid</code></span>
   
+  
 </dd>
 
 
@@ -468,6 +479,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Nginx running user.
   <span class='default'>Default: <code>www-data</code></span>
+  
   
 </dd>
 
@@ -481,6 +493,7 @@ var Swiftype = window.Swiftype || {};
   Associative array of virtual hosts objects, the key is used as vhost identifier
   <span class='default'>Default: <code>[object Object]</code></span>
   
+  See the associated vhost object details <a href='#vhost'>here</a>
 </dd>
 
 
@@ -492,6 +505,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Number of Nginx processes
   <span class='default'>Default: <code>4</code></span>
+  
   
 </dd>
 
@@ -522,6 +536,7 @@ var Swiftype = window.Swiftype || {};
   Space separated list of domain name aliases
   
   
+  
 
 </dd>
 
@@ -533,6 +548,7 @@ var Swiftype = window.Swiftype || {};
   Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP
   
   <span class='default'>Default: <code>_</code></span>
+  
 
 </dd>
 
@@ -544,6 +560,7 @@ var Swiftype = window.Swiftype || {};
   Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
   
   <span class='default'>Default: <code>80</code></span>
+  
 
 </dd>
 
@@ -553,6 +570,7 @@ var Swiftype = window.Swiftype || {};
 </dt>
 <dd class='description'>
   list of route objects
+  
   
   
 
@@ -568,6 +586,7 @@ var Swiftype = window.Swiftype || {};
   Custom inline nginx config to include within the route (e.g. auth, custom timeout)
   
   
+  
 
 </dd>
 
@@ -579,6 +598,7 @@ var Swiftype = window.Swiftype || {};
   For type static only, define how to consider the source folder - alias or root
   <span class='default'>Valid values: Either of alias / root</span>
   <span class='default'>Default: <code>root</code></span>
+  
 
 </dd>
 
@@ -588,6 +608,7 @@ var Swiftype = window.Swiftype || {};
 </dt>
 <dd class='description'>
   Either an upstream name, or a service / url, or a path
+  
   
   
 
@@ -601,6 +622,7 @@ var Swiftype = window.Swiftype || {};
   The type of handler for that route
   <span class='default'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static</span>
   
+  
 
 </dd>
 
@@ -611,6 +633,7 @@ var Swiftype = window.Swiftype || {};
 <dd class='description'>
   Any string / regex that nginx understand as a `location`
   <span class='default'>Valid values: Any string including regex</span>
+  
   
 
 </dd>
@@ -627,6 +650,7 @@ var Swiftype = window.Swiftype || {};
   Enable HTTPS
   
   
+  
 
 <h3>ssl Object</h3>
 <dl>
@@ -640,6 +664,7 @@ var Swiftype = window.Swiftype || {};
   HTTPS certificate file path (chained if needed)
   
   <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></span>
+  
 
 </dd>
 
@@ -651,6 +676,7 @@ var Swiftype = window.Swiftype || {};
   Private key file path used to generate the certificate (password-less)
   
   <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></span>
+  
 
 </dd>
 
@@ -666,6 +692,7 @@ var Swiftype = window.Swiftype || {};
   List of technologies the vhost will support (only &#39;php&#39; for the moment)
   
   
+  
 
 </dd>
 
@@ -675,6 +702,7 @@ var Swiftype = window.Swiftype || {};
 </dt>
 <dd class='description'>
   list of upstream objects
+  
   
   
 
@@ -690,6 +718,7 @@ var Swiftype = window.Swiftype || {};
   List of backends associated with the upstream
   
   
+  
 
 </dd>
 
@@ -699,6 +728,7 @@ var Swiftype = window.Swiftype || {};
 </dt>
 <dd class='description'>
   Name of the upstream - it must be unique on the entire node
+  
   
   
 
@@ -714,6 +744,7 @@ var Swiftype = window.Swiftype || {};
 </dt>
 <dd class='description'>
   Subfolder to serve data from based on the root /var/www/_vhost_id_
+  
   
   
 
