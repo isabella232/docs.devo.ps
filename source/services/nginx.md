@@ -67,9 +67,11 @@ configuration:
     type: string
   vhosts:
     default: {}
-    description: List of virtual hosts objects
+    description: Associative array of virtual hosts objects, the key is used as vhost
+      identifier
+    object_id: vhost
     required: false
-    type: array
+    type: object
   worker_processes:
     default: 4
     description: Number of Nginx processes
@@ -77,27 +79,17 @@ configuration:
     required: false
     type: integer
 documentation: http://wiki.nginx.org/Modules
-tags:
-- web
-tasks:
-- description: Start Nginx if stopped
-  name: start
-- description: Stop Nginx if started
-  name: stop
-- description: Reload Nginx, reload the configuration and perform a graceful restart
-  name: reload
-- description: Restart Nginx, reload the configuration (but kills existing connection)
-  name: restart
-- description: Defines a HTTP virtual host in Nginx config
-  name: vhost add
-  options:
+objects:
+  vhost:
     aliases:
       description: Space separated list of domain name aliases
       required: false
       type: string
     domain:
-      description: Domain name
-      required: true
+      default: _
+      description: Primary domain name, use '_' as wildcard to respond to every domain
+        / IP
+      required: false
       type: string
     port:
       default: 80
@@ -149,6 +141,11 @@ tasks:
           required: false
           type: string
       required: false
+    support:
+      description: List of technologies the vhost will support (only 'php' for the
+        moment)
+      required: false
+      type: array
     upstreams:
       description: list of upstream objects
       options:
@@ -165,9 +162,20 @@ tasks:
       required: false
       type: array
     webroot:
-      description: subfolder to serve data from based on the root /var/www/_domain_
+      description: Subfolder to serve data from based on the root /var/www/_vhost_id_
       required: false
       type: string
+tags:
+- web
+tasks:
+- description: Start Nginx if stopped
+  name: start
+- description: Stop Nginx if started
+  name: stop
+- description: Reload Nginx, reload the configuration and perform a graceful restart
+  name: reload
+- description: Restart Nginx, reload the configuration (but kills existing connection)
+  name: restart
 title: Nginx
 
 ---

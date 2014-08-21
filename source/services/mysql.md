@@ -29,9 +29,9 @@ configuration:
     type: string
   databases:
     default: {}
-    description: Databases to be present on the host
+    description: Associative array of databaes, the key is used as database name
+    object_id: database
     required: false
-    type: database
   innodb:
     innodb_adaptive_flushing:
       default: true
@@ -312,10 +312,36 @@ configuration:
       type: integer
   users:
     default: {}
-    description: Regular users
+    description: Associative array of users, the key is used as username, no options
+      supported at the moment
+    object_id: user
     required: false
-    type: user
+    type: object
 documentation: http://dev.mysql.com/doc/
+objects:
+  database:
+    users:
+      default: None
+      description: Array of users with full privileges on the database
+      required: false
+      type: array
+  user:
+    generate_password:
+      default: true
+      description: Define whether a random password must be generated for the user
+      required: false
+      type: bool
+    hosts:
+      default: localhost
+      description: Array of hosts the user will be allowed to connect from. ex. [localhost,
+        192.168.%]
+      required: false
+      type: array
+    password:
+      default: RANDOM
+      description: Define the password to be set for the user [UNSUPPORTED]
+      required: false
+      type: string
 tags:
 - database
 - relational
@@ -328,23 +354,6 @@ tasks:
   name: reload
 - description: Restart MySQL, reload the configuration (but kills existing connection)
   name: restart
-- description: Add a new MySQL user and a dedicated database
-  name: user add
-  options:
-    db:
-      description: Name of the database to be granted access to. If the database doesn't
-        exist it will be created.
-      required: false
-      type: string
-    pass:
-      description: Password to use for the MySQL user. If none supplied a random one
-        will be created
-      required: false
-      type: string
-    user:
-      description: Name of the user to create
-      required: true
-      type: string
 title: MySQL
 
 ---
