@@ -182,6 +182,8 @@ var Swiftype = window.Swiftype || {};
   
 
 
+<a href='/services/mysql' >undefined</a>
+
 <a href='/services/apache' >Apache</a>
 
 <a href='/services/common' >Common</a>
@@ -205,8 +207,6 @@ var Swiftype = window.Swiftype || {};
 <a href='/services/memcached' >Memcached</a>
 
 <a href='/services/mongodb' >MongoDB</a>
-
-<a href='/services/mysql' >MySQL</a>
 
 <a href='/services/nginx'  class='active'>Nginx</a>
 
@@ -285,214 +285,6 @@ var Swiftype = window.Swiftype || {};
     </dt>
     <dd>
       Restart Nginx, reload the configuration (but kills existing connection)
-      
-    </dd>
-    
-    <dt>
-      <code class='terminal'>vhost add</code>
-    </dt>
-    <dd>
-      Defines a HTTP virtual host in Nginx config
-      
-        <h3>Options</h3>
-        <dl>
-          
-          
-<dt>
-  <code><span class='type string'>string</span> aliases</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Space separated list of domain name aliases
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> domain</code>
-  
-</dt>
-<dd class='description'>
-  Domain name
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type integer'>integer</span> port</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
-  
-  <span class='default'>Default: <code>80</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type array'>array</span> routes</code>
-  
-</dt>
-<dd class='description'>
-  list of route objects
-  
-  
-
-<h3>route Object</h3>
-<dl>
-
-
-<dt>
-  <code><span class='type string'>string</span> custom</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Custom inline nginx config to include within the route (e.g. auth, custom timeout)
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> static</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  For type static only, define how to consider the source folder - alias or root
-  <span class='default'>Valid values: Either of alias / root</span>
-  <span class='default'>Default: <code>root</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> to</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Either an upstream name, or a service / url, or a path
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> type</code>
-  
-</dt>
-<dd class='description'>
-  The type of handler for that route
-  <span class='default'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static</span>
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> uri</code>
-  
-</dt>
-<dd class='description'>
-  Any string / regex that nginx understand as a `location`
-  <span class='default'>Valid values: Any string including regex</span>
-  
-
-</dd>
-
-</dl>
-
-</dd>
-
-<dt>
-  <code><span class='type '></span> ssl</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Enable HTTPS
-  
-  
-
-<h3>ssl Object</h3>
-<dl>
-
-
-<dt>
-  <code><span class='type string'>string</span> certificate</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  HTTPS certificate file path (chained if needed)
-  
-  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> private_key</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Private key file path used to generate the certificate (password-less)
-  
-  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></span>
-
-</dd>
-
-</dl>
-
-</dd>
-
-<dt>
-  <code><span class='type array'>array</span> upstreams</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  list of upstream objects
-  
-  
-
-<h3>upstream Object</h3>
-<dl>
-
-
-<dt>
-  <code><span class='type array'>array</span> backends</code>
-  
-</dt>
-<dd class='description'>
-  List of backends associated with the upstream
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> name</code>
-  
-</dt>
-<dd class='description'>
-  Name of the upstream - it must be unique on the entire node
-  
-  
-
-</dd>
-
-</dl>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> webroot</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  subfolder to serve data from based on the root /var/www/_domain_
-  
-  
-
-</dd>
-
-        </dl>
       
     </dd>
     
@@ -683,10 +475,10 @@ var Swiftype = window.Swiftype || {};
 
 <dt>
   <code class='full'>vhosts</code>
-  <code><span class='type'>array</span> vhosts</code>
+  <code><span class='type'>object</span> vhosts</code>
 </dt>
 <dd class='description'>
-  List of virtual hosts objects
+  Associative array of virtual hosts objects, the key is used as vhost identifier
   <span class='default'>Default: <code>[object Object]</code></span>
   
 </dd>
@@ -708,6 +500,229 @@ var Swiftype = window.Swiftype || {};
 </section>
 
 
+
+<section class='objects'>
+  <h2 id='objects'><a href='#objects'>Nginx Objects</a></h2>
+  <dl>
+    
+    <dt>
+      <h3 id='vhost'><a href='#vhost'>Vhost</a></h3>
+    </dt>
+    <dd>
+      A virtual host object.
+      
+      <dl>
+        
+        
+<dt>
+  <code><span class='type string'>string</span> aliases</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Space separated list of domain name aliases
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> domain</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP
+  
+  <span class='default'>Default: <code>_</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type integer'>integer</span> port</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
+  
+  <span class='default'>Default: <code>80</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type array'>array</span> routes</code>
+  
+</dt>
+<dd class='description'>
+  list of route objects
+  
+  
+
+<h3>route Object</h3>
+<dl>
+
+
+<dt>
+  <code><span class='type string'>string</span> custom</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Custom inline nginx config to include within the route (e.g. auth, custom timeout)
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> static</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  For type static only, define how to consider the source folder - alias or root
+  <span class='default'>Valid values: Either of alias / root</span>
+  <span class='default'>Default: <code>root</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> to</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Either an upstream name, or a service / url, or a path
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> type</code>
+  
+</dt>
+<dd class='description'>
+  The type of handler for that route
+  <span class='default'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static</span>
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> uri</code>
+  
+</dt>
+<dd class='description'>
+  Any string / regex that nginx understand as a `location`
+  <span class='default'>Valid values: Any string including regex</span>
+  
+
+</dd>
+
+</dl>
+
+</dd>
+
+<dt>
+  <code><span class='type '></span> ssl</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Enable HTTPS
+  
+  
+
+<h3>ssl Object</h3>
+<dl>
+
+
+<dt>
+  <code><span class='type string'>string</span> certificate</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  HTTPS certificate file path (chained if needed)
+  
+  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> private_key</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Private key file path used to generate the certificate (password-less)
+  
+  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></span>
+
+</dd>
+
+</dl>
+
+</dd>
+
+<dt>
+  <code><span class='type array'>array</span> support</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  List of technologies the vhost will support (only &#39;php&#39; for the moment)
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type array'>array</span> upstreams</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  list of upstream objects
+  
+  
+
+<h3>upstream Object</h3>
+<dl>
+
+
+<dt>
+  <code><span class='type array'>array</span> backends</code>
+  
+</dt>
+<dd class='description'>
+  List of backends associated with the upstream
+  
+  
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> name</code>
+  
+</dt>
+<dd class='description'>
+  Name of the upstream - it must be unique on the entire node
+  
+  
+
+</dd>
+
+</dl>
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> webroot</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Subfolder to serve data from based on the root /var/www/_vhost_id_
+  
+  
+
+</dd>
+
+      </dl>
+      
+    
+</section>
 
 
 
