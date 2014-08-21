@@ -475,11 +475,11 @@ var Swiftype = window.Swiftype || {};
 
 <dt>
   <code class='full'>vhosts</code>
-  <code><span class='type'>object</span> vhosts</code>
+  <code><span class='type'>array</span> vhosts</code>
 </dt>
 <dd class='description'>
-  Associative array of virtual hosts objects, the key is used as vhost identifier (<a href='#object-vhost'>Read more about vhost objects</a>)
-  <span class='default'>Default: <code>[object Object]</code></span>
+  Array of virtual hosts objects (<a href='#object-vhost'>Read more about vhost objects</a>)
+  <span class='default'>Default: <code></code></span>
   
 </dd>
 
@@ -634,6 +634,17 @@ var Swiftype = window.Swiftype || {};
   Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP
   
   <span class='default'>Default: <code>_</code></span>
+
+</dd>
+
+<dt>
+  <code><span class='type string'>string</span> id</code>
+  <span class='optional'>Optional</span>
+</dt>
+<dd class='description'>
+  Virtual host identifier, used to perform lookup in the vhosts array. Also used to name the configuration files and the default web root.
+  
+  
 
 </dd>
 
