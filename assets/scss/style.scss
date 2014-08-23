@@ -1,5 +1,9 @@
 /* Eggshell */
 
+@import '_fonts.scss';
+
+/* Eggshell */
+
 @import 'eggshell';
 
 /* Variables (layout) */
@@ -11,18 +15,8 @@ $width: 960px;
 /* General */
 
 body {
-  background: $light;
   line-height: 150%;
   text-align: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
 }
 
 .icon {
@@ -93,7 +87,6 @@ code,
     text-align: left;
   }
   .logo {
-    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
     a:before {
       @include font-size($large);
       @include icon();
@@ -105,7 +98,6 @@ code,
   }
   .menu {
     float: right;
-    font-family: 'Open Sans', Arial, sans-serif;
     @include font-size($small);
     form {
       display: inline;
@@ -127,13 +119,9 @@ code,
   padding: $gutter 0;
   text-align: left;
   .content {
-    background: #FFF;
-    border: 1px solid $line;
-    border-radius: $radius;
     @include box-sizing(border-box);
     margin-left: $sidebar + $gutter;
     margin-top: $header;
-    padding: 1.5*$gutter/2 $gutter;
     .header {
       .tags {
         float: right;
@@ -276,11 +264,11 @@ code,
       width: $gutter/4;
     }
     &::-webkit-scrollbar-track {
-      background: shade($light, 3%);
+      background: $light;
       border-radius: $gutter/4;
     }
     &::-webkit-scrollbar-thumb {
-      background: shade($light, 10%);
+      background: shade($light, 6%);
       border-radius: $gutter/4;
     }
     h3 {

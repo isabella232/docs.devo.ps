@@ -1,4 +1,93 @@
 /* Eggshell */
+/*
+ * Font Definition for Open Sans. This stylesheet comes from
+ * http://qrohlf.com/posts/better-opensans 
+ */
+/* Regular */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Regular-webfont.eot');
+  src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular-webfont.woff') format('woff'), url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'), url('fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+  font-weight: normal;
+  font-weight: 400;
+  font-style: normal; }
+
+/* Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Italic-webfont.eot');
+  src: url('fonts/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Italic-webfont.woff') format('woff'), url('fonts/OpenSans-Italic-webfont.ttf') format('truetype'), url('fonts/OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
+  font-weight: normal;
+  font-weight: 400;
+  font-style: italic; }
+
+/* Light */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Light-webfont.eot');
+  src: url('fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Light-webfont.woff') format('woff'), url('fonts/OpenSans-Light-webfont.ttf') format('truetype'), url('fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+  font-weight: 200;
+  font-style: normal; }
+
+/* Light Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-LightItalic-webfont.eot');
+  src: url('fonts/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-LightItalic-webfont.woff') format('woff'), url('fonts/OpenSans-LightItalic-webfont.ttf') format('truetype'), url('fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
+  font-weight: 200;
+  font-style: italic; }
+
+/* Semibold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Semibold-webfont.eot');
+  src: url('fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Semibold-webfont.woff') format('woff'), url('fonts/OpenSans-Semibold-webfont.ttf') format('truetype'), url('fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+  font-weight: 500;
+  font-style: normal; }
+
+/* Semibold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-SemiboldItalic-webfont.eot');
+  src: url('fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff'), url('fonts/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'), url('fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+  font-weight: 500;
+  font-style: italic; }
+
+/* Bold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Bold-webfont.eot');
+  src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-Bold-webfont.woff') format('woff'), url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'), url('fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+  font-weight: bold;
+  font-weight: 700;
+  font-style: normal; }
+
+/* Bold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-BoldItalic-webfont.eot');
+  src: url('fonts/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-BoldItalic-webfont.woff') format('woff'), url('fonts/OpenSans-BoldItalic-webfont.ttf') format('truetype'), url('fonts/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
+  font-weight: bold;
+  font-weight: 700;
+  font-style: italic; }
+
+/* Extra Bold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-ExtraBold-webfont.eot');
+  src: url('fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-ExtraBold-webfont.woff') format('woff'), url('fonts/OpenSans-ExtraBold-webfont.ttf') format('truetype'), url('fonts/OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
+  font-weight: 900;
+  font-style: normal; }
+
+/* Extra Bold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-ExtraBoldItalic-webfont.eot');
+  src: url('fonts/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'), url('fonts/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'), url('fonts/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
+  font-weight: 900;
+  font-style: italic; }
+
+/* Eggshell */
 /* Normalize.css */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
@@ -1130,12 +1219,8 @@ table {
 /* Variables (layout) */
 /* General */
 body {
-  background: #fafafb;
   line-height: 150%;
   text-align: center; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', 'Open Sans', Arial, sans-serif; }
 
 .icon:before {
   font-family: 'icons';
@@ -1190,24 +1275,21 @@ code .type, .code .type {
     margin: 0 auto;
     max-width: 960px;
     text-align: left; }
-  #header .logo {
-    font-family: 'Roboto', 'Open Sans', Arial, sans-serif; }
-    #header .logo a:before {
-      font-size: 24px;
-      font-size: 2.4rem;
-      font-family: 'icons';
-      font-variant: normal;
-      font-weight: normal;
-      speak: none;
-      text-transform: none;
-      -webkit-font-smoothing: antialiased;
-      content: '2';
-      float: left;
-      font-size: 16;
-      margin-right: 5px; }
+  #header .logo a:before {
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-family: 'icons';
+    font-variant: normal;
+    font-weight: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    content: '2';
+    float: left;
+    font-size: 16;
+    margin-right: 5px; }
   #header .menu {
     float: right;
-    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 12px;
     font-size: 1.2rem; }
     #header .menu form {
@@ -1224,15 +1306,11 @@ code .type, .code .type {
   padding: 20px 0;
   text-align: left; }
   #main .content {
-    background: #FFF;
-    border: 1px solid #dde0e2;
-    border-radius: 2px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-left: 200px;
     margin-top: 53px;
-    padding: 15px 20px;
     /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */ }
     #main .content .header .tags {
       float: right;
@@ -1397,10 +1475,10 @@ code .type, .code .type {
     #main .sidebar::-webkit-scrollbar {
       width: 5px; }
     #main .sidebar::-webkit-scrollbar-track {
-      background: #f2f2f3;
+      background: #fafafb;
       border-radius: 5px; }
     #main .sidebar::-webkit-scrollbar-thumb {
-      background: #e1e1e1;
+      background: #ebebeb;
       border-radius: 5px; }
     #main .sidebar h3 {
       font-size: inherit;
