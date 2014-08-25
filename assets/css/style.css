@@ -1455,16 +1455,16 @@ code .type, .code .type {
   #main .sidebar {
     border: 1px solid #dde0e2;
     border-radius: 4px;
-    bottom: 20px;
-    box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
     font-size: 14px;
     font-size: 1.4rem;
+    height: 60%;
     padding-bottom: 50px;
     position: fixed;
     top: 84px;
     width: 220px; }
     #main .sidebar .swifttype {
       border-bottom: 1px solid #dde0e2;
+      box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
       padding: 10px; }
       #main .sidebar .swifttype input {
         border-radius: 20px;
@@ -1480,10 +1480,10 @@ code .type, .code .type {
         width: 5px; }
       #main .sidebar .menu::-webkit-scrollbar-track {
         background: #fafafb;
-        border-radius: 5px; }
+        border-radius: 0; }
       #main .sidebar .menu::-webkit-scrollbar-thumb {
-        background: #ebebeb;
-        border-radius: 5px; }
+        background: #dde0e2;
+        border-radius: 0; }
       #main .sidebar .menu h3 {
         font-size: inherit;
         margin: 10px 0 5px; }

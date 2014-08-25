@@ -239,15 +239,15 @@ code,
   .sidebar {
     border: 1px solid $line;
     border-radius: 2*$radius;
-    bottom: $gutter;
-    box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
     @include font-size($smaller);
+    height: 60%;
     padding-bottom: $search;
     position: fixed;
     top: $header + $gutter;
     width: $sidebar;
     .swifttype {
       border-bottom: 1px solid $line;
+      box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
       padding: $gutter/2;
       input {
         border-radius: $gutter;
@@ -264,11 +264,11 @@ code,
       }
       &::-webkit-scrollbar-track {
         background: $light;
-        border-radius: $gutter/4;
+        border-radius: 0;
       }
       &::-webkit-scrollbar-thumb {
-        background: shade($light, 6%);
-        border-radius: $gutter/4;
+        background: $line;
+        border-radius: 0;
       }
       h3 {
         font-size: inherit;
