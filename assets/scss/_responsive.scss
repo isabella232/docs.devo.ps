@@ -1,0 +1,96 @@
+
+/* Smartphones, iPhone, portrait 480x320 phones */
+
+@media (max-width: 481px) {
+  html {
+    font-size: 57%;
+  }
+}
+
+/* Portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+@media (max-width: 641px) {
+  #header {
+    .toggle {
+      color: $grey;
+      float: right;
+      &:after {
+        @include icon;
+        content: '/';
+        margin-left: $gutter/4;
+        vertical-align: middle;
+      }
+      &.active {
+        &:after {
+          content: '\'';
+        }
+        + .menu {
+          display: block;
+        }
+      }
+    }
+    .menu {
+      border-bottom: 1px solid $light;
+      display: none;
+      margin: $gutter 0 (-$gutter);
+      a {
+        border-top: 1px solid $light;
+        display: block;
+        padding: 1.5*$gutter/2 0;
+        &.active {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+/* Portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+@media (min-width: 481px) and (max-width: 641px) {
+  html {
+    font-size: 59%;
+  }
+}
+
+/* Portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+@media (min-width: 641px) {
+  #header {
+    @include clearfix;
+    .logo {
+      float: left;
+    }
+    .toggle {
+      display: none;
+    }
+    .menu {
+      float: right;
+      @include font-size($small);
+      a {
+        margin-left: $gutter;
+        &.active {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  #main {
+    .content {
+      margin-left: $sidebar + 1.5*$gutter;
+    }
+  }
+}
+
+/* Tablet, landscape iPad, lo-res laptops ands desktops */
+
+@media (min-width: 961px) { }
+
+/* Big landscape tablets, laptops, and desktops */
+
+@media (min-width: 1025px) { }
+
+/* Hi-res laptops and desktops */
+
+@media (min-width: 1281px) { }

@@ -8,8 +8,9 @@
 
 /* Variables (layout) */
 
-$header: 53px;
-$sidebar: 180px;
+$header: 64px;
+$search: 50px;
+$sidebar: 220px;
 $width: 960px;
 
 /* General */
@@ -72,44 +73,28 @@ code,
 /* Header */
 
 #header {
-  background: #FFF;
-  border-bottom: 1px solid $line;
-  box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
-  left: 0;
-  padding: 1.5*$gutter/2 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 999;
-  .content {
+  .wrapper {
+    @include clearfix();
     margin: 0 auto;
     max-width: $width;
+    padding: $gutter 0;
+    position: relative;
     text-align: left;
+    width: 90%;
   }
   .logo {
+    position: fixed;
+    top: $gutter;
     a:before {
       @include font-size($large);
       @include icon();
       content: '2';
       float: left;
-      font-size: $normal;
       margin-right: $gutter/4;
     }
   }
-  .menu {
-    float: right;
-    @include font-size($small);
-    form {
-      display: inline;
-    }
-    input {
-      border-radius: $gutter;
-      margin: (-$gutter/4) 0;
-    }
-    a,
-    input {
-      margin-left: $gutter;
-    }
+  .signin {
+    font-weight: bold;
   }
 }
 
@@ -118,10 +103,9 @@ code,
   max-width: $width;
   padding: $gutter 0;
   text-align: left;
+  width: 90%;
   .content {
     @include box-sizing(border-box);
-    margin-left: $sidebar + $gutter;
-    margin-top: $header;
     .header {
       .tags {
         float: right;
@@ -177,7 +161,6 @@ code,
         white-space: nowrap;
       }
     }
-    /* HACK BEFORE WE ADD A HELP/ZOOM WIDGET */
     em {
       background: tint($blue, 90%);
       border: 1px solid tint($blue, 80%);
@@ -254,40 +237,57 @@ code,
     }
   }
   .sidebar {
+    border: 1px solid $line;
+    border-radius: 2*$radius;
     bottom: $gutter;
+    box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
     @include font-size($smaller);
-    overflow-y: auto;
+    padding-bottom: $search;
     position: fixed;
     top: $header + $gutter;
     width: $sidebar;
-    &::-webkit-scrollbar {
-      width: $gutter/4;
-    }
-    &::-webkit-scrollbar-track {
-      background: $light;
-      border-radius: $gutter/4;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: shade($light, 6%);
-      border-radius: $gutter/4;
-    }
-    h3 {
-      font-size: inherit;
-      margin: $gutter/2 0 $gutter/4;
-      &:first-child {
-        margin-top: 0;
+    .swifttype {
+      border-bottom: 1px solid $line;
+      padding: $gutter/2;
+      input {
+        border-radius: $gutter;
+        width: $sidebar - 2*$gutter;
       }
     }
-    a {
-      display: block;
-      margin-bottom: $gutter/4;
-      padding-left: $gutter/2;
-      &.active {
-        color: $black;
-        font-weight: bold;
+    .menu {
+      @include box-sizing(border-box);
+      height: 100%;
+      overflow-y: auto;
+      padding: $gutter/2;
+      &::-webkit-scrollbar {
+        width: $gutter/4;
       }
-      &:first-child {
-        padding-left: 0;
+      &::-webkit-scrollbar-track {
+        background: $light;
+        border-radius: $gutter/4;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: shade($light, 6%);
+        border-radius: $gutter/4;
+      }
+      h3 {
+        font-size: inherit;
+        margin: $gutter/2 0 $gutter/4;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      a {
+        display: block;
+        margin-bottom: $gutter/4;
+        padding-left: $gutter/2;
+        &.active {
+          color: $black;
+          font-weight: bold;
+        }
+        &:first-child {
+          padding-left: 0;
+        }
       }
     }
   }
@@ -296,3 +296,7 @@ code,
 /* SwiftType overrides */
 
 @import '_swifttype.scss'; 
+
+/* Responsive */
+
+@import '_responsive.scss';
