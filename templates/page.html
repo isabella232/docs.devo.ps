@@ -23,7 +23,7 @@
   <dl>
     {% for task in tasks %}
     <dt>
-      <code class='terminal'>{{ task.name | safe }}</code>
+      <code class='terminal'>devops {{ title }} {{ task.name | safe }}</code>
     </dt>
     <dd>
       {{ task.description | safe }}
