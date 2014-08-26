@@ -145,13 +145,6 @@ code,
         text-decoration: underline;
       }
     }
-    h2,
-    h3 {
-      /* <hack> to avoid header to obscure titles */
-      margin-top: -3*$gutter;
-      padding-top: 3*$gutter;
-      /* <\hack> */
-    }
     table {
       td {
         vertical-align: top;
