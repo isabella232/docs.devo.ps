@@ -17,13 +17,17 @@
   {% endif %}</h1>  
 </header>
 
+<section class='body'>
+  {{ contents | safe }}
+</section>
+
 {% if tasks %}
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
   <dl>
     {% for task in tasks %}
     <dt>
-      <code class='terminal'>{{ task.name | safe }}</code>
+      <code class='terminal'>devops {{ title | lower }} {{ task.name | safe }}</code>
     </dt>
     <dd>
       {{ task.description | safe }}
@@ -39,10 +43,6 @@
   </dl>
 </section>
 {% endif %}
-
-<section class='body'>
-  {{ contents | safe }}
-</section>
 
 {% if configuration %}
 <section class='configuration'>
