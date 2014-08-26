@@ -17,6 +17,10 @@
   {% endif %}</h1>  
 </header>
 
+<section class='body'>
+  {{ contents | safe }}
+</section>
+
 {% if tasks %}
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
@@ -39,10 +43,6 @@
   </dl>
 </section>
 {% endif %}
-
-<section class='body'>
-  {{ contents | safe }}
-</section>
 
 {% if configuration %}
 <section class='configuration'>
