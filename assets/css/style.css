@@ -1499,6 +1499,81 @@ code .type, .code .type {
         #main .sidebar .menu a:first-child {
           padding-left: 0; }
 
+/* SUPPORT (CHAT & INTERCOM) */
+#support {
+  bottom: 20px;
+  color: #FFF;
+  cursor: pointer;
+  right: 20px;
+  position: fixed; }
+  #support:hover h2 {
+    opacity: 1; }
+  #support:hover .links {
+    opacity: 1;
+    padding-bottom: 4px;
+    -webkit-transition-property: opacity, padding;
+    -moz-transition-property: opacity, padding;
+    transition-property: opacity, padding;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    visibility: visible; }
+  #support h2 {
+    background: #203442;
+    border-radius: 2px;
+    color: inherit;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    opacity: 0.9;
+    padding: 10px; }
+    #support h2:before {
+      font-family: 'icons';
+      font-variant: normal;
+      font-weight: normal;
+      speak: none;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      content: '0'; }
+    #support h2 span {
+      display: none; }
+  #support .links {
+    bottom: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    visibility: hidden; }
+    #support .links a {
+      background: #203442;
+      color: white;
+      display: block;
+      font-size: 14px;
+      font-size: 1.4rem;
+      padding: 10px;
+      text-align: left;
+      white-space: nowrap; }
+      #support .links a:first-child {
+        border-radius: 2px 2px 0 0; }
+      #support .links a:last-child {
+        border-radius: 0 0 2px 2px; }
+      #support .links a:hover {
+        background: #364854; }
+      #support .links a:before {
+        font-family: 'icons';
+        font-variant: normal;
+        font-weight: normal;
+        speak: none;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        opacity: 0.5;
+        margin-right: 10px; }
+      #support .links a.chat:before {
+        content: '0'; }
+      #support .links a.help:before {
+        content: '='; }
+      #support .links a.documentation:before {
+        content: '-'; }
+
 /* SwiftType overrides */
 body .swiftype-widget .autocomplete {
   background: #FFF;
