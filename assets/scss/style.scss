@@ -145,6 +145,12 @@ code,
         text-decoration: underline;
       }
     }
+    h2,
+    h3 {
+      /* Hack to add some space before the anchors */
+      margin-top: $gutter;
+      padding-top: $gutter;
+    }
     table {
       td {
         vertical-align: top;

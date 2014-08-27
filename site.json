@@ -33,6 +33,7 @@
         "metalsmith-collections": {
             "pages": { "pattern": "*/*.md" },
             "guides": { "pattern": "guides/*.md" },
+            "howto": { "pattern": "how-to/*.md" },
             "manual": { "pattern": "manual/*.md" },
             "providers": { "pattern": "providers/*.md" },
             "services": { "pattern": "services/*.md" }

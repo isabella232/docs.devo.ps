@@ -1383,10 +1383,9 @@ code .type, .code .type {
       #main .content h2 a:hover {
         text-decoration: underline; }
     #main .content h2, #main .content h3 {
-      /* <hack> to avoid header to obscure titles */
-      margin-top: -60px;
-      padding-top: 60px;
-      /* <\hack> */ }
+      /* Hack to add some space before the anchors */
+      margin-top: 20px;
+      padding-top: 20px; }
     #main .content table td {
       vertical-align: top; }
     #main .content table .code, #main .content table code {
