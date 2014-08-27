@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
 <head>
-  <title>Node.js | devo.ps documentation</title>
+  <title>Add a server | devo.ps documentation</title>
   
   <meta charset='utf-8'/>
   <meta name='description' content='Documentation for devo.ps'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, language'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
   <!-- Favicons -->
@@ -72,7 +72,7 @@ var Swiftype = window.Swiftype || {};
   
 
 
-<a href='/how-to/add-a-node' >Add a server</a>
+<a href='/how-to/add-a-node'  class='active'>Add a server</a>
 
 
 <h3>Manual</h3>
@@ -211,7 +211,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/nginx' >Nginx</a>
 
-<a href='/services/nodejs'  class='active'>Node.js</a>
+<a href='/services/nodejs' >Node.js</a>
 
 <a href='/services/openvpn' >OpenVPN</a>
 
@@ -244,152 +244,49 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>language</li>
-    
   </ul>
 
-  <h1>Node.js 
-  <a href='http://nodejs.org/api/'><span>Official documentation</span></a>
-  </h1>  
+  <h1>Add a server </h1>  
 </header>
 
 <section class='body'>
-  
-</section>
+  <ol>
+<li><p>(Optional) Create a new repository.</p>
+</li>
+<li><p>From your profile page, <strong>click on the repository you wanto to use</strong>. You will land on the &quot;Files&quot; section of the repository.</p>
+<p> <em>Repositories are used to gather logical infrastructures together: set of servers, tasks and scripts that work together.</em></p>
+</li>
+<li><p><strong>Navigate to the &quot;Nodes&quot; section</strong>.</p>
+</li>
+<li><p><strong>Click on the &quot;Add a node&quot; button</strong>. This will open the file editor.</p>
+<p> <em>Servers are often refered to as &quot;nodes&quot;; we use this more general term as we plan on adding support for load balancers, firewall and elements of your infrastructure that are not servers.</em></p>
+</li>
+<li><p>The editor allows you to <strong>write and save the YAML file that will configure your server</strong>. For the sake of this example, we will create a simple NGINX server on Digital Ocean:</p>
+<pre><code> id: web
+ name: Web server
+ type: server
 
+ provider:
+   name: digitalocean
 
-<section class='tasks'>
-  <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
-    
-    <dt>
-      <code class='terminal'>devops node.js start</code>
-    </dt>
-    <dd>
-      Start all the apps managed by Foreverd (node.js) if stopped
-      
-    </dd>
-    
-    <dt>
-      <code class='terminal'>devops node.js stop</code>
-    </dt>
-    <dd>
-      Stop all the apps managed by Foreverd (node.js) if started
-      
-    </dd>
-    
-    <dt>
-      <code class='terminal'>devops node.js restart</code>
-    </dt>
-    <dd>
-      Restart all the apps managed by Foreverd (node.js).
-      
-    </dd>
-    
-    <dt>
-      <code class='terminal'>devops node.js app add</code>
-    </dt>
-    <dd>
-      Add a new app defintion for foreverd to run
-      
-        <h3>Options</h3>
-        <dl>
-          
-          
-<dt>
-  <code><span class='type string'>string</span> extra_env</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  additional environment variable to pass to the application
-  
-  
+ services:
+   nginx: &#39;*&#39;
+</code></pre><p> <em>I here assume that I have valid Digital Ocean API keys <a href="/manual/profile/#providers">set in my profile</a>.</em></p>
+</li>
+<li><p><strong>Save the file</strong>. You will be directly redirected to the &quot;Nodes&quot; section. Your server will appear and display a &quot;syncing&quot; status.</p>
+</li>
+<li><p><strong>Once the status of your server is set to &quot;synced&quot;, click on it</strong>. You will see your server&#39;s details.</p>
+</li>
+<li><p>You can copy the IP address of your server. <strong>Paste this IP in your browser</strong>.</p>
+</li>
+<li><p><strong>The browser will display the NGINX default message</strong>: &quot;It works!&quot;.</p>
+</li>
+</ol>
 
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> name</code>
-  
-</dt>
-<dd class='description'>
-  name of your app
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> node_env</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  node.js environment var NODE_ENV
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> root</code>
-  
-</dt>
-<dd class='description'>
-  path of the root folder of your app
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> script</code>
-  
-</dt>
-<dd class='description'>
-  node.js script to run via foreverd
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> user</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  running user of the application
-  
-  <span class='default'>Default: <code>devops</code></span>
-
-</dd>
-
-        </dl>
-      
-    </dd>
-    
-  </dl>
 </section>
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
-    
-    
-
-<dt>
-  <code class='full'>packages</code>
-  <code><span class='type'>array</span> packages</code>
-</dt>
-<dd class='description'>
-  List of packages to have globally installed on the server
-  <span class='default'>Default: <code></code></span>
-  
-</dd>
-
-
-  </dl>
-</section>
 
 
 
