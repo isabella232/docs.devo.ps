@@ -1,4 +1,12 @@
 ---
+defaults:
+  image:
+    id: 124
+    name: Ubuntu 14.04.1 64bit LTS
+  location:
+    id: 2
+    name: Dallas, TX, USA
+description: ' '
 locations:
 - country: US
   id: '2'
