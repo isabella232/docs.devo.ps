@@ -6,7 +6,6 @@ defaults:
   location:
     id: 2
     name: Dallas, TX, USA
-description: ""
 locations:
 - country: US
   id: '2'

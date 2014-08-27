@@ -6,7 +6,6 @@ defaults:
   location:
     id: 3
     name: San Francisco 1
-description: ""
 locations:
 - country: null
   id: '1'
