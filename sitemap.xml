@@ -2,22 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.devo.ps/services/elasticsearch</loc>
-    <lastmod>2014-08-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/guides/how-to-deploy-your-nodejs-app</loc>
+    <loc>http://docs.devo.ps/services/git</loc>
     <lastmod>2014-08-27</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/CLI</loc>
-    <lastmod>2014-08-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/git-repositories</loc>
     <lastmod>2014-08-27</lastmod>
   </url>
   
@@ -97,12 +87,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/guides/how-to-use-the-cli</loc>
+    <loc>http://docs.devo.ps/services/elasticsearch</loc>
     <lastmod>2014-08-27</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/git</loc>
+    <loc>http://docs.devo.ps/manual/git-repositories</loc>
     <lastmod>2014-08-27</lastmod>
   </url>
   
