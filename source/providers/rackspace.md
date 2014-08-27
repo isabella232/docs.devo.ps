@@ -1,6 +1,7 @@
 ---
 defaults: null
-description: null
+description: >-
+  None
 locations:
 - country: US
   id: dfw
