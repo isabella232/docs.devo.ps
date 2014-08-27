@@ -11,7 +11,7 @@
   {% if defaults %}
   <h2>Defaults</h2>
   <h3>Image</h3>
-    {% if defaults.image.id %}
+    {% if defaults.image.id and defaults.image.name %}
     <table>
       <thead>
         <th>ID</th>
@@ -20,7 +20,7 @@
       <tbody>
         <tr>
           <td>{{ defaults.image.id | safe }}</td>
-          <td>{{ defaults.image.description | safe }}</td>
+          <td>{{ defaults.image.name | safe }}</td>
         </tr>
       </tbody>
     </table>
@@ -28,7 +28,7 @@
     No defaults available for the image. You need to provide the image id in the node definintion.
     {% endif %}
   <h3>Location</h3>
-    {% if defaults.location.id %}
+    {% if defaults.location.id and defaults.location.name %}
     <table>
       <thead>
         <th>ID</th>
@@ -37,7 +37,7 @@
       <tbody>
         <tr>
           <td>{{ defaults.location.id | safe }}</td>
-          <td>{{ defaults.location.description | safe }}</td>
+          <td>{{ defaults.location.name | safe }}</td>
         </tr>
       </tbody>
     </table>
