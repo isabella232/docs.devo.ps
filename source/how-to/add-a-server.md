@@ -4,7 +4,7 @@ title: Add a server
 
 1. (Optional) Create a new repository.
 
-1. From your profile page, **click on the repository you wanto to use**. You will land on the "Files" section of the repository.
+1. From your profile page, **click on the repository you want to use**. You will land on the "Files" section of the repository.
 
     <em>Repositories are used to gather logical infrastructures together: set of servers, tasks and scripts that work together.</em>
 
@@ -22,11 +22,13 @@ title: Add a server
 
         provider:
           name: digitalocean
+          region: 3
+          size: 66
 
         services:
           nginx: '*'
 
-    <em>I here assume that I have valid Digital Ocean API keys [set in my profile](/manual/profile/#providers).</em>
+    <em>I here assume that I have valid Digital Ocean API keys [set in my profile](/manual/profile/#providers). Moreover, I use the value 3 for `region` and 66 for the `size`, which respectively means the "San Francisco 1" datacenter and the "512M" instance as shown on the [Digital Ocean documentation page](/providers/digitalocean).</em>
 
 1. **Save the file**. You will be directly redirected to the "Nodes" section. Your server will appear and display a "syncing" status.
 
