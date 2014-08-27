@@ -7,8 +7,11 @@
 </header>
 
 <section class='body'>
-  {% if description %}{{ description | safe }}{% endif %}
-  {% if defaults %}
+  {{ contents | safe }}
+</section>
+
+{% if defaults %}
+<section class='defaults'>
   <h2>Defaults</h2>
   <h3>Image</h3>
     {% if defaults.image.id and defaults.image.name %}
@@ -44,7 +47,10 @@
     {% else %}
     No defaults available for the location. You need to provide the location id in the node definition.
     {% endif %}
-  {% endif %}
+</section>
+{% endif %}
+
+<section class='sizes'>
   <h2>Sizes</h2>
   <table>
     <thead>
@@ -64,6 +70,9 @@
     {% endfor %}
     </tbody>
   </table>
+</section>
+
+<section class='locations'>
   <h2>Locations</h2>
   <table>
     <thead>
