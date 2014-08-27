@@ -22,7 +22,7 @@ For example, we could add a `web.yml` file with the following content:
       name: digitalocean
       size: 66
       location: 3
-      image: ubuntu14.04
+      image: 5141286
 
     services:
       nodejs: '*'
