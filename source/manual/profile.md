@@ -12,7 +12,7 @@ The SSH keys defined in your profile are used for two things:
 
 * **Git access**; when cloning a repository, you will only be asked to run a command like:
 
-    <code class='terminal pre'>git clone git@gh.devo.ps:{USERNAME}/{REPO}</code>
+    <code class='terminal pre'>git clone git@git.devo.ps:{USERNAME}/{REPO}</code>
 
     We use your SSH keys to try and authenticate you against the Git server.
 
@@ -24,7 +24,7 @@ The SSH keys defined in your profile are used for two things:
 
     Where {IP_ADDRESS} is the IP address of your server. You can retrieve this information either using the [CLI](/manual/cli#usage) (see the `devops info` command) or using the Web UI on the details page of your node. You can also use the [CLI](/manual/cli#usage)'s `devops ssh` command.
 
-*If you don't have an SSH key, we recommend you check ou the GitHub's page on [generating SSH keys](https://help.github.com/articles/generating-ssh-keys).*
+*If you don't have an SSH key, we recommend you check out the GitHub's page on [generating SSH keys](https://help.github.com/articles/generating-ssh-keys).*
 
 ## Providers
 
