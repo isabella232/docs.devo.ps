@@ -7,6 +7,44 @@
 </header>
 
 <section class='body'>
+  {% if description %}{{ description | safe }}{% endif %}
+  {% if defaults %}
+  <h2>Defaults</h2>
+  <h3>Image</h3>
+    {% if defaults.image.id %}
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ defaults.image.id | safe }}</td>
+          <td>{{ defaults.image.description | safe }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% else %}
+    No defaults available for the image. You need to provide the image id in the node definintion.
+    {% endif %}
+  <h3>Location</h3>
+    {% if defaults.location.id %}
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ defaults.location.id | safe }}</td>
+          <td>{{ defaults.location.description | safe }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% else %}
+    No defaults available for the location. You need to provide the location id in the node definintion.
+    {% endif %}
+  {% endif %}
   <h2>Sizes</h2>
   <table>
     <thead>
