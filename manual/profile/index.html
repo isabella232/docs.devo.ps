@@ -260,7 +260,7 @@ var Swiftype = window.Swiftype || {};
 <p>The SSH keys defined in your profile are used for two things:</p>
 <ul>
 <li><p><strong>Git access</strong>; when cloning a repository, you will only be asked to run a command like:</p>
-<p>  <code class='terminal pre'>git clone git@gh.devo.ps:{USERNAME}/{REPO}</code></p>
+<p>  <code class='terminal pre'>git clone git@git.devo.ps:{USERNAME}/{REPO}</code></p>
 <p>  We use your SSH keys to try and authenticate you against the Git server.</p>
 <p>  <em>We currently don&#39;t support HTTP or username/password Git access.</em></p>
 </li>
@@ -269,7 +269,7 @@ var Swiftype = window.Swiftype || {};
 <p>  Where {IP_ADDRESS} is the IP address of your server. You can retrieve this information either using the <a href="/manual/cli#usage">CLI</a> (see the <code>devops info</code> command) or using the Web UI on the details page of your node. You can also use the <a href="/manual/cli#usage">CLI</a>&#39;s <code>devops ssh</code> command.</p>
 </li>
 </ul>
-<p><em>If you don&#39;t have an SSH key, we recommend you check ou the GitHub&#39;s page on <a href="https://help.github.com/articles/generating-ssh-keys">generating SSH keys</a>.</em></p>
+<p><em>If you don&#39;t have an SSH key, we recommend you check out the GitHub&#39;s page on <a href="https://help.github.com/articles/generating-ssh-keys">generating SSH keys</a>.</em></p>
 <h2 id="providers">Providers</h2>
 <p>Providers are cloud hosting services; currently this means <a href="/providers/ec2">EC2</a>, <a href="/providers/linode">Linode</a>, <a href="/providers/digitalocean">Digital Ocean</a> or <a href="/providers/rackspace">Rackspace</a>. For you to use our service, we require you enter the API key to at least one of these providers; we will use these keys to manage servers on your behalf.</p>
 <p>When you invite a collaborator to one of your repository, he may be able to SSH in the nodes and provision servers on your behalf, however he will not be able to see the API key or other information available from your profile.</p>
