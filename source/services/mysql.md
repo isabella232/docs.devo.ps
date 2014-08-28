@@ -28,7 +28,7 @@ configuration:
     required: false
     type: string
   databases:
-    default: None
+    default: {}
     description: Associative array of databases, the key is used as database name
     object_id: database
     required: false
@@ -312,7 +312,7 @@ configuration:
       required: false
       type: integer
   users:
-    default: None
+    default: {}
     description: Associative array of users, the key is used as username
     object_id: user
     required: false
