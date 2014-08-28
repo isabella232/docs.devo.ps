@@ -2,6 +2,8 @@
 title: Add a server
 ---
 
+<iframe width="420" height="315" src="//www.youtube.com/embed/RIsiAluCxU4" frameborder="0" allowfullscreen></iframe>
+
 1. (Optional) Create a new repository.
 
 1. From your profile page, **click on the repository you want to use**. You will land on the "Files" section of the repository.
