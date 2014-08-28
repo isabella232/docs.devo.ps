@@ -2,7 +2,7 @@
 title: Add a server
 ---
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/RIsiAluCxU4" frameborder="0" allowfullscreen></iframe>
+<p align='center'><iframe width="480" height="360" src="//www.youtube.com/embed/RIsiAluCxU4" frameborder="0" allowfullscreen></iframe><p>
 
 1. (Optional) Create a new repository.
 
