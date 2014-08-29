@@ -43,6 +43,78 @@
       }
     }
   }
+
+  #main {
+    .sidebar {
+      margin-bottom: $gutter;
+      .cancel {
+        display: none;
+      }
+      .swifttype {
+        display: none;
+      }
+      h3 {
+        display: none;
+      }
+      a {
+        display: none;
+        padding: $gutter/2;
+        &.active {
+          display: block;
+          &:before {
+            @include icon;
+            content: '/';
+            float: right;
+          }
+        }
+        &:hover,
+        &:active {
+          background: $light;
+        }
+      }
+      &.active {
+        background: #FFF;
+        border: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 999;
+        .cancel {
+          display: block;
+          float: right;
+          padding: 1.5*$gutter/2 $gutter $gutter/2 0;
+          &:before {
+            @include icon;
+            content: 'X';
+            @include font-size($large);
+          }
+          span {
+            display: none;
+          }
+        }
+        .swifttype {
+          display: block;
+          padding: $gutter/2 $gutter;
+        }
+        h3,
+        a {
+          border-top: 1px solid $light;
+          display: block;
+          margin: 0;
+          padding: 1.5*$gutter/2 $gutter;
+        }
+        a {
+          padding-left: 2*$gutter;
+          &:first-child {
+            padding-left: $gutter;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -78,6 +150,7 @@
   }
 
   #main {
+    padding: $gutter 0;
     .content {
       margin-left: $sidebar + 1.5*$gutter;
     }
@@ -88,10 +161,14 @@
       position: fixed;
       top: $header + $gutter;
       width: $sidebar;
+      .cancel {
+        display: none;
+      }
       .swifttype {
         border-bottom: 1px solid $line;
         box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
         @include font-size($smaller);
+        padding: $gutter/2;
       }
       .menu {
         @include box-sizing(border-box);

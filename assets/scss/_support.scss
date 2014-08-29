@@ -16,6 +16,7 @@
       @include transition-duration(0.2s);
       visibility: visible;
       width: auto;
+      z-inde: 999;
     }
   }
   h2 {
@@ -43,6 +44,7 @@
     right: 0;
     visibility: hidden;
     width: 0;
+    z-inde: -999;
     a {
       background: $black;
       color: white;

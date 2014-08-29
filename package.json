@@ -49,6 +49,6 @@
     "gulp-sass": "*",
     "eggshell": "latest",
     "mkdirp": "*",
-    "consolidate":"git+https://github.com/kuno/consolidate.js.git"
+    "consolidate":"*"
   }
 }
