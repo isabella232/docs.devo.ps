@@ -1381,7 +1381,7 @@ code .type, .code .type {
         text-decoration: underline; }
     #main .content h2, #main .content h3 {
       /* Hack to add some space before the anchors */
-      margin-top: 20px;
+      margin-top: -20px;
       padding-top: 20px; }
     #main .content table td {
       vertical-align: top; }
