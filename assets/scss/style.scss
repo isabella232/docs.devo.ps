@@ -83,8 +83,6 @@ code,
     width: 90%;
   }
   .logo {
-    position: fixed;
-    top: $gutter;
     a:before {
       @include font-size($large);
       @include icon();
@@ -115,11 +113,11 @@ code,
         li {
           background: #FFF;
           border: 1px solid $line;
-          border-radius: $gutter;
+          border-radius: $radius;
           box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0;
           display: inline-block;
-          margin: 0 $gutter/5 0 0;
           padding: $gutter/5 $gutter/2;
+          margin: $gutter/5 $gutter/5 0 0;
         }
       }
     }
@@ -238,55 +236,11 @@ code,
   .sidebar {
     border: 1px solid $line;
     border-radius: 2*$radius;
-    @include font-size($smaller);
-    height: 60%;
-    padding-bottom: $search;
-    position: fixed;
-    top: $header + $gutter;
-    width: $sidebar;
     .swifttype {
-      border-bottom: 1px solid $line;
-      box-shadow: rgba(0, 0, 0, 0.01) 0 2px 0 0;
       padding: $gutter/2;
       input {
         border-radius: $gutter;
         width: $sidebar - 2*$gutter;
-      }
-    }
-    .menu {
-      @include box-sizing(border-box);
-      height: 100%;
-      overflow-y: auto;
-      padding: $gutter/2;
-      &::-webkit-scrollbar {
-        width: $gutter/4;
-      }
-      &::-webkit-scrollbar-track {
-        background: $light;
-        border-radius: 0;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: $line;
-        border-radius: 0;
-      }
-      h3 {
-        font-size: inherit;
-        margin: $gutter/2 0 $gutter/4;
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-      a {
-        display: block;
-        margin-bottom: $gutter/4;
-        padding-left: $gutter/2;
-        &.active {
-          color: $black;
-          font-weight: bold;
-        }
-        &:first-child {
-          padding-left: 0;
-        }
       }
     }
   }

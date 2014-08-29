@@ -78,6 +78,9 @@
             ],
             "fonts": [
                 "assets/fonts/*"
+            ],
+            "images": [
+                "assets/images/*"
             ]
         }
     }
