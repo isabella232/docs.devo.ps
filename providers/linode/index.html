@@ -116,9 +116,9 @@ var Swiftype = window.Swiftype || {};
   
 
 
-<a href='/providers/digitalocean' >Digital Ocean</a>
+<a href='/providers/ec2' >Amazon EC2</a>
 
-<a href='/providers/ec2' >Ec2</a>
+<a href='/providers/digitalocean' >Digital Ocean</a>
 
 <a href='/providers/linode'  class='active'>Linode</a>
 
@@ -239,7 +239,19 @@ var Swiftype = window.Swiftype || {};
 </header>
 
 <section class='body'>
-  
+  <p><a href="https://www.linode.com/?r=a278f28e12e5e4e08adc41d8491a1988363e80d6">Linode</a> is a virtual private server provider based in New Jersey with datacenters in Tokyo, the US (US West, US Central, US South, US East) and London.</p>
+<h2 id="example">Example</h2>
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a Linode 1024 server (<code>size: 1</code>) in their droplet Dallas datacenter (<code>location: 2</code>):</p>
+<pre><code>id: linode_server
+name: Linode server
+type: server
+
+provider:
+  name: linode
+  location: 2
+  size: 1
+</code></pre><p><em>Don&#39;t have a Linode account yet? <a href='https://www.linode.com/?r=a278f28e12e5e4e08adc41d8491a1988363e80d6' class='button' target='_blank'>Sign up for an account</a></em></p>
+
 </section>
 
 

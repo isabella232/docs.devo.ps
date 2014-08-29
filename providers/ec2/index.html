@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Ec2 | devo.ps documentation</title>
+  <title>Amazon EC2 | devo.ps documentation</title>
   
   <meta charset='utf-8'/>
   <meta name='description' content='Documentation for devo.ps'/>
@@ -116,9 +116,9 @@ var Swiftype = window.Swiftype || {};
   
 
 
-<a href='/providers/digitalocean' >Digital Ocean</a>
+<a href='/providers/ec2'  class='active'>Amazon EC2</a>
 
-<a href='/providers/ec2'  class='active'>Ec2</a>
+<a href='/providers/digitalocean' >Digital Ocean</a>
 
 <a href='/providers/linode' >Linode</a>
 
@@ -235,22 +235,24 @@ var Swiftype = window.Swiftype || {};
     <section class='content'>
       
 <header class='header'>
-  <h1>Ec2</h1>
+  <h1>Amazon EC2</h1>
 </header>
 
 <section class='body'>
-  <p>Amazon EC2 is a full featured cloud provider with extensive options.</p>
-<p><em>Due to the various types of instances, AMIs and locations, no default image AMI
-can be provided by the devo.ps platform.</em></p>
-<p>Refer to the <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 documentation</a> 
-in order to find the proper combinaison between:</p>
-<ul>
-<li>instance type, </li>
-<li>ami, </li>
-<li>location</li>
-</ul>
-<p>Currently devo.ps <strong>only support Ubuntu 14.04 LTS</strong>, you should limit your AMI choices
-to the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs</a></p>
+  <p><a href="https://aws.amazon.com/">Amazon Elastic Compute Cloud (EC2)</a> is one of the most popular cloud computing platforms, with datacenters in the Northern Virginia, Northern California, Oregon, Sao Paulo, Ireland, Sydney, Tokyo and Singapore.</p>
+<p><em>Due to the large amount of configurations available on EC2, we are currently not able to provide default values for the image. Refer to both the <a href="https://aws.amazon.com/ec2/instance-types/">EC2 Instance Types Matrix</a> and the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs page</a> to define the AMI that will work for your location and instance size.</em></p>
+<h3 id="example">Example</h3>
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a micro instance of first generation (<code>size: t1.micro</code>) in the Northern Virginia datacenter (<code>location: us-east-1</code>) with a 64-bit Ubuntu 14.04.1 LTS, EBS-backed AMI (<code>image: ami-d2ff23ba</code>, see the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs page</a>):</p>
+<pre><code>id: ec2_server
+name: EC2 server
+type: server
+
+providers:
+  name: ec2
+  size: t1.micro
+  location: us-east-1
+  image: ami-d2ff23ba
+</code></pre><p><em>Don&#39;t have an Amazon EC2 account yet? <a href='https://aws.amazon.com/' class='button' target='_blank'>Sign up for an account</a></em></p>
 
 </section>
 
