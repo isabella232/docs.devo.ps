@@ -62,11 +62,6 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('./public/assets/fonts'));
 })
 
-gulp.task('images', function() {
-    gulp.src(site.assets.custom.images)
-        .pipe(gulp.dest('./public/assets/images'));
-})
-
 //
 gulp.task('metalsmith', function(callback) {
     var metalsmith = new Metalsmith(process.cwd());
