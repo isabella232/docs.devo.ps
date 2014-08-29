@@ -99,13 +99,6 @@ sizes:
   ram: 8192
 - bandwidth: null
   disk: 40
-  id: performance2-120
-  name: 120 GB Performance
-  price: 5.44
-  price_per: hour
-  ram: 122880
-- bandwidth: null
-  disk: 40
   id: performance2-15
   name: 15 GB Performance
   price: 0.68
