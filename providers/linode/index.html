@@ -234,6 +234,9 @@ var Swiftype = window.Swiftype || {};
 
     <section class='content'>
       
+
+<div class='notification warning'>We currently only support Ubuntu 14.04 LTS images for all providers.</div>
+
 <header class='header'>
   <h1>Linode</h1>
 </header>
@@ -254,47 +257,45 @@ provider:
 </code></pre>
 </section>
 
-
 <section class='defaults'>
-  <h2>Defaults</h2>
-  <h3>Image</h3>
-    
-    <table>
-      <thead>
-        <th>ID</th>
-        <th>Description</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>124</td>
-          <td>Ubuntu 14.04.1 64bit LTS</td>
-        </tr>
-      </tbody>
-    </table>
-    
-  <h3>Location</h3>
-    
-    <table>
-      <thead>
-        <th>ID</th>
-        <th>Description</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2</td>
-          <td>Dallas, TX, USA</td>
-        </tr>
-      </tbody>
-    </table>
-    
+  <h2>Default values</h2>
+  
+  <p><em>The following values will be used by default for the provider if the attribute is missing.</em></p>
+  <table>
+    <thead>
+      <th>Attribute</th>
+      <th>Value</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><code>image</code></td>
+        <td><code>124</code></td>
+        <td>Ubuntu 14.04.1 64bit LTS</td>
+      </tr>
+      
+      
+      <tr>
+        <td><code>location</code></td>
+        <td><code>2</code></td>
+        <td>Dallas, TX, USA</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
 </section>
 
 
-<section class='sizes'>
-  <h2>Sizes</h2>
+<section class='values'>
+  <h2>Values</h2>
+  <p><em>Use the following values to set your provider's sizes and location attributes.</em></p>
+
+  <h3>Size</h3>
   <table>
     <thead>
-      <th>ID</th>
+      <th>Value</th>
       <th>Name</th>
       <th>RAM</th>
       <th>Disk (GB)</th>
@@ -366,13 +367,11 @@ provider:
     
     </tbody>
   </table>
-</section>
 
-<section class='locations'>
-  <h2>Locations</h2>
+  <h3>Location</h3>
   <table>
     <thead>
-      <th>ID</th>
+      <th>Value</th>
       <th>Name</th>
       <th>Country</th>
     </thead>
