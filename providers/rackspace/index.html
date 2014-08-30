@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title> | devo.ps documentation</title>
+  <title>Rackspace | devo.ps documentation</title>
   
   <meta charset='utf-8'/>
   <meta name='description' content='Documentation for devo.ps'/>
@@ -117,13 +117,13 @@ var Swiftype = window.Swiftype || {};
   
 
 
-<a href='/providers/rackspace'  class='active'>undefined</a>
-
 <a href='/providers/ec2' >Amazon EC2</a>
 
 <a href='/providers/digitalocean' >Digital Ocean</a>
 
 <a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace'  class='active'>Rackspace</a>
 
 
 <h3>Services</h3>
@@ -179,8 +179,10 @@ var Swiftype = window.Swiftype || {};
 
   
 
+  
 
-<a href='/services/nodejs' >undefined</a>
+
+<a href='/services/common' >undefined</a>
 
 <a href='/services/apache' >Apache</a>
 
@@ -196,6 +198,8 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/git' >Git</a>
 
+<a href='/services/go' >Go</a>
+
 <a href='/services/java' >Java</a>
 
 <a href='/services/memcached' >Memcached</a>
@@ -205,6 +209,8 @@ var Swiftype = window.Swiftype || {};
 <a href='/services/mysql' >MySQL</a>
 
 <a href='/services/nginx' >Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
 
 <a href='/services/openvpn' >OpenVPN</a>
 
@@ -234,24 +240,213 @@ var Swiftype = window.Swiftype || {};
     <section class='content'>
       
 
-<header class='header'>
-  <ul class='tags'>
-    
-  </ul>
+<div class='notification warning'>We currently only support Ubuntu 14.04 LTS images for all providers.</div>
 
-  <h1> </h1>  
+<header class='header'>
+  <h1>Rackspace</h1>
 </header>
 
 <section class='body'>
+  <p><a href="http://rackspace.com">Rackspace</a> is a managed cloud computing company base in Texas with datacenters in Texas, Illinois, Virginia, the United Kingdom, Australia, and Hong Kong.</p>
+<p><em>Don&#39;t have a Rackspace account yet? <a href='https://www.rackspace.com/' target='_blank'>Sign up for an account</a>.</em></p>
+<h2 id="example">Example</h2>
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a 512MB Standard Instance (<code>size: 2</code>) on Rackspace in their Dallas datacenter (<code>location: dfw</code>):</p>
+<pre><code>id: rackspace_server
+name: Rackspace server
+type: server
+
+provider:
+  name: rackspace
+  location: dfw
+  size: 2
+</code></pre>
+</section>
+
+<section class='defaults'>
+  <h2>Default values</h2>
+  
+    <p><em>This provider has no default values: you must specify size, location and image attributes.</em></p>
   
 </section>
 
 
+<section class='values'>
+  <h2>Values</h2>
+  <p><em>Use the following values to set your provider's sizes and location attributes.</em></p>
 
+  <h3>Size</h3>
+  <table>
+    <thead>
+      <th>Value</th>
+      <th>Name</th>
+      <th>RAM</th>
+      <th>Disk (GB)</th>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><code>2</code></td>
+        <td>512MB Standard Instance</td>
+        <td><code>512</code></td>
+        <td><code>20</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>3</code></td>
+        <td>1GB Standard Instance</td>
+        <td><code>1024</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>4</code></td>
+        <td>2GB Standard Instance</td>
+        <td><code>2048</code></td>
+        <td><code>80</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>5</code></td>
+        <td>4GB Standard Instance</td>
+        <td><code>4096</code></td>
+        <td><code>160</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>6</code></td>
+        <td>8GB Standard Instance</td>
+        <td><code>8192</code></td>
+        <td><code>320</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>7</code></td>
+        <td>15GB Standard Instance</td>
+        <td><code>15360</code></td>
+        <td><code>620</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>8</code></td>
+        <td>30GB Standard Instance</td>
+        <td><code>30720</code></td>
+        <td><code>1200</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-1</code></td>
+        <td>1 GB Performance</td>
+        <td><code>1024</code></td>
+        <td><code>20</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-2</code></td>
+        <td>2 GB Performance</td>
+        <td><code>2048</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-4</code></td>
+        <td>4 GB Performance</td>
+        <td><code>4096</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-8</code></td>
+        <td>8 GB Performance</td>
+        <td><code>8192</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-120</code></td>
+        <td>120 GB Performance</td>
+        <td><code>122880</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-15</code></td>
+        <td>15 GB Performance</td>
+        <td><code>15360</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-30</code></td>
+        <td>30 GB Performance</td>
+        <td><code>30720</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-60</code></td>
+        <td>60 GB Performance</td>
+        <td><code>61440</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-90</code></td>
+        <td>90 GB Performance</td>
+        <td><code>92160</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+    </tbody>
+  </table>
 
-
-
-
+  <h3>Location</h3>
+  <table>
+    <thead>
+      <th>Value</th>
+      <th>Name</th>
+      <th>Country</th>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><code>dfw</code></td>
+        <td>Dallas (Texas)</td>
+        <td>US</td>
+      </tr>
+    
+      <tr>
+        <td><code>ord</code></td>
+        <td>Chicago (Illinois)</td>
+        <td>US</td>
+      </tr>
+    
+      <tr>
+        <td><code>iad</code></td>
+        <td>Northern Virginia</td>
+        <td>US</td>
+      </tr>
+    
+      <tr>
+        <td><code>lon</code></td>
+        <td>London (UK)</td>
+        <td>UK</td>
+      </tr>
+    
+      <tr>
+        <td><code>syd</code></td>
+        <td>Sydney (Australia)</td>
+        <td>Australia</td>
+      </tr>
+    
+      <tr>
+        <td><code>hkg</code></td>
+        <td>Hong Kong (China)</td>
+        <td>China</td>
+      </tr>
+    
+    </tbody>
+  </table>
+</section>
 
     </section>
   <section>
