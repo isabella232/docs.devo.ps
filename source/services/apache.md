@@ -174,9 +174,12 @@ tasks:
 title: Apache
 
 ---
+# Files
+Drop here all the files that can be copied over to the servers.
 
+Those files will not be modified and will be copied as-is. 
 
-### Notes
+If you need to have files that are modified on a per host basis, you need to use the templates.
 
-For better user experience you may prefer the use of the `reload` task instead of `restart`.
-
+Extra details:
+    - http://ansible.cc/docs/index.html
