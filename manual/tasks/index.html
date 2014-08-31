@@ -273,7 +273,7 @@ steps:
   - run: devops git update
     options:
       repo: https://github.com/Wiredcraft/octokan.com.git
-      dest: {{ build }}
+      dest: &quot;{{ build }}&quot;
       version: master
   - run: cd {{ build }}; make build ; cp -a _site/* /var/www/{{ domain }}
 </code></pre><h2 id="format">Format</h2>
