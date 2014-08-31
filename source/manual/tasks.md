@@ -31,7 +31,7 @@ For example, we could add a `deploy.yml` file with the following content:
       - run: devops git update
         options:
           repo: https://github.com/Wiredcraft/octokan.com.git
-          dest: {{ build }}
+          dest: "{{ build }}"
           version: master
       - run: cd {{ build }}; make build ; cp -a _site/* /var/www/{{ domain }}
 
