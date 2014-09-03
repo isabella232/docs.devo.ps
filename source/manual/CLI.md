@@ -1,5 +1,6 @@
 ---
 title: CLI
+experimental: true
 ---
 
 The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server or listing your repositories.
@@ -35,7 +36,7 @@ You will first need to install EPEL (you can find plenty of tutorials for [Fedor
   <dd>Displays the full list of commands supported by the CLI.</dd>
 
   <dt><code class='terminal'>devops login</code></dt>
-  <dd>Authenticate your CLI; this require you use the API key given to you on the [user settings page](https://app.devo.ps/#/user/settings).</dd>
+  <dd>Authenticate your CLI; this require you use your devo.ps username (GitHub username) and the API key given to you on the [user settings page](https://app.devo.ps/#/user/settings).</dd>
 
   <dt><code class='terminal'>devops logout</code></dt>
   <dd>Logs your CLI out.</dd>
