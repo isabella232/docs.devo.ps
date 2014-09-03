@@ -256,7 +256,7 @@ var Swiftype = window.Swiftype || {};
   <h1 id="virtual-hosts">Virtual Hosts</h1>
 <p>In practive virtual hosts allows you to compartment your web files and allow you to run different domains at the same time on the same host.</p>
 <h2 id="default-web-roots">Default web roots</h2>
-<p>The default web roots are created based on the vhost id supploed on creation:</p>
+<p>The default web roots are created based on the vhost id supplied on creation:</p>
 <pre><code>/var/www/{vhost_id}
 </code></pre><p>Sometime your public files are hosted in a subfolder of the main web root (e.g. <code>public</code>), in that case you want to use the <code>webroot</code> parameter in the vhost definition. It will be appended to the main webroot. For example, with the following configuration:</p>
 <pre><code>configuration:
@@ -278,7 +278,7 @@ var Swiftype = window.Swiftype || {};
 <li>static: will simply consider the traffic to be served as-is, and that the files do not require any processing.</li>
 </ul>
 <h2 id="supported-technologies">Supported technologies</h2>
-<p>An extra attribute <code>support</code> is available in the definition of a <em>vhost</em>; it should list the technologies that this vhost needs to support. </p>
+<p>An extra attribute <code>support</code> is available in the definition of a vhost; it should list the technologies that this vhost needs to support. </p>
 <p>Currently only <code>php</code> is relevant and will change the behavior of the vhost by ensuring the <code>index</code> includes <code>index.php</code> along with the <code>index.html</code> and <code>index.htm</code>.</p>
 <h2 id="example">Example</h2>
 <p>The following configuration snippet:</p>
