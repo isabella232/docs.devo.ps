@@ -99,10 +99,11 @@ objects:
         required: false
         type: string
       type:
+        default: custom
         description: The type of handler for that route
-        required: true
+        required: false
         type: string
-        valid_values: Either of proxy / fastcgi / websocket / uwsgi / static
+        valid_values: Either of proxy / fastcgi / websocket / uwsgi / static / custom
       uri:
         description: Any string / regex that nginx understand as a `location`
         required: true
