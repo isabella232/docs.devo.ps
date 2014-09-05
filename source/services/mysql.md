@@ -28,8 +28,8 @@ configuration:
     required: false
     type: string
   databases:
-    default: {}
-    description: Associative array of databases, the key is used as database name
+    default: []
+    description: Array of databases
     object_id: database
     required: false
     type: object
@@ -312,8 +312,8 @@ configuration:
       required: false
       type: integer
   users:
-    default: {}
-    description: Associative array of users, the key is used as username
+    default: []
+    description: Array of users
     object_id: user
     required: false
     type: object
@@ -323,30 +323,29 @@ objects:
     description: MySQL database object, defines a database and the permissions of
       the users
     options:
+      name:
+        default: null
+        description: Database name
+        required: true
       users:
-        default: None
-        description: Array of users with full privileges on the database
+        default: []
+        description: Array of users with full privileges on the database, users will
+          be granted access from all their hosts
         required: false
         type: array
   user:
-    description: MySQL user object. Currently passwords are generated randomly only.
+    description: MySQL user object. Passwords are randomly generated.
     options:
-      generate_password:
-        default: true
-        description: Define whether a random password must be generated for the user
-        required: false
-        type: bool
       hosts:
         default: localhost
         description: Array of hosts the user will be allowed to connect from. ex.
           [localhost, 192.168.%]
         required: false
         type: array
-      password:
-        default: RANDOM
-        description: Define the password to be set for the user [UNSUPPORTED]
-        required: false
-        type: string
+      name:
+        default: null
+        description: User name
+        required: true
 tags:
 - database
 - relational
