@@ -327,6 +327,7 @@ objects:
         default: null
         description: Database name
         required: true
+        type: string
       users:
         default: []
         description: Array of users with full privileges on the database, users will
@@ -346,6 +347,7 @@ objects:
         default: null
         description: User name
         required: true
+        type: string
 tags:
 - database
 - relational
