@@ -371,8 +371,8 @@ var Swiftype = window.Swiftype || {};
   <code><span class='type'>object</span> databases</code>
 </dt>
 <dd class='description'>
-  Associative array of databases, the key is used as database name (<a href='#object-database'>Read more about database objects</a>)
-  <span class='default'>Default: <code>[object Object]</code></span>
+  Array of databases (<a href='#object-database'>Read more about database objects</a>)
+  <span class='default'>Default: <code></code></span>
   
 </dd>
 
@@ -916,8 +916,8 @@ var Swiftype = window.Swiftype || {};
   <code><span class='type'>object</span> users</code>
 </dt>
 <dd class='description'>
-  Associative array of users, the key is used as username (<a href='#object-user'>Read more about user objects</a>)
-  <span class='default'>Default: <code>[object Object]</code></span>
+  Array of users (<a href='#object-user'>Read more about user objects</a>)
+  <span class='default'>Default: <code></code></span>
   
 </dd>
 
@@ -941,13 +941,24 @@ var Swiftype = window.Swiftype || {};
         
         
 <dt>
+  <code><span class='type '></span> name</code>
+  
+</dt>
+<dd class='description'>
+  Database name
+  
+  
+
+</dd>
+
+<dt>
   <code><span class='type array'>array</span> users</code>
   <span class='optional'>Optional</span>
 </dt>
 <dd class='description'>
-  Array of users with full privileges on the database
+  Array of users with full privileges on the database, users will be granted access from all their hosts
   
-  <span class='default'>Default: <code>None</code></span>
+  <span class='default'>Default: <code></code></span>
 
 </dd>
 
@@ -958,22 +969,11 @@ var Swiftype = window.Swiftype || {};
       <h3 id='object-user'><a href='#object-user'>user</a></h3>
     </dt>
     <dd>
-      MySQL user object. Currently passwords are generated randomly only.
+      MySQL user object. Passwords are randomly generated.
       
       <dl>
         
         
-<dt>
-  <code><span class='type bool'>bool</span> generate_password</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Define whether a random password must be generated for the user
-  
-  <span class='default'>Default: <code>true</code></span>
-
-</dd>
-
 <dt>
   <code><span class='type array'>array</span> hosts</code>
   <span class='optional'>Optional</span>
@@ -986,13 +986,13 @@ var Swiftype = window.Swiftype || {};
 </dd>
 
 <dt>
-  <code><span class='type string'>string</span> password</code>
-  <span class='optional'>Optional</span>
+  <code><span class='type '></span> name</code>
+  
 </dt>
 <dd class='description'>
-  Define the password to be set for the user [UNSUPPORTED]
+  User name
   
-  <span class='default'>Default: <code>RANDOM</code></span>
+  
 
 </dd>
 
