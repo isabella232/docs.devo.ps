@@ -1,8 +1,7 @@
 {% for val in tree %}
 {% if val.type and val.description %}
 <dt id='details_{{ loop.key }}'>
-  <code class='full'>{% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code>
-  <code><span class='type'>{{ val.type }}</span> {{ loop.key }}</code>
+  <code><span class='type'>{{ val.type }}</span> {% if parent %}{{ parent }}.{% endif %}<strong>{{ loop.key }}</strong></code>
 </dt>
 <dd class='description'>
   {{ val.description }}{% if val.object_id %} (<a href='#object-{{ val.object_id }}'>Read more about {{ val.object_id }} objects</a>){% endif %}
@@ -16,12 +15,8 @@
 {% set parent_prev = parent %}
 {% set parent += '.'+ loop.key %}
 {% endif %}
-<dt><code>{{ parent }}</code></dt>
-<dd>
-<dl>
 {% set tree = val %}
 {% include "_tree.html" %}
 {% set parent = parent_prev %}
-</dl></dd>
 {% endif %}
 {% endfor %}
