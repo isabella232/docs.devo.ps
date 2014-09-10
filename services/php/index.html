@@ -326,7 +326,451 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
+  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
+  <dl>
+  <dd>
+    <code>configuration</code>:
+    <dl>
+    <dd>
+      <code>php</code>:
+      <dl>
+        
+        
+
+<dd><code>apc:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_enable_cli"><code>enable_cli</code><span class="sample_description">Enable / disable APC for the CLI version of PHP (Mostly for testing and debugging).</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_enabled"><code>enabled</code><span class="sample_description">Enable / disable APC (0 - disabled).</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_gc_ttl"><code>gc_ttl</code><span class="sample_description">The number of seconds that a cache entry may remain on the garbage-collection list.</span></a>: <code>3600</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_file_size"><code>max_file_size</code><span class="sample_description">Cache files up to this file size. Prevents large files from being cached.</span></a>: <code>1M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_shm_segments"><code>shm_segments</code><span class="sample_description">The number of shared memory segments to allocate for the compiler cache.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_shm_size"><code>shm_size</code><span class="sample_description">The size of each shared memory segment in MB. (add unit)</span></a>: <code>128M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_ttl"><code>ttl</code><span class="sample_description">The number of seconds a cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</span></a>: <code>14400</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_user_ttl"><code>user_ttl</code><span class="sample_description">The number of seconds a user cache entry is allowed to idle in a slot in case this cache entry slot is needed by another entry.</span></a>: <code>7200</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd><code>cgi:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_fix_pathinfo"><code>fix_pathinfo</code><span class="sample_description">cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.</span></a>: <code>1</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_composer"><code>composer</code><span class="sample_description">Add composer support (https://getcomposer.org/) globally to the node</span></a>: <span>no defaults</span>
+</dd>
+
+
+
+<dd>
+  <a href="#details_display_errors"><code>display_errors</code><span class="sample_description">Define whether PHP will output errors, notices and warnings.</span></a>: <code>Off</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_error_log"><code>error_log</code><span class="sample_description">Log errors to specified file (or syslog).</span></a>: <code>syslog</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_error_reporting"><code>error_reporting</code><span class="sample_description">Define which errors, warnings and notices to report.</span></a>: <code>E_ALL &amp; ~E_DEPRECATED</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_expose_php"><code>expose_php</code><span class="sample_description">Decides whether PHP may expose the fact that it is installed on the server.</span></a>: <code>Off</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_extensions"><code>extensions</code><span class="sample_description">List of extra php extensions installable via the regular OS package manager</span></a>: <code></code>
+</dd>
+
+
+
+<dd><code>fpm:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_emergency_restart_interval"><code>emergency_restart_interval</code><span class="sample_description">Time within which an emergency graceful restart should be initiated (along with the threshold) - Available Units s(econds) default, m(inutes), h(ours), or d(ays)</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_emergency_restart_threshold"><code>emergency_restart_threshold</code><span class="sample_description">If more than X processes restart with SIGSEGV or SIGBUS within the emergency restart interval, php-fpm will restart</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_error_log"><code>error_log</code><span class="sample_description">Location of the error log file - can use `syslog` instead of file.</span></a>: <code>/var/log/php-fpm/php5-fpm.log</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_log_level"><code>log_level</code><span class="sample_description">Minimum log level to capture the logs for</span></a>: <code>notice</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_pid"><code>pid</code><span class="sample_description">Location of the php5-fpm process PID file</span></a>: <code>/var/run/php5-fpm.pid</code>
+</dd>
+
+
+
+<dd><code>pool:</code>
+  <dl>
+  
+  
+
+<dd><code>bind:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_allowed_clients"><code>allowed_clients</code><span class="sample_description">List (comma separated) of ipv4 addresses of FastCGI clients which are allowed to connect.</span></a>: <code>127.0.0.1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_group"><code>group</code><span class="sample_description">Group owner of the unix socket (only relevant if listen is a path)</span></a>: <code>www-data</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_mode"><code>mode</code><span class="sample_description">Permission of the socket file (only relevant if listen is a path)</span></a>: <code>0666</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_owner"><code>owner</code><span class="sample_description">Owner of the unix socket (only relevant if listen is a path)</span></a>: <code>www-data</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_group"><code>group</code><span class="sample_description">Running unix group of the pool</span></a>: <code>www-data</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_listen"><code>listen</code><span class="sample_description">The address on which to accept FastCGI requests (ip.add.re.ss;port, port, sock path)</span></a>: <code>127.0.0.1:9000</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_name"><code>name</code><span class="sample_description">Pool name</span></a>: <code>www</code>
+</dd>
+
+
+
+<dd><code>ping:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_path"><code>path</code><span class="sample_description">URL path to simple ping</span></a>: <code>/ping</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_response"><code>response</code><span class="sample_description">Message to be sent back on ping</span></a>: <code>pong</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd><code>pm:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_max_children"><code>max_children</code><span class="sample_description">Maximum number of children (usually cpu-core * 2)</span></a>: <code>10</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_requests"><code>max_requests</code><span class="sample_description">Maximum number of requests processed by a single process before being respawned</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_spare_servers"><code>max_spare_servers</code><span class="sample_description">Maximum number of spare servers to keep running</span></a>: <code>6</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_min_spare_servers"><code>min_spare_servers</code><span class="sample_description">Minimum number of spare servers to keep running</span></a>: <code>2</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_process_idle_timeout"><code>process_idle_timeout</code><span class="sample_description">Maximum time to keep a server idle running (ondemand)</span></a>: <code>10s</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_start_servers"><code>start_servers</code><span class="sample_description">Number of server to start (dynamic)</span></a>: <code>4</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_status_path"><code>status_path</code><span class="sample_description">URL path to access the status of the php pool</span></a>: <code>/status</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_type"><code>type</code><span class="sample_description">Choose how the process manager will control the number of child processes. (static, dynamic, ondemand)</span></a>: <code>static</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_request_slowlog_timeout"><code>request_slowlog_timeout</code><span class="sample_description">Time after which a backtrace is sent to the slowlogs (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_request_terminate_timeout"><code>request_terminate_timeout</code><span class="sample_description">Time after which a the process gets terminated (0; disabled); Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_slowlog"><code>slowlog</code><span class="sample_description">Path for the slow log file of this pool</span></a>: <code>/var/log/php-fpm/$pool.log.slow</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_user"><code>user</code><span class="sample_description">Running unix user of the pool</span></a>: <code>www-data</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_process_control_timeout"><code>process_control_timeout</code><span class="sample_description">Time limit for child processes to wait for a reaction on signals from master. Available Units; s(econds) default, m(inutes), h(ours), or d(ays)</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_process_max"><code>process_max</code><span class="sample_description">The maximum number of processes FPM will fork across all the pools. 0 means no limit.</span></a>: <code>0</code>
+</dd>
+
+
+
+<dd><code>syslog:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_facility"><code>facility</code><span class="sample_description">Syslog facility to send the log to (only if error_log=syslog)</span></a>: <code>daemon</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_ident"><code>ident</code><span class="sample_description">String that is prepended to the syslog message</span></a>: <code>php-fpm</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_log_errors"><code>log_errors</code><span class="sample_description">Define whether PHP should log errors to locations such as a server-specific log, STDERR, or a location specified by the error_log.</span></a>: <code>On</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_execution_time"><code>max_execution_time</code><span class="sample_description">Maximum execution time of each script, in seconds.</span></a>: <code>60</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_input_time"><code>max_input_time</code><span class="sample_description">Maximum amount of time each script may spend parsing request data.</span></a>: <code>120</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_memory_limit"><code>memory_limit</code><span class="sample_description">Maximum amount of memory a script may consume.</span></a>: <code>128M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_pecl_extensions"><code>pecl_extensions</code><span class="sample_description">List of extra php extensions installable via PECL</span></a>: <code></code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_post_max_size"><code>post_max_size</code><span class="sample_description">Maximum size of POST data that PHP will accept.</span></a>: <code>16M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_realpath_cache_size"><code>realpath_cache_size</code><span class="sample_description">Determines the size of the realpath cache to be used.</span></a>: <code>256k</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_realpath_cache_ttl"><code>realpath_cache_ttl</code><span class="sample_description">Duration of time, in seconds for which to cache realpath information for a given file or directory.</span></a>: <code>3600</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_safe_mode"><code>safe_mode</code><span class="sample_description">Enable / disable php safe_mode.</span></a>: <code>Off</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_safe_mode_gid"><code>safe_mode_gid</code><span class="sample_description">Compare GID instead of UID when php safe_mode is enabled.</span></a>: <code>Off</code>
+</dd>
+
+
+
+<dd><code>session:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_save_handler"><code>save_handler</code><span class="sample_description">Handler used to store/retrieve session data.</span></a>: <code>files</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_save_path"><code>save_path</code><span class="sample_description">Folder PATH where sessions will be stored (if save_habdler is file).</span></a>: <code>/var/lib/php/session</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_upload_max_filesize"><code>upload_max_filesize</code><span class="sample_description">Maximum allowed size for uploaded files.</span></a>: <code>16M</code>
+</dd>
+
+
+      </dl>
+    </dd>
+    </dl>
+  </dd>
+  </dl>
+  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
   <dl>
     
     
@@ -340,7 +784,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_enable_cli'>
   <code class='full'>apc.enable_cli</code>
   <code><span class='type'>integer</span> enable_cli</code>
 </dt>
@@ -352,7 +796,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_enabled'>
   <code class='full'>apc.enabled</code>
   <code><span class='type'>integer</span> enabled</code>
 </dt>
@@ -364,7 +808,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_gc_ttl'>
   <code class='full'>apc.gc_ttl</code>
   <code><span class='type'>integer</span> gc_ttl</code>
 </dt>
@@ -376,7 +820,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_file_size'>
   <code class='full'>apc.max_file_size</code>
   <code><span class='type'>string</span> max_file_size</code>
 </dt>
@@ -388,7 +832,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_shm_segments'>
   <code class='full'>apc.shm_segments</code>
   <code><span class='type'>integer</span> shm_segments</code>
 </dt>
@@ -400,7 +844,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_shm_size'>
   <code class='full'>apc.shm_size</code>
   <code><span class='type'>string</span> shm_size</code>
 </dt>
@@ -412,7 +856,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_ttl'>
   <code class='full'>apc.ttl</code>
   <code><span class='type'>integer</span> ttl</code>
 </dt>
@@ -424,7 +868,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_user_ttl'>
   <code class='full'>apc.user_ttl</code>
   <code><span class='type'>integer</span> user_ttl</code>
 </dt>
@@ -449,7 +893,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_fix_pathinfo'>
   <code class='full'>cgi.fix_pathinfo</code>
   <code><span class='type'>integer</span> fix_pathinfo</code>
 </dt>
@@ -465,7 +909,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_composer'>
   <code class='full'>composer</code>
   <code><span class='type'>boolean</span> composer</code>
 </dt>
@@ -477,7 +921,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_display_errors'>
   <code class='full'>display_errors</code>
   <code><span class='type'>string</span> display_errors</code>
 </dt>
@@ -489,7 +933,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_error_log'>
   <code class='full'>error_log</code>
   <code><span class='type'>string</span> error_log</code>
 </dt>
@@ -501,7 +945,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_error_reporting'>
   <code class='full'>error_reporting</code>
   <code><span class='type'>string</span> error_reporting</code>
 </dt>
@@ -513,7 +957,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_expose_php'>
   <code class='full'>expose_php</code>
   <code><span class='type'>string</span> expose_php</code>
 </dt>
@@ -525,7 +969,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_extensions'>
   <code class='full'>extensions</code>
   <code><span class='type'>array</span> extensions</code>
 </dt>
@@ -546,7 +990,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_emergency_restart_interval'>
   <code class='full'>fpm.emergency_restart_interval</code>
   <code><span class='type'>string</span> emergency_restart_interval</code>
 </dt>
@@ -558,7 +1002,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_emergency_restart_threshold'>
   <code class='full'>fpm.emergency_restart_threshold</code>
   <code><span class='type'>integer</span> emergency_restart_threshold</code>
 </dt>
@@ -570,7 +1014,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_error_log'>
   <code class='full'>fpm.error_log</code>
   <code><span class='type'>string</span> error_log</code>
 </dt>
@@ -582,7 +1026,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_level'>
   <code class='full'>fpm.log_level</code>
   <code><span class='type'>string</span> log_level</code>
 </dt>
@@ -594,7 +1038,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_pid'>
   <code class='full'>fpm.pid</code>
   <code><span class='type'>string</span> pid</code>
 </dt>
@@ -626,7 +1070,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_allowed_clients'>
   <code class='full'>fpm.pool.bind.allowed_clients</code>
   <code><span class='type'>string</span> allowed_clients</code>
 </dt>
@@ -638,7 +1082,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_group'>
   <code class='full'>fpm.pool.bind.group</code>
   <code><span class='type'>string</span> group</code>
 </dt>
@@ -650,7 +1094,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_mode'>
   <code class='full'>fpm.pool.bind.mode</code>
   <code><span class='type'>string</span> mode</code>
 </dt>
@@ -662,7 +1106,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_owner'>
   <code class='full'>fpm.pool.bind.owner</code>
   <code><span class='type'>string</span> owner</code>
 </dt>
@@ -678,7 +1122,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_group'>
   <code class='full'>fpm.pool.group</code>
   <code><span class='type'>string</span> group</code>
 </dt>
@@ -690,7 +1134,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_listen'>
   <code class='full'>fpm.pool.listen</code>
   <code><span class='type'>string</span> listen</code>
 </dt>
@@ -702,7 +1146,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_name'>
   <code class='full'>fpm.pool.name</code>
   <code><span class='type'>string</span> name</code>
 </dt>
@@ -724,7 +1168,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_path'>
   <code class='full'>fpm.pool.ping.path</code>
   <code><span class='type'>string</span> path</code>
 </dt>
@@ -736,7 +1180,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_response'>
   <code class='full'>fpm.pool.ping.response</code>
   <code><span class='type'>string</span> response</code>
 </dt>
@@ -762,7 +1206,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_children'>
   <code class='full'>fpm.pool.pm.max_children</code>
   <code><span class='type'>integer</span> max_children</code>
 </dt>
@@ -774,7 +1218,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_requests'>
   <code class='full'>fpm.pool.pm.max_requests</code>
   <code><span class='type'>integer</span> max_requests</code>
 </dt>
@@ -786,7 +1230,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_spare_servers'>
   <code class='full'>fpm.pool.pm.max_spare_servers</code>
   <code><span class='type'>integer</span> max_spare_servers</code>
 </dt>
@@ -798,7 +1242,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_min_spare_servers'>
   <code class='full'>fpm.pool.pm.min_spare_servers</code>
   <code><span class='type'>integer</span> min_spare_servers</code>
 </dt>
@@ -810,7 +1254,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_process_idle_timeout'>
   <code class='full'>fpm.pool.pm.process_idle_timeout</code>
   <code><span class='type'>string</span> process_idle_timeout</code>
 </dt>
@@ -822,7 +1266,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_start_servers'>
   <code class='full'>fpm.pool.pm.start_servers</code>
   <code><span class='type'>integer</span> start_servers</code>
 </dt>
@@ -834,7 +1278,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_status_path'>
   <code class='full'>fpm.pool.pm.status_path</code>
   <code><span class='type'>string</span> status_path</code>
 </dt>
@@ -846,7 +1290,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_type'>
   <code class='full'>fpm.pool.pm.type</code>
   <code><span class='type'>string</span> type</code>
 </dt>
@@ -862,7 +1306,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_request_slowlog_timeout'>
   <code class='full'>fpm.pool.request_slowlog_timeout</code>
   <code><span class='type'>string</span> request_slowlog_timeout</code>
 </dt>
@@ -874,7 +1318,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_request_terminate_timeout'>
   <code class='full'>fpm.pool.request_terminate_timeout</code>
   <code><span class='type'>string</span> request_terminate_timeout</code>
 </dt>
@@ -886,7 +1330,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_slowlog'>
   <code class='full'>fpm.pool.slowlog</code>
   <code><span class='type'>string</span> slowlog</code>
 </dt>
@@ -898,7 +1342,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_user'>
   <code class='full'>fpm.pool.user</code>
   <code><span class='type'>string</span> user</code>
 </dt>
@@ -914,7 +1358,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_process_control_timeout'>
   <code class='full'>fpm.pool.process_control_timeout</code>
   <code><span class='type'>string</span> process_control_timeout</code>
 </dt>
@@ -926,7 +1370,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_process_max'>
   <code class='full'>fpm.pool.process_max</code>
   <code><span class='type'>integer</span> process_max</code>
 </dt>
@@ -948,7 +1392,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_facility'>
   <code class='full'>fpm.pool.syslog.facility</code>
   <code><span class='type'>string</span> facility</code>
 </dt>
@@ -960,7 +1404,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_ident'>
   <code class='full'>fpm.pool.syslog.ident</code>
   <code><span class='type'>string</span> ident</code>
 </dt>
@@ -980,7 +1424,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_errors'>
   <code class='full'>fpm.pool.log_errors</code>
   <code><span class='type'>string</span> log_errors</code>
 </dt>
@@ -992,7 +1436,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_execution_time'>
   <code class='full'>fpm.pool.max_execution_time</code>
   <code><span class='type'>integer</span> max_execution_time</code>
 </dt>
@@ -1004,7 +1448,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_input_time'>
   <code class='full'>fpm.pool.max_input_time</code>
   <code><span class='type'>integer</span> max_input_time</code>
 </dt>
@@ -1016,7 +1460,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_memory_limit'>
   <code class='full'>fpm.pool.memory_limit</code>
   <code><span class='type'>string</span> memory_limit</code>
 </dt>
@@ -1028,7 +1472,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_pecl_extensions'>
   <code class='full'>fpm.pool.pecl_extensions</code>
   <code><span class='type'>array</span> pecl_extensions</code>
 </dt>
@@ -1040,7 +1484,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_post_max_size'>
   <code class='full'>fpm.pool.post_max_size</code>
   <code><span class='type'>string</span> post_max_size</code>
 </dt>
@@ -1052,7 +1496,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_realpath_cache_size'>
   <code class='full'>fpm.pool.realpath_cache_size</code>
   <code><span class='type'>string</span> realpath_cache_size</code>
 </dt>
@@ -1064,7 +1508,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_realpath_cache_ttl'>
   <code class='full'>fpm.pool.realpath_cache_ttl</code>
   <code><span class='type'>integer</span> realpath_cache_ttl</code>
 </dt>
@@ -1076,7 +1520,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_safe_mode'>
   <code class='full'>fpm.pool.safe_mode</code>
   <code><span class='type'>string</span> safe_mode</code>
 </dt>
@@ -1088,7 +1532,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_safe_mode_gid'>
   <code class='full'>fpm.pool.safe_mode_gid</code>
   <code><span class='type'>string</span> safe_mode_gid</code>
 </dt>
@@ -1110,7 +1554,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_save_handler'>
   <code class='full'>fpm.pool.session.save_handler</code>
   <code><span class='type'>string</span> save_handler</code>
 </dt>
@@ -1122,7 +1566,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_save_path'>
   <code class='full'>fpm.pool.session.save_path</code>
   <code><span class='type'>string</span> save_path</code>
 </dt>
@@ -1138,7 +1582,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_upload_max_filesize'>
   <code class='full'>fpm.pool.upload_max_filesize</code>
   <code><span class='type'>string</span> upload_max_filesize</code>
 </dt>

@@ -303,12 +303,105 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
+  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
+  <dl>
+  <dd>
+    <code>configuration</code>:
+    <dl>
+    <dd>
+      <code>varnish</code>:
+      <dl>
+        
+        
+
+<dd>
+  <a href="#details_admin_listen_address"><code>admin_listen_address</code><span class="sample_description">Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</span></a>: <code>127.0.0.1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_admin_listen_port"><code>admin_listen_port</code><span class="sample_description">Telnet admin interface listen port.</span></a>: <code>6082</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_listen_address"><code>listen_address</code><span class="sample_description">Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</span></a>: <span>no defaults</span>
+</dd>
+
+
+
+<dd>
+  <a href="#details_listen_port"><code>listen_port</code><span class="sample_description">Listen port.</span></a>: <code>6081</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_threads"><code>max_threads</code><span class="sample_description">The maximum number of worker threads to start.</span></a>: <code>1000</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_min_threads"><code>min_threads</code><span class="sample_description">The minimum number of worker threads to start.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_secret_file"><code>secret_file</code><span class="sample_description">File containing administration secret.</span></a>: <code>/etc/varnish/secret</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_storage_file"><code>storage_file</code><span class="sample_description">Storage file, only used if storage_type is file.</span></a>: <code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_storage_size"><code>storage_size</code><span class="sample_description">Cache size: in bytes, optionally using k / M / G / T suffix.</span></a>: <code>256M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_storage_type"><code>storage_type</code><span class="sample_description">Store objects either in memory (malloc), on in a file (file).</span></a>: <code>malloc</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_thread_timeout"><code>thread_timeout</code><span class="sample_description">Idle timeout for worker threads.</span></a>: <code>120</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_ttl"><code>ttl</code><span class="sample_description">Default TTL used when the backend does not specify one.</span></a>: <code>120</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_vcl_conf"><code>vcl_conf</code><span class="sample_description">Main configuration file.</span></a>: <code>/etc/varnish/default.vcl</code>
+</dd>
+
+
+      </dl>
+    </dd>
+    </dl>
+  </dd>
+  </dl>
+  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
   <dl>
     
     
 
-<dt>
+<dt id='details_admin_listen_address'>
   <code class='full'>admin_listen_address</code>
   <code><span class='type'>string</span> admin_listen_address</code>
 </dt>
@@ -320,7 +413,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_admin_listen_port'>
   <code class='full'>admin_listen_port</code>
   <code><span class='type'>integer</span> admin_listen_port</code>
 </dt>
@@ -332,7 +425,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_listen_address'>
   <code class='full'>listen_address</code>
   <code><span class='type'>string</span> listen_address</code>
 </dt>
@@ -344,7 +437,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_listen_port'>
   <code class='full'>listen_port</code>
   <code><span class='type'>integer</span> listen_port</code>
 </dt>
@@ -356,7 +449,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_threads'>
   <code class='full'>max_threads</code>
   <code><span class='type'>integer</span> max_threads</code>
 </dt>
@@ -368,7 +461,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_min_threads'>
   <code class='full'>min_threads</code>
   <code><span class='type'>integer</span> min_threads</code>
 </dt>
@@ -380,7 +473,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_secret_file'>
   <code class='full'>secret_file</code>
   <code><span class='type'>string</span> secret_file</code>
 </dt>
@@ -392,7 +485,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_storage_file'>
   <code class='full'>storage_file</code>
   <code><span class='type'>string</span> storage_file</code>
 </dt>
@@ -404,7 +497,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_storage_size'>
   <code class='full'>storage_size</code>
   <code><span class='type'>string</span> storage_size</code>
 </dt>
@@ -416,7 +509,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_storage_type'>
   <code class='full'>storage_type</code>
   <code><span class='type'>string</span> storage_type</code>
 </dt>
@@ -428,7 +521,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_thread_timeout'>
   <code class='full'>thread_timeout</code>
   <code><span class='type'>integer</span> thread_timeout</code>
 </dt>
@@ -440,7 +533,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_ttl'>
   <code class='full'>ttl</code>
   <code><span class='type'>integer</span> ttl</code>
 </dt>
@@ -452,7 +545,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_vcl_conf'>
   <code class='full'>vcl_conf</code>
   <code><span class='type'>string</span> vcl_conf</code>
 </dt>

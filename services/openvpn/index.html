@@ -354,12 +354,168 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
+  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
+  <dl>
+  <dd>
+    <code>configuration</code>:
+    <dl>
+    <dd>
+      <code>openvpn</code>:
+      <dl>
+        
+        
+
+<dd>
+  <a href="#details_cipher"><code>cipher</code><span class="sample_description">cipher</span></a>: <code>BF-CBC</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_dev"><code>dev</code><span class="sample_description">Device type</span></a>: <code>tun</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_dns1"><code>dns1</code><span class="sample_description">DNS to propagate to the clients (default to OpenDNS)</span></a>: <code>208.67.222.222</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_dns2"><code>dns2</code><span class="sample_description">DNS to propagate to the clients (default to OpenDNS)</span></a>: <code>208.67.220.220</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_group"><code>group</code><span class="sample_description">Running group of openvpn (must exist)</span></a>: <code>nogroup</code>
+</dd>
+
+
+
+<dd><code>key:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_ca_expire"><code>ca_expire</code><span class="sample_description">CA validity period (in days)</span></a>: <code>3650</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_city"><code>city</code><span class="sample_description">Key city</span></a>: <code>SanFrancisco</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_common_name"><code>common_name</code><span class="sample_description">Key Common Name (CN)</span></a>: <code>server</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_country"><code>country</code><span class="sample_description">Key country</span></a>: <code>US</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_email"><code>email</code><span class="sample_description">Key email</span></a>: <code>admin@server</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_key_expire"><code>key_expire</code><span class="sample_description">Key validity period (in days)</span></a>: <code>3650</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_key_size"><code>key_size</code><span class="sample_description">Increase key size if you are paranoid; it will slow down TLS negociation</span></a>: <code>1024</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_name"><code>name</code><span class="sample_description">Key name</span></a>: <code>server</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_org"><code>org</code><span class="sample_description">Key Organization</span></a>: <code>Fort-Funston</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_org_unit"><code>org_unit</code><span class="sample_description">Key Organization Unit (OU)</span></a>: <code>server</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_province"><code>province</code><span class="sample_description">Key province</span></a>: <code>CA</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_client"><code>max_client</code><span class="sample_description">Maximum number of simultaneous clients</span></a>: <code>100</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_netmask"><code>netmask</code><span class="sample_description">Netmask to apply on IP range for clients</span></a>: <code>255.255.255.0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_network"><code>network</code><span class="sample_description">Network IP range for clients</span></a>: <code>10.8.0.0</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_port"><code>port</code><span class="sample_description">Listening port</span></a>: <code>1194</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_proto"><code>proto</code><span class="sample_description">Protocol</span></a>: <code>udp</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_user"><code>user</code><span class="sample_description">Running user of openvpn (must exist)</span></a>: <code>nobody</code>
+</dd>
+
+
+      </dl>
+    </dd>
+    </dl>
+  </dd>
+  </dl>
+  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
   <dl>
     
     
 
-<dt>
+<dt id='details_cipher'>
   <code class='full'>cipher</code>
   <code><span class='type'>string</span> cipher</code>
 </dt>
@@ -371,7 +527,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_dev'>
   <code class='full'>dev</code>
   <code><span class='type'>string</span> dev</code>
 </dt>
@@ -383,7 +539,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_dns1'>
   <code class='full'>dns1</code>
   <code><span class='type'>string</span> dns1</code>
 </dt>
@@ -395,7 +551,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_dns2'>
   <code class='full'>dns2</code>
   <code><span class='type'>string</span> dns2</code>
 </dt>
@@ -407,7 +563,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_group'>
   <code class='full'>group</code>
   <code><span class='type'>string</span> group</code>
 </dt>
@@ -428,7 +584,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_ca_expire'>
   <code class='full'>key.ca_expire</code>
   <code><span class='type'>integer</span> ca_expire</code>
 </dt>
@@ -440,7 +596,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_city'>
   <code class='full'>key.city</code>
   <code><span class='type'>string</span> city</code>
 </dt>
@@ -452,7 +608,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_common_name'>
   <code class='full'>key.common_name</code>
   <code><span class='type'>string</span> common_name</code>
 </dt>
@@ -464,7 +620,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_country'>
   <code class='full'>key.country</code>
   <code><span class='type'>string</span> country</code>
 </dt>
@@ -476,7 +632,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_email'>
   <code class='full'>key.email</code>
   <code><span class='type'>string</span> email</code>
 </dt>
@@ -488,7 +644,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_key_expire'>
   <code class='full'>key.key_expire</code>
   <code><span class='type'>integer</span> key_expire</code>
 </dt>
@@ -500,7 +656,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_key_size'>
   <code class='full'>key.key_size</code>
   <code><span class='type'>integer</span> key_size</code>
 </dt>
@@ -512,7 +668,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_name'>
   <code class='full'>key.name</code>
   <code><span class='type'>string</span> name</code>
 </dt>
@@ -524,7 +680,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_org'>
   <code class='full'>key.org</code>
   <code><span class='type'>string</span> org</code>
 </dt>
@@ -536,7 +692,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_org_unit'>
   <code class='full'>key.org_unit</code>
   <code><span class='type'>string</span> org_unit</code>
 </dt>
@@ -548,7 +704,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_province'>
   <code class='full'>key.province</code>
   <code><span class='type'>string</span> province</code>
 </dt>
@@ -564,7 +720,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_client'>
   <code class='full'>max_client</code>
   <code><span class='type'>integer</span> max_client</code>
 </dt>
@@ -576,7 +732,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_netmask'>
   <code class='full'>netmask</code>
   <code><span class='type'>string</span> netmask</code>
 </dt>
@@ -588,7 +744,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_network'>
   <code class='full'>network</code>
   <code><span class='type'>string</span> network</code>
 </dt>
@@ -600,7 +756,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_port'>
   <code class='full'>port</code>
   <code><span class='type'>integer</span> port</code>
 </dt>
@@ -612,7 +768,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_proto'>
   <code class='full'>proto</code>
   <code><span class='type'>string</span> proto</code>
 </dt>
@@ -624,7 +780,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_user'>
   <code class='full'>user</code>
   <code><span class='type'>string</span> user</code>
 </dt>

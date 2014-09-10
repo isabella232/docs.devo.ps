@@ -301,12 +301,348 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
+  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
+  <dl>
+  <dd>
+    <code>configuration</code>:
+    <dl>
+    <dd>
+      <code>mysql</code>:
+      <dl>
+        
+        
+
+<dd>
+  <a href="#details_auto_increment_increment"><code>auto_increment_increment</code><span class="sample_description">Auto increment.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_auto_increment_offset"><code>auto_increment_offset</code><span class="sample_description">Auto increment offset.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_base_dir"><code>base_dir</code><span class="sample_description">Base folder.</span></a>: <code>/usr</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_bind_address"><code>bind_address</code><span class="sample_description">Binding IP address.</span></a>: <code>127.0.0.1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_data_dir"><code>data_dir</code><span class="sample_description">Database files path.</span></a>: <code>/var/lib/mysql</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_databases"><code>databases</code><span class="sample_description">Array of databases</span></a>: <code></code>
+</dd>
+
+
+
+<dd><code>innodb:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_innodb_adaptive_flushing"><code>innodb_adaptive_flushing</code><span class="sample_description">Specifies whether to dynamically adjust the rate of flushing dirty pages in the InnoDB buffer pool based on the workload.</span></a>: <code>true</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_additional_mem_pool_size"><code>innodb_additional_mem_pool_size</code><span class="sample_description">The size in bytes of a memory pool InnoDB uses to store data dictionary information and other internal data structures.</span></a>: <code>8M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_buffer_pool_size"><code>innodb_buffer_pool_size</code><span class="sample_description">The size in bytes of the memory buffer InnoDB uses to cache data and indexes of its tables.</span></a>: <code>128M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_data_file_path"><code>innodb_data_file_path</code><span class="sample_description">The paths to individual data files and their sizes.</span></a>: <code>ibdata1:10M:autoextend:max:500M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_flush_log_at_trx_commit"><code>innodb_flush_log_at_trx_commit</code><span class="sample_description">If 0 the log buffer is written out to the log file once per second. If 1 the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. If 2 the log buffer is written out to the file at each commit but the flush to disk operation is not performed on it.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_flush_method"><code>innodb_flush_method</code><span class="sample_description">Flush method for InnoDB, either of fdatasync, O_DSYNC or O_DIRECT</span></a>: <code>O_DIRECT</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_log_buffer_size"><code>innodb_log_buffer_size</code><span class="sample_description">The size in bytes of the buffer that InnoDB uses to write to the log files on disk.</span></a>: <code>8M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_innodb_log_file_size"><code>innodb_log_file_size</code><span class="sample_description">The size in bytes of each log file in a log group.</span></a>: <code>5M</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd><code>logs:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_log_error"><code>log_error</code><span class="sample_description">The location of the error log.</span></a>: <code>/var/log/mysql/mysql.log</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_log_queries_not_using_indexes"><code>log_queries_not_using_indexes</code><span class="sample_description">If you are using this option with the slow query log enabled then queries that are expected to retrieve all rows are logged.</span></a>: <span>no defaults</span>
+</dd>
+
+
+
+<dd>
+  <a href="#details_long_query_time"><code>long_query_time</code><span class="sample_description">Increment slow_queries variable and log if a query takes longer than this many seconds.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_slow_query_log"><code>slow_query_log</code><span class="sample_description">Whether the slow query log is enabled.</span></a>: <code>1</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_slow_query_log_file"><code>slow_query_log_file</code><span class="sample_description">The name of the slow query log file.</span></a>: <code>/var/log/mysql/slow.log</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_old_passwords"><code>old_passwords</code><span class="sample_description">Allow old (non-secure) passwords.</span></a>: <span>no defaults</span>
+</dd>
+
+
+
+<dd>
+  <a href="#details_pid_file"><code>pid_file</code><span class="sample_description">Pid file.</span></a>: <code>/var/run/mysqld/mysqld.pid</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_port"><code>port</code><span class="sample_description">Connection port.</span></a>: <code>3306</code>
+</dd>
+
+
+
+<dd><code>query_cache:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_query_cache_limit"><code>query_cache_limit</code><span class="sample_description">Do not cache results that are larger than this number of bytes.</span></a>: <code>2M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_query_cache_size"><code>query_cache_size</code><span class="sample_description">The amount of memory allocated for caching query results.</span></a>: <code>64M</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd><code>replication:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_expire_logs_days"><code>expire_logs_days</code><span class="sample_description">The number of days for automatic binary log file removal.</span></a>: <code>10</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_log_bin"><code>log_bin</code><span class="sample_description">Enable binary logging. The option value is the basename for the log sequence.</span></a>: <code>mysql-bin</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_log_bin_trust_function_creators"><code>log_bin_trust_function_creators</code><span class="sample_description">Controls whether stored function creators can be trusted not to create stored functions that will cause unsafe events to be written to the binary log.</span></a>: <span>no defaults</span>
+</dd>
+
+
+
+<dd>
+  <a href="#details_log_slave_updates"><code>log_slave_updates</code><span class="sample_description">This option tells the slave to log the updates performed by its SQL thread to its own binary log.</span></a>: <code>true</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_binlog_size"><code>max_binlog_size</code><span class="sample_description">If a write to the binary log causes the current log file size to exceed the value of this variable then the server rotates the binary logs.</span></a>: <code>100M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_relay_log"><code>relay_log</code><span class="sample_description">The basename for the relay log.</span></a>: <code>relay-bin</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_server_id"><code>server_id</code><span class="sample_description">Is used in replication to enable master and slave servers to identify themselves uniquely.</span></a>: <code>10</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_skip_slave_start"><code>skip_slave_start</code><span class="sample_description">Tells the slave server not to start the slave threads when the server starts.</span></a>: <code>true</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_sync_binlog"><code>sync_binlog</code><span class="sample_description">If the value of this variable is greater than 0 then the MySQL server synchronizes its binary log to disk (using fdatasync()) after every sync_binlog writes to the binary log.</span></a>: <code>1</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_socket"><code>socket</code><span class="sample_description">Mysql listening socket.</span></a>: <code>/var/run/mysqld/mysqld.sock</code>
+</dd>
+
+
+
+<dd><code>tunable:</code>
+  <dl>
+  
+  
+
+<dd>
+  <a href="#details_back_log"><code>back_log</code><span class="sample_description">The number of outstanding connection requests MySQL can have. In other words this value is the size of the listen queue for incoming TCP/IP connections.</span></a>: <code>128</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_key_buffer"><code>key_buffer</code><span class="sample_description">Size of the buffer used for index blocks. The key buffer is also known as the key cache.</span></a>: <code>256M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_allowed_packet"><code>max_allowed_packet</code><span class="sample_description">The maximum size of one packet or any generated/intermediate string.</span></a>: <code>16M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_connections"><code>max_connections</code><span class="sample_description">The maximum permitted number of simultaneous client connections.</span></a>: <code>256</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_max_heap_table_size"><code>max_heap_table_size</code><span class="sample_description">Maximum size to which user-created MEMORY tables are permitted to grow.</span></a>: <code>64M</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_net_read_timeout"><code>net_read_timeout</code><span class="sample_description">The number of seconds to wait for more data from a connection before aborting the read.</span></a>: <code>30</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_net_write_timeout"><code>net_write_timeout</code><span class="sample_description">The number of seconds to wait for a block to be written to a connection before aborting the write.</span></a>: <code>30</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_table_open_cache"><code>table_open_cache</code><span class="sample_description">The number of open tables for all threads.</span></a>: <code>1024</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_thread_cache_size"><code>thread_cache_size</code><span class="sample_description">Number of threads the server should cache for reuse.</span></a>: <code>32</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_thread_stack"><code>thread_stack</code><span class="sample_description">The stack size for each thread.</span></a>: <code>256K</code>
+</dd>
+
+
+
+<dd>
+  <a href="#details_wait_timeout"><code>wait_timeout</code><span class="sample_description">The number of seconds the server waits for activity on a noninteractive connection before closing it.</span></a>: <code>180</code>
+</dd>
+
+
+  </dl>
+</dd>
+
+
+
+<dd>
+  <a href="#details_users"><code>users</code><span class="sample_description">Array of users</span></a>: <code></code>
+</dd>
+
+
+      </dl>
+    </dd>
+    </dl>
+  </dd>
+  </dl>
+  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
   <dl>
     
     
 
-<dt>
+<dt id='details_auto_increment_increment'>
   <code class='full'>auto_increment_increment</code>
   <code><span class='type'>integer</span> auto_increment_increment</code>
 </dt>
@@ -318,7 +654,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_auto_increment_offset'>
   <code class='full'>auto_increment_offset</code>
   <code><span class='type'>integer</span> auto_increment_offset</code>
 </dt>
@@ -330,7 +666,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_base_dir'>
   <code class='full'>base_dir</code>
   <code><span class='type'>string</span> base_dir</code>
 </dt>
@@ -342,7 +678,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_bind_address'>
   <code class='full'>bind_address</code>
   <code><span class='type'>string</span> bind_address</code>
 </dt>
@@ -354,7 +690,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_data_dir'>
   <code class='full'>data_dir</code>
   <code><span class='type'>string</span> data_dir</code>
 </dt>
@@ -366,7 +702,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_databases'>
   <code class='full'>databases</code>
   <code><span class='type'>object</span> databases</code>
 </dt>
@@ -387,7 +723,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_adaptive_flushing'>
   <code class='full'>innodb.innodb_adaptive_flushing</code>
   <code><span class='type'>string</span> innodb_adaptive_flushing</code>
 </dt>
@@ -399,7 +735,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_additional_mem_pool_size'>
   <code class='full'>innodb.innodb_additional_mem_pool_size</code>
   <code><span class='type'>string</span> innodb_additional_mem_pool_size</code>
 </dt>
@@ -411,7 +747,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_buffer_pool_size'>
   <code class='full'>innodb.innodb_buffer_pool_size</code>
   <code><span class='type'>string</span> innodb_buffer_pool_size</code>
 </dt>
@@ -423,7 +759,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_data_file_path'>
   <code class='full'>innodb.innodb_data_file_path</code>
   <code><span class='type'>string</span> innodb_data_file_path</code>
 </dt>
@@ -435,7 +771,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_flush_log_at_trx_commit'>
   <code class='full'>innodb.innodb_flush_log_at_trx_commit</code>
   <code><span class='type'>integer</span> innodb_flush_log_at_trx_commit</code>
 </dt>
@@ -447,7 +783,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_flush_method'>
   <code class='full'>innodb.innodb_flush_method</code>
   <code><span class='type'>string</span> innodb_flush_method</code>
 </dt>
@@ -459,7 +795,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_log_buffer_size'>
   <code class='full'>innodb.innodb_log_buffer_size</code>
   <code><span class='type'>string</span> innodb_log_buffer_size</code>
 </dt>
@@ -471,7 +807,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_innodb_log_file_size'>
   <code class='full'>innodb.innodb_log_file_size</code>
   <code><span class='type'>string</span> innodb_log_file_size</code>
 </dt>
@@ -496,7 +832,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_error'>
   <code class='full'>logs.log_error</code>
   <code><span class='type'>string</span> log_error</code>
 </dt>
@@ -508,7 +844,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_queries_not_using_indexes'>
   <code class='full'>logs.log_queries_not_using_indexes</code>
   <code><span class='type'>string</span> log_queries_not_using_indexes</code>
 </dt>
@@ -520,7 +856,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_long_query_time'>
   <code class='full'>logs.long_query_time</code>
   <code><span class='type'>number</span> long_query_time</code>
 </dt>
@@ -532,7 +868,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_slow_query_log'>
   <code class='full'>logs.slow_query_log</code>
   <code><span class='type'>integer</span> slow_query_log</code>
 </dt>
@@ -544,7 +880,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_slow_query_log_file'>
   <code class='full'>logs.slow_query_log_file</code>
   <code><span class='type'>string</span> slow_query_log_file</code>
 </dt>
@@ -560,7 +896,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_old_passwords'>
   <code class='full'>old_passwords</code>
   <code><span class='type'>integer</span> old_passwords</code>
 </dt>
@@ -572,7 +908,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_pid_file'>
   <code class='full'>pid_file</code>
   <code><span class='type'>string</span> pid_file</code>
 </dt>
@@ -584,7 +920,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_port'>
   <code class='full'>port</code>
   <code><span class='type'>integer</span> port</code>
 </dt>
@@ -605,7 +941,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_query_cache_limit'>
   <code class='full'>query_cache.query_cache_limit</code>
   <code><span class='type'>string</span> query_cache_limit</code>
 </dt>
@@ -617,7 +953,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_query_cache_size'>
   <code class='full'>query_cache.query_cache_size</code>
   <code><span class='type'>string</span> query_cache_size</code>
 </dt>
@@ -642,7 +978,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_expire_logs_days'>
   <code class='full'>replication.expire_logs_days</code>
   <code><span class='type'>integer</span> expire_logs_days</code>
 </dt>
@@ -654,7 +990,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_bin'>
   <code class='full'>replication.log_bin</code>
   <code><span class='type'>string</span> log_bin</code>
 </dt>
@@ -666,7 +1002,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_bin_trust_function_creators'>
   <code class='full'>replication.log_bin_trust_function_creators</code>
   <code><span class='type'>string</span> log_bin_trust_function_creators</code>
 </dt>
@@ -678,7 +1014,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_log_slave_updates'>
   <code class='full'>replication.log_slave_updates</code>
   <code><span class='type'>string</span> log_slave_updates</code>
 </dt>
@@ -690,7 +1026,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_binlog_size'>
   <code class='full'>replication.max_binlog_size</code>
   <code><span class='type'>string</span> max_binlog_size</code>
 </dt>
@@ -702,7 +1038,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_relay_log'>
   <code class='full'>replication.relay_log</code>
   <code><span class='type'>string</span> relay_log</code>
 </dt>
@@ -714,7 +1050,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_server_id'>
   <code class='full'>replication.server_id</code>
   <code><span class='type'>integer</span> server_id</code>
 </dt>
@@ -726,7 +1062,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_skip_slave_start'>
   <code class='full'>replication.skip_slave_start</code>
   <code><span class='type'>string</span> skip_slave_start</code>
 </dt>
@@ -738,7 +1074,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_sync_binlog'>
   <code class='full'>replication.sync_binlog</code>
   <code><span class='type'>integer</span> sync_binlog</code>
 </dt>
@@ -754,7 +1090,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_socket'>
   <code class='full'>socket</code>
   <code><span class='type'>string</span> socket</code>
 </dt>
@@ -775,7 +1111,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_back_log'>
   <code class='full'>tunable.back_log</code>
   <code><span class='type'>integer</span> back_log</code>
 </dt>
@@ -787,7 +1123,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_key_buffer'>
   <code class='full'>tunable.key_buffer</code>
   <code><span class='type'>string</span> key_buffer</code>
 </dt>
@@ -799,7 +1135,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_allowed_packet'>
   <code class='full'>tunable.max_allowed_packet</code>
   <code><span class='type'>string</span> max_allowed_packet</code>
 </dt>
@@ -811,7 +1147,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_connections'>
   <code class='full'>tunable.max_connections</code>
   <code><span class='type'>integer</span> max_connections</code>
 </dt>
@@ -823,7 +1159,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_max_heap_table_size'>
   <code class='full'>tunable.max_heap_table_size</code>
   <code><span class='type'>string</span> max_heap_table_size</code>
 </dt>
@@ -835,7 +1171,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_net_read_timeout'>
   <code class='full'>tunable.net_read_timeout</code>
   <code><span class='type'>integer</span> net_read_timeout</code>
 </dt>
@@ -847,7 +1183,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_net_write_timeout'>
   <code class='full'>tunable.net_write_timeout</code>
   <code><span class='type'>integer</span> net_write_timeout</code>
 </dt>
@@ -859,7 +1195,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_table_open_cache'>
   <code class='full'>tunable.table_open_cache</code>
   <code><span class='type'>integer</span> table_open_cache</code>
 </dt>
@@ -871,7 +1207,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_thread_cache_size'>
   <code class='full'>tunable.thread_cache_size</code>
   <code><span class='type'>integer</span> thread_cache_size</code>
 </dt>
@@ -883,7 +1219,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_thread_stack'>
   <code class='full'>tunable.thread_stack</code>
   <code><span class='type'>string</span> thread_stack</code>
 </dt>
@@ -895,7 +1231,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_wait_timeout'>
   <code class='full'>tunable.wait_timeout</code>
   <code><span class='type'>integer</span> wait_timeout</code>
 </dt>
@@ -911,7 +1247,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt>
+<dt id='details_users'>
   <code class='full'>users</code>
   <code><span class='type'>object</span> users</code>
 </dt>
