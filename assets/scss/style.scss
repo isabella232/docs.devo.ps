@@ -166,7 +166,7 @@ code,
       font-style: normal;
       padding: $gutter/4 $gutter/2;
     }
-    dl.configuration {
+    ul.mock {
       background: $light;
       border: 1px solid $line;
       border-radius: $radius;
@@ -174,15 +174,18 @@ code,
       font-family: 'Lucidatypewriter', monospace;
       @include font-size($smaller);
       line-height: 140%;
+      list-style: none;
+      margin: 0 0 $gutter;
       padding: $gutter/4 $gutter/2;
-      dd {
-        margin: 0;
-      }
-      dt {
-        margin: 0;
-      }
-      dl {
+      ul {
+        display: block;
+        list-style: none;
         margin: 0 0 0 $gutter;
+        padding: 0;
+      }
+      li {
+        margin: 0;
+        padding: 0;
       }
       strong {
         color: $purple;
@@ -200,7 +203,34 @@ code,
       }
       a {
         color: inherit;
+        &:hover {
+          background: tint($light, 80%);
+        }
+        &.details {
+          color: $blue;
+          font-family: $font;
+          &:hover {
+            color: shade($blue, 10%);
+          }
+        }
+      }
+      button.more {
+        color: $blue;
+        padding: 0;
         @include tooltip(right);
+        &:before {
+          @include icon;
+          content: 'v';
+        }
+        &.expanded {
+          color: inherit;
+          &:before {
+            content: 's';
+          }
+        }
+        &:hover {
+          color: shade($blue, 10%);
+        }
       }
     }
   }

@@ -1395,7 +1395,7 @@ code .type, .code .type {
       font-size: 1.4rem;
       font-style: normal;
       padding: 5px 10px; }
-    #main .content dl.configuration {
+    #main .content ul.mock {
       background: #fafafb;
       border: 1px solid #dde0e2;
       border-radius: 2px;
@@ -1404,27 +1404,41 @@ code .type, .code .type {
       font-size: 14px;
       font-size: 1.4rem;
       line-height: 140%;
+      list-style: none;
+      margin: 0 0 20px;
       padding: 5px 10px; }
-      #main .content dl.configuration dd {
-        margin: 0; }
-      #main .content dl.configuration dt {
-        margin: 0; }
-      #main .content dl.configuration dl {
-        margin: 0 0 0 20px; }
-      #main .content dl.configuration strong {
+      #main .content ul.mock ul {
+        display: block;
+        list-style: none;
+        margin: 0 0 0 20px;
+        padding: 0; }
+      #main .content ul.mock li {
+        margin: 0;
+        padding: 0; }
+      #main .content ul.mock strong {
         color: #8B66CB;
         font-weight: normal; }
-      #main .content dl.configuration span {
+      #main .content ul.mock span {
         font-family: 'Open Sans', Arial, sans-serif; }
-      #main .content dl.configuration i {
+      #main .content ul.mock i {
         color: #576671;
         font-style: normal; }
-        #main .content dl.configuration i.empty {
+        #main .content ul.mock i.empty {
           color: #a5adb3; }
-      #main .content dl.configuration a {
-        color: inherit;
+      #main .content ul.mock a {
+        color: inherit; }
+        #main .content ul.mock a:hover {
+          background: #fefefe; }
+        #main .content ul.mock a.details {
+          color: #1F8DD6;
+          font-family: 'Open Sans', Arial, sans-serif; }
+          #main .content ul.mock a.details:hover {
+            color: #1b7ec0; }
+      #main .content ul.mock button.more {
+        color: #1F8DD6;
+        padding: 0;
         position: relative; }
-        #main .content dl.configuration a span {
+        #main .content ul.mock button.more span {
           background: #203442;
           border-radius: 2px;
           color: #FFF;
@@ -1439,7 +1453,7 @@ code .type, .code .type {
           white-space: nowrap;
           width: auto;
           z-index: 999; }
-        #main .content dl.configuration a:hover span {
+        #main .content ul.mock button.more:hover span {
           opacity: 1;
           -webkit-transition-property: opacity, margin;
           -moz-transition-property: opacity, margin;
@@ -1448,7 +1462,7 @@ code .type, .code .type {
           -moz-transition-duration: 0.1s;
           transition-duration: 0.1s;
           visibility: visible; }
-        #main .content dl.configuration a span {
+        #main .content ul.mock button.more span {
           left: 100%;
           top: 50%;
           -webkit-transform: translateY(-50%);
@@ -1456,7 +1470,7 @@ code .type, .code .type {
           -ms-transform: translateY(-50%);
           -o-transform: translateY(-50%);
           transform: translateY(-50%); }
-          #main .content dl.configuration a span:after {
+          #main .content ul.mock button.more span:after {
             content: '';
             position: absolute;
             border-bottom: 5px solid transparent;
@@ -1470,8 +1484,22 @@ code .type, .code .type {
             -ms-transform: translateY(-50%);
             -o-transform: translateY(-50%);
             transform: translateY(-50%); }
-        #main .content dl.configuration a:hover span {
+        #main .content ul.mock button.more:hover span {
           margin-left: 8px; }
+        #main .content ul.mock button.more:before {
+          font-family: 'icons';
+          font-variant: normal;
+          font-weight: normal;
+          speak: none;
+          text-transform: none;
+          -webkit-font-smoothing: antialiased;
+          content: 'v'; }
+        #main .content ul.mock button.more.expanded {
+          color: inherit; }
+          #main .content ul.mock button.more.expanded:before {
+            content: 's'; }
+        #main .content ul.mock button.more:hover {
+          color: #1b7ec0; }
   #main .sidebar {
     border: 1px solid #dde0e2;
     border-radius: 4px; }
@@ -1484,7 +1512,9 @@ code .type, .code .type {
   bottom: 20px;
   color: #FFF;
   cursor: pointer;
-  right: 20px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  left: 20px;
   position: fixed; }
   #support:hover h2 {
     opacity: 1; }
@@ -1516,16 +1546,13 @@ code .type, .code .type {
     height: 0;
     opacity: 0;
     position: absolute;
-    right: 0;
     visibility: hidden;
     width: 0;
-    z-inde: -999; }
+    z-index: -999; }
     #support .links a {
       background: #203442;
       color: white;
       display: block;
-      font-size: 14px;
-      font-size: 1.4rem;
       padding: 10px;
       text-align: left;
       white-space: nowrap; }

@@ -1,0 +1,22 @@
+{% for val in tree %}
+{% if val.type and val.description and val.type != 'array' %}
+<li>
+  <a href='#details_{{ loop.key }}'>
+    <strong>{{ loop.key }}</strong>:
+    {% if val.default %}<i>{{ val.default }}</i>{% else %}<i class='empty'>no default value</i>{% endif %}
+  </a>
+</li>
+{% else %}
+<li>
+  <strong>{{ loop.key }}</strong>: </dt>
+  {% if val.type and val.type == 'array' %}
+  <a href='#details_{{ loop.key }}' class='details'>See the {{ loop.key }} definition</a>
+  {% else %}
+  <ul>
+    {% set tree = val %}
+    {% include "_mock_tree.html" %}
+  </ul>
+  {% endif %}
+</li>
+{% endif %}
+{% endfor %}
