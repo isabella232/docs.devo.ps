@@ -1,0 +1,18 @@
+{% for val in tree %}
+{% if val.type and val.description %}
+<dd>
+  <a href='#details_{{ loop.key }}'>
+    <strong>{{ loop.key }}</strong>: {% if val.default %}<i>{{ val.default }}</i>{% else %}<i class='empty'>no defaults</i>{% endif %}
+    <span>{{ val.description }}</span>
+  </a>
+</dd>
+{% else %}
+<dd>
+  <strong>{{ loop.key }}:</strong>
+  <dl>
+    {% set tree = val %}
+    {% include "_conf_tree.html" %}
+  </dl>
+</dd>
+{% endif %}
+{% endfor %}
