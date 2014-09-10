@@ -1,6 +1,6 @@
 {% for val in tree %}
 {% if val.type and val.description %}
-<dt id='details_{{ loop.key }}'>
+<dt>
   <code class='full'>{% if parent %}{{ parent }}.{% endif %}{{ loop.key }}</code>
   <code><span class='type'>{{ val.type }}</span> {{ loop.key }}</code>
 </dt>
