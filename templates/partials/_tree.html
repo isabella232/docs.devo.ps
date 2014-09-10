@@ -8,15 +8,29 @@
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
   {% if val.required == true %}<span class='required'>Required</span>{% endif %}
 </dd>
-{% else %}
-{% if not parent %}
-{% set parent = loop.key %}
-{% else %}
-{% set parent_prev = parent %}
-{% set parent += '.'+ loop.key %}
 {% endif %}
-{% set tree = val %}
-{% include "_tree.html" %}
-{% set parent = parent_prev %}
+
+{% if not val.type or not val.description or val.options %}
+    {% if not parent_prev %}{% set parent_prev = [] %}{% endif %}
+    {% if not parent %}
+        {% set parent = loop.key %}
+    {% else %}
+        {% set parent_prev = parent_prev.push(parent) %}
+        {% set parent += '.'+ loop.key %}
+    {% endif %}
+    {% if val.options %}
+        {% set tree = val.options %}
+        {% if val.type and val.type == 'array' %}
+            {% set parent = loop.key | replace('s$', '')%}
+        {% endif %}        
+        <dd class='objects'><dl>
+        {% include "_tree.html" %}
+        </dl></dd>
+    {% else %}
+        {% set tree = val %}
+        {% include "_tree.html" %}
+    {% endif %}
+    {% set parent = parent_prev.pop() %}
 {% endif %}
+
 {% endfor %}
