@@ -48,8 +48,18 @@
 <section class='configuration'>
   <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
   <dl>
-    {% set tree = configuration %}
-    {% include 'partials/_sample_tree.html' %}
+  <dd>
+    <code>configuration</code>:
+    <dl>
+    <dd>
+      <code>{{ title | lower }}</code>:
+      <dl>
+        {% set tree = configuration %}
+        {% include 'partials/_sample_tree.html' %}
+      </dl>
+    </dd>
+    </dl>
+  </dd>
   </dl>
   <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
   <dl>

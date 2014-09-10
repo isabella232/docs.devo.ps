@@ -1,7 +1,7 @@
 {% for val in tree %}
 {% if val.type and val.description %}
 <dd>
-  <a href="#details_{{ loop.key }}"><code>{{ loop.key }}</code><span>{{ val.description }}</span></a>: {% if val.default %}<code>{{ val.default }}</code>{% else %}<span>no defaults</span>{% endif %}
+  <a href="#details_{{ loop.key }}"><code>{{ loop.key }}</code><span class="sample_description">{{ val.description }}</span></a>: {% if val.default %}<code>{{ val.default }}</code>{% else %}<span>no defaults</span>{% endif %}
 </dd>
 {% else %}
 <dd><code>{{ loop.key }}:</code>
