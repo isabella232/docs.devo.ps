@@ -1395,58 +1395,83 @@ code .type, .code .type {
       font-size: 1.4rem;
       font-style: normal;
       padding: 5px 10px; }
-    #main .content dl {
+    #main .content dl.configuration {
+      background: #fafafb;
+      border: 1px solid #dde0e2;
+      border-radius: 2px;
+      color: #a5adb3;
+      font-family: 'Lucidatypewriter', monospace;
       font-size: 14px;
       font-size: 1.4rem;
-      margin: 0 0 20px; }
-      #main .content dl dt {
-        border-top: 1px solid #eaeced;
-        margin-bottom: 5px;
-        padding-top: 10px; }
-        #main .content dl dt > code {
-          margin-right: 10px; }
-      #main .content dl dd {
-        margin-left: 0;
-        padding-bottom: 10px;
-        padding-left: 20px; }
-        #main .content dl dd:last-child {
-          border-bottom: 1px solid #eaeced; }
-        #main .content dl dd small {
-          display: block; }
-          #main .content dl dd small code {
-            font-size: inherit; }
-      #main .content dl dl {
-        border-left: 3px solid #eaeced;
-        margin-bottom: 0;
-        margin-top: 10px;
-        padding-left: 10px; }
-        #main .content dl dl dd:last-child {
-          border-bottom: 0;
-          padding-bottom: 0; }
-      #main .content dl h3 {
-        color: #a5adb3;
-        font-size: 12px;
-        font-size: 1.2rem;
-        margin-top: 0;
-        padding-top: 0;
-        margin: 10px 0;
-        text-transform: uppercase; }
-      #main .content dl .full {
-        background: transparent;
-        border: 0;
-        color: #a5adb3;
-        float: right;
-        padding: 0; }
-      #main .content dl .optional, #main .content dl .required {
-        color: #FF8859; }
-      #main .content dl .default {
-        display: block; }
-        #main .content dl .default code {
-          background: transparent;
-          border: 0;
-          color: #50CD84;
-          line-height: inherit;
-          padding: 0; }
+      line-height: 140%;
+      padding: 5px 10px; }
+      #main .content dl.configuration dd {
+        margin: 0; }
+      #main .content dl.configuration dt {
+        margin: 0; }
+      #main .content dl.configuration dl {
+        margin: 0 0 0 20px; }
+      #main .content dl.configuration strong {
+        color: #8B66CB;
+        font-weight: normal; }
+      #main .content dl.configuration span {
+        font-family: 'Open Sans', Arial, sans-serif; }
+      #main .content dl.configuration i {
+        color: #576671;
+        font-style: normal; }
+        #main .content dl.configuration i.empty {
+          color: #a5adb3; }
+      #main .content dl.configuration a {
+        color: inherit;
+        position: relative; }
+        #main .content dl.configuration a span {
+          background: #203442;
+          border-radius: 2px;
+          color: #FFF;
+          font-size: 12px;
+          font-size: 1.2rem;
+          line-height: 140%;
+          opacity: 0;
+          padding: 7.5px 15px;
+          position: absolute;
+          text-align: center;
+          visibility: hidden;
+          white-space: nowrap;
+          width: auto;
+          z-index: 999; }
+        #main .content dl.configuration a:hover span {
+          opacity: 1;
+          -webkit-transition-property: opacity, margin;
+          -moz-transition-property: opacity, margin;
+          transition-property: opacity, margin;
+          -webkit-transition-duration: 0.1s;
+          -moz-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+          visibility: visible; }
+        #main .content dl.configuration a span {
+          left: 100%;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%); }
+          #main .content dl.configuration a span:after {
+            content: '';
+            position: absolute;
+            border-bottom: 5px solid transparent;
+            border-left-color: #203442;
+            border-right: 5px solid #203442;
+            border-top: 5px solid transparent;
+            left: -5px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%); }
+        #main .content dl.configuration a:hover span {
+          margin-left: 8px; }
   #main .sidebar {
     border: 1px solid #dde0e2;
     border-radius: 4px; }

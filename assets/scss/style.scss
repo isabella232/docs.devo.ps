@@ -166,69 +166,41 @@ code,
       font-style: normal;
       padding: $gutter/4 $gutter/2;
     }
-    dl {
+    dl.configuration {
+      background: $light;
+      border: 1px solid $line;
+      border-radius: $radius;
+      color: $grey;
+      font-family: 'Lucidatypewriter', monospace;
       @include font-size($smaller);
-      margin: 0 0 $gutter;
-      dt {
-        border-top: 1px solid tint($line, 40%);
-        margin-bottom: $gutter/4;
-        padding-top: $gutter/2;
-        > code {
-          margin-right: $gutter/2;
-        }
-      }
+      line-height: 140%;
+      padding: $gutter/4 $gutter/2;
       dd {
-        margin-left: 0;
-        padding-bottom: $gutter/2;
-        padding-left: $gutter;
-        &:last-child {
-          border-bottom: 1px solid tint($line, 40%);
-        }
-        small {
-          display: block;
-          code {
-            font-size: inherit;
-          }
-        }
+        margin: 0;
+      }
+      dt {
+        margin: 0;
       }
       dl {
-        border-left: 3px solid tint($line, 40%);
-        margin-bottom: 0;
-        margin-top: $gutter/2;
-        padding-left: $gutter/2;
-        dd:last-child {
-          border-bottom: 0;
-          padding-bottom: 0;
+        margin: 0 0 0 $gutter;
+      }
+      strong {
+        color: $purple;
+        font-weight: normal;
+      }
+      span {
+        font-family: $font;
+      }
+      i {
+        color: tint($black, 25%);
+        font-style: normal;
+        &.empty {
+          color: $grey;
         }
       }
-      h3 {
-        color: $grey;
-        @include font-size($small);
-        margin-top: 0;
-        padding-top: 0;
-        margin: $gutter/2 0;
-        text-transform: uppercase;
-      }
-      .full {
-        background: transparent;
-        border: 0;
-        color: $grey;
-        float: right;
-        padding: 0;
-      }
-      .optional,
-      .required {
-        color: $orange;
-      }
-      .default {
-        display: block;
-        code {
-          background: transparent;
-          border: 0;
-          color: $green;
-          line-height: inherit;
-          padding: 0;
-        }
+      a {
+        color: inherit;
+        @include tooltip(right);
       }
     }
   }
