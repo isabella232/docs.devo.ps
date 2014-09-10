@@ -374,124 +374,7 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
-  <dl>
-  <dd>
-    <code>configuration</code>:
-    <dl>
-    <dd>
-      <code>nginx</code>:
-      <dl>
-        
-        
-
-<dd><code>events:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_worker_connections"><code>worker_connections</code><span class="sample_description">Number of concurrent http connection handled per nginx process</span></a>: <code>1024</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd><code>http:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_access_log"><code>access_log</code><span class="sample_description">Global access log file path</span></a>: <code>/var/log/nginx/access.log</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_error_log"><code>error_log</code><span class="sample_description">Global error log file path</span></a>: <code>/var/log/nginx/error.log</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_gzip"><code>gzip</code><span class="sample_description">Enable gzip compression</span></a>: <code>on</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_gzip_disable"><code>gzip_disable</code><span class="sample_description">Space separated list of browser to disable gzip compression for</span></a>: <code>msie6</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_keepalive_timeout"><code>keepalive_timeout</code><span class="sample_description">Keepalive timeout (sec) - 0 to disable</span></a>: <code>65</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_sendfile"><code>sendfile</code><span class="sample_description">Enable sendfile</span></a>: <code>on</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_tcp_nodelay"><code>tcp_nodelay</code><span class="sample_description">Enable tcp_nodelay</span></a>: <code>on</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_tcp_nopush"><code>tcp_nopush</code><span class="sample_description">Enable tcp_nopush</span></a>: <code>on</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_types_hash_max_size"><code>types_hash_max_size</code><span class="sample_description">Maximum size of hash tables</span></a>: <code>2048</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_pid"><code>pid</code><span class="sample_description">Pid file path</span></a>: <code>/var/run/nginx.pid</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_user"><code>user</code><span class="sample_description">Nginx running user.</span></a>: <code>www-data</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_vhosts"><code>vhosts</code><span class="sample_description">Array of virtual hosts objects</span></a>: <code></code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_worker_processes"><code>worker_processes</code><span class="sample_description">Number of Nginx processes</span></a>: <code>4</code>
-</dd>
-
-
-      </dl>
-    </dd>
-    </dl>
-  </dd>
-  </dl>
-  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
+  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
   <dl>
     
     
@@ -505,7 +388,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_worker_connections'>
+<dt>
   <code class='full'>events.worker_connections</code>
   <code><span class='type'>integer</span> worker_connections</code>
 </dt>
@@ -530,7 +413,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_access_log'>
+<dt>
   <code class='full'>http.access_log</code>
   <code><span class='type'>string</span> access_log</code>
 </dt>
@@ -542,7 +425,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_error_log'>
+<dt>
   <code class='full'>http.error_log</code>
   <code><span class='type'>string</span> error_log</code>
 </dt>
@@ -554,7 +437,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_gzip'>
+<dt>
   <code class='full'>http.gzip</code>
   <code><span class='type'>string</span> gzip</code>
 </dt>
@@ -566,7 +449,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_gzip_disable'>
+<dt>
   <code class='full'>http.gzip_disable</code>
   <code><span class='type'>string</span> gzip_disable</code>
 </dt>
@@ -578,7 +461,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_keepalive_timeout'>
+<dt>
   <code class='full'>http.keepalive_timeout</code>
   <code><span class='type'>integer</span> keepalive_timeout</code>
 </dt>
@@ -590,7 +473,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_sendfile'>
+<dt>
   <code class='full'>http.sendfile</code>
   <code><span class='type'>string</span> sendfile</code>
 </dt>
@@ -602,7 +485,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_tcp_nodelay'>
+<dt>
   <code class='full'>http.tcp_nodelay</code>
   <code><span class='type'>string</span> tcp_nodelay</code>
 </dt>
@@ -614,7 +497,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_tcp_nopush'>
+<dt>
   <code class='full'>http.tcp_nopush</code>
   <code><span class='type'>string</span> tcp_nopush</code>
 </dt>
@@ -626,7 +509,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_types_hash_max_size'>
+<dt>
   <code class='full'>http.types_hash_max_size</code>
   <code><span class='type'>integer</span> types_hash_max_size</code>
 </dt>
@@ -642,7 +525,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_pid'>
+<dt>
   <code class='full'>pid</code>
   <code><span class='type'>string</span> pid</code>
 </dt>
@@ -654,7 +537,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_user'>
+<dt>
   <code class='full'>user</code>
   <code><span class='type'>string</span> user</code>
 </dt>
@@ -666,7 +549,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_vhosts'>
+<dt>
   <code class='full'>vhosts</code>
   <code><span class='type'>array</span> vhosts</code>
 </dt>
@@ -678,7 +561,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_worker_processes'>
+<dt>
   <code class='full'>worker_processes</code>
   <code><span class='type'>integer</span> worker_processes</code>
 </dt>

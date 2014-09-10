@@ -303,199 +303,7 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
-  <dl>
-  <dd>
-    <code>configuration</code>:
-    <dl>
-    <dd>
-      <code>apache</code>:
-      <dl>
-        
-        
-
-<dd><code>event:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_maxclients"><code>maxclients</code><span class="sample_description">Maximum number of simultaneous client connections</span></a>: <code>150</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxrequestsperchild"><code>maxrequestsperchild</code><span class="sample_description">Maximum number of requests a server process serves.</span></a>: <span>no defaults</span>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxsparethreads"><code>maxsparethreads</code><span class="sample_description">Maximum number of worker threads which are kept spare.</span></a>: <code>75</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_minsparethreads"><code>minsparethreads</code><span class="sample_description">Minimum number of worker threads which are kept spare,</span></a>: <code>25</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_startservers"><code>startservers</code><span class="sample_description">Initial number of server processes to start.</span></a>: <code>5</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_threadlimit"><code>threadlimit</code><span class="sample_description">ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</span></a>: <code>64</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_threadsperchild"><code>threadsperchild</code><span class="sample_description">Constant number of worker threads in each server process.</span></a>: <code>25</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_group"><code>group</code><span class="sample_description">Apache running group.</span></a>: <code>www-data</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_keepalive"><code>keepalive</code><span class="sample_description">Whether or not to allow persistent connections.</span></a>: <code>true</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_keepalivetimout"><code>keepalivetimout</code><span class="sample_description">Number of seconds to wait for the next request from the same client on the same connection.</span></a>: <code>5</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxkeepaliverequests"><code>maxkeepaliverequests</code><span class="sample_description">The maximum number of requests to allow during a persistent connection.</span></a>: <code>100</code>
-</dd>
-
-
-
-<dd><code>prefork:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_maxclients"><code>maxclients</code><span class="sample_description">Maximum number of server processes allowed to start.</span></a>: <code>150</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxrequestsperchild"><code>maxrequestsperchild</code><span class="sample_description">Maximum number of requests a server process serves.</span></a>: <code>4000</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxspareservers"><code>maxspareservers</code><span class="sample_description">Maximum number of server processes which are kept spare.</span></a>: <code>10</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_minspareservers"><code>minspareservers</code><span class="sample_description">Minimum number of server processes which are kept spare.</span></a>: <code>2</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_startservers"><code>startservers</code><span class="sample_description">Number of server processes to start.</span></a>: <code>5</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_timeout"><code>timeout</code><span class="sample_description">The number of seconds before receives and sends time out.</span></a>: <code>300</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_user"><code>user</code><span class="sample_description">Apache running user.</span></a>: <code>www-data</code>
-</dd>
-
-
-
-<dd><code>worker:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_maxclients"><code>maxclients</code><span class="sample_description">Maximum number of simultaneous client connections</span></a>: <code>150</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxrequestsperchild"><code>maxrequestsperchild</code><span class="sample_description">Maximum number of requests a server process serves.</span></a>: <span>no defaults</span>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxsparethreads"><code>maxsparethreads</code><span class="sample_description">Maximum number of worker threads which are kept spare.</span></a>: <code>75</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_minsparethreads"><code>minsparethreads</code><span class="sample_description">Minimum number of worker threads which are kept spare,</span></a>: <code>25</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_startservers"><code>startservers</code><span class="sample_description">Initial number of server processes to start.</span></a>: <code>5</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_threadlimit"><code>threadlimit</code><span class="sample_description">ThreadsPerChild can be changed to this maximum value during a graceful restart. ThreadLimit can only be changed by stopping and starting Apache.</span></a>: <code>64</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_threadsperchild"><code>threadsperchild</code><span class="sample_description">Constant number of worker threads in each server process.</span></a>: <code>25</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-      </dl>
-    </dd>
-    </dl>
-  </dd>
-  </dl>
-  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
+  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
   <dl>
     
     
@@ -509,7 +317,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxclients'>
+<dt>
   <code class='full'>event.maxclients</code>
   <code><span class='type'>integer</span> maxclients</code>
 </dt>
@@ -521,7 +329,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxrequestsperchild'>
+<dt>
   <code class='full'>event.maxrequestsperchild</code>
   <code><span class='type'>integer</span> maxrequestsperchild</code>
 </dt>
@@ -533,7 +341,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxsparethreads'>
+<dt>
   <code class='full'>event.maxsparethreads</code>
   <code><span class='type'>integer</span> maxsparethreads</code>
 </dt>
@@ -545,7 +353,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_minsparethreads'>
+<dt>
   <code class='full'>event.minsparethreads</code>
   <code><span class='type'>integer</span> minsparethreads</code>
 </dt>
@@ -557,7 +365,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_startservers'>
+<dt>
   <code class='full'>event.startservers</code>
   <code><span class='type'>integer</span> startservers</code>
 </dt>
@@ -569,7 +377,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_threadlimit'>
+<dt>
   <code class='full'>event.threadlimit</code>
   <code><span class='type'>integer</span> threadlimit</code>
 </dt>
@@ -581,7 +389,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_threadsperchild'>
+<dt>
   <code class='full'>event.threadsperchild</code>
   <code><span class='type'>integer</span> threadsperchild</code>
 </dt>
@@ -597,7 +405,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_group'>
+<dt>
   <code class='full'>group</code>
   <code><span class='type'>string</span> group</code>
 </dt>
@@ -609,7 +417,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_keepalive'>
+<dt>
   <code class='full'>keepalive</code>
   <code><span class='type'>string</span> keepalive</code>
 </dt>
@@ -621,7 +429,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_keepalivetimout'>
+<dt>
   <code class='full'>keepalivetimout</code>
   <code><span class='type'>integer</span> keepalivetimout</code>
 </dt>
@@ -633,7 +441,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxkeepaliverequests'>
+<dt>
   <code class='full'>maxkeepaliverequests</code>
   <code><span class='type'>integer</span> maxkeepaliverequests</code>
 </dt>
@@ -654,7 +462,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxclients'>
+<dt>
   <code class='full'>prefork.maxclients</code>
   <code><span class='type'>integer</span> maxclients</code>
 </dt>
@@ -666,7 +474,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxrequestsperchild'>
+<dt>
   <code class='full'>prefork.maxrequestsperchild</code>
   <code><span class='type'>integer</span> maxrequestsperchild</code>
 </dt>
@@ -678,7 +486,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxspareservers'>
+<dt>
   <code class='full'>prefork.maxspareservers</code>
   <code><span class='type'>integer</span> maxspareservers</code>
 </dt>
@@ -690,7 +498,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_minspareservers'>
+<dt>
   <code class='full'>prefork.minspareservers</code>
   <code><span class='type'>integer</span> minspareservers</code>
 </dt>
@@ -702,7 +510,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_startservers'>
+<dt>
   <code class='full'>prefork.startservers</code>
   <code><span class='type'>integer</span> startservers</code>
 </dt>
@@ -718,7 +526,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_timeout'>
+<dt>
   <code class='full'>timeout</code>
   <code><span class='type'>integer</span> timeout</code>
 </dt>
@@ -730,7 +538,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_user'>
+<dt>
   <code class='full'>user</code>
   <code><span class='type'>string</span> user</code>
 </dt>
@@ -751,7 +559,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxclients'>
+<dt>
   <code class='full'>worker.maxclients</code>
   <code><span class='type'>integer</span> maxclients</code>
 </dt>
@@ -763,7 +571,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxrequestsperchild'>
+<dt>
   <code class='full'>worker.maxrequestsperchild</code>
   <code><span class='type'>integer</span> maxrequestsperchild</code>
 </dt>
@@ -775,7 +583,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxsparethreads'>
+<dt>
   <code class='full'>worker.maxsparethreads</code>
   <code><span class='type'>integer</span> maxsparethreads</code>
 </dt>
@@ -787,7 +595,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_minsparethreads'>
+<dt>
   <code class='full'>worker.minsparethreads</code>
   <code><span class='type'>integer</span> minsparethreads</code>
 </dt>
@@ -799,7 +607,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_startservers'>
+<dt>
   <code class='full'>worker.startservers</code>
   <code><span class='type'>integer</span> startservers</code>
 </dt>
@@ -811,7 +619,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_threadlimit'>
+<dt>
   <code class='full'>worker.threadlimit</code>
   <code><span class='type'>integer</span> threadlimit</code>
 </dt>
@@ -823,7 +631,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_threadsperchild'>
+<dt>
   <code class='full'>worker.threadsperchild</code>
   <code><span class='type'>integer</span> threadsperchild</code>
 </dt>

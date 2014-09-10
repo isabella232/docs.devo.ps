@@ -299,316 +299,7 @@ var Swiftype = window.Swiftype || {};
 
 
 <section class='configuration'>
-  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
-  <dl>
-  <dd>
-    <code>configuration</code>:
-    <dl>
-    <dd>
-      <code>redis</code>:
-      <dl>
-        
-        
-
-<dd><code>aom:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_aof_rewrite_min_size"><code>aof_rewrite_min_size</code><span class="sample_description">Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage</span></a>: <code>64mb</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_aof_rewrite_percentage"><code>aof_rewrite_percentage</code><span class="sample_description">Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)</span></a>: <code>100</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_enable"><code>enable</code><span class="sample_description">Enable Append Only Mode</span></a>: <code>no</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_filename"><code>filename</code><span class="sample_description">Name of the append only file</span></a>: <code>appendonly.aof</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_fsync"><code>fsync</code><span class="sample_description">Fsync mode to sync the append only file</span></a>: <code>everysec</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_no_appendfsync_on_rewrite"><code>no_appendfsync_on_rewrite</code><span class="sample_description">Define whether to (not) append fsync operations if another fsync op is already in progress</span></a>: <code>no</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_bind"><code>bind</code><span class="sample_description">Binding IP address.</span></a>: <code>127.0.0.1</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_databases"><code>databases</code><span class="sample_description">Number of databases within the redis server</span></a>: <code>1</code>
-</dd>
-
-
-
-<dd><code>limits:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_maxclients"><code>maxclients</code><span class="sample_description">Max number of clients connected</span></a>: <code>10000</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_maxmemory"><code>maxmemory</code><span class="sample_description">Maximum RAM used by Redis to store data (no limit by default) in bytes</span></a>: <span>no defaults</span>
-</dd>
-
-
-
-<dd>
-  <a href="#details_policy"><code>policy</code><span class="sample_description">Define how Redis will remove keys when maxmemory is reached</span></a>: <code>volatile-lru</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_samples"><code>samples</code><span class="sample_description">Sample size to use to base the policy eviction for LRU and TTL policy algorithms</span></a>: <code>3</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_logfile"><code>logfile</code><span class="sample_description">Server log file</span></a>: <code>/var/log/redis/redis-server.log</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_loglevel"><code>loglevel</code><span class="sample_description">Server log verbosity</span></a>: <code>notice</code>
-</dd>
-
-
-
-<dd><code>lua:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_time_limit"><code>time_limit</code><span class="sample_description">Time limit (in ms) for the execution of a LUA script</span></a>: <code>5000</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_port"><code>port</code><span class="sample_description">Connection port.</span></a>: <code>6379</code>
-</dd>
-
-
-
-<dd><code>replication:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_is_slave"><code>is_slave</code><span class="sample_description">Is this redis instance a slave?</span></a>: <span>no defaults</span>
-</dd>
-
-
-
-<dd>
-  <a href="#details_masterauth"><code>masterauth</code><span class="sample_description">Redis master auth password (if required)</span></a>: <span>no defaults</span>
-</dd>
-
-
-
-<dd>
-  <a href="#details_masterip"><code>masterip</code><span class="sample_description">IP or host of the master server</span></a>: <span>no defaults</span>
-</dd>
-
-
-
-<dd>
-  <a href="#details_masterport"><code>masterport</code><span class="sample_description">Redis port of the master server</span></a>: <code>6379</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_ping_slave_period"><code>ping_slave_period</code><span class="sample_description">Frequency (in sec) to ping the master server as health check</span></a>: <code>10</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_priority"><code>priority</code><span class="sample_description">Slave priority</span></a>: <code>100</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_read_only"><code>read_only</code><span class="sample_description">Make the slave server read-only (preferred option)</span></a>: <code>yes</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_serve_stale_data"><code>serve_stale_data</code><span class="sample_description">Slave redis serves stale data if the connection is lost with the master</span></a>: <code>yes</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_timeout"><code>timeout</code><span class="sample_description">Timeout to Bulk IO transfer and ping response to mark the master as unreachable</span></a>: <code>60</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd><code>security:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_requirepass"><code>requirepass</code><span class="sample_description">Require a password to connect (either client or slave)</span></a>: <span>no defaults</span>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd><code>slowlog:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_log_slower_than"><code>log_slower_than</code><span class="sample_description">Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries</span></a>: <code>10000</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_max_len"><code>max_len</code><span class="sample_description">Length of the slow log to capture (FIFO based)</span></a>: <code>128</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd><code>snapshotting:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_dbfilename"><code>dbfilename</code><span class="sample_description">Filename where to dump the DB</span></a>: <code>dump.rdb</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_dir"><code>dir</code><span class="sample_description">Folder where to store the snapshots</span></a>: <code>/var/lib/redis</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_rdbchecksum"><code>rdbchecksum</code><span class="sample_description">Enable database checksum (use ~10% extra CPU)</span></a>: <code>yes</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_rdbcompression"><code>rdbcompression</code><span class="sample_description">Enable database compression</span></a>: <code>yes</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_save"><code>save</code><span class="sample_description">Array of save rules including seconds and number of changes that trigger a save</span></a>: <code>[object Object],[object Object],[object Object]</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd><code>syslog:</code>
-  <dl>
-  
-  
-
-<dd>
-  <a href="#details_enable"><code>enable</code><span class="sample_description">Send log to syslog</span></a>: <code>no</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_facility"><code>facility</code><span class="sample_description">Syslog facility</span></a>: <code>local0</code>
-</dd>
-
-
-
-<dd>
-  <a href="#details_ident"><code>ident</code><span class="sample_description">Syslog identity</span></a>: <code>redis</code>
-</dd>
-
-
-  </dl>
-</dd>
-
-
-
-<dd>
-  <a href="#details_timeout"><code>timeout</code><span class="sample_description">Close the connection after a client is idle for N seconds (0 to disable)</span></a>: <span>no defaults</span>
-</dd>
-
-
-      </dl>
-    </dd>
-    </dl>
-  </dd>
-  </dl>
-  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
+  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
   <dl>
     
     
@@ -622,7 +313,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_aof_rewrite_min_size'>
+<dt>
   <code class='full'>aom.aof_rewrite_min_size</code>
   <code><span class='type'>string</span> aof_rewrite_min_size</code>
 </dt>
@@ -634,7 +325,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_aof_rewrite_percentage'>
+<dt>
   <code class='full'>aom.aof_rewrite_percentage</code>
   <code><span class='type'>integer</span> aof_rewrite_percentage</code>
 </dt>
@@ -646,7 +337,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_enable'>
+<dt>
   <code class='full'>aom.enable</code>
   <code><span class='type'>string</span> enable</code>
 </dt>
@@ -658,7 +349,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_filename'>
+<dt>
   <code class='full'>aom.filename</code>
   <code><span class='type'>string</span> filename</code>
 </dt>
@@ -670,7 +361,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_fsync'>
+<dt>
   <code class='full'>aom.fsync</code>
   <code><span class='type'>string</span> fsync</code>
 </dt>
@@ -682,7 +373,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_no_appendfsync_on_rewrite'>
+<dt>
   <code class='full'>aom.no_appendfsync_on_rewrite</code>
   <code><span class='type'>string</span> no_appendfsync_on_rewrite</code>
 </dt>
@@ -698,7 +389,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_bind'>
+<dt>
   <code class='full'>bind</code>
   <code><span class='type'>string</span> bind</code>
 </dt>
@@ -710,7 +401,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_databases'>
+<dt>
   <code class='full'>databases</code>
   <code><span class='type'>integer</span> databases</code>
 </dt>
@@ -731,7 +422,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxclients'>
+<dt>
   <code class='full'>limits.maxclients</code>
   <code><span class='type'>integer</span> maxclients</code>
 </dt>
@@ -743,7 +434,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_maxmemory'>
+<dt>
   <code class='full'>limits.maxmemory</code>
   <code><span class='type'>integer</span> maxmemory</code>
 </dt>
@@ -755,7 +446,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_policy'>
+<dt>
   <code class='full'>limits.policy</code>
   <code><span class='type'>string</span> policy</code>
 </dt>
@@ -767,7 +458,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_samples'>
+<dt>
   <code class='full'>limits.samples</code>
   <code><span class='type'>integer</span> samples</code>
 </dt>
@@ -783,7 +474,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_logfile'>
+<dt>
   <code class='full'>logfile</code>
   <code><span class='type'>string</span> logfile</code>
 </dt>
@@ -795,7 +486,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_loglevel'>
+<dt>
   <code class='full'>loglevel</code>
   <code><span class='type'>string</span> loglevel</code>
 </dt>
@@ -816,7 +507,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_time_limit'>
+<dt>
   <code class='full'>lua.time_limit</code>
   <code><span class='type'>integer</span> time_limit</code>
 </dt>
@@ -832,7 +523,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_port'>
+<dt>
   <code class='full'>port</code>
   <code><span class='type'>integer</span> port</code>
 </dt>
@@ -853,7 +544,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_is_slave'>
+<dt>
   <code class='full'>replication.is_slave</code>
   <code><span class='type'>string</span> is_slave</code>
 </dt>
@@ -865,7 +556,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_masterauth'>
+<dt>
   <code class='full'>replication.masterauth</code>
   <code><span class='type'>string</span> masterauth</code>
 </dt>
@@ -877,7 +568,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_masterip'>
+<dt>
   <code class='full'>replication.masterip</code>
   <code><span class='type'>string</span> masterip</code>
 </dt>
@@ -889,7 +580,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_masterport'>
+<dt>
   <code class='full'>replication.masterport</code>
   <code><span class='type'>integer</span> masterport</code>
 </dt>
@@ -901,7 +592,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_ping_slave_period'>
+<dt>
   <code class='full'>replication.ping_slave_period</code>
   <code><span class='type'>integer</span> ping_slave_period</code>
 </dt>
@@ -913,7 +604,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_priority'>
+<dt>
   <code class='full'>replication.priority</code>
   <code><span class='type'>integer</span> priority</code>
 </dt>
@@ -925,7 +616,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_read_only'>
+<dt>
   <code class='full'>replication.read_only</code>
   <code><span class='type'>string</span> read_only</code>
 </dt>
@@ -937,7 +628,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_serve_stale_data'>
+<dt>
   <code class='full'>replication.serve_stale_data</code>
   <code><span class='type'>string</span> serve_stale_data</code>
 </dt>
@@ -949,7 +640,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_timeout'>
+<dt>
   <code class='full'>replication.timeout</code>
   <code><span class='type'>integer</span> timeout</code>
 </dt>
@@ -974,7 +665,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_requirepass'>
+<dt>
   <code class='full'>security.requirepass</code>
   <code><span class='type'>string</span> requirepass</code>
 </dt>
@@ -999,7 +690,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_log_slower_than'>
+<dt>
   <code class='full'>slowlog.log_slower_than</code>
   <code><span class='type'>integer</span> log_slower_than</code>
 </dt>
@@ -1011,7 +702,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_max_len'>
+<dt>
   <code class='full'>slowlog.max_len</code>
   <code><span class='type'>integer</span> max_len</code>
 </dt>
@@ -1036,7 +727,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_dbfilename'>
+<dt>
   <code class='full'>snapshotting.dbfilename</code>
   <code><span class='type'>string</span> dbfilename</code>
 </dt>
@@ -1048,7 +739,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_dir'>
+<dt>
   <code class='full'>snapshotting.dir</code>
   <code><span class='type'>string</span> dir</code>
 </dt>
@@ -1060,7 +751,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_rdbchecksum'>
+<dt>
   <code class='full'>snapshotting.rdbchecksum</code>
   <code><span class='type'>string</span> rdbchecksum</code>
 </dt>
@@ -1072,7 +763,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_rdbcompression'>
+<dt>
   <code class='full'>snapshotting.rdbcompression</code>
   <code><span class='type'>string</span> rdbcompression</code>
 </dt>
@@ -1084,7 +775,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_save'>
+<dt>
   <code class='full'>snapshotting.save</code>
   <code><span class='type'>array</span> save</code>
 </dt>
@@ -1109,7 +800,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_enable'>
+<dt>
   <code class='full'>syslog.enable</code>
   <code><span class='type'>string</span> enable</code>
 </dt>
@@ -1121,7 +812,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_facility'>
+<dt>
   <code class='full'>syslog.facility</code>
   <code><span class='type'>string</span> facility</code>
 </dt>
@@ -1133,7 +824,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_ident'>
+<dt>
   <code class='full'>syslog.ident</code>
   <code><span class='type'>string</span> ident</code>
 </dt>
@@ -1149,7 +840,7 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<dt id='details_timeout'>
+<dt>
   <code class='full'>timeout</code>
   <code><span class='type'>integer</span> timeout</code>
 </dt>
