@@ -46,7 +46,12 @@
 
 {% if configuration %}
 <section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
+  <h2 id='sample_configuration'><a href='#sample_configuration'>Sample Configuration</a></h2>
+  <dl>
+    {% set tree = configuration %}
+    {% include 'partials/_sample_tree.html' %}
+  </dl>
+  <h2 id='configuration'><a href='#full_configuration'>Full Configuration</a></h2>
   <dl>
     {% set tree = configuration %}
     {% include 'partials/_tree.html' %}
