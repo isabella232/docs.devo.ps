@@ -1,7 +1,34 @@
+{% set undef_weight = 99900 %}
+{% set weighted = {} %}
 {% for val in tree %}
+    {{ loop.key }}
+    {% if not val.weight %}
+        {% set undef_weight += 1 %}
+        {% set weighted[undef_weight] = loop.key %}
+    {% else %}
+        {% set weight = val.weight * 100 + loop.index %}
+        {% set weighted[weight] = loop.key %}    
+    {% endif %}
+{% endfor %}
+
+<!-- {% for k in weighted | sort %}
+{{ k }}
+{{ weighted[k] }}
+{% endfor %}
+
+{% for k in weighted %}
+{{ k }}
+{{ loop.key }}
+{% endfor %}
+ -->
+
+{% for k in weighted | sort %}
+{% set item = weighted[k] %}
+{% set val = tree[item] %}
+{{ weighted[k] }}
 {% if val.type and val.description %}
-<dt id='details_{{ loop.key }}'>
-  <code><span class='type'>{{ val.type }}</span> {% if parent %}{{ parent }}.{% endif %}<strong>{{ loop.key }}</strong></code>
+<dt id='details_{{ item }}'>
+  <code><span class='type'>{{ val.type }}</span> {% if parent %}{{ parent }}.{% endif %}<strong>{{ item }}</strong></code>
 </dt>
 <dd class='description'>
   {{ val.description }}{% if val.object_id %} (<a href='#object-{{ val.object_id }}'>Read more about {{ val.object_id }} objects</a>){% endif %}
@@ -9,14 +36,19 @@
   {% if val.required == true %}<span class='required'>Required</span>{% endif %}
 </dd>
 {% else %}
-{% if not parent %}
-{% set parent = loop.key %}
-{% else %}
-{% set parent_prev = parent %}
-{% set parent += '.'+ loop.key %}
-{% endif %}
-{% set tree = val %}
-{% include "_tree.html" %}
-{% set parent = parent_prev %}
+    {% set weighted_prev = weighted %}
+    {% set item_prev = item %}
+    {% if not parent %}
+        {% set parent = item %}
+    {% else %}
+        {% set parent_prev = parent %}
+        {% set parent += '.'+ item %}
+    {% endif %}
+    {{ item }} {{ k }} {{ weighted[k] }} {{ weighted_prev[k] }}
+    {% set tree = val %}
+    {% include "_tree.html" %}
+    {{ item }} {{ k }} {{ weighted[k] }} {{ weighted_prev[k] }}
+    {% set parent = parent_prev %}
+    {% set item = item_prev %}
 {% endif %}
 {% endfor %}

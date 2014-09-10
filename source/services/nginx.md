@@ -7,76 +7,90 @@ configuration:
       minimum: 1
       required: false
       type: integer
+      weight: 1
   http:
     access_log:
       default: /var/log/nginx/access.log
       description: Global access log file path
       required: false
       type: string
+      weight: 1
     error_log:
       default: /var/log/nginx/error.log
       description: Global error log file path
       required: false
       type: string
+      weight: 2
     gzip:
       default: 'on'
       description: Enable gzip compression
       required: false
       type: string
+      weight: 3
     gzip_disable:
       default: msie6
       description: Space separated list of browser to disable gzip compression for
       required: false
       type: string
+      weight: 4
     keepalive_timeout:
       default: 65
       description: Keepalive timeout (sec) - 0 to disable
       minimum: 0
       required: false
       type: integer
+      weight: 5
     sendfile:
       default: 'on'
       description: Enable sendfile
       required: false
       type: string
+      weight: 6
     tcp_nodelay:
       default: 'on'
       description: Enable tcp_nodelay
       required: false
       type: string
+      weight: 7
     tcp_nopush:
       default: 'on'
       description: Enable tcp_nopush
       required: false
       type: string
+      weight: 8
     types_hash_max_size:
       default: 2048
       description: Maximum size of hash tables
       minimum: 0
       required: false
       type: integer
+      weight: 9
   pid:
     default: /var/run/nginx.pid
     description: Pid file path
     required: false
     type: string
+    weight: 1
   user:
     default: www-data
     description: Nginx running user.
     required: false
     type: string
+    weight: 2
   vhosts:
     default: []
     description: Array of virtual hosts objects
     object_id: vhost
     required: false
     type: array
+    weight: 3
   worker_processes:
     default: 4
     description: Number of Nginx processes
     minimum: 1
     required: false
     type: integer
+    weight: 4
 documentation: http://wiki.nginx.org/Modules
 objects:
   route:
