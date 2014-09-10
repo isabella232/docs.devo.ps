@@ -33,10 +33,14 @@
       {{ task.description | safe }}
       {% if task.options %}
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           {% set tree = task.options %}
           {% include 'partials/_task_tree.html' %}
-        </dl>
+        </table>
       {% endif %}
     </dd>
     {% endfor %}
