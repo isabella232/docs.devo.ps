@@ -1,36 +1,39 @@
 {% for val in tree %}
-{% if val.type and val.description %}
-<dt id='details_{{ loop.key }}'>
-  <code><span class='type'>{{ val.type }}</span> {% if parent %}{{ parent }}.{% endif %}<strong>{{ loop.key }}</strong></code>
-</dt>
-<dd class='description'>
-  {{ val.description }}{% if val.object_id %} (<a href='#object-{{ val.object_id }}'>Read more about {{ val.object_id }} objects</a>){% endif %}
-  {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
-  {% if val.required == true %}<span class='required'>Required</span>{% endif %}
-</dd>
-{% endif %}
+  {% if val.type and val.description %}
+    <dt id='details_{{ loop.key }}'>
+      {% if parent %}{{ parent }}.{% endif %}<strong>{{ loop.key }}</strong> <span class='type'>{{ val.type }}</span>
+    </dt>
 
-{% if not val.type or not val.description or val.options %}
-    {% if not parent_prev %}{% set parent_prev = [] %}{% endif %}
+    <dd class='description'>{{ val.description }}</dd>
+    {% if val.default %}<dd class='default'>Default: <code>{{ val.default }}</code></dd>{% endif %}
+    {% if val.required == true %}<dd class='required'>Required</dd>{% endif %}
+  {% endif %}
+
+  {% if not val.type or not val.description or val.options %}
+    {% if not parent_prev %}
+      {% set parent_prev = [] %}
+    {% endif %}
+    
     {% if not parent %}
-        {% set parent = loop.key %}
+      {% set parent = loop.key %}
     {% else %}
-        {% set parent_prev = parent_prev.push(parent) %}
-        {% set parent += '.'+ loop.key %}
+      {% set parent_prev = parent_prev.push(parent) %}
+      {% set parent += '.'+ loop.key %}
     {% endif %}
-    {% if val.options %}
-        {% set tree = val.options %}
-        {% if val.type and val.type == 'array' %}
-            {% set parent = loop.key | replace('s$', '')%}
-        {% endif %}        
-        <dd class='objects'><dl>
-        {% include "_tree.html" %}
-        </dl></dd>
-    {% else %}
-        {% set tree = val %}
-        {% include "_tree.html" %}
-    {% endif %}
-    {% set parent = parent_prev.pop() %}
-{% endif %}
 
+    {% if val.options %}
+      {% set tree = val.options %}
+      {% if val.type and val.type == 'array' %}
+          {% set parent = loop.key | replace('s$', '')%}
+      {% endif %}        
+      <dd class='objects'><dl>
+      {% include "_list_tree.html" %}
+      </dl></dd>
+    {% else %}
+      {% set tree = val %}
+      {% include "_list_tree.html" %}
+    {% endif %}
+
+    {% set parent = parent_prev.pop() %}
+  {% endif %}
 {% endfor %}

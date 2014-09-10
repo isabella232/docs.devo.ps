@@ -12,6 +12,7 @@ $header: 64px;
 $search: 50px;
 $sidebar: 220px;
 $width: 960px;
+$codeFont: 'Lucidatypewriter', monospace;
 
 /* General */
 
@@ -171,8 +172,7 @@ code,
       border: 1px solid $line;
       border-radius: $radius;
       color: $grey;
-      font-family: 'Lucidatypewriter', monospace;
-      @include font-size($smaller);
+      font-family: $codeFont;
       line-height: 140%;
       list-style: none;
       margin: 0 0 $gutter;
@@ -231,6 +231,27 @@ code,
         &:hover {
           color: shade($blue, 10%);
         }
+      }
+    }
+    dl.list {
+      margin: 0 0 $gutter;
+      dt {
+        background: $light;
+        border-top: 1px solid $line;
+        color: $purple;
+        font-family: $codeFont;
+        margin: 0 0 $gutter/4;
+        padding: $gutter/4 $gutter/2;
+        .type {
+          color: $grey;
+        }
+      }
+      dd {
+        @include font-size($smaller);
+        margin: 0 0 $gutter/4 $gutter;
+      }
+      dd + dt {
+        margin-top: $gutter/2;
       }
     }
   }
