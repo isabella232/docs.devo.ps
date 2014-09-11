@@ -16,7 +16,7 @@
     {% if not parent %}
       {% set parent = loop.key %}
     {% else %}
-      {% set parent_prev = parent_prev.push(parent) %}
+      {% set add = parent_prev.push(parent) %}
       {% set parent += '.'+ loop.key %}
     {% endif %}
 
@@ -32,7 +32,6 @@
       {% set tree = val %}
       {% include "_list_tree.html" %}
     {% endif %}
-    
     {% set parent = parent_prev.pop() %}
   {% endif %}
 {% endfor %}
