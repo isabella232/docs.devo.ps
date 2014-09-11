@@ -1,4 +1,4 @@
-Official [documentation website](http://devo.ps) for devo.ps for [devo.ps](http://devo.ps).
+Official [documentation website](http://devo.ps) for [devo.ps](http://devo.ps).
 
 ## Install
 
