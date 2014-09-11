@@ -1298,6 +1298,8 @@ code .type, .code .type {
     box-sizing: border-box; }
     #main .content .header .tags {
       float: right;
+      font-size: 14px;
+      font-size: 1.4rem;
       list-style: none;
       margin: 0;
       padding: 0; }
@@ -1443,7 +1445,9 @@ code .type, .code .type {
         color: #576671;
         font-style: normal; }
         #main .content ul.mock i.empty {
-          color: #a5adb3; }
+          background: none;
+          color: #a5adb3;
+          padding: 0; }
       #main .content ul.mock a {
         color: inherit; }
         #main .content ul.mock a:hover {
