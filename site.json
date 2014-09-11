@@ -74,10 +74,10 @@
                 "assets/scss/**/*.{scss,sass}"
             ],
             "favicons": [
-                "assets/favicons/"
+                "assets/favicons/*"
             ],
             "fonts": [
-                "assets/fonts/"
+                "assets/fonts/*"
             ]
         }
     }

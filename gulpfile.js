@@ -28,7 +28,7 @@ gulp.task('prepare', function(callback) {
 });
 
 gulp.task('clean', function() {
-    gulp.src([site.destination, './public/assets'], {read: false})
+    gulp.src(site.destination, {read: false})
         .pipe(clean());
 })
 
