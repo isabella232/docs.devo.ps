@@ -1750,6 +1750,8 @@ body .swiftype-widget .autocomplete {
       padding: 15px 0; }
       #header .menu a.active {
         color: inherit; }
+  #main .content {
+    padding-bottom: 60px; }
   #main .sidebar {
     margin-bottom: 20px; }
     #main .sidebar .cancel {
