@@ -31,6 +31,9 @@ locations:
 - country: null
   id: '8'
   name: New York 3
+- country: null
+  id: '9'
+  name: Amsterdam 3
 sizes:
 - bandwidth: 0
   disk: 0

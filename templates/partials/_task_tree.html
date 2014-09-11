@@ -1,18 +1,13 @@
 {% for val in tree %}
-<dt>
+<tr>
+<td>
   <code><span class='type {{ val.type }}'>{{ val.type }}</span> {{ loop.key }}</code>
   {% if val.required == false %}<span class='optional'>Optional</span>{% endif %}
-</dt>
-<dd class='description'>
-  {{ val.description }}{% if val.object_id %} (<a href='#object-{{ val.object_id }}'>Read more about {{ val.object_id }} objects</a>){% endif %}
+</td>
+<td class='description'>
+  {{ val.description }}
   {% if val.valid_values %}<span class='default'>Valid values: {{ val.valid_values }}</span>{% endif %}
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
-{% if val.options %}
-<h3>{{ loop.key | replace('s$', '') }} Object</h3>
-<dl>
-{% set tree = val.options %}
-{% include "_task_tree.html" %}
-</dl>
-{% endif %}
-</dd>
+</td>
+</tr>
 {% endfor %}

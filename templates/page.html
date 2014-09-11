@@ -24,19 +24,23 @@
 {% if tasks %}
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     {% for task in tasks %}
     <dt>
-      <code class='terminal'>devops {{ title | lower }} {{ task.name | safe }}</code>
+      devops {{ title | lower }} {{ task.name | safe }}
     </dt>
     <dd>
       {{ task.description | safe }}
       {% if task.options %}
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           {% set tree = task.options %}
           {% include 'partials/_task_tree.html' %}
-        </dl>
+        </table>
       {% endif %}
     </dd>
     {% endfor %}
@@ -45,32 +49,28 @@
 {% endif %}
 
 {% if configuration %}
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
-    {% set tree = configuration %}
-    {% include 'partials/_tree.html' %}
-  </dl>
-</section>
-{% endif %}
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
 
-{% if objects %}
-<section class='objects'>
-  <h2 id='objects'><a href='#objects'>Objects</a></h2>
-  <dl>
-    {% for object in objects %}
-    <dt>
-      <h3 id='object-{{ loop.key }}'><a href='#object-{{ loop.key }}'>{{ loop.key }}</a></h3>
-    </dt>
-    <dd>
-      {{ object.description | safe }}
-      {% if object.options %}
-      <dl>
-        {% set tree = object.options %}
-        {% include 'partials/_task_tree.html' %}
-      </dl>
-      {% endif %}
-    {% endfor %}
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>{{ title | lower }}</strong>:
+          <ul class='content'>
+            {% set tree = configuration %}
+            {% include 'partials/_mock_tree.html' %}
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    {% set tree = configuration %}
+    {% include 'partials/_list_tree.html' %}
+  </dl>
 </section>
 {% endif %}
 

@@ -12,6 +12,7 @@ $header: 64px;
 $search: 50px;
 $sidebar: 220px;
 $width: 960px;
+$codeFont: 'Lucidatypewriter', monospace;
 
 /* General */
 
@@ -106,6 +107,7 @@ code,
     .header {
       .tags {
         float: right;
+        @include font-size($smaller);
         list-style: none;
         margin: 0;
         padding: 0;
@@ -166,69 +168,195 @@ code,
       font-style: normal;
       padding: $gutter/4 $gutter/2;
     }
-    dl {
-      @include font-size($smaller);
-      margin: 0 0 $gutter;
-      dt {
-        border-top: 1px solid tint($line, 40%);
-        margin-bottom: $gutter/4;
-        padding-top: $gutter/2;
-        > code {
-          margin-right: $gutter/2;
+    .tabs {
+      border-bottom: 1px solid $line;
+      h3 {
+        background: $light;
+        border: 1px solid $line;
+        border-radius: $radius $radius 0 0;
+        $color: inherit;
+        cursor: pointer;
+        display: inline-block;
+        font-size: inherit;
+        margin: 0 0 -1px $gutter/2;
+        padding: $gutter/4 $gutter/2;
+        &.active {
+          background: #FFF;
+          border-bottom-color: #FFF;
+          color: $black;
+          font-weight: bold;
+        }
+        &:hover {
+          background: #FFF;
         }
       }
-      dd {
-        margin-left: 0;
-        padding-bottom: $gutter/2;
-        padding-left: $gutter;
-        &:last-child {
-          border-bottom: 1px solid tint($line, 40%);
-        }
-        small {
+    }
+    .tabbed {
+      list-style: none;
+      margin: 0 0 $gutter;
+      li {
+        display: none;
+        margin: 0;
+        padding: 0;
+        &.active {
           display: block;
-          code {
-            font-size: inherit;
+        }
+      }
+    }
+    .snippet-header {
+      border: 1px solid $line;
+      border-radius: $radius;
+      cursor: pointer;
+      margin: 0;
+      padding: $gutter/4 $gutter/2;
+      strong {
+        color: $purple;
+        font-family: $codeFont;
+        font-weight: normal;
+      }
+      &:before {
+        color: $grey;
+        @include icon;
+        content: 'v';
+        margin-right: $gutter/2;
+      }
+      &:hover {
+        background: $light;
+      }
+      &.expanded {
+        border-bottom: 0;
+        border-radius: $radius $radius 0 0;
+        &:before {
+          content: 's';
+        }
+      }
+      & + pre {
+        margin-top: 0;
+        code {
+          border-radius: 0 0 $radius $radius;
+          width: auto;
+        }
+      }
+    }
+    dl {
+      @include font-size();
+      margin: 0 0 $gutter;
+      dt {
+        font-family: $codeFont;
+        margin: 0 0 $gutter/4;
+        padding: $gutter/4 $gutter/2;
+      }
+      dd {
+        @include font-size($smaller);
+        margin: 0 0 $gutter/4 1.5*$gutter;
+      }
+      dd + dt {
+        margin-top: $gutter/2;
+      }
+      dl {
+        margin-left: 1.5*$gutter;
+      }
+    }
+    dl.commands {
+      dt {
+        background: tint($black, 10%);
+        border-radius: $radius;
+        border: 1px solid $black;
+        color: #FFF;
+      }
+    }
+    ul.mock {
+      background: $light;
+      border: 1px solid $line;
+      border-radius: $radius;
+      color: $grey;
+      font-family: $codeFont;
+      line-height: 140%;
+      list-style: none;
+      margin: 0 0 $gutter;
+      padding: $gutter/4 $gutter/2;
+      ul {
+        display: block;
+        list-style: none;
+        margin: 0 0 0 $gutter;
+        padding: 0;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      strong {
+        color: $purple;
+        font-weight: normal;
+      }
+      span {
+        font-family: $font;
+      }
+      i {
+        color: tint($black, 25%);
+        font-style: normal;
+        &.empty {
+          background: none;
+          color: $grey;
+          padding: 0;
+        }
+      }
+      a {
+        color: inherit;
+        &:hover {
+          background: tint($light, 80%);
+        }
+        &.details {
+          color: $blue;
+          font-family: $font;
+          &:hover {
+            color: shade($blue, 10%);
           }
         }
       }
-      dl {
-        border-left: 3px solid tint($line, 40%);
-        margin-bottom: 0;
-        margin-top: $gutter/2;
-        padding-left: $gutter/2;
-        dd:last-child {
-          border-bottom: 0;
-          padding-bottom: 0;
-        }
-      }
-      h3 {
-        color: $grey;
-        @include font-size($small);
-        margin-top: 0;
-        padding-top: 0;
-        margin: $gutter/2 0;
-        text-transform: uppercase;
-      }
-      .full {
-        background: transparent;
-        border: 0;
-        color: $grey;
-        float: right;
+      button.more {
+        color: $blue;
         padding: 0;
-      }
-      .optional,
-      .required {
-        color: $orange;
-      }
-      .default {
-        display: block;
-        code {
-          background: transparent;
-          border: 0;
-          color: $green;
-          line-height: inherit;
-          padding: 0;
+        @include tooltip(right);
+        &:before {
+          @include icon;
+          content: 'v';
         }
+        &.expanded {
+          color: inherit;
+          &:before {
+            content: 's';
+          }
+        }
+        &:hover {
+          color: shade($blue, 10%);
+        }
+      }
+      .array {
+        li {
+          padding-left: 1.5*$gutter/2;
+          position: relative;
+          &:first-child {
+            &:before {
+              content: '-';
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+    dl.list {
+      dt {
+        background: $light;
+        border-top: 1px solid $line;
+        color: $purple;
+        .type {
+          color: $grey;
+        }
+      }
+      .required {
+        color: $red;
       }
     }
   }
