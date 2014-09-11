@@ -1555,6 +1555,13 @@ code .type, .code .type {
             content: 's'; }
         #main .content ul.mock button.more:hover {
           color: #1b7ec0; }
+      #main .content ul.mock .array li {
+        padding-left: 15px;
+        position: relative; }
+        #main .content ul.mock .array li:first-child:before {
+          content: '-';
+          position: absolute;
+          left: 0; }
     #main .content dl.list dt {
       background: #fafafb;
       border-top: 1px solid #dde0e2;

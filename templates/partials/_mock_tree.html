@@ -10,8 +10,7 @@
 <li>
   <strong>{{ loop.key }}</strong>: </dt>
   {% if val.type and val.type == 'array' %}
-  <ul>
-    <li>-</li>
+  <ul class='array'>
     {% set tree = val.options %}
     {% include "_mock_tree.html" %}
   </ul>

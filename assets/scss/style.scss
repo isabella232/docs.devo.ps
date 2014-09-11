@@ -297,6 +297,19 @@ code,
           color: shade($blue, 10%);
         }
       }
+      .array {
+        li {
+          padding-left: 1.5*$gutter/2;
+          position: relative;
+          &:first-child {
+            &:before {
+              content: '-';
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
     }
     dl.list {
       dt {
