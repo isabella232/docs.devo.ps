@@ -2,12 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.devo.ps/services/python</loc>
+    <loc>http://docs.devo.ps/services/git</loc>
     <lastmod>2014-09-11</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/how-to/add-a-server</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/git-repositories</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/nodes</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/profile</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/tasks</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/vars</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/digitalocean</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/ec2</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/linode</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/rackspace</loc>
+    <lastmod>2014-09-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/apache</loc>
     <lastmod>2014-09-11</lastmod>
   </url>
   
@@ -42,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/git</loc>
+    <loc>http://docs.devo.ps/manual/CLI</loc>
     <lastmod>2014-09-11</lastmod>
   </url>
   
@@ -92,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/apache</loc>
+    <loc>http://docs.devo.ps/services/python</loc>
     <lastmod>2014-09-11</lastmod>
   </url>
   
@@ -133,56 +183,6 @@
   
   <url>
     <loc>http://docs.devo.ps/services/zeromq</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/digitalocean</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/ec2</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/linode</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/rackspace</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/CLI</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/git-repositories</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/nodes</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/profile</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/tasks</loc>
-    <lastmod>2014-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/vars</loc>
     <lastmod>2014-09-11</lastmod>
   </url>
   
