@@ -47,6 +47,7 @@
     "gulp-concat": "*",
     "gulp-clean": "*",
     "gulp-sass": "*",
+    "run-sequence": "*",
     "eggshell": "latest",
     "mkdirp": "*",
     "consolidate":"*"

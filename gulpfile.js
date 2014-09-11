@@ -13,6 +13,7 @@ var sass = require('gulp-sass');
 var eggshell= require('eggshell');
 var concat = require('gulp-concat');
 var gutil = require('gulp-util');
+var seq = require('run-sequence');
 var log = gutil.log;
 var colors = gutil.colors;
 
@@ -128,5 +129,17 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith']);
+gulp.task('default', function (cb) {
+    seq(
+        'clean',
+        'sass',
+        'concat-js',
+        'concat-css',
+        'favicons',
+        'fonts',
+        'metalsmith',
+        cb
+    );
+});
+
 gulp.task('development', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith', 'server']);
