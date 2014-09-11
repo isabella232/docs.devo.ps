@@ -168,6 +168,41 @@ code,
       font-style: normal;
       padding: $gutter/4 $gutter/2;
     }
+    .tabs {
+      border-bottom: 1px solid $line;
+      h3 {
+        background: $light;
+        border: 1px solid $line;
+        border-radius: $radius $radius 0 0;
+        $color: inherit;
+        cursor: pointer;
+        display: inline-block;
+        font-size: inherit;
+        margin: 0 0 -1px $gutter/2;
+        padding: $gutter/4 $gutter/2;
+        &.active {
+          background: #FFF;
+          border-bottom-color: #FFF;
+          color: $black;
+          font-weight: bold;
+        }
+        &:hover {
+          background: #FFF;
+        }
+      }
+    }
+    .tabbed {
+      list-style: none;
+      margin: 0 0 $gutter;
+      li {
+        display: none;
+        margin: 0;
+        padding: 0;
+        &.active {
+          display: block;
+        }
+      }
+    }
     .snippet-header {
       border: 1px solid $line;
       border-radius: $radius;
@@ -226,7 +261,7 @@ code,
       dt {
         background: tint($black, 10%);
         border-radius: $radius;
-        border-top: 1px solid $black;
+        border: 1px solid $black;
         color: #FFF;
       }
     }

@@ -1,7 +1,7 @@
 $(function() {
   $('.lang-snippet').each(function () {
     var that = this;
-    var header = $(this).parent().prev('h3');
+    var header = $(this).parent().prev('h4');
     var label = header.html();
     $(this).hide();
     header.addClass('snippet-header').html('Show <strong>'+ label +'</strong>');

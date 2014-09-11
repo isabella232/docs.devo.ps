@@ -1397,6 +1397,33 @@ code .type, .code .type {
       font-size: 1.4rem;
       font-style: normal;
       padding: 5px 10px; }
+    #main .content .tabs {
+      border-bottom: 1px solid #dde0e2; }
+      #main .content .tabs h3 {
+        background: #fafafb;
+        border: 1px solid #dde0e2;
+        border-radius: 2px 2px 0 0;
+        cursor: pointer;
+        display: inline-block;
+        font-size: inherit;
+        margin: 0 0 -1px 10px;
+        padding: 5px 10px; }
+        #main .content .tabs h3.active {
+          background: #FFF;
+          border-bottom-color: #FFF;
+          color: #203442;
+          font-weight: bold; }
+        #main .content .tabs h3:hover {
+          background: #FFF; }
+    #main .content .tabbed {
+      list-style: none;
+      margin: 0 0 20px; }
+      #main .content .tabbed li {
+        display: none;
+        margin: 0;
+        padding: 0; }
+        #main .content .tabbed li.active {
+          display: block; }
     #main .content .snippet-header {
       border: 1px solid #dde0e2;
       border-radius: 2px;
@@ -1448,7 +1475,7 @@ code .type, .code .type {
     #main .content dl.commands dt {
       background: #364854;
       border-radius: 2px;
-      border-top: 1px solid #203442;
+      border: 1px solid #203442;
       color: #FFF; }
     #main .content ul.mock {
       background: #fafafb;
