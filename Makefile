@@ -6,6 +6,7 @@ install:
 	@./node_modules/.bin/bower install
 
 build: install
-	@./node_modules/.bin/gulp
+	@./node_modules/.bin/gulp prepare
+	@./node_modules/.bin/gulp metalsmith
 
 .PHONY: dev install build
