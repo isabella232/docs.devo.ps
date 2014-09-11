@@ -27,8 +27,6 @@ gulp.task('prepare', function(callback) {
     mkdirp(site.destination, callback);
 });
 
-site.assets.vendor.js.concat(site.assets.custom.js);
-
 gulp.task('clean', function() {
     gulp.src([site.destination, './public/assets'], {read: false})
         .pipe(clean());
