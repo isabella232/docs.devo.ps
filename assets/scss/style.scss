@@ -107,6 +107,7 @@ code,
     .header {
       .tags {
         float: right;
+        @include font-size($smaller);
         list-style: none;
         margin: 0;
         padding: 0;
@@ -225,7 +226,9 @@ code,
         color: tint($black, 25%);
         font-style: normal;
         &.empty {
+          background: none;
           color: $grey;
+          padding: 0;
         }
       }
       a {
