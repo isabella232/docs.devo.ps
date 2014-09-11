@@ -1397,6 +1397,38 @@ code .type, .code .type {
       font-size: 1.4rem;
       font-style: normal;
       padding: 5px 10px; }
+    #main .content .snippet-header {
+      border: 1px solid #dde0e2;
+      border-radius: 2px;
+      cursor: pointer;
+      margin: 0;
+      padding: 5px 10px; }
+      #main .content .snippet-header strong {
+        color: #8B66CB;
+        font-family: 'Lucidatypewriter', monospace;
+        font-weight: normal; }
+      #main .content .snippet-header:before {
+        color: #a5adb3;
+        font-family: 'icons';
+        font-variant: normal;
+        font-weight: normal;
+        speak: none;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        content: 'v';
+        margin-right: 10px; }
+      #main .content .snippet-header:hover {
+        background: #fafafb; }
+      #main .content .snippet-header.expanded {
+        border-bottom: 0;
+        border-radius: 2px 2px 0 0; }
+        #main .content .snippet-header.expanded:before {
+          content: 's'; }
+      #main .content .snippet-header + pre {
+        margin-top: 0; }
+        #main .content .snippet-header + pre code {
+          border-radius: 0 0 2px 2px;
+          width: auto; }
     #main .content dl {
       font-size: 16px;
       font-size: 1.6rem;
@@ -1529,6 +1561,8 @@ code .type, .code .type {
       color: #8B66CB; }
       #main .content dl.list dt .type {
         color: #a5adb3; }
+    #main .content dl.list .required {
+      color: #FF5F5F; }
   #main .sidebar {
     border: 1px solid #dde0e2;
     border-radius: 4px; }
