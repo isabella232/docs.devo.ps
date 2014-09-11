@@ -209,26 +209,39 @@ Routes allow you to define a list of ways to handle different types of requests,
 
 ## Example
 
-    configuration:
-      nginx:
-        vhosts:
-          - id: my_vhost
-            port: 8080
-            domain: mydomain.com
-            aliases: alias.mydomain.com alias2.mydomain.com
-            webroot: public
-            support:
-              - php
-            routes:
-              - uri: '@php'
-                type: fastcgi
-                to: localhost:9001
-              - uri: '~ ^/(app|app_dev|config)\.php(/|$)'
-                type: custom
-                custom: >
-                  try_files $uri @php
+* ### PHP app
 
-We here define a vhost that will XXX.
+  ```example
+  configuration:
+    nginx:
+      vhosts:
+        - id: my_vhost
+          domain: mydomain.com
+          routes:
+            - uri: '@php'
+              type: fastcgi
+              to: localhost:9001
+  ```
+
+    We here define a vhost that will XXX.
+* ### Node.js app
+
+  ```example
+  configuration:
+    nginx:
+      vhosts:
+        - id: my_vhost
+          domain: mydomain.com
+          routes:
+            - uri: '@js'
+              type: fastcgi
+              to: localhost:9001
+  ```
+
+    We here define a vhost that will XXX.
+    
+  </li>
+</ul>
 
 This configuration will generate the following Nginx configuration file (also linked and enabled in `sites-enabled`):
 
