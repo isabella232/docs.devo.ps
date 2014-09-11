@@ -29,23 +29,10 @@ configuration:
     type: string
   databases:
     default: []
-    description: Array of databases, defines a database and the permissions of
-      the users
+    description: Array of databases
     object_id: database
     required: false
-    type: array
-    options:
-      name:
-        default: null
-        description: Database name
-        required: true
-        type: string
-      users:
-        default: []
-        description: Array of users with full privileges on the database, users will
-          be granted access from all their hosts
-        required: false
-        type: array
+    type: object
   innodb:
     innodb_adaptive_flushing:
       default: true
@@ -326,10 +313,29 @@ configuration:
       type: integer
   users:
     default: []
-    description: Array of MySQL users. Passwords are randomly generated.
+    description: Array of users
     object_id: user
     required: false
-    type: array
+    type: object
+documentation: http://dev.mysql.com/doc/
+objects:
+  database:
+    description: MySQL database object, defines a database and the permissions of
+      the users
+    options:
+      name:
+        default: null
+        description: Database name
+        required: true
+        type: string
+      users:
+        default: []
+        description: Array of users with full privileges on the database, users will
+          be granted access from all their hosts
+        required: false
+        type: array
+  user:
+    description: MySQL user object. Passwords are randomly generated.
     options:
       hosts:
         default: localhost
@@ -342,9 +348,6 @@ configuration:
         description: User name
         required: true
         type: string
-
-documentation: http://dev.mysql.com/doc/
-
 tags:
 - database
 - relational
