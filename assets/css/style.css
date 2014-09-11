@@ -1848,7 +1848,7 @@ body .swiftype-widget .autocomplete {
     #main .sidebar {
       font-size: 14px;
       font-size: 1.4rem;
-      height: 60%;
+      bottom: 80px;
       padding-bottom: 50px;
       position: fixed;
       top: 84px;
@@ -1874,7 +1874,7 @@ body .swiftype-widget .autocomplete {
           background: #fafafb;
           border-radius: 0; }
         #main .sidebar .menu::-webkit-scrollbar-thumb {
-          background: #dde0e2;
+          background: #c6c9cb;
           border-radius: 0; }
         #main .sidebar .menu h3 {
           font-size: inherit;

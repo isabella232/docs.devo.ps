@@ -161,7 +161,7 @@
     }
     .sidebar {
       @include font-size($smaller);
-      height: 60%;
+      bottom: 4*$gutter;
       padding-bottom: $search;
       position: fixed;
       top: $header + $gutter;
@@ -188,7 +188,7 @@
           border-radius: 0;
         }
         &::-webkit-scrollbar-thumb {
-          background: $line;
+          background: shade($line, 10%);
           border-radius: 0;
         }
         h3 {

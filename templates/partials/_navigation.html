@@ -30,7 +30,7 @@
 <h3>Services</h3>
 {% set menu = {} %}
 {% for item in services %}
-  {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
+  {% if item.title %}{% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}{% endif %}
 {% endfor %}
 {% for i in menu | sort %}
 <a href='/{{ services[menu[i]].path }}' {% if path == services[menu[i]].path %} class='active'{% endif %}>{{ services[menu[i]].title }}</a>
