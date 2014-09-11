@@ -168,6 +168,41 @@ code,
       font-style: normal;
       padding: $gutter/4 $gutter/2;
     }
+    .snippet-header {
+      border: 1px solid $line;
+      border-radius: $radius;
+      cursor: pointer;
+      margin: 0;
+      padding: $gutter/4 $gutter/2;
+      strong {
+        color: $purple;
+        font-family: $codeFont;
+        font-weight: normal;
+      }
+      &:before {
+        color: $grey;
+        @include icon;
+        content: 'v';
+        margin-right: $gutter/2;
+      }
+      &:hover {
+        background: $light;
+      }
+      &.expanded {
+        border-bottom: 0;
+        border-radius: $radius $radius 0 0;
+        &:before {
+          content: 's';
+        }
+      }
+      & + pre {
+        margin-top: 0;
+        code {
+          border-radius: 0 0 $radius $radius;
+          width: auto;
+        }
+      }
+    }
     dl {
       @include font-size();
       margin: 0 0 $gutter;
@@ -271,6 +306,9 @@ code,
         .type {
           color: $grey;
         }
+      }
+      .required {
+        color: $red;
       }
     }
   }
