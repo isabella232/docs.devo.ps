@@ -45,6 +45,9 @@
   }
 
   #main {
+    .content {
+      padding-bottom: 3*$gutter;
+    }
     .sidebar {
       margin-bottom: $gutter;
       .cancel {
