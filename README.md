@@ -16,3 +16,4 @@ This will build the static version of the site in `_site/`:
     make build
 
 The build and push to the `gh-pages` branch is automated w/ devo.ps.
+
