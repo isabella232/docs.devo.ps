@@ -166,10 +166,11 @@ configuration:
                 description: Subfolder to serve data from based on the root /var/www/_vhost_id_
                 required: false
                 type: string
-            support:
-                description: List of technologies the vhost will support (only 'php' for the moment)
+            indexes:
+                description: List indexes space separated.
                 required: false
-                type: array
+                type: string
+                default: index.html index.htm
 
 tasks:
 - description: Start Nginx if stopped
