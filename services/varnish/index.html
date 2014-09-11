@@ -263,10 +263,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops varnish start</code>
+      devops varnish start
     </dt>
     <dd>
       Start Varnish if stopped
@@ -274,7 +274,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops varnish stop</code>
+      devops varnish stop
     </dt>
     <dd>
       Stop Varnish if started
@@ -282,7 +282,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops varnish reload</code>
+      devops varnish reload
     </dt>
     <dd>
       Reload Varnish, reload the configuration and perform a graceful restart
@@ -290,7 +290,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops varnish restart</code>
+      devops varnish restart
     </dt>
     <dd>
       Restart Varnish, reload the configuration (but kills existing connection)
@@ -302,171 +302,289 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>varnish</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <a href='#details_admin_listen_address'>
+    <strong>admin_listen_address</strong>:
+    <i>127.0.0.1</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_admin_listen_port'>
+    <strong>admin_listen_port</strong>:
+    <i>6082</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_listen_address'>
+    <strong>listen_address</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_listen_port'>
+    <strong>listen_port</strong>:
+    <i>6081</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_max_threads'>
+    <strong>max_threads</strong>:
+    <i>1000</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_min_threads'>
+    <strong>min_threads</strong>:
+    <i>1</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_secret_file'>
+    <strong>secret_file</strong>:
+    <i>/etc/varnish/secret</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_storage_file'>
+    <strong>storage_file</strong>:
+    <i>/var/lib/varnish/$INSTANCE/varnish_storage.bin</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_storage_size'>
+    <strong>storage_size</strong>:
+    <i>256M</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_storage_type'>
+    <strong>storage_type</strong>:
+    <i>malloc</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_thread_timeout'>
+    <strong>thread_timeout</strong>:
+    <i>120</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ttl'>
+    <strong>ttl</strong>:
+    <i>120</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_vcl_conf'>
+    <strong>vcl_conf</strong>:
+    <i>/etc/varnish/default.vcl</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
     
     
-
-<dt>
-  <code class='full'>admin_listen_address</code>
-  <code><span class='type'>string</span> admin_listen_address</code>
-</dt>
-<dd class='description'>
-  Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.
-  <span class='default'>Default: <code>127.0.0.1</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>admin_listen_port</code>
-  <code><span class='type'>integer</span> admin_listen_port</code>
-</dt>
-<dd class='description'>
-  Telnet admin interface listen port.
-  <span class='default'>Default: <code>6082</code></span>
+    <dt id='details_admin_listen_address'>
+      <strong>admin_listen_address</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Telnet admin interface listen address, usually only bind localhost IP address for the admin interface.</dd>
+    <dd class='default'>Default: <code>127.0.0.1</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>listen_address</code>
-  <code><span class='type'>string</span> listen_address</code>
-</dt>
-<dd class='description'>
-  Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.
   
+
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>listen_port</code>
-  <code><span class='type'>integer</span> listen_port</code>
-</dt>
-<dd class='description'>
-  Listen port.
-  <span class='default'>Default: <code>6081</code></span>
+    <dt id='details_admin_listen_port'>
+      <strong>admin_listen_port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Telnet admin interface listen port.</dd>
+    <dd class='default'>Default: <code>6082</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>max_threads</code>
-  <code><span class='type'>integer</span> max_threads</code>
-</dt>
-<dd class='description'>
-  The maximum number of worker threads to start.
-  <span class='default'>Default: <code>1000</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>min_threads</code>
-  <code><span class='type'>integer</span> min_threads</code>
-</dt>
-<dd class='description'>
-  The minimum number of worker threads to start.
-  <span class='default'>Default: <code>1</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>secret_file</code>
-  <code><span class='type'>string</span> secret_file</code>
-</dt>
-<dd class='description'>
-  File containing administration secret.
-  <span class='default'>Default: <code>/etc/varnish/secret</code></span>
+    <dt id='details_listen_address'>
+      <strong>listen_address</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Blank address means all IPv4 and IPv6 interfaces, otherwise specify a host name, an IPv4 dotted quad.</dd>
+    
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>storage_file</code>
-  <code><span class='type'>string</span> storage_file</code>
-</dt>
-<dd class='description'>
-  Storage file, only used if storage_type is file.
-  <span class='default'>Default: <code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>storage_size</code>
-  <code><span class='type'>string</span> storage_size</code>
-</dt>
-<dd class='description'>
-  Cache size: in bytes, optionally using k / M / G / T suffix.
-  <span class='default'>Default: <code>256M</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>storage_type</code>
-  <code><span class='type'>string</span> storage_type</code>
-</dt>
-<dd class='description'>
-  Store objects either in memory (malloc), on in a file (file).
-  <span class='default'>Default: <code>malloc</code></span>
+    <dt id='details_listen_port'>
+      <strong>listen_port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Listen port.</dd>
+    <dd class='default'>Default: <code>6081</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>thread_timeout</code>
-  <code><span class='type'>integer</span> thread_timeout</code>
-</dt>
-<dd class='description'>
-  Idle timeout for worker threads.
-  <span class='default'>Default: <code>120</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>ttl</code>
-  <code><span class='type'>integer</span> ttl</code>
-</dt>
-<dd class='description'>
-  Default TTL used when the backend does not specify one.
-  <span class='default'>Default: <code>120</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>vcl_conf</code>
-  <code><span class='type'>string</span> vcl_conf</code>
-</dt>
-<dd class='description'>
-  Main configuration file.
-  <span class='default'>Default: <code>/etc/varnish/default.vcl</code></span>
+    <dt id='details_max_threads'>
+      <strong>max_threads</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>The maximum number of worker threads to start.</dd>
+    <dd class='default'>Default: <code>1000</code></dd>
+    
   
-</dd>
 
+  
+
+  
+    <dt id='details_min_threads'>
+      <strong>min_threads</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>The minimum number of worker threads to start.</dd>
+    <dd class='default'>Default: <code>1</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_secret_file'>
+      <strong>secret_file</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>File containing administration secret.</dd>
+    <dd class='default'>Default: <code>/etc/varnish/secret</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_storage_file'>
+      <strong>storage_file</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Storage file, only used if storage_type is file.</dd>
+    <dd class='default'>Default: <code>/var/lib/varnish/$INSTANCE/varnish_storage.bin</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_storage_size'>
+      <strong>storage_size</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Cache size: in bytes, optionally using k / M / G / T suffix.</dd>
+    <dd class='default'>Default: <code>256M</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_storage_type'>
+      <strong>storage_type</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Store objects either in memory (malloc), on in a file (file).</dd>
+    <dd class='default'>Default: <code>malloc</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_thread_timeout'>
+      <strong>thread_timeout</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Idle timeout for worker threads.</dd>
+    <dd class='default'>Default: <code>120</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ttl'>
+      <strong>ttl</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Default TTL used when the backend does not specify one.</dd>
+    <dd class='default'>Default: <code>120</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_vcl_conf'>
+      <strong>vcl_conf</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Main configuration file.</dd>
+    <dd class='default'>Default: <code>/etc/varnish/default.vcl</code></dd>
+    
+  
+
+  
 
   </dl>
 </section>
-
-
 
 
 

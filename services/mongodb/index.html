@@ -261,10 +261,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops mongodb start</code>
+      devops mongodb start
     </dt>
     <dd>
       Start MongoDB if stopped
@@ -272,7 +272,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops mongodb stop</code>
+      devops mongodb stop
     </dt>
     <dd>
       Stop MongoDB if started
@@ -280,7 +280,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops mongodb reload</code>
+      devops mongodb reload
     </dt>
     <dd>
       Reload MongoDB, reload the configuration and perform a graceful restart
@@ -288,7 +288,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops mongodb restart</code>
+      devops mongodb restart
     </dt>
     <dd>
       Restart MongoDB, reload the configuration (but kills existing connection)
@@ -300,111 +300,189 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>mongodb</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <a href='#details_bindip'>
+    <strong>bindip</strong>:
+    <i>127.0.0.1</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_dbpath'>
+    <strong>dbpath</strong>:
+    <i>/var/lib/mongodb</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_enable'>
+    <strong>enable</strong>:
+    <i>yes</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_enable_rest'>
+    <strong>enable_rest</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_logpath'>
+    <strong>logpath</strong>:
+    <i>/var/log/mongodb/mongodb.log</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_nohttp'>
+    <strong>nohttp</strong>:
+    <i>false</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i>27017</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_user'>
+    <strong>user</strong>:
+    <i>mongodb</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
     
     
-
-<dt>
-  <code class='full'>bindip</code>
-  <code><span class='type'>string</span> bindip</code>
-</dt>
-<dd class='description'>
-  Binding IP address.
-  <span class='default'>Default: <code>127.0.0.1</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>dbpath</code>
-  <code><span class='type'>string</span> dbpath</code>
-</dt>
-<dd class='description'>
-  Database files path.
-  <span class='default'>Default: <code>/var/lib/mongodb</code></span>
+    <dt id='details_bindip'>
+      <strong>bindip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Binding IP address.</dd>
+    <dd class='default'>Default: <code>127.0.0.1</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>enable</code>
-  <code><span class='type'>string</span> enable</code>
-</dt>
-<dd class='description'>
-  Enable or disable mongodb service.
-  <span class='default'>Default: <code>yes</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>enable_rest</code>
-  <code><span class='type'>boolean</span> enable_rest</code>
-</dt>
-<dd class='description'>
-  Enable REST over the HTTP interface
   
+    <dt id='details_dbpath'>
+      <strong>dbpath</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Database files path.</dd>
+    <dd class='default'>Default: <code>/var/lib/mongodb</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>logpath</code>
-  <code><span class='type'>string</span> logpath</code>
-</dt>
-<dd class='description'>
-  Database log file path.
-  <span class='default'>Default: <code>/var/log/mongodb/mongodb.log</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>nohttp</code>
-  <code><span class='type'>string</span> nohttp</code>
-</dt>
-<dd class='description'>
-  Disable entirely the HTTP interface.
-  <span class='default'>Default: <code>false</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>port</code>
-  <code><span class='type'>integer</span> port</code>
-</dt>
-<dd class='description'>
-  Connection port.
-  <span class='default'>Default: <code>27017</code></span>
+    <dt id='details_enable'>
+      <strong>enable</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable or disable mongodb service.</dd>
+    <dd class='default'>Default: <code>yes</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>user</code>
-  <code><span class='type'>string</span> user</code>
-</dt>
-<dd class='description'>
-  Mongodb running user.
-  <span class='default'>Default: <code>mongodb</code></span>
   
-</dd>
 
+  
+    <dt id='details_enable_rest'>
+      <strong>enable_rest</strong> <span class='type'>boolean</span>
+    </dt>
+    <dd class='description'>Enable REST over the HTTP interface</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_logpath'>
+      <strong>logpath</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Database log file path.</dd>
+    <dd class='default'>Default: <code>/var/log/mongodb/mongodb.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_nohttp'>
+      <strong>nohttp</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Disable entirely the HTTP interface.</dd>
+    <dd class='default'>Default: <code>false</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_port'>
+      <strong>port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Connection port.</dd>
+    <dd class='default'>Default: <code>27017</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Mongodb running user.</dd>
+    <dd class='default'>Default: <code>mongodb</code></dd>
+    
+  
+
+  
 
   </dl>
 </section>
-
-
 
 
 

@@ -257,153 +257,172 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops git update</code>
+      devops git update
     </dt>
     <dd>
       Clone or update a git repository
       
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           
           
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> dest</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Folder where repository is cloned on the node
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> repo</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   URL of the git repository (http or ssh)
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> version</code>
   <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Version of the repository to checkout (HEAD, SHA-1, branch or tag name)
   
   <span class='default'>Default: <code>HEAD</code></span>
+</td>
+</tr>
 
-</dd>
-
-        </dl>
+        </table>
       
     </dd>
     
     <dt>
-      <code class='terminal'>devops git config</code>
+      devops git config
     </dt>
     <dd>
       Set git user configuration either globally or for a repo defined by its path on the system
       
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           
           
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> email</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Email address of the user used to perform the commits
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> path</code>
   <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Path of the repo on the host where to set the git configuration, if no `path` provided perform a global setup
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> user</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Full name of the user that will perform commits
   
   
+</td>
+</tr>
 
-</dd>
-
-        </dl>
+        </table>
       
     </dd>
     
     <dt>
-      <code class='terminal'>devops git deploy</code>
+      devops git deploy
     </dt>
     <dd>
       Commit and push the content of a folder to a remote repository
       
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           
           
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> branch</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Remote branch to push the source content to (will be removed)
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> repo</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Local folder where the repository is located
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> source</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Source folder within the repo where the content to push is
   
   
+</td>
+</tr>
 
-</dd>
-
-        </dl>
+        </table>
       
     </dd>
     
   </dl>
 </section>
-
-
 
 
 

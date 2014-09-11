@@ -261,10 +261,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops uwsgi start</code>
+      devops uwsgi start
     </dt>
     <dd>
       Start uWSGI emperor if stopped
@@ -272,7 +272,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops uwsgi stop</code>
+      devops uwsgi stop
     </dt>
     <dd>
       Stop uWSGI emperor if started
@@ -280,7 +280,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops uwsgi restart</code>
+      devops uwsgi restart
     </dt>
     <dd>
       Restart uWSGI emperor, reload the configuration (but kills existing connection)
@@ -288,67 +288,73 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops uwsgi app add</code>
+      devops uwsgi app add
     </dt>
     <dd>
       Add a new uWSGI application configuration
       
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           
           
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> module</code>
   <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   stuff
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> name</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   Name of the app
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type int'>int</span> port</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   listening TCP port
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> root</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   root folder of the application
   
   
+</td>
+</tr>
 
-</dd>
-
-        </dl>
+        </table>
       
     </dd>
     
   </dl>
 </section>
-
-
 
 
 

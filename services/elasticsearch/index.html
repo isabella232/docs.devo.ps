@@ -261,10 +261,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops elasticsearch start</code>
+      devops elasticsearch start
     </dt>
     <dd>
       Start ElasticSearch if stopped
@@ -272,7 +272,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops elasticsearch stop</code>
+      devops elasticsearch stop
     </dt>
     <dd>
       Stop ElasticSearch if started
@@ -280,7 +280,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops elasticsearch reload</code>
+      devops elasticsearch reload
     </dt>
     <dd>
       Reload ElasticSearch, reload the configuration and perform a graceful restart
@@ -288,7 +288,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops elasticsearch restart</code>
+      devops elasticsearch restart
     </dt>
     <dd>
       Restart ElasticSearch, reload the configuration (but kills existing connection)
@@ -300,99 +300,172 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>elasticsearch</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <a href='#details_bind_host'>
+    <strong>bind_host</strong>:
+    <i>127.0.0.1</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_group'>
+    <strong>group</strong>:
+    <i>elasticsearch</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_heap_size'>
+    <strong>heap_size</strong>:
+    <i>256m</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_http_port'>
+    <strong>http_port</strong>:
+    <i>9200</i>
+  </a>
+</li>
+
+
+
+<li>
+  <strong>plugins</strong>: </dt>
+  
+  <ul class='array'>
     
     
-
-<dt>
-  <code class='full'>bind_host</code>
-  <code><span class='type'>string</span> bind_host</code>
-</dt>
-<dd class='description'>
-  The IP address to bind to.
-  <span class='default'>Default: <code>127.0.0.1</code></span>
+  </ul>
   
-</dd>
+</li>
 
 
 
-<dt>
-  <code class='full'>group</code>
-  <code><span class='type'>string</span> group</code>
-</dt>
-<dd class='description'>
-  Running group for the elasticsearch process
-  <span class='default'>Default: <code>elasticsearch</code></span>
+<li>
+  <a href='#details_transport_port'>
+    <strong>transport_port</strong>:
+    <i>9300</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_user'>
+    <strong>user</strong>:
+    <i>elasticsearch</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>heap_size</code>
-  <code><span class='type'>string</span> heap_size</code>
-</dt>
-<dd class='description'>
-  Heap size for the elasticsearch process (unit as 256m 1g)
-  <span class='default'>Default: <code>256m</code></span>
+    <dt id='details_bind_host'>
+      <strong>bind_host</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The IP address to bind to.</dd>
+    <dd class='default'>Default: <code>127.0.0.1</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>http_port</code>
-  <code><span class='type'>integer</span> http_port</code>
-</dt>
-<dd class='description'>
-  Listening port for HTTP traffic
-  <span class='default'>Default: <code>9200</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>plugins</code>
-  <code><span class='type'>array</span> plugins</code>
-</dt>
-<dd class='description'>
-  List of extra plugins to install
-  <span class='default'>Default: <code></code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>transport_port</code>
-  <code><span class='type'>integer</span> transport_port</code>
-</dt>
-<dd class='description'>
-  Listening port for inter-node traffic (cluster)
-  <span class='default'>Default: <code>9300</code></span>
+    <dt id='details_group'>
+      <strong>group</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Running group for the elasticsearch process</dd>
+    <dd class='default'>Default: <code>elasticsearch</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>user</code>
-  <code><span class='type'>string</span> user</code>
-</dt>
-<dd class='description'>
-  Running user for the elasticsearch process
-  <span class='default'>Default: <code>elasticsearch</code></span>
   
-</dd>
 
+  
+    <dt id='details_heap_size'>
+      <strong>heap_size</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Heap size for the elasticsearch process (unit as 256m 1g)</dd>
+    <dd class='default'>Default: <code>256m</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_http_port'>
+      <strong>http_port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Listening port for HTTP traffic</dd>
+    <dd class='default'>Default: <code>9200</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_plugins'>
+      <strong>plugins</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of extra plugins to install</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_transport_port'>
+      <strong>transport_port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Listening port for inter-node traffic (cluster)</dd>
+    <dd class='default'>Default: <code>9300</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Running user for the elasticsearch process</dd>
+    <dd class='default'>Default: <code>elasticsearch</code></dd>
+    
+  
+
+  
 
   </dl>
 </section>
-
-
 
 
 

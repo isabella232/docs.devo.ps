@@ -261,10 +261,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops memcached start</code>
+      devops memcached start
     </dt>
     <dd>
       Start Memcached if stopped
@@ -272,7 +272,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops memcached stop</code>
+      devops memcached stop
     </dt>
     <dd>
       Stop Memcached if started
@@ -280,7 +280,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops memcached reload</code>
+      devops memcached reload
     </dt>
     <dd>
       Reload Memcached, reload the configuration and perform a graceful restart
@@ -288,7 +288,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops memcached restart</code>
+      devops memcached restart
     </dt>
     <dd>
       Restart Memcached, reload the configuration (but kills existing connection)
@@ -300,99 +300,169 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>memcached</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <a href='#details_connection'>
+    <strong>connection</strong>:
+    <i>1024</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_enable'>
+    <strong>enable</strong>:
+    <i>yes</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_listen'>
+    <strong>listen</strong>:
+    <i>127.0.0.1</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_logfile'>
+    <strong>logfile</strong>:
+    <i>/var/log/memcached.log</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_memory'>
+    <strong>memory</strong>:
+    <i>64</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i>11211</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_user'>
+    <strong>user</strong>:
+    <i>memcache</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
     
     
-
-<dt>
-  <code class='full'>connection</code>
-  <code><span class='type'>integer</span> connection</code>
-</dt>
-<dd class='description'>
-  Maximumum number of concurrent inbound connections.
-  <span class='default'>Default: <code>1024</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>enable</code>
-  <code><span class='type'>string</span> enable</code>
-</dt>
-<dd class='description'>
-  Enable or disable memcached service.
-  <span class='default'>Default: <code>yes</code></span>
+    <dt id='details_connection'>
+      <strong>connection</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Maximumum number of concurrent inbound connections.</dd>
+    <dd class='default'>Default: <code>1024</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>listen</code>
-  <code><span class='type'>string</span> listen</code>
-</dt>
-<dd class='description'>
-  Binding IP address.
-  <span class='default'>Default: <code>127.0.0.1</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>logfile</code>
-  <code><span class='type'>string</span> logfile</code>
-</dt>
-<dd class='description'>
-  Log file path
-  <span class='default'>Default: <code>/var/log/memcached.log</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>memory</code>
-  <code><span class='type'>integer</span> memory</code>
-</dt>
-<dd class='description'>
-  Amount of memory allocated in MB.
-  <span class='default'>Default: <code>64</code></span>
+    <dt id='details_enable'>
+      <strong>enable</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable or disable memcached service.</dd>
+    <dd class='default'>Default: <code>yes</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>port</code>
-  <code><span class='type'>integer</span> port</code>
-</dt>
-<dd class='description'>
-  Connection port.
-  <span class='default'>Default: <code>11211</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>user</code>
-  <code><span class='type'>string</span> user</code>
-</dt>
-<dd class='description'>
-  Memcached running user.
-  <span class='default'>Default: <code>memcache</code></span>
   
-</dd>
+    <dt id='details_listen'>
+      <strong>listen</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Binding IP address.</dd>
+    <dd class='default'>Default: <code>127.0.0.1</code></dd>
+    
+  
 
+  
+
+  
+    <dt id='details_logfile'>
+      <strong>logfile</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Log file path</dd>
+    <dd class='default'>Default: <code>/var/log/memcached.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_memory'>
+      <strong>memory</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Amount of memory allocated in MB.</dd>
+    <dd class='default'>Default: <code>64</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_port'>
+      <strong>port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Connection port.</dd>
+    <dd class='default'>Default: <code>11211</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Memcached running user.</dd>
+    <dd class='default'>Default: <code>memcache</code></dd>
+    
+  
+
+  
 
   </dl>
 </section>
-
-
 
 
 

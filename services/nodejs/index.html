@@ -259,10 +259,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops node.js start</code>
+      devops node.js start
     </dt>
     <dd>
       Start all the apps managed by Foreverd (node.js) if stopped
@@ -270,7 +270,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops node.js stop</code>
+      devops node.js stop
     </dt>
     <dd>
       Stop all the apps managed by Foreverd (node.js) if started
@@ -278,7 +278,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops node.js restart</code>
+      devops node.js restart
     </dt>
     <dd>
       Restart all the apps managed by Foreverd (node.js).
@@ -286,82 +286,92 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops node.js app add</code>
+      devops node.js app add
     </dt>
     <dd>
       Add a new app defintion for foreverd to run
       
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           
           
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> extra_env</code>
   <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   additional environment variable to pass to the application
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> name</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   name of your app
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> node_env</code>
   <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   node.js environment var NODE_ENV
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> root</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   path of the root folder of your app
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> script</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   node.js script to run via foreverd
   
   
+</td>
+</tr>
 
-</dd>
-
-<dt>
+<tr>
+<td>
   <code><span class='type string'>string</span> user</code>
   <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   running user of the application
   
   <span class='default'>Default: <code>devops</code></span>
+</td>
+</tr>
 
-</dd>
-
-        </dl>
+        </table>
       
     </dd>
     
@@ -370,27 +380,52 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
-    
-    
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
 
-<dt>
-  <code class='full'>packages</code>
-  <code><span class='type'>array</span> packages</code>
-</dt>
-<dd class='description'>
-  List of packages to have globally installed on the server
-  <span class='default'>Default: <code></code></span>
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>node.js</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <strong>packages</strong>: </dt>
   
-</dd>
+  <ul class='array'>
+    
+    
+  </ul>
+  
+</li>
 
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
+  
+    <dt id='details_packages'>
+      <strong>packages</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of packages to have globally installed on the server</dd>
+    
+    
+  
+
+  
 
   </dl>
 </section>
-
-
 
 
 

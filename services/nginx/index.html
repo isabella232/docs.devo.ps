@@ -253,68 +253,53 @@ var Swiftype = window.Swiftype || {};
 </header>
 
 <section class='body'>
-  <h1 id="virtual-hosts">Virtual Hosts</h1>
-<p>In practive virtual hosts allows you to compartment your web files and allow you to run different domains at the same time on the same host.</p>
-<h2 id="default-web-roots">Default web roots</h2>
-<p>The default web roots are created based on the vhost id supplied on creation:</p>
-<pre><code>/var/www/{vhost_id}
-</code></pre><p>Sometime your public files are hosted in a subfolder of the main web root (e.g. <code>public</code>), in that case you want to use the <code>webroot</code> parameter in the vhost definition. It will be appended to the main webroot. For example, with the following configuration:</p>
-<pre><code>configuration:
-  nginx:
-    vhosts:
-      - id: my_vhost
-        webroot: public
-</code></pre><p>The root will be set to <code>/var/www/my_vhost/public</code></p>
+  <p>Nginx is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a Web server.</p>
+<h2 id="vhosts">vhosts</h2>
+<p>Save for a few settings, you&#39;ll most likely end up adding vhosts to your Nginx configuration.</p>
+<p>In a nutshell, each vhost defines a directory of files, where your application or Web site resides, and a list of domains associated with it. Whenever you add a vhost, we&#39;ll create a Web root associated with its id: <code>var/www/{vhost_id}</code> where <code>{vhost_id}</code> is the id of your vhost.</p>
+<p><em>You can use the <code>webroot</code> if you&#39;re serving files out of a sub-folder of the default Web root. For example, if you serve files out of the <code>public/</code> subfolder of your app, adding the <code>webroot: public</code> to your vhost will make it serve files out of the <code>/var/www/my_vhost/public</code> folder.</em></p>
 <h2 id="routes">Routes</h2>
-<p>Routes define how the web server will handle the requests based on the <code>uri</code> provided in the request. You can read more about the routes objects below.</p>
-<p>Routes will define the <code>locations</code> within the nginx configuration file. The order matters, the 1st routes will be processed before the last ones.</p>
-<p>There is several types of routes:</p>
+<p>Routes allow you to define a list of ways to handle different types of requests, based on the <code>uri</code> (order matter, first routes in the list have precedence). These routes have a <code>type</code> attribute:</p>
 <ul>
-<li>custom (default): allows you to fully specify the content of the location. It usually goes along with the <code>custom</code> property where you can specify exactly the content.</li>
-<li>fastcgi: will send the request to a fastcgi backend or upstream. It usually applies to PHP.</li>
-<li>proxy: will send the request to a http proxy, eiter local or remote. It usually applies to backend services like a node.js process, a django service (running as http), etc.</li>
-<li>websocket: will assume the request is meant to be processed as websocket traffic. It will change several of the headers.</li>
-<li>uwsgi: will send the request to a uwsgi service. It typically applies to Python apps.</li>
-<li>static: will simply consider the traffic to be served as-is, and that the files do not require any processing.</li>
+<li><code>custom</code> (default): routes of this type have a <code>custom</code> attribute that will take the content of a regular <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">Nginx location block</a>.</li>
+<li><code>fastcgi</code>: sends requests to a fastcgi backend or upstream. Common for <strong>PHP apps</strong>.</li>
+<li><code>proxy</code>: sends requests to a http proxy (local or remote). Common for <strong>node.js apps</strong>.</li>
+<li><code>websocket</code>: assumes requests are handled as websocket traffic.</li>
+<li><code>uwsgi</code>: sends requests to a uwsgi service. Common for <strong>Python apps</strong>.</li>
+<li><code>static</code>: serves files as static assets without any processing.</li>
 </ul>
-<h2 id="supported-technologies">Supported technologies</h2>
-<p>An extra attribute <code>support</code> is available in the definition of a vhost; it should list the technologies that this vhost needs to support. </p>
-<p>Currently only <code>php</code> is relevant and will change the behavior of the vhost by ensuring the <code>index</code> includes <code>index.php</code> along with the <code>index.html</code> and <code>index.htm</code>.</p>
-<h2 id="example">Example</h2>
-<p>The following configuration snippet:</p>
-<pre><code>configuration:
+<p><em><strong>You can add supported technologies with the <code>support</code> attribute</strong>. This attribute willl help your vhost figure out what index to serve. By default it includes <code>index.html</code> and <code>index.html</code>, adding <code>php</code> to <code>support</code> will extend it to <code>index.php</code>.</em></p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><h3 id="php-app">PHP app</h3>
+<pre><code class="lang-example">configuration:
   nginx:
     vhosts:
-      - id: my_vhost
-        port: 8080
+      - id: my_vhost_php
         domain: mydomain.com
-        aliases: alias.mydomain.com alias2.mydomain.com
-        webroot: public
-        support:
-          - php
+        indexes: index.php
         routes:
-          - uri: &#39;@php&#39;
+          - uri: &#39;~ \.php$&#39;
             type: fastcgi
             to: localhost:9001
-          - uri: &#39;~ ^/(app|app_dev|config)\.php(/|$)&#39;
-            type: custom
-            custom: &gt;
-              try_files $uri @php
-</code></pre><p>Will generate the following config file in <code>/etc/nginx/sites-available/my_vhost</code> (also linked and enabled in <code>sites-enabled</code>):</p>
-<pre><code>server {
-    listen   8080;
-    root /var/www/my_vhost/public;
+</code></pre>
+<p>We here define a vhost that will answer to the <code>mydomain.com</code> domain and will pass all requests which URL ends up with <code>.php</code> to a <code>fastcgi</code> process listening on <code>http://localhost:9001</code> (Typically a php-fpm process).</p>
+<p>This configuration will generate the following Nginx configuration file (also linked and enabled in <code>sites-enabled</code>):</p>
+<h4 id="-etc-nginx-sites-available-my_vhost_php">/etc/nginx/sites-available/my_vhost_php</h4>
+<pre><code class="lang-snippet">server {
+    listen   80;
+    root /var/www/my_vhost_php;
 
     index index.php index.html index.htm;
 
-    access_log /var/log/nginx/my_vhost-access.log;
-    error_log /var/log/nginx/my_vhost-error.log;
+    access_log /var/log/nginx/my_vhost_php-access.log;
+    error_log /var/log/nginx/my_vhost_php-error.log;
 
     # Make site accessible from http://localhost/
     # server_name _;
-    server_name mydomain.com alias.mydomain.com alias2.mydomain.com;
+    server_name mydomain.com;
 
-    location @php {
+    location ~ \.php$ {
         # Route type: fastcgi
         fastcgi_pass localhost:9001;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -322,22 +307,54 @@ var Swiftype = window.Swiftype || {};
         fastcgi_index index.php; 
         include fastcgi_params;
     }
+}
+</code></pre>
+</li>
+<li><h3 id="node-js-app">Node.js app</h3>
+<pre><code class="lang-example">configuration:
+  nginx:
+    vhosts:
+      - id: my_vhost_node
+        domain: mydomain.com
+        routes:
+          - uri: &#39;/&#39;
+            type: proxy
+            to: localhost:3000
+</code></pre>
+<p>We here define a vhost that will answer to the <code>mydomain.com</code> domain and will proxy all requests to a http process listening on <code>http://localhost:3000</code> (Typically your Node.js service).</p>
+<h4 id="-etc-nginx-sites-available-my_vhost_node">/etc/nginx/sites-available/my_vhost_node</h4>
+<pre><code class="lang-snippet">server {
+    listen   80;
+    root /var/www/my_vhost_node;
 
-    location ~ ^/(app|app_dev|config)\.php(/|$) {
-        # Route type: custom
-        try_files $uri @php
+    index index.html index.htm;
+
+    access_log /var/log/nginx/my_vhost_node-access.log;
+    error_log /var/log/nginx/my_vhost_node-error.log;
+
+    # Make site accessible from http://localhost/
+    # server_name _;
+    server_name mydomain.com;
+
+    location / {
+        # Route type: proxy
+        proxy_pass localhost:3000;
+        proxy_pass_header Set-Cookie;
     }
 }
 </code></pre>
+</li>
+</ul>
+
 </section>
 
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops nginx start</code>
+      devops nginx start
     </dt>
     <dd>
       Start Nginx if stopped
@@ -345,7 +362,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops nginx stop</code>
+      devops nginx stop
     </dt>
     <dd>
       Stop Nginx if started
@@ -353,7 +370,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops nginx reload</code>
+      devops nginx reload
     </dt>
     <dd>
       Reload Nginx, reload the configuration and perform a graceful restart
@@ -361,7 +378,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops nginx restart</code>
+      devops nginx restart
     </dt>
     <dd>
       Restart Nginx, reload the configuration (but kills existing connection)
@@ -373,454 +390,789 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>nginx</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <strong>events</strong>: </dt>
+  
+  <ul>
     
     
 
+<li>
+  <a href='#details_worker_connections'>
+    <strong>worker_connections</strong>:
+    <i>1024</i>
+  </a>
+</li>
 
 
-
-<dt><code>events</code></dt>
-<dd>
-<dl>
-
-
-
-<dt>
-  <code class='full'>events.worker_connections</code>
-  <code><span class='type'>integer</span> worker_connections</code>
-</dt>
-<dd class='description'>
-  Number of concurrent http connection handled per nginx process
-  <span class='default'>Default: <code>1024</code></span>
+  </ul>
   
-</dd>
+</li>
 
 
 
-</dl></dd>
-
-
-
-
-
-
-<dt><code>http</code></dt>
-<dd>
-<dl>
-
-
-
-<dt>
-  <code class='full'>http.access_log</code>
-  <code><span class='type'>string</span> access_log</code>
-</dt>
-<dd class='description'>
-  Global access log file path
-  <span class='default'>Default: <code>/var/log/nginx/access.log</code></span>
+<li>
+  <strong>http</strong>: </dt>
   
-</dd>
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_access_log'>
+    <strong>access_log</strong>:
+    <i>/var/log/nginx/access.log</i>
+  </a>
+</li>
 
 
 
-<dt>
-  <code class='full'>http.error_log</code>
-  <code><span class='type'>string</span> error_log</code>
-</dt>
-<dd class='description'>
-  Global error log file path
-  <span class='default'>Default: <code>/var/log/nginx/error.log</code></span>
+<li>
+  <a href='#details_error_log'>
+    <strong>error_log</strong>:
+    <i>/var/log/nginx/error.log</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_gzip'>
+    <strong>gzip</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_gzip_disable'>
+    <strong>gzip_disable</strong>:
+    <i>msie6</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_keepalive_timeout'>
+    <strong>keepalive_timeout</strong>:
+    <i>65</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_sendfile'>
+    <strong>sendfile</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_tcp_nodelay'>
+    <strong>tcp_nodelay</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_tcp_nopush'>
+    <strong>tcp_nopush</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_types_hash_max_size'>
+    <strong>types_hash_max_size</strong>:
+    <i>2048</i>
+  </a>
+</li>
+
+
+  </ul>
   
-</dd>
+</li>
 
 
 
-<dt>
-  <code class='full'>http.gzip</code>
-  <code><span class='type'>string</span> gzip</code>
-</dt>
-<dd class='description'>
-  Enable gzip compression
-  <span class='default'>Default: <code>on</code></span>
+<li>
+  <a href='#details_pid'>
+    <strong>pid</strong>:
+    <i>/var/run/nginx.pid</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_user'>
+    <strong>user</strong>:
+    <i>www-data</i>
+  </a>
+</li>
+
+
+
+<li>
+  <strong>vhosts</strong>: </dt>
   
-</dd>
+  <ul class='array'>
+    
+    
+
+<li>
+  <a href='#details_aliases'>
+    <strong>aliases</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
 
 
 
-<dt>
-  <code class='full'>http.gzip_disable</code>
-  <code><span class='type'>string</span> gzip_disable</code>
-</dt>
-<dd class='description'>
-  Space separated list of browser to disable gzip compression for
-  <span class='default'>Default: <code>msie6</code></span>
+<li>
+  <a href='#details_domain'>
+    <strong>domain</strong>:
+    <i>_</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_id'>
+    <strong>id</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_indexes'>
+    <strong>indexes</strong>:
+    <i>index.html index.htm</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i>80</i>
+  </a>
+</li>
+
+
+
+<li>
+  <strong>routes</strong>: </dt>
   
-</dd>
+  <ul class='array'>
+    
+    
+
+<li>
+  <a href='#details_custom'>
+    <strong>custom</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
 
 
 
-<dt>
-  <code class='full'>http.keepalive_timeout</code>
-  <code><span class='type'>integer</span> keepalive_timeout</code>
-</dt>
-<dd class='description'>
-  Keepalive timeout (sec) - 0 to disable
-  <span class='default'>Default: <code>65</code></span>
+<li>
+  <a href='#details_static'>
+    <strong>static</strong>:
+    <i>root</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_to'>
+    <strong>to</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_type'>
+    <strong>type</strong>:
+    <i>custom</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_uri'>
+    <strong>uri</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
   
-</dd>
+</li>
 
 
 
-<dt>
-  <code class='full'>http.sendfile</code>
-  <code><span class='type'>string</span> sendfile</code>
-</dt>
-<dd class='description'>
-  Enable sendfile
-  <span class='default'>Default: <code>on</code></span>
+<li>
+  <a href='#details_ssl'>
+    <strong>ssl</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <strong>upstreams</strong>: </dt>
   
-</dd>
+  <ul class='array'>
+    
+    
 
-
-
-<dt>
-  <code class='full'>http.tcp_nodelay</code>
-  <code><span class='type'>string</span> tcp_nodelay</code>
-</dt>
-<dd class='description'>
-  Enable tcp_nodelay
-  <span class='default'>Default: <code>on</code></span>
+<li>
+  <strong>backends</strong>: </dt>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>http.tcp_nopush</code>
-  <code><span class='type'>string</span> tcp_nopush</code>
-</dt>
-<dd class='description'>
-  Enable tcp_nopush
-  <span class='default'>Default: <code>on</code></span>
+  <ul class='array'>
+    
+    
+  </ul>
   
-</dd>
+</li>
 
 
 
-<dt>
-  <code class='full'>http.types_hash_max_size</code>
-  <code><span class='type'>integer</span> types_hash_max_size</code>
-</dt>
-<dd class='description'>
-  Maximum size of hash tables
-  <span class='default'>Default: <code>2048</code></span>
+<li>
+  <a href='#details_name'>
+    <strong>name</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
   
-</dd>
+</li>
 
 
 
-</dl></dd>
+<li>
+  <a href='#details_webroot'>
+    <strong>webroot</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
 
 
-
-<dt>
-  <code class='full'>pid</code>
-  <code><span class='type'>string</span> pid</code>
-</dt>
-<dd class='description'>
-  Pid file path
-  <span class='default'>Default: <code>/var/run/nginx.pid</code></span>
+  </ul>
   
-</dd>
+</li>
 
 
 
-<dt>
-  <code class='full'>user</code>
-  <code><span class='type'>string</span> user</code>
-</dt>
-<dd class='description'>
-  Nginx running user.
-  <span class='default'>Default: <code>www-data</code></span>
+<li>
+  <a href='#details_worker_processes'>
+    <strong>worker_processes</strong>:
+    <i>4</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>vhosts</code>
-  <code><span class='type'>array</span> vhosts</code>
-</dt>
-<dd class='description'>
-  Array of virtual hosts objects (<a href='#object-vhost'>Read more about vhost objects</a>)
-  <span class='default'>Default: <code></code></span>
   
-</dd>
+    
+      
+    
+    
+    
+      
+    
 
-
-
-<dt>
-  <code class='full'>worker_processes</code>
-  <code><span class='type'>integer</span> worker_processes</code>
-</dt>
-<dd class='description'>
-  Number of Nginx processes
-  <span class='default'>Default: <code>4</code></span>
+    
+      
+      
   
-</dd>
+    <dt id='details_worker_connections'>
+      events.<strong>worker_connections</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Number of concurrent http connection handled per nginx process</dd>
+    <dd class='default'>Default: <code>1024</code></dd>
+    
+  
 
+  
+
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_access_log'>
+      http.<strong>access_log</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Global access log file path</dd>
+    <dd class='default'>Default: <code>/var/log/nginx/access.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_error_log'>
+      http.<strong>error_log</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Global error log file path</dd>
+    <dd class='default'>Default: <code>/var/log/nginx/error.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_gzip'>
+      http.<strong>gzip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable gzip compression</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_gzip_disable'>
+      http.<strong>gzip_disable</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Space separated list of browser to disable gzip compression for</dd>
+    <dd class='default'>Default: <code>msie6</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_keepalive_timeout'>
+      http.<strong>keepalive_timeout</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Keepalive timeout (sec) - 0 to disable</dd>
+    <dd class='default'>Default: <code>65</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_sendfile'>
+      http.<strong>sendfile</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable sendfile</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_tcp_nodelay'>
+      http.<strong>tcp_nodelay</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable tcp_nodelay</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_tcp_nopush'>
+      http.<strong>tcp_nopush</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable tcp_nopush</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_types_hash_max_size'>
+      http.<strong>types_hash_max_size</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Maximum size of hash tables</dd>
+    <dd class='default'>Default: <code>2048</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_pid'>
+      <strong>pid</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Pid file path</dd>
+    <dd class='default'>Default: <code>/var/run/nginx.pid</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Nginx running user.</dd>
+    <dd class='default'>Default: <code>www-data</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_vhosts'>
+      <strong>vhosts</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>Array of virtual hosts objects</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_aliases'>
+      vhost.<strong>aliases</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Space separated list of domain name aliases</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_domain'>
+      vhost.<strong>domain</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP</dd>
+    <dd class='default'>Default: <code>_</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_id'>
+      vhost.<strong>id</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Virtual host identifier, used to perform lookup in the vhosts array. Also used to name the configuration files and the default web root.</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_indexes'>
+      vhost.<strong>indexes</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>List indexes space separated.</dd>
+    <dd class='default'>Default: <code>index.html index.htm</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_port'>
+      vhost.<strong>port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Listening port (TCP/80 by default, TCP/443 if SSL is enabled)</dd>
+    <dd class='default'>Default: <code>80</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_routes'>
+      vhost.<strong>routes</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of route objects. The order matters and the routes will be applied sequentially.</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_custom'>
+      route.<strong>custom</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_static'>
+      route.<strong>static</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>For type static only, define how to consider the source folder - alias or root</dd>
+    <dd class='default'>Default: <code>root</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_to'>
+      route.<strong>to</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Either an upstream name, or a service / url, or a path</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_type'>
+      route.<strong>type</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The type of handler for that route</dd>
+    <dd class='default'>Default: <code>custom</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_uri'>
+      route.<strong>uri</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Any string / regex that nginx understand as a `location`</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_ssl'>
+      vhost.<strong>ssl</strong> <span class='type'>object</span>
+    </dt>
+    <dd class='description'>Enable HTTPS</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+      <dl>
+        
+  
+    <dt id='details_certificate'>
+      vhost.ssl.<strong>certificate</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>HTTPS certificate file path (chained if needed)</dd>
+    <dd class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_private_key'>
+      vhost.ssl.<strong>private_key</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Private key file path used to generate the certificate (password-less)</dd>
+    <dd class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></dd>
+    
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_upstreams'>
+      vhost.<strong>upstreams</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>list of upstream objects</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_backends'>
+      upstream.<strong>backends</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of backends associated with the upstream</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+  
+    <dt id='details_name'>
+      upstream.<strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Name of the upstream - it must be unique on the entire node</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_webroot'>
+      vhost.<strong>webroot</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Subfolder to serve data from based on the root /var/www/_vhost_id_</dd>
+    
+    
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_worker_processes'>
+      <strong>worker_processes</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Number of Nginx processes</dd>
+    <dd class='default'>Default: <code>4</code></dd>
+    
+  
+
+  
 
   </dl>
-</section>
-
-
-
-<section class='objects'>
-  <h2 id='objects'><a href='#objects'>Objects</a></h2>
-  <dl>
-    
-    <dt>
-      <h3 id='object-route'><a href='#object-route'>route</a></h3>
-    </dt>
-    <dd>
-      A route object used in a vhost.
-      
-      <dl>
-        
-        
-<dt>
-  <code><span class='type string'>string</span> custom</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Custom inline nginx config to include within the route (e.g. auth, custom timeout)
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> static</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  For type static only, define how to consider the source folder - alias or root
-  <span class='default'>Valid values: Either of alias / root</span>
-  <span class='default'>Default: <code>root</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> to</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Either an upstream name, or a service / url, or a path
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> type</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  The type of handler for that route
-  <span class='default'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static / custom</span>
-  <span class='default'>Default: <code>custom</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> uri</code>
-  
-</dt>
-<dd class='description'>
-  Any string / regex that nginx understand as a `location`
-  <span class='default'>Valid values: Any string including regex</span>
-  
-
-</dd>
-
-      </dl>
-      
-    
-    <dt>
-      <h3 id='object-upstream'><a href='#object-upstream'>upstream</a></h3>
-    </dt>
-    <dd>
-      An upstream object used in a vhost.
-      
-      <dl>
-        
-        
-<dt>
-  <code><span class='type array'>array</span> backends</code>
-  
-</dt>
-<dd class='description'>
-  List of backends associated with the upstream
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> name</code>
-  
-</dt>
-<dd class='description'>
-  Name of the upstream - it must be unique on the entire node
-  
-  
-
-</dd>
-
-      </dl>
-      
-    
-    <dt>
-      <h3 id='object-vhost'><a href='#object-vhost'>vhost</a></h3>
-    </dt>
-    <dd>
-      A virtual host object.
-      
-      <dl>
-        
-        
-<dt>
-  <code><span class='type string'>string</span> aliases</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Space separated list of domain name aliases
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> domain</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP
-  
-  <span class='default'>Default: <code>_</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> id</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Virtual host identifier, used to perform lookup in the vhosts array. Also used to name the configuration files and the default web root.
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type integer'>integer</span> port</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Listening port (TCP/80 by default, TCP/443 if SSL is enabled)
-  
-  <span class='default'>Default: <code>80</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type array'>array</span> routes</code>
-  
-</dt>
-<dd class='description'>
-  List of route objects. The order matters and the routes will be applied sequentially. (<a href='#object-route'>Read more about route objects</a>)
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type '></span> ssl</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Enable HTTPS
-  
-  
-
-<h3>ssl Object</h3>
-<dl>
-
-
-<dt>
-  <code><span class='type string'>string</span> certificate</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  HTTPS certificate file path (chained if needed)
-  
-  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></span>
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> private_key</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Private key file path used to generate the certificate (password-less)
-  
-  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></span>
-
-</dd>
-
-</dl>
-
-</dd>
-
-<dt>
-  <code><span class='type array'>array</span> support</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  List of technologies the vhost will support (only &#39;php&#39; for the moment)
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type array'>array</span> upstreams</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  list of upstream objects (<a href='#object-upstream'>Read more about upstream objects</a>)
-  
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> webroot</code>
-  <span class='optional'>Optional</span>
-</dt>
-<dd class='description'>
-  Subfolder to serve data from based on the root /var/www/_vhost_id_
-  
-  
-
-</dd>
-
-      </dl>
-      
-    
 </section>
 
 

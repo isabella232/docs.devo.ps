@@ -261,10 +261,10 @@ var Swiftype = window.Swiftype || {};
 
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     
     <dt>
-      <code class='terminal'>devops openvpn start</code>
+      devops openvpn start
     </dt>
     <dd>
       Start OpenVPN if stopped
@@ -272,7 +272,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops openvpn stop</code>
+      devops openvpn stop
     </dt>
     <dd>
       Stop OpenVPN if started
@@ -280,7 +280,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops openvpn reload</code>
+      devops openvpn reload
     </dt>
     <dd>
       Reload OpenVPN, reload the configuration and perform a graceful restart
@@ -288,7 +288,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops openvpn restart</code>
+      devops openvpn restart
     </dt>
     <dd>
       Restart OpenVPN, reload the configuration (but kills existing connection)
@@ -296,55 +296,32 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      <code class='terminal'>devops openvpn user add</code>
+      devops openvpn user add
     </dt>
     <dd>
       Add OpenVPN client users and send credentials by email
       
         <h3>Options</h3>
-        <dl>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
           
           
-<dt>
+<tr>
+<td>
   <code><span class='type array'>array</span> users</code>
   
-</dt>
-<dd class='description'>
+</td>
+<td class='description'>
   list of user objects
   
   
+</td>
+</tr>
 
-<h3>user Object</h3>
-<dl>
-
-
-<dt>
-  <code><span class='type string'>string</span> email</code>
-  
-</dt>
-<dd class='description'>
-  The email address to send the credentials to
-  <span class='default'>Valid values: email address</span>
-  
-
-</dd>
-
-<dt>
-  <code><span class='type string'>string</span> name</code>
-  
-</dt>
-<dd class='description'>
-  The client name (ex. bob, alice)
-  
-  
-
-</dd>
-
-</dl>
-
-</dd>
-
-        </dl>
+        </table>
       
     </dd>
     
@@ -353,292 +330,499 @@ var Swiftype = window.Swiftype || {};
 
 
 
-<section class='configuration'>
-  <h2 id='configuration'><a href='#configuration'>Configuration</a></h2>
-  <dl>
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>openvpn</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <a href='#details_cipher'>
+    <strong>cipher</strong>:
+    <i>BF-CBC</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_dev'>
+    <strong>dev</strong>:
+    <i>tun</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_dns1'>
+    <strong>dns1</strong>:
+    <i>208.67.222.222</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_dns2'>
+    <strong>dns2</strong>:
+    <i>208.67.220.220</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_group'>
+    <strong>group</strong>:
+    <i>nogroup</i>
+  </a>
+</li>
+
+
+
+<li>
+  <strong>key</strong>: </dt>
+  
+  <ul>
     
     
 
-<dt>
-  <code class='full'>cipher</code>
-  <code><span class='type'>string</span> cipher</code>
-</dt>
-<dd class='description'>
-  cipher
-  <span class='default'>Default: <code>BF-CBC</code></span>
+<li>
+  <a href='#details_ca_expire'>
+    <strong>ca_expire</strong>:
+    <i>3650</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_city'>
+    <strong>city</strong>:
+    <i>SanFrancisco</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_common_name'>
+    <strong>common_name</strong>:
+    <i>server</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_country'>
+    <strong>country</strong>:
+    <i>US</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_email'>
+    <strong>email</strong>:
+    <i>admin@server</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_key_expire'>
+    <strong>key_expire</strong>:
+    <i>3650</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_key_size'>
+    <strong>key_size</strong>:
+    <i>1024</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_name'>
+    <strong>name</strong>:
+    <i>server</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_org'>
+    <strong>org</strong>:
+    <i>Fort-Funston</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_org_unit'>
+    <strong>org_unit</strong>:
+    <i>server</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_province'>
+    <strong>province</strong>:
+    <i>CA</i>
+  </a>
+</li>
+
+
+  </ul>
   
-</dd>
+</li>
 
 
 
-<dt>
-  <code class='full'>dev</code>
-  <code><span class='type'>string</span> dev</code>
-</dt>
-<dd class='description'>
-  Device type
-  <span class='default'>Default: <code>tun</code></span>
+<li>
+  <a href='#details_max_client'>
+    <strong>max_client</strong>:
+    <i>100</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_netmask'>
+    <strong>netmask</strong>:
+    <i>255.255.255.0</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_network'>
+    <strong>network</strong>:
+    <i>10.8.0.0</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i>1194</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_proto'>
+    <strong>proto</strong>:
+    <i>udp</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_user'>
+    <strong>user</strong>:
+    <i>nobody</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>dns1</code>
-  <code><span class='type'>string</span> dns1</code>
-</dt>
-<dd class='description'>
-  DNS to propagate to the clients (default to OpenDNS)
-  <span class='default'>Default: <code>208.67.222.222</code></span>
+    <dt id='details_cipher'>
+      <strong>cipher</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>cipher</dd>
+    <dd class='default'>Default: <code>BF-CBC</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>dns2</code>
-  <code><span class='type'>string</span> dns2</code>
-</dt>
-<dd class='description'>
-  DNS to propagate to the clients (default to OpenDNS)
-  <span class='default'>Default: <code>208.67.220.220</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>group</code>
-  <code><span class='type'>string</span> group</code>
-</dt>
-<dd class='description'>
-  Running group of openvpn (must exist)
-  <span class='default'>Default: <code>nogroup</code></span>
   
-</dd>
-
-
-
-
-
-
-<dt><code>key</code></dt>
-<dd>
-<dl>
-
-
-
-<dt>
-  <code class='full'>key.ca_expire</code>
-  <code><span class='type'>integer</span> ca_expire</code>
-</dt>
-<dd class='description'>
-  CA validity period (in days)
-  <span class='default'>Default: <code>3650</code></span>
+    <dt id='details_dev'>
+      <strong>dev</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Device type</dd>
+    <dd class='default'>Default: <code>tun</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.city</code>
-  <code><span class='type'>string</span> city</code>
-</dt>
-<dd class='description'>
-  Key city
-  <span class='default'>Default: <code>SanFrancisco</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.common_name</code>
-  <code><span class='type'>string</span> common_name</code>
-</dt>
-<dd class='description'>
-  Key Common Name (CN)
-  <span class='default'>Default: <code>server</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>key.country</code>
-  <code><span class='type'>string</span> country</code>
-</dt>
-<dd class='description'>
-  Key country
-  <span class='default'>Default: <code>US</code></span>
+    <dt id='details_dns1'>
+      <strong>dns1</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>DNS to propagate to the clients (default to OpenDNS)</dd>
+    <dd class='default'>Default: <code>208.67.222.222</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.email</code>
-  <code><span class='type'>string</span> email</code>
-</dt>
-<dd class='description'>
-  Key email
-  <span class='default'>Default: <code>admin@server</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.key_expire</code>
-  <code><span class='type'>integer</span> key_expire</code>
-</dt>
-<dd class='description'>
-  Key validity period (in days)
-  <span class='default'>Default: <code>3650</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>key.key_size</code>
-  <code><span class='type'>integer</span> key_size</code>
-</dt>
-<dd class='description'>
-  Increase key size if you are paranoid; it will slow down TLS negociation
-  <span class='default'>Default: <code>1024</code></span>
+    <dt id='details_dns2'>
+      <strong>dns2</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>DNS to propagate to the clients (default to OpenDNS)</dd>
+    <dd class='default'>Default: <code>208.67.220.220</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.name</code>
-  <code><span class='type'>string</span> name</code>
-</dt>
-<dd class='description'>
-  Key name
-  <span class='default'>Default: <code>server</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.org</code>
-  <code><span class='type'>string</span> org</code>
-</dt>
-<dd class='description'>
-  Key Organization
-  <span class='default'>Default: <code>Fort-Funston</code></span>
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>key.org_unit</code>
-  <code><span class='type'>string</span> org_unit</code>
-</dt>
-<dd class='description'>
-  Key Organization Unit (OU)
-  <span class='default'>Default: <code>server</code></span>
+    <dt id='details_group'>
+      <strong>group</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Running group of openvpn (must exist)</dd>
+    <dd class='default'>Default: <code>nogroup</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>key.province</code>
-  <code><span class='type'>string</span> province</code>
-</dt>
-<dd class='description'>
-  Key province
-  <span class='default'>Default: <code>CA</code></span>
   
-</dd>
 
-
-
-</dl></dd>
-
-
-
-<dt>
-  <code class='full'>max_client</code>
-  <code><span class='type'>integer</span> max_client</code>
-</dt>
-<dd class='description'>
-  Maximum number of simultaneous clients
-  <span class='default'>Default: <code>100</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>netmask</code>
-  <code><span class='type'>string</span> netmask</code>
-</dt>
-<dd class='description'>
-  Netmask to apply on IP range for clients
-  <span class='default'>Default: <code>255.255.255.0</code></span>
   
-</dd>
+    
+      
+    
+    
+    
+      
+    
 
-
-
-<dt>
-  <code class='full'>network</code>
-  <code><span class='type'>string</span> network</code>
-</dt>
-<dd class='description'>
-  Network IP range for clients
-  <span class='default'>Default: <code>10.8.0.0</code></span>
+    
+      
+      
   
-</dd>
-
-
-
-<dt>
-  <code class='full'>port</code>
-  <code><span class='type'>integer</span> port</code>
-</dt>
-<dd class='description'>
-  Listening port
-  <span class='default'>Default: <code>1194</code></span>
+    <dt id='details_ca_expire'>
+      key.<strong>ca_expire</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>CA validity period (in days)</dd>
+    <dd class='default'>Default: <code>3650</code></dd>
+    
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>proto</code>
-  <code><span class='type'>string</span> proto</code>
-</dt>
-<dd class='description'>
-  Protocol
-  <span class='default'>Default: <code>udp</code></span>
   
-</dd>
 
-
-
-<dt>
-  <code class='full'>user</code>
-  <code><span class='type'>string</span> user</code>
-</dt>
-<dd class='description'>
-  Running user of openvpn (must exist)
-  <span class='default'>Default: <code>nobody</code></span>
   
-</dd>
+    <dt id='details_city'>
+      key.<strong>city</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key city</dd>
+    <dd class='default'>Default: <code>SanFrancisco</code></dd>
+    
+  
 
+  
+
+  
+    <dt id='details_common_name'>
+      key.<strong>common_name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key Common Name (CN)</dd>
+    <dd class='default'>Default: <code>server</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_country'>
+      key.<strong>country</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key country</dd>
+    <dd class='default'>Default: <code>US</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_email'>
+      key.<strong>email</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key email</dd>
+    <dd class='default'>Default: <code>admin@server</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_key_expire'>
+      key.<strong>key_expire</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Key validity period (in days)</dd>
+    <dd class='default'>Default: <code>3650</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_key_size'>
+      key.<strong>key_size</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Increase key size if you are paranoid; it will slow down TLS negociation</dd>
+    <dd class='default'>Default: <code>1024</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_name'>
+      key.<strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key name</dd>
+    <dd class='default'>Default: <code>server</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_org'>
+      key.<strong>org</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key Organization</dd>
+    <dd class='default'>Default: <code>Fort-Funston</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_org_unit'>
+      key.<strong>org_unit</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key Organization Unit (OU)</dd>
+    <dd class='default'>Default: <code>server</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_province'>
+      key.<strong>province</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Key province</dd>
+    <dd class='default'>Default: <code>CA</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_max_client'>
+      <strong>max_client</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Maximum number of simultaneous clients</dd>
+    <dd class='default'>Default: <code>100</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_netmask'>
+      <strong>netmask</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Netmask to apply on IP range for clients</dd>
+    <dd class='default'>Default: <code>255.255.255.0</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_network'>
+      <strong>network</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Network IP range for clients</dd>
+    <dd class='default'>Default: <code>10.8.0.0</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_port'>
+      <strong>port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Listening port</dd>
+    <dd class='default'>Default: <code>1194</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_proto'>
+      <strong>proto</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Protocol</dd>
+    <dd class='default'>Default: <code>udp</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Running user of openvpn (must exist)</dd>
+    <dd class='default'>Default: <code>nobody</code></dd>
+    
+  
+
+  
 
   </dl>
 </section>
-
-
 
 
 
