@@ -1,7 +1,6 @@
 <a href='/' {% if path == '' %} class='active'{% endif %}>Getting started</a>
 
 <h3>How to</h3>
-
 {% set menu = {} %}
 {% for item in howto %}
   {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
@@ -11,7 +10,6 @@
 {% endfor %}
 
 <h3>Manual</h3>
-
 {% set menu = {} %}
 {% for item in manual %}
   {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
@@ -21,7 +19,6 @@
 {% endfor %}
 
 <h3>Providers</h3>
-
 {% set menu = {} %}
 {% for item in providers %}
   {% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}
@@ -31,7 +28,6 @@
 {% endfor %}
 
 <h3>Services</h3>
-
 {% set menu = {} %}
 {% for item in services %}
   {% if item.title %}{% set l_title = item.title | lower %}{% set menu[l_title] = loop.index0 %}{% endif %}
