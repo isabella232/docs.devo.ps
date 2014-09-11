@@ -27,43 +27,43 @@ gulp.task('prepare', function(callback) {
     mkdirp(site.destination, callback);
 });
 
-gulp.task('clean', function() {
-    gulp.src(site.destination, {read: false})
+gulp.task('clean', [], function() {
+    return gulp.src(site.destination, {read: false})
         .pipe(clean());
 })
 
-gulp.task('sass', function() {
-    gulp.src(site.assets.custom.scss)
+gulp.task('sass', ['clean'], function() {
+    return gulp.src(site.assets.custom.scss)
         .pipe(sass({
             includePaths: eggshell.includePaths
         }))
         .pipe(gulp.dest('./assets/css/'));
 });
 
-gulp.task('concat-js', function() {
-    gulp.src(siteJS)
+gulp.task('concat-js', ['clean'], function() {
+    return gulp.src(siteJS)
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('concat-css', function() {
-    gulp.src(siteCSS)
+gulp.task('concat-css', ['clean'], function() {
+    return gulp.src(siteCSS)
         .pipe(concat('styles.css'))
         .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('favicons', function() {
-    gulp.src(site.assets.custom.favicons)
+gulp.task('favicons', ['clean'], function() {
+    return gulp.src(site.assets.custom.favicons)
         .pipe(gulp.dest('./public/assets/favicons'));
 })
 
-gulp.task('fonts', function() {
-    gulp.src(site.assets.custom.fonts)
+gulp.task('fonts', ['clean'], function() {
+    return gulp.src(site.assets.custom.fonts)
         .pipe(gulp.dest('./public/assets/fonts'));
 })
 
-//
-gulp.task('metalsmith', ['concat-js'], function(callback) {
+gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts'], function(callback) {
+
     var metalsmith = new Metalsmith(process.cwd());
     var plugins = site.metalsmith || {};
 
@@ -127,5 +127,6 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith']);
+
+gulp.task('default', ['metalsmith']);
 gulp.task('development', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith', 'server']);
