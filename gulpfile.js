@@ -13,7 +13,6 @@ var sass = require('gulp-sass');
 var eggshell= require('eggshell');
 var concat = require('gulp-concat');
 var gutil = require('gulp-util');
-var seq = require('run-sequence');
 var log = gutil.log;
 var colors = gutil.colors;
 
@@ -28,8 +27,10 @@ gulp.task('prepare', function(callback) {
     mkdirp(site.destination, callback);
 });
 
+site.assets.vendor.js.concat(site.assets.custom.js);
+
 gulp.task('clean', function() {
-    gulp.src(site.destination, {read: false})
+    gulp.src([site.destination, './public/assets'], {read: false})
         .pipe(clean());
 })
 
@@ -87,7 +88,6 @@ gulp.task('metalsmith', function(callback) {
     });
 });
 
-//
 gulp.task('server', ['prepare', 'watch'], function(callback) {
     var devApp, devServer, devAddress, devHost, url;
 
@@ -129,17 +129,5 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', function (cb) {
-    seq(
-        'clean',
-        'sass',
-        'concat-js',
-        'concat-css',
-        'favicons',
-        'fonts',
-        'metalsmith',
-        cb
-    );
-});
-
+gulp.task('default', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith']);
 gulp.task('development', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith', 'server']);
