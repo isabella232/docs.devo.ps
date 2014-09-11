@@ -10,7 +10,11 @@
 <li>
   <strong>{{ loop.key }}</strong>: </dt>
   {% if val.type and val.type == 'array' %}
-  <a href='#details_{{ loop.key }}' class='details'>See the {{ loop.key }} definition</a>
+  <ul>
+    <li>-</li>
+    {% set tree = val.options %}
+    {% include "_mock_tree.html" %}
+  </ul>
   {% else %}
   <ul>
     {% set tree = val %}
