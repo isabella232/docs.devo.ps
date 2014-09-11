@@ -1395,6 +1395,27 @@ code .type, .code .type {
       font-size: 1.4rem;
       font-style: normal;
       padding: 5px 10px; }
+    #main .content dl {
+      font-size: 16px;
+      font-size: 1.6rem;
+      margin: 0 0 20px; }
+      #main .content dl dt {
+        font-family: 'Lucidatypewriter', monospace;
+        margin: 0 0 5px;
+        padding: 5px 10px; }
+      #main .content dl dd {
+        font-size: 14px;
+        font-size: 1.4rem;
+        margin: 0 0 5px 30px; }
+      #main .content dl dd + dt {
+        margin-top: 10px; }
+      #main .content dl dl {
+        margin-left: 30px; }
+    #main .content dl.commands dt {
+      background: #364854;
+      border-radius: 2px;
+      border-top: 1px solid #203442;
+      color: #FFF; }
     #main .content ul.mock {
       background: #fafafb;
       border: 1px solid #dde0e2;
@@ -1498,23 +1519,12 @@ code .type, .code .type {
             content: 's'; }
         #main .content ul.mock button.more:hover {
           color: #1b7ec0; }
-    #main .content dl.list {
-      margin: 0 0 20px; }
-      #main .content dl.list dt {
-        background: #fafafb;
-        border-top: 1px solid #dde0e2;
-        color: #8B66CB;
-        font-family: 'Lucidatypewriter', monospace;
-        margin: 0 0 5px;
-        padding: 5px 10px; }
-        #main .content dl.list dt .type {
-          color: #a5adb3; }
-      #main .content dl.list dd {
-        font-size: 14px;
-        font-size: 1.4rem;
-        margin: 0 0 5px 20px; }
-      #main .content dl.list dd + dt {
-        margin-top: 10px; }
+    #main .content dl.list dt {
+      background: #fafafb;
+      border-top: 1px solid #dde0e2;
+      color: #8B66CB; }
+      #main .content dl.list dt .type {
+        color: #a5adb3; }
   #main .sidebar {
     border: 1px solid #dde0e2;
     border-radius: 4px; }

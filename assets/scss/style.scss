@@ -167,6 +167,33 @@ code,
       font-style: normal;
       padding: $gutter/4 $gutter/2;
     }
+    dl {
+      @include font-size();
+      margin: 0 0 $gutter;
+      dt {
+        font-family: $codeFont;
+        margin: 0 0 $gutter/4;
+        padding: $gutter/4 $gutter/2;
+      }
+      dd {
+        @include font-size($smaller);
+        margin: 0 0 $gutter/4 1.5*$gutter;
+      }
+      dd + dt {
+        margin-top: $gutter/2;
+      }
+      dl {
+        margin-left: 1.5*$gutter;
+      }
+    }
+    dl.commands {
+      dt {
+        background: tint($black, 10%);
+        border-radius: $radius;
+        border-top: 1px solid $black;
+        color: #FFF;
+      }
+    }
     ul.mock {
       background: $light;
       border: 1px solid $line;
@@ -234,24 +261,13 @@ code,
       }
     }
     dl.list {
-      margin: 0 0 $gutter;
       dt {
         background: $light;
         border-top: 1px solid $line;
         color: $purple;
-        font-family: $codeFont;
-        margin: 0 0 $gutter/4;
-        padding: $gutter/4 $gutter/2;
         .type {
           color: $grey;
         }
-      }
-      dd {
-        @include font-size($smaller);
-        margin: 0 0 $gutter/4 $gutter;
-      }
-      dd + dt {
-        margin-top: $gutter/2;
       }
     }
   }

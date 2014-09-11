@@ -24,10 +24,10 @@
 {% if tasks %}
 <section class='tasks'>
   <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl>
+  <dl class='commands'>
     {% for task in tasks %}
     <dt>
-      <code class='terminal'>devops {{ title | lower }} {{ task.name | safe }}</code>
+      devops {{ title | lower }} {{ task.name | safe }}
     </dt>
     <dd>
       {{ task.description | safe }}

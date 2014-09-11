@@ -4,7 +4,14 @@ $(function() {
     var that = this;
     expand.click(function () {
       $(that).toggle(100);
-      ($(this).hasClass('expanded')) ? $(this).removeClass('expanded') : $(this).addClass('expanded');
+      if ($(this).hasClass('expanded')) {
+        $(this).removeClass('expanded');
+        $(this).html('<span>Expand</span>');
+      }
+      else {
+        $(this).addClass('expanded');
+        $(this).html('<span>Collapse</span>');
+      }
     });
     $(that).hide();
     $(that).before(expand);

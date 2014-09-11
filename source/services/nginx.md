@@ -183,25 +183,16 @@ tasks:
 title: Nginx
 
 ---
-# Virtual Hosts
 
-In practive virtual hosts allows you to compartment your web files and allow you to run different domains at the same time on the same host.
+Nginx is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a Web server.
 
-## Default web roots
+## vhosts
 
-The default web roots are created based on the vhost id supplied on creation:
+Save for a few settings, you'll most likely end up adding vhosts to your Nginx configuration.
 
-    /var/www/{vhost_id}
+In a nutshell, each vhost defines a directory of files, where your application or Web site resides, and a list of domains associated with it. Whenever you add a vhost, we'll create a Web root associated with its id: `var/www/{vhost_id}` where `{vhost_id}` is the id of your vhost.
 
-Sometime your public files are hosted in a subfolder of the main web root (e.g. `public`), in that case you want to use the `webroot` parameter in the vhost definition. It will be appended to the main webroot. For example, with the following configuration:
-
-    configuration:
-      nginx:
-        vhosts:
-          - id: my_vhost
-            webroot: public
-
-The root will be set to `/var/www/my_vhost/public`
+<em>You can use the `webroot` if you're serving files out of a sub-folder of the default Web root. For example, if you serve files out of the `public/` subfolder of your app, adding the `webroot: public` to your vhost will make it serve files out of the `/var/www/my_vhost/public` folder.</em>
 
 ## Routes
 
@@ -218,11 +209,7 @@ There is several types of routes:
 - uwsgi: will send the request to a uwsgi service. It typically applies to Python apps.
 - static: will simply consider the traffic to be served as-is, and that the files do not require any processing.
 
-## Supported technologies
-
-An extra attribute `support` is available in the definition of a vhost; it should list the technologies that this vhost needs to support. 
-
-Currently only `php` is relevant and will change the behavior of the vhost by ensuring the `index` includes `index.php` along with the `index.html` and `index.htm`.
+<em><strong>You can add supported technologies with the `support` attribute</strong>. This attribute willl help you vhost figure out what index to serve. By default it includes `index.html` and `index.html`, adding `php` to `support` will extend it to `index.php`.</em>
 
 ## Example
 
