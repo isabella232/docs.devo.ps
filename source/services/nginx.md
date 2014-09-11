@@ -216,53 +216,55 @@ Routes allow you to define a list of ways to handle different types of requests,
   configuration:
     nginx:
       vhosts:
-        - id: my_vhost
+        - id: my_vhost_php
           domain: mydomain.com
+          indexes: index.php
           routes:
-            - uri: '@php'
+            - uri: '~ \.php$'
               type: fastcgi
               to: localhost:9001
   ```
 
-    We here define a vhost that will XXX.
+    We here define a vhost that will answer to the `mydomain.com` domain and will pass all requests which URL ends up with `.php` to a `fastcgi` process listening on `http://localhost:9001` (Typically a php-fpm process).
+
 * ### Node.js app
 
   ```example
   configuration:
     nginx:
       vhosts:
-        - id: my_vhost
+        - id: my_vhost_node
           domain: mydomain.com
           routes:
-            - uri: '@js'
-              type: fastcgi
-              to: localhost:9001
+            - uri: '/'
+              type: proxy
+              to: localhost:3000
   ```
 
-    We here define a vhost that will XXX.
+    We here define a vhost that will answer to the `mydomain.com` domain and will proxy all requests to a http process listening on `http://localhost:3000` (Typically your Node.js service).
     
   </li>
 </ul>
 
 This configuration will generate the following Nginx configuration file (also linked and enabled in `sites-enabled`):
 
-### /etc/nginx/sites-available/my_vhost
+### /etc/nginx/sites-available/my_vhost_php
 
 ```snippet
 server {
-    listen   8080;
-    root /var/www/my_vhost/public;
+    listen   80;
+    root /var/www/my_vhost_php;
 
     index index.php index.html index.htm;
 
-    access_log /var/log/nginx/my_vhost-access.log;
-    error_log /var/log/nginx/my_vhost-error.log;
+    access_log /var/log/nginx/my_vhost_php-access.log;
+    error_log /var/log/nginx/my_vhost_php-error.log;
 
     # Make site accessible from http://localhost/
     # server_name _;
-    server_name mydomain.com alias.mydomain.com alias2.mydomain.com;
+    server_name mydomain.com;
 
-    location @php {
+    location ~ \.php$ {
         # Route type: fastcgi
         fastcgi_pass localhost:9001;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -270,11 +272,29 @@ server {
         fastcgi_index index.php; 
         include fastcgi_params;
     }
-
-    location ~ ^/(app|app_dev|config)\.php(/|$) {
-        # Route type: custom
-        try_files $uri @php
-    }
 }
 ```
 
+### /etc/nginx/sites-available/my_vhost_node
+
+```snippet
+server {
+    listen   80;
+    root /var/www/my_vhost_node;
+
+    index index.html index.htm;
+
+    access_log /var/log/nginx/my_vhost_node-access.log;
+    error_log /var/log/nginx/my_vhost_node-error.log;
+
+    # Make site accessible from http://localhost/
+    # server_name _;
+    server_name mydomain.com;
+
+    location / {
+        # Route type: proxy
+        proxy_pass localhost:3000;
+        proxy_pass_header Set-Cookie;
+    }
+}
+```
