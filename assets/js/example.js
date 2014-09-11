@@ -1,5 +1,5 @@
 $(function() {
-  $('#example + ul, #example + ul').each(function () {
+  $('#examples + ul, #example + ul').each(function () {
     var that = this;
     var tabs = $('<div class="tabs"></div>');
     $(this).addClass('tabbed');
