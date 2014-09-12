@@ -27,12 +27,12 @@ gulp.task('prepare', function(callback) {
     mkdirp(site.destination, callback);
 });
 
-gulp.task('clean', [], function() {
+gulp.task('clean', function() {
     return gulp.src(site.destination, {read: false})
         .pipe(clean());
 })
 
-gulp.task('sass', ['clean'], function() {
+gulp.task('sass', function() {
     return gulp.src(site.assets.custom.scss)
         .pipe(sass({
             includePaths: eggshell.includePaths
@@ -40,24 +40,24 @@ gulp.task('sass', ['clean'], function() {
         .pipe(gulp.dest('./assets/css/'));
 });
 
-gulp.task('concat-js', ['clean'], function() {
+gulp.task('concat-js', function() {
     return gulp.src(siteJS)
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('concat-css', ['clean'], function() {
+gulp.task('concat-css', function() {
     return gulp.src(siteCSS)
         .pipe(concat('styles.css'))
         .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('favicons', ['clean'], function() {
+gulp.task('favicons', function() {
     return gulp.src(site.assets.custom.favicons)
         .pipe(gulp.dest('./public/assets/favicons'));
 })
 
-gulp.task('fonts', ['clean'], function() {
+gulp.task('fonts', function() {
     return gulp.src(site.assets.custom.fonts)
         .pipe(gulp.dest('./public/assets/fonts'));
 })
@@ -128,5 +128,5 @@ gulp.task('watch', function() {
 
 // The default task (called when you run `gulp` from cli)
 
-gulp.task('default', ['metalsmith']);
-gulp.task('development', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts', 'metalsmith', 'server']);
+gulp.task('default', ['clean', 'metalsmith']);
+gulp.task('development', ['clean', 'metalsmith', 'server']);

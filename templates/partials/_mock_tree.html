@@ -8,13 +8,16 @@
 </li>
 {% else %}
 <li>
-  <strong>{{ loop.key }}</strong>: </dt>
   {% if val.type and val.type == 'array' %}
+  <a href='#details_{{ loop.key }}'>
+    <strong>{{ loop.key }}</strong>:
+  </a>
   <ul class='array'>
     {% set tree = val.options %}
     {% include "_mock_tree.html" %}
   </ul>
   {% else %}
+  <strong>{{ loop.key }}</strong>:
   <ul>
     {% set tree = val %}
     {% include "_mock_tree.html" %}
