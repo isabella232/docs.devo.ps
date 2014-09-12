@@ -4,8 +4,8 @@
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
-  <title>Node.js | devo.ps documentation</title>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, language'/>
+  <title>Fail2ban | devo.ps documentation</title>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, security'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -196,7 +196,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/elasticsearch' >ElasticSearch</a>
 
-<a href='/services/fail2ban' >Fail2ban</a>
+<a href='/services/fail2ban'  class='active'>Fail2ban</a>
 
 <a href='/services/git' >Git</a>
 
@@ -212,7 +212,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/nginx' >Nginx</a>
 
-<a href='/services/nodejs'  class='active'>Node.js</a>
+<a href='/services/nodejs' >Node.js</a>
 
 <a href='/services/openvpn' >OpenVPN</a>
 
@@ -245,17 +245,16 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>language</li>
+      <li>security</li>
     
   </ul>
 
-  <h1>Node.js 
-  <a href='http://nodejs.org/api/'><span>Official documentation</span></a>
-  </h1>  
+  <h1>Fail2ban </h1>  
 </header>
 
 <section class='body'>
-  
+  <p>Fail2Ban is a service that automatically blocks failed connection attempts to services running on a node. The remote IP addresses are then usually blacklisted for up to 10 minutes before being allowed again.</p>
+
 </section>
 
 
@@ -264,34 +263,42 @@ var Swiftype = window.Swiftype || {};
   <dl class='commands'>
     
     <dt>
-      devops node.js start
+      devops fail2ban start
     </dt>
     <dd>
-      Start all the apps managed by Foreverd (node.js) if stopped
+      Start Fail2ban if stopped
       
     </dd>
     
     <dt>
-      devops node.js stop
+      devops fail2ban stop
     </dt>
     <dd>
-      Stop all the apps managed by Foreverd (node.js) if started
+      Stop Fail2ban if started
       
     </dd>
     
     <dt>
-      devops node.js restart
+      devops fail2ban reload
     </dt>
     <dd>
-      Restart all the apps managed by Foreverd (node.js).
+      Reload Fail2ban, reload the configuration and perform a graceful restart
       
     </dd>
     
     <dt>
-      devops node.js app add
+      devops fail2ban restart
     </dt>
     <dd>
-      Add a new app defintion for foreverd to run
+      Restart Fail2ban, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+    <dt>
+      devops fail2ban ip ban
+    </dt>
+    <dd>
+      Ban an IP address to a service (known to fail2ban)
       
         <h3>Options</h3>
         <table>
@@ -303,23 +310,53 @@ var Swiftype = window.Swiftype || {};
           
 <tr>
 <td>
-  <code><span class='type string'>string</span> extra_env</code>
+  <code><span class='type string'>string</span> ip</code>
+  
+</td>
+<td class='description'>
+  IP address of the host to ban
+  
+  
+</td>
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> jail</code>
   <span class='optional'>Optional</span>
 </td>
 <td class='description'>
-  additional environment variable to pass to the application
+  The service to ban the IP address from
   
-  
+  <span class='default'>Default: <code>ssh</code></span>
 </td>
 </tr>
 
+        </table>
+      
+    </dd>
+    
+    <dt>
+      devops fail2ban ip unban
+    </dt>
+    <dd>
+      Lift a ban from an IP address to a service (known to fail2ban)
+      
+        <h3>Options</h3>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
+          
+          
 <tr>
 <td>
-  <code><span class='type string'>string</span> name</code>
+  <code><span class='type string'>string</span> ip</code>
   
 </td>
 <td class='description'>
-  name of your app
+  IP address of the host to unban
   
   
 </td>
@@ -327,49 +364,13 @@ var Swiftype = window.Swiftype || {};
 
 <tr>
 <td>
-  <code><span class='type string'>string</span> node_env</code>
+  <code><span class='type string'>string</span> jail</code>
   <span class='optional'>Optional</span>
 </td>
 <td class='description'>
-  node.js environment var NODE_ENV
+  The service to unban the IP address from
   
-  
-</td>
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> root</code>
-  
-</td>
-<td class='description'>
-  path of the root folder of your app
-  
-  
-</td>
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> script</code>
-  
-</td>
-<td class='description'>
-  node.js script to run via foreverd
-  
-  
-</td>
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> user</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  running user of the application
-  
-  <span class='default'>Default: <code>devops</code></span>
+  <span class='default'>Default: <code>ssh</code></span>
 </td>
 </tr>
 
@@ -390,19 +391,16 @@ var Swiftype = window.Swiftype || {};
       <strong>configuration</strong>:
       <ul>
         <li>
-          <strong>node.js</strong>:
+          <strong>fail2ban</strong>:
           <ul class='content'>
             
             
 
 <li>
-  <strong>packages</strong>: </dt>
-  
-  <ul class='array'>
-    
-    
-  </ul>
-  
+  <a href='#details_ignoreip'>
+    <strong>ignoreip</strong>:
+    <i class='empty'>no default value</i>
+  </a>
 </li>
 
 
@@ -416,10 +414,10 @@ var Swiftype = window.Swiftype || {};
     
     
   
-    <dt id='details_packages'>
-      <strong>packages</strong> <span class='type'>array</span>
+    <dt id='details_ignoreip'>
+      <strong>ignoreip</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>List of packages to have globally installed on the server</dd>
+    <dd class='description'>Space separated list of IP address, CIDR masks or a DNS host for which Fail2ban will never block connection attempts.</dd>
     
     
   
