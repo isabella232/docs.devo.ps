@@ -2,17 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.devo.ps/services/git</loc>
+    <loc>http://docs.devo.ps/services/go</loc>
     <lastmod>2014-09-12</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/how-to/add-a-server</loc>
-    <lastmod>2014-09-12</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/git-repositories</loc>
+    <loc>http://docs.devo.ps/manual/CLI</loc>
     <lastmod>2014-09-12</lastmod>
   </url>
   
@@ -97,12 +92,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/manual/CLI</loc>
+    <loc>http://docs.devo.ps/services/git</loc>
     <lastmod>2014-09-12</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/go</loc>
+    <loc>http://docs.devo.ps/manual/git-repositories</loc>
     <lastmod>2014-09-12</lastmod>
   </url>
   
@@ -193,6 +188,11 @@
   
   <url>
     <loc>http://docs.devo.ps/services/zeromq</loc>
+    <lastmod>2014-09-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/how-to/add-a-server</loc>
     <lastmod>2014-09-12</lastmod>
   </url>
   
