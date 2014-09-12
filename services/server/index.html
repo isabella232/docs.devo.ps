@@ -4,7 +4,7 @@
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   
-  <title>Fail2ban | devo.ps documentation</title>
+  <title>Server | devo.ps documentation</title>
   <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, security'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
@@ -198,7 +198,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/elasticsearch' >ElasticSearch</a>
 
-<a href='/services/fail2ban'  class='active'>Fail2ban</a>
+<a href='/services/fail2ban' >Fail2ban</a>
 
 <a href='/services/git' >Git</a>
 
@@ -228,7 +228,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/ruby' >Ruby</a>
 
-<a href='/services/server' >Server</a>
+<a href='/services/server'  class='active'>Server</a>
 
 <a href='/services/uwsgi' >uWSGI</a>
 
@@ -253,12 +253,54 @@ var Swiftype = window.Swiftype || {};
     
   </ul>
 
-  <h1>Fail2ban </h1>  
+  <h1>Server </h1>  
 </header>
 
 <section class='body'>
-  <p>Fail2Ban is a service that automatically blocks failed connection attempts to services running on a node. The remote IP addresses are then usually blacklisted for up to 10 minutes before being allowed again.</p>
-
+  <p>You can perform fine tuning of your node.</p>
+<h2 id="hostname">Hostname</h2>
+<p>By default the hostname of your node will be your node id. You can override the hostname by specifying:</p>
+<pre><code>configuration:
+    server:
+        hostname: mybox
+</code></pre><h2 id="deb-repositories">Deb Repositories</h2>
+<p>You can add any custom repository by defining the following:</p>
+<pre><code>configuration:
+    server:
+        repositories:
+            - name: &#39;ppa:nginx/stable&#39;
+            - name: &#39;deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main&#39;
+              key: &#39;http://packages.elasticsearch.org/GPG-KEY-elasticsearch&#39;
+</code></pre><h2 id="deb-packages">Deb packages</h2>
+<p>You can install custom DEB packages on your node by defining the following in the configuration:</p>
+<pre><code>configuration:
+    server:
+        packages:
+            - some-package
+            - some-other-package
+</code></pre><p>Those packages are expected to be found within the deb packages repositories defined in your node.</p>
+<h2 id="sysctl-settings">Sysctl settings</h2>
+<p>You can specify extra parameters to your node with:</p>
+<pre><code>configuration:
+    server:
+        sysctl:
+            vm.swappiness: 10
+            net.ipv4.ip_forward: 1
+</code></pre><h2 id="swap-settings">SWAP settings</h2>
+<p>By default some swap will be created on the node. This can be disabled or tuned to match your needs.</p>
+<p>The following example will change the default size and path, and create a 4GB swap file at <code>/custom_path</code>:</p>
+<pre><code>configuration:
+    server:
+        swap:
+            enable: true
+            size: 4096
+            path: /custom_path
+</code></pre><p>This example, will ensure no swap file is being created</p>
+<pre><code>configuration:
+    server:
+        swap:
+            enable: false
+</code></pre>
 </section>
 
 
@@ -267,118 +309,18 @@ var Swiftype = window.Swiftype || {};
   <dl class='commands'>
     
     <dt>
-      devops fail2ban start
+      devops server restart
     </dt>
     <dd>
-      Start Fail2ban if stopped
+      Restart the server and wait for it to come back online
       
     </dd>
     
     <dt>
-      devops fail2ban stop
+      devops server stop
     </dt>
     <dd>
-      Stop Fail2ban if started
-      
-    </dd>
-    
-    <dt>
-      devops fail2ban reload
-    </dt>
-    <dd>
-      Reload Fail2ban, reload the configuration and perform a graceful restart
-      
-    </dd>
-    
-    <dt>
-      devops fail2ban restart
-    </dt>
-    <dd>
-      Restart Fail2ban, reload the configuration (but kills existing connection)
-      
-    </dd>
-    
-    <dt>
-      devops fail2ban ip ban
-    </dt>
-    <dd>
-      Ban an IP address to a service (known to fail2ban)
-      
-        <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
-          
-          
-<tr>
-<td>
-  <code><span class='type string'>string</span> ip</code>
-  
-</td>
-<td class='description'>
-  IP address of the host to ban
-  
-  
-</td>
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> jail</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  The service to ban the IP address from
-  
-  <span class='default'>Default: <code>ssh</code></span>
-</td>
-</tr>
-
-        </table>
-      
-    </dd>
-    
-    <dt>
-      devops fail2ban ip unban
-    </dt>
-    <dd>
-      Lift a ban from an IP address to a service (known to fail2ban)
-      
-        <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
-          
-          
-<tr>
-<td>
-  <code><span class='type string'>string</span> ip</code>
-  
-</td>
-<td class='description'>
-  IP address of the host to unban
-  
-  
-</td>
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> jail</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  The service to unban the IP address from
-  
-  <span class='default'>Default: <code>ssh</code></span>
-</td>
-</tr>
-
-        </table>
+      Stop the server and ... just stops it
       
     </dd>
     
@@ -395,15 +337,105 @@ var Swiftype = window.Swiftype || {};
       <strong>configuration</strong>:
       <ul>
         <li>
-          <strong>fail2ban</strong>:
+          <strong>server</strong>:
           <ul class='content'>
             
             
 
 <li>
-  <a href='#details_ignoreip'>
-    <strong>ignoreip</strong>:
+  <a href='#details_hostname'>
+    <strong>hostname</strong>:
+    <i>[object Object]</i>
+  </a>
+</li>
+
+
+
+<li>
+  <strong>packages</strong>: </dt>
+  
+  <ul class='array'>
+    
+    
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <strong>repositories</strong>: </dt>
+  
+  <ul class='array'>
+    
+    
+
+<li>
+  <a href='#details_key'>
+    <strong>key</strong>:
     <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_name'>
+    <strong>name</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <strong>swap</strong>: </dt>
+  
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_enable'>
+    <strong>enable</strong>:
+    <i>true</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_path'>
+    <strong>path</strong>:
+    <i>/swapfile</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_size'>
+    <strong>size</strong>:
+    <i>2048</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_sysctl'>
+    <strong>sysctl</strong>:
+    <i>[object Object]</i>
   </a>
 </li>
 
@@ -418,11 +450,134 @@ var Swiftype = window.Swiftype || {};
     
     
   
-    <dt id='details_ignoreip'>
-      <strong>ignoreip</strong> <span class='type'>string</span>
+    <dt id='details_hostname'>
+      <strong>hostname</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Space separated list of IP addresses, CIDR masks or DNS hosts for which Fail2ban will never block connection attempts.</dd>
+    <dd class='description'>Custom hostname to set the server to</dd>
+    <dd class='default'>Default: <code>[object Object]</code></dd>
     
+  
+
+  
+
+  
+    <dt id='details_packages'>
+      <strong>packages</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of packages to install on the server</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_repositories'>
+      <strong>repositories</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of repositories to install on the server</dd>
+    
+    
+  
+
+  
+    
+      
+    
+    
+    
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_key'>
+      repositorie.<strong>key</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Local or remote GPG key used to authenticate the repository</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_name'>
+      repositorie.<strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Either a ppa repository, or a full line</dd>
+    
+    
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_enable'>
+      swap.<strong>enable</strong> <span class='type'>boolean</span>
+    </dt>
+    <dd class='description'>Whether or not to include SWAP on the server</dd>
+    <dd class='default'>Default: <code>true</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_path'>
+      swap.<strong>path</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Path of the SWAP file</dd>
+    <dd class='default'>Default: <code>/swapfile</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_size'>
+      swap.<strong>size</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Size in MB of the SWAP</dd>
+    <dd class='default'>Default: <code>2048</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_sysctl'>
+      <strong>sysctl</strong> <span class='type'>object</span>
+    </dt>
+    <dd class='description'>Key/Value pair of sysctl settings (e.g. vm.swappiness: 1)</dd>
+    <dd class='default'>Default: <code>[object Object]</code></dd>
     
   
 

@@ -167,6 +167,11 @@
   </url>
   
   <url>
+    <loc>http://docs.devo.ps/services/server</loc>
+    <lastmod>2014-09-12</lastmod>
+  </url>
+  
+  <url>
     <loc>http://docs.devo.ps/services/uwsgi</loc>
     <lastmod>2014-09-12</lastmod>
   </url>
