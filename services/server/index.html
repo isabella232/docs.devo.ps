@@ -260,51 +260,51 @@ var Swiftype = window.Swiftype || {};
   <p>You can perform fine tuning of your node.</p>
 <h2 id="hostname">Hostname</h2>
 <p>By default the hostname of your node will be your node id. You can override the hostname by specifying:</p>
-<pre><code class="lang-example">  configuration:
-    server:
-      hostname: mybox
+<pre><code class="lang-example">configuration:
+  server:
+    hostname: mybox
 </code></pre>
 <h2 id="deb-repositories">Deb Repositories</h2>
 <p>You can add any custom repository by defining the following:</p>
-<pre><code class="lang-example">  configuration:
-    server:
-      repositories:
-        - name: &#39;ppa:nginx/stable&#39;
-        - name: &#39;deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main&#39;
-          key: &#39;http://packages.elasticsearch.org/GPG-KEY-elasticsearch&#39;
+<pre><code class="lang-example">configuration:
+  server:
+    repositories:
+      - name: &#39;ppa:nginx/stable&#39;
+      - name: &#39;deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main&#39;
+        key: &#39;http://packages.elasticsearch.org/GPG-KEY-elasticsearch&#39;
 </code></pre>
 <h2 id="deb-packages">Deb packages</h2>
 <p>You can install custom DEB packages on your node by defining the following in the configuration:</p>
-<pre><code class="lang-example">  configuration:
-    server:
-      packages:
-        - some-package
-        - some-other-package
+<pre><code class="lang-example">configuration:
+  server:
+    packages:
+      - some-package
+      - some-other-package
 </code></pre>
 <p>Those packages are expected to be found within the deb packages repositories defined in your node.</p>
 <h2 id="sysctl-settings">Sysctl settings</h2>
 <p>You can specify extra parameters to your node with:</p>
-<pre><code class="lang-example">  configuration:
-    server:
-      sysctl:
-        vm.swappiness: 10
-        net.ipv4.ip_forward: 1
+<pre><code class="lang-example">configuration:
+  server:
+    sysctl:
+      vm.swappiness: 10
+      net.ipv4.ip_forward: 1
 </code></pre>
 <h2 id="swap-settings">SWAP settings</h2>
 <p>By default some swap will be created on the node. This can be disabled or tuned to match your needs.</p>
 <p>The following example will change the default size and path, and create a 4GB swap file at <code>/custom_path</code>:</p>
-<pre><code class="lang-example">  configuration:
-    server:
-      swap:
-        enable: true
-        size: 4096
-        path: /custom_path
+<pre><code class="lang-example">configuration:
+  server:
+    swap:
+      enable: true
+      size: 4096
+      path: /custom_path
 </code></pre>
 <p>This example, will ensure no swap file is being created</p>
-<pre><code class="lang-example">  configuration:
-    server:
-      swap:
-        enable: false
+<pre><code class="lang-example">configuration:
+  server:
+    swap:
+      enable: false
 </code></pre>
 
 </section>
