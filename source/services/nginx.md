@@ -185,6 +185,27 @@ tasks:
   name: reload
 - description: Restart Nginx, reload the configuration (but kills existing connection)
   name: restart
+- description: 'Add a Nginx virtual host.
+
+    It uses the same attributes than a vhost item in the node configuration
+
+    '
+  name: vhost add
+- description: 'Removes a Nginx virtual host configuration file and the webroot if
+    purge is set to true. Restarts Nginx if needed.
+
+    '
+  name: vhost remove
+  options:
+    id:
+      description: The ID of your nginx domain
+      required: true
+      type: string
+    purge:
+      default: false
+      description: Whether or not delete the associated webroot (/var/www/{vhost_id})
+      required: false
+      type: boolean
 title: Nginx
 
 ---
