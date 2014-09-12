@@ -1,7 +1,7 @@
 ---
 configuration:
   ignoreip:
-    description: Space separated list of IP address, CIDR masks or a DNS host for
+    description: Space separated list of IP addresses, CIDR masks or DNS hosts for
       which Fail2ban will never block connection attempts.
     required: false
     type: string
