@@ -8,7 +8,7 @@ A node is usually a server, either physical or virtual. However, it may also ref
 
 ## Node file
 
-Each node is defined in a YAML (`.yml`) file.
+Each node is defined as a YAML (`.yml`) file.
 
 *We currently require that you name the file as the node id (see example) and save it in the `nodes/` folder. We are working on adding support for arbitrary file names and folders, allowing you to save multiple nodes in a single file.*
 
@@ -117,7 +117,6 @@ Status | Description | Icon
  <span class='icon error'></span> | **Out of sync** | The latest snycing failed or the service lost contact with the node. The current state isn't the same as what is in your repo. Check the console logs for more information.
 
 *If a syncing fails, the system will try a certain amount of times before giving up. You trigger another series of attempts by using the sync action either through the Web UI or CLI.*
-
 
 ## SSH keys & Users
 
