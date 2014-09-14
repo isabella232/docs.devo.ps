@@ -347,26 +347,19 @@ tags:
 - database
 - relational
 tasks:
-- description: Start MySQL if stopped
+- description: Starts MySQL.
   name: start
-- description: Stop MySQL if started
+- description: Stops MySQL.
   name: stop
-- description: Reload MySQL, reload the configuration and perform a graceful restart
+- description: Reloads the MySQL configuration and performs a graceful restart.
   name: reload
-- description: Restart MySQL, reload the configuration (but kills existing connection)
+- description: Restarts MySQL and reload the configuration (this will kill existing
+    connections).
   name: restart
-- description: 'Add a MySQL user
-
-    It uses the same attributes than a user item in the node configuration for MySQL
-
-    '
+- description: Adds a MySQL user. Use the same attributes as for a user in the configuration.
   name: user add
-- description: 'Add a MySQL database
-
-    It uses the same attributes than a database item in the node configuration for
-    MySQL. You can specify any of the existing MySQL users in the `users` array
-
-    '
+- description: Adds a database. Use the same attributes as for a database in the configuration.
+    You can specify any of the existing MySQL users in the `users` array.
   name: database add
 title: MySQL
 
