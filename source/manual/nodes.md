@@ -8,7 +8,7 @@ A node is usually a server, either physical or virtual. However, it may also ref
 
 ## Node file
 
-Each node is defined as a YAML (`.yml`) file.
+Each node is defined in a YAML (`.yml`) file.
 
 *We currently require that you name the file as the node id (see example) and save it in the `nodes/` folder. We are working on adding support for arbitrary file names and folders, allowing you to save multiple nodes in a single file.*
 
