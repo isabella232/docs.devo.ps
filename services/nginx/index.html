@@ -363,7 +363,7 @@ var Swiftype = window.Swiftype || {};
       devops nginx start
     </dt>
     <dd>
-      Start Nginx if stopped
+      Starts Nginx.
       
     </dd>
     
@@ -371,7 +371,7 @@ var Swiftype = window.Swiftype || {};
       devops nginx stop
     </dt>
     <dd>
-      Stop Nginx if started
+      Stops Nginx.
       
     </dd>
     
@@ -379,7 +379,7 @@ var Swiftype = window.Swiftype || {};
       devops nginx reload
     </dt>
     <dd>
-      Reload Nginx, reload the configuration and perform a graceful restart
+      Reloads the Nginx configuration and performs a graceful restart.
       
     </dd>
     
@@ -387,7 +387,57 @@ var Swiftype = window.Swiftype || {};
       devops nginx restart
     </dt>
     <dd>
-      Restart Nginx, reload the configuration (but kills existing connection)
+      Restarts Nginx and reload the configuration (this will kill existing connections).
+      
+    </dd>
+    
+    <dt>
+      devops nginx vhost add
+    </dt>
+    <dd>
+      Adds a virtual host. Use the same attributes as for a vhost in the configuration.
+      
+    </dd>
+    
+    <dt>
+      devops nginx vhost remove
+    </dt>
+    <dd>
+      Removes a vhost and restarts Nginx if needed. If `purge` is set to true, removes the associate webroot.
+      
+        <h3>Options</h3>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
+          
+          
+<tr>
+<td>
+  <code><span class='type string'>string</span> id</code>
+  
+</td>
+<td class='description'>
+  The ID of your nginx domain
+  
+  
+</td>
+</tr>
+
+<tr>
+<td>
+  <code><span class='type boolean'>boolean</span> purge</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  Whether or not delete the associated webroot (/var/www/{vhost_id})
+  
+  
+</td>
+</tr>
+
+        </table>
       
     </dd>
     

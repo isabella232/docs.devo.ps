@@ -273,7 +273,7 @@ var Swiftype = window.Swiftype || {};
       devops mysql start
     </dt>
     <dd>
-      Start MySQL if stopped
+      Starts MySQL.
       
     </dd>
     
@@ -281,7 +281,7 @@ var Swiftype = window.Swiftype || {};
       devops mysql stop
     </dt>
     <dd>
-      Stop MySQL if started
+      Stops MySQL.
       
     </dd>
     
@@ -289,7 +289,7 @@ var Swiftype = window.Swiftype || {};
       devops mysql reload
     </dt>
     <dd>
-      Reload MySQL, reload the configuration and perform a graceful restart
+      Reloads the MySQL configuration and performs a graceful restart.
       
     </dd>
     
@@ -297,7 +297,23 @@ var Swiftype = window.Swiftype || {};
       devops mysql restart
     </dt>
     <dd>
-      Restart MySQL, reload the configuration (but kills existing connection)
+      Restarts MySQL and reload the configuration (this will kill existing connections).
+      
+    </dd>
+    
+    <dt>
+      devops mysql user add
+    </dt>
+    <dd>
+      Adds a MySQL user. Use the same attributes as for a user in the configuration.
+      
+    </dd>
+    
+    <dt>
+      devops mysql database add
+    </dt>
+    <dd>
+      Adds a database. Use the same attributes as for a database in the configuration. You can specify any of the existing MySQL users in the `users` array.
       
     </dd>
     
