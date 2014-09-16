@@ -356,11 +356,35 @@ tasks:
 - description: Restarts MySQL and reload the configuration (this will kill existing
     connections).
   name: restart
-- description: Adds a MySQL user. Use the same attributes as for a user in the configuration.
+- description: Adds a MySQL user.
   name: user add
-- description: Adds a database. Use the same attributes as for a database in the configuration.
-    You can specify any of the existing MySQL users in the `users` array.
+  options:
+    hosts:
+      default: localhost
+      description: Array of hosts the user will be allowed to connect from. ex. [localhost,
+        192.168.%]
+      required: false
+      type: array
+    name:
+      default: null
+      description: User name
+      required: true
+      type: string
+- description: Adds a database.
   name: database add
+  options:
+    name:
+      default: null
+      description: Database name
+      required: true
+      type: string
+    users:
+      default: []
+      description: Array of users with full privileges on the database, users will
+        be granted access from all their hosts. You can use any of the existing MySQL
+        user
+      required: false
+      type: array
 title: MySQL
 
 ---
