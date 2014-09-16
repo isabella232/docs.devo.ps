@@ -305,7 +305,41 @@ var Swiftype = window.Swiftype || {};
       devops mysql user add
     </dt>
     <dd>
-      Adds a MySQL user. Use the same attributes as for a user in the configuration.
+      Adds a MySQL user.
+      
+        <h3>Options</h3>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
+          
+          
+<tr>
+<td>
+  <code><span class='type array'>array</span> hosts</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  Array of hosts the user will be allowed to connect from. ex. [localhost, 192.168.%]
+  
+  <span class='default'>Default: <code>localhost</code></span>
+</td>
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> name</code>
+  
+</td>
+<td class='description'>
+  User name
+  
+  
+</td>
+</tr>
+
+        </table>
       
     </dd>
     
@@ -313,7 +347,41 @@ var Swiftype = window.Swiftype || {};
       devops mysql database add
     </dt>
     <dd>
-      Adds a database. Use the same attributes as for a database in the configuration. You can specify any of the existing MySQL users in the `users` array.
+      Adds a database.
+      
+        <h3>Options</h3>
+        <table>
+        <tr>
+          <th>Key</th>
+          <th>Description</th>
+        </tr>
+          
+          
+<tr>
+<td>
+  <code><span class='type string'>string</span> name</code>
+  
+</td>
+<td class='description'>
+  Database name
+  
+  
+</td>
+</tr>
+
+<tr>
+<td>
+  <code><span class='type array'>array</span> users</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  Array of users with full privileges on the database, users will be granted access from all their hosts. You can use any of the existing MySQL user
+  
+  <span class='default'>Default: <code></code></span>
+</td>
+</tr>
+
+        </table>
       
     </dd>
     
