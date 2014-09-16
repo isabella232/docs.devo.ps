@@ -9,5 +9,28 @@
   {% if val.valid_values %}<span class='default'>Valid values: {{ val.valid_values }}</span>{% endif %}
   {% if val.default %}<span class='default'>Default: <code>{{ val.default }}</code></span>{% endif %}
 </td>
+{% if val.options %}
+  {% if not parent_prev %}
+    {% set parent_prev = [] %}
+  {% endif %}
+  
+  {% if not parent %}
+    {% set parent = loop.key %}
+  {% else %}
+    {% set add = parent_prev.push(parent) %}
+    {% set parent += '.'+ loop.key %}
+  {% endif %}
+
+  {% set tree = val.options %}
+  {% if val.type and val.type == 'array' %}
+    {% set parent = loop.key | replace('s$', '')%}
+  {% endif %}
+
+<table>
+  {% include "_task_tree.html" %}
+</table>
+
+  {% set parent = parent_prev.pop() %}
+{% endif %}
 </tr>
 {% endfor %}
