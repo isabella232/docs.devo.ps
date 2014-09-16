@@ -308,41 +308,32 @@ var Swiftype = window.Swiftype || {};
       Adds a MySQL user.
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type array'>array</span> hosts</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  Array of hosts the user will be allowed to connect from. ex. [localhost, 192.168.%]
   
-  <span class='default'>Default: <code>localhost</code></span>
-</td>
-
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> name</code>
+    <dt id='details_hosts'>
+      <strong>hosts</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>Array of hosts the user will be allowed to connect from. ex. [localhost, 192.168.%]</dd>
+    <dd class='default'>Default: <code>localhost</code></dd>
+    
   
-</td>
-<td class='description'>
-  User name
+
   
+
   
-</td>
+    <dt id='details_name'>
+      <strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>User name</dd>
+    
+    <dd class='required'>Required</dd>
+  
 
-</tr>
+  
 
-
-        </table>
+        </dl>
       
     </dd>
     
@@ -353,41 +344,32 @@ var Swiftype = window.Swiftype || {};
       Adds a database.
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type string'>string</span> name</code>
   
-</td>
-<td class='description'>
-  Database name
+    <dt id='details_name'>
+      <strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Database name</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type array'>array</span> users</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  Array of users with full privileges on the database, users will be granted access from all their hosts. You can use any of the existing MySQL user
   
-  <span class='default'>Default: <code></code></span>
-</td>
+    <dt id='details_users'>
+      <strong>users</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>Array of users with full privileges on the database, users will be granted access from all their hosts. You can use any of the existing MySQL user</dd>
+    
+    
+  
 
-</tr>
+  
 
-
-        </table>
+        </dl>
       
     </dd>
     

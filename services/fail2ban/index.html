@@ -305,41 +305,32 @@ var Swiftype = window.Swiftype || {};
       Ban an IP address to a service (known to fail2ban)
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type string'>string</span> ip</code>
   
-</td>
-<td class='description'>
-  IP address of the host to ban
+    <dt id='details_ip'>
+      <strong>ip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>IP address of the host to ban</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> jail</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  The service to ban the IP address from
   
-  <span class='default'>Default: <code>ssh</code></span>
-</td>
+    <dt id='details_jail'>
+      <strong>jail</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The service to ban the IP address from</dd>
+    <dd class='default'>Default: <code>ssh</code></dd>
+    
+  
 
-</tr>
+  
 
-
-        </table>
+        </dl>
       
     </dd>
     
@@ -350,41 +341,32 @@ var Swiftype = window.Swiftype || {};
       Lift a ban from an IP address to a service (known to fail2ban)
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type string'>string</span> ip</code>
   
-</td>
-<td class='description'>
-  IP address of the host to unban
+    <dt id='details_ip'>
+      <strong>ip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>IP address of the host to unban</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> jail</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  The service to unban the IP address from
   
-  <span class='default'>Default: <code>ssh</code></span>
-</td>
+    <dt id='details_jail'>
+      <strong>jail</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The service to unban the IP address from</dd>
+    <dd class='default'>Default: <code>ssh</code></dd>
+    
+  
 
-</tr>
+  
 
-
-        </table>
+        </dl>
       
     </dd>
     

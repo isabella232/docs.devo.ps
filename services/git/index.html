@@ -272,54 +272,43 @@ var Swiftype = window.Swiftype || {};
       Clone or update a git repository
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type string'>string</span> dest</code>
   
-</td>
-<td class='description'>
-  Folder where repository is cloned on the node
+    <dt id='details_dest'>
+      <strong>dest</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Folder where repository is cloned on the node</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> repo</code>
   
-</td>
-<td class='description'>
-  URL of the git repository (http or ssh)
+    <dt id='details_repo'>
+      <strong>repo</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>URL of the git repository (http or ssh)</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> version</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  Version of the repository to checkout (HEAD, SHA-1, branch or tag name)
   
-  <span class='default'>Default: <code>HEAD</code></span>
-</td>
+    <dt id='details_version'>
+      <strong>version</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Version of the repository to checkout (HEAD, SHA-1, branch or tag name)</dd>
+    <dd class='default'>Default: <code>HEAD</code></dd>
+    
+  
 
-</tr>
+  
 
-
-        </table>
+        </dl>
       
     </dd>
     
@@ -330,54 +319,43 @@ var Swiftype = window.Swiftype || {};
       Set git user configuration either globally or for a repo defined by its path on the system
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type string'>string</span> email</code>
   
-</td>
-<td class='description'>
-  Email address of the user used to perform the commits
+    <dt id='details_email'>
+      <strong>email</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Email address of the user used to perform the commits</dd>
+    
+    <dd class='required'>Required</dd>
   
-  
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> path</code>
-  <span class='optional'>Optional</span>
-</td>
-<td class='description'>
-  Path of the repo on the host where to set the git configuration, if no `path` provided perform a global setup
   
+
   
-</td>
-
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> user</code>
+    <dt id='details_path'>
+      <strong>path</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Path of the repo on the host where to set the git configuration, if no `path` provided perform a global setup</dd>
+    
+    
   
-</td>
-<td class='description'>
-  Full name of the user that will perform commits
+
   
+
   
-</td>
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Full name of the user that will perform commits</dd>
+    
+    <dd class='required'>Required</dd>
+  
 
-</tr>
+  
 
-
-        </table>
+        </dl>
       
     </dd>
     
@@ -388,54 +366,43 @@ var Swiftype = window.Swiftype || {};
       Commit and push the content of a folder to a remote repository
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type string'>string</span> branch</code>
   
-</td>
-<td class='description'>
-  Remote branch to push the source content to (will be removed)
+    <dt id='details_branch'>
+      <strong>branch</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Remote branch to push the source content to (will be removed)</dd>
+    
+    <dd class='required'>Required</dd>
   
-  
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> repo</code>
   
-</td>
-<td class='description'>
-  Local folder where the repository is located
-  
-  
-</td>
 
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> source</code>
   
-</td>
-<td class='description'>
-  Source folder within the repo where the content to push is
+    <dt id='details_repo'>
+      <strong>repo</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Local folder where the repository is located</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
-</td>
 
-</tr>
+  
+    <dt id='details_source'>
+      <strong>source</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Source folder within the repo where the content to push is</dd>
+    
+    <dd class='required'>Required</dd>
+  
 
+  
 
-        </table>
+        </dl>
       
     </dd>
     

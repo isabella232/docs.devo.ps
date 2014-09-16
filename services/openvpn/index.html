@@ -308,74 +308,62 @@ var Swiftype = window.Swiftype || {};
       Add OpenVPN client users and send credentials by email
       
         <h3>Options</h3>
-        <table>
-        <tr>
-          <th>Key</th>
-          <th>Description</th>
-        </tr>
+        <dl class='list'>
           
           
-<tr>
-<td>
-  <code><span class='type array'>array</span> users</code>
   
-</td>
-<td class='description'>
-  list of user objects
+    <dt id='details_users'>
+      <strong>users</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>list of user objects</dd>
+    
+    <dd class='required'>Required</dd>
   
-  
-</td>
 
   
     
+      
+    
+    
+    
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
   
+    <dt id='details_email'>
+      user.<strong>email</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The email address to send the credentials to</dd>
+    
+    <dd class='required'>Required</dd>
   
+
   
+
+  
+    <dt id='details_name'>
+      user.<strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The client name (ex. bob, alice)</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+      </dl>
+    
     
   
 
-  
-  
-    
-  
-
-<table>
-  
-<tr>
-<td>
-  <code><span class='type string'>string</span> email</code>
-  
-</td>
-<td class='description'>
-  The email address to send the credentials to
-  <span class='default'>Valid values: email address</span>
-  
-</td>
-
-</tr>
-
-<tr>
-<td>
-  <code><span class='type string'>string</span> name</code>
-  
-</td>
-<td class='description'>
-  The client name (ex. bob, alice)
-  
-  
-</td>
-
-</tr>
-
-
-</table>
-
-  
-
-</tr>
-
-
-        </table>
+        </dl>
       
     </dd>
     
