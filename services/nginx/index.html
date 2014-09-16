@@ -415,6 +415,7 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
 </tr>
 
 <tr>
@@ -427,6 +428,7 @@ var Swiftype = window.Swiftype || {};
   
   <span class='default'>Default: <code>_</code></span>
 </td>
+
 </tr>
 
 <tr>
@@ -439,6 +441,7 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
 </tr>
 
 <tr>
@@ -451,6 +454,7 @@ var Swiftype = window.Swiftype || {};
   
   <span class='default'>Default: <code>index.html index.htm</code></span>
 </td>
+
 </tr>
 
 <tr>
@@ -463,6 +467,7 @@ var Swiftype = window.Swiftype || {};
   
   <span class='default'>Default: <code>80</code></span>
 </td>
+
 </tr>
 
 <tr>
@@ -475,6 +480,92 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
+  
+    
+  
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+<table>
+  
+<tr>
+<td>
+  <code><span class='type string'>string</span> custom</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  Custom inline nginx config to include within the route (e.g. auth, custom timeout)
+  
+  
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> static</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  For type static only, define how to consider the source folder - alias or root
+  <span class='default'>Valid values: Either of alias / root</span>
+  <span class='default'>Default: <code>root</code></span>
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> to</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  Either an upstream name, or a service / url, or a path
+  
+  
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> type</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  The type of handler for that route
+  <span class='default'>Valid values: Either of proxy / fastcgi / websocket / uwsgi / static / custom</span>
+  <span class='default'>Default: <code>custom</code></span>
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> uri</code>
+  
+</td>
+<td class='description'>
+  Any string / regex that nginx understand as a `location`
+  <span class='default'>Valid values: Any string including regex</span>
+  
+</td>
+
+</tr>
+
+
+</table>
+
+  
+
 </tr>
 
 <tr>
@@ -487,6 +578,49 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
+  
+  
+  
+    
+  
+
+  
+  
+
+<table>
+  
+<tr>
+<td>
+  <code><span class='type string'>string</span> certificate</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  HTTPS certificate file path (chained if needed)
+  
+  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></span>
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> private_key</code>
+  <span class='optional'>Optional</span>
+</td>
+<td class='description'>
+  Private key file path used to generate the certificate (password-less)
+  
+  <span class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></span>
+</td>
+
+</tr>
+
+
+</table>
+
+  
+
 </tr>
 
 <tr>
@@ -499,6 +633,51 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
+  
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+<table>
+  
+<tr>
+<td>
+  <code><span class='type array'>array</span> backends</code>
+  
+</td>
+<td class='description'>
+  List of backends associated with the upstream
+  
+  
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <code><span class='type string'>string</span> name</code>
+  
+</td>
+<td class='description'>
+  Name of the upstream - it must be unique on the entire node
+  
+  
+</td>
+
+</tr>
+
+
+</table>
+
+  
+
 </tr>
 
 <tr>
@@ -511,7 +690,9 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
 </tr>
+
 
         </table>
       
@@ -541,6 +722,7 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
 </tr>
 
 <tr>
@@ -553,7 +735,9 @@ var Swiftype = window.Swiftype || {};
   
   
 </td>
+
 </tr>
+
 
         </table>
       
@@ -902,8 +1086,6 @@ var Swiftype = window.Swiftype || {};
   
 
   
-    
-      
     
     
     
