@@ -297,77 +297,59 @@ var Swiftype = window.Swiftype || {};
     <dd>
       Add a new app defintion for foreverd to run
       
-        <h3>Options</h3>
-        <dl class='list'>
-          
-          
-  
-    <dt id='details_extra_env'>
-      <strong>extra_env</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>additional environment variable to pass to the application</dd>
-    
-    
-  
-
-  
-
-  
-    <dt id='details_name'>
-      <strong>name</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>name of your app</dd>
-    
-    <dd class='required'>Required</dd>
-  
-
-  
-
-  
-    <dt id='details_node_env'>
-      <strong>node_env</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>node.js environment var NODE_ENV</dd>
-    
-    
-  
-
-  
-
-  
-    <dt id='details_root'>
-      <strong>root</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>path of the root folder of your app</dd>
-    
-    <dd class='required'>Required</dd>
-  
-
-  
-
-  
-    <dt id='details_script'>
-      <strong>script</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>node.js script to run via foreverd</dd>
-    
-    <dd class='required'>Required</dd>
-  
-
-  
-
-  
-    <dt id='details_user'>
-      <strong>user</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>running user of the application</dd>
-    <dd class='default'>Default: <code>devops</code></dd>
-    
-  
-
-  
-
-        </dl>
+        <h3>Arguments</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>extra_env</td>
+              <td class='type'>string</td>
+              <td class='description'>additional environment variable to pass to the application</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>name</td>
+              <td class='type'>string</td>
+              <td class='description'>name of your app</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>node_env</td>
+              <td class='type'>string</td>
+              <td class='description'>node.js environment var NODE_ENV</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>root</td>
+              <td class='type'>string</td>
+              <td class='description'>path of the root folder of your app</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>script</td>
+              <td class='type'>string</td>
+              <td class='description'>node.js script to run via foreverd</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>user</td>
+              <td class='type'>string</td>
+              <td class='description'>running user of the application</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
       
     </dd>
     
