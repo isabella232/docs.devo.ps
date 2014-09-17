@@ -32,11 +32,24 @@
     <dd>
       {{ task.description | safe }}
       {% if task.options %}
-        <h3>Options</h3>
-        <dl class='list'>
-          {% set tree = task.options %}
-          {% include 'partials/_list_tree.html' %}
-        </dl>
+        <h3>Arguments</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            {% for option in task.options %}
+            <tr>
+              <td class='name'>{{ loop.key }}</td>
+              <td class='type'>{% if option.type %}{{ option.type }}{% endif %}</td>
+              <td class='description'>{% if option.description %}{{ option.description }}{% endif %}</td>
+              <td class='required'>{% if option.required %}Required{% endif %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       {% endif %}
     </dd>
     {% endfor %}

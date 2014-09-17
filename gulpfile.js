@@ -24,7 +24,7 @@ var siteCSS = site.assets.vendor.css.concat(site.assets.custom.css);
  * Tasks
  */
 gulp.task('prepare', function(callback) {
-    mkdirp(site.destination, callback);
+    return mkdirp(site.destination, callback);
 });
 
 gulp.task('clean', function() {

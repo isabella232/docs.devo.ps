@@ -264,6 +264,21 @@ code,
         border: 1px solid $black;
         color: #FFF;
       }
+      h3 {
+        font-size: inherit;
+        margin: 0 0 $gutter/2;
+      }
+      table {
+        .name {
+          font-weight: bold;
+        }
+        .type {
+          color: $purple;
+        }
+        .required {
+          color: $red;
+        }
+      }
     }
     ul.mock {
       background: $light;

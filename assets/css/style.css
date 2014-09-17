@@ -1477,6 +1477,15 @@ code .type, .code .type {
       border-radius: 2px;
       border: 1px solid #203442;
       color: #FFF; }
+    #main .content dl.commands h3 {
+      font-size: inherit;
+      margin: 0 0 10px; }
+    #main .content dl.commands table .name {
+      font-weight: bold; }
+    #main .content dl.commands table .type {
+      color: #8B66CB; }
+    #main .content dl.commands table .required {
+      color: #FF5F5F; }
     #main .content ul.mock {
       background: #fafafb;
       border: 1px solid #dde0e2;
