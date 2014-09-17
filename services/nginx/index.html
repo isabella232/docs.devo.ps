@@ -260,21 +260,6 @@ var Swiftype = window.Swiftype || {};
 
 <section class='body'>
   <p>Nginx is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a Web server.</p>
-<h2 id="vhosts">vhosts</h2>
-<p>Save for a few settings, you&#39;ll most likely end up adding vhosts to your Nginx configuration.</p>
-<p>In a nutshell, each vhost defines a directory of files, where your application or Web site resides, and a list of domains associated with it. Whenever you add a vhost, we&#39;ll create a Web root associated with its id: <code>var/www/{vhost_id}</code> where <code>{vhost_id}</code> is the id of your vhost.</p>
-<p><em>You can use the <code>webroot</code> if you&#39;re serving files out of a sub-folder of the default Web root. For example, if you serve files out of the <code>public/</code> subfolder of your app, adding the <code>webroot: public</code> to your vhost will make it serve files out of the <code>/var/www/my_vhost/public</code> folder.</em></p>
-<h2 id="routes">Routes</h2>
-<p>Routes allow you to define a list of ways to handle different types of requests, based on the <code>uri</code> (order matter, first routes in the list have precedence). These routes have a <code>type</code> attribute:</p>
-<ul>
-<li><code>custom</code> (default): routes of this type have a <code>custom</code> attribute that will take the content of a regular <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">Nginx location block</a>.</li>
-<li><code>fastcgi</code>: sends requests to a fastcgi backend or upstream. Common for <strong>PHP apps</strong>.</li>
-<li><code>proxy</code>: sends requests to a http proxy (local or remote). Common for <strong>node.js apps</strong>.</li>
-<li><code>websocket</code>: assumes requests are handled as websocket traffic.</li>
-<li><code>uwsgi</code>: sends requests to a uwsgi service. Common for <strong>Python apps</strong>.</li>
-<li><code>static</code>: serves files as static assets without any processing.</li>
-</ul>
-<p><em><strong>You can add supported technologies with the <code>support</code> attribute</strong>. This attribute willl help your vhost figure out what index to serve. By default it includes <code>index.html</code> and <code>index.html</code>, adding <code>php</code> to <code>support</code> will extend it to <code>index.php</code>.</em></p>
 <h2 id="examples">Examples</h2>
 <ul>
 <li><h3 id="php-app">PHP app</h3>
@@ -351,6 +336,21 @@ var Swiftype = window.Swiftype || {};
 </code></pre>
 </li>
 </ul>
+<h2 id="vhosts">vhosts</h2>
+<p>Save for a few settings, you&#39;ll most likely end up adding vhosts to your Nginx configuration.</p>
+<p>In a nutshell, each vhost defines a directory of files, where your application or Web site resides, and a list of domains associated with it. Whenever you add a vhost, we&#39;ll create a Web root associated with its id: <code>var/www/{vhost_id}</code> where <code>{vhost_id}</code> is the id of your vhost.</p>
+<p><em>You can use the <code>webroot</code> if you&#39;re serving files out of a sub-folder of the default Web root. For example, if you serve files out of the <code>public/</code> subfolder of your app, adding the <code>webroot: public</code> to your vhost will make it serve files out of the <code>/var/www/my_vhost/public</code> folder.</em></p>
+<h2 id="routes">Routes</h2>
+<p>Routes allow you to define a list of ways to handle different types of requests, based on the <code>uri</code> (order matter, first routes in the list have precedence). These routes have a <code>type</code> attribute:</p>
+<ul>
+<li><code>custom</code> (default): routes of this type have a <code>custom</code> attribute that will take the content of a regular <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">Nginx location block</a>.</li>
+<li><code>fastcgi</code>: sends requests to a fastcgi backend or upstream. Common for <strong>PHP apps</strong>.</li>
+<li><code>proxy</code>: sends requests to a http proxy (local or remote). Common for <strong>node.js apps</strong>.</li>
+<li><code>websocket</code>: assumes requests are handled as websocket traffic.</li>
+<li><code>uwsgi</code>: sends requests to a uwsgi service. Common for <strong>Python apps</strong>.</li>
+<li><code>static</code>: serves files as static assets without any processing.</li>
+</ul>
+<p><em><strong>You can add supported technologies with the <code>support</code> attribute</strong>. This attribute willl help your vhost figure out what index to serve. By default it includes <code>index.html</code> and <code>index.html</code>, adding <code>php</code> to <code>support</code> will extend it to <code>index.php</code>.</em></p>
 
 </section>
 
@@ -407,9 +407,9 @@ var Swiftype = window.Swiftype || {};
           <tbody>
             
             <tr>
-              <td class='name'>vhost</td>
+              <td class='name'>id</td>
               <td class='type'>object</td>
-              <td class='description'>A vhost object (as defined in the configuration)</td>
+              <td class='description'>Adds a virtual host. Use the same attributes as for a vhost in the configuration.</td>
               <td class='required'>Required</td>
             </tr>
             
