@@ -3,7 +3,7 @@ title: CLI
 experimental: true
 ---
 
-The CLI (Command Line Interface) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server or listing your repositories.
+The Command Line Interface (CLI) lets you interact with devo. directly from your terminal. It allows you do everything that you can do through the Web UI: triggering tasks, monitoring the status of a server or listing your repositories.
 
 ## Installation
 
