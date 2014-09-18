@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-  <title>Vagrant | devo.ps documentation</title>
+  <title>Meteor | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, virtualbox, vm'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, app, framework'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -211,7 +211,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/memcached' >Memcached</a>
 
-<a href='/services/meteor' >Meteor</a>
+<a href='/services/meteor'  class='active'>Meteor</a>
 
 <a href='/services/mongodb' >MongoDB</a>
 
@@ -237,7 +237,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/uwsgi' >uWSGI</a>
 
-<a href='/services/vagrant'  class='active'>Vagrant</a>
+<a href='/services/vagrant' >Vagrant</a>
 
 <a href='/services/varnish' >Varnish</a>
 
@@ -254,19 +254,39 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>virtualbox</li>
+      <li>app</li>
     
-      <li>vm</li>
+      <li>framework</li>
     
   </ul>
 
-  <h1>Vagrant 
-  <a href='http://docs.vagrantup.com/v2/'><span>Official documentation</span></a>
+  <h1>Meteor 
+  <a href='http://docs.meteor.com'><span>Official documentation</span></a>
   </h1>  
 </header>
 
 <section class='body'>
-  
+  <p>Meteor is an ultra-simple environment for building modern websites. What once took weeks, even with the best tools, now takes hours with Meteor.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><h3 id="meteor-application">Meteor application</h3>
+<pre><code class="lang-example">services:
+  meteor: &#39;*&#39;
+  nodejs: &#39;*&#39;
+  mongodb: &#39;*&#39;
+
+configuration:
+  mongodb:
+    users:
+      - name: meteor
+        databases:
+          - meteor
+</code></pre>
+<p>You need to explicitely define both <code>meteor</code> and <code>nodejs</code> as services available on your node. </p>
+<p>The snippet above will install meteor, nodejs and mongodb. It also will create a meteor user with admin access to a meteor database. Check the service documentation for more details about <a href="/services/mongodb/">MongoDB settings</a></p>
+</li>
+</ul>
+
 </section>
 
 
