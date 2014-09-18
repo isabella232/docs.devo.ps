@@ -13,23 +13,9 @@ if [ -z "$COMMIT_MSG" ]; then
 fi
 
 TMP_FOLDER=$(mktemp -d)
-# TMP_FOLDER2=$(mktemp -d)
 
-# cd $TMP_FOLDER
-# echo "Fetching services / providers details"
-# git clone --branch docs git@github.com:devo-ps/devops-ansible.git
-
-# #
-# # Copy wiki to manual
-# #
-# cd devops-ansible
-# cp -a * $HERE/source/
-
-#
 # Prepare the menu data file
-#
 cd $HERE
-# python build/prepare_menu.py
 mkdir public
 make build
 
@@ -49,4 +35,3 @@ git push
 
 # Cleanup
 rm -rf $TMP_FOLDER
-# rm -rf $TMP_FOLDER2
