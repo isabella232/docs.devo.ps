@@ -80,7 +80,7 @@ gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts']
         metalsmith.use(plugin(opts));
     });
 
-    metalsmith.build(function(err){
+    return metalsmith.build(function(err){
         if (err) return callback(err);
         callback();
     });
