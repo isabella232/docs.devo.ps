@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-  <title>MongoDB | devo.ps documentation</title>
+  <title>Supervisor | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, database, nosql'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, messagebus'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -215,7 +215,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/meteor' >Meteor</a>
 
-<a href='/services/mongodb'  class='active'>MongoDB</a>
+<a href='/services/mongodb' >MongoDB</a>
 
 <a href='/services/mysql' >MySQL</a>
 
@@ -237,7 +237,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/server' >Server</a>
 
-<a href='/services/supervisor' >Supervisor</a>
+<a href='/services/supervisor'  class='active'>Supervisor</a>
 
 <a href='/services/uwsgi' >uWSGI</a>
 
@@ -258,14 +258,12 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>database</li>
-    
-      <li>nosql</li>
+      <li>messagebus</li>
     
   </ul>
 
-  <h1>MongoDB 
-  <a href='http://docs.mongodb.org/manual/'><span>Official documentation</span></a>
+  <h1>Supervisor 
+  <a href='http://supervisord.org/configuration.html'><span>Official documentation</span></a>
   </h1>  
 </header>
 
@@ -279,42 +277,34 @@ var Swiftype = window.Swiftype || {};
   <dl class='commands'>
     
     <dt>
-      devops mongodb start
+      devops supervisor restart
     </dt>
     <dd>
-      Start MongoDB if stopped
+      Restart the Supervisor service.
       
     </dd>
     
     <dt>
-      devops mongodb stop
+      devops supervisor start
     </dt>
     <dd>
-      Stop MongoDB if started
+      Start the Supervisor service if stopped.
       
     </dd>
     
     <dt>
-      devops mongodb reload
+      devops supervisor stop
     </dt>
     <dd>
-      Reload MongoDB, reload the configuration and perform a graceful restart
+      Stop the Supervisor service if running.
       
     </dd>
     
     <dt>
-      devops mongodb restart
+      devops supervisor program add
     </dt>
     <dd>
-      Restart MongoDB, reload the configuration (but kills existing connection)
-      
-    </dd>
-    
-    <dt>
-      devops mongodb user add
-    </dt>
-    <dd>
-      Adds a MongoDB database admin user.
+      Add a new program to Supervisor.
       
         <h3>Options</h3>
         <table>
@@ -327,16 +317,79 @@ var Swiftype = window.Swiftype || {};
           <tbody>
             
             <tr>
-              <td class='name'>databases</td>
-              <td class='type'>array</td>
-              <td class='description'>Array of database names the user will become an admin of</td>
+              <td class='name'>autostart</td>
+              <td class='type'>boolean</td>
+              <td class='description'>Choose whether the application should be executed automatically on start.</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>command</td>
+              <td class='type'>string</td>
+              <td class='description'>Command to execute. It must be executed in foreground.</td>
               <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>env</td>
+              <td class='type'>string</td>
+              <td class='description'>Space separated list of environment variables to provide to the command on execution.</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>extra</td>
+              <td class='type'>string</td>
+              <td class='description'>Any parameter (line seperated) supported by Supervisor for the programs (http://supervisord.org/configuration.html#program-x-section-settings)</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>log</td>
+              <td class='type'>object</td>
+              <td class='description'>Log related details.</td>
+              <td class='required'></td>
             </tr>
             
             <tr>
               <td class='name'>name</td>
               <td class='type'>string</td>
-              <td class='description'>User name</td>
+              <td class='description'>Name of the program to add.</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>user</td>
+              <td class='type'>string</td>
+              <td class='description'>Running user for the command.</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+    <dt>
+      devops supervisor program remove
+    </dt>
+    <dd>
+      Remove an existing program from Supervisor.
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>name</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the program to remove. It should match one that was previously created.</td>
               <td class='required'>Required</td>
             </tr>
             
@@ -346,10 +399,10 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      devops mongodb database add
+      devops supervisor program restart
     </dt>
     <dd>
-      Adds a database and the read-write users
+      Restart a program managed by Supervisor.
       
         <h3>Options</h3>
         <table>
@@ -364,15 +417,64 @@ var Swiftype = window.Swiftype || {};
             <tr>
               <td class='name'>name</td>
               <td class='type'>string</td>
-              <td class='description'>Database name</td>
+              <td class='description'>Name of the program to restart.</td>
               <td class='required'>Required</td>
             </tr>
             
+          </tbody>
+        </table>
+      
+    </dd>
+    
+    <dt>
+      devops supervisor program start
+    </dt>
+    <dd>
+      Start a program managed by Supervisor.
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
             <tr>
-              <td class='name'>users</td>
-              <td class='type'>array</td>
-              <td class='description'>Array of users with read-write privileges on the database.</td>
-              <td class='required'></td>
+              <td class='name'>name</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the program to start.</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+    <dt>
+      devops supervisor program stop
+    </dt>
+    <dd>
+      Stop a program managed by Supervisor.
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>name</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the program to stop.</td>
+              <td class='required'>Required</td>
             </tr>
             
           </tbody>
@@ -393,15 +495,24 @@ var Swiftype = window.Swiftype || {};
       <strong>configuration</strong>:
       <ul>
         <li>
-          <strong>mongodb</strong>:
+          <strong>supervisor</strong>:
           <ul class='content'>
             
             
 
 <li>
-  <a href='#details_bindip'>
-    <strong>bindip</strong>:
-    <i>127.0.0.1</i>
+  <a href='#details_inet'>
+    <strong>inet</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_nodaemon'>
+    <strong>nodaemon</strong>:
+    <i class='empty'>no default value</i>
   </a>
 </li>
 
@@ -409,90 +520,62 @@ var Swiftype = window.Swiftype || {};
 
 <li>
   
-  <a href='#details_databases'>
-    <strong>databases</strong>:
+  <a href='#details_programs'>
+    <strong>programs</strong>:
   </a>
   <ul class='array'>
     
     
+
+<li>
+  <a href='#details_autostart'>
+    <strong>autostart</strong>:
+    <i>true</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_command'>
+    <strong>command</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_env'>
+    <strong>env</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_extra'>
+    <strong>extra</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_log'>
+    <strong>log</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
 
 <li>
   <a href='#details_name'>
     <strong>name</strong>:
     <i class='empty'>no default value</i>
-  </a>
-</li>
-
-
-
-<li>
-  
-  <a href='#details_users'>
-    <strong>users</strong>:
-  </a>
-  <ul class='array'>
-    
-    
-  </ul>
-  
-</li>
-
-
-  </ul>
-  
-</li>
-
-
-
-<li>
-  <a href='#details_dbpath'>
-    <strong>dbpath</strong>:
-    <i>/var/lib/mongodb</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_enable'>
-    <strong>enable</strong>:
-    <i>yes</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_enable_rest'>
-    <strong>enable_rest</strong>:
-    <i class='empty'>no default value</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_logpath'>
-    <strong>logpath</strong>:
-    <i>/var/log/mongodb/mongodb.log</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_nohttp'>
-    <strong>nohttp</strong>:
-    <i>false</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_port'>
-    <strong>port</strong>:
-    <i>27017</i>
   </a>
 </li>
 
@@ -501,39 +584,7 @@ var Swiftype = window.Swiftype || {};
 <li>
   <a href='#details_user'>
     <strong>user</strong>:
-    <i>mongodb</i>
-  </a>
-</li>
-
-
-
-<li>
-  
-  <a href='#details_users'>
-    <strong>users</strong>:
-  </a>
-  <ul class='array'>
-    
-    
-
-<li>
-  
-  <a href='#details_databases'>
-    <strong>databases</strong>:
-  </a>
-  <ul class='array'>
-    
-    
-  </ul>
-  
-</li>
-
-
-
-<li>
-  <a href='#details_name'>
-    <strong>name</strong>:
-    <i class='empty'>no default value</i>
+    <i>root</i>
   </a>
 </li>
 
@@ -553,21 +604,10 @@ var Swiftype = window.Swiftype || {};
     
     
   
-    <dt id='details_bindip'>
-      <strong>bindip</strong> <span class='type'>string</span>
+    <dt id='details_inet'>
+      <strong>inet</strong> <span class='type'>object</span>
     </dt>
-    <dd class='description'>Binding IP address.</dd>
-    <dd class='default'>Default: <code>127.0.0.1</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_databases'>
-      <strong>databases</strong> <span class='type'>array</span>
-    </dt>
-    <dd class='description'>Array of databases, defines a database and the list of users with only read-write access</dd>
+    <dd class='description'>Enable HTTP support for managing Supervisor (not enabled by default)</dd>
     
     
   
@@ -583,27 +623,36 @@ var Swiftype = window.Swiftype || {};
 
     
       
-      
-        
       
       <dl>
         
   
-    <dt id='details_name'>
-      database.<strong>name</strong> <span class='type'>string</span>
+    <dt id='details_password'>
+      inet.<strong>password</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Database name</dd>
+    <dd class='description'>The password required for authentication to this HTTP server. This can be a cleartext password, or can be specified as a SHA-1 hash if prefixed by the string {SHA}</dd>
     
-    <dd class='required'>Required</dd>
+    
   
 
   
 
   
-    <dt id='details_users'>
-      database.<strong>users</strong> <span class='type'>array</span>
+    <dt id='details_port'>
+      inet.<strong>port</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Array of users with read-write privileges on the database. If the user does not exist it will be created. Do not specify users that are already admin of the database or they will loose their admin privileges.</dd>
+    <dd class='description'>A TCP host:port value or (e.g. 127.0.0.1:9001) on which supervisor will listen for HTTP/XML-RPC requests</dd>
+    <dd class='default'>Default: <code>127.0.0.1:9001</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_username'>
+      inet.<strong>username</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Username required for authentication to this HTTP server.</dd>
     
     
   
@@ -616,32 +665,10 @@ var Swiftype = window.Swiftype || {};
   
 
   
-    <dt id='details_dbpath'>
-      <strong>dbpath</strong> <span class='type'>string</span>
+    <dt id='details_nodaemon'>
+      <strong>nodaemon</strong> <span class='type'>boolean</span>
     </dt>
-    <dd class='description'>Database files path.</dd>
-    <dd class='default'>Default: <code>/var/lib/mongodb</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_enable'>
-      <strong>enable</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Enable or disable mongodb service.</dd>
-    <dd class='default'>Default: <code>yes</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_enable_rest'>
-      <strong>enable_rest</strong> <span class='type'>boolean</span>
-    </dt>
-    <dd class='description'>Enable REST over the HTTP interface</dd>
+    <dd class='description'>Define whether or not run the Supervisor service as a daemon or not</dd>
     
     
   
@@ -649,54 +676,10 @@ var Swiftype = window.Swiftype || {};
   
 
   
-    <dt id='details_logpath'>
-      <strong>logpath</strong> <span class='type'>string</span>
+    <dt id='details_programs'>
+      <strong>programs</strong> <span class='type'>array</span>
     </dt>
-    <dd class='description'>Database log file path.</dd>
-    <dd class='default'>Default: <code>/var/log/mongodb/mongodb.log</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_nohttp'>
-      <strong>nohttp</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Disable entirely the HTTP interface.</dd>
-    <dd class='default'>Default: <code>false</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_port'>
-      <strong>port</strong> <span class='type'>integer</span>
-    </dt>
-    <dd class='description'>Connection port.</dd>
-    <dd class='default'>Default: <code>27017</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_user'>
-      <strong>user</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Mongodb running user.</dd>
-    <dd class='default'>Default: <code>mongodb</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_users'>
-      <strong>users</strong> <span class='type'>array</span>
-    </dt>
-    <dd class='description'>Array of MongoDB admin db users. Passwords are randomly generated. A global admin user (named admin) is created automatically. The users defined here will be admin users of their respective databases</dd>
+    <dd class='description'>array of programs managed by Supervisor</dd>
     
     
   
@@ -716,23 +699,116 @@ var Swiftype = window.Swiftype || {};
       <dl>
         
   
-    <dt id='details_databases'>
-      user.<strong>databases</strong> <span class='type'>array</span>
+    <dt id='details_autostart'>
+      program.<strong>autostart</strong> <span class='type'>boolean</span>
     </dt>
-    <dd class='description'>Array of database names where the user will be an admin</dd>
+    <dd class='description'>Choose whether the application should be executed automatically on start.</dd>
+    <dd class='default'>Default: <code>true</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_command'>
+      program.<strong>command</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Command to execute. It must be executed in foreground.</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+  
+    <dt id='details_env'>
+      program.<strong>env</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Space separated list of environment variables to provide to the command on execution.</dd>
     
     
   
 
+  
+
+  
+    <dt id='details_extra'>
+      program.<strong>extra</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Any parameter (line seperated) supported by Supervisor for the programs (http://supervisord.org/configuration.html#program-x-section-settings)</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_log'>
+      program.<strong>log</strong> <span class='type'>object</span>
+    </dt>
+    <dd class='description'>Log related details.</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+      <dl>
+        
+  
+    <dt id='details_stderr'>
+      program.log.<strong>stderr</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Path to the log file that will save the command stderr</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_stdout'>
+      program.log.<strong>stdout</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Path to the log file that will save the command stdout</dd>
+    
+    
+  
+
+  
+
+      </dl>
+    
+    
   
 
   
     <dt id='details_name'>
-      user.<strong>name</strong> <span class='type'>string</span>
+      program.<strong>name</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>User name</dd>
+    <dd class='description'>Name of the program to add.</dd>
     
     <dd class='required'>Required</dd>
+  
+
+  
+
+  
+    <dt id='details_user'>
+      program.<strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Running user for the command.</dd>
+    <dd class='default'>Default: <code>root</code></dd>
+    
   
 
   
