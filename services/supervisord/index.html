@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Supervisor | devo.ps documentation</title>
+  <title>Supervisord | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
@@ -237,7 +237,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/server' >Server</a>
 
-<a href='/services/supervisor'  class='active'>Supervisor</a>
+<a href='/services/supervisord'  class='active'>Supervisord</a>
 
 <a href='/services/uwsgi' >uWSGI</a>
 
@@ -262,7 +262,7 @@ var Swiftype = window.Swiftype || {};
     
   </ul>
 
-  <h1>Supervisor 
+  <h1>Supervisord 
   <a href='http://supervisord.org/configuration.html'><span>Official documentation</span></a>
   </h1>  
 </header>
@@ -277,34 +277,34 @@ var Swiftype = window.Swiftype || {};
   <dl class='commands'>
     
     <dt>
-      devops supervisor restart
+      devops supervisord restart
     </dt>
     <dd>
-      Restart the Supervisor service.
+      Restart the Supervisord service.
       
     </dd>
     
     <dt>
-      devops supervisor start
+      devops supervisord start
     </dt>
     <dd>
-      Start the Supervisor service if stopped.
+      Start the Supervisord service if stopped.
       
     </dd>
     
     <dt>
-      devops supervisor stop
+      devops supervisord stop
     </dt>
     <dd>
-      Stop the Supervisor service if running.
+      Stop the Supervisord service if running.
       
     </dd>
     
     <dt>
-      devops supervisor program add
+      devops supervisord program add
     </dt>
     <dd>
-      Add a new program to Supervisor.
+      Add a new program to Supervisord.
       
         <h3>Options</h3>
         <table>
@@ -340,7 +340,7 @@ var Swiftype = window.Swiftype || {};
             <tr>
               <td class='name'>extra</td>
               <td class='type'>string</td>
-              <td class='description'>Any parameter (line seperated) supported by Supervisor for the programs (http://supervisord.org/configuration.html#program-x-section-settings)</td>
+              <td class='description'>Any parameter (line seperated) supported by Supervisord for the programs (http://supervisord.org/configuration.html#program-x-section-settings)</td>
               <td class='required'></td>
             </tr>
             
@@ -371,7 +371,7 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      devops supervisor program remove
+      devops supervisord program remove
     </dt>
     <dd>
       Remove an existing program from Supervisor.
@@ -399,10 +399,10 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      devops supervisor program restart
+      devops supervisord program restart
     </dt>
     <dd>
-      Restart a program managed by Supervisor.
+      Restart a program managed by Supervisord.
       
         <h3>Options</h3>
         <table>
@@ -427,10 +427,10 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      devops supervisor program start
+      devops supervisord program start
     </dt>
     <dd>
-      Start a program managed by Supervisor.
+      Start a program managed by Supervisord.
       
         <h3>Options</h3>
         <table>
@@ -455,10 +455,10 @@ var Swiftype = window.Swiftype || {};
     </dd>
     
     <dt>
-      devops supervisor program stop
+      devops supervisord program stop
     </dt>
     <dd>
-      Stop a program managed by Supervisor.
+      Stop a program managed by Supervisord.
       
         <h3>Options</h3>
         <table>
@@ -495,7 +495,7 @@ var Swiftype = window.Swiftype || {};
       <strong>configuration</strong>:
       <ul>
         <li>
-          <strong>supervisor</strong>:
+          <strong>supervisord</strong>:
           <ul class='content'>
             
             
@@ -607,7 +607,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_inet'>
       <strong>inet</strong> <span class='type'>object</span>
     </dt>
-    <dd class='description'>Enable HTTP support for managing Supervisor (not enabled by default)</dd>
+    <dd class='description'>Enable HTTP support for managing Supervisord (not enabled by default)</dd>
     
     
   
@@ -641,7 +641,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_port'>
       inet.<strong>port</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>A TCP host:port value or (e.g. 127.0.0.1:9001) on which supervisor will listen for HTTP/XML-RPC requests</dd>
+    <dd class='description'>A TCP host:port value or (e.g. 127.0.0.1:9001) on which Supervisord will listen for HTTP/XML-RPC requests</dd>
     <dd class='default'>Default: <code>127.0.0.1:9001</code></dd>
     
   
@@ -668,7 +668,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_nodaemon'>
       <strong>nodaemon</strong> <span class='type'>boolean</span>
     </dt>
-    <dd class='description'>Define whether or not run the Supervisor service as a daemon or not</dd>
+    <dd class='description'>Define whether or not run the Supervisord service as a daemon or not</dd>
     
     
   
@@ -679,7 +679,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_programs'>
       <strong>programs</strong> <span class='type'>array</span>
     </dt>
-    <dd class='description'>array of programs managed by Supervisor</dd>
+    <dd class='description'>array of programs managed by Supervisord</dd>
     
     
   
@@ -735,7 +735,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_extra'>
       program.<strong>extra</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Any parameter (line seperated) supported by Supervisor for the programs (http://supervisord.org/configuration.html#program-x-section-settings)</dd>
+    <dd class='description'>Any parameter (line seperated) supported by Supervisord for the programs (http://supervisord.org/configuration.html#program-x-section-settings)</dd>
     
     
   
