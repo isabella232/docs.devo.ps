@@ -1,7 +1,7 @@
 ---
 configuration:
   inet:
-    description: Enable HTTP support for managing Supervisor (not enabled by default)
+    description: Enable HTTP support for managing Supervisord (not enabled by default)
     options:
       password:
         default: null
@@ -12,7 +12,7 @@ configuration:
         type: string
       port:
         default: 127.0.0.1:9001
-        description: A TCP host:port value or (e.g. 127.0.0.1:9001) on which supervisor
+        description: A TCP host:port value or (e.g. 127.0.0.1:9001) on which Supervisord
           will listen for HTTP/XML-RPC requests
         required: false
         type: string
@@ -24,12 +24,13 @@ configuration:
     type: object
   nodaemon:
     default: false
-    description: Define whether or not run the Supervisor service as a daemon or not
+    description: Define whether or not run the Supervisord service as a daemon or
+      not
     required: false
     type: boolean
   programs:
     default: []
-    description: array of programs managed by Supervisor
+    description: array of programs managed by Supervisord
     options:
       autostart:
         default: true
@@ -48,7 +49,7 @@ configuration:
         required: false
         type: string
       extra:
-        description: Any parameter (line seperated) supported by Supervisor for the
+        description: Any parameter (line seperated) supported by Supervisord for the
           programs (http://supervisord.org/configuration.html#program-x-section-settings)
         required: false
         type: string
@@ -79,13 +80,13 @@ documentation: http://supervisord.org/configuration.html
 tags:
 - messagebus
 tasks:
-- description: Restart the Supervisor service.
+- description: Restart the Supervisord service.
   name: restart
-- description: Start the Supervisor service if stopped.
+- description: Start the Supervisord service if stopped.
   name: start
-- description: Stop the Supervisor service if running.
+- description: Stop the Supervisord service if running.
   name: stop
-- description: Add a new program to Supervisor.
+- description: Add a new program to Supervisord.
   name: program add
   options:
     autostart:
@@ -105,7 +106,7 @@ tasks:
       required: false
       type: string
     extra:
-      description: Any parameter (line seperated) supported by Supervisor for the
+      description: Any parameter (line seperated) supported by Supervisord for the
         programs (http://supervisord.org/configuration.html#program-x-section-settings)
       required: false
       type: string
@@ -139,27 +140,27 @@ tasks:
         created.
       required: true
       type: string
-- description: Restart a program managed by Supervisor.
+- description: Restart a program managed by Supervisord.
   name: program restart
   options:
     name:
       description: Name of the program to restart.
       required: true
       type: string
-- description: Start a program managed by Supervisor.
+- description: Start a program managed by Supervisord.
   name: program start
   options:
     name:
       description: Name of the program to start.
       required: true
       type: string
-- description: Stop a program managed by Supervisor.
+- description: Stop a program managed by Supervisord.
   name: program stop
   options:
     name:
       description: Name of the program to stop.
       required: true
       type: string
-title: Supervisor
+title: Supervisord
 
 ---
