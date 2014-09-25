@@ -1,7 +1,7 @@
 ---
 defaults:
   image:
-    id: 5141286
+    id: 6324931
     name: Ubuntu 14.04.1 64bit LTS
   location:
     id: 3
