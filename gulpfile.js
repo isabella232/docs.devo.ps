@@ -86,7 +86,18 @@ gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts']
     });
 });
 
-gulp.task('server', ['prepare', 'watch'], function(callback) {
+// Rerun the task when a file changes
+gulp.task('watch', function() {
+    gulp.watch(site.assets.custom.scss, ['sass']);
+    gulp.watch(siteJS, ['concat-js']);
+    gulp.watch(siteCSS, ['concat-css']);
+    gulp.watch(['./public/**/*', './assets/**/*.{png}', './templates/**/*', './source/**/*'], ['metalsmith']);
+});
+
+// The default task (called when you run `gulp` from cli)
+
+gulp.task('default', ['clean', 'metalsmith']);
+gulp.task('development', ['clean', 'metalsmith', 'prepare', 'watch'], function(callback) {
     var devApp, devServer, devAddress, devHost, url;
 
     devApp = connect()
@@ -117,16 +128,3 @@ gulp.task('server', ['prepare', 'watch'], function(callback) {
         callback(); // we're done with this task for now
     });
 });
-
-// Rerun the task when a file changes
-gulp.task('watch', function() {
-    gulp.watch(site.assets.custom.scss, ['sass']);
-    gulp.watch(siteJS, ['concat-js']);
-    gulp.watch(siteCSS, ['concat-css']);
-    gulp.watch(['./public/**/*', './assets/**/*.{png}', './templates/**/*', './source/**/*'], ['metalsmith']);
-});
-
-// The default task (called when you run `gulp` from cli)
-
-gulp.task('default', ['clean', 'metalsmith']);
-gulp.task('development', ['clean', 'metalsmith', 'server']);
