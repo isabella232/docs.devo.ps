@@ -6,32 +6,29 @@
 
 export HERE=$(pwd)
 
-COMMIT_MSG=$1
-if [ -z "$COMMIT_MSG" ]; then
-    # default commit message
-    COMMIT_MSG='New deployment'
-fi
+COMMIT="$COMMIT"
+MAIL="$EMAIL"
+DEST="$DEST"
+
+[ -z "$DEST" ] && DEST='gh-pages'
 
 TMP_FOLDER=$(mktemp -d)
 
-# Prepare the menu data file
-cd $HERE
-mkdir public
+echo -n "Running the build process... " >&2
 make build
+[ $? -eq 0 ] && echo "Success." >&2 || echo "Failed." >&2
 
-# Copy build files
-cp -a _site/* $TMP_FOLDER
+echo "Copying build result..." >&2
+cp -a _site $TMP_FOLDER 
 
-# Stash changes to allow branch switch
-git stash
-git checkout gh-pages
-git clean -f -d
-git clean -f -x
-git pull
-cp -a $TMP_FOLDER/* .
-git add .
-git commit -am "$COMMIT_MSG"
-git push
+echo "Resetting git repository and swithing branch..."  >&2
+git reset --hard && git checkout $DEST
 
-# Cleanup
+echo "Emptying destination branch, and populating with new build..." >&2
+git rm -r --ignore-unmatch * && cp -a $TMP_FOLDER/* .
+
+echo "Adding new build and pushing result to GitHub" >&2
+git add . && git commit -am "Build triggered by commit $COMMIT from $EMAIL" && git push origin $DEST
+
+echo "Removing build folder..." >&2
 rm -rf $TMP_FOLDER
