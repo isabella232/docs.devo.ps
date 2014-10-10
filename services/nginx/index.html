@@ -1,0 +1,1311 @@
+<!doctype html>
+<html>
+<head>
+  <title>Nginx | devo.ps documentation</title>
+  
+  <!-- Meta -->
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, web'/>
+  <meta name='description' content='Documentation for devo.ps'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='/assets/styles.css?0.1.0' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='wrapper'>
+      <span class='logo'><a href='http://devo.ps'>devo.ps</a> documentation</span>
+
+      <button class='toggle'>Menu</button>
+      <nav class='menu'>
+        <a href='https://www.hipchat.com/gyHEHtsXZ' target='_blank'>Chat with us</a>
+        <a href='http://docs.devo.ps'>Documentation</a>
+        <a href='http://devo.ps/about'>About</a>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://app.devo.ps' class='signin'>Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <button class='cancel'><span>Close</span></button>
+      <form class='swifttype'>
+  <input type='text' id='st-search-input' placeholder='Search by keyword'/>
+</form>
+<script type='text/javascript'>
+var Swiftype = window.Swiftype || {};
+  (function() {
+    Swiftype.key = 'nkPRs5W_yrQndsebXC-A';
+
+    /** DO NOT EDIT BELOW THIS LINE **/
+    var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+    script.src = '//s.swiftypecdn.com/embed.js';
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+  }());
+</script>
+      <nav class='menu'>
+        <a href='/' >Getting started</a>
+
+<h3>How to</h3>
+
+
+  
+
+  
+
+
+<a href='/how-to/add-a-server' >Add a server</a>
+
+<a href='/how-to/create-digitalocean-api-key' >Create Digital Ocean API key</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/profile' >Profile</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/ec2' >Amazon EC2</a>
+
+<a href='/providers/digitalocean' >Digital Ocean</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/services/apache' >Apache</a>
+
+<a href='/services/couchbase' >CouchBase</a>
+
+<a href='/services/couchdb' >CouchDB</a>
+
+<a href='/services/dart' >Dart</a>
+
+<a href='/services/docker' >Docker</a>
+
+<a href='/services/elasticsearch' >ElasticSearch</a>
+
+<a href='/services/fail2ban' >Fail2ban</a>
+
+<a href='/services/git' >Git</a>
+
+<a href='/services/go' >Go</a>
+
+<a href='/services/java' >Java</a>
+
+<a href='/services/memcached' >Memcached</a>
+
+<a href='/services/meteor' >Meteor</a>
+
+<a href='/services/mongodb' >MongoDB</a>
+
+<a href='/services/mysql' >MySQL</a>
+
+<a href='/services/nginx'  class='active'>Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
+
+<a href='/services/openvpn' >OpenVPN</a>
+
+<a href='/services/php' >PHP</a>
+
+<a href='/services/python' >Python</a>
+
+<a href='/services/rabbitmq' >RabbitMQ</a>
+
+<a href='/services/redis' >Redis</a>
+
+<a href='/services/ruby' >Ruby</a>
+
+<a href='/services/server' >Server</a>
+
+<a href='/services/supervisord' >Supervisord</a>
+
+<a href='/services/uwsgi' >uWSGI</a>
+
+<a href='/services/vagrant' >Vagrant</a>
+
+<a href='/services/varnish' >Varnish</a>
+
+<a href='/services/xvfb' >Xvfb</a>
+
+<a href='/services/zeromq' >ZeroMQ</a>
+
+      </nav>
+    </nav>
+
+    <section class='content'>
+      
+
+<header class='header'>
+  <ul class='tags'>
+    
+      <li>web</li>
+    
+  </ul>
+
+  <h1>Nginx 
+  <a href='http://wiki.nginx.org/Modules'><span>Official documentation</span></a>
+  </h1>  
+</header>
+
+<section class='body'>
+  <p>Nginx is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a Web server.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><h3 id="php-app">PHP app</h3>
+<pre><code class="lang-example">configuration:
+  nginx:
+    vhosts:
+      - id: my_vhost_php
+        domain: mydomain.com
+        indexes: index.php
+        routes:
+          - uri: &#39;~ \.php$&#39;
+            type: fastcgi
+            to: localhost:9001
+</code></pre>
+<p>We here define a vhost that will answer to the <code>mydomain.com</code> domain and will pass all requests which URL ends up with <code>.php</code> to a <code>fastcgi</code> process listening on <code>http://localhost:9001</code> (Typically a php-fpm process).</p>
+<p>This configuration will generate the following Nginx configuration file (also linked and enabled in <code>sites-enabled</code>):</p>
+<h4 id="-etc-nginx-sites-available-my_vhost_php">/etc/nginx/sites-available/my_vhost_php</h4>
+<pre><code class="lang-snippet">server {
+    listen   80;
+    root /var/www/my_vhost_php;
+
+    index index.php index.html index.htm;
+
+    access_log /var/log/nginx/my_vhost_php-access.log;
+    error_log /var/log/nginx/my_vhost_php-error.log;
+
+    # Make site accessible from http://localhost/
+    # server_name _;
+    server_name mydomain.com;
+
+    location ~ \.php$ {
+        # Route type: fastcgi
+        fastcgi_pass localhost:9001;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        # NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini
+        fastcgi_index index.php; 
+        include fastcgi_params;
+    }
+}
+</code></pre>
+</li>
+<li><h3 id="node-js-app">Node.js app</h3>
+<pre><code class="lang-example">configuration:
+  nginx:
+    vhosts:
+      - id: my_vhost_node
+        domain: mydomain.com
+        routes:
+          - uri: &#39;/&#39;
+            type: proxy
+            to: localhost:3000
+</code></pre>
+<p>We here define a vhost that will answer to the <code>mydomain.com</code> domain and will proxy all requests to a http process listening on <code>http://localhost:3000</code> (Typically your Node.js service).</p>
+<h4 id="-etc-nginx-sites-available-my_vhost_node">/etc/nginx/sites-available/my_vhost_node</h4>
+<pre><code class="lang-snippet">server {
+    listen   80;
+    root /var/www/my_vhost_node;
+
+    index index.html index.htm;
+
+    access_log /var/log/nginx/my_vhost_node-access.log;
+    error_log /var/log/nginx/my_vhost_node-error.log;
+
+    # Make site accessible from http://localhost/
+    # server_name _;
+    server_name mydomain.com;
+
+    location / {
+        # Route type: proxy
+        proxy_pass localhost:3000;
+        proxy_pass_header Set-Cookie;
+    }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="vhosts">vhosts</h2>
+<p>Save for a few settings, you&#39;ll most likely end up adding vhosts to your Nginx configuration.</p>
+<p>In a nutshell, each vhost defines a directory of files, where your application or Web site resides, and a list of domains associated with it. Whenever you add a vhost, we&#39;ll create a Web root associated with its id: <code>var/www/{vhost_id}</code> where <code>{vhost_id}</code> is the id of your vhost.</p>
+<p><em>You can use the <code>webroot</code> if you&#39;re serving files out of a sub-folder of the default Web root. For example, if you serve files out of the <code>public/</code> subfolder of your app, adding the <code>webroot: public</code> to your vhost will make it serve files out of the <code>/var/www/my_vhost/public</code> folder.</em></p>
+<h2 id="routes">Routes</h2>
+<p>Routes allow you to define a list of ways to handle different types of requests, based on the <code>uri</code> (order matter, first routes in the list have precedence). These routes have a <code>type</code> attribute:</p>
+<ul>
+<li><code>custom</code> (default): routes of this type have a <code>custom</code> attribute that will take the content of a regular <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">Nginx location block</a>.</li>
+<li><code>fastcgi</code>: sends requests to a fastcgi backend or upstream. Common for <strong>PHP apps</strong>.</li>
+<li><code>proxy</code>: sends requests to a http proxy (local or remote). Common for <strong>node.js apps</strong>.</li>
+<li><code>websocket</code>: assumes requests are handled as websocket traffic.</li>
+<li><code>uwsgi</code>: sends requests to a uwsgi service. Common for <strong>Python apps</strong>.</li>
+<li><code>static</code>: serves files as static assets without any processing.</li>
+</ul>
+<p><em><strong>You can add supported technologies with the <code>support</code> attribute</strong>. This attribute willl help your vhost figure out what index to serve. By default it includes <code>index.html</code> and <code>index.html</code>, adding <code>php</code> to <code>support</code> will extend it to <code>index.php</code>.</em></p>
+
+</section>
+
+
+<section class='tasks'>
+  <h2 id='commands'><a href='#commands'>Commands</a></h2>
+  <dl class='commands'>
+    
+    <dt>
+      devops nginx start
+    </dt>
+    <dd>
+      Starts Nginx.
+      
+    </dd>
+    
+    <dt>
+      devops nginx stop
+    </dt>
+    <dd>
+      Stops Nginx.
+      
+    </dd>
+    
+    <dt>
+      devops nginx reload
+    </dt>
+    <dd>
+      Reloads the Nginx configuration and performs a graceful restart.
+      
+    </dd>
+    
+    <dt>
+      devops nginx restart
+    </dt>
+    <dd>
+      Restarts Nginx and reload the configuration (this will kill existing connections).
+      
+    </dd>
+    
+    <dt>
+      devops nginx vhost add
+    </dt>
+    <dd>
+      Adds a virtual host.
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>id</td>
+              <td class='type'>object</td>
+              <td class='description'>Adds a virtual host. Use the same attributes as for a vhost in the configuration.</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+    <dt>
+      devops nginx vhost remove
+    </dt>
+    <dd>
+      Removes a vhost and restarts Nginx if needed. If `purge` is set to true, removes the associate webroot.
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>id</td>
+              <td class='type'>string</td>
+              <td class='description'>The ID of your nginx domain</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>purge</td>
+              <td class='type'>boolean</td>
+              <td class='description'>Whether or not delete the associated webroot (/var/www/{vhost_id})</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+  </dl>
+</section>
+
+
+
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>nginx</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  
+  <strong>events</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_worker_connections'>
+    <strong>worker_connections</strong>:
+    <i>1024</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  
+  <strong>http</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_access_log'>
+    <strong>access_log</strong>:
+    <i>/var/log/nginx/access.log</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_error_log'>
+    <strong>error_log</strong>:
+    <i>/var/log/nginx/error.log</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_gzip'>
+    <strong>gzip</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_gzip_disable'>
+    <strong>gzip_disable</strong>:
+    <i>msie6</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_keepalive_timeout'>
+    <strong>keepalive_timeout</strong>:
+    <i>65</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_sendfile'>
+    <strong>sendfile</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_tcp_nodelay'>
+    <strong>tcp_nodelay</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_tcp_nopush'>
+    <strong>tcp_nopush</strong>:
+    <i>on</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_types_hash_max_size'>
+    <strong>types_hash_max_size</strong>:
+    <i>2048</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_pid'>
+    <strong>pid</strong>:
+    <i>/var/run/nginx.pid</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_user'>
+    <strong>user</strong>:
+    <i>www-data</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <a href='#details_vhosts'>
+    <strong>vhosts</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+
+<li>
+  <a href='#details_aliases'>
+    <strong>aliases</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_domain'>
+    <strong>domain</strong>:
+    <i>_</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_id'>
+    <strong>id</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_indexes'>
+    <strong>indexes</strong>:
+    <i>index.html index.htm</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i>80</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <a href='#details_routes'>
+    <strong>routes</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+
+<li>
+  <a href='#details_custom'>
+    <strong>custom</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_static'>
+    <strong>static</strong>:
+    <i>root</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_to'>
+    <strong>to</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_type'>
+    <strong>type</strong>:
+    <i>custom</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_uri'>
+    <strong>uri</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_ssl'>
+    <strong>ssl</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <a href='#details_upstreams'>
+    <strong>upstreams</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+
+<li>
+  
+  <a href='#details_backends'>
+    <strong>backends</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_name'>
+    <strong>name</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_webroot'>
+    <strong>webroot</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_worker_processes'>
+    <strong>worker_processes</strong>:
+    <i>4</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
+  
+
+  
+    
+      
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_worker_connections'>
+      events.<strong>worker_connections</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Number of concurrent http connection handled per nginx process</dd>
+    <dd class='default'>Default: <code>1024</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_access_log'>
+      http.<strong>access_log</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Global access log file path</dd>
+    <dd class='default'>Default: <code>/var/log/nginx/access.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_error_log'>
+      http.<strong>error_log</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Global error log file path</dd>
+    <dd class='default'>Default: <code>/var/log/nginx/error.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_gzip'>
+      http.<strong>gzip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable gzip compression</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_gzip_disable'>
+      http.<strong>gzip_disable</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Space separated list of browser to disable gzip compression for</dd>
+    <dd class='default'>Default: <code>msie6</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_keepalive_timeout'>
+      http.<strong>keepalive_timeout</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Keepalive timeout (sec) - 0 to disable</dd>
+    <dd class='default'>Default: <code>65</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_sendfile'>
+      http.<strong>sendfile</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable sendfile</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_tcp_nodelay'>
+      http.<strong>tcp_nodelay</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable tcp_nodelay</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_tcp_nopush'>
+      http.<strong>tcp_nopush</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable tcp_nopush</dd>
+    <dd class='default'>Default: <code>on</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_types_hash_max_size'>
+      http.<strong>types_hash_max_size</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Maximum size of hash tables</dd>
+    <dd class='default'>Default: <code>2048</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_pid'>
+      <strong>pid</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Pid file path</dd>
+    <dd class='default'>Default: <code>/var/run/nginx.pid</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_user'>
+      <strong>user</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Nginx running user.</dd>
+    <dd class='default'>Default: <code>www-data</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_vhosts'>
+      <strong>vhosts</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>Array of virtual hosts objects</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_aliases'>
+      vhost.<strong>aliases</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Space separated list of domain name aliases</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_domain'>
+      vhost.<strong>domain</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Primary domain name, use &#39;_&#39; as wildcard to respond to every domain / IP</dd>
+    <dd class='default'>Default: <code>_</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_id'>
+      vhost.<strong>id</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Virtual host identifier, used to perform lookup in the vhosts array. Also used to name the configuration files and the default web root.</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_indexes'>
+      vhost.<strong>indexes</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>List indexes space separated.</dd>
+    <dd class='default'>Default: <code>index.html index.htm</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_port'>
+      vhost.<strong>port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Listening port (TCP/80 by default, TCP/443 if SSL is enabled)</dd>
+    <dd class='default'>Default: <code>80</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_routes'>
+      vhost.<strong>routes</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of route objects. The order matters and the routes will be applied sequentially.</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_custom'>
+      route.<strong>custom</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Custom inline nginx config to include within the route (e.g. auth, custom timeout)</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_static'>
+      route.<strong>static</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>For type static only, define how to consider the source folder - alias or root</dd>
+    <dd class='default'>Default: <code>root</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_to'>
+      route.<strong>to</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Either an upstream name, or a service / url, or a path</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_type'>
+      route.<strong>type</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>The type of handler for that route</dd>
+    <dd class='default'>Default: <code>custom</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_uri'>
+      route.<strong>uri</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Any string / regex that nginx understand as a `location`</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_ssl'>
+      vhost.<strong>ssl</strong> <span class='type'>object</span>
+    </dt>
+    <dd class='description'>Enable HTTPS</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+      <dl>
+        
+  
+    <dt id='details_certificate'>
+      vhost.ssl.<strong>certificate</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>HTTPS certificate file path (chained if needed)</dd>
+    <dd class='default'>Default: <code>/etc/nginx/ssl/{domain}.pem</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_private_key'>
+      vhost.ssl.<strong>private_key</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Private key file path used to generate the certificate (password-less)</dd>
+    <dd class='default'>Default: <code>/etc/nginx/ssl/{domain}.key</code></dd>
+    
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_upstreams'>
+      vhost.<strong>upstreams</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>list of upstream objects</dd>
+    
+    
+  
+
+  
+    
+    
+    
+      
+      
+    
+
+    
+      
+      
+        
+      
+      <dl>
+        
+  
+    <dt id='details_backends'>
+      upstream.<strong>backends</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of backends associated with the upstream</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+  
+    <dt id='details_name'>
+      upstream.<strong>name</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Name of the upstream - it must be unique on the entire node</dd>
+    
+    <dd class='required'>Required</dd>
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_webroot'>
+      vhost.<strong>webroot</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Subfolder to serve data from based on the root /var/www/_vhost_id_</dd>
+    
+    
+  
+
+  
+
+      </dl>
+    
+    
+  
+
+  
+    <dt id='details_worker_processes'>
+      <strong>worker_processes</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Number of Nginx processes</dd>
+    <dd class='default'>Default: <code>4</code></dd>
+    
+  
+
+  
+
+  </dl>
+</section>
+
+
+
+    </section>
+  <section>
+
+  <aside id='support'>
+    <h2>Need help?</h2>
+    <nav class='links'>
+      <a class='chat' href='https://www.hipchat.com/gyHEHtsXZ' target='_blank'>Chat with us</a>
+      <a class='help' href='mailto:help@devo.ps' target='_blank'>Contact the support</a>
+      <a class='documentation' href='http://docs.devo.ps' target='_blank'>Check the documentation</a>
+    </nav>
+  </aside>
+
+  <!-- JS -->
+  <script src='/assets/scripts.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript'>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '510b396a613f5d2666000007');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+  <script type='text/javascript'>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34006371-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
