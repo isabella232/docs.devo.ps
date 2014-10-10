@@ -50,8 +50,7 @@
             "default": "page.html",
             "directory": "./templates"
         },
-        "metalsmith-assets": null,
-        "metalsmith-static": null
+        "metalsmith-assets": null
     },             
     "assets": {
         "vendor": {
@@ -65,22 +64,10 @@
         },
         "custom": {
             "js": [
-                "assets/js/*.js"
-            ],
-            "css": [
-                "assets/css/*.css"
+                "js/*.js"
             ],
             "scss": [
-                "assets/scss/**/*.{scss,sass}"
-            ],
-            "fonts": [
-                "assets/fonts/*"
-            ],
-            "favicons": [
-                "assets/favicons/*"
-            ],
-            "images": [
-                "assets/images/*"
+                "scss/**/*.{scss,sass}"
             ]
         }
     }

@@ -10,72 +10,52 @@ var gulp = require('gulp');
 var mkdirp = require('mkdirp');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
-var eggshell= require('eggshell');
 var concat = require('gulp-concat');
 var gutil = require('gulp-util');
+var merge = require('merge-stream');
 var log = gutil.log;
 var colors = gutil.colors;
 
 var site = require(path.resolve(__dirname, 'site.json'));
 var siteJS = site.assets.vendor.js.concat(site.assets.custom.js);
-var siteCSS = site.assets.vendor.css.concat(site.assets.custom.css);
+var siteCSS = site.assets.vendor.css.concat(site.assets.custom.scss);
 
 /*
  * Tasks
  */
 gulp.task('prepare', function(callback) {
-    return mkdirp(site.destination, callback);
+    mkdirp(site.destination, callback);
 });
 
 gulp.task('clean', function() {
-    return gulp.src(site.destination, {read: false})
+    gulp.src(site.destination, {read: false})
         .pipe(clean());
 })
 
-gulp.task('sass', function() {
-    return gulp.src(site.assets.custom.scss)
-        .pipe(sass({
-            includePaths: eggshell.includePaths
-        }))
-        .pipe(gulp.dest('./assets/css/'));
-});
-
-gulp.task('concat-js', function() {
-    return gulp.src(siteJS)
+gulp.task('js', function() {
+    gulp.src(siteJS)
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('concat-css', function() {
-    return gulp.src(siteCSS)
-        .pipe(concat('styles.css'))
-        .pipe(gulp.dest('./public/assets'));
+gulp.task('css', function() {
+    var vendor = gulp.src(site.assets.vendor.css);
+
+    var custom = gulp.src(site.assets.custom.scss)
+                     .pipe(sass({ includePaths: require('eggshell').includePaths }));
+
+    return merge(vendor, custom)
+           .pipe(concat('styles.css'))
+           .pipe(gulp.dest('./public/assets'));
 });
 
-gulp.task('favicons', function() {
-    return gulp.src(site.assets.custom.favicons)
-        .pipe(gulp.dest('./public/assets/favicons'));
-})
-
-gulp.task('images', function() {
-    return gulp.src(site.assets.custom.images)
-        .pipe(gulp.dest('./public/assets/images'));
-})
-
-gulp.task('fonts', function() {
-    return gulp.src(site.assets.custom.fonts)
-        .pipe(gulp.dest('./public/assets/fonts'));
-})
-
-gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'images', 'fonts'], function(callback) {
-
+//
+gulp.task('metalsmith', function(callback) {
     var metalsmith = new Metalsmith(process.cwd());
     var plugins = site.metalsmith || {};
-
     metalsmith.source(site.source);
     metalsmith.destination(site.destination);
     metalsmith.metadata(site.metadata);
-
     Object.keys(plugins).forEach(function(key) {
         var plugin;
         var opts = plugins[key];
@@ -85,26 +65,17 @@ gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'images'
         metalsmith.use(plugin(opts));
     });
 
-    return metalsmith.build(function(err){
+    metalsmith.build(function(err){
         if (err) return callback(err);
         callback();
     });
 });
 
-// Rerun the task when a file changes
-gulp.task('watch', function() {
-    gulp.watch(site.assets.custom.scss, ['sass']);
-    gulp.watch(siteJS, ['concat-js']);
-    gulp.watch(siteCSS, ['concat-css']);
-    gulp.watch(['./public/**/*', './assets/**/*.{png}', './templates/**/*', './source/**/*'], ['metalsmith']);
-});
-
 // The default task (called when you run `gulp` from cli)
+gulp.task('default', ['css', 'js', 'metalsmith']);
 
-gulp.task('default', ['clean', 'metalsmith']);
-gulp.task('development', ['clean', 'metalsmith', 'prepare', 'watch'], function(callback) {
+gulp.task('development', ['css', 'js', 'metalsmith'], function(callback) {
     var devApp, devServer, devAddress, devHost, url;
-
     devApp = connect()
     .use(connect.logger('dev'))
     .use(connect.static(site.destination));
@@ -132,4 +103,9 @@ gulp.task('development', ['clean', 'metalsmith', 'prepare', 'watch'], function(c
         log('Done');
         callback(); // we're done with this task for now
     });
+
+    // Watching files
+    gulp.watch(siteJS, ['js']);
+    gulp.watch(siteCSS, ['css']);
+    gulp.watch(['./public/**/*', './templates/**/*', './source/**/*'], ['metalsmith']);
 });
