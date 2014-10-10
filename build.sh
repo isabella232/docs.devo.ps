@@ -4,12 +4,11 @@
 # Meant to be called by devops builder
 ###################
 
-export HERE=$(pwd)
-
 COMMIT="$COMMIT"
 MAIL="$EMAIL"
 DEST="$DEST"
 
+# Set defaults
 [ -z "$DEST" ] && DEST='gh-pages'
 
 TMP_FOLDER=$(mktemp -d)
