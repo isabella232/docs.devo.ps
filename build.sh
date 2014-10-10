@@ -15,6 +15,7 @@ TMP_FOLDER=$(mktemp -d)
 
 echo -n "Running the build process... " >&2
 make build
+make build
 [ $? -eq 0 ] && echo "Success." >&2 || echo "Failed." >&2
 
 echo "Copying build result..." >&2
