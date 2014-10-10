@@ -2,67 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.devo.ps/services/memcached</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/CLI</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/nodes</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/tasks</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/profile</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/digitalocean</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/manual/vars</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/linode</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/ec2</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/providers/rackspace</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/services/common</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/how-to/create-digitalocean-api-key</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/services/couchbase</loc>
+    <loc>http://docs.devo.ps/services/go</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -72,7 +12,67 @@
   </url>
   
   <url>
+    <loc>http://docs.devo.ps/manual/CLI</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/git-repositories</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/nodes</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/profile</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/tasks</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/manual/vars</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/digitalocean</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/ec2</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/linode</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/rackspace</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
     <loc>http://docs.devo.ps/services/apache</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/common</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/couchbase</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -102,12 +102,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/go</loc>
+    <loc>http://docs.devo.ps/services/git</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/manual/git-repositories</loc>
+    <loc>http://docs.devo.ps/how-to/create-digitalocean-api-key</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -117,7 +117,7 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/git</loc>
+    <loc>http://docs.devo.ps/services/memcached</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -132,12 +132,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/nginx</loc>
+    <loc>http://docs.devo.ps/services/mysql</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/mysql</loc>
+    <loc>http://docs.devo.ps/services/nginx</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -162,12 +162,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/redis</loc>
+    <loc>http://docs.devo.ps/services/rabbitmq</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/rabbitmq</loc>
+    <loc>http://docs.devo.ps/services/redis</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -182,17 +182,7 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/vagrant</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
     <loc>http://docs.devo.ps/services/supervisord</loc>
-    <lastmod>2014-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/services/varnish</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
@@ -202,12 +192,22 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/zeromq</loc>
+    <loc>http://docs.devo.ps/services/vagrant</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/varnish</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/xvfb</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/zeromq</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
