@@ -32,11 +32,6 @@ gulp.task('clean', function() {
         .pipe(clean());
 })
 
-gulp.task('assets', function() {
-    gulp.src('./assets')
-        .pipe(gulp.dest('./public/assets'));
-});
-
 gulp.task('js', function() {
     gulp.src(siteJS)
         .pipe(concat('scripts.js'))
@@ -77,9 +72,9 @@ gulp.task('metalsmith', function(callback) {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['assets', 'css', 'js', 'metalsmith']);
+gulp.task('default', ['css', 'js', 'metalsmith']);
 
-gulp.task('development', ['assets', 'css', 'js', 'metalsmith'], function(callback) {
+gulp.task('development', ['css', 'js', 'metalsmith'], function(callback) {
     var devApp, devServer, devAddress, devHost, url;
     devApp = connect()
     .use(connect.logger('dev'))
