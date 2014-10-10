@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>http://docs.devo.ps/manual/CLI</loc>
+    <lastmod>2014-10-10</lastmod>
+  </url>
+  
+  <url>
     <loc>http://docs.devo.ps/manual/git-repositories</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
@@ -102,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/manual/CLI</loc>
+    <loc>http://docs.devo.ps/how-to/create-digitalocean-api-key</loc>
     <lastmod>2014-10-10</lastmod>
   </url>
   
