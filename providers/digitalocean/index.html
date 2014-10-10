@@ -262,7 +262,7 @@ var Swiftype = window.Swiftype || {};
 </header>
 
 <section class='body'>
-  <p><a href="http://digitalocean.com">DigitalOcean</a> is a virtual private server provider based in New York with datacenters in New York, Amsterdam, San Francisco, London and Singapore.</p>
+  <p><a href="http://digitalocean.com">Digital Ocean</a> is a virtual private server provider based in New York with datacenters in New York, Amsterdam, San Francisco, London and Singapore.</p>
 <p><em>Don&#39;t have a Digital Ocean account yet? <a href='https://www.digitalocean.com/?refcode=3918a442dbd7' target='_blank'>Sign up for an account</a>.</em></p>
 <h2 id="example">Example</h2>
 <p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a 512MB droplet (<code>size: 66</code>) on Digital Ocean in their San Francisco 1 datacenter (<code>location: 3</code>):</p>
@@ -274,7 +274,25 @@ provider:
   name: digitalocean
   location: 3
   size: 66
-</code></pre>
+</code></pre><h2 id="api-keys">API keys</h2>
+<p>The devo.ps platform currently only supports the version 1 of the Digital Ocean API. Support for the v2 is on-going and will be added soon.</p>
+<ol>
+<li><p><a href="https://www.digitalocean.com/login">Log on your Digital Ocean account</a></p>
+</li>
+<li><p>Click on the <code>Apps &amp; API</code> item from the left menu</p>
+ <p align='center'><img src='/assets/images/digitalocean_api_menu.png' alt='Digital Ocean menu' /></p>
+</li>
+<li><p>Click on the <code>API v1.0 Page</code> link in the header</p>
+ <p align='center'><img src='/assets/images/digitalocean_api_v1.png' alt='Digital Ocean API v1.0' /></p>
+</li>
+<li><p>Click on the <code>Generate new key</code> button, and save your keys</p>
+ <p align='center'><img src='/assets/images/digitalocean_api_create.png' alt='Digital Ocean generate API key' /></p>
+</li>
+<li><p>Go in your <a href="https://app.devo.ps/#/user/profile">devo.ps profile</a></p>
+<p> <em>Click on <code>Add a Cloud Provider</code>, select <code>Digital Ocean</code> and enter the keys created in the previous step.</em></p>
+</li>
+</ol>
+
 </section>
 
 <section class='defaults'>
