@@ -57,12 +57,17 @@ gulp.task('favicons', function() {
         .pipe(gulp.dest('./public/assets/favicons'));
 })
 
+gulp.task('images', function() {
+    return gulp.src(site.assets.custom.images)
+        .pipe(gulp.dest('./public/assets/images'));
+})
+
 gulp.task('fonts', function() {
     return gulp.src(site.assets.custom.fonts)
         .pipe(gulp.dest('./public/assets/fonts'));
 })
 
-gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'fonts'], function(callback) {
+gulp.task('metalsmith', ['sass', 'concat-js', 'concat-css', 'favicons', 'images', 'fonts'], function(callback) {
 
     var metalsmith = new Metalsmith(process.cwd());
     var plugins = site.metalsmith || {};

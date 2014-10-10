@@ -78,6 +78,9 @@
             ],
             "favicons": [
                 "assets/favicons/*"
+            ],
+            "images": [
+                "assets/images/*"
             ]
         }
     }
