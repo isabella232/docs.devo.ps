@@ -18,7 +18,7 @@ make build
 [ $? -eq 0 ] && echo "Success." >&2 || echo "Failed." >&2
 
 echo "Copying build result..." >&2
-cp -a _site $TMP_FOLDER 
+cp -a _site/* $TMP_FOLDER 
 
 echo "Resetting git repository and swithing branch..."  >&2
 git reset --hard && git checkout $DEST
