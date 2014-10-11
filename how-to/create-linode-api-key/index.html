@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Git &amp; Repositories | devo.ps documentation</title>
+  <title>Create Linode API key | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
@@ -86,7 +86,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/how-to/create-digitalocean-api-key' >Create Digital Ocean API key</a>
 
-<a href='/how-to/create-linode-api-key' >Create Linode API key</a>
+<a href='/how-to/create-linode-api-key'  class='active'>Create Linode API key</a>
 
 
 <h3>Manual</h3>
@@ -107,7 +107,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/manual/CLI' >CLI</a>
 
-<a href='/manual/git-repositories'  class='active'>Git &amp; Repositories</a>
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
 
 <a href='/manual/nodes' >Nodes</a>
 
@@ -264,43 +264,31 @@ var Swiftype = window.Swiftype || {};
     
   </ul>
 
-  <h1>Git &amp; Repositories </h1>  
+  <h1>Create Linode API key </h1>  
 </header>
 
 <section class='body'>
-  <h2 id="repositories">Repositories</h2>
-<p>devo.ps allows you to create Git repositories. Each repository can contain any number of nodes, tasks and scripts. These can only reference each other; for example, a task may not refer to the variables or nodes defined in another repository. You can add a repository from the profile page.</p>
-<h3 id="files-folders">Files &amp; Folders</h3>
-<p>We recommend you organize your repositories in three subfolders:</p>
-<ul>
-<li><code>nodes/</code> contains nodes files (servers),</li>
-<li><code>scripts/</code> contains scripts (shell, Ruby, Python...),</li>
-<li><code>tasks/</code> contains tasks files,</li>
-</ul>
-<p><em>We currently require you to use the folder structure but will be soon allowing users to use any kind of organization.</em></p>
-<p>Folder can contain subfolders. Nodes and tasks files must be <code>.yaml</code> or <code>.yml</code> files, scripts should be <code>.sh</code>, <code>.py</code> or <code>.rb</code>. We also support README files; either <code>README.md</code>, <code>README.txt</code> or <code>README</code> will work.</p>
-<h3 id="branches">Branches</h3>
-<p>Branches of a repository can be <strong>active</strong>. For every active branch, devo.ps will try and provision nodes and run tasks as opposed to inactive branches. <a href="#validation">Validation</a> only happens on active branches.</p>
-<p><em>We currently only allow the master branch to be active.</em></p>
-<h3 id="collaborators">Collaborators</h3>
-<p>You can invite any number of devo.ps users as collaborators: they will have read and write access to the repository but won&#39;t be able to either read your profile information (cloud provider keys) or change the repository settings (collaborators and active branches).</p>
-<p><em>We are currently adding more granular permission management allowing to manage teams and delegate admin permissions to other users.</em></p>
-<h2 id="git">Git</h2>
-<h3 id="url">URL</h3>
-<p>Each repository is available at <code>git@gh.devo.ps:{USER}/{REPO}</code> where <code>{USER}</code> is the username of the repository&#39;s owner and <code>{REPO}</code> is the repository&#39;s name. To clone this repository on your loca, simply run:</p>
-<p><code class='terminal pre'>git clone git@gh.devo.ps:{USER}/{REPO}</code></p>
-<h3 id="validation">Validation</h3>
-<p>Whenever you <code>git push</code> your local changes, we run the committed files through a validation step (if the branch you&#39;re working is active). If the validation fails, the push command will fail with an error informing you of the potential issue.</p>
-<h3 id="operations">Operations</h3>
-<ul>
-<li><p><strong>Add a file</strong>; if the file is a node, we will attempt to provision it using the cloud provider key provided in the profile of the repository&#39;s owner. For a task, the triggers (webhook or other) will be added and the task will start being run as soon as one of them is triggered.</p>
+  <ol>
+<li><p><a href="https://manager.linode.com/">Log on your Linode account</a></p>
 </li>
-<li><p><strong>Remove a file</strong>; if the file is a node, we will effectively attempt to decommission the server, which means <strong>you will loose all data stored on the node</strong>. Task will simply be removed and no new run will be added. If a task is removed while running, the run will finish.</p>
-<p>  *We are currently implementing more advanced storage features which will allow you to backup and snapshot your data (files and database) before deleting a node.</p>
+<li><p>On the top right of the window, click on <code>my profile</code> - you may be prompted to re-enter your password</p>
+ <p align='center'><img src='/images/linode_api_profile.png' alt='Linode API' /></p>
 </li>
-<li><p><strong>Update a file</strong>; for nodes, the configuration will be adjusted. If this involves changing the provider or a change in size that requires to provision a new box, we will first destroy the existing node before re-provisioning a new one.</p>
+<li><p>Click on the <code>API Keys</code> item in the sub menu</p>
+ <p align='center'><img src='/images/linode_api_keys.png' alt='Linode API keys' /></p>
 </li>
-</ul>
+<li><p>Enter a new label (e.g. devops) and click on <code>Create API key</code></p>
+ <p align='center'><img src='/images/linode_api_create.png' alt='Linode API keys' /></p>
+</li>
+<li><p>The API key is presented to you - save it.</p>
+ <p align='center'><img src='/images/linode_api_key.png' alt='Linode API key' /></p>
+
+<p> <em>Upon Save, you will be presented with your access key and secret key, beware you must write them down now as they won&#39;t be displayed to you anymore in the future. If you don&#39;t save those information, you will have to re-create a user.</em></p>
+</li>
+<li><p>Go in your <a href="https://app.devo.ps/#/user/profile">devo.ps profile</a></p>
+<p> <em>Click on <code>Add a Cloud Provider</code>, select <code>Linode</code> and enter the API key created in the previous step.</em></p>
+</li>
+</ol>
 
 </section>
 
