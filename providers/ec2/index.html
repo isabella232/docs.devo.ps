@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Linode | devo.ps documentation</title>
+  <title>Amazon EC2 | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
@@ -130,11 +130,11 @@ var Swiftype = window.Swiftype || {};
   
 
 
-<a href='/providers/ec2' >Amazon EC2</a>
+<a href='/providers/ec2'  class='active'>Amazon EC2</a>
 
 <a href='/providers/digitalocean' >Digital Ocean</a>
 
-<a href='/providers/linode'  class='active'>Linode</a>
+<a href='/providers/linode' >Linode</a>
 
 <a href='/providers/rackspace' >Rackspace</a>
 
@@ -270,23 +270,25 @@ var Swiftype = window.Swiftype || {};
 <div class='notification warning'>We currently only support Ubuntu 14.04 LTS images for all providers.</div>
 
 <header class='header'>
-  <h1>Linode</h1>
+  <h1>Amazon EC2</h1>
 </header>
 
 <section class='body'>
-  <p><a href="https://www.linode.com/?r=a278f28e12e5e4e08adc41d8491a1988363e80d6">Linode</a> is a virtual private server provider based in New Jersey with datacenters in Tokyo, the US (US West, US Central, US South, US East) and London.</p>
-<p><em>Don&#39;t have a Linode account yet? <a href='https://www.linode.com/?r=a278f28e12e5e4e08adc41d8491a1988363e80d6' target='_blank'>Sign up for an account</a>.</em></p>
-<p><em>Don&#39;t know how to create your Linode API keys? Check out this <a href='/how-to/create-linode-api-key'>tutorial</a>.</em></p>
+  <p><a href="https://aws.amazon.com/">Amazon Elastic Compute Cloud (EC2)</a> is one of the most popular cloud computing platforms, with datacenters in the Northern Virginia, Northern California, Oregon, Sao Paulo, Ireland, Sydney, Tokyo and Singapore.</p>
+<p><em>Due to the large amount of configurations available on EC2, we are currently not able to provide default values for the image. Refer to both the <a href="https://aws.amazon.com/ec2/instance-types/">EC2 Instance Types Matrix</a> and the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs page</a> to define the AMI that will work for your location and instance size.</em></p>
+<p><em>Don&#39;t have an Amazon EC2 account yet? <a href='https://aws.amazon.com/' target='_blank'>Sign up for an account</a>.</em></p>
+<p><em>Don&#39;t know how to create your Amazon EC2 API keys? Check out this <a href='/how-to/create-amazon-ec2-api-key'>tutorial</a>.</em></p>
 <h2 id="example">Example</h2>
-<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a Linode 1024 server (<code>size: 1</code>) in their droplet Dallas datacenter (<code>location: 2</code>):</p>
-<pre><code>id: linode_server
-name: Linode server
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a micro instance of first generation (<code>size: t1.micro</code>) in the Northern Virginia datacenter (<code>location: us-east-1</code>) with a 64-bit Ubuntu 14.04.1 LTS, EBS-backed AMI (<code>image: ami-d2ff23ba</code>, see the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs page</a>):</p>
+<pre><code>id: ec2_server
+name: EC2 server
 type: server
 
-provider:
-  name: linode
-  location: 2
-  size: 1
+providers:
+  name: ec2
+  size: t1.micro
+  location: us-east-1
+  image: ami-d2ff23ba
 </code></pre>
 </section>
 
@@ -302,17 +304,11 @@ provider:
     </thead>
     <tbody>
       
-      <tr>
-        <td><code>image</code></td>
-        <td><code>124</code></td>
-        <td>Ubuntu 14.04.1 64bit LTS</td>
-      </tr>
-      
       
       <tr>
         <td><code>location</code></td>
-        <td><code>2</code></td>
-        <td>Dallas, TX, USA</td>
+        <td><code>us-east-1</code></td>
+        <td>US East (N. Virginia)</td>
       </tr>
       
     </tbody>
@@ -336,66 +332,199 @@ provider:
     <tbody>
     
       <tr>
-        <td><code>1</code></td>
-        <td>Linode 1024</td>
-        <td><code>1024</code></td>
-        <td><code>24576</code></td>
+        <td><code>t1.micro</code></td>
+        <td>Micro Instance</td>
+        <td><code>613</code></td>
+        <td><code>15</code></td>
       </tr>
     
       <tr>
-        <td><code>2</code></td>
-        <td>Linode 2048</td>
-        <td><code>2048</code></td>
-        <td><code>49152</code></td>
+        <td><code>m1.small</code></td>
+        <td>Small Instance</td>
+        <td><code>1740</code></td>
+        <td><code>160</code></td>
       </tr>
     
       <tr>
-        <td><code>4</code></td>
-        <td>Linode 4096</td>
-        <td><code>4096</code></td>
-        <td><code>98304</code></td>
+        <td><code>m1.medium</code></td>
+        <td>Medium Instance</td>
+        <td><code>3700</code></td>
+        <td><code>410</code></td>
       </tr>
     
       <tr>
-        <td><code>6</code></td>
-        <td>Linode 8192</td>
-        <td><code>8192</code></td>
-        <td><code>196608</code></td>
+        <td><code>m1.large</code></td>
+        <td>Large Instance</td>
+        <td><code>7680</code></td>
+        <td><code>850</code></td>
       </tr>
     
       <tr>
-        <td><code>7</code></td>
-        <td>Linode 16384</td>
-        <td><code>16384</code></td>
-        <td><code>393216</code></td>
+        <td><code>m1.xlarge</code></td>
+        <td>Extra Large Instance</td>
+        <td><code>15360</code></td>
+        <td><code>1690</code></td>
       </tr>
     
       <tr>
-        <td><code>8</code></td>
-        <td>Linode 32768</td>
-        <td><code>32768</code></td>
-        <td><code>786432</code></td>
+        <td><code>m2.xlarge</code></td>
+        <td>High-Memory Extra Large Instance</td>
+        <td><code>17510</code></td>
+        <td><code>420</code></td>
       </tr>
     
       <tr>
-        <td><code>9</code></td>
-        <td>Linode 49152</td>
-        <td><code>49152</code></td>
-        <td><code>1179648</code></td>
+        <td><code>m2.2xlarge</code></td>
+        <td>High-Memory Double Extra Large Instance</td>
+        <td><code>35021</code></td>
+        <td><code>850</code></td>
       </tr>
     
       <tr>
-        <td><code>10</code></td>
-        <td>Linode 65536</td>
-        <td><code>65536</code></td>
-        <td><code>1572864</code></td>
+        <td><code>m2.4xlarge</code></td>
+        <td>High-Memory Quadruple Extra Large Instance</td>
+        <td><code>70042</code></td>
+        <td><code>1690</code></td>
       </tr>
     
       <tr>
-        <td><code>12</code></td>
-        <td>Linode 98304</td>
-        <td><code>98304</code></td>
-        <td><code>1966080</code></td>
+        <td><code>m3.medium</code></td>
+        <td>Medium Instance</td>
+        <td><code>3840</code></td>
+        <td><code>4000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.large</code></td>
+        <td>Large Instance</td>
+        <td><code>7168</code></td>
+        <td><code>32000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.xlarge</code></td>
+        <td>Extra Large Instance</td>
+        <td><code>15360</code></td>
+        <td><code>80000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.2xlarge</code></td>
+        <td>Double Extra Large Instance</td>
+        <td><code>30720</code></td>
+        <td><code>160000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c1.medium</code></td>
+        <td>High-CPU Medium Instance</td>
+        <td><code>1740</code></td>
+        <td><code>350</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c1.xlarge</code></td>
+        <td>High-CPU Extra Large Instance</td>
+        <td><code>7680</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cc1.4xlarge</code></td>
+        <td>Cluster Compute Quadruple Extra Large Instance</td>
+        <td><code>23552</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cc2.8xlarge</code></td>
+        <td>Cluster Compute Eight Extra Large Instance</td>
+        <td><code>63488</code></td>
+        <td><code>3370</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.large</code></td>
+        <td>Compute Optimized Large Instance</td>
+        <td><code>3750</code></td>
+        <td><code>16</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.xlarge</code></td>
+        <td>Compute Optimized Extra Large Instance</td>
+        <td><code>7000</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.2xlarge</code></td>
+        <td>Compute Optimized Double Extra Large Instance</td>
+        <td><code>15000</code></td>
+        <td><code>80</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.4xlarge</code></td>
+        <td>Compute Optimized Quadruple Extra Large Instance</td>
+        <td><code>30000</code></td>
+        <td><code>160</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.8xlarge</code></td>
+        <td>Compute Optimized Eight Extra Large Instance</td>
+        <td><code>60000</code></td>
+        <td><code>320</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cg1.4xlarge</code></td>
+        <td>Cluster GPU Quadruple Extra Large Instance</td>
+        <td><code>22528</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cr1.8xlarge</code></td>
+        <td>High Memory Cluster Eight Extra Large</td>
+        <td><code>244000</code></td>
+        <td><code>240</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>hs1.8xlarge</code></td>
+        <td>High Storage Eight Extra Large Instance</td>
+        <td><code>119808</code></td>
+        <td><code>48000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.xlarge</code></td>
+        <td>High Storage Optimized Extra Large Instance</td>
+        <td><code>31232</code></td>
+        <td><code>800</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.2xlarge</code></td>
+        <td>High Storage Optimized Double Extra Large Instance</td>
+        <td><code>62464</code></td>
+        <td><code>1600</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.4xlarge</code></td>
+        <td>High Storage Optimized Quadruple Large Instance</td>
+        <td><code>124928</code></td>
+        <td><code>3200</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.8xlarge</code></td>
+        <td>High Storage Optimized Eight Extra Large Instance</td>
+        <td><code>249856</code></td>
+        <td><code>6400</code></td>
       </tr>
     
     </tbody>
@@ -411,39 +540,51 @@ provider:
     <tbody>
     
       <tr>
-        <td><code>2</code></td>
-        <td>Dallas, TX, USA</td>
+        <td><code>us-east-1</code></td>
+        <td>US East (Northern Virginia)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>3</code></td>
-        <td>Fremont, CA, USA</td>
+        <td><code>us-west-1</code></td>
+        <td>US West (Oregon)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>4</code></td>
-        <td>Atlanta, GA, USA</td>
+        <td><code>us-west-2</code></td>
+        <td>US West (Northern California)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>6</code></td>
-        <td>Newark, NJ, USA</td>
-        <td>US</td>
+        <td><code>eu-west-1</code></td>
+        <td>EU (Ireland)</td>
+        <td>Ireland</td>
       </tr>
     
       <tr>
-        <td><code>7</code></td>
-        <td>London, England, UK</td>
-        <td>GB</td>
+        <td><code>ap-southeast-1</code></td>
+        <td>Asia Pacific (Singapore)</td>
+        <td>Singapore</td>
       </tr>
     
       <tr>
-        <td><code>8</code></td>
-        <td>Tokyo, JP</td>
-        <td>JP</td>
+        <td><code>ap-southeast-2</code></td>
+        <td>Asia Pacific (Sydney)</td>
+        <td>Australia</td>
+      </tr>
+    
+      <tr>
+        <td><code>ap-northeast-1</code></td>
+        <td>Asia Pacific (Tokyo)</td>
+        <td>Japan</td>
+      </tr>
+    
+      <tr>
+        <td><code>sa-east-1</code></td>
+        <td>South America (Sao Paulo)</td>
+        <td>Brazil</td>
       </tr>
     
     </tbody>

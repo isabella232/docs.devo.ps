@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.devo.ps/services/go</loc>
+    <loc>http://docs.devo.ps/services/git</loc>
     <lastmod>2014-10-11</lastmod>
   </url>
   
@@ -57,7 +57,17 @@
   </url>
   
   <url>
+    <loc>http://docs.devo.ps/providers/ec2</loc>
+    <lastmod>2014-10-11</lastmod>
+  </url>
+  
+  <url>
     <loc>http://docs.devo.ps/providers/linode</loc>
+    <lastmod>2014-10-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/rackspace</loc>
     <lastmod>2014-10-11</lastmod>
   </url>
   
@@ -102,12 +112,12 @@
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/services/git</loc>
+    <loc>http://docs.devo.ps/how-to/create-amazon-ec2-api-key</loc>
     <lastmod>2014-10-11</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.devo.ps/how-to/create-amazon-ec2-api-key</loc>
+    <loc>http://docs.devo.ps/services/go</loc>
     <lastmod>2014-10-11</lastmod>
   </url>
   
