@@ -1,23 +1,28 @@
 ---
-defaults: null
+defaults:
+  image:
+    id: e19a734c-c7e6-443a-830c-242209c4d65d
+  location:
+    id: ORD
+    name: Chicago (US)
 locations:
 - country: US
-  id: dfw
+  id: DFW
   name: Dallas (Texas)
 - country: US
-  id: ord
+  id: ORD
   name: Chicago (Illinois)
 - country: US
-  id: iad
+  id: IAD
   name: Northern Virginia
 - country: UK
-  id: lon
+  id: LON
   name: London (UK)
 - country: Australia
-  id: syd
+  id: SYD
   name: Sydney (Australia)
 - country: China
-  id: hkg
+  id: HKG
   name: Hong Kong (China)
 sizes:
 - bandwidth: null
@@ -142,7 +147,7 @@ title: Rackspace
 
 ## Example
 
-The following [node file](http://docs.devo.ps/manual/nodes/#node-file) will create a 512MB Standard Instance (`size: 2`) on Rackspace in their Dallas datacenter (`location: dfw`):
+The following [node file](http://docs.devo.ps/manual/nodes/#node-file) will create a 512MB Standard Instance (`size: 2`) on Rackspace in their Dallas datacenter (`location: DFW`):
 
     id: rackspace_server
     name: Rackspace server
@@ -150,5 +155,9 @@ The following [node file](http://docs.devo.ps/manual/nodes/#node-file) will crea
 
     provider:
       name: rackspace
-      location: dfw
+      location: DFW
       size: 2
+
+<em>Note that all the location's ID must be UPPERCASE</em>
+
+<em>The `performance` sizes are only available in the following locations: `IAD`, `ORD`, `LON`.</em>
