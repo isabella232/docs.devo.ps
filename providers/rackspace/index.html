@@ -277,22 +277,41 @@ var Swiftype = window.Swiftype || {};
   <p><a href="http://rackspace.com">Rackspace</a> is a managed cloud computing company base in Texas with datacenters in Texas, Illinois, Virginia, the United Kingdom, Australia, and Hong Kong.</p>
 <p><em>Don&#39;t have a Rackspace account yet? <a href='https://www.rackspace.com/' target='_blank'>Sign up for an account</a>.</em></p>
 <h2 id="example">Example</h2>
-<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a 512MB Standard Instance (<code>size: 2</code>) on Rackspace in their Dallas datacenter (<code>location: dfw</code>):</p>
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a 512MB Standard Instance (<code>size: 2</code>) on Rackspace in their Dallas datacenter (<code>location: DFW</code>):</p>
 <pre><code>id: rackspace_server
 name: Rackspace server
 type: server
 
 provider:
   name: rackspace
-  location: dfw
+  location: DFW
   size: 2
-</code></pre>
+</code></pre><p><em>Note that all the location&#39;s ID must be UPPERCASE</em></p>
+<p><em>The <code>performance</code> sizes are only available in the following locations: <code>IAD</code>, <code>ORD</code>, <code>LON</code>.</em></p>
+
 </section>
 
 <section class='defaults'>
   <h2>Default values</h2>
   
-    <p><em>This provider has no default values: you must specify size, location and image attributes.</em></p>
+  <p><em>The following values will be used by default for the provider if the attribute is missing.</em></p>
+  <table>
+    <thead>
+      <th>Attribute</th>
+      <th>Value</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      
+      
+      <tr>
+        <td><code>location</code></td>
+        <td><code>ORD</code></td>
+        <td>Chicago (US)</td>
+      </tr>
+      
+    </tbody>
+  </table>
   
 </section>
 
@@ -436,37 +455,37 @@ provider:
     <tbody>
     
       <tr>
-        <td><code>dfw</code></td>
+        <td><code>DFW</code></td>
         <td>Dallas (Texas)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>ord</code></td>
+        <td><code>ORD</code></td>
         <td>Chicago (Illinois)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>iad</code></td>
+        <td><code>IAD</code></td>
         <td>Northern Virginia</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>lon</code></td>
+        <td><code>LON</code></td>
         <td>London (UK)</td>
         <td>UK</td>
       </tr>
     
       <tr>
-        <td><code>syd</code></td>
+        <td><code>SYD</code></td>
         <td>Sydney (Australia)</td>
         <td>Australia</td>
       </tr>
     
       <tr>
-        <td><code>hkg</code></td>
+        <td><code>HKG</code></td>
         <td>Hong Kong (China)</td>
         <td>China</td>
       </tr>
