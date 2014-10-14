@@ -167,6 +167,11 @@
   </url>
   
   <url>
+    <loc>http://docs.devo.ps/services/postgresql</loc>
+    <lastmod>2014-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>http://docs.devo.ps/services/python</loc>
     <lastmod>2014-10-14</lastmod>
   </url>

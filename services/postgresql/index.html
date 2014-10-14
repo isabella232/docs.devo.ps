@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-  <title>MongoDB | devo.ps documentation</title>
+  <title>PostgreSQL | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, database, nosql'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, database, relational'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -229,7 +229,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/meteor' >Meteor</a>
 
-<a href='/services/mongodb'  class='active'>MongoDB</a>
+<a href='/services/mongodb' >MongoDB</a>
 
 <a href='/services/mysql' >MySQL</a>
 
@@ -241,7 +241,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/php' >PHP</a>
 
-<a href='/services/postgresql' >PostgreSQL</a>
+<a href='/services/postgresql'  class='active'>PostgreSQL</a>
 
 <a href='/services/python' >Python</a>
 
@@ -276,17 +276,29 @@ var Swiftype = window.Swiftype || {};
     
       <li>database</li>
     
-      <li>nosql</li>
+      <li>relational</li>
     
   </ul>
 
-  <h1>MongoDB 
-  <a href='http://docs.mongodb.org/manual/'><span>Official documentation</span></a>
+  <h1>PostgreSQL 
+  <a href='http://www.postgresql.org/docs/'><span>Official documentation</span></a>
   </h1>  
 </header>
 
 <section class='body'>
-  
+  <h1 id="units-in-the-configuration">Units in the configuration</h1>
+<p>The various size or time configuration items can be expressed in the following units.</p>
+<h2 id="memory-units">Memory units</h2>
+<p>  kB = kilobytes
+  MB = megabytes
+  GB = gigabytes</p>
+<h2 id="time-units">Time units</h2>
+<p>  ms  = milliseconds
+  s   = seconds
+  min = minutes
+  h   = hours
+  d   = days</p>
+
 </section>
 
 
@@ -295,104 +307,34 @@ var Swiftype = window.Swiftype || {};
   <dl class='commands'>
     
     <dt>
-      devops mongodb start
+      devops postgresql start
     </dt>
     <dd>
-      Start MongoDB if stopped
+      Start PostgreSQL if stopped
       
     </dd>
     
     <dt>
-      devops mongodb stop
+      devops postgresql stop
     </dt>
     <dd>
-      Stop MongoDB if started
+      Stop PostgreSQL if started
       
     </dd>
     
     <dt>
-      devops mongodb reload
+      devops postgresql reload
     </dt>
     <dd>
-      Reload MongoDB, reload the configuration and perform a graceful restart
+      Reload PostgreSQL, reload the configuration and perform a graceful restart
       
     </dd>
     
     <dt>
-      devops mongodb restart
+      devops postgresql restart
     </dt>
     <dd>
-      Restart MongoDB, reload the configuration (but kills existing connection)
-      
-    </dd>
-    
-    <dt>
-      devops mongodb user add
-    </dt>
-    <dd>
-      Adds a MongoDB database admin user.
-      
-        <h3>Options</h3>
-        <table>
-          <thead>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Required</th>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td class='name'>databases</td>
-              <td class='type'>array</td>
-              <td class='description'>Array of database names the user will become an admin of</td>
-              <td class='required'>Required</td>
-            </tr>
-            
-            <tr>
-              <td class='name'>name</td>
-              <td class='type'>string</td>
-              <td class='description'>User name</td>
-              <td class='required'>Required</td>
-            </tr>
-            
-          </tbody>
-        </table>
-      
-    </dd>
-    
-    <dt>
-      devops mongodb database add
-    </dt>
-    <dd>
-      Adds a database and the read-write users
-      
-        <h3>Options</h3>
-        <table>
-          <thead>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Required</th>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td class='name'>name</td>
-              <td class='type'>string</td>
-              <td class='description'>Database name</td>
-              <td class='required'>Required</td>
-            </tr>
-            
-            <tr>
-              <td class='name'>users</td>
-              <td class='type'>array</td>
-              <td class='description'>Array of users with read-write privileges on the database.</td>
-              <td class='required'></td>
-            </tr>
-            
-          </tbody>
-        </table>
+      Restart PostgreSQL, reload the configuration (but kills existing connection)
       
     </dd>
     
@@ -409,15 +351,24 @@ var Swiftype = window.Swiftype || {};
       <strong>configuration</strong>:
       <ul>
         <li>
-          <strong>mongodb</strong>:
+          <strong>postgresql</strong>:
           <ul class='content'>
             
             
 
 <li>
-  <a href='#details_bindip'>
-    <strong>bindip</strong>:
-    <i>127.0.0.1</i>
+  <a href='#details_authentication_timeout'>
+    <strong>authentication_timeout</strong>:
+    <i>1min</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_data_directory'>
+    <strong>data_directory</strong>:
+    <i>/var/lib/postgresql/9.3/main</i>
   </a>
 </li>
 
@@ -461,45 +412,72 @@ var Swiftype = window.Swiftype || {};
 
 
 <li>
-  <a href='#details_dbpath'>
-    <strong>dbpath</strong>:
-    <i>/var/lib/mongodb</i>
+  <a href='#details_effective_cache_size'>
+    <strong>effective_cache_size</strong>:
+    <i>128MB</i>
   </a>
 </li>
 
 
 
 <li>
-  <a href='#details_enable'>
-    <strong>enable</strong>:
-    <i>yes</i>
+  <a href='#details_external_pid_file'>
+    <strong>external_pid_file</strong>:
+    <i>/var/run/postgresql/9.3-main.pid</i>
   </a>
 </li>
 
 
 
 <li>
-  <a href='#details_enable_rest'>
-    <strong>enable_rest</strong>:
+  <a href='#details_fsync'>
+    <strong>fsync</strong>:
+    <i>true</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_hba_file'>
+    <strong>hba_file</strong>:
+    <i>/etc/postgresql/9.3/main/pg_hba.conf</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ident_file'>
+    <strong>ident_file</strong>:
+    <i>/etc/postgresql/9.3/main/pg_ident.conf</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_listen_addresses'>
+    <strong>listen_addresses</strong>:
+    <i>localhost</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_max_connections'>
+    <strong>max_connections</strong>:
+    <i>100</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_pg_ctl_options'>
+    <strong>pg_ctl_options</strong>:
     <i class='empty'>no default value</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_logpath'>
-    <strong>logpath</strong>:
-    <i>/var/log/mongodb/mongodb.log</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_nohttp'>
-    <strong>nohttp</strong>:
-    <i>false</i>
   </a>
 </li>
 
@@ -508,16 +486,79 @@ var Swiftype = window.Swiftype || {};
 <li>
   <a href='#details_port'>
     <strong>port</strong>:
-    <i>27017</i>
+    <i>5432</i>
   </a>
 </li>
 
 
 
 <li>
-  <a href='#details_user'>
-    <strong>user</strong>:
-    <i>mongodb</i>
+  <a href='#details_shared_buffers'>
+    <strong>shared_buffers</strong>:
+    <i>128MB</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ssl'>
+    <strong>ssl</strong>:
+    <i>true</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ssl_cert_file'>
+    <strong>ssl_cert_file</strong>:
+    <i>/etc/ssl/certs/ssl-cert-snakeoil.pem</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ssl_ciphers'>
+    <strong>ssl_ciphers</strong>:
+    <i>DEFAULT:!LOW:!EXP:!MD5:@STRENGTH</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ssl_key_file'>
+    <strong>ssl_key_file</strong>:
+    <i>/etc/ssl/private/ssl-cert-snakeoil.key</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ssl_renegotiation_limit'>
+    <strong>ssl_renegotiation_limit</strong>:
+    <i>512MB</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_superuser_reserved_connections'>
+    <strong>superuser_reserved_connections</strong>:
+    <i>3</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_unix_socket_directories'>
+    <strong>unix_socket_directories</strong>:
+    <i>/var/run/postgresql</i>
   </a>
 </li>
 
@@ -531,20 +572,6 @@ var Swiftype = window.Swiftype || {};
   <ul class='array'>
     
     
-
-<li>
-  
-  <a href='#details_databases'>
-    <strong>databases</strong>:
-  </a>
-  <ul class='array'>
-    
-    
-  </ul>
-  
-</li>
-
-
 
 <li>
   <a href='#details_name'>
@@ -569,11 +596,22 @@ var Swiftype = window.Swiftype || {};
     
     
   
-    <dt id='details_bindip'>
-      <strong>bindip</strong> <span class='type'>string</span>
+    <dt id='details_authentication_timeout'>
+      <strong>authentication_timeout</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Binding IP address.</dd>
-    <dd class='default'>Default: <code>127.0.0.1</code></dd>
+    <dd class='description'>Timeout for the authentication, from 1s to 10min. Refer to the time units for more details.</dd>
+    <dd class='default'>Default: <code>1min</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_data_directory'>
+      <strong>data_directory</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Data folder.</dd>
+    <dd class='default'>Default: <code>/var/lib/postgresql/9.3/main</code></dd>
     
   
 
@@ -583,7 +621,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_databases'>
       <strong>databases</strong> <span class='type'>array</span>
     </dt>
-    <dd class='description'>Array of databases, defines a database and the list of users with only read-write access</dd>
+    <dd class='description'>Array of databases, defines a database and the permissions of the users</dd>
     
     
   
@@ -619,7 +657,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_users'>
       database.<strong>users</strong> <span class='type'>array</span>
     </dt>
-    <dd class='description'>Array of users with read-write privileges on the database. If the user does not exist it will be created. Do not specify users that are already admin of the database or they will loose their admin privileges.</dd>
+    <dd class='description'>Array of users with full privileges on the database, users will be granted access from all their hosts</dd>
     
     
   
@@ -632,55 +670,88 @@ var Swiftype = window.Swiftype || {};
   
 
   
-    <dt id='details_dbpath'>
-      <strong>dbpath</strong> <span class='type'>string</span>
+    <dt id='details_effective_cache_size'>
+      <strong>effective_cache_size</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Database files path.</dd>
-    <dd class='default'>Default: <code>/var/lib/mongodb</code></dd>
+    <dd class='description'>Amount of memory expected to be available on the OS for data caching. Set up to 50% of the RAM on the server.</dd>
+    <dd class='default'>Default: <code>128MB</code></dd>
     
   
 
   
 
   
-    <dt id='details_enable'>
-      <strong>enable</strong> <span class='type'>string</span>
+    <dt id='details_external_pid_file'>
+      <strong>external_pid_file</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Enable or disable mongodb service.</dd>
-    <dd class='default'>Default: <code>yes</code></dd>
+    <dd class='description'>Path to the pid file.</dd>
+    <dd class='default'>Default: <code>/var/run/postgresql/9.3-main.pid</code></dd>
     
   
 
   
 
   
-    <dt id='details_enable_rest'>
-      <strong>enable_rest</strong> <span class='type'>boolean</span>
+    <dt id='details_fsync'>
+      <strong>fsync</strong> <span class='type'>boolean</span>
     </dt>
-    <dd class='description'>Enable REST over the HTTP interface</dd>
-    
-    
-  
-
-  
-
-  
-    <dt id='details_logpath'>
-      <strong>logpath</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Database log file path.</dd>
-    <dd class='default'>Default: <code>/var/log/mongodb/mongodb.log</code></dd>
+    <dd class='description'>Enable fsync of transaction to disk before being commited. Can reduce performance but is safer. Disable with caution.</dd>
+    <dd class='default'>Default: <code>true</code></dd>
     
   
 
   
 
   
-    <dt id='details_nohttp'>
-      <strong>nohttp</strong> <span class='type'>string</span>
+    <dt id='details_hba_file'>
+      <strong>hba_file</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Disable entirely the HTTP interface.</dd>
-    <dd class='default'>Default: <code>false</code></dd>
+    <dd class='description'>Path to the host-based authentication file.</dd>
+    <dd class='default'>Default: <code>/etc/postgresql/9.3/main/pg_hba.conf</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ident_file'>
+      <strong>ident_file</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Path to the ident configuration file.</dd>
+    <dd class='default'>Default: <code>/etc/postgresql/9.3/main/pg_ident.conf</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_listen_addresses'>
+      <strong>listen_addresses</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Comma-separated list of addresses, use * for all.</dd>
+    <dd class='default'>Default: <code>localhost</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_max_connections'>
+      <strong>max_connections</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Maximum amount of concurrent connection to PostgreSQL, note that increasing the max_connections costs ~400 bytes of shared memory per connection slot, plus lock space (see max_locks_per_transaction).</dd>
+    <dd class='default'>Default: <code>100</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_pg_ctl_options'>
+      <strong>pg_ctl_options</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>This configuration file contains cluster specific options to be passed to pg_ctl.</dd>
+    
     
   
 
@@ -690,19 +761,96 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_port'>
       <strong>port</strong> <span class='type'>integer</span>
     </dt>
-    <dd class='description'>Connection port.</dd>
-    <dd class='default'>Default: <code>27017</code></dd>
+    <dd class='description'>Listening port.</dd>
+    <dd class='default'>Default: <code>5432</code></dd>
     
   
 
   
 
   
-    <dt id='details_user'>
-      <strong>user</strong> <span class='type'>string</span>
+    <dt id='details_shared_buffers'>
+      <strong>shared_buffers</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Mongodb running user.</dd>
-    <dd class='default'>Default: <code>mongodb</code></dd>
+    <dd class='description'>Amount of memory allocated to PostgreSQL to cache data. Set to up to 25% of the RAM available on the server.</dd>
+    <dd class='default'>Default: <code>128MB</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ssl'>
+      <strong>ssl</strong> <span class='type'>boolean</span>
+    </dt>
+    <dd class='description'>Enable SSL.</dd>
+    <dd class='default'>Default: <code>true</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ssl_cert_file'>
+      <strong>ssl_cert_file</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>SSL certificate.</dd>
+    <dd class='default'>Default: <code>/etc/ssl/certs/ssl-cert-snakeoil.pem</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ssl_ciphers'>
+      <strong>ssl_ciphers</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Allowed SSL ciphers.</dd>
+    <dd class='default'>Default: <code>DEFAULT:!LOW:!EXP:!MD5:@STRENGTH</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ssl_key_file'>
+      <strong>ssl_key_file</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>SSL private key.</dd>
+    <dd class='default'>Default: <code>/etc/ssl/private/ssl-cert-snakeoil.key</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ssl_renegotiation_limit'>
+      <strong>ssl_renegotiation_limit</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Amount of data between SSL renegotiations. Refer to the size units for more details.</dd>
+    <dd class='default'>Default: <code>512MB</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_superuser_reserved_connections'>
+      <strong>superuser_reserved_connections</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Number of connections reserved to the superuser.</dd>
+    <dd class='default'>Default: <code>3</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_unix_socket_directories'>
+      <strong>unix_socket_directories</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Comma-separated list of directories used to store the unix sockets.</dd>
+    <dd class='default'>Default: <code>/var/run/postgresql</code></dd>
     
   
 
@@ -712,7 +860,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_users'>
       <strong>users</strong> <span class='type'>array</span>
     </dt>
-    <dd class='description'>Array of MongoDB admin db users. Passwords are randomly generated. A global admin user (named admin) is created automatically. The users defined here will be admin users of their respective databases</dd>
+    <dd class='description'>Array of MySQL users. Passwords are randomly generated.</dd>
     
     
   
@@ -731,17 +879,6 @@ var Swiftype = window.Swiftype || {};
       
       <dl>
         
-  
-    <dt id='details_databases'>
-      user.<strong>databases</strong> <span class='type'>array</span>
-    </dt>
-    <dd class='description'>Array of database names where the user will be an admin</dd>
-    
-    
-  
-
-  
-
   
     <dt id='details_name'>
       user.<strong>name</strong> <span class='type'>string</span>
