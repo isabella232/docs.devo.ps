@@ -14,21 +14,27 @@ tasks:
 - description: Add a new uWSGI application configuration
   name: app add
   options:
+    listen:
+      description: Listening HTTP address (either of "ip.ad.dr.es:port", or "port")
+        - if not specified uses unix socket instead
+      required: false
+      type: string
     module:
-      description: stuff
+      description: The uWSGI module to execute in the app (e.g. django.core.handlers.wsgi:WSGIHandler(),
+        wsgihandler:application)
       required: false
       type: string
     name:
       description: Name of the app
       required: true
       type: string
-    port:
-      description: listening TCP port
-      required: true
-      type: int
     root:
       description: root folder of the application
       required: true
+      type: string
+    virtualenv:
+      description: Name of the virtualenv to use
+      required: false
       type: string
 title: uWSGI
 
