@@ -4,7 +4,7 @@ title: Getting started
 
 This documentation is divided in 3 sections:
 
-- The **manual** explains the main features of devo.ps. Make sure to read the pages about [nodes](/manual/nodes) and [tasks](/manual/tasks), the two core concepts of this product.
+- The **manual** describes the main features of devo.ps. Make sure to read the pages about [nodes](/manual/nodes) and [tasks](/manual/tasks), the two core concepts of this product.
 
 - The **providers** section explains the settings for the providers we support (AWS, Digital Ocean, Rackspace, Linode).
 
