@@ -335,9 +335,16 @@ var Swiftype = window.Swiftype || {};
           <tbody>
             
             <tr>
+              <td class='name'>listen</td>
+              <td class='type'>string</td>
+              <td class='description'>Listening HTTP address (either of &quot;ip.ad.dr.es:port&quot;, or &quot;port&quot;) - if not specified uses unix socket instead</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
               <td class='name'>module</td>
               <td class='type'>string</td>
-              <td class='description'>stuff</td>
+              <td class='description'>The uWSGI module to execute in the app (e.g. django.core.handlers.wsgi:WSGIHandler(), wsgihandler:application)</td>
               <td class='required'></td>
             </tr>
             
@@ -349,17 +356,17 @@ var Swiftype = window.Swiftype || {};
             </tr>
             
             <tr>
-              <td class='name'>port</td>
-              <td class='type'>int</td>
-              <td class='description'>listening TCP port</td>
-              <td class='required'>Required</td>
-            </tr>
-            
-            <tr>
               <td class='name'>root</td>
               <td class='type'>string</td>
               <td class='description'>root folder of the application</td>
               <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>virtualenv</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the virtualenv to use</td>
+              <td class='required'></td>
             </tr>
             
           </tbody>
