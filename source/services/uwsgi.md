@@ -16,7 +16,7 @@ tasks:
   options:
     listen:
       description: Listening HTTP address (either of "ip.ad.dr.es:port", or "port")
-        - if not specified uses unix socket instead
+        - if not specified uses unix socket instead.
       required: false
       type: string
     module:
@@ -33,7 +33,7 @@ tasks:
       required: true
       type: string
     virtualenv:
-      description: Name of the virtualenv to use
+      description: Name of the virtualenv to use.
       required: false
       type: string
 title: uWSGI
