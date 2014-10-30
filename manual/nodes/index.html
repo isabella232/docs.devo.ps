@@ -306,7 +306,7 @@ configuration:
       - gulp
       - forever
       - bower      
-</code></pre><p>Once pushed to <code>master</code>, this will provision a 512MB Ubuntu server on Digital Ocean (using the <a href="/manual/profile#providers">provider credentials defined in your profile</a>) in their <code>San Francisco 1</code> datacenter (location and size values are <a href="/providers/digital_ocean/">documented in the provider section</a>). It will also install <a href="/services/nginx">Nginx</a> and <a href="/services/nodejs">Node.js</a> and additionally add the the <code>gulp</code>, <code>forever</code> and <code>bower</code> packages to Node.js.</p>
+</code></pre><p>Once pushed to <code>master</code>, this will provision a 512MB Ubuntu server on Digital Ocean (using the <a href="/manual/profile#providers">provider credentials defined in your profile</a>) in their <code>San Francisco 1</code> datacenter (location and size values are <a href="/providers/digitalocean/">documented in the provider section</a>). It will also install <a href="/services/nginx">Nginx</a> and <a href="/services/nodejs">Node.js</a> and additionally add the the <code>gulp</code>, <code>forever</code> and <code>bower</code> packages to Node.js.</p>
 <h3 id="format">Format</h3>
 <dl>
   <dt><code><span class='type'>string</span> id</code></dt>
@@ -323,7 +323,7 @@ configuration:
     The provider information for the node, used for provisioning.
     <dl>
       <dt><code><span class='type'>string</span> name</code></dt>
-      <dd>The id of the provider you want to use. We currently support Digital Ocean (<a href="/providers/digital_ocean">digitalocean</a>), EC2 (<a href="/providers/ec2">ec2</a>), Linode (<a href="/providers/linode">linode</a>) and Rackspace (<a href="/providers/rackspace">rackspace</a>).</dd>
+      <dd>The id of the provider you want to use. We currently support Digital Ocean (<a href="/providers/digitalocean">digitalocean</a>), EC2 (<a href="/providers/ec2">ec2</a>), Linode (<a href="/providers/linode">linode</a>) and Rackspace (<a href="/providers/rackspace">rackspace</a>).</dd>
 
       <dt><code><span class='type'>integer</span> size</code></dt>
       <dd>id of the server size to use, as defined in the provider&#39;s documentation.</dd>
