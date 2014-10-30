@@ -140,3 +140,19 @@ Will automatically create the following endpoints:
 Where `{USER}` is the repository owner and `{REPO}` the name of the repository.
 
 When a webhook receives a `POST` payload, it gets converted a JSON object and assigned to the `{{ payload }}` [variable](/manual/variables).
+
+### Cron
+
+Crons allow you define a schedule when the task should be started.
+
+The following definition in a task:
+
+    triggers:
+      cron:
+        - '0 */2 * * *'
+
+Will automatically create a new execution schedule and will get the task started every 2 hours.
+
+*The syntax of the cron follows the regular unix crontab; you can find more details [here](https://en.wikipedia.org/wiki/Cron)*
+
+You may typically want to use cron triggers for backup, any operation you want to schedule in advance, or periodically restart a buggy application...
