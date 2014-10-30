@@ -35,7 +35,7 @@ For example, we could add a `web.yml` file with the following content:
           - forever
           - bower      
 
-Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Ocean (using the [provider credentials defined in your profile](/manual/profile#providers)) in their `San Francisco 1` datacenter (location and size values are [documented in the provider section](/providers/digital_ocean/)). It will also install [Nginx](/services/nginx) and [Node.js](/services/nodejs) and additionally add the the `gulp`, `forever` and `bower` packages to Node.js.
+Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Ocean (using the [provider credentials defined in your profile](/manual/profile#providers)) in their `San Francisco 1` datacenter (location and size values are [documented in the provider section](/providers/digitalocean/)). It will also install [Nginx](/services/nginx) and [Node.js](/services/nodejs) and additionally add the the `gulp`, `forever` and `bower` packages to Node.js.
 
 ### Format
 
@@ -54,7 +54,7 @@ Once pushed to `master`, this will provision a 512MB Ubuntu server on Digital Oc
     The provider information for the node, used for provisioning.
     <dl>
       <dt><code><span class='type'>string</span> name</code></dt>
-      <dd>The id of the provider you want to use. We currently support Digital Ocean ([digitalocean](/providers/digital_ocean)), EC2 ([ec2](/providers/ec2)), Linode ([linode](/providers/linode)) and Rackspace ([rackspace](/providers/rackspace)).</dd>
+      <dd>The id of the provider you want to use. We currently support Digital Ocean ([digitalocean](/providers/digitalocean)), EC2 ([ec2](/providers/ec2)), Linode ([linode](/providers/linode)) and Rackspace ([rackspace](/providers/rackspace)).</dd>
       
       <dt><code><span class='type'>integer</span> size</code></dt>
       <dd>id of the server size to use, as defined in the provider's documentation.</dd>
