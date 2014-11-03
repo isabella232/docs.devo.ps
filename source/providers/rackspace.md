@@ -75,6 +75,153 @@ sizes:
   price_per: hour
   ram: 30720
 - bandwidth: null
+  disk: 0
+  id: compute1-15
+  name: 15 GB Compute v1
+  price: 0.0
+  price_per: hour
+  ram: 15360
+- bandwidth: null
+  disk: 0
+  id: compute1-30
+  name: 30 GB Compute v1
+  price: 0.0
+  price_per: hour
+  ram: 30720
+- bandwidth: null
+  disk: 0
+  id: compute1-4
+  name: 3.75 GB Compute v1
+  price: 0.0
+  price_per: hour
+  ram: 3840
+- bandwidth: null
+  disk: 0
+  id: compute1-60
+  name: 60 GB Compute v1
+  price: 0.0
+  price_per: hour
+  ram: 61440
+- bandwidth: null
+  disk: 0
+  id: compute1-8
+  name: 7.5 GB Compute v1
+  price: 0.0
+  price_per: hour
+  ram: 7680
+- bandwidth: null
+  disk: 20
+  id: general1-1
+  name: 1 GB General Purpose v1
+  price: 0.0
+  price_per: hour
+  ram: 1024
+- bandwidth: null
+  disk: 40
+  id: general1-2
+  name: 2 GB General Purpose v1
+  price: 0.0
+  price_per: hour
+  ram: 2048
+- bandwidth: null
+  disk: 80
+  id: general1-4
+  name: 4 GB General Purpose v1
+  price: 0.0
+  price_per: hour
+  ram: 4096
+- bandwidth: null
+  disk: 160
+  id: general1-8
+  name: 8 GB General Purpose v1
+  price: 0.0
+  price_per: hour
+  ram: 8192
+- bandwidth: null
+  disk: 40
+  id: io1-120
+  name: 120 GB I/O v1
+  price: 0.0
+  price_per: hour
+  ram: 122880
+- bandwidth: null
+  disk: 40
+  id: io1-15
+  name: 15 GB I/O v1
+  price: 0.0
+  price_per: hour
+  ram: 15360
+- bandwidth: null
+  disk: 40
+  id: io1-30
+  name: 30 GB I/O v1
+  price: 0.0
+  price_per: hour
+  ram: 30720
+- bandwidth: null
+  disk: 40
+  id: io1-60
+  name: 60 GB I/O v1
+  price: 0.0
+  price_per: hour
+  ram: 61440
+- bandwidth: null
+  disk: 40
+  id: io1-90
+  name: 90 GB I/O v1
+  price: 0.0
+  price_per: hour
+  ram: 92160
+- bandwidth: null
+  disk: 0
+  id: memory1-120
+  name: 120 GB Memory v1
+  price: 0.0
+  price_per: hour
+  ram: 122880
+- bandwidth: null
+  disk: 0
+  id: memory1-15
+  name: 15 GB Memory v1
+  price: 0.0
+  price_per: hour
+  ram: 15360
+- bandwidth: null
+  disk: 0
+  id: memory1-240
+  name: 240 GB Memory v1
+  price: 0.0
+  price_per: hour
+  ram: 245760
+- bandwidth: null
+  disk: 0
+  id: memory1-30
+  name: 30 GB Memory v1
+  price: 0.0
+  price_per: hour
+  ram: 30720
+- bandwidth: null
+  disk: 0
+  id: memory1-60
+  name: 60 GB Memory v1
+  price: 0.0
+  price_per: hour
+  ram: 61440
+- bandwidth: null
+  disk: 32
+  id: onmetal-compute1
+  name: OnMetal Compute v1
+  price: 0.0
+  price_per: hour
+  ram: 32768
+- bandwidth: null
+  disk: 32
+  id: onmetal-memory1
+  name: OnMetal Memory v1
+  price: 0.0
+  price_per: hour
+  ram: 524288
+- bandwidth: null
   disk: 20
   id: performance1-1
   name: 1 GB Performance
