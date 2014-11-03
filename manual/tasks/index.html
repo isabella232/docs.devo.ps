@@ -397,7 +397,6 @@ steps:
 <p>Commands are run as the <code>devops</code> user on targeted nodes. You can however switch users by using the <code>sudo</code> command in scripts or inline commands.</p>
 <h2 id="triggers">Triggers</h2>
 <p>Tasks are run whenever one of the triggers conditions are met.</p>
-<p><em>We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.</em></p>
 <h3 id="webhook">Webhook</h3>
 <p>Webhooks allow you define HTTP callbacks which you, or a 3rd party, can query with a <code>POST</code> payload.</p>
 <p>The following definition in a task:</p>
@@ -419,7 +418,7 @@ https://wh.devo.ps/{USER}/{REPO}/some/other/url
     - &#39;0 */2 * * *&#39;
 </code></pre><p>Will automatically create a new execution schedule and will get the task started every 2 hours.</p>
 <p><em>The syntax of the cron follows the regular unix crontab; you can find more details <a href="https://en.wikipedia.org/wiki/Cron">here</a></em></p>
-<p>You may typically want to use cron triggers for backup, any operation you want to schedule in advance, or periodically restart a buggy application...</p>
+<p>You may typically want to use cron triggers for backup, any operation you want to schedule in advance, or periodically restart a buggy application.</p>
 
 </section>
 
