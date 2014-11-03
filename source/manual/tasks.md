@@ -117,8 +117,6 @@ Commands are run as the `devops` user on targeted nodes. You can however switch 
 
 Tasks are run whenever one of the triggers conditions are met.
 
-*We currently only support manual and webhook triggers. We are working on adding support for cron and 3rd party events (GitHub, TravisCI, NewRelic...). Webhooks are however flexible enough that you should be able to integrate most 3rd parties already.*
-
 ### Webhook
 
 Webhooks allow you define HTTP callbacks which you, or a 3rd party, can query with a `POST` payload.
@@ -155,4 +153,4 @@ Will automatically create a new execution schedule and will get the task started
 
 *The syntax of the cron follows the regular unix crontab; you can find more details [here](https://en.wikipedia.org/wiki/Cron)*
 
-You may typically want to use cron triggers for backup, any operation you want to schedule in advance, or periodically restart a buggy application...
+You may typically want to use cron triggers for backup, any operation you want to schedule in advance, or periodically restart a buggy application.
