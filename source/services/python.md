@@ -8,6 +8,37 @@ configuration:
 documentation: https://docs.python.org/2/
 tags:
 - language
+tasks:
+- description: Install python packages
+  name: packages add
+  options:
+    packages:
+      description: List of packages to install
+      required: false
+      type: array
+    requirements_file:
+      description: Full path to the requirements.txt file
+      required: false
+      type: string
+    virtualenv:
+      description: Name of the virtualenv to use
+      required: false
+      type: string
+- description: Remove python packages
+  name: packages remove
+  options:
+    packages:
+      description: List of packages to remove
+      required: false
+      type: array
+    requirements_file:
+      description: Full path to the requirements.txt file
+      required: false
+      type: string
+    virtualenv:
+      description: Name of the virtualenv to consider
+      required: false
+      type: string
 title: Python
 
 ---
