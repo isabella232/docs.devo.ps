@@ -290,6 +290,97 @@ var Swiftype = window.Swiftype || {};
 </section>
 
 
+<section class='tasks'>
+  <h2 id='commands'><a href='#commands'>Commands</a></h2>
+  <dl class='commands'>
+    
+    <dt>
+      devops python packages add
+    </dt>
+    <dd>
+      Install python packages
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>packages</td>
+              <td class='type'>array</td>
+              <td class='description'>List of packages to install</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>requirements_file</td>
+              <td class='type'>string</td>
+              <td class='description'>Full path to the requirements.txt file</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>virtualenv</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the virtualenv to use</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+    <dt>
+      devops python packages remove
+    </dt>
+    <dd>
+      Remove python packages
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>packages</td>
+              <td class='type'>array</td>
+              <td class='description'>List of packages to remove</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>requirements_file</td>
+              <td class='type'>string</td>
+              <td class='description'>Full path to the requirements.txt file</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>virtualenv</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the virtualenv to consider</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+  </dl>
+</section>
+
 
 
 <section id='configuration'>
