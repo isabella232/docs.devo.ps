@@ -22,6 +22,11 @@
   </url>
   
   <url>
+    <loc>http://docs.devo.ps/how-to/start-automatically-a-task-using-a-github-webhook</loc>
+    <lastmod>2014-11-06</lastmod>
+  </url>
+  
+  <url>
     <loc>http://docs.devo.ps/manual/CLI</loc>
     <lastmod>2014-11-06</lastmod>
   </url>

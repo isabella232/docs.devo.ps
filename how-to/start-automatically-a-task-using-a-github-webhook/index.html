@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Variables | devo.ps documentation</title>
+  <title>Start automatically a task using a GitHub webhook | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
@@ -90,7 +90,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/how-to/create-linode-api-key' >Create Linode API key</a>
 
-<a href='/how-to/start-automatically-a-task-using-a-github-webhook' >Start automatically a task using a GitHub webhook</a>
+<a href='/how-to/start-automatically-a-task-using-a-github-webhook'  class='active'>Start automatically a task using a GitHub webhook</a>
 
 
 <h3>Manual</h3>
@@ -119,7 +119,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/manual/tasks' >Tasks</a>
 
-<a href='/manual/vars'  class='active'>Variables</a>
+<a href='/manual/vars' >Variables</a>
 
 
 <h3>Providers</h3>
@@ -272,53 +272,49 @@ var Swiftype = window.Swiftype || {};
     
   </ul>
 
-  <h1>Variables </h1>  
+  <h1>Start automatically a task using a GitHub webhook </h1>  
 </header>
 
 <section class='body'>
-  <h2 id="types-of-variables">Types of variables</h2>
-<p>Variables, usually refered to as <code>vars</code>, are various kind of values available through devo.ps;</p>
+  <p>Webhooks provide a highly convenient way to execute a task automatically when a specific URL gets hit. Common use cases are:</p>
 <ul>
-<li><p><strong>Services configuration</strong>; each service comes with a set of default configuration that you can override. The value of each each of these configuration is available as a variable.</p>
-<p>  For example, the NGINX service has a <code>events.worker_connections</code> <a href="/services/nginx#configuration">configuration variable</a>. If that service is installed on the <code>web_1</code> node, then you should be able to access it at <code>{{ web_1.configuration.nginx.events.worker_connections }}</code>.</p>
-</li>
-<li><p><strong>Meta data</strong>; some information coming is dynamically assigned to each node upon provisioning.</p>
-<p>  For example, the IP address (<code>{{ web_1.ip }})</code>) or devops SSH key (<code>{{ web1.pub_key }}</code>).</p>
-</li>
-<li><p><strong>Custom variables</strong>; users can define custom variables in the <code>vars</code> attributes of nodes, tasks and tasks commands.</p>
-<p>  For example, </p>
-</li>
+<li>deploy an application whenever a commit is performed in your Github code repository</li>
 </ul>
-<h2 id="assigning">Assigning</h2>
-<pre><code>vars:
-  my_var: 123
-  my_other_var: [&quot;An&quot;, &quot;array&quot;, &quot;of&quot;, &quot;strings&quot;]
-  {{ my_global_var }}: &quot;Something else again&quot;
-</code></pre><!-- ## Registry -->
+<ol>
+<li><p>(Pre-requisite) You need to have defined a task with the steps you want to run automatically</p>
+</li>
+<li><p>From your profile page, <strong>click on the repository you want to use</strong>. You will land on the &quot;Home&quot; section of the repository.</p>
+<p> <em>The Home section shows all the servers and tasks you have defined and their status.</em></p>
+</li>
+<li><p><strong>Click on the task</strong> to execute automatically via a GitHub webhook, and <strong>click on the edit icon</strong>.</p>
+</li>
+<li><p>In the editor, edit your task and add a new webhook trigger like the following:</p>
+<pre><code> id: my-task
+ name: My Task
+ type: task
 
-<h2 id="reading">Reading</h2>
-<ul>
-<li><p>an inline command like</p>
-<pre><code>  steps:
-    - run: mkdir {{ myvar }} &amp;&amp; cd {{ myvar }}
-</code></pre></li>
-<li><p>or with a script</p>
-<pre><code>  steps:
-    - run: devops scripts/some_script.sh
+ triggers:
+   webhooks:
+     - path: my/secret/url
 
-  shell&gt; cat ./scripts/some_script.sh
-
-  #!/bin/bash
-  echo {{ my_other_var }}
-</code></pre></li>
-<li><p>or within a package task</p>
-<pre><code>  steps:
-    - run: devops package some_task
-      options:
-        some: {{ myvar }}
-</code></pre></li>
-</ul>
-<!-- ## Scope -->
+ steps:
+   ...
+</code></pre><p> <em>The path you enter in your task will be reachable via the following URL: <a href="https://wh.devo.ps/*{">https://wh.devo.ps/*{</a> username }<em>/</em>{ repo }<em>/</em>{ path }*. You will see the exact URL path when you save the task and see the details of the task.</em></p>
+<p> <em>You can specify multiple paths for the various clients you may want to use; for example a GitHub dedicated URL, a Jenkins URL, etc.</em></p>
+<p> <em>You can automatically trigger this task by performing a POST HTTP request.</em></p>
+</li>
+<li><p><strong>Go in your GitHub account</strong>, and select the repository you want to set the webhook on.</p>
+</li>
+<li><p><strong>Click on the settings page</strong>, then <strong>Webhooks and Services</strong> tabs.</p>
+<p> <em>Note; you need to be administrator of that GitHub repository to access the settings page. If you are not, you may want to contact the admins and get them to add the webhook.</em></p>
+</li>
+<li><p><strong>Click on &quot;Add webhook&quot;</strong>, and <strong>paste</strong> the webhook URL in the &quot;Payload URL&quot; text box. Keep the &quot;Content type&quot; as <em>application/json</em> and leave the &quot;Secret&quot; blank. You probably want to keep the rest as default, unless you know what you are doing; only trigger the webhook on <em>push event</em>.</p>
+<p> <em>You may be prompted for your GitHub password to perform this operation.</em></p>
+<p> <em>You can also refer to the official <a href="https://developer.github.com/webhooks/">GitHub documentation about webhook</a>.</em></p>
+</li>
+<li><p>Finally <strong>Click the &quot;Add Webhook&quot; button</strong> and you are set! Any future commit on your GitHub repository will automatically trigger a webhook to your devo.ps account and get the task to start in a matter of seconds.</p>
+</li>
+</ol>
 
 </section>
 
