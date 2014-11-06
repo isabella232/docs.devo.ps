@@ -281,12 +281,12 @@ var Swiftype = window.Swiftype || {};
 <li>deploy an application whenever a commit is performed in your Github code repository</li>
 </ul>
 <ol>
-<li><p>(Pre-requisite) You need to have defined a task with the steps you want to run automatically</p>
+<li><p>(Pre-requisite) You need to have defined a task with the steps you want to run automatically.</p>
 </li>
 <li><p>From your profile page, <strong>click on the repository you want to use</strong>. You will land on the &quot;Home&quot; section of the repository.</p>
-<p> <em>The Home section shows all the servers and tasks you have defined and their status.</em></p>
+<p> <em>The Home section shows all the servers and tasks you have defined in that specific repository and their status.</em></p>
 </li>
-<li><p><strong>Click on the task</strong> to execute automatically via a GitHub webhook, and <strong>click on the edit icon</strong>.</p>
+<li><p><strong>Click on the task</strong> you want to trigger via a GitHub webhook, and <strong>click on the edit icon</strong>.</p>
 </li>
 <li><p>In the editor, edit your task and add a new webhook trigger like the following:</p>
 <pre><code> id: my-task
@@ -299,22 +299,23 @@ var Swiftype = window.Swiftype || {};
 
  steps:
    ...
-</code></pre><p> <em>The path you enter in your task will be reachable via the following URL: <a href="https://wh.devo.ps/*{">https://wh.devo.ps/*{</a> username }<em>/</em>{ repo }<em>/</em>{ path }*. You will see the exact URL path when you save the task and see the details of the task.</em></p>
-<p> <em>You can specify multiple paths for the various clients you may want to use; for example a GitHub dedicated URL, a Jenkins URL, etc.</em></p>
-<p> <em>You can automatically trigger this task by performing a POST HTTP request.</em></p>
+</code></pre><p> <em>The path you enter in your task will be reachable via the following URL: <a href="https://wh.devo.ps/">https://wh.devo.ps/</a><i>username</i>/<i>repo</i>/<i>path</i>. You will see the exact URL path when you save the task and see the details of the task.</em></p>
+<p> <em>You can specify <strong>multiple paths</strong> for the various clients you may want to use; for example a GitHub dedicated URL, a Jenkins URL, etc.</em></p>
+<p> <em>This task will be triggered by a POST HTTP request on the URL previously defined.</em></p>
 </li>
 <li><p><strong>Go in your GitHub account</strong>, and select the repository you want to set the webhook on.</p>
 </li>
 <li><p><strong>Click on the settings page</strong>, then <strong>Webhooks and Services</strong> tabs.</p>
 <p> <em>Note; you need to be administrator of that GitHub repository to access the settings page. If you are not, you may want to contact the admins and get them to add the webhook.</em></p>
 </li>
-<li><p><strong>Click on &quot;Add webhook&quot;</strong>, and <strong>paste</strong> the webhook URL in the &quot;Payload URL&quot; text box. Keep the &quot;Content type&quot; as <em>application/json</em> and leave the &quot;Secret&quot; blank. You probably want to keep the rest as default, unless you know what you are doing; only trigger the webhook on <em>push event</em>.</p>
+<li><p><strong>Click on &quot;Add webhook&quot;</strong>, and <strong>paste</strong> the webhook URL in the &quot;Payload URL&quot; text box. Keep the &quot;Content type&quot; as <code>application/json</code> and leave the &quot;Secret&quot; blank. You probably want to keep the rest as default, unless you know what you are doing; only trigger the webhook on &quot;push event&quot;.</p>
 <p> <em>You may be prompted for your GitHub password to perform this operation.</em></p>
 <p> <em>You can also refer to the official <a href="https://developer.github.com/webhooks/">GitHub documentation about webhook</a>.</em></p>
 </li>
-<li><p>Finally <strong>Click the &quot;Add Webhook&quot; button</strong> and you are set! Any future commit on your GitHub repository will automatically trigger a webhook to your devo.ps account and get the task to start in a matter of seconds.</p>
+<li><p>Finally <strong>Click the &quot;Add Webhook&quot; button</strong> and you are set! </p>
 </li>
 </ol>
+<p>Any future commit on your GitHub repository will automatically trigger a webhook to your devo.ps account and get the task to start in a matter of seconds.</p>
 
 </section>
 
