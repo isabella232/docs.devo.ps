@@ -6,7 +6,7 @@ Events are signals emitted a certain time during the lifetime of your infrastuct
 
 ## Using events in tasks
 
-Refer to the [event section in tasks](/manual/tasks/#Event)
+Refer to the [event section in tasks](/manual/tasks/#event)
 
 ## Signal list
 
