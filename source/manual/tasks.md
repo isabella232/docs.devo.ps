@@ -169,7 +169,7 @@ The following definition in a task:
 Will automatically register this task to be executed when:
 
 - the node `my-node` has been successfully created
-- the task `some-task` has failed its run
+- the task `some-task` fails a run
 
 A complete list of the events is available in the [events](/manual/events/) section of the documentation.
 
