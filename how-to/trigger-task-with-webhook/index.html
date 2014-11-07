@@ -282,7 +282,7 @@ var Swiftype = window.Swiftype || {};
 <li>Run integration testing on each commit</li>
 <li>etc.</li>
 </ul>
-<p>In this how-to we will focus on setting up a webhook in a devo.ps task and associate it with a GitHub webhook.</p>
+<p>In this how-to we will focus on setting up a webhook in a devo.ps task and associate it with GitHub.</p>
 <ol>
 <li><p>(Pre-requisite) You need to have defined a task with the steps you want to run automatically.</p>
 </li>
@@ -301,6 +301,8 @@ var Swiftype = window.Swiftype || {};
 
  triggers:
    webhooks:
+     # This URL is publicly accessible, you may want to randomize it instead
+     # - path: SuPeRr4ndOm
      - path: my/super/secret/url
 
  steps:
