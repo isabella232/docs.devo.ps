@@ -146,7 +146,7 @@ Crons allow you define a schedule when the task should be started.
 The following definition in a task:
 
     triggers:
-      cron:
+      crons:
         - '0 */2 * * *'
 
 Will automatically create a new execution schedule and will get the task started every 2 hours.
@@ -154,3 +154,23 @@ Will automatically create a new execution schedule and will get the task started
 *The syntax of the cron follows the regular unix crontab; you can find more details [here](https://en.wikipedia.org/wiki/Cron)*
 
 You may typically want to use cron triggers for backup, any operation you want to schedule in advance, or periodically restart a buggy application.
+
+### Event
+
+Events are triggered at various time during the life of your infrastructure, for example when a `sync` operation on a node starts, when it completes, or when a task `run` starts and complete. Defining events in your trigger list allow tasks to listen to those events and automatically starts whenever such signal is received.
+
+The following definition in a task:
+
+    triggers:
+      events:
+        - node.my-node.create.success
+        - task.some-task.run.error
+
+Will automatically register this task to be executed when:
+
+- the node `my-node` has been successfully created
+- the task `some-task` has failed its run
+
+A complete list of the events is available in the [events](/manual/events/) section of the documentation.
+
+
