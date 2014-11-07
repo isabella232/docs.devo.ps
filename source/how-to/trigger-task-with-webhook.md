@@ -9,7 +9,7 @@ Webhooks provide a highly convenient way to execute a task automatically when a 
 - etc.
 
 
-In this how-to we will focus on setting up a webhook in a devo.ps task and associate it with a GitHub webhook.
+In this how-to we will focus on setting up a webhook in a devo.ps task and associate it with GitHub.
 
 
 1. (Pre-requisite) You need to have defined a task with the steps you want to run automatically.
@@ -32,6 +32,8 @@ In this how-to we will focus on setting up a webhook in a devo.ps task and assoc
 
         triggers:
           webhooks:
+            # This URL is publicly accessible, you may want to randomize it instead
+            # - path: SuPeRr4ndOm
             - path: my/super/secret/url
 
         steps:
