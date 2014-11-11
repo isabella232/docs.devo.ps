@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-  <title>CouchDB | devo.ps documentation</title>
+  <title>Frequently Asked Questions | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, database, nosql'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -68,7 +68,7 @@ var Swiftype = window.Swiftype || {};
       <nav class='menu'>
         <a href='/' >Getting started</a>
 
-<h3><a href='/faq' >FAQ</a></h3>
+<h3><a href='/faq'  class='active'>FAQ</a></h3>
 
 <h3>How to</h3>
 
@@ -211,7 +211,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/couchbase' >CouchBase</a>
 
-<a href='/services/couchdb'  class='active'>CouchDB</a>
+<a href='/services/couchdb' >CouchDB</a>
 
 <a href='/services/dart' >Dart</a>
 
@@ -276,288 +276,59 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>database</li>
-    
-      <li>nosql</li>
-    
   </ul>
 
-  <h1>CouchDB 
-  <a href='http://docs.couchdb.org/en/latest/'><span>Official documentation</span></a>
-  </h1>  
+  <h1>Frequently Asked Questions </h1>  
 </header>
 
 <section class='body'>
-  <h3 id="notes">Notes</h3>
-<p>For better user experience you may prefer the use of the <code>reload</code> task instead of <code>restart</code>.</p>
+  <p>A quick collection of Frequently Asked Questions, if you don&#39;t find your answer in the following list feel free to either <a href="https://app.devo.ps/cwtcfmmj@incoming.intercom.io">contact us</a>, <a href="http://www.hipchat.com/gyHEHtsXZ">hop in a chat</a> and get in touch.</p>
+<h2 id="i-can-t-connect-to-my-server-">I can&#39;t connect to my server?</h2>
+<p>Check that you are using the correct SSH private key, and that you are using the <code>devops</code> user.</p>
+<h2 id="i-can-t-clone-pull-push-to-my-devo-ps-git-repository-">I can&#39;t clone/pull/push to my devo.ps Git repository?</h2>
+<p>Check that you are using the correct SSH private key.</p>
+<h2 id="i-changed-the-provider-s-details-either-provider-size-or-location-but-nothing-happens-">I changed the provider&#39;s details (either provider, size or location) but nothing happens?</h2>
+<p>We currently do not support resize, or migration of servers between providers or regions. </p>
+<p>If you want to change you can either:</p>
+<ul>
+<li>Remove your server and create a new one with the new provider details.</li>
+<li>Create a new server directly with a different file name.</li>
+<li>Perform a manual resize on the cloud provider of your choice; as long as the data are present and the IP address remain the same you will still be able to manage your server via devo.ps.</li>
+</ul>
+<h2 id="i-started-a-task-but-it-gets-stuck-while-updating-cloning-my-github-repository-">I started a task but it gets stuck while updating/cloning my GitHub repository?</h2>
+<p>If you use a <strong>public GitHub repository</strong>, make sure that:</p>
+<ul>
+<li>You use the <code>HTTP</code> url to the repository (e.g. <code>https://github.com/user/myrepo.git</code>)</li>
+</ul>
+<p>If you use a <strong>private GitHub repository</strong>, make sure that:</p>
+<ul>
+<li>You use the <code>SSH</code> based URL (e.g. <code>git@github.com/user/myrepo.git</code>)</li>
+<li>You have added the SSH key of your server to your GitHub account, either as a deploy key to the repository, or directly to your user.</li>
+</ul>
+<h2 id="i-started-to-sync-a-server-run-a-task-but-it-never-completes-keep-on-spinning-">I started to sync a server / run a task but it never completes / keep on spinning?</h2>
+<p><a href="https://app.devo.ps/cwtcfmmj@incoming.intercom.io">Contact us.</a></p>
+<h2 id="how-do-i-give-access-to-a-buddy-of-mine-">How do I give access to a buddy of mine?</h2>
+<p>Use the collaboration feature! Simply follow the steps below:</p>
+<ul>
+<li>Get your buddy to sign-up, </li>
+<li>Add his username to the list of collaborators for your repository. </li>
+</ul>
+<p>He/She will be able to view/edit your servers and tasks and will also be able to access your boxes. Remove him from your collaborator list and all his accesses will be revoked from your infrastructure.</p>
+<h2 id="do-you-support-xyz-">Do you support XYZ?</h2>
+<p>Check the services documentation (on the left). If we don&#39;t, feel free to <a href="https://app.devo.ps/cwtcfmmj@incoming.intercom.io">contact us</a> and let us know that you are interested in such technology.</p>
+<h2 id="how-much-does-it-cost-">How much does it cost?</h2>
+<p>It depends on your usage of the platform. Check the <a href="http://devo.ps/pricing/">pricing page</a> for more details. Currently this is still free for all!</p>
+<h2 id="how-do-i-do-">How do I do ...</h2>
+<p><a href="https://www.hipchat.com/gyHEHtsXZ">Hop on a chat</a> with us and we&#39;ll make sure to answer as effeciently as we can. Or <a href="https://app.devo.ps/cwtcfmmj@incoming.intercom.io">drop us a line</a> in Intercom.</p>
+<h2 id="i-have-a-great-idea-">I have a great idea.</h2>
+<p>We&#39;re always open to suggestions. Feel free to <a href="https://app.devo.ps/cwtcfmmj@incoming.intercom.io">tell us</a>!</p>
+<h2 id="i-love-you-">I love you!</h2>
+<p>So do we!</p>
 
 </section>
 
 
-<section class='tasks'>
-  <h2 id='commands'><a href='#commands'>Commands</a></h2>
-  <dl class='commands'>
-    
-    <dt>
-      devops couchdb start
-    </dt>
-    <dd>
-      Start CouchDB if stopped
-      
-    </dd>
-    
-    <dt>
-      devops couchdb stop
-    </dt>
-    <dd>
-      Stop CouchDB if started
-      
-    </dd>
-    
-    <dt>
-      devops couchdb reload
-    </dt>
-    <dd>
-      Reload CouchDB, reload the configuration and perform a graceful restart
-      
-    </dd>
-    
-    <dt>
-      devops couchdb restart
-    </dt>
-    <dd>
-      Restart CouchDB, reload the configuration (but kills existing connection)
-      
-    </dd>
-    
-  </dl>
-</section>
 
-
-
-<section id='configuration'>
-  <h2><a href='#configuration'>Configuration</a></h2>
-
-  <ul class='mock'>
-    <li>
-      <strong>configuration</strong>:
-      <ul>
-        <li>
-          <strong>couchdb</strong>:
-          <ul class='content'>
-            
-            
-
-<li>
-  <a href='#details_admin_pass'>
-    <strong>admin_pass</strong>:
-    <i>admin</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_admin_user'>
-    <strong>admin_user</strong>:
-    <i>admin</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_bind_address'>
-    <strong>bind_address</strong>:
-    <i>127.0.0.1</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_enable'>
-    <strong>enable</strong>:
-    <i>1</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_insecure'>
-    <strong>insecure</strong>:
-    <i class='empty'>no default value</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_max_document_size'>
-    <strong>max_document_size</strong>:
-    <i>4294967296</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_port'>
-    <strong>port</strong>:
-    <i>5984</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_running_user'>
-    <strong>running_user</strong>:
-    <i>couchdb</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_stderr_file'>
-    <strong>stderr_file</strong>:
-    <i>/dev/null</i>
-  </a>
-</li>
-
-
-
-<li>
-  <a href='#details_stdout_file'>
-    <strong>stdout_file</strong>:
-    <i>/dev/null</i>
-  </a>
-</li>
-
-
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <dl class='list'>
-    
-    
-  
-    <dt id='details_admin_pass'>
-      <strong>admin_pass</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Define the admin password</dd>
-    <dd class='default'>Default: <code>admin</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_admin_user'>
-      <strong>admin_user</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Define the admin username</dd>
-    <dd class='default'>Default: <code>admin</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_bind_address'>
-      <strong>bind_address</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>The IP address to bind to.</dd>
-    <dd class='default'>Default: <code>127.0.0.1</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_enable'>
-      <strong>enable</strong> <span class='type'>integer</span>
-    </dt>
-    <dd class='description'>Define whether CouchDB should start at bood time</dd>
-    <dd class='default'>Default: <code>1</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_insecure'>
-      <strong>insecure</strong> <span class='type'>boolean</span>
-    </dt>
-    <dd class='description'>Allow insecure setup (no admin user)</dd>
-    
-    <dd class='required'>Required</dd>
-  
-
-  
-
-  
-    <dt id='details_max_document_size'>
-      <strong>max_document_size</strong> <span class='type'>integer</span>
-    </dt>
-    <dd class='description'>Maximum document size</dd>
-    <dd class='default'>Default: <code>4294967296</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_port'>
-      <strong>port</strong> <span class='type'>integer</span>
-    </dt>
-    <dd class='description'>Listening port</dd>
-    <dd class='default'>Default: <code>5984</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_running_user'>
-      <strong>running_user</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Define the running user for the CouchDB process (it needs to exist)</dd>
-    <dd class='default'>Default: <code>couchdb</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_stderr_file'>
-      <strong>stderr_file</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Where to send the process STDERR</dd>
-    <dd class='default'>Default: <code>/dev/null</code></dd>
-    
-  
-
-  
-
-  
-    <dt id='details_stdout_file'>
-      <strong>stdout_file</strong> <span class='type'>string</span>
-    </dt>
-    <dd class='description'>Where to send the process STDOUT</dd>
-    <dd class='default'>Default: <code>/dev/null</code></dd>
-    
-  
-
-  
-
-  </dl>
-</section>
 
 
 
