@@ -1,5 +1,7 @@
 <a href='/' {% if path == '' %} class='active'{% endif %}>Getting started</a>
 
+<h3><a href='/faq' {% if path == 'faq' %} class='active'{% endif %}>FAQ</a></h3>
+
 <h3>How to</h3>
 {% set menu = {} %}
 {% for item in howto %}
