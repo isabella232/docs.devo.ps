@@ -2,7 +2,7 @@
 title: Frequently Asked Questions
 ---
 
-A quick collection of Frequently Asked Questions, if you don't find your answer in the following list feel free to either [contact us](https://app.devo.ps/cwtcfmmj@incoming.intercom.io), [hop in a chat](http://www.hipchat.com/gyHEHtsXZ) and get in touch.
+A quick collection of Frequently Asked Questions, if you don't find your answer in the following list feel free to either [contact us](mailto://support@devo.ps), [hop in a chat](http://www.hipchat.com/gyHEHtsXZ) and get in touch.
 
 ## I can't connect to my server?
 
@@ -35,7 +35,7 @@ If you use a **private GitHub repository**, make sure that:
 
 ## I started to sync a server / run a task but it never completes / keep on spinning?
 
-[Contact us.](https://app.devo.ps/cwtcfmmj@incoming.intercom.io)
+[Contact us.](mailto://support@devo.ps)
 
 ## How do I give access to a buddy of mine?
 
@@ -48,7 +48,7 @@ He/She will be able to view/edit your servers and tasks and will also be able to
 
 ## Do you support XYZ?
 
-Check the services documentation (on the left). If we don't, feel free to [contact us](https://app.devo.ps/cwtcfmmj@incoming.intercom.io) and let us know that you are interested in such technology.
+Check the services documentation (on the left). If we don't, feel free to [contact us](mailto://support@devo.ps) and let us know that you are interested in such technology.
 
 ## How much does it cost?
 
@@ -56,11 +56,11 @@ It depends on your usage of the platform. Check the [pricing page](http://devo.p
 
 ## How do I do ...
 
-[Hop on a chat](https://www.hipchat.com/gyHEHtsXZ) with us and we'll make sure to answer as effeciently as we can. Or [drop us a line](https://app.devo.ps/cwtcfmmj@incoming.intercom.io) in Intercom.
+[Hop on a chat](https://www.hipchat.com/gyHEHtsXZ) with us and we'll make sure to answer as effeciently as we can. Or [drop us a line](mailto://support@devo.ps) in Intercom.
 
 ## I have a great idea.
 
-We're always open to suggestions. Feel free to [tell us](https://app.devo.ps/cwtcfmmj@incoming.intercom.io)!
+We're always open to suggestions. Feel free to [tell us](mailto://support@devo.ps)!
 
 ## I love you!
 
