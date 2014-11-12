@@ -135,10 +135,18 @@ var Swiftype = window.Swiftype || {};
 
   
 
+  
+
+  
+
+
+<a href='/providers/ec2' >Amazon EC2</a>
 
 <a href='/providers/digitalocean' >Digital Ocean</a>
 
 <a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -206,8 +214,12 @@ var Swiftype = window.Swiftype || {};
 
   
 
+  
+
 
 <a href='/services/apache' >Apache</a>
+
+<a href='/services/backup' >Backup</a>
 
 <a href='/services/couchbase' >CouchBase</a>
 
@@ -337,6 +349,34 @@ var Swiftype = window.Swiftype || {};
     </dt>
     <dd>
       Restart PostgreSQL, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+    <dt>
+      devops postgresql database backup
+    </dt>
+    <dd>
+      Backup database(s)
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>name</td>
+              <td class='type'>array</td>
+              <td class='description'>Database name, if not defined it will backup all the databases</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
       
     </dd>
     

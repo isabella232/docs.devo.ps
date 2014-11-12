@@ -2,228 +2,243 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.devo.ps/services/git</loc>
-    <lastmod>2014-11-11</lastmod>
+    <loc>http://docs.devo.ps/services/fail2ban</loc>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/how-to/add-a-server</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/how-to/create-digitalocean-api-key</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/how-to/create-linode-api-key</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/how-to/trigger-task-with-webhook</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/CLI</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/events</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/git-repositories</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/nodes</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/profile</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/tasks</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/manual/vars</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/providers/digitalocean</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/ec2</loc>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/providers/linode</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/providers/rackspace</loc>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/apache</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/backup</loc>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/common</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/couchbase</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/couchdb</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/dart</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/docker</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/elasticsearch</loc>
-    <lastmod>2014-11-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://docs.devo.ps/services/fail2ban</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/how-to/create-amazon-ec2-api-key</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.devo.ps/services/git</loc>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/go</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/java</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/memcached</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/meteor</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/mongodb</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/mysql</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/nginx</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/nodejs</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/openvpn</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/php</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/postgresql</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/python</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/rabbitmq</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/redis</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/ruby</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/server</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/supervisord</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/uwsgi</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/vagrant</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/varnish</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/xvfb</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
   <url>
     <loc>http://docs.devo.ps/services/zeromq</loc>
-    <lastmod>2014-11-11</lastmod>
+    <lastmod>2014-11-12</lastmod>
   </url>
   
 </urlset>

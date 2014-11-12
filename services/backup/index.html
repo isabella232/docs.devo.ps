@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-  <title>Java | devo.ps documentation</title>
+  <title>Backup | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, language'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, backup'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -219,7 +219,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/apache' >Apache</a>
 
-<a href='/services/backup' >Backup</a>
+<a href='/services/backup'  class='active'>Backup</a>
 
 <a href='/services/couchbase' >CouchBase</a>
 
@@ -237,7 +237,7 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/services/go' >Go</a>
 
-<a href='/services/java'  class='active'>Java</a>
+<a href='/services/java' >Java</a>
 
 <a href='/services/memcached' >Memcached</a>
 
@@ -288,19 +288,60 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>language</li>
+      <li>backup</li>
     
   </ul>
 
-  <h1>Java 
-  <a href='http://openjdk.java.net/'><span>Official documentation</span></a>
-  </h1>  
+  <h1>Backup </h1>  
 </header>
 
 <section class='body'>
-  
+  <p>README.md</p>
+
 </section>
 
+
+<section class='tasks'>
+  <h2 id='commands'><a href='#commands'>Commands</a></h2>
+  <dl class='commands'>
+    
+    <dt>
+      devops backup file archive
+    </dt>
+    <dd>
+      Save a list of files and folders to a compressed tar archive
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>files</td>
+              <td class='type'>array</td>
+              <td class='description'>List of files to backup</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+            <tr>
+              <td class='name'>name</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the archive to create (suffixed by the timestamp)</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+  </dl>
+</section>
 
 
 
