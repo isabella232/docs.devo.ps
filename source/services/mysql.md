@@ -385,6 +385,14 @@ tasks:
         user
       required: false
       type: array
+- description: Backup database(s)
+  name: database backup
+  options:
+    name:
+      default: null
+      description: Database name, if not defined it will backup all the databases
+      required: false
+      type: array
 title: MySQL
 
 ---
