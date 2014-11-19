@@ -1,4 +1,5 @@
 ---
+backup: true
 configuration:
   authentication_timeout:
     default: 1min
@@ -159,6 +160,11 @@ tasks:
       description: Database name, if not defined it will backup all the databases
       required: false
       type: array
+    path:
+      default: /opt/backup/%Y/%m/%d
+      description: Path to destination folder of the backup
+      required: false
+      type: string
 title: PostgreSQL
 
 ---

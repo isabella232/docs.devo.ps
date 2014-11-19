@@ -1,4 +1,5 @@
 ---
+backup: true
 configuration:
   aom:
     aof_rewrite_min_size:
@@ -279,6 +280,14 @@ tasks:
   name: reload
 - description: Restart Redis, reload the configuration (but kills existing connection)
   name: restart
+- description: Backup database(s)
+  name: database backup
+  options:
+    path:
+      default: /opt/backup/%Y/%m/%d
+      description: Path to destination folder of the backup
+      required: false
+      type: string
 title: Redis
 
 ---

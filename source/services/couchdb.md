@@ -1,4 +1,5 @@
 ---
+backup: true
 configuration:
   admin_pass:
     default: admin
@@ -65,6 +66,19 @@ tasks:
   name: reload
 - description: Restart CouchDB, reload the configuration (but kills existing connection)
   name: restart
+- description: Backup database(s)
+  name: database backup
+  options:
+    name:
+      default: null
+      description: Database name, if not defined it will backup all the databases
+      required: false
+      type: array
+    path:
+      default: /opt/backup/%Y/%m/%d
+      description: Path to destination folder of the backup
+      required: false
+      type: string
 title: CouchDB
 
 ---

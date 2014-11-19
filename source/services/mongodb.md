@@ -1,4 +1,5 @@
 ---
+backup: true
 configuration:
   bindip:
     default: 127.0.0.1
@@ -126,6 +127,19 @@ tasks:
       description: Array of users with read-write privileges on the database.
       required: false
       type: array
+- description: Backup database(s)
+  name: database backup
+  options:
+    name:
+      default: null
+      description: Database name, if not defined it will backup all the databases
+      required: false
+      type: array
+    path:
+      default: /opt/backup/%Y/%m/%d
+      description: Path to destination folder of the backup
+      required: false
+      type: string
 title: MongoDB
 
 ---
