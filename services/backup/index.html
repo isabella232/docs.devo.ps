@@ -135,18 +135,10 @@ var Swiftype = window.Swiftype || {};
 
   
 
-  
-
-  
-
-
-<a href='/providers/ec2' >Amazon EC2</a>
 
 <a href='/providers/digitalocean' >Digital Ocean</a>
 
 <a href='/providers/linode' >Linode</a>
-
-<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -285,6 +277,8 @@ var Swiftype = window.Swiftype || {};
     <section class='content'>
       
 
+<div class='warning notification'>This feature is experimental: expect things to break and documentation to be innacurate and change inadvertantly. Use at your own risks.</div>
+
 <header class='header'>
   <ul class='tags'>
     
@@ -296,7 +290,27 @@ var Swiftype = window.Swiftype || {};
 </header>
 
 <section class='body'>
-  <p>README.md</p>
+  <p>The backup service provides simple local backup for the services installed on the server. It relies on <a href="https://pypi.python.com/pypi/backupallthethings">BackupAllTheThings</a>. Consider this service only as a conveniency, not as a full-blown backup framework. </p>
+<h2 id="backup-support">Backup support</h2>
+<p>Several of the databases available in <a href="http://devo.ps">devo.ps</a> come with a <em>backup</em> support among which:</p>
+<ul>
+<li>MySQL </li>
+<li>PostgreSQL</li>
+<li>CouchDB</li>
+<li>MongoDB</li>
+<li>Redis</li>
+</ul>
+<p>The backup files are then available by default in /opt/backup/YYYY/MM/DD/{service} in compressed archives.</p>
+<p>The services for which the backup service is available are marked in the documentation.</p>
+<h2 id="limitations">Limitations</h2>
+<p>Currently the following features are <strong>not supported</strong>:</p>
+<ul>
+<li>remote storage</li>
+<li>encryption</li>
+<li>restore</li>
+</ul>
+<p>You may want to rely on other backup frameworks to push the archives remotely and securely.</p>
+<p>Restoring backup is still a manual task. You will have to perform it by yourself using the appropriate commands for each of the services.</p>
 
 </section>
 
@@ -306,10 +320,10 @@ var Swiftype = window.Swiftype || {};
   <dl class='commands'>
     
     <dt>
-      devops backup file archive
+      devops backup run
     </dt>
     <dd>
-      Save a list of files and folders to a compressed tar archive
+      Run the backup
       
         <h3>Options</h3>
         <table>
@@ -322,17 +336,59 @@ var Swiftype = window.Swiftype || {};
           <tbody>
             
             <tr>
-              <td class='name'>files</td>
+              <td class='name'>couchdb_dbs</td>
               <td class='type'>array</td>
-              <td class='description'>List of files to backup</td>
-              <td class='required'>Required</td>
+              <td class='description'>List of the CouchDB databases to backup (default to all dbs)</td>
+              <td class='required'></td>
             </tr>
             
             <tr>
-              <td class='name'>name</td>
+              <td class='name'>files</td>
+              <td class='type'>array</td>
+              <td class='description'>List of all the files / folders to backup</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>mongodb_dbs</td>
+              <td class='type'>array</td>
+              <td class='description'>List of the MongoDB databases to backup (default to all dbs)</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>mysql_dbs</td>
+              <td class='type'>array</td>
+              <td class='description'>List of the MySQL databases to backup (default to all dbs)</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>path</td>
               <td class='type'>string</td>
-              <td class='description'>Name of the archive to create (suffixed by the timestamp)</td>
-              <td class='required'>Required</td>
+              <td class='description'>Full path of the storage destination. See [documentation](https://github.com/devo-ps/backupallthethings#custom-destination-folder)</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>postgresql_dbs</td>
+              <td class='type'>array</td>
+              <td class='description'>List of the PostgreSQL databases to backup (default to all dbs)</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>redis_dbs</td>
+              <td class='type'>array</td>
+              <td class='description'>List of the Redis databases to backup (default to all dbs)</td>
+              <td class='required'></td>
+            </tr>
+            
+            <tr>
+              <td class='name'>services</td>
+              <td class='type'>array</td>
+              <td class='description'>List of the services to backup</td>
+              <td class='required'></td>
             </tr>
             
           </tbody>
@@ -344,6 +400,75 @@ var Swiftype = window.Swiftype || {};
 </section>
 
 
+
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>backup</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  <a href='#details_path'>
+    <strong>path</strong>:
+    <i>/opt/backup/%Y/%m/%d</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <a href='#details_schedules'>
+    <strong>schedules</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+  </ul>
+  
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
+  
+    <dt id='details_path'>
+      <strong>path</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Default path of the destination of the backup files</dd>
+    <dd class='default'>Default: <code>/opt/backup/%Y/%m/%d</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_schedules'>
+      <strong>schedules</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>List of schedules at which the backup will run via cronjob. Crontab Format (ex. 0 */2 * * *)</dd>
+    
+    
+  
+
+  
+
+  </dl>
+</section>
 
 
 

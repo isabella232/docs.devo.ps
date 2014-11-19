@@ -135,18 +135,10 @@ var Swiftype = window.Swiftype || {};
 
   
 
-  
-
-  
-
-
-<a href='/providers/ec2' >Amazon EC2</a>
 
 <a href='/providers/digitalocean' >Digital Ocean</a>
 
 <a href='/providers/linode' >Linode</a>
-
-<a href='/providers/rackspace' >Rackspace</a>
 
 
 <h3>Services</h3>
@@ -335,6 +327,34 @@ var Swiftype = window.Swiftype || {};
     </dt>
     <dd>
       Restart Redis, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+    <dt>
+      devops redis database backup
+    </dt>
+    <dd>
+      Backup database(s)
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>path</td>
+              <td class='type'>string</td>
+              <td class='description'>Path to destination folder of the backup</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
       
     </dd>
     
