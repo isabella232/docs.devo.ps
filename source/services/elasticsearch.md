@@ -15,6 +15,12 @@ configuration:
     description: Heap size for the elasticsearch process (unit as 256m 1g)
     required: false
     type: string
+  host:
+    default: null
+    description: Set both 'bind_host' and 'publish_host'. If defined it overrides
+      both 'bind_host' and 'publish_host' settings.
+    required: false
+    type: string
   http_port:
     default: 9200
     description: Listening port for HTTP traffic
@@ -27,6 +33,11 @@ configuration:
     description: List of extra plugins to install
     required: false
     type: array
+  publish_host:
+    default: 127.0.0.1
+    description: The address other nodes will use to communicate with this node.
+    required: false
+    type: string
   transport_port:
     default: 9300
     description: Listening port for inter-node traffic (cluster)
