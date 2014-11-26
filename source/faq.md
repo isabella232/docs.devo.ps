@@ -4,6 +4,40 @@ title: Frequently Asked Questions
 
 A quick collection of Frequently Asked Questions, if you don't find your answer in the following list feel free to either [contact us](mailto://support@devo.ps), [hop in a chat](http://www.hipchat.com/gyHEHtsXZ) and get in touch.
 
+## How do I access my server?
+
+Simply use `ssh` and access it with the following command:
+
+```
+ssh devops@{ip.add.re.ss}
+```
+
+Where `{ip.add.re.ss}` is the IP address of your server. You can find this information on the details of your server at `https://app.devo.ps/{USER}/{REPO}/node/{NODE_ID}`
+
+## How do I remove / delete a server?
+
+- Go in your repository page (e.g. `https://app.devo.ps/{USER}/{REPO}`),
+- Click on your server, then on the `Edit` icon,
+- Click on `Remove` at the bottom of the edit form, next to the `Save` button.
+
+If you are using `git` directly, you can simply remove the `.yml` file, commit and push back to your devo.ps repository.
+
+## How long does it take to deploy / sync a server?
+
+It obviously depends how many services you have enabled on your box, whether you are creating the server for the first time or only updating it, which cloud provider you are using (some are faster), and where you install the services from (the network speed might differ, mirrors might be closer).
+
+Without being fully accurate; you can estimate the breakdown to:
+
+- Provision a new server; ~ 2/3 minutes
+- Install base services, users, etc.; ~ 2/3 minutes
+- Install custom services; ~ 2/3 minutes per service
+
+Usually it will take from 5 to 15 min for a new box to be created and synced.
+
+When updating a server and adding / updating services, it should only take a few minutes.
+
+Do not take those numbers for granted though; check the console of your server at `https://app.devo.ps/#/{USER}/{REPO}/node/{NODE_ID}/console` to see the progress.
+
 ## I can't connect to my server?
 
 Check that you are using the correct SSH private key, and that you are using the `devops` user.

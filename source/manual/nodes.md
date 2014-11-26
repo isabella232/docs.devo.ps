@@ -142,3 +142,11 @@ If you have installed the [CLI](/manual/CLI.html), you can also use one of the f
 
     *If you only have 1 node in the repository, `devops ssh` would suffice.*
     
+## Adding and Removing nodes
+
+Adding a node is as simple as creating a new `.yml` file in the `nodes/` folder that respects the conventions established above.
+
+Removing a node will effectively remove the server (shutdown / delete) from the cloud provider it is seating on. To remove a node you can either:
+
+- Edit the node and click on `Remove` next to the save button
+- Remove the file directly if you are using `git`, commit and push back to your devo.ps repository.
