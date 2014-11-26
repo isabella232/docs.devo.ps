@@ -295,6 +295,28 @@ var Swiftype = window.Swiftype || {};
 
 <section class='body'>
   <p>A quick collection of Frequently Asked Questions, if you don&#39;t find your answer in the following list feel free to either <a href="mailto://support@devo.ps">contact us</a>, <a href="http://www.hipchat.com/gyHEHtsXZ">hop in a chat</a> and get in touch.</p>
+<h2 id="how-do-i-access-my-server-">How do I access my server?</h2>
+<p>Simply use <code>ssh</code> and access it with the following command:</p>
+<pre><code>ssh devops@{ip.add.re.ss}
+</code></pre><p>Where <code>{ip.add.re.ss}</code> is the IP address of your server. You can find this information on the details of your server at <code>https://app.devo.ps/{USER}/{REPO}/node/{NODE_ID}</code></p>
+<h2 id="how-do-i-remove-delete-a-server-">How do I remove / delete a server?</h2>
+<ul>
+<li>Go in your repository page (e.g. <code>https://app.devo.ps/{USER}/{REPO}</code>),</li>
+<li>Click on your server, then on the <code>Edit</code> icon,</li>
+<li>Click on <code>Remove</code> at the bottom of the edit form, next to the <code>Save</code> button.</li>
+</ul>
+<p>If you are using <code>git</code> directly, you can simply remove the <code>.yml</code> file, commit and push back to your devo.ps repository.</p>
+<h2 id="how-long-does-it-take-to-deploy-sync-a-server-">How long does it take to deploy / sync a server?</h2>
+<p>It obviously depends how many services you have enabled on your box, whether you are creating the server for the first time or only updating it, which cloud provider you are using (some are faster), and where you install the services from (the network speed might differ, mirrors might be closer).</p>
+<p>Without being fully accurate; you can estimate the breakdown to:</p>
+<ul>
+<li>Provision a new server; ~ 2/3 minutes</li>
+<li>Install base services, users, etc.; ~ 2/3 minutes</li>
+<li>Install custom services; ~ 2/3 minutes per service</li>
+</ul>
+<p>Usually it will take from 5 to 15 min for a new box to be created and synced.</p>
+<p>When updating a server and adding / updating services, it should only take a few minutes.</p>
+<p>Do not take those numbers for granted though; check the console of your server at <code>https://app.devo.ps/#/{USER}/{REPO}/node/{NODE_ID}/console</code> to see the progress.</p>
 <h2 id="i-can-t-connect-to-my-server-">I can&#39;t connect to my server?</h2>
 <p>Check that you are using the correct SSH private key, and that you are using the <code>devops</code> user.</p>
 <h2 id="i-can-t-clone-pull-push-to-my-devo-ps-git-repository-">I can&#39;t clone/pull/push to my devo.ps Git repository?</h2>

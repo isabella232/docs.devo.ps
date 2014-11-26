@@ -425,6 +425,13 @@ configuration:
 <p>  <em>If you only have 1 node in the repository, <code>devops ssh</code> would suffice.</em></p>
 </li>
 </ul>
+<h2 id="adding-and-removing-nodes">Adding and Removing nodes</h2>
+<p>Adding a node is as simple as creating a new <code>.yml</code> file in the <code>nodes/</code> folder that respects the conventions established above.</p>
+<p>Removing a node will effectively remove the server (shutdown / delete) from the cloud provider it is seating on. To remove a node you can either:</p>
+<ul>
+<li>Edit the node and click on <code>Remove</code> next to the save button</li>
+<li>Remove the file directly if you are using <code>git</code>, commit and push back to your devo.ps repository.</li>
+</ul>
 
 </section>
 
