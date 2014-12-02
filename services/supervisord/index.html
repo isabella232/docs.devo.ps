@@ -316,10 +316,9 @@ var Swiftype = window.Swiftype || {};
 </code></pre>
 <p>We here define a node.js application that will run as <code>nobody</code> user, execute the <code>app.js</code> code from the <code>/opt/api</code> folder. It will restart automatically no matter how. Both <code>NODE_ENV</code> and <code>MANDRILL_API_KEY</code> environment variable will be passed along to the running process.</p>
 </li>
-</ul>
-<ul>
 <li><h3 id="python-app">Python app</h3>
-<pre><code class="lang-example">  supervisord:
+<pre><code class="lang-example">configuration:
+  supervisord:
     programs:
       - name: app
         user: nobody
@@ -329,7 +328,8 @@ var Swiftype = window.Swiftype || {};
 <p>We here define a simple program that will execute <code>app.py</code> as nobody, passing the <code>DEBUG</code> environment variable along.</p>
 </li>
 <li><h3 id="custom-app">Custom app</h3>
-<pre><code class="lang-example">  supervisord:
+<pre><code class="lang-example">configuration:
+  supervisord:
     programs:
       - name: consul
         command: /bin/consul agent -config-dir /etc/consul.d/
