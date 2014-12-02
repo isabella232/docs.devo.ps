@@ -6,7 +6,7 @@
   <!-- Meta -->
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, messagebus'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, daemon'/>
   <meta name='description' content='Documentation for devo.ps'/>
   
   <!-- Favicons -->
@@ -288,7 +288,7 @@ var Swiftype = window.Swiftype || {};
 <header class='header'>
   <ul class='tags'>
     
-      <li>messagebus</li>
+      <li>daemon</li>
     
   </ul>
 
@@ -298,7 +298,57 @@ var Swiftype = window.Swiftype || {};
 </header>
 
 <section class='body'>
-  
+  <p>Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.</p>
+<p>It can be used to manage any type of process, from custom python code to node.js application.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><h3 id="node-js-app">Node.js app</h3>
+<pre><code class="lang-example">configuration:
+  supervisord:
+    programs:
+      - name: api
+        user: nobody
+        command: node app.js
+        env: NODE_ENV=prod,MANDRILL_API_KEY=qwerty
+        extra: |
+          directory = /opt/api
+          autorestart = true
+</code></pre>
+<p>We here define a node.js application that will run as <code>nobody</code> user, execute the <code>app.js</code> code from the <code>/opt/api</code> folder. It will restart automatically no matter how. Both <code>NODE_ENV</code> and <code>MANDRILL_API_KEY</code> environment variable will be passed along to the running process.</p>
+</li>
+</ul>
+<ul>
+<li><h3 id="python-app">Python app</h3>
+<pre><code class="lang-example">  supervisord:
+    programs:
+      - name: app
+        user: nobody
+        command: python /opt/my_app/app.py
+        env: DEBUG=true
+</code></pre>
+<p>We here define a simple program that will execute <code>app.py</code> as nobody, passing the <code>DEBUG</code> environment variable along.</p>
+</li>
+<li><h3 id="custom-app">Custom app</h3>
+<pre><code class="lang-example">  supervisord:
+    programs:
+      - name: consul
+        command: /bin/consul agent -config-dir /etc/consul.d/
+</code></pre>
+<p>We here define a simple program that will execute a custom command; in this case the <code>consul</code> agent as root.</p>
+</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<p>Supervisord has dozens of available options, but for improved user experience we only selected a few that we considered essential enough for having their dedicated devo.ps attribute. You can check below for the available options.</p>
+<p>You can however extensively customize your program execution by using the <code>extra</code> option. Note that with the <code>Yaml</code> format of the server (and task), you need to use the proper &quot;scalar&quot; to maintain the proper new-line character.</p>
+<pre><code class="lang-example">supervisord:
+  programs:
+    ...
+      extra: |
+        first = parameter
+        second = parameter
+</code></pre>
+<p>Note the <code>|</code> after <code>extra:</code>, it will ensure both lines below are effectively treated as lines (instead of space separated strings of a larger <code>extra</code> string). See the [official YAML documentation)[<a href="http://www.yaml.org/spec/1.2/spec.html#id2760844">http://www.yaml.org/spec/1.2/spec.html#id2760844</a>] for more details about the scalars format.</p>
+
 </section>
 
 
@@ -363,7 +413,7 @@ var Swiftype = window.Swiftype || {};
             <tr>
               <td class='name'>env</td>
               <td class='type'>string</td>
-              <td class='description'>Space separated list of environment variables to provide to the command on execution.</td>
+              <td class='description'>Comma separated list of environment variables to provide to the command on execution.</td>
               <td class='required'></td>
             </tr>
             
@@ -531,10 +581,40 @@ var Swiftype = window.Swiftype || {};
             
 
 <li>
-  <a href='#details_inet'>
-    <strong>inet</strong>:
+  
+  <strong>inet</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_password'>
+    <strong>password</strong>:
     <i class='empty'>no default value</i>
   </a>
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_username'>
+    <strong>username</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
+  
 </li>
 
 
@@ -634,13 +714,6 @@ var Swiftype = window.Swiftype || {};
     
     
   
-    <dt id='details_inet'>
-      <strong>inet</strong> <span class='type'>object</span>
-    </dt>
-    <dd class='description'>Enable HTTP support for managing Supervisord (not enabled by default)</dd>
-    
-    
-  
 
   
     
@@ -654,8 +727,6 @@ var Swiftype = window.Swiftype || {};
     
       
       
-      <dl>
-        
   
     <dt id='details_password'>
       inet.<strong>password</strong> <span class='type'>string</span>
@@ -671,8 +742,8 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_port'>
       inet.<strong>port</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>A TCP host:port value or (e.g. 127.0.0.1:9001) on which Supervisord will listen for HTTP/XML-RPC requests</dd>
-    <dd class='default'>Default: <code>127.0.0.1:9001</code></dd>
+    <dd class='description'>A TCP host:port value or (e.g. `127.0.0.1:9001`) on which Supervisord will listen for HTTP/XML-RPC requests</dd>
+    
     
   
 
@@ -689,7 +760,6 @@ var Swiftype = window.Swiftype || {};
 
   
 
-      </dl>
     
     
   
@@ -754,7 +824,7 @@ var Swiftype = window.Swiftype || {};
     <dt id='details_env'>
       program.<strong>env</strong> <span class='type'>string</span>
     </dt>
-    <dd class='description'>Space separated list of environment variables to provide to the command on execution.</dd>
+    <dd class='description'>Comma separated list of environment variables to provide to the command on execution.</dd>
     
     
   
