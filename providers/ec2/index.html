@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+<head>
+  <title>Amazon EC2 | devo.ps documentation</title>
+  
+  <!-- Meta -->
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation'/>
+  <meta name='description' content='Documentation for devo.ps'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='/assets/styles.css?0.1.0' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='wrapper'>
+      <span class='logo'><a href='http://devo.ps'>devo.ps</a> documentation</span>
+
+      <button class='toggle'>Menu</button>
+      <nav class='menu'>
+        <a href='https://www.hipchat.com/gyHEHtsXZ' target='_blank'>Chat with us</a>
+        <a href='http://docs.devo.ps'>Documentation</a>
+        <a href='http://devo.ps/about'>About</a>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://app.devo.ps' class='signin'>Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <button class='cancel'><span>Close</span></button>
+      <form class='swifttype'>
+  <input type='text' id='st-search-input' placeholder='Search by keyword'/>
+</form>
+<script type='text/javascript'>
+var Swiftype = window.Swiftype || {};
+  (function() {
+    Swiftype.key = 'nkPRs5W_yrQndsebXC-A';
+
+    /** DO NOT EDIT BELOW THIS LINE **/
+    var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+    script.src = '//s.swiftypecdn.com/embed.js';
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+  }());
+</script>
+      <nav class='menu'>
+        <a href='/' >Getting started</a>
+
+<h3><a href='/faq' >FAQ</a></h3>
+
+<h3>How to</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/how-to/add-a-server' >Add a server</a>
+
+<a href='/how-to/create-amazon-ec2-api-key' >Create Amazon EC2 API key</a>
+
+<a href='/how-to/create-digitalocean-api-key' >Create Digital Ocean API key</a>
+
+<a href='/how-to/create-linode-api-key' >Create Linode API key</a>
+
+<a href='/how-to/trigger-task-with-webhook' >Trigger a Task With a Webhook</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/events' >Events</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/profile' >Profile</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/ec2'  class='active'>Amazon EC2</a>
+
+<a href='/providers/digitalocean' >Digital Ocean</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+
+      </nav>
+    </nav>
+
+    <section class='content'>
+      
+
+<div class='notification warning'>We currently only support Ubuntu 14.04 LTS images for all providers.</div>
+
+<header class='header'>
+  <h1>Amazon EC2</h1>
+</header>
+
+<section class='body'>
+  <p><a href="https://aws.amazon.com/">Amazon Elastic Compute Cloud (EC2)</a> is one of the most popular cloud computing platforms, with datacenters in the Northern Virginia, Northern California, Oregon, Sao Paulo, Ireland, Sydney, Tokyo and Singapore.</p>
+<p><em>Due to the large amount of configurations available on EC2, we are currently not able to provide default values for the image. Refer to both the <a href="https://aws.amazon.com/ec2/instance-types/">EC2 Instance Types Matrix</a> and the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs page</a> to define the AMI that will work for your location and instance size.</em></p>
+<p><em>Don&#39;t have an Amazon EC2 account yet? <a href='https://aws.amazon.com/' target='_blank'>Sign up for an account</a>.</em></p>
+<p><em>Don&#39;t know how to create your Amazon EC2 API keys? Check out this <a href='/how-to/create-amazon-ec2-api-key'>tutorial</a>.</em></p>
+<h2 id="example">Example</h2>
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a micro instance of first generation (<code>size: t1.micro</code>) in the Northern Virginia datacenter (<code>location: us-east-1</code>) with a 64-bit Ubuntu 14.04.1 LTS, EBS-backed AMI (<code>image: ami-d2ff23ba</code>, see the <a href="http://cloud-images.ubuntu.com/releases/14.04.1/release/">official Ubuntu AMIs page</a>):</p>
+<pre><code>id: ec2_server
+name: EC2 server
+type: server
+
+providers:
+  name: ec2
+  size: t1.micro
+  location: us-east-1
+  image: ami-d2ff23ba
+</code></pre>
+</section>
+
+<section class='defaults'>
+  <h2>Default values</h2>
+  
+  <p><em>The following values will be used by default for the provider if the attribute is missing.</em></p>
+  <table>
+    <thead>
+      <th>Attribute</th>
+      <th>Value</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      
+      
+      <tr>
+        <td><code>location</code></td>
+        <td><code>us-east-1</code></td>
+        <td>US East (N. Virginia)</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+</section>
+
+
+<section class='values'>
+  <h2>Values</h2>
+  <p><em>Use the following values to set your provider's sizes and location attributes.</em></p>
+
+  <h3>Size</h3>
+  <table>
+    <thead>
+      <th>Value</th>
+      <th>Name</th>
+      <th>RAM</th>
+      <th>Disk (GB)</th>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><code>t1.micro</code></td>
+        <td>Micro Instance</td>
+        <td><code>613</code></td>
+        <td><code>15</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m1.small</code></td>
+        <td>Small Instance</td>
+        <td><code>1740</code></td>
+        <td><code>160</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m1.medium</code></td>
+        <td>Medium Instance</td>
+        <td><code>3700</code></td>
+        <td><code>410</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m1.large</code></td>
+        <td>Large Instance</td>
+        <td><code>7680</code></td>
+        <td><code>850</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m1.xlarge</code></td>
+        <td>Extra Large Instance</td>
+        <td><code>15360</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m2.xlarge</code></td>
+        <td>High-Memory Extra Large Instance</td>
+        <td><code>17510</code></td>
+        <td><code>420</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m2.2xlarge</code></td>
+        <td>High-Memory Double Extra Large Instance</td>
+        <td><code>35021</code></td>
+        <td><code>850</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m2.4xlarge</code></td>
+        <td>High-Memory Quadruple Extra Large Instance</td>
+        <td><code>70042</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.medium</code></td>
+        <td>Medium Instance</td>
+        <td><code>3840</code></td>
+        <td><code>4000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.large</code></td>
+        <td>Large Instance</td>
+        <td><code>7168</code></td>
+        <td><code>32000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.xlarge</code></td>
+        <td>Extra Large Instance</td>
+        <td><code>15360</code></td>
+        <td><code>80000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>m3.2xlarge</code></td>
+        <td>Double Extra Large Instance</td>
+        <td><code>30720</code></td>
+        <td><code>160000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c1.medium</code></td>
+        <td>High-CPU Medium Instance</td>
+        <td><code>1740</code></td>
+        <td><code>350</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c1.xlarge</code></td>
+        <td>High-CPU Extra Large Instance</td>
+        <td><code>7680</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cc1.4xlarge</code></td>
+        <td>Cluster Compute Quadruple Extra Large Instance</td>
+        <td><code>23552</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cc2.8xlarge</code></td>
+        <td>Cluster Compute Eight Extra Large Instance</td>
+        <td><code>63488</code></td>
+        <td><code>3370</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.large</code></td>
+        <td>Compute Optimized Large Instance</td>
+        <td><code>3750</code></td>
+        <td><code>16</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.xlarge</code></td>
+        <td>Compute Optimized Extra Large Instance</td>
+        <td><code>7000</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.2xlarge</code></td>
+        <td>Compute Optimized Double Extra Large Instance</td>
+        <td><code>15000</code></td>
+        <td><code>80</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.4xlarge</code></td>
+        <td>Compute Optimized Quadruple Extra Large Instance</td>
+        <td><code>30000</code></td>
+        <td><code>160</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>c3.8xlarge</code></td>
+        <td>Compute Optimized Eight Extra Large Instance</td>
+        <td><code>60000</code></td>
+        <td><code>320</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cg1.4xlarge</code></td>
+        <td>Cluster GPU Quadruple Extra Large Instance</td>
+        <td><code>22528</code></td>
+        <td><code>1690</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>cr1.8xlarge</code></td>
+        <td>High Memory Cluster Eight Extra Large</td>
+        <td><code>244000</code></td>
+        <td><code>240</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>hs1.8xlarge</code></td>
+        <td>High Storage Eight Extra Large Instance</td>
+        <td><code>119808</code></td>
+        <td><code>48000</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.xlarge</code></td>
+        <td>High Storage Optimized Extra Large Instance</td>
+        <td><code>31232</code></td>
+        <td><code>800</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.2xlarge</code></td>
+        <td>High Storage Optimized Double Extra Large Instance</td>
+        <td><code>62464</code></td>
+        <td><code>1600</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.4xlarge</code></td>
+        <td>High Storage Optimized Quadruple Large Instance</td>
+        <td><code>124928</code></td>
+        <td><code>3200</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>i2.8xlarge</code></td>
+        <td>High Storage Optimized Eight Extra Large Instance</td>
+        <td><code>249856</code></td>
+        <td><code>6400</code></td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+  <h3>Location</h3>
+  <table>
+    <thead>
+      <th>Value</th>
+      <th>Name</th>
+      <th>Country</th>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><code>us-east-1</code></td>
+        <td>US East (Northern Virginia)</td>
+        <td>US</td>
+      </tr>
+    
+      <tr>
+        <td><code>us-west-1</code></td>
+        <td>US West (Oregon)</td>
+        <td>US</td>
+      </tr>
+    
+      <tr>
+        <td><code>us-west-2</code></td>
+        <td>US West (Northern California)</td>
+        <td>US</td>
+      </tr>
+    
+      <tr>
+        <td><code>eu-west-1</code></td>
+        <td>EU (Ireland)</td>
+        <td>Ireland</td>
+      </tr>
+    
+      <tr>
+        <td><code>ap-southeast-1</code></td>
+        <td>Asia Pacific (Singapore)</td>
+        <td>Singapore</td>
+      </tr>
+    
+      <tr>
+        <td><code>ap-southeast-2</code></td>
+        <td>Asia Pacific (Sydney)</td>
+        <td>Australia</td>
+      </tr>
+    
+      <tr>
+        <td><code>ap-northeast-1</code></td>
+        <td>Asia Pacific (Tokyo)</td>
+        <td>Japan</td>
+      </tr>
+    
+      <tr>
+        <td><code>sa-east-1</code></td>
+        <td>South America (Sao Paulo)</td>
+        <td>Brazil</td>
+      </tr>
+    
+    </tbody>
+  </table>
+</section>
+
+    </section>
+  <section>
+
+  <aside id='support'>
+    <h2>Need help?</h2>
+    <nav class='links'>
+      <a class='chat' href='https://www.hipchat.com/gyHEHtsXZ' target='_blank'>Chat with us</a>
+      <a class='help' href='mailto:help@devo.ps' target='_blank'>Contact the support</a>
+      <a class='documentation' href='http://docs.devo.ps' target='_blank'>Check the documentation</a>
+    </nav>
+  </aside>
+
+  <!-- JS -->
+  <script src='/assets/scripts.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript'>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '510b396a613f5d2666000007');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+  <script type='text/javascript'>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34006371-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
