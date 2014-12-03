@@ -316,7 +316,7 @@ configuration:
 </code></pre>
 <p>We are installing here the default version of Ruby available on the system via the package manager (apt), and install globally the gems <code>rails</code> and <code>compass</code></p>
 </li>
-<li><h3 id="single-custom-ruby-version">Single custom Ruby version</h3>
+<li><h3 id="single-custom-version">Single custom version</h3>
 <pre><code class="lang-example">services:
   ruby: &#39;*&#39;
 
@@ -329,7 +329,7 @@ configuration:
 </code></pre>
 <p>We are installing here both the default version of Ruby available on the system via the package manager (apt), and the version <code>1.9.3-p551</code>. We install as well <code>compass</code> using the <strong>system version</strong> of Ruby, but install no extra gems with the <code>1.9.3-p551</code> version.</p>
 </li>
-<li><h3 id="multiple-custom-ruby-versions-and-gems">Multiple custom Ruby versions and gems</h3>
+<li><h3 id="multiple-custom-versions">Multiple custom versions</h3>
 <pre><code class="lang-example">services:
   ruby: &#39;*&#39;
 
