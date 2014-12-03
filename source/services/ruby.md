@@ -2,7 +2,7 @@
 configuration:
   gems:
     default: []
-    description: List of gems to install globally on the system
+    description: List of gems to install globally on the system.
     required: false
     type: array
   versions:
