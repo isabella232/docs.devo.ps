@@ -7,11 +7,10 @@ configuration:
     type: array
   versions:
     default: {}
-    description: 'Dictionary of Ruby versions to install in addition to the system
+    description: Dictionary of Ruby versions to install in addition to the system
       version of Ruby. The `keys` are the Ruby versions to install, the `values` are
       either an empty object `{}` to only install the Ruby version without extra gems,
-      or an object with a `gems` attribute that lists the gems to install (e.g. `{
-      gems: [rails, compass] }`)'
+      or an object with a `gems` attribute that lists the gems to install.
     required: false
     type: object
 documentation: https://www.ruby-lang.org/en/documentation/
@@ -28,8 +27,8 @@ tasks:
       type: array
     ruby_version:
       default: system
-      description: 'Version of Ruby the gems should be installed to. Note: the version
-        of Ruby should be installed on the system already.'
+      description: Version of Ruby the gems should be installed to. The version of
+        Ruby should be installed on the system already.
       required: false
       type: string
 - description: Remove Ruby gems globally
@@ -41,8 +40,8 @@ tasks:
       type: array
     ruby_version:
       default: system
-      description: 'Version of Ruby the gem should be removed from. Note: the version
-        of Ruby should be installed on the system.'
+      description: Version of Ruby the gem should be removed from. The version of
+        Ruby should be installed on the system.
       required: false
       type: string
 - description: List installed versions of Ruby in rbenv
