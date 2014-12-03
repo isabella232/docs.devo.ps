@@ -1,4 +1,0 @@
-Sitemap: http://docs.devo.ps/sitemap.xml
-
-User-agent: *
-Disallow: /assets/
