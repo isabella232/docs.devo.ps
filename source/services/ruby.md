@@ -8,12 +8,10 @@ configuration:
   versions:
     default: {}
     description: 'Dictionary of Ruby versions to install in addition to the system
-      version of Ruby.  The `keys` are the Ruby versions to install, the `values`
-      are either an empty object `{}` to only install the Ruby version without extra
-      gems, or an object with a `gems` attribute that lists the gems to install (e.g.
-      `{ gems: [rails, compass] }`)
-
-      '
+      version of Ruby. The `keys` are the Ruby versions to install, the `values` are
+      either an empty object `{}` to only install the Ruby version without extra gems,
+      or an object with a `gems` attribute that lists the gems to install (e.g. `{
+      gems: [rails, compass] }`)'
     required: false
     type: object
 documentation: https://www.ruby-lang.org/en/documentation/
