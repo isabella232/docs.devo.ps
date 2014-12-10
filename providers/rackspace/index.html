@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Linode | devo.ps documentation</title>
+  <title>Rackspace | devo.ps documentation</title>
   
   <!-- Meta -->
   <meta charset='utf-8'/>
@@ -144,9 +144,9 @@ var Swiftype = window.Swiftype || {};
 
 <a href='/providers/digitalocean' >Digital Ocean</a>
 
-<a href='/providers/linode'  class='active'>Linode</a>
+<a href='/providers/linode' >Linode</a>
 
-<a href='/providers/rackspace' >Rackspace</a>
+<a href='/providers/rackspace'  class='active'>Rackspace</a>
 
 
 <h3>Services</h3>
@@ -288,24 +288,25 @@ var Swiftype = window.Swiftype || {};
 <div class='notification warning'>We currently only support Ubuntu 14.04 LTS images for all providers.</div>
 
 <header class='header'>
-  <h1>Linode</h1>
+  <h1>Rackspace</h1>
 </header>
 
 <section class='body'>
-  <p><a href="https://www.linode.com/?r=a278f28e12e5e4e08adc41d8491a1988363e80d6">Linode</a> is a virtual private server provider based in New Jersey with datacenters in Tokyo, the US (US West, US Central, US South, US East) and London.</p>
-<p><em>Don&#39;t have a Linode account yet? <a href='https://www.linode.com/?r=a278f28e12e5e4e08adc41d8491a1988363e80d6' target='_blank'>Sign up for an account</a>.</em></p>
-<p><em>Don&#39;t know how to create your Linode API keys? Check out this <a href='/how-to/create-linode-api-key'>tutorial</a>.</em></p>
+  <p><a href="http://rackspace.com">Rackspace</a> is a managed cloud computing company base in Texas with datacenters in Texas, Illinois, Virginia, the United Kingdom, Australia, and Hong Kong.</p>
+<p><em>Don&#39;t have a Rackspace account yet? <a href='https://www.rackspace.com/' target='_blank'>Sign up for an account</a>.</em></p>
 <h2 id="example">Example</h2>
-<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a Linode 1024 server (<code>size: 1</code>) in their droplet Dallas datacenter (<code>location: 2</code>):</p>
-<pre><code>id: linode_server
-name: Linode server
+<p>The following <a href="http://docs.devo.ps/manual/nodes/#node-file">node file</a> will create a 512MB Standard Instance (<code>size: 2</code>) on Rackspace in their Dallas datacenter (<code>location: DFW</code>):</p>
+<pre><code>id: rackspace_server
+name: Rackspace server
 type: server
 
 provider:
-  name: linode
-  location: 2
-  size: 1
-</code></pre>
+  name: rackspace
+  location: DFW
+  size: 2
+</code></pre><p><em>Note that all the location&#39;s ID must be UPPERCASE</em></p>
+<p><em>The <code>performance</code> sizes are only available in the following locations: <code>IAD</code>, <code>ORD</code>, <code>LON</code>.</em></p>
+
 </section>
 
 <section class='defaults'>
@@ -320,17 +321,11 @@ provider:
     </thead>
     <tbody>
       
-      <tr>
-        <td><code>image</code></td>
-        <td><code>124</code></td>
-        <td>Ubuntu 14.04.1 64bit LTS</td>
-      </tr>
-      
       
       <tr>
         <td><code>location</code></td>
-        <td><code>2</code></td>
-        <td>Dallas, TX, USA</td>
+        <td><code>ORD</code></td>
+        <td>Chicago (US)</td>
       </tr>
       
     </tbody>
@@ -354,66 +349,248 @@ provider:
     <tbody>
     
       <tr>
-        <td><code>1</code></td>
-        <td>Linode 1024</td>
-        <td><code>1024</code></td>
-        <td><code>24576</code></td>
+        <td><code>2</code></td>
+        <td>512MB Standard Instance</td>
+        <td><code>512</code></td>
+        <td><code>20</code></td>
       </tr>
     
       <tr>
-        <td><code>2</code></td>
-        <td>Linode 2048</td>
-        <td><code>2048</code></td>
-        <td><code>49152</code></td>
+        <td><code>3</code></td>
+        <td>1GB Standard Instance</td>
+        <td><code>1024</code></td>
+        <td><code>40</code></td>
       </tr>
     
       <tr>
         <td><code>4</code></td>
-        <td>Linode 4096</td>
+        <td>2GB Standard Instance</td>
+        <td><code>2048</code></td>
+        <td><code>80</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>5</code></td>
+        <td>4GB Standard Instance</td>
         <td><code>4096</code></td>
-        <td><code>98304</code></td>
+        <td><code>160</code></td>
       </tr>
     
       <tr>
         <td><code>6</code></td>
-        <td>Linode 8192</td>
+        <td>8GB Standard Instance</td>
         <td><code>8192</code></td>
-        <td><code>196608</code></td>
+        <td><code>320</code></td>
       </tr>
     
       <tr>
         <td><code>7</code></td>
-        <td>Linode 16384</td>
-        <td><code>16384</code></td>
-        <td><code>393216</code></td>
+        <td>15GB Standard Instance</td>
+        <td><code>15360</code></td>
+        <td><code>620</code></td>
       </tr>
     
       <tr>
         <td><code>8</code></td>
-        <td>Linode 32768</td>
-        <td><code>32768</code></td>
-        <td><code>786432</code></td>
+        <td>30GB Standard Instance</td>
+        <td><code>30720</code></td>
+        <td><code>1200</code></td>
       </tr>
     
       <tr>
-        <td><code>9</code></td>
-        <td>Linode 49152</td>
-        <td><code>49152</code></td>
-        <td><code>1179648</code></td>
+        <td><code>compute1-15</code></td>
+        <td>15 GB Compute v1</td>
+        <td><code>15360</code></td>
+        
       </tr>
     
       <tr>
-        <td><code>10</code></td>
-        <td>Linode 65536</td>
-        <td><code>65536</code></td>
-        <td><code>1572864</code></td>
+        <td><code>compute1-30</code></td>
+        <td>30 GB Compute v1</td>
+        <td><code>30720</code></td>
+        
       </tr>
     
       <tr>
-        <td><code>12</code></td>
-        <td>Linode 98304</td>
-        <td><code>98304</code></td>
-        <td><code>1966080</code></td>
+        <td><code>compute1-4</code></td>
+        <td>3.75 GB Compute v1</td>
+        <td><code>3840</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>compute1-60</code></td>
+        <td>60 GB Compute v1</td>
+        <td><code>61440</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>compute1-8</code></td>
+        <td>7.5 GB Compute v1</td>
+        <td><code>7680</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>general1-1</code></td>
+        <td>1 GB General Purpose v1</td>
+        <td><code>1024</code></td>
+        <td><code>20</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>general1-2</code></td>
+        <td>2 GB General Purpose v1</td>
+        <td><code>2048</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>general1-4</code></td>
+        <td>4 GB General Purpose v1</td>
+        <td><code>4096</code></td>
+        <td><code>80</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>general1-8</code></td>
+        <td>8 GB General Purpose v1</td>
+        <td><code>8192</code></td>
+        <td><code>160</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>io1-120</code></td>
+        <td>120 GB I/O v1</td>
+        <td><code>122880</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>io1-15</code></td>
+        <td>15 GB I/O v1</td>
+        <td><code>15360</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>io1-30</code></td>
+        <td>30 GB I/O v1</td>
+        <td><code>30720</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>io1-60</code></td>
+        <td>60 GB I/O v1</td>
+        <td><code>61440</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>io1-90</code></td>
+        <td>90 GB I/O v1</td>
+        <td><code>92160</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>memory1-120</code></td>
+        <td>120 GB Memory v1</td>
+        <td><code>122880</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>memory1-15</code></td>
+        <td>15 GB Memory v1</td>
+        <td><code>15360</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>memory1-240</code></td>
+        <td>240 GB Memory v1</td>
+        <td><code>245760</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>memory1-30</code></td>
+        <td>30 GB Memory v1</td>
+        <td><code>30720</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>memory1-60</code></td>
+        <td>60 GB Memory v1</td>
+        <td><code>61440</code></td>
+        
+      </tr>
+    
+      <tr>
+        <td><code>performance1-1</code></td>
+        <td>1 GB Performance</td>
+        <td><code>1024</code></td>
+        <td><code>20</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-2</code></td>
+        <td>2 GB Performance</td>
+        <td><code>2048</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-4</code></td>
+        <td>4 GB Performance</td>
+        <td><code>4096</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance1-8</code></td>
+        <td>8 GB Performance</td>
+        <td><code>8192</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-120</code></td>
+        <td>120 GB Performance</td>
+        <td><code>122880</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-15</code></td>
+        <td>15 GB Performance</td>
+        <td><code>15360</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-30</code></td>
+        <td>30 GB Performance</td>
+        <td><code>30720</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-60</code></td>
+        <td>60 GB Performance</td>
+        <td><code>61440</code></td>
+        <td><code>40</code></td>
+      </tr>
+    
+      <tr>
+        <td><code>performance2-90</code></td>
+        <td>90 GB Performance</td>
+        <td><code>92160</code></td>
+        <td><code>40</code></td>
       </tr>
     
     </tbody>
@@ -429,39 +606,39 @@ provider:
     <tbody>
     
       <tr>
-        <td><code>2</code></td>
-        <td>Dallas, TX, USA</td>
+        <td><code>DFW</code></td>
+        <td>Dallas (Texas)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>3</code></td>
-        <td>Fremont, CA, USA</td>
+        <td><code>ORD</code></td>
+        <td>Chicago (Illinois)</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>4</code></td>
-        <td>Atlanta, GA, USA</td>
+        <td><code>IAD</code></td>
+        <td>Northern Virginia</td>
         <td>US</td>
       </tr>
     
       <tr>
-        <td><code>6</code></td>
-        <td>Newark, NJ, USA</td>
-        <td>US</td>
+        <td><code>LON</code></td>
+        <td>London (UK)</td>
+        <td>UK</td>
       </tr>
     
       <tr>
-        <td><code>7</code></td>
-        <td>London, England, UK</td>
-        <td>GB</td>
+        <td><code>SYD</code></td>
+        <td>Sydney (Australia)</td>
+        <td>Australia</td>
       </tr>
     
       <tr>
-        <td><code>8</code></td>
-        <td>Tokyo, JP</td>
-        <td>JP</td>
+        <td><code>HKG</code></td>
+        <td>Hong Kong (China)</td>
+        <td>China</td>
       </tr>
     
     </tbody>
