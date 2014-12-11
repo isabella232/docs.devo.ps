@@ -6,6 +6,7 @@ configuration:
     required: false
     type: array
 documentation: http://nodejs.org/api/
+name: nodejs
 tags:
 - language
 tasks:
