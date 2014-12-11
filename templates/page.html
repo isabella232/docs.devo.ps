@@ -27,7 +27,7 @@
   <dl class='commands'>
     {% for task in tasks %}
     <dt>
-      devops {{ title | lower }} {{ task.name | safe }}
+      devops {% if name %}{{ name }}{% else %}{{ title | lower }}{% endif %} {{ task.name | safe }}
     </dt>
     <dd>
       {{ task.description | safe }}
