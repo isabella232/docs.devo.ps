@@ -67,7 +67,7 @@
       <strong>configuration</strong>:
       <ul>
         <li>
-          <strong>{{ title | lower }}</strong>:
+          <strong>{% if name %}{{ name }}{% else %}{{ title | lower }}{% endif %}</strong>:
           <ul class='content'>
             {% set tree = configuration %}
             {% include 'partials/_mock_tree.html' %}
