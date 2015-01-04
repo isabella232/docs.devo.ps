@@ -300,6 +300,16 @@ var Swiftype = window.Swiftype || {};
 </header>
 
 
+<section class='dependencies'>
+  <h2 id='dependencies'><a href='#dependencies'>Dependencies</a></h2>
+  The following services will automatically be installed along with the Docker service:
+  <ul class='dependencies'>
+    
+    <li><a href='/services/supervisord'>supervisord</a></li>
+    
+  </ul>
+</section>
+
 
 <section class='body'>
   
@@ -339,6 +349,34 @@ var Swiftype = window.Swiftype || {};
     </dt>
     <dd>
       Restart Docker, stop then start the Docker daemon
+      
+    </dd>
+    
+    <dt>
+      devops docker image pull
+    </dt>
+    <dd>
+      Pull a container image
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>name</td>
+              <td class='type'>string</td>
+              <td class='description'>Name of the docker image to pull</td>
+              <td class='required'>Required</td>
+            </tr>
+            
+          </tbody>
+        </table>
       
     </dd>
     
