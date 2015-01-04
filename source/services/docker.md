@@ -1,4 +1,6 @@
 ---
+dependencies:
+- supervisord
 documentation: https://docs.docker.com/
 experimental: true
 tags:
@@ -12,6 +14,13 @@ tasks:
   name: reload
 - description: Restart Docker, stop then start the Docker daemon
   name: restart
+- description: Pull a container image
+  name: image pull
+  options:
+    name:
+      description: Name of the docker image to pull
+      required: true
+      type: string
 title: Docker
 
 ---

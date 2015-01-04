@@ -50,6 +50,8 @@ configuration:
     description: Running user for the elasticsearch process
     required: false
     type: string
+dependencies:
+- java
 documentation: http://www.elasticsearch.org/guide/
 tags:
 - database
