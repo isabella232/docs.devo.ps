@@ -17,6 +17,18 @@
   {% endif %}</h1>  
 </header>
 
+{% if dependencies %}
+<section class='dependencies'>
+  <h2 id='dependencies'><a href='#dependencies'>Dependencies</a></h2>
+  The following services will automatically be installed along with the {{ title }} service:
+  <ul class='dependencies'>
+    {% for dep in dependencies %}
+    <li><a href='/services/{{ dep }}'>{{ dep }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 <section class='body'>
   {{ contents | safe }}
 </section>
