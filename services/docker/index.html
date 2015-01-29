@@ -385,6 +385,175 @@ var Swiftype = window.Swiftype || {};
 
 
 
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>docker</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  
+  <a href='#details_dns'>
+    <strong>dns</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_extra_args'>
+    <strong>extra_args</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_inet'>
+    <strong>inet</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_inet_ip'>
+    <strong>inet_ip</strong>:
+    <i>0.0.0.0</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_inet_port'>
+    <strong>inet_port</strong>:
+    <i>2375</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_registry_mirror'>
+    <strong>registry_mirror</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_sock'>
+    <strong>sock</strong>:
+    <i>true</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
+  
+    <dt id='details_dns'>
+      <strong>dns</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>Array of DNS ips to pass to Docker and each container.</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_extra_args'>
+      <strong>extra_args</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Extra arguments to pass to the Docker service. E.g. &quot;--insecure-registry x.y.z:5000&quot;.</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_inet'>
+      <strong>inet</strong> <span class='type'>boolean</span>
+    </dt>
+    <dd class='description'>Enable INET tcp for Docker service.</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_inet_ip'>
+      <strong>inet_ip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>IP address used to bind the Docker service.</dd>
+    <dd class='default'>Default: <code>0.0.0.0</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_inet_port'>
+      <strong>inet_port</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>PORT address used to bind the Docker service.</dd>
+    <dd class='default'>Default: <code>2375</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_registry_mirror'>
+      <strong>registry_mirror</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Define the URL of the registry mirror to use.</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_sock'>
+      <strong>sock</strong> <span class='type'>boolean</span>
+    </dt>
+    <dd class='description'>Enable UNIX socket for Docker service.</dd>
+    <dd class='default'>Default: <code>true</code></dd>
+    
+  
+
+  
+
+  </dl>
+</section>
+
 
 
     </section>
