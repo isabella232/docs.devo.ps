@@ -1,8 +1,8 @@
 ---
 defaults:
   image:
-    id: 9801950
-    name: Ubuntu 14.04.1 64bit LTS
+    id: 11836690
+    name: Ubuntu 14.04.2 64bit LTS
   location:
     id: 3
     name: San Francisco 1
@@ -34,6 +34,9 @@ locations:
 - country: null
   id: '9'
   name: Amsterdam 3
+- country: null
+  id: '10'
+  name: Frankfurt 1
 sizes:
 - bandwidth: 0
   disk: 0

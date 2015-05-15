@@ -2,7 +2,7 @@
 defaults:
   image:
     id: 124
-    name: Ubuntu 14.04.1 64bit LTS
+    name: Ubuntu 14.04.2 64bit LTS
   location:
     id: 2
     name: Dallas, TX, USA
@@ -25,6 +25,9 @@ locations:
 - country: JP
   id: '8'
   name: Tokyo, JP
+- country: ??
+  id: '9'
+  name: Singapore, SG
 sizes:
 - bandwidth: 2000
   disk: 24576
