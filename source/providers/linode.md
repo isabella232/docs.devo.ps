@@ -28,6 +28,9 @@ locations:
 - country: ??
   id: '9'
   name: Singapore, SG
+- country: ??
+  id: '10'
+  name: Frankfurt, DE
 sizes:
 - bandwidth: 2000
   disk: 24576
