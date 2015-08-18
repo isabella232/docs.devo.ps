@@ -1,0 +1,1414 @@
+<!doctype html>
+<html>
+<head>
+  <title>Redis | devo.ps documentation</title>
+  
+  <!-- Meta -->
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  <meta name='keywords' content='devo.ps, DevOps, Cloud, servers, infrastructure, automation, Continuous Integration, Continuous Deployment, Configuration Management, Orchestration, System Administration, PaaS, IaaS, documentation, database'/>
+  <meta name='description' content='Documentation for devo.ps'/>
+  
+  <!-- Favicons -->
+  <link rel='shortcut icon' href='/assets/favicon.ico'>
+<link rel='apple-touch-icon' sizes='57x57' href='/assets/favicons/apple-touch-icon-57x57.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/apple-touch-icon-114x114.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/apple-touch-icon-72x72.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/apple-touch-icon-144x144.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/apple-touch-icon-60x60.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/apple-touch-icon-120x120.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/apple-touch-icon-76x76.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/apple-touch-icon-152x152.png'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-196x196.png' sizes='196x196'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-160x160.png' sizes='160x160'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-96x96.png' sizes='96x96'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-16x16.png' sizes='16x16'>
+<link rel='icon' type='image/png' href='/assets/favicons/favicon-32x32.png' sizes='32x32'>
+<meta name='msapplication-TileColor' content='#da532c'>
+<meta name='msapplication-TileImage' content='/assets/favicons/mstile-144x144.png'>
+<meta name='msapplication-config' content='/assets/favicons/browserconfig.xml'>
+
+  <!-- CSS -->
+  <link href='/assets/styles.css?0.1.0' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <header id='header'>
+    <div class='wrapper'>
+      <span class='logo'><a href='http://devo.ps'>devo.ps</a> documentation</span>
+
+      <button class='toggle'>Menu</button>
+      <nav class='menu'>
+        <a href='https://www.hipchat.com/gyHEHtsXZ' target='_blank'>Chat with us</a>
+        <a href='http://docs.devo.ps'>Documentation</a>
+        <a href='http://devo.ps/about'>About</a>
+        <a href='http://devo.ps/blog'>Blog</a>
+        <a href='http://app.devo.ps' class='signin'>Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id='main'>
+    <nav class='sidebar'>
+      <button class='cancel'><span>Close</span></button>
+      <form class='swifttype'>
+  <input type='text' id='st-search-input' placeholder='Search by keyword'/>
+</form>
+<script type='text/javascript'>
+var Swiftype = window.Swiftype || {};
+  (function() {
+    Swiftype.key = 'nkPRs5W_yrQndsebXC-A';
+
+    /** DO NOT EDIT BELOW THIS LINE **/
+    var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+    script.src = '//s.swiftypecdn.com/embed.js';
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+  }());
+</script>
+      <nav class='menu'>
+        <a href='/' >Getting started</a>
+
+<h3><a href='/faq' >FAQ</a></h3>
+
+<h3>How to</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/how-to/add-a-server' >Add a server</a>
+
+<a href='/how-to/create-amazon-ec2-api-key' >Create Amazon EC2 API key</a>
+
+<a href='/how-to/create-digitalocean-api-key' >Create Digital Ocean API key</a>
+
+<a href='/how-to/create-linode-api-key' >Create Linode API key</a>
+
+<a href='/how-to/trigger-task-with-webhook' >Trigger a Task With a Webhook</a>
+
+
+<h3>Manual</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/manual/CLI' >CLI</a>
+
+<a href='/manual/events' >Events</a>
+
+<a href='/manual/git-repositories' >Git &amp; Repositories</a>
+
+<a href='/manual/nodes' >Nodes</a>
+
+<a href='/manual/profile' >Profile</a>
+
+<a href='/manual/tasks' >Tasks</a>
+
+<a href='/manual/vars' >Variables</a>
+
+
+<h3>Providers</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/providers/ec2' >Amazon EC2</a>
+
+<a href='/providers/digitalocean' >Digital Ocean</a>
+
+<a href='/providers/linode' >Linode</a>
+
+<a href='/providers/rackspace' >Rackspace</a>
+
+
+<h3>Services</h3>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a href='/services/apache' >Apache</a>
+
+<a href='/services/backup' >Backup</a>
+
+<a href='/services/couchbase' >CouchBase</a>
+
+<a href='/services/couchdb' >CouchDB</a>
+
+<a href='/services/dart' >Dart</a>
+
+<a href='/services/docker' >Docker</a>
+
+<a href='/services/elasticsearch' >ElasticSearch</a>
+
+<a href='/services/fail2ban' >Fail2ban</a>
+
+<a href='/services/git' >Git</a>
+
+<a href='/services/go' >Go</a>
+
+<a href='/services/java' >Java</a>
+
+<a href='/services/memcached' >Memcached</a>
+
+<a href='/services/meteor' >Meteor</a>
+
+<a href='/services/mongodb' >MongoDB</a>
+
+<a href='/services/mysql' >MySQL</a>
+
+<a href='/services/nginx' >Nginx</a>
+
+<a href='/services/nodejs' >Node.js</a>
+
+<a href='/services/openvpn' >OpenVPN</a>
+
+<a href='/services/php' >PHP</a>
+
+<a href='/services/postgresql' >PostgreSQL</a>
+
+<a href='/services/python' >Python</a>
+
+<a href='/services/rabbitmq' >RabbitMQ</a>
+
+<a href='/services/redis'  class='active'>Redis</a>
+
+<a href='/services/ruby' >Ruby</a>
+
+<a href='/services/server' >Server</a>
+
+<a href='/services/supervisord' >Supervisord</a>
+
+<a href='/services/uwsgi' >uWSGI</a>
+
+<a href='/services/vagrant' >Vagrant</a>
+
+<a href='/services/varnish' >Varnish</a>
+
+<a href='/services/xvfb' >Xvfb</a>
+
+<a href='/services/zeromq' >ZeroMQ</a>
+
+      </nav>
+    </nav>
+
+    <section class='content'>
+      
+
+<header class='header'>
+  <ul class='tags'>
+    
+      <li>database</li>
+    
+  </ul>
+
+  <h1>Redis 
+  <a href='http://redis.io/documentation'><span>Official documentation</span></a>
+  </h1>  
+</header>
+
+
+
+<section class='body'>
+  
+</section>
+
+
+<section class='tasks'>
+  <h2 id='commands'><a href='#commands'>Commands</a></h2>
+  <dl class='commands'>
+    
+    <dt>
+      devops redis start
+    </dt>
+    <dd>
+      Start Redis if stopped
+      
+    </dd>
+    
+    <dt>
+      devops redis stop
+    </dt>
+    <dd>
+      Stop Redis if started
+      
+    </dd>
+    
+    <dt>
+      devops redis reload
+    </dt>
+    <dd>
+      Reload Redis, reload the configuration and perform a graceful restart
+      
+    </dd>
+    
+    <dt>
+      devops redis restart
+    </dt>
+    <dd>
+      Restart Redis, reload the configuration (but kills existing connection)
+      
+    </dd>
+    
+    <dt>
+      devops redis database backup
+    </dt>
+    <dd>
+      Backup database(s)
+      
+        <h3>Options</h3>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class='name'>path</td>
+              <td class='type'>string</td>
+              <td class='description'>Path to destination folder of the backup</td>
+              <td class='required'></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      
+    </dd>
+    
+  </dl>
+</section>
+
+
+
+<section id='configuration'>
+  <h2><a href='#configuration'>Configuration</a></h2>
+
+  <ul class='mock'>
+    <li>
+      <strong>configuration</strong>:
+      <ul>
+        <li>
+          <strong>redis</strong>:
+          <ul class='content'>
+            
+            
+
+<li>
+  
+  <strong>aom</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_aof_rewrite_min_size'>
+    <strong>aof_rewrite_min_size</strong>:
+    <i>64mb</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_aof_rewrite_percentage'>
+    <strong>aof_rewrite_percentage</strong>:
+    <i>100</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_enable'>
+    <strong>enable</strong>:
+    <i>no</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_filename'>
+    <strong>filename</strong>:
+    <i>appendonly.aof</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_fsync'>
+    <strong>fsync</strong>:
+    <i>everysec</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_no_appendfsync_on_rewrite'>
+    <strong>no_appendfsync_on_rewrite</strong>:
+    <i>no</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_bind'>
+    <strong>bind</strong>:
+    <i>127.0.0.1</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_databases'>
+    <strong>databases</strong>:
+    <i>1</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <strong>limits</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_maxclients'>
+    <strong>maxclients</strong>:
+    <i>10000</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_maxmemory'>
+    <strong>maxmemory</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_policy'>
+    <strong>policy</strong>:
+    <i>volatile-lru</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_samples'>
+    <strong>samples</strong>:
+    <i>3</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_logfile'>
+    <strong>logfile</strong>:
+    <i>/var/log/redis/redis-server.log</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_loglevel'>
+    <strong>loglevel</strong>:
+    <i>notice</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <strong>lua</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_time_limit'>
+    <strong>time_limit</strong>:
+    <i>5000</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_port'>
+    <strong>port</strong>:
+    <i>6379</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <strong>replication</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_is_slave'>
+    <strong>is_slave</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_masterauth'>
+    <strong>masterauth</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_masterip'>
+    <strong>masterip</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_masterport'>
+    <strong>masterport</strong>:
+    <i>6379</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ping_slave_period'>
+    <strong>ping_slave_period</strong>:
+    <i>10</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_priority'>
+    <strong>priority</strong>:
+    <i>100</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_read_only'>
+    <strong>read_only</strong>:
+    <i>yes</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_serve_stale_data'>
+    <strong>serve_stale_data</strong>:
+    <i>yes</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_timeout'>
+    <strong>timeout</strong>:
+    <i>60</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  
+  <strong>security</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_requirepass'>
+    <strong>requirepass</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  
+  <strong>slowlog</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_log_slower_than'>
+    <strong>log_slower_than</strong>:
+    <i>10000</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_max_len'>
+    <strong>max_len</strong>:
+    <i>128</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  
+  <strong>snapshotting</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_dbfilename'>
+    <strong>dbfilename</strong>:
+    <i>dump.rdb</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_dir'>
+    <strong>dir</strong>:
+    <i>/var/lib/redis</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_rdbchecksum'>
+    <strong>rdbchecksum</strong>:
+    <i>yes</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_rdbcompression'>
+    <strong>rdbcompression</strong>:
+    <i>yes</i>
+  </a>
+</li>
+
+
+
+<li>
+  
+  <a href='#details_save'>
+    <strong>save</strong>:
+  </a>
+  <ul class='array'>
+    
+    
+  </ul>
+  
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  
+  <strong>syslog</strong>:
+  <ul>
+    
+    
+
+<li>
+  <a href='#details_enable'>
+    <strong>enable</strong>:
+    <i>no</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_facility'>
+    <strong>facility</strong>:
+    <i>local0</i>
+  </a>
+</li>
+
+
+
+<li>
+  <a href='#details_ident'>
+    <strong>ident</strong>:
+    <i>redis</i>
+  </a>
+</li>
+
+
+  </ul>
+  
+</li>
+
+
+
+<li>
+  <a href='#details_timeout'>
+    <strong>timeout</strong>:
+    <i class='empty'>no default value</i>
+  </a>
+</li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <dl class='list'>
+    
+    
+  
+
+  
+    
+      
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_aof_rewrite_min_size'>
+      aom.<strong>aof_rewrite_min_size</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Minimum size of the AOF to consider auto rewrite of the AOF based on the percentage</dd>
+    <dd class='default'>Default: <code>64mb</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_aof_rewrite_percentage'>
+      aom.<strong>aof_rewrite_percentage</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Automatically trigger AOF rewrite if the AOF grows by more of the specified percentage (0 to disable)</dd>
+    <dd class='default'>Default: <code>100</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_enable'>
+      aom.<strong>enable</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable Append Only Mode</dd>
+    <dd class='default'>Default: <code>no</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_filename'>
+      aom.<strong>filename</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Name of the append only file</dd>
+    <dd class='default'>Default: <code>appendonly.aof</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_fsync'>
+      aom.<strong>fsync</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Fsync mode to sync the append only file</dd>
+    <dd class='default'>Default: <code>everysec</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_no_appendfsync_on_rewrite'>
+      aom.<strong>no_appendfsync_on_rewrite</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Define whether to (not) append fsync operations if another fsync op is already in progress</dd>
+    <dd class='default'>Default: <code>no</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_bind'>
+      <strong>bind</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Binding IP address.</dd>
+    <dd class='default'>Default: <code>127.0.0.1</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_databases'>
+      <strong>databases</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Number of databases within the redis server</dd>
+    <dd class='default'>Default: <code>1</code></dd>
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_maxclients'>
+      limits.<strong>maxclients</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Max number of clients connected</dd>
+    <dd class='default'>Default: <code>10000</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_maxmemory'>
+      limits.<strong>maxmemory</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Maximum RAM used by Redis to store data (no limit by default) in bytes</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_policy'>
+      limits.<strong>policy</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Define how Redis will remove keys when maxmemory is reached</dd>
+    <dd class='default'>Default: <code>volatile-lru</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_samples'>
+      limits.<strong>samples</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Sample size to use to base the policy eviction for LRU and TTL policy algorithms</dd>
+    <dd class='default'>Default: <code>3</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_logfile'>
+      <strong>logfile</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Server log file</dd>
+    <dd class='default'>Default: <code>/var/log/redis/redis-server.log</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_loglevel'>
+      <strong>loglevel</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Server log verbosity</dd>
+    <dd class='default'>Default: <code>notice</code></dd>
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_time_limit'>
+      lua.<strong>time_limit</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Time limit (in ms) for the execution of a LUA script</dd>
+    <dd class='default'>Default: <code>5000</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_port'>
+      <strong>port</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Connection port.</dd>
+    <dd class='default'>Default: <code>6379</code></dd>
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_is_slave'>
+      replication.<strong>is_slave</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Is this redis instance a slave?</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_masterauth'>
+      replication.<strong>masterauth</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Redis master auth password (if required)</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_masterip'>
+      replication.<strong>masterip</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>IP or host of the master server</dd>
+    
+    
+  
+
+  
+
+  
+    <dt id='details_masterport'>
+      replication.<strong>masterport</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Redis port of the master server</dd>
+    <dd class='default'>Default: <code>6379</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ping_slave_period'>
+      replication.<strong>ping_slave_period</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Frequency (in sec) to ping the master server as health check</dd>
+    <dd class='default'>Default: <code>10</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_priority'>
+      replication.<strong>priority</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Slave priority</dd>
+    <dd class='default'>Default: <code>100</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_read_only'>
+      replication.<strong>read_only</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Make the slave server read-only (preferred option)</dd>
+    <dd class='default'>Default: <code>yes</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_serve_stale_data'>
+      replication.<strong>serve_stale_data</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Slave redis serves stale data if the connection is lost with the master</dd>
+    <dd class='default'>Default: <code>yes</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_timeout'>
+      replication.<strong>timeout</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Timeout to Bulk IO transfer and ping response to mark the master as unreachable</dd>
+    <dd class='default'>Default: <code>60</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_requirepass'>
+      security.<strong>requirepass</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Require a password to connect (either client or slave)</dd>
+    
+    
+  
+
+  
+
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_log_slower_than'>
+      slowlog.<strong>log_slower_than</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Execution time in microsecond to catpure the slow logs; negative value to disable; 0 to log all queries</dd>
+    <dd class='default'>Default: <code>10000</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_max_len'>
+      slowlog.<strong>max_len</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Length of the slow log to capture (FIFO based)</dd>
+    <dd class='default'>Default: <code>128</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_dbfilename'>
+      snapshotting.<strong>dbfilename</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Filename where to dump the DB</dd>
+    <dd class='default'>Default: <code>dump.rdb</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_dir'>
+      snapshotting.<strong>dir</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Folder where to store the snapshots</dd>
+    <dd class='default'>Default: <code>/var/lib/redis</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_rdbchecksum'>
+      snapshotting.<strong>rdbchecksum</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable database checksum (use ~10% extra CPU)</dd>
+    <dd class='default'>Default: <code>yes</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_rdbcompression'>
+      snapshotting.<strong>rdbcompression</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Enable database compression</dd>
+    <dd class='default'>Default: <code>yes</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_save'>
+      snapshotting.<strong>save</strong> <span class='type'>array</span>
+    </dt>
+    <dd class='description'>Array of save rules including seconds and number of changes that trigger a save</dd>
+    <dd class='default'>Default: <code>[object Object],[object Object],[object Object]</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+
+  
+    
+    
+    
+      
+    
+
+    
+      
+      
+  
+    <dt id='details_enable'>
+      syslog.<strong>enable</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Send log to syslog</dd>
+    <dd class='default'>Default: <code>no</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_facility'>
+      syslog.<strong>facility</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Syslog facility</dd>
+    <dd class='default'>Default: <code>local0</code></dd>
+    
+  
+
+  
+
+  
+    <dt id='details_ident'>
+      syslog.<strong>ident</strong> <span class='type'>string</span>
+    </dt>
+    <dd class='description'>Syslog identity</dd>
+    <dd class='default'>Default: <code>redis</code></dd>
+    
+  
+
+  
+
+    
+    
+  
+
+  
+    <dt id='details_timeout'>
+      <strong>timeout</strong> <span class='type'>integer</span>
+    </dt>
+    <dd class='description'>Close the connection after a client is idle for N seconds (0 to disable)</dd>
+    
+    
+  
+
+  
+
+  </dl>
+</section>
+
+
+
+    </section>
+  <section>
+
+  <aside id='support'>
+    <h2>Need help?</h2>
+    <nav class='links'>
+      <a class='chat' href='https://www.hipchat.com/gyHEHtsXZ' target='_blank'>Chat with us</a>
+      <a class='help' href='mailto:help@devo.ps' target='_blank'>Contact the support</a>
+      <a class='documentation' href='http://docs.devo.ps' target='_blank'>Check the documentation</a>
+    </nav>
+  </aside>
+
+  <!-- JS -->
+  <script src='/assets/scripts.js' type='text/javascript'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script type='text/javascript'>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '510b396a613f5d2666000007');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+  <script type='text/javascript'>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34006371-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
